@@ -189,6 +189,6 @@ Feel free to experiment with the live demo and share your thoughts!
 10. **Hugging Face - Performance Benchmarks**\
     *An overview of the model performance across various tasks and benchmarks, showcasing the strengths and weaknesses of different models.*\
     [Source](https://huggingface.co/spaces/mteb/leaderboard)
-11. **Hugging Face - Community Discussion**\    
+11. **Hugging Face - Community Discussion**    
     *Join the community discussions on Hugging Face, where users can ask questions, share insights, and discuss AI-related topics.*\
     [Source](https://discuss.huggingface.co/)
