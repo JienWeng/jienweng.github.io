@@ -1,7 +1,7 @@
 name: Deploy Zola
 on:
   push:
-    branches: [main] # Make sure this matches your branch name (main or master)
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -16,16 +16,20 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          submodules: recursive # Fetches Serene theme
+          submodules: recursive
+
       - name: Install Zola
-        run: |
-          sudo snap install zola --edge
+        uses: taiki-e/install-action@v2
+        with:
+          tool: zola@0.21.0
+
       - name: Build
         run: zola build
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./public # Zola outputs to the 'public' folder
+          path: ./public
 
   deploy:
     environment:
