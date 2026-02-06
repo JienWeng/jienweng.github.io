@@ -3,7 +3,7 @@ title = "Let's talk about Solar Photovoltaic Systems in WWTPs Malaysia"
 description = "Discussion on Intergrating Solar Photovoltaic Systems in Wastewater Treatment Plants in Malaysia"
 date = 2025-12-01
 updated = 2025-12-02
-draft = false
+draft = true
 
 [taxonomies]
 categories = ["2025"]

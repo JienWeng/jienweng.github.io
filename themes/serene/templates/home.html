@@ -51,7 +51,7 @@
           {% endif %}
         </div>
         {% if section.extra.bio %}
-        <div id="bio"> {{ section.extra.bio }} </div>
+        <div id="bio"> {{ section.extra.bio }} <a href="https://github.com/sponsors/jienweng" class="sponsor-link" rel="noreferrer" target="_blank">Support me</a></div>
         {% endif %}
       </div>
     </section>
@@ -100,6 +100,7 @@
         <a class="instant" href="{{ config.extra.blog_section_path }}">{{ section.extra.recent_more_text }}</a>
       </div>
     </section>
+    {% include "_subscribe.html" %}
   {% endif %}
   </main>
   {% if section.extra.footer %}

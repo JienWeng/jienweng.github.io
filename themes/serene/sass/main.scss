@@ -1154,6 +1154,19 @@ body.homepage {
 
     #bio {
       color: var(--text-pale-color);
+
+      .sponsor-link {
+        margin-left: 0.5em;
+        color: var(--primary-color);
+        text-decoration: none;
+        border-bottom: 1.5px solid rgba(0,0,0,0);
+        
+        @media (hover: hover) {
+          &:hover {
+            border-bottom-color: var(--primary-color);
+          }
+        }
+      }
     }
   }
 
@@ -1172,9 +1185,17 @@ body.homepage {
       text-decoration: none;
       line-height: 0;
       color: var(--text-color);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
 
       &:hover {
         color: var(--primary-color);
+      }
+
+      svg {
+        width: 18px;
+        height: 18px;
       }
     }
 
@@ -1297,6 +1318,46 @@ dialog#rss-mask {
     cursor: pointer;
     &.copied, &:hover {
       color: var(--primary-color);
+    }
+  }
+}
+
+/* footer sponsor
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.footer-sponsor {
+  padding: 0 15px;
+  
+  .sponsor-block {
+    margin: 1.5em 0;
+    padding: 1.25em;
+    border: 1.5px solid var(--detail-border-color);
+    border-radius: var(--detail-border-radius);
+    text-align: center;
+    background-color: var(--bg-color);
+
+    .sponsor-text {
+      margin: 0 0 1em 0;
+      font-size: 1em;
+    }
+
+    .sponsor-link {
+      display: inline-block;
+      padding: 0.75em 1.5em;
+      background-color: var(--primary-color);
+      color: var(--bg-color);
+      border: none;
+      border-radius: var(--detail-border-radius);
+      font-weight: 500;
+      text-decoration: none;
+      cursor: pointer;
+      transition: opacity 0.15s;
+
+      @media (hover: hover) {
+        &:hover {
+          opacity: 0.9;
+        }
+      }
     }
   }
 }

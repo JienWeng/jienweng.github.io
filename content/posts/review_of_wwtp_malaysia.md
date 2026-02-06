@@ -3,7 +3,7 @@ title = "A Short Review of Sustainability of Wastewater Treatment Plants in Mala
 description = "An overview of the current state and future prospects of WWTPs in Malaysia."
 date = 2025-12-03
 updated = 2025-12-05
-draft = false
+draft = true
 
 [taxonomies]
 categories = ["2025"]

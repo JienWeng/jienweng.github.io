@@ -16,6 +16,7 @@ links = [
     { name = "GitHub", icon = "github", url = "https://github.com/jienweng" },
     { name = "LinkedIn", icon = "linkedin", url = "https://linkedin.com/in/jienweng" },
     { name = "Email", icon = "email", url = "mailto:laijienweng" },
+    { name = "Support", icon = "support", url = "https://github.com/sponsors/jienweng" }
 ]
 
 # Show a few recent posts in home page
@@ -31,18 +32,17 @@ date_format = "%b %-d, %Y"
 
 <!-- under the supervision of [Ir. Ts. Gs. Dr. Chow Ming Fai](https://www.monash.edu.my/engineering/about-us/all-staff/civil-engineering/ap-dr-chow-ming-fai) -->
 
-I'm a Research Assistant at [Monash University Malaysia](https://www.monash.edu.my). I obtained my BSc. in Applied Mathematics from [Tunku Abdul Rahman University (UTAR)](https://www.utar.edu.my). My research is motivated by the reinforcement learning advancements in attention-based predictive models. I believe that soon the current LLM would reach a point where it hardly improves, and the next gap to filled in is experience.
+I'm a Research Assistant at [Monash University Malaysia](https://www.monash.edu.my). I obtained my BSc. in Applied Mathematics from [Tunku Abdul Rahman University (UTAR)](https://www.utar.edu.my). My research is motivated by the reinforcement learning advancements in attention-based predictive models. I believe that soon the current LLM would reach a point where it hardly improves, and the next gap to filled in is experience. Also, I'm currently working on quantitative finance on both TradFi and DeFi, feel free to discuss.
 
-Beyond academics, I'm currently working on several web development projects, and actively providing college-level mathematics and public speaking tutoring services.
+Beyond academics, I'm currently working on several web development projects, and actively providing college-level mathematics and public speaking tutoring.
 
 <hr>
 
 # Contact
 
 - Email: [laijienweng@gmail.com](mailto:laijienweng@gmail.com)
-- Office: [Starbucks AEON Cheras Selatan](https://share.google/ToEkH5uFfJYN8Efm7)
 
-I'm always down to chat about anything, math, techs, researchs, puppies etc. Feel free to reach out via email!
+I'm always down to chat about anything, math, tech, research, puppies etc. Feel free to reach out via email!
 
 <hr>
 
