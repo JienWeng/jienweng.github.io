@@ -1,0 +1,56 @@
+name: Newsletter Sync
+on:
+  push:
+    paths:
+      - 'content/posts/**' # Adjust to your folder structure
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2 # Required to see what file changed
+
+      - name: Extract Newest Post
+        id: post_data
+        run: |
+          # 1. Get the path of the newest added/modified markdown file
+          FILE_PATH=$(git diff --name-only HEAD^ HEAD | grep 'content/posts/.*\.md' | head -1)
+          
+          if [ -z "$FILE_PATH" ]; then
+            echo "No new posts found."
+            exit 0
+          fi
+
+          # 2. Extract Title from Zola Front Matter
+          TITLE=$(grep '^title =' "$FILE_PATH" | head -1 | cut -d '"' -f 2)
+          
+          # 3. Strip Front Matter and keep the body
+          # Logic: Delete everything between the first two '+++' markers
+          BODY=$(sed '1,/+++/d;1,/+++/d' "$FILE_PATH")
+
+          # 4. Prepare for Buttondown (Add Math mode comment)
+          FINAL_BODY="\n\n$BODY"
+
+          # 5. Output for next step (using GitHub env to avoid multiline issues)
+          {
+            echo "TITLE=$TITLE"
+            echo "BODY<<EOF"
+            echo -e "$FINAL_BODY"
+            echo "EOF"
+          } >> "$GITHUB_ENV"
+
+      - name: Push to Buttondown API
+        if: env.TITLE != ''
+        run: |
+          curl --request POST \
+            --url https://api.buttondown.email/v1/emails \
+            --header "Authorization: Token ${{ secrets.BUTTONDOWN_API_KEY }}" \
+            --header 'Content-Type: application/json' \
+            --data "{
+              \"subject\": \"${{ env.TITLE }}\",
+              \"body\": $(echo -n "${{ env.BODY }}" | jq -Rs .),
+              \"status\": \"draft\"
+            }"
