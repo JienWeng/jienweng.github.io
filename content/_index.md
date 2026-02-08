@@ -9,7 +9,7 @@ footer = true
 
 # If you don't want to display id/bio/avatar, simply comment out that line
 name = "Jien Weng"
-id = "jienweng"
+# id = "jienweng"
 bio = "A math nerd."
 avatar = "img/profile.webp"
 links = [
