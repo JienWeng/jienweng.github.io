@@ -1,56 +1,64 @@
-name: Newsletter Sync
+name: RSS to Buttondown
 on:
-  push:
-    paths:
-      - 'content/posts/**' # Adjust to your folder structure
+  workflow_run:
+    workflows: ["Deploy Zola to GitHub Pages"] # Adjust this to match your Zola deploy workflow name
+    types: [completed]
+  workflow_dispatch: 
 
 jobs:
-  sync:
+  newsletter:
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' }}
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
         with:
-          fetch-depth: 2 # Required to see what file changed
+          python-version: '3.x'
 
-      - name: Extract Newest Post
-        id: post_data
+      - name: Install dependencies
+        run: pip install feedparser requests
+
+      - name: Parse RSS and Create Buttondown Draft
+        env:
+          BD_API_KEY: ${{ secrets.BUTTONDOWN_API_KEY }}
+          RSS_URL: "https://jienweng.github.io/rss.xml" # Update to your actual RSS URL
         run: |
-          # 1. Get the path of the newest added/modified markdown file
-          FILE_PATH=$(git diff --name-only HEAD^ HEAD | grep 'content/posts/.*\.md' | head -1)
-          
-          if [ -z "$FILE_PATH" ]; then
-            echo "No new posts found."
-            exit 0
-          fi
+          python - <<EOF
+          import feedparser
+          import requests
+          import os
 
-          # 2. Extract Title from Zola Front Matter
-          TITLE=$(grep '^title =' "$FILE_PATH" | head -1 | cut -d '"' -f 2)
-          
-          # 3. Strip Front Matter and keep the body
-          # Logic: Delete everything between the first two '+++' markers
-          BODY=$(sed '1,/+++/d;1,/+++/d' "$FILE_PATH")
+          # 1. Parse the feed
+          feed = feedparser.parse(os.environ['RSS_URL'])
+          if not feed.entries:
+              print("No entries found.")
+              exit(0)
 
-          # 4. Prepare for Buttondown (Add Math mode comment)
-          FINAL_BODY="\n\n$BODY"
+          latest_post = feed.entries[0]
+          title = latest_post.title
+          link = latest_post.link
+          # Zola usually puts the full content in 'description' or 'content'
+          body = latest_post.get('content', [{'value': latest_post.description}])[0]['value']
 
-          # 5. Output for next step (using GitHub env to avoid multiline issues)
-          {
-            echo "TITLE=$TITLE"
-            echo "BODY<<EOF"
-            echo -e "$FINAL_BODY"
-            echo "EOF"
-          } >> "$GITHUB_ENV"
+          # 2. Prepare API call to Buttondown
+          url = "https://api.buttondown.email/v1/emails"
+          headers = {
+              "Authorization": f"Token {os.environ['BD_API_KEY']}",
+              "Content-Type": "application/json"
+          }
+          data = {
+              "subject": title,
+              "body": f"{body}\n\n<p><a href='{link}'>Read this post on the web</a></p>",
+              "status": "draft" # Change to "sent" if you want it to go out automatically
+          }
 
-      - name: Push to Buttondown API
-        if: env.TITLE != ''
-        run: |
-          curl --request POST \
-            --url https://api.buttondown.email/v1/emails \
-            --header "Authorization: Token ${{ secrets.BUTTONDOWN_API_KEY }}" \
-            --header 'Content-Type: application/json' \
-            --data "{
-              \"subject\": \"${{ env.TITLE }}\",
-              \"body\": $(echo -n "${{ env.BODY }}" | jq -Rs .),
-              \"status\": \"draft\"
-            }"
+          # 3. Send to Buttondown
+          response = requests.post(url, headers=headers, json=data)
+          if response.status_code == 201:
+              print(f"Successfully created draft: {title}")
+          else:
+              print(f"Error: {response.status_code} - {response.text}")
+          EOF

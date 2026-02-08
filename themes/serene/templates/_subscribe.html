@@ -1,10 +1,23 @@
 <section id="subscribe-section" class="prose" style="padding: 0 15px 2em;">
-    <form action="https://api.follow.it/subscription-form/WnRzVmxERlY0cXJWblR5OTBrMFJnQ2tFaHZMdEhYUkdXVGVJSm9NcndDOEQ1MUxqamx4ckswcW14NVpuSW5OcTNLRzNEdlV5TjFNWlJMaVNhMURRRnNTWVVZd1FSNFZ4aTF3cjZMOU5sdkIwZ1M0YThVZ3M3d3d5QzVvdXRVRXV8N0xyeVJBcWVXcTIraXd6ckw5TkFDWnoyZXh2QWU4OC9waFRreHlwWVVDMD0=/8" method="post" class="embeddable-buttondown-form" referrerpolicy="unsafe-url">
+    <form 
+        action="https://buttondown.email/api/emails/embed-subscribe/jienweng" 
+        method="post" 
+        target="popupwindow" 
+        onsubmit="window.open('https://buttondown.email/jienweng', 'popupwindow')"
+        class="embeddable-buttondown-form"
+    >
         <h3>Subscribe for updates</h3>
         <p style="margin: 0.75em 0; font-size: 0.95em; color: var(--text-pale-color);">Get notified when I publish new content.</p>
+        
         <div style="display: flex; gap: 0.5em; margin: 1em 0;">
-            <input type="email" name="email" id="bd-email" placeholder="your-mail@example.com" required style="flex: 1; padding: 0.75em; border: 1.5px solid var(--primary-color); border-radius: 0; background-color: transparent; color: var(--text-color); font-family: inherit;">
-            <button type="submit" style="padding: 0.75em 1.5em; background-color: var(--primary-color); color: var(--bg-color); border: none; border-radius: 0; font-weight: 500; cursor: pointer; text-decoration: none;">Subscribe</button>
+            <input type="email" name="email" id="bd-email" placeholder="your-mail@example.com" required 
+                style="flex: 1; padding: 0.75em; border: 1.5px solid var(--primary-color); border-radius: 0; background-color: transparent; color: var(--text-color); font-family: inherit;">
+            
+            <input type="hidden" value="1" name="embed" />
+            
+            <button type="submit" style="padding: 0.75em 1.5em; background-color: var(--primary-color); color: var(--bg-color); border: none; border-radius: 0; font-weight: 500; cursor: pointer; text-decoration: none;">
+                Subscribe
+            </button>
         </div>
     </form>
 </section>
