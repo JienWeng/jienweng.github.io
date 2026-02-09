@@ -3,7 +3,7 @@ title = "R-squared: SST, SSE, SSR and the Relationship with Correlation"
 description = "Defining the coefficient of determination from the sum of squares decomposition and proving that R-squared equals the square of the correlation coefficient."
 date = 2026-01-30
 updated = 2026-01-30
-draft = false
+draft = true
 
 [taxonomies]
 categories = ["2026"]
@@ -44,7 +44,7 @@ The total variability in the observed response values can be decomposed into two
 
 ### Total Sum of Squares (SST)
 
-$$SST = \sum^n_{i=1}(y_i - \bar{y})^2 = S_{yy}.$$
+$$SST = \sum^n_{i=1}(y_i - \bar{y})^2 = S\_{yy}.$$
 
 This measures the total variability of $y$ around its mean.
 
@@ -56,7 +56,7 @@ This measures the variability in $y$ that is explained by the regression model.
 
 ### Sum of Squared Errors (SSE)
 
-$$SSE = \sum^n_{i=1}(y_i - \hat{y}_i)^2 = \sum^n_{i=1}e_i^2.$$
+$$SSE = \sum^n\_{i=1}(y\_i - \hat{y}\_i)^2.$$
 
 This measures the variability in $y$ that remains unexplained.
 
@@ -72,11 +72,11 @@ $$y_i - \bar{y} = (\hat{y}_i - \bar{y}) + (y_i - \hat{y}_i).$$
 
 Squaring both sides and summing over all observations:
 
-$$\sum^n_{i=1}(y_i - \bar{y})^2 = \sum^n_{i=1}(\hat{y}_i - \bar{y})^2 + \sum^n_{i=1}(y_i - \hat{y}_i)^2 + 2\sum^n_{i=1}(\hat{y}_i - \bar{y})(y_i - \hat{y}_i).$$
+$$\sum_{i=1}^n (y_i - \bar{y})^2 = \sum_{i=1}^n (\hat{y}_i - \bar{y})^2 + \sum_{i=1}^n (y_i - \hat{y}_i)^2 + 2\sum_{i=1}^n (\hat{y}_i - \bar{y})(y_i - \hat{y}_i).$$
 
 The cross term vanishes because of the properties of OLS residuals:
 
-$$\sum^n_{i=1}(\hat{y}_i - \bar{y})(y_i - \hat{y}_i) = \sum^n_{i=1}(\hat{y}_i - \bar{y})e_i = 0.$$
+$$\sum_{i=1}^n (\hat{y}_i - \bar{y})(y_i - \hat{y}_i) = \sum_{i=1}^n (\hat{y}_i - \bar{y})\,e_i = 0.$$ 
 
 This holds because OLS residuals are orthogonal to the fitted values. Therefore:
 
@@ -100,37 +100,37 @@ The value of $R^2$ represents the proportion of the total variability in $y$ tha
 
 We now prove that for simple linear regression, the coefficient of determination equals the square of the Pearson correlation coefficient.
 
-### Step 1: Express SSR in terms of $S_{xx}$, $S_{xy}$
+### Step 1: Express SSR in terms of $S\_{xx}$, $S\_{xy}$
 
 For simple linear regression, the fitted values are:
 
-$$\hat{y}_i = \hat{\beta}_0 + \hat{\beta}_1 x_i = (\bar{y} - \hat{\beta}_1\bar{x}) + \hat{\beta}_1 x_i = \bar{y} + \hat{\beta}_1(x_i - \bar{x}).$$
+$$\hat{y}_i = \hat{\beta}\_0 + \hat{\beta}\_1 x_i = (\bar{y} - \hat{\beta}\_1\bar{x}) + \hat{\beta}\_1 x_i = \bar{y} + \hat{\beta}\_1(x_i - \bar{x}).$$
 
 Therefore:
 
-$$\hat{y}_i - \bar{y} = \hat{\beta}_1(x_i - \bar{x}).$$
+$$\hat{y}_i - \bar{y} = \hat{\beta}\_1(x_i - \bar{x}).$$
 
 Substituting into SSR:
 
-$$SSR = \sum^n_{i=1}(\hat{y}_i - \bar{y})^2 = \hat{\beta}_1^2 \sum^n_{i=1}(x_i - \bar{x})^2 = \hat{\beta}_1^2 \cdot S_{xx}.$$
+$$SSR = \sum_{i=1}^n (\hat{y}_i - \bar{y})^2 = \hat{\beta}\_1^2 \sum_{i=1}^n (x_i - \bar{x})^2 = \hat{\beta}\_1^2 \cdot S\_{xx}.$$ 
 
-Since $\hat{\beta}_1 = S_{xy}/S_{xx}$:
+Since $\hat{\beta}\_1 = S\_{xy}/S\_{xx}$:
 
-$$SSR = \left(\frac{S_{xy}}{S_{xx}}\right)^2 S_{xx} = \frac{S_{xy}^2}{S_{xx}}.$$
+$$SSR = \left(\frac{S\_{xy}}{S\_{xx}}\right)^2 S\_{xx} = \frac{S\_{xy}^2}{S\_{xx}}.$$
 
 ### Step 2: Compute $R^2$
 
-$$R^2 = \frac{SSR}{SST} = \frac{S_{xy}^2 / S_{xx}}{S_{yy}} = \frac{S_{xy}^2}{S_{xx} \cdot S_{yy}}.$$
+$$R^2 = \frac{SSR}{SST} = \frac{S\_{xy}^2 / S\_{xx}}{S\_{yy}} = \frac{S\_{xy}^2}{S\_{xx} \cdot S\_{yy}}.$$
 
 ### Step 3: Compare with $r^2$
 
 From the [previous post](/posts/regression-04-correlation), the correlation coefficient is:
 
-$$r = \frac{S_{xy}}{\sqrt{S_{xx} \cdot S_{yy}}}.$$
+$$r = \frac{S\_{xy}}{\sqrt{S\_{xx} \cdot S\_{yy}}}.$$
 
 Squaring both sides:
 
-$$r^2 = \frac{S_{xy}^2}{S_{xx} \cdot S_{yy}}.$$
+$$r^2 = \frac{S\_{xy}^2}{S\_{xx} \cdot S\_{yy}}.$$
 
 Therefore:
 
@@ -140,27 +140,27 @@ This result is elegant and important. It tells us that for simple linear regress
 
 ## Alternative Proof via SSE
 
-We can also prove the result by expressing SSE in terms of $S_{xx}$, $S_{yy}$, $S_{xy}$.
+We can also prove the result by expressing SSE in terms of $S\_{xx}$, $S\_{yy}$, $S\_{xy}$.
 
-Since $e_i = y_i - \hat{y}_i = y_i - \bar{y} - \hat{\beta}_1(x_i - \bar{x})$:
+Since $e_i = y_i - \hat{y}_i = y_i - \bar{y} - \hat{\beta}\_1(x_i - \bar{x})$:
 
 \begin{align*}
-SSE &= \sum^n_{i=1}\left[(y_i - \bar{y}) - \hat{\beta}_1(x_i - \bar{x})\right]^2 \\
-&= \sum^n_{i=1}(y_i - \bar{y})^2 - 2\hat{\beta}_1\sum^n_{i=1}(x_i - \bar{x})(y_i - \bar{y}) + \hat{\beta}_1^2\sum^n_{i=1}(x_i - \bar{x})^2 \\
-&= S_{yy} - 2\hat{\beta}_1 S_{xy} + \hat{\beta}_1^2 S_{xx}.
+SSE &= \sum_{i=1}^n \big[(y_i - \bar{y}) - \hat{\beta}\_1 (x_i - \bar{x})\big]^2 \\
+&= \sum_{i=1}^n (y_i - \bar{y})^2 - 2\hat{\beta}\_1 \sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y}) + \hat{\beta}\_1^2 \sum_{i=1}^n (x_i - \bar{x})^2 \\
+&= S\_{yy} - 2\hat{\beta}\_1 S\_{xy} + \hat{\beta}\_1^2 S\_{xx}.
 \end{align*}
 
-Substituting $\hat{\beta}_1 = S_{xy}/S_{xx}$:
+Substituting $\hat{\beta}\_1 = S\_{xy}/S\_{xx}$:
 
 \begin{align*}
-SSE &= S_{yy} - 2 \cdot \frac{S_{xy}}{S_{xx}} \cdot S_{xy} + \frac{S_{xy}^2}{S_{xx}^2} \cdot S_{xx} \\
-&= S_{yy} - \frac{2S_{xy}^2}{S_{xx}} + \frac{S_{xy}^2}{S_{xx}} \\
-&= S_{yy} - \frac{S_{xy}^2}{S_{xx}}.
+SSE &= S\_{yy} - 2\cdot\frac{S\_{xy}}{S\_{xx}}\cdot S\_{xy} + \frac{S\_{xy}^2}{S\_{xx}^2}\cdot S\_{xx} \\
+&= S\_{yy} - \frac{2S\_{xy}^2}{S\_{xx}} + \frac{S\_{xy}^2}{S\_{xx}} \\
+&= S\_{yy} - \frac{S\_{xy}^2}{S\_{xx}}.
 \end{align*}
 
 Therefore:
 
-$$R^2 = 1 - \frac{SSE}{SST} = 1 - \frac{S_{yy} - S_{xy}^2/S_{xx}}{S_{yy}} = \frac{S_{xy}^2}{S_{xx} \cdot S_{yy}} = r^2.$$
+$$R^2 = 1 - \frac{SSE}{SST} = 1 - \frac{S\_{yy} - S\_{xy}^2/S\_{xx}}{S\_{yy}} = \frac{S\_{xy}^2}{S\_{xx} \cdot S\_{yy}} = r^2.$$
 
 ## Adjusted $R^2$ for Multiple Regression
 
@@ -178,7 +178,7 @@ In this post, we covered the sum of squares decomposition and the coefficient of
 
 - $SST = SSR + SSE$ decomposes total variability into explained and unexplained components.
 - $R^2 = SSR/SST = 1 - SSE/SST$ measures the proportion of variance explained.
-- For simple linear regression, $R^2 = r^2 = S_{xy}^2/(S_{xx} \cdot S_{yy})$, proven by expressing SSR in terms of $S_{xx}$ and $S_{xy}$.
+- For simple linear regression, $R^2 = r^2 = S\_{xy}^2/(S\_{xx} \cdot S\_{yy})$, proven by expressing SSR in terms of $S\_{xx}$ and $S\_{xy}$.
 - Adjusted $R^2$ penalizes for model complexity in multiple regression.
 
-In the next post, we will derive the standard errors of the regression coefficients $\hat{\beta}_0$ and $\hat{\beta}_1$ using $S_{xx}$ and MSE.
+In the next post, we will derive the standard errors of the regression coefficients $\hat{\beta}\_0$ and $\hat{\beta}\_1$ using $S\_{xx}$ and MSE.

@@ -34,7 +34,7 @@ reaction = true
 7. [Confidence Intervals for Regression Coefficients](/posts/regression-07-confidence-intervals)
 8. [Statistical Testing in Regression](/posts/regression-08-statistical-testing)
 9. [ANOVA in Regression: SST, SSR, SSE and the F-Test](/posts/regression-09-anova)
-{% end %}
+   {% end %}
 
 In the [previous post](/posts/regression-01-simple-linear-regression), we explored simple linear regression with a single predictor. In practice, the response variable $y$ often depends on more than one predictor. Multiple linear regression extends the framework to accommodate $p - 1$ independent variables.
 
@@ -44,7 +44,7 @@ The multiple linear regression model for the $i$-th observation is:
 
 $$y_i = \beta_0 + \beta_1 x_{i1} + \beta_2 x_{i2} + \cdots + \beta_{p-1} x_{i,p-1} + \varepsilon_i,$$
 
-where $x_{ij}$ is the value of the $j$-th predictor for the $i$-th observation, $\beta_j$ are the regression coefficients, and $\varepsilon_i$ is the error term. The total number of parameters is $p$ (including the intercept $\beta_0$).
+where $x\_{ij}$ is the value of the $j$-th predictor for the $i$-th observation, $\beta\_j$ are the regression coefficients, and $\varepsilon\_i$ is the error term. The total number of parameters is $p$ (including the intercept $\beta\_0$).
 
 ## Matrix Notation
 
@@ -52,9 +52,9 @@ Writing out the model for each observation individually becomes cumbersome as th
 
 Define the following:
 
-$$\mathbf{Y} = \begin{pmatrix} y_1 \\ y_2 \\ \vdots \\ y_n \end{pmatrix}, \quad \mathbf{X} = \begin{pmatrix} 1 & x_{11} & x_{12} & \cdots & x_{1,p-1} \\ 1 & x_{21} & x_{22} & \cdots & x_{2,p-1} \\ \vdots & \vdots & \vdots & \ddots & \vdots \\ 1 & x_{n1} & x_{n2} & \cdots & x_{n,p-1} \end{pmatrix},$$
+$$\mathbf{Y} = \begin{pmatrix} y\_1 \\\\ y\_2 \\\\ \vdots \\\\ y\_n \end{pmatrix}, \quad \mathbf{X} = \begin{pmatrix} 1 & x\_{11} & x\_{12} & \cdots & x\_{1,p-1} \\\\ 1 & x\_{21} & x\_{22} & \cdots & x\_{2,p-1} \\\\ \vdots & \vdots & \vdots & \ddots & \vdots \\\\ 1 & x\_{n1} & x\_{n2} & \cdots & x\_{n,p-1} \end{pmatrix},$$
 
-$$\boldsymbol{\beta} = \begin{pmatrix} \beta_0 \\ \beta_1 \\ \vdots \\ \beta_{p-1} \end{pmatrix}, \quad \boldsymbol{\varepsilon} = \begin{pmatrix} \varepsilon_1 \\ \varepsilon_2 \\ \vdots \\ \varepsilon_n \end{pmatrix}.$$
+$$\boldsymbol{\beta} = \begin{pmatrix} \beta\_0 \\\\ \beta\_1 \\\\ \vdots \\\\ \beta\_{p-1} \end{pmatrix}, \quad \boldsymbol{\varepsilon} = \begin{pmatrix} \varepsilon\_1 \\\\ \varepsilon\_2 \\\\ \vdots \\\\ \varepsilon\_n \end{pmatrix}.$$
 
 The model can now be written as:
 
@@ -88,9 +88,9 @@ This single formula generalizes the simple linear regression result. When $p = 2
 
 ## Interpreting the Coefficients
 
-Each coefficient $\hat{\beta}_j$ (for $j = 1, 2, \ldots, p - 1$) represents the estimated change in $y$ for a one-unit increase in $x_j$, while holding all other predictors constant. This "holding other variables constant" interpretation is what distinguishes multiple regression from running separate simple regressions.
+Each coefficient $\hat{\beta}\_j$ (for $j = 1, 2, \ldots, p - 1$) represents the estimated change in $y$ for a one-unit increase in $x_j$, while holding all other predictors constant. This "holding other variables constant" interpretation is what distinguishes multiple regression from running separate simple regressions.
 
-The intercept $\hat{\beta}_0$ represents the estimated value of $y$ when all predictors are equal to zero.
+The intercept $\hat{\beta}\_0$ represents the estimated value of $y$ when all predictors are equal to zero.
 
 ## The Hat Matrix
 
@@ -120,7 +120,7 @@ When assumptions 1 through 4 hold, the Gauss-Markov theorem guarantees that $\ha
 
 In the special case where $p = 2$, we have a single predictor $x$ and the design matrix becomes:
 
-$$\mathbf{X} = \begin{pmatrix} 1 & x_1 \\ 1 & x_2 \\ \vdots & \vdots \\ 1 & x_n \end{pmatrix}.$$
+$$\mathbf{X} = \begin{pmatrix} 1 & x\_1 \\\\ 1 & x\_2 \\\\ \vdots & \vdots \\\\ 1 & x\_n \end{pmatrix}.$$
 
 Computing $(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{Y}$ in this case yields the familiar results $\hat{\beta}_1 = S_{xy}/S_{xx}$ and $\hat{\beta}_0 = \bar{y} - \hat{\beta}_1\bar{x}$, confirming that the matrix formulation is a true generalization.
 
@@ -130,7 +130,7 @@ In this post, we extended the regression framework to handle multiple predictors
 
 - The model $\mathbf{Y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\varepsilon}$ uses matrix notation to express the relationship compactly.
 - The OLS estimator $\hat{\boldsymbol{\beta}} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{Y}$ generalizes the simple linear regression solution.
-- Each $\hat{\beta}_j$ measures the effect of one predictor while holding the others constant.
+- Each $\hat{\beta}\_j$ measures the effect of one predictor while holding the others constant.
 - The hat matrix $\mathbf{H}$ projects observed values onto fitted values.
 
 In the next post, we will explore polynomial regression, which is a special case of multiple linear regression where the predictors are powers of a single variable.

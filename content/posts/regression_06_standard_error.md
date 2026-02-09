@@ -34,7 +34,7 @@ reaction = true
 7. [Confidence Intervals for Regression Coefficients](/posts/regression-07-confidence-intervals)
 8. [Statistical Testing in Regression](/posts/regression-08-statistical-testing)
 9. [ANOVA in Regression: SST, SSR, SSE and the F-Test](/posts/regression-09-anova)
-{% end %}
+   {% end %}
 
 In the [previous post](/posts/regression-05-r-squared-and-correlation), we measured how well the regression model fits the data through $R^2$. But a good fit alone is not enough. We also need to quantify the uncertainty in our coefficient estimates. This is where the standard error comes in.
 
@@ -46,7 +46,7 @@ The natural estimate is based on the residuals. The Mean Squared Error (MSE) is 
 
 $$MSE = \frac{SSE}{n - 2} = \frac{\sum^n_{i=1}(y_i - \hat{y}_i)^2}{n - 2}.$$
 
-The denominator is $n - 2$ (not $n$) because we lose two degrees of freedom for estimating $\hat{\beta}_0$ and $\hat{\beta}_1$. This correction ensures that MSE is an unbiased estimator of $\sigma^2$:
+The denominator is $n - 2$ (not $n$) because we lose two degrees of freedom for estimating $\hat{\beta}\_0$ and $\hat{\beta}\_1$. This correction ensures that MSE is an unbiased estimator of $\sigma^2$:
 
 $$E(MSE) = \sigma^2.$$
 
@@ -60,23 +60,23 @@ $$MSE = \frac{SSE}{n - p}.$$
 
 The OLS estimators are functions of the random variable $\mathbf{Y}$ (since $\mathbf{X}$ is treated as fixed). Their variances can be derived from the model assumptions.
 
-**Variance of $\hat{\beta}_1$:**
+**Variance of $\hat{\beta}\_1$:**
 
-Since $\hat{\beta}_1 = S_{xy}/S_{xx} = \sum^n_{i=1}c_i y_i$ where $c_i = (x_i - \bar{x})/S_{xx}$, and the $y_i$ are independent with variance $\sigma^2$:
+Since $\hat{\beta}\_1 = S\_{xy}/S\_{xx} = \sum^n_{i=1}c_i y_i$ where $c_i = (x_i - \bar{x})/S\_{xx}$, and the $y_i$ are independent with variance $\sigma^2$:
 
 \begin{align*}
-\text{Var}(\hat{\beta}_1) &= \sum^n_{i=1}c_i^2 \text{Var}(y_i) = \sigma^2 \sum^n_{i=1}\frac{(x_i - \bar{x})^2}{S_{xx}^2} \\
-&= \sigma^2 \cdot \frac{S_{xx}}{S_{xx}^2} = \frac{\sigma^2}{S_{xx}}.
+\text{Var}(\hat{\beta}\_1) &= \sum^n_{i=1}c_i^2 \text{Var}(y_i) = \sigma^2 \sum^n_{i=1}\frac{(x_i - \bar{x})^2}{S\_{xx}^2} \\
+&= \sigma^2 \cdot \frac{S\_{xx}}{S\_{xx}^2} = \frac{\sigma^2}{S\_{xx}}.
 \end{align*}
 
-**Variance of $\hat{\beta}_0$:**
+**Variance of $\hat{\beta}\_0$:**
 
 Since $\hat{\beta}_0 = \bar{y} - \hat{\beta}_1\bar{x}$:
 
 \begin{align*}
-\text{Var}(\hat{\beta}_0) &= \text{Var}(\bar{y}) + \bar{x}^2 \text{Var}(\hat{\beta}_1) \\
-&= \frac{\sigma^2}{n} + \bar{x}^2 \cdot \frac{\sigma^2}{S_{xx}} \\
-&= \sigma^2\left(\frac{1}{n} + \frac{\bar{x}^2}{S_{xx}}\right).
+\text{Var}(\hat{\beta}\_0) &= \text{Var}(\bar{y}) + \bar{x}^2 \text{Var}(\hat{\beta}\_1) \\
+&= \frac{\sigma^2}{n} + \bar{x}^2 \cdot \frac{\sigma^2}{S\_{xx}} \\
+&= \sigma^2\left(\frac{1}{n} + \frac{\bar{x}^2}{S\_{xx}}\right).
 \end{align*}
 
 Note that $\text{Var}(\hat{\beta}_0)$ depends on the mean of $x$: the further $\bar{x}$ is from zero, the larger the variance of the intercept estimate.
@@ -85,18 +85,18 @@ Note that $\text{Var}(\hat{\beta}_0)$ depends on the mean of $x$: the further $\
 
 The standard error of an estimator is the square root of its estimated variance, obtained by replacing $\sigma^2$ with MSE.
 
-**Standard error of $\hat{\beta}_1$:**
+**Standard error of $\hat{\beta}\_1$:**
 
-$$SE(\hat{\beta}_1) = \sqrt{\frac{MSE}{S_{xx}}}.$$
+$$SE(\hat{\beta}\_1) = \sqrt{\frac{MSE}{S\_{xx}}}.$$
 
-**Standard error of $\hat{\beta}_0$:**
+**Standard error of $\hat{\beta}\_0$:**
 
-$$SE(\hat{\beta}_0) = \sqrt{MSE\left(\frac{1}{n} + \frac{\bar{x}^2}{S_{xx}}\right)}.$$
+$$SE(\hat{\beta}\_0) = \sqrt{MSE\left(\frac{1}{n} + \frac{\bar{x}^2}{S\_{xx}}\right)}.$$
 
 These formulas show that the precision of our estimates improves (standard errors decrease) when:
 
 - $MSE$ is small (the model fits the data well).
-- $S_{xx}$ is large (there is more spread in the $x$ values).
+- $S\_{xx}$ is large (there is more spread in the $x$ values).
 - $n$ is large (we have more data).
 
 ## General Case: Multiple Regression
@@ -109,35 +109,35 @@ The estimated variance-covariance matrix is:
 
 $$\widehat{\text{Var}}(\hat{\boldsymbol{\beta}}) = MSE \cdot (\mathbf{X}^T\mathbf{X})^{-1}.$$
 
-Let $(\mathbf{X}^T\mathbf{X})^{-1} = \mathbf{C}$, and let $C_{jj}$ denote the $(j+1)$-th diagonal element of $\mathbf{C}$ (corresponding to $\hat{\beta}_j$). Then:
+Let $(\mathbf{X}^T\mathbf{X})^{-1} = \mathbf{C}$, and let $C_{jj}$ denote the $(j+1)$-th diagonal element of $\mathbf{C}$ (corresponding to $\hat{\beta}\_j$). Then:
 
-$$\text{Var}(\hat{\beta}_j) = \sigma^2 C_{jj},$$
+$$\text{Var}(\hat{\beta}\_j) = \sigma^2 C_{jj},$$
 
-$$SE(\hat{\beta}_j) = \sqrt{MSE \cdot C_{jj}}.$$
+$$SE(\hat{\beta}\_j) = \sqrt{MSE \cdot C_{jj}}.$$
 
 ### Verification for Simple Linear Regression
 
 For simple linear regression, the design matrix is:
 
-$$\mathbf{X} = \begin{pmatrix} 1 & x_1 \\ 1 & x_2 \\ \vdots & \vdots \\ 1 & x_n \end{pmatrix}, \quad \mathbf{X}^T\mathbf{X} = \begin{pmatrix} n & \sum x_i \\ \sum x_i & \sum x_i^2 \end{pmatrix}.$$
+$$\mathbf{X} = \begin{pmatrix} 1 & x\_1 \\\\ 1 & x\_2 \\\\ \vdots & \vdots \\\\ 1 & x\_n \end{pmatrix}, \quad \mathbf{X}^T\mathbf{X} = \begin{pmatrix} n & \sum x\_i \\\\ \sum x\_i & \sum x\_i^2 \end{pmatrix}.$$
 
 The inverse is:
 
-$$(\mathbf{X}^T\mathbf{X})^{-1} = \frac{1}{n\sum x_i^2 - (\sum x_i)^2}\begin{pmatrix} \sum x_i^2 & -\sum x_i \\ -\sum x_i & n \end{pmatrix}.$$
+$$(\mathbf{X}^T\mathbf{X})^{-1} = \frac{1}{n\sum x\_i^2 - (\sum x\_i)^2}\begin{pmatrix} \sum x\_i^2 & -\sum x\_i \\\\ -\sum x\_i & n \end{pmatrix}.$$
 
 Since $n\sum x_i^2 - (\sum x_i)^2 = n \cdot S_{xx}$, the diagonal elements are:
 
-$$C_{00} = \frac{\sum x_i^2}{n \cdot S_{xx}} = \frac{1}{n} + \frac{\bar{x}^2}{S_{xx}}, \quad C_{11} = \frac{n}{n \cdot S_{xx}} = \frac{1}{S_{xx}}.$$
+$$C_{00} = \frac{\sum x_i^2}{n \cdot S\_{xx}} = \frac{1}{n} + \frac{\bar{x}^2}{S\_{xx}}, \quad C_{11} = \frac{n}{n \cdot S\_{xx}} = \frac{1}{S\_{xx}}.$$
 
 These give us:
 
-$$\text{Var}(\hat{\beta}_0) = \sigma^2\left(\frac{1}{n} + \frac{\bar{x}^2}{S_{xx}}\right), \quad \text{Var}(\hat{\beta}_1) = \frac{\sigma^2}{S_{xx}},$$
+$$\text{Var}(\hat{\beta}\_0) = \sigma^2\left(\frac{1}{n} + \frac{\bar{x}^2}{S\_{xx}}\right), \quad \text{Var}(\hat{\beta}\_1) = \frac{\sigma^2}{S\_{xx}},$$
 
 which matches our earlier derivations.
 
 ## Interpreting the Standard Error
 
-The standard error measures the typical size of the sampling variability in the estimated coefficient. If we were to repeatedly draw new samples of size $n$ from the same population and compute $\hat{\beta}_1$ each time, the standard deviation of these estimates would be approximately $SE(\hat{\beta}_1)$.
+The standard error measures the typical size of the sampling variability in the estimated coefficient. If we were to repeatedly draw new samples of size $n$ from the same population and compute $\hat{\beta}\_1$ each time, the standard deviation of these estimates would be approximately $SE(\hat{\beta}_1)$.
 
 A small standard error relative to the coefficient estimate suggests that the estimate is precise. A large standard error suggests substantial uncertainty. We will use the standard error to construct confidence intervals (Post 7) and perform hypothesis tests (Post 8).
 
@@ -147,8 +147,8 @@ In this post, we derived the standard errors of the regression coefficients:
 
 - $MSE = SSE/(n-2)$ estimates the error variance $\sigma^2$ for simple linear regression, or $MSE = SSE/(n-p)$ for multiple regression.
 - $SE(\hat{\beta}_1) = \sqrt{MSE/S_{xx}}$ measures the precision of the slope estimate.
-- $SE(\hat{\beta}_0) = \sqrt{MSE(1/n + \bar{x}^2/S_{xx})}$ measures the precision of the intercept estimate.
+- $SE(\hat{\beta}\_0) = \sqrt{MSE(1/n + \bar{x}^2/S\_{xx})}$ measures the precision of the intercept estimate.
 - For multiple regression, $SE(\hat{\beta}_j) = \sqrt{MSE \cdot C_{jj}}$ where $C_{jj}$ is the $j$-th diagonal element of $(\mathbf{X}^T\mathbf{X})^{-1}$.
-- Precision improves with larger $S_{xx}$, smaller $MSE$, and larger $n$.
+- Precision improves with larger $S\_{xx}$, smaller $MSE$, and larger $n$.
 
-In the next post, we will use these standard errors to construct confidence intervals for $\beta_0$, $\beta_1$, and $\beta_i$.
+In the next post, we will use these standard errors to construct confidence intervals for $\beta\_0$, $\beta\_1$, and $\beta_i$.

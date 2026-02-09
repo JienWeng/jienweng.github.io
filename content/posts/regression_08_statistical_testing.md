@@ -3,7 +3,7 @@ title = "Statistical Testing in Regression"
 description = "Performing hypothesis tests on regression coefficients using t-tests, p-values, and the connection to confidence intervals."
 date = 2026-02-20
 updated = 2026-02-20
-draft = false
+draft = true
 
 [taxonomies]
 categories = ["2026"]
@@ -40,7 +40,7 @@ In the [previous post](/posts/regression-07-confidence-intervals), we constructe
 
 ## Hypothesis Testing for Individual Coefficients
 
-The most common test in regression asks whether a particular predictor has a significant linear effect on the response. For coefficient $\beta_j$, the hypotheses are:
+The most common test in regression asks whether a particular predictor has a significant linear effect on the response. For coefficient $\beta\_j$, the hypotheses are:
 
 $$H_0: \beta_j = 0 \quad \text{(the predictor has no effect)},$$
 $$H_1: \beta_j \neq 0 \quad \text{(the predictor has an effect)}.$$
@@ -51,7 +51,7 @@ This is a two-sided test. One-sided alternatives ($H_1: \beta_j > 0$ or $H_1: \b
 
 Under $H_0: \beta_j = 0$, the test statistic is:
 
-$$t = \frac{\hat{\beta}_j - 0}{SE(\hat{\beta}_j)} = \frac{\hat{\beta}_j}{SE(\hat{\beta}_j)}.$$
+$$t = \frac{\hat{\beta}\_j - 0}{SE(\hat{\beta}\_j)} = \frac{\hat{\beta}\_j}{SE(\hat{\beta}\_j)}.$$
 
 Under the null hypothesis and the normality assumption, this statistic follows a t-distribution:
 
@@ -63,19 +63,19 @@ where $n - p$ is the residual degrees of freedom.
 
 Testing $H_0: \beta_1 = 0$ (the slope is zero):
 
-$$t = \frac{\hat{\beta}_1}{SE(\hat{\beta}_1)} = \frac{\hat{\beta}_1}{\sqrt{MSE/S_{xx}}} = \frac{S_{xy}/S_{xx}}{\sqrt{MSE/S_{xx}}} = \frac{S_{xy}}{\sqrt{MSE \cdot S_{xx}}}.$$
+$$t = \frac{\hat{\beta}\_1}{SE(\hat{\beta}\_1)} = \frac{\hat{\beta}\_1}{\sqrt{MSE/S\_{xx}}} = \frac{S\_{xy}/S\_{xx}}{\sqrt{MSE/S\_{xx}}} = \frac{S\_{xy}}{\sqrt{MSE \cdot S\_{xx}}}.$$
 
 This statistic follows $t_{n-2}$ under $H_0$.
 
 Testing $H_0: \beta_0 = 0$ (the intercept is zero):
 
-$$t = \frac{\hat{\beta}_0}{SE(\hat{\beta}_0)} = \frac{\hat{\beta}_0}{\sqrt{MSE(1/n + \bar{x}^2/S_{xx})}}.$$
+$$t = \frac{\hat{\beta}\_0}{SE(\hat{\beta}\_0)} = \frac{\hat{\beta}\_0}{\sqrt{MSE(1/n + \bar{x}^2/S\_{xx})}}.$$
 
 ### For Multiple Regression
 
 Testing $H_0: \beta_i = 0$ for any coefficient $\beta_i$:
 
-$$t = \frac{\hat{\beta}_i}{SE(\hat{\beta}_i)} = \frac{\hat{\beta}_i}{\sqrt{MSE \cdot C_{ii}}},$$
+$$t = \frac{\hat{\beta}\_i}{SE(\hat{\beta}\_i)} = \frac{\hat{\beta}\_i}{\sqrt{MSE \cdot C_{ii}}},$$
 
 where $C_{ii}$ is the appropriate diagonal element of $(\mathbf{X}^T\mathbf{X})^{-1}$.
 
@@ -109,7 +109,7 @@ The decision rule using p-values is equivalent to using critical values: reject 
 
 More generally, we can test $H_0: \beta_j = \beta_{j,0}$ for any hypothesized value $\beta_{j,0}$:
 
-$$t = \frac{\hat{\beta}_j - \beta_{j,0}}{SE(\hat{\beta}_j)}.$$
+$$t = \frac{\hat{\beta}\_j - \beta_{j,0}}{SE(\hat{\beta}\_j)}.$$
 
 The test for $\beta_j = 0$ is simply the special case where $\beta_{j,0} = 0$.
 
@@ -117,10 +117,10 @@ The test for $\beta_j = 0$ is simply the special case where $\beta_{j,0} = 0$.
 
 There is a direct equivalence between hypothesis tests and confidence intervals:
 
-- **Reject** $H_0: \beta_j = \beta_{j,0}$ at level $\alpha$ if and only if $\beta_{j,0}$ falls outside the $(1 - \alpha) \times 100\%$ confidence interval for $\beta_j$.
+- **Reject** $H_0: \beta_j = \beta_{j,0}$ at level $\alpha$ if and only if $\beta_{j,0}$ falls outside the $(1 - \alpha) \times 100\%$ confidence interval for $\beta\_j$.
 - **Fail to reject** $H_0$ if and only if $\beta_{j,0}$ falls inside the confidence interval.
 
-This means that when we check whether a 95% confidence interval for $\beta_1$ contains zero, we are implicitly performing a t-test at the $\alpha = 0.05$ level.
+This means that when we check whether a 95% confidence interval for $\beta\_1$ contains zero, we are implicitly performing a t-test at the $\alpha = 0.05$ level.
 
 ## Testing the Correlation
 
@@ -141,7 +141,7 @@ Conversely, a non-significant result does not mean the effect is zero; it may re
 When interpreting regression results, consider both:
 
 1. **Statistical significance**: Is the p-value small enough to reject $H_0$?
-2. **Practical significance**: Is the estimated effect $\hat{\beta}_j$ large enough to matter in the context of the problem?
+2. **Practical significance**: Is the estimated effect $\hat{\beta}\_j$ large enough to matter in the context of the problem?
 
 The confidence interval is particularly helpful here because it shows both the direction and the plausible range of the effect size.
 
@@ -163,7 +163,7 @@ In this post, we covered hypothesis testing for regression coefficients:
 
 - The t-statistic $t = \hat{\beta}_j / SE(\hat{\beta}_j)$ follows $t_{n-p}$ under $H_0: \beta_j = 0$.
 - Reject $H_0$ when $|t| > t_{\alpha/2, n-p}$ or equivalently when $p\text{-value} < \alpha$.
-- For $\beta_1$ in SLR: $t = S_{xy}/\sqrt{MSE \cdot S_{xx}}$ with $n - 2$ degrees of freedom.
+- For $\beta\_1$ in SLR: $t = S_{xy}/\sqrt{MSE \cdot S_{xx}}$ with $n - 2$ degrees of freedom.
 - Testing $\beta_1 = 0$ is equivalent to testing $\rho = 0$.
 - Confidence intervals and hypothesis tests provide equivalent information.
 - Always consider practical significance alongside statistical significance.

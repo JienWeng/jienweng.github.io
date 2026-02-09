@@ -52,7 +52,7 @@ jobs:
           data = {
               "subject": title,
               "body": f"{body}\n\n<p><a href='{link}'>Read this post on the web</a></p>",
-              "status": "draft" # Change to "sent" if you want it to go out automatically
+              "status": "sent" 
           }
 
           # 3. Send to Buttondown
