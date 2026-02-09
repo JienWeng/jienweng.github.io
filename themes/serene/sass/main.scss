@@ -1798,6 +1798,52 @@ body.not-found {
   }
 }
 
+/* subscribe section
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.subscribe-section {
+  padding: 0 15px 2em;
+
+  h3 {
+    font-size: 1.1em;
+    margin: 1.5em 0 0.5em;
+  }
+
+  .subscribe-description {
+    margin: 0.75em 0;
+    font-size: 0.95em;
+    color: var(--text-pale-color);
+  }
+
+  .subscribe-form-row {
+    display: flex;
+    gap: 0.5em;
+    margin: 1em 0;
+  }
+
+  .subscribe-input {
+    flex: 1;
+    padding: 0.75em;
+    border: 1.5px solid var(--primary-color);
+    border-radius: 0;
+    background-color: transparent;
+    color: var(--text-color);
+    font-family: inherit;
+    font-size: 1em;
+  }
+
+  .subscribe-button {
+    padding: 0.75em 1.5em;
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    border: none;
+    border-radius: 0;
+    font-size: 1em;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+  }
+}
 
 /* normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
