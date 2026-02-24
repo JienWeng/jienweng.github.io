@@ -45,6 +45,7 @@ sections = [
   { name = "cv", path = "/cv", is_external = false },
   { name = "posts", path = "/posts", is_external = false },
   { name = "research", path = "/research", is_external = false },
+  { name = "projects", path = "/projects", is_external = false },
   # { name = "gallery", path = "/gallery", is_external = false },
   # { name = "tags", path = "/tags", is_external = false },
   # { name = "github", path = "https://github.com/jienweng", is_external = true },

@@ -1,0 +1,183 @@
+{% import "macros/prose.html" as macros %}
+{% extends "_base.html" %}
+
+{% block page %}prose-page{% endblock page %}
+{% block lang -%}
+{%- if section.extra.lang %}{{section.extra.lang}}{% else %}{{section.lang}}{% endif -%}
+{%- endblock lang %}
+{% block title %}{{ section.title }}{% endblock title %}
+{% block desc %}
+{% if section.description %}
+{% set desc = section.description %}
+{% else %}
+{% set desc = config.description %}
+{% endif %}
+<meta name="description" content="{{ desc }}">
+{% endblock desc %}
+
+{% block head %}
+<style>
+  .projects-grid {
+    padding: 0 15px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5em;
+    margin: 1.5em 0 3em;
+    align-items: start;
+  }
+
+  @supports (grid-template-rows: masonry) {
+    .projects-grid {
+      grid-template-rows: masonry;
+    }
+  }
+
+  .project-card {
+    border: 1.5px solid var(--text-decoration-color);
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.2s;
+  }
+
+  .project-card:hover {
+    border-color: var(--primary-color);
+  }
+
+  .project-card.featured {
+    border-left: 3px solid var(--primary-color);
+  }
+
+  .project-card .img-wrapper {
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: var(--primary-decoration-color);
+  }
+
+  .project-card .img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .project-card .card-body {
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4em;
+    flex: 1;
+  }
+
+  .project-card .card-title {
+    font-weight: bold;
+    color: var(--primary-color);
+  }
+
+  .project-card .card-title a {
+    color: inherit;
+    text-decoration: none;
+    border: none;
+  }
+
+  .project-card .card-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    flex-wrap: wrap;
+  }
+
+  .project-card .card-date {
+    font-size: 0.8em;
+    color: var(--text-pale-color);
+  }
+
+  .project-card .card-status {
+    font-size: 0.72em;
+    padding: 0.1em 0.45em;
+    background: var(--primary-decoration-color);
+    color: var(--primary-color);
+  }
+
+  .project-card .card-desc {
+    font-size: 0.9em;
+    flex: 1;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+
+  .project-card .card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4em;
+  }
+
+  .project-card .card-tags span {
+    font-size: 0.75em;
+    padding: 0.15em 0.5em;
+    background: var(--primary-decoration-color);
+    color: var(--primary-color);
+  }
+
+  @media (max-width: 480px) {
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+{% endblock head %}
+
+{% block content %}
+<div id="wrapper">
+  <main>
+    {{ macros::back_link(path = get_url(path="/")) }}
+    {% include "_section_title.html" %}
+    <div>
+      {% if section.content %}
+      <article class="prose">
+        {{ section.content | safe }}
+      </article>
+      {% endif %}
+
+      <div class="projects-grid">
+        {% for page in section.pages %}
+        <div class="project-card{% if page.extra.featured %} featured{% endif %}">
+          {% if page.extra.img %}
+          <div class="img-wrapper">
+            <img src="{{ page.extra.img }}" alt="{{ page.title }}" loading="lazy">
+          </div>
+          {% endif %}
+          <div class="card-body">
+            <div class="card-title">
+              <a class="instant" href="{{ page.permalink }}">{{ page.title }}</a>
+            </div>
+            <div class="card-meta">
+              <span class="card-date">{{ page.date | date(format=section.extra.date_format) }}</span>
+              {% if page.extra.status %}
+              <span class="card-status">{{ page.extra.status }}</span>
+              {% endif %}
+            </div>
+            {% if page.description %}
+            <div class="card-desc">{{ page.description }}</div>
+            {% endif %}
+            {% if page.taxonomies.tags %}
+            <div class="card-tags">
+              {% for tag in page.taxonomies.tags %}
+              <span>{{ tag }}</span>
+              {% endfor %}
+            </div>
+            {% endif %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    {% include "_footer.html" %}
+  </main>
+</div>
+{% endblock content %}
+
+{% block script %}
+<script src="/js/lightense.min.js"></script>
+{% endblock script %}

@@ -1,0 +1,311 @@
+{% import "macros/prose.html" as macros %}
+{% extends "_base.html" %}
+
+{% block page %}prose-page{% endblock page %}
+{% block lang -%}
+{%- if page.extra.lang %}{{page.extra.lang}}{% else %}{{page.lang}}{% endif -%}
+{%- endblock lang %}
+{% block title %}{{ page.title }}{% endblock title %}
+{% block desc %}
+{% if page.description %}
+{% set desc = page.description %}
+{% else %}
+{% set desc = config.description %}
+{% endif %}
+<meta name="description" content="{{ desc }}">
+{% endblock desc %}
+
+{% block head %}
+{% if config.markdown.highlight_theme == "css" %}
+<link id="hl" rel="stylesheet" type="text/css" href="/hl-{% if config.extra.force_theme == "dark" %}dark{% else %}light{% endif %}.css" />
+{% endif %}
+{% if page.extra.math %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: '$$', right: '$$', display: true },
+        { left: '$', right: '$', display: false },
+        { left: '\\(', right: '\\)', display: false },
+        { left: '\\[', right: '\\]', display: true }
+      ],
+      throwOnError: false
+    });
+  });
+</script>
+{% endif %}
+<style>
+  /* Cancel the prose-page article padding — layout handles it */
+  .project-content article {
+    padding: 0;
+  }
+
+  /* Hero image */
+  .project-hero {
+    aspect-ratio: 21 / 9;
+    overflow: hidden;
+    margin-bottom: 1.5em;
+  }
+
+  .project-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Title + description header */
+  .project-header {
+    padding: 0 15px;
+    margin-bottom: 1.5em;
+    border-bottom: 1.5px solid var(--text-decoration-color);
+    padding-bottom: 1em;
+  }
+
+  .project-header h1 {
+    font-size: 1.15em;
+    font-weight: bolder;
+    margin: 0 0 0.3em;
+  }
+
+  .project-header .project-desc {
+    color: var(--text-pale-color);
+    font-size: 0.95em;
+    margin: 0;
+  }
+
+  /* Two-column layout: content + sidebar */
+  .project-layout {
+    display: flex;
+    gap: 2em;
+    padding: 0 15px;
+    align-items: flex-start;
+  }
+
+  .project-content {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .project-sidebar {
+    width: 190px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 2em;
+  }
+
+  /* Sidebar metadata blocks */
+  .meta-section {
+    margin-bottom: 1.5em;
+  }
+
+  .meta-label {
+    font-size: 0.72em;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-pale-color);
+    margin-bottom: 0.4em;
+  }
+
+  .meta-value {
+    font-size: 0.9em;
+  }
+
+  .status-badge {
+    display: inline-block;
+    padding: 0.2em 0.6em;
+    font-size: 0.8em;
+    font-weight: 600;
+    background: var(--primary-decoration-color);
+    color: var(--primary-color);
+  }
+
+  .project-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    padding: 0.4em 0.8em;
+    border: 1.5px solid var(--text-decoration-color);
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.85em;
+    transition: border-color 0.2s;
+    margin-bottom: 0.5em;
+  }
+
+  .project-link:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+  }
+
+  .sidebar-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4em;
+  }
+
+  .sidebar-tags a {
+    font-size: 0.75em;
+    padding: 0.15em 0.5em;
+    background: var(--primary-decoration-color);
+    color: var(--primary-color);
+    text-decoration: none;
+    border: none;
+  }
+
+  /* In-content image gallery — use class="gallery" on a div in markdown */
+  .project-content .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 0.5em;
+    margin: 1.5em 0;
+    line-height: 0;
+  }
+
+  .project-content .gallery img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    cursor: zoom-in;
+    display: block;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  /* Auto-orient video — no hardcoded aspect ratio, intrinsic size wins */
+  .project-video-wrap {
+    margin: 1.5em 0;
+    text-align: center;
+    border: none;
+    padding: 0;
+  }
+
+  .project-video {
+    max-width: 100%;
+    max-height: 65vh;
+    display: block;
+    margin: 0 auto;
+    border-radius: var(--img-border-radius);
+    border: none;
+  }
+
+
+  /* Mobile: sidebar becomes a horizontal strip above content */
+  @media (max-width: 600px) {
+    .project-layout {
+      flex-direction: column;
+    }
+
+    .project-sidebar {
+      width: 100%;
+      position: static;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5em;
+    }
+
+    .project-sidebar .meta-section {
+      margin-bottom: 0;
+    }
+  }
+</style>
+{% endblock head %}
+
+{% block content %}
+{%- set section = get_section(path="projects/_index.md", metadata_only=true) -%}
+<div id="wrapper">
+  <main>
+    {{ macros::back_link(path = get_url(path=section.path)) }}
+
+    {% if page.extra.hero_img or page.extra.img %}
+    <div class="project-hero">
+      <img src="{% if page.extra.hero_img %}{{ page.extra.hero_img }}{% else %}{{ page.extra.img }}{% endif %}" alt="{{ page.title }}">
+    </div>
+    {% endif %}
+
+    {% if page.extra.video %}
+    <div class="youtube-container" style="padding: 0 15px; margin-bottom: 0;">
+      <video class="youtube-video" controls preload="metadata"{% if page.extra.video_poster %} poster="{{ page.extra.video_poster }}"{% endif %}>
+        <source src="{{ page.extra.video }}" type="video/mp4">
+      </video>
+      {% if page.extra.video_caption %}
+      <p class="youtube-caption">{{ page.extra.video_caption }}</p>
+      {% endif %}
+    </div>
+    {% endif %}
+
+    <div class="project-header">
+      <h1>{{ page.title }}</h1>
+      {% if page.description %}
+      <p class="project-desc">{{ page.description }}</p>
+      {% endif %}
+    </div>
+
+    <div class="project-layout">
+      <div class="project-content">
+        <article class="prose">
+          {{ page.content | safe }}
+        </article>
+      </div>
+
+      <aside class="project-sidebar">
+        {% if page.extra.status %}
+        <div class="meta-section">
+          <div class="meta-label">Status</div>
+          <span class="status-badge">{{ page.extra.status }}</span>
+        </div>
+        {% endif %}
+
+        {% if page.extra.period %}
+        <div class="meta-section">
+          <div class="meta-label">Period</div>
+          <div class="meta-value">{{ page.extra.period }}</div>
+        </div>
+        {% endif %}
+
+        <div class="meta-section">
+          <div class="meta-label">Published</div>
+          <div class="meta-value">{{ page.date | date(format="%b %-d, %Y") }}</div>
+        </div>
+
+        {% if page.extra.github %}
+        <div class="meta-section">
+          <a class="project-link" href="{{ page.extra.github }}" target="_blank" rel="noreferrer noopener">↗ GitHub</a>
+        </div>
+        {% endif %}
+
+        {% if page.extra.demo %}
+        <div class="meta-section">
+          <a class="project-link" href="{{ page.extra.demo }}" target="_blank" rel="noreferrer noopener">↗ Demo</a>
+        </div>
+        {% endif %}
+
+        {% if page.taxonomies.tags %}
+        <div class="meta-section">
+          <div class="meta-label">Tags</div>
+          <div class="sidebar-tags">
+            {% for tag in page.taxonomies.tags %}
+            <a class="instant" href="{{ config.base_url }}/tags/{{ tag | slugify }}">{{ tag }}</a>
+            {% endfor %}
+          </div>
+        </div>
+        {% endif %}
+      </aside>
+    </div>
+
+    {% include "_footer.html" %}
+  </main>
+</div>
+{% endblock content %}
+
+{% block script %}
+<script src="/js/lightense.min.js"></script>
+{% if page.extra.mermaid %}
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true });
+</script>
+{% endif %}
+{% endblock script %}

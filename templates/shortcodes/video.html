@@ -1,0 +1,8 @@
+<figure class="project-video-wrap">
+  <video class="project-video" controls preload="metadata"{% if poster %} poster="{{ poster }}"{% endif %}>
+    <source src="{{ src }}" type="video/mp4">
+  </video>
+  {% if caption %}
+  <figcaption>{{ caption }}</figcaption>
+  {% endif %}
+</figure>
