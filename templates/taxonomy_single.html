@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}{{ term.name }} · {{ config.title }}{% endblock title %}
+{% block body_class %}taxonomy-page{% endblock body_class %}
+
+{% block content %}
+<main class="content-grid">
+  <aside class="rail">
+    <div class="rail-block">
+      <a class="back-link" href="{{ get_url(path='/' ~ taxonomy.name ~ '/') }}">Back to {{ taxonomy.name }}</a>
+      <div class="eyebrow">{{ taxonomy.name | title }}</div>
+      <h1 class="section-title">{{ term.name }}</h1>
+    </div>
+  </aside>
+  <section class="well">
+    <div class="edition-list section-list">
+      {% for item in term.pages %}
+      <a class="edition-row" href="{{ item.permalink }}">
+        <span class="edition-title">{{ item.title }}</span>
+        <span class="edition-date">{% if item.date %}{{ item.date | date(format="%b %-d, %Y") }}{% endif %}</span>
+      </a>
+      {% endfor %}
+    </div>
+  </section>
+</main>
+{% endblock content %}

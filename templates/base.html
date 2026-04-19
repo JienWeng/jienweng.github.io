@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% set title_text = config.title %}
+  {% if page %}{% set title_text = page.title ~ " · " ~ config.title %}{% endif %}
+  {% if section and section.title %}{% set title_text = section.title ~ " · " ~ config.title %}{% endif %}
+
+  {% set desc_text = config.description %}
+  {% if page and page.description %}{% set desc_text = page.description %}{% endif %}
+  {% if section and section.description %}{% set desc_text = section.description %}{% endif %}
+
+  {% set canonical_url = config.base_url %}
+  {% if page %}{% set canonical_url = page.permalink %}{% endif %}
+  {% if section and section.permalink %}{% set canonical_url = section.permalink %}{% endif %}
+
+  {% set og_type = "website" %}
+  {% if page %}{% set og_type = "article" %}{% endif %}
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="{{ desc_text }}">
+  <meta name="robots" content="index,follow">
+  <title>{% block title %}{{ title_text }}{% endblock title %}</title>
+  <link rel="canonical" href="{{ canonical_url }}">
+  <link rel="alternate" type="application/atom+xml" title="{{ config.title }} Atom Feed" href="{{ get_url(path='atom.xml') }}">
+
+  <meta property="og:title" content="{{ title_text }}">
+  <meta property="og:description" content="{{ desc_text }}">
+  <meta property="og:type" content="{{ og_type }}">
+  <meta property="og:url" content="{{ canonical_url }}">
+  <meta property="og:site_name" content="{{ config.title }}">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{{ title_text }}">
+  <meta name="twitter:description" content="{{ desc_text }}">
+
+  {% if page and page.date %}
+  <meta property="article:published_time" content="{{ page.date }}">
+  {% endif %}
+  {% if page and page.updated %}
+  <meta property="article:modified_time" content="{{ page.updated }}">
+  {% endif %}
+
+  <link id="syntax-theme" rel="stylesheet" href="{{ get_url(path='css/giallo-light.css') }}">
+  <link rel="stylesheet" href="{{ get_url(path='site.css') }}">
+  {% if page and page.extra.math %}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+  {% endif %}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      {% if page %}
+      "@type": "Article",
+      "headline": {{ page.title | json_encode | safe }},
+      "description": {{ desc_text | json_encode | safe }},
+      "url": {{ canonical_url | json_encode | safe }},
+      "mainEntityOfPage": {{ canonical_url | json_encode | safe }},
+      "author": {
+        "@type": "Person",
+        "name": {{ config.extra.author | json_encode | safe }}
+      }{% if page.date %},
+      "datePublished": {{ page.date | json_encode | safe }}{% endif %}{% if page.updated %},
+      "dateModified": {{ page.updated | json_encode | safe }}{% endif %}
+      {% else %}
+      "@type": "WebSite",
+      "name": {{ config.title | json_encode | safe }},
+      "url": {{ config.base_url | json_encode | safe }},
+      "description": {{ config.description | json_encode | safe }},
+      "author": {
+        "@type": "Person",
+        "name": {{ config.extra.author | json_encode | safe }}
+      }
+      {% endif %}
+    }
+  </script>
+  {% block head %}{% endblock head %}
+</head>
+<body class="{% block body_class %}default{% endblock body_class %}">
+  {% set current = "/" %}
+  {% if page %}{% set current = page.path %}{% endif %}
+  {% if section and section.path != "/" %}{% set current = section.path %}{% endif %}
+
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="site-brand">
+        <a href="{{ get_url(path='/') }}" class="site-title">{{ config.extra.site_title }}</a>
+      </div>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="{{ get_url(path='/blog/') }}"{% if current is starting_with("blog/") %} aria-current="page"{% endif %}>Blog</a>
+        <a href="{{ get_url(path='/notes/') }}"{% if current is starting_with("notes/") %} aria-current="page"{% endif %}>Notes</a>
+        <a href="{{ get_url(path='/bio/') }}"{% if current == "bio.md" %} aria-current="page"{% endif %}>Bio</a>
+        <a href="{{ get_url(path='/cv/') }}"{% if current is starting_with("cv/") %} aria-current="page"{% endif %}>CV</a>
+        <a href="{{ get_url(path='/publications/') }}"{% if current is starting_with("publications/") %} aria-current="page"{% endif %}>Publications</a>
+        <a href="{{ get_url(path='/projects/') }}"{% if current is starting_with("projects/") %} aria-current="page"{% endif %}>Projects</a>
+        <a href="{{ get_url(path='/misc/') }}"{% if current is starting_with("misc/") %} aria-current="page"{% endif %}>Misc</a>
+      </nav>
+    </header>
+
+    {% block content %}{% endblock content %}
+
+    <footer class="site-footer">
+      <div>© 2026 {{ config.extra.author }}</div>
+      <div class="footer-links">
+        <a href="{{ get_url(path='atom.xml') }}">RSS</a>
+        <a href="mailto:{{ config.extra.email }}">Email</a>
+        <a href="{{ config.extra.github }}" target="_blank" rel="noreferrer noopener">GitHub</a>
+        <a href="{{ config.extra.linkedin }}" target="_blank" rel="noreferrer noopener">LinkedIn</a>
+        <a href="{{ config.extra.orcid }}" target="_blank" rel="noreferrer noopener">ORCID</a>
+      </div>
+    </footer>
+  </div>
+
+  <script src="{{ get_url(path='site.js') }}"></script>
+  {% if page and page.extra.math %}
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            { left: '$$', right: '$$', display: true },
+            { left: '$', right: '$', display: false },
+            { left: '\\(', right: '\\)', display: false },
+            { left: '\\[', right: '\\]', display: true }
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+  {% endif %}
+  {% block script %}{% endblock script %}
+</body>
+</html>

@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }} · {{ config.title }}{% endblock title %}
+{% block body_class %}article-page{% endblock body_class %}
+
+{% block content %}
+<main class="content-grid">
+  <aside class="rail">
+    <div class="rail-block article-rail">
+      {% if page.ancestors %}
+      {% set parent = get_section(path=page.ancestors | last) %}
+      <a class="back-link" href="{{ parent.permalink }}">Back</a>
+      {% else %}
+      <a class="back-link" href="{{ get_url(path='/') }}">Back</a>
+      {% endif %}
+      <h1 class="section-title">{{ page.title }}</h1>
+      {% if page.date %}
+      <p class="rail-note">{{ page.date | date(format="%b %-d, %Y") }}</p>
+      {% endif %}
+      {% if page.taxonomies.tags %}
+      <ul class="tag-list">
+        {% for tag in page.taxonomies.tags %}
+        <li><a href="{{ get_taxonomy_url(kind='tags', name=tag) }}">{{ tag }}</a></li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+      {% if page.toc and page.extra.toc %}
+      <nav class="toc" aria-label="Table of contents">
+        <ul class="plain-list">
+          {% for h2 in page.toc %}
+          <li><a href="#{{ h2.id }}">{{ h2.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </nav>
+      {% endif %}
+    </div>
+  </aside>
+
+  <section class="well">
+    <article class="prose article-prose">
+      {{ page.content | safe }}
+    </article>
+
+    {% set path = page.path %}
+    {% if path is starting_with("blog/") or path is starting_with("notes/") %}
+    <div class="comments-block">
+      <div id="giscus-container"></div>
+    </div>
+    {% endif %}
+  </section>
+</main>
+{% endblock content %}
+
+{% block script %}
+{% set path = page.path %}
+{% if path is starting_with("blog/") or path is starting_with("notes/") %}
+{% include "partials/giscus.html" %}
+{% endif %}
+{% endblock script %}

@@ -1,0 +1,6 @@
+<details class="detail-block"{% if default_open %} open{% endif %}>
+  <summary>{{ title }}</summary>
+  <div class="detail-body">
+    {{ body | markdown | safe }}
+  </div>
+</details>

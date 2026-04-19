@@ -1,0 +1,102 @@
+{% extends "base.html" %} {% block title %}{{ config.title }}{% endblock title
+%} {% block body_class %}home{% endblock body_class %} {% block content %} {%
+set notes = get_section(path="notes/_index.md") %} {% set blog =
+get_section(path="blog/_index.md") %}
+
+<main class="home-ledger">
+    <section class="title-sheet">
+        <h1 class="home-title">{{ config.extra.site_title }}</h1>
+        <p class="home-abstract">
+            I work on reinforcement learning, information structure, and
+            statistical modelling. Most of my interest is in cases where the
+            informational regime changes the problem before algorithm choice
+            does. This site collects notes, essays, publications, and smaller
+            technical work around those interests. Some pieces are direct
+            research outputs, some are working explanations, and some are
+            smaller artifacts that were useful enough to keep.
+        </p>
+        <div class="section-index" aria-label="Section index">
+            <a href="{{ blog.permalink }}">Blog / Essays</a>
+            <a href="{{ notes.permalink }}">Notes</a>
+            <a href="{{ get_url(path='/bio/') }}">Bio</a>
+            <a href="{{ get_url(path='/publications/') }}">Publications</a>
+            <a href="{{ get_url(path='/cv/') }}">CV</a>
+            <a href="{{ get_url(path='/projects/') }}">Pet Projects</a>
+            <a href="{{ get_url(path='/misc/') }}">Misc</a>
+        </div>
+    </section>
+
+    <aside class="home-marginalia">
+        <div class="marginal-block">
+            <img
+                class="portrait"
+                src="{{ get_url(path='img/profile.webp') }}"
+                alt="Portrait of Jien Weng"
+            />
+        </div>
+        <div class="marginal-block">
+            <ul class="plain-list">
+                <li><a href="mailto:{{ config.extra.email }}">Email</a></li>
+                <li>
+                    <a
+                        href="{{ config.extra.github }}"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        >GitHub</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="{{ config.extra.linkedin }}"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        >LinkedIn</a
+                    >
+                </li>
+            </ul>
+        </div>
+    </aside>
+
+    <section class="ledger-main">
+        <section class="index-block primary-index">
+            <div class="index-header">
+                <h2>Recent Blog / Essays</h2>
+                <a href="{{ blog.permalink }}">index</a>
+            </div>
+            <div class="edition-list">
+                {% for item in blog.pages | slice(end=config.extra.home_posts)
+                %}
+                <a class="edition-row" href="{{ item.permalink }}">
+                    <span class="edition-title">{{ item.title }}</span>
+                    <span class="edition-date"
+                        >{{ item.date | date(format="%b %-d, %Y") }}</span
+                    >
+                </a>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section class="index-block">
+            <div class="index-header">
+                <h2>Recent Notes</h2>
+                <a href="{{ notes.permalink }}">index</a>
+            </div>
+            <div class="edition-list">
+                {% for item in notes.pages | slice(end=config.extra.home_notes)
+                %}
+                <a class="edition-row" href="{{ item.permalink }}">
+                    <span class="edition-title">{{ item.title }}</span>
+                    <span class="edition-date"
+                        >{{ item.date | date(format="%b %-d, %Y") }}</span
+                    >
+                </a>
+                {% endfor %}
+            </div>
+        </section>
+
+        <article class="prose home-file-note">
+            {{ section.content | safe }}
+        </article>
+    </section>
+</main>
+{% endblock content %}

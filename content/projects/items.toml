@@ -1,0 +1,39 @@
+[[collection]]
+type = "art"
+title = "ZakatDAO"
+subtitle = "Smart-contract zakat distribution prototype."
+content = "A prototype for a more auditable zakat-distribution system. It uses smart-contract logic as the accounting and distribution layer."
+img = "/img/projects/zakatdao/banner.png"
+link = "https://github.com/JienWeng/ZakatDAO"
+
+[[collection]]
+type = "art"
+title = "FacePay"
+subtitle = "Face-recognition payment prototype."
+content = "A small biometric-payments prototype. It tests face recognition as the identity check in a payment flow."
+img = "/img/projects/facepay/facepay.jpg"
+link = "https://github.com/JienWeng/FacePay"
+
+[[collection]]
+type = "art"
+title = "Yappy"
+subtitle = "Conversational app prototype."
+content = "A small conversational application prototype. It was built to test interaction flow and lightweight application structure."
+img = "/img/projects/yappy/demo.gif"
+link = "https://github.com/JienWeng/Yappy"
+
+[[collection]]
+type = "art"
+title = "DecimalSat"
+subtitle = "Ground-station and satellite build."
+content = "A small hardware build around a satellite and ground-station setup. The project includes assembly work and supporting communications pieces."
+img = "/img/projects/decimal-sat/assembled-sat.jpeg"
+link = "https://github.com/JienWeng/DecimalSat"
+
+[[collection]]
+type = "art"
+title = "Kepler.gl (fork)"
+subtitle = "Monash geospatial analysis and open-data platform."
+content = "A Monash-linked fork of kepler.gl for geospatial analysis and open-data sharing in the Klang Valley area. The project is still in progress."
+img = "/img/projects/kepler/kepler.png"
+link = "https://github.com/JienWeng/kepler.gl"

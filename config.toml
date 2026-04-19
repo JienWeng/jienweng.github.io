@@ -1,0 +1,55 @@
+base_url = "https://jienweng.github.io"
+title = "Jien Weng"
+description = "Research notes, essays, publications, and working papers by Jien Weng."
+default_language = "en"
+output_dir = "public"
+compile_sass = true
+minify_html = true
+build_search_index = true
+generate_feeds = true
+feed_filenames = ["atom.xml"]
+taxonomies = [{ name = "tags" }, { name = "categories" }]
+
+[markdown]
+render_emoji = false
+external_links_target_blank = true
+external_links_no_follow = true
+external_links_no_referrer = true
+smart_punctuation = false
+insert_anchor_links = "none"
+
+[markdown.highlighting]
+style = "class"
+light_theme = "github-light"
+dark_theme = "github-dark"
+
+[slugify]
+paths = "on"
+taxonomies = "on"
+anchors = "on"
+
+[extra]
+site_title = "Jien Weng"
+tagline = "Research, notes, working papers, and adjacent curiosities."
+author = "Jien Weng"
+email = "laijienweng@gmail.com"
+github = "https://github.com/jienweng"
+linkedin = "https://linkedin.com/in/jienweng"
+scholar = "https://scholar.google.com"
+orcid = "https://orcid.org/0009-0001-2543-3887"
+primary_accent = "ochre"
+home_posts = 3
+home_notes = 4
+force_theme = ""
+
+[extra.giscus]
+repo = "jienweng/jienweng.github.io"
+repo_id = "R_kgDORoI8qQ"
+category = "General"
+category_id = "DIC_kwDORoI8qc4C4gQL"
+mapping = "pathname"
+strict = "0"
+reactions_enabled = "1"
+emit_metadata = "0"
+input_position = "bottom"
+lang = "en"

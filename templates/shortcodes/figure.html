@@ -1,0 +1,6 @@
+<figure class="wide">
+  <img src="{{ src }}" alt="{{ alt | default(value='') }}">
+  {% if caption %}
+  <figcaption>{{ caption }}</figcaption>
+  {% endif %}
+</figure>

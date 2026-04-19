@@ -1,0 +1,35 @@
+[[collection]]
+type = "card_simple"
+title = "Monash University"
+date = "Dec 2025 - Present"
+icon = "https://retail.apps.monash.edu/retail/img/monash-logo-mono.png"
+link = "https://www.monash.edu" 
+content = "Research Assistant"
+featured = true  # optional
+
+[[collection]]
+type = "card_simple"
+title = "MMI Capital"
+date = "Aug 2025 - Present"
+# icon = ""
+# link = "https://jienweng.com" # optional
+content = "Frontend Web Developer"
+featured = false  # optional
+
+[[collection]]
+type = "card_simple"
+title = "ACTBuilder Actuarial Solution"
+date = "Jul 2025 - Present"
+# icon = "https://yt3.googleusercontent.com/kZo3aN6y8jir2NWOysuHt5vEixFTrdN0IESfzHhsKsmcqCuwhOIh3dy1Mzk0PRkt4JSVu6WjMCI=s160-c-k-c0x00ffffff-no-rj"
+link = "https://actbuilder.com.my" # optional
+content = "Technical Support"
+featured = false  # optional
+
+[[collection]]
+type = "card_simple"
+title = "Great Eastern Life Assurance"
+date = "Oct 2024 - Jan 2025"
+icon = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_bwoq80vl_iPTGuE1xgdc3-9xLB1uJXq1mw&s"
+link = "https://www.greateasternlife.com/my/en/personal-insurance.html" # optional
+content = "Finance Analyst - Data Engineer Intern"
+featured = false  # optional

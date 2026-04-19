@@ -1,0 +1,34 @@
+[[collection]]
+type = "card_simple"
+title = "Kuok Foundation Scholar"
+date = "Oct 2024" # optional
+content = ""
+featured = false  # optional
+
+[[collection]]
+type = "card_simple"
+title = "HuaZong Education Fund"
+date = "Apr 2024" # optional
+content = ""
+featured = false  # optional
+
+[[collection]]
+type = "card_simple"
+title = "KIT Foundation Scholarship"
+date = "May 2023" # optional
+content = ""
+featured = false  # optional
+
+[[collection]]
+type = "card_simple"
+title = "UTAR Scholarships for Top Achievers"
+date = "Oct 2022" # optional
+content = ""
+featured = false  # optional
+
+[[collection]]
+type = "card_simple"
+title = "UTAR Scholarships for Top Achievers (Pre-U)"
+date = "Oct 2021" # optional
+content = ""
+featured = false  # optional

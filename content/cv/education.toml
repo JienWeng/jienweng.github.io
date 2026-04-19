@@ -1,0 +1,17 @@
+[[collection]]
+type = "card_simple"
+title = "UTAR"
+content = "BSc. (Hons) Applied Mathematics with Computing, First Class Honours" 
+date = "Oct 2022 - Oct 2025"
+# icon = ""
+link = "https://www.utar.edu.my" # optional
+featured = false  # optional
+
+[[collection]]
+type = "card_simple"
+title = "UTAR"
+content = "Foundation in Science" 
+date = "Oct 2021 - Oct 2022"
+# icon = ""
+link = "https://www.utar.edu.my" # optional
+featured = false  # optional

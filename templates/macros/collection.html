@@ -1,0 +1,95 @@
+{% macro card_simple(item) %}
+<article class="collection-item collection-simple">
+  <div class="collection-main">
+    <div class="collection-title-line">
+      {% if item.link %}
+      <a class="collection-title" href="{{ item.link }}" target="_blank" rel="noreferrer noopener">{{ item.title }}</a>
+      {% else %}
+      <div class="collection-title">{{ item.title }}</div>
+      {% endif %}
+    </div>
+    <div class="collection-body">{{ item.content | markdown | safe }}</div>
+  </div>
+  {% if item.date %}<div class="collection-date">{{ item.date }}</div>{% endif %}
+</article>
+{% endmacro %}
+
+{% macro card(item) %}
+<article class="collection-item collection-card">
+  <div class="collection-main">
+    <div class="collection-title-line">
+      {% if item.link %}
+      <a class="collection-title" href="{{ item.link }}" target="_blank" rel="noreferrer noopener">{{ item.title }}</a>
+      {% else %}
+      <div class="collection-title">{{ item.title }}</div>
+      {% endif %}
+    </div>
+    {% if item.subtitle %}<div class="collection-subtitle">{{ item.subtitle }}</div>{% endif %}
+    {% if item.content %}<div class="collection-body">{{ item.content | markdown | safe }}</div>{% endif %}
+  </div>
+  {% if item.date %}<div class="collection-date">{{ item.date }}</div>{% endif %}
+</article>
+{% endmacro %}
+
+{% macro art_simple(item) %}
+<article class="collection-item collection-simple collection-credential">
+  <div class="collection-main">
+    <div class="collection-title-line">
+      {% if item.link %}
+      <a class="collection-title" href="{{ item.link }}" target="_blank" rel="noreferrer noopener">{{ item.title }}</a>
+      {% else %}
+      <div class="collection-title">{{ item.title }}</div>
+      {% endif %}
+    </div>
+    {% if item.subtitle %}<div class="collection-subtitle">{{ item.subtitle }}</div>{% endif %}
+  </div>
+  {% if item.link %}<div class="collection-linkline"><a href="{{ item.link }}" target="_blank" rel="noreferrer noopener">Credential</a></div>{% endif %}
+</article>
+{% endmacro %}
+
+{% macro card_expandable(item) %}
+<article class="collection-item collection-expandable">
+  <div class="collection-main">
+    <div class="collection-title-line">
+      {% if item.link %}
+      <a class="collection-title" href="{{ item.link }}" target="_blank" rel="noreferrer noopener">{{ item.title }}</a>
+      {% else %}
+      <div class="collection-title">{{ item.title }}</div>
+      {% endif %}
+    </div>
+    {% if item.subtitle %}<div class="collection-subtitle">{{ item.subtitle }}</div>{% endif %}
+  </div>
+  {% if item.date %}<div class="collection-date">{{ item.date }}</div>{% endif %}
+  <details class="collection-details">
+    <summary>Abstract</summary>
+    <div class="collection-body">{{ item.content | markdown | safe }}</div>
+    {% if item.tags %}
+    <ul class="tag-list inline-tags">
+      {% for tag in item.tags %}
+      <li>{{ tag }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </details>
+</article>
+{% endmacro %}
+
+{% macro art(item) %}
+<article class="collection-item collection-art collection-project">
+  {% if item.img %}
+  <div class="collection-project-thumb">
+    <img src="{{ item.img }}" alt="{{ item.title }}">
+  </div>
+  {% endif %}
+  <div class="collection-art-copy">
+    {% if item.link %}
+    <a class="collection-title" href="{{ item.link }}" target="_blank" rel="noreferrer noopener">{{ item.title }}</a>
+    {% else %}
+    <div class="collection-title">{{ item.title }}</div>
+    {% endif %}
+    {% if item.subtitle %}<div class="collection-subtitle">{{ item.subtitle }}</div>{% endif %}
+    {% if item.content %}<div class="collection-body">{{ item.content | markdown | safe }}</div>{% endif %}
+    {% if item.link %}<div class="collection-linkline"><a href="{{ item.link }}" target="_blank" rel="noreferrer noopener">GitHub</a></div>{% endif %}
+  </div>
+</article>
+{% endmacro %}

@@ -1,0 +1,19 @@
+{% import "macros/collection.html" as collection %}
+
+{% set data = load_data(path="content" ~ section.path ~ file, format="toml") %}
+
+<div class="collection-list">
+  {% for item in data.collection %}
+    {% if item.type == "card" %}
+      {{ collection::card(item=item) }}
+    {% elif item.type == "card_simple" %}
+      {{ collection::card_simple(item=item) }}
+    {% elif item.type == "art_simple" %}
+      {{ collection::art_simple(item=item) }}
+    {% elif item.type == "card_expandable" %}
+      {{ collection::card_expandable(item=item) }}
+    {% elif item.type == "art" %}
+      {{ collection::art(item=item) }}
+    {% endif %}
+  {% endfor %}
+</div>
