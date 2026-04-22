@@ -163,16 +163,13 @@ $$
 Now rewrite $X_k$ by separating even and odd indices:
 
 $$
-X_k = \sum_{n=0}^{N-1} x_n \, e^{-i 2\pi k n / N}
-= \sum_{m=0}^{N/2 - 1} x_{2m} \, e^{-i 2\pi k (2m) / N}
-+ \sum_{m=0}^{N/2 - 1} x_{2m+1} \, e^{-i 2\pi k (2m+1) / N}.
+X_k \;=\; \sum_{m=0}^{N/2 - 1} x_{2m} \, e^{-i 2\pi k (2m) / N} \;+\; \sum_{m=0}^{N/2 - 1} x_{2m+1} \, e^{-i 2\pi k (2m+1) / N}.
 $$
 
 Pull out the extra factor in the odd sum:
 
 $$
-X_k = \sum_{m=0}^{N/2 - 1} x_{2m} \, e^{-i 2\pi k m / (N/2)}
-+ e^{-i 2\pi k / N} \sum_{m=0}^{N/2 - 1} x_{2m+1} \, e^{-i 2\pi k m / (N/2)}.
+X_k \;=\; \sum_{m=0}^{N/2 - 1} x_{2m} \, e^{-i 2\pi k m / (N/2)} \;+\; e^{-i 2\pi k / N} \sum_{m=0}^{N/2 - 1} x_{2m+1} \, e^{-i 2\pi k m / (N/2)}.
 $$
 
 Now look carefully at each sum. Each one is itself a DFT, of length $N/2$. Let
@@ -245,10 +242,7 @@ with $T(1) = O(1)$, for some constant $c$.
 Unroll the recurrence:
 
 $$
-T(N) = 2T(N/2) + cN
-= 4 T(N/4) + 2cN
-= 8 T(N/8) + 3cN
-= \ldots
+T(N) \;=\; 2T(N/2) + cN \;=\; 4 T(N/4) + 2cN \;=\; 8 T(N/8) + 3cN \;=\; \ldots
 $$
 
 After $\log_2 N$ levels of unrolling we reach $T(1)$, and each level contributes $cN$ work:
@@ -308,6 +302,86 @@ X_3 = E_1 - W_4^1 \, O_1 = (x_0 - x_2) + i(x_1 - x_3).
 $$
 
 Four outputs, built from two pairs of butterflies. You can check by hand that these match $X_k = \sum_n x_n \omega_4^{kn}$ directly. This is the full FFT, in miniature.
+
+## Hand Calculation with Real Numbers
+
+The symbolic form is useful, but it is more convincing to watch the recursion run on actual numbers. Take the concrete input
+
+$$
+x = (x_0, x_1, x_2, x_3) = (1, 2, 3, 4).
+$$
+
+Following the principle from the previous section step by step.
+
+**Step 1. Split by parity.**
+
+$$
+\text{even: } (x_0, x_2) = (1, 3), \qquad \text{odd: } (x_1, x_3) = (2, 4).
+$$
+
+**Step 2. Length-2 DFT of each half.** Using $Y_0 = a + b$, $Y_1 = a - b$:
+
+$$
+E_0 = 1 + 3 = 4, \qquad E_1 = 1 - 3 = -2,
+$$
+
+$$
+O_0 = 2 + 4 = 6, \qquad O_1 = 2 - 4 = -2.
+$$
+
+**Step 3. Twiddle factors at $N = 4$.**
+
+$$
+W_4^0 = e^{0} = 1, \qquad W_4^1 = e^{-i\pi/2} = -i.
+$$
+
+**Step 4. Apply the butterfly equations.** Using $X_k = E_k + W_4^k O_k$ and $X_{k+2} = E_k - W_4^k O_k$:
+
+$$
+X_0 = E_0 + W_4^0 \, O_0 = 4 + (1)(6) = 10,
+$$
+
+$$
+X_1 = E_1 + W_4^1 \, O_1 = -2 + (-i)(-2) = -2 + 2i,
+$$
+
+$$
+X_2 = E_0 - W_4^0 \, O_0 = 4 - 6 = -2,
+$$
+
+$$
+X_3 = E_1 - W_4^1 \, O_1 = -2 - (-i)(-2) = -2 - 2i.
+$$
+
+So by hand,
+
+$$
+X = (10,\; -2 + 2i,\; -2,\; -2 - 2i).
+$$
+
+**Step 5. Cross-check with code.** Running the same input through `numpy` and our from-scratch implementations should produce exactly the same vector:
+
+```python
+import numpy as np
+
+x = np.array([1, 2, 3, 4], dtype=complex)
+
+print("numpy  :", np.fft.fft(x))
+print("naive  :", naive_dft(x))
+print("fft_rec:", fft_recursive(x))
+```
+
+Expected output (up to floating-point error):
+
+```
+numpy  : [10.+0.j -2.+2.j -2.+0.j -2.-2.j]
+naive  : [10.+0.j -2.+2.j -2.+0.j -2.-2.j]
+fft_rec: [10.+0.j -2.+2.j -2.+0.j -2.-2.j]
+```
+
+Three different routes, one answer. The naive DFT sums all $N^2 = 16$ terms directly. The recursive FFT computes two length-2 DFTs and combines them with two butterflies, using far fewer operations. Both recover the same spectrum because they are computing the same mathematical object, just through different arithmetic paths.
+
+This is the moment where the principle becomes tangible. Even/odd split, two half-DFTs, twiddle factor, butterfly. Four equations, one vector of outputs. Scale the same pattern recursively to $N = 8, 16, \ldots, 2^{20}$ and you have the full FFT.
 
 ## From Scratch in Python: Naive DFT and Recursive FFT
 
