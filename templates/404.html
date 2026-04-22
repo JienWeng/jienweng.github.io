@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block body_class %}error-page{% endblock %}
+
+{% block title %}Page Not Found · {{ config.title }}{% endblock %}
+
+{% block content %}
+<div class="content-grid">
+  <main class="well">
+    <h1>Page Not Found</h1>
+    <p>The page you're looking for doesn't exist or has been moved.</p>
+    <a href="{{ get_url(path='/') }}">← Back to home</a>
+  </main>
+</div>
+{% endblock content %}
