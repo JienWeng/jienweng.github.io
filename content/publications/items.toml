@@ -1,8 +1,9 @@
 [[collection]]
 type = "card_expandable"
 title = "The Primacy of Information Design Over Algorithm Selection in Multi-Agent Cooperation"
-subtitle = "Jien Weng Lai, Wei Lun Tan, Ying Loong Lee, Ming Fai Chow · Under Review"
-date = "Mar 2026"
+authors = "Jien Weng Lai, Wei Lun Tan, Ying Loong Lee, Ming Fai Chow"
+status = "Under Review"
+date = "Apr 2026"
 content = """
 A full-factorial experiment in the Public Goods Game shows that information regime and incentive strength explain 85.8% of cooperation-rate variance; algorithm choice accounts for just 3.8%. Agents with the least information cooperate most (83% vs 42% under full observation), attributable to state-space compression. TreeSHAP and Shapley-variance decomposition confirm information structure, not algorithm selection is the primary design lever for cooperation.
 """
@@ -12,11 +13,13 @@ featured = true
 [[collection]]
 type = "card_expandable"
 title = "Optimal Execution with Alpha Signals"
-subtitle = "Jien Weng Lai · Under Review"
-date = "Mar 2026"
-link = "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6323159"
+authors = "Jien Weng Lai"
+venue = "SSRN"
+status = "Published"
+date = "Apr 2026"
+link = "https://doi.org/10.2139/ssrn.6323159"
+pdf = "https://ssrn.com/abstract=6323159"
 content = """
-Studies optimal trade execution strategies that incorporate predictive alpha signals, bridging market microstructure theory with practical quantitative trading. Preprint available on SSRN.
+The execution of large portfolio transactions requires balancing market impact and adverse price drift. The Almgren-Chriss (2001) framework provides a meanvariance trade-off for martingale price processes, but practitioners often utilize short-term alpha signals. This paper re-evaluates the optimal liquidation problem using Stochastic Optimal Control. By incorporating a mean-reverting alpha signal into the price dynamics, we derive a closed-form solution using the Hamilton-Jacobi-Bellman (HJB) equation. The resulting optimal trading rate is an affine function of the current inventory and the predictive signal. This results in a trajectory that adjusts execution speed to capture transient alpha. This work provides a transparent and additive framework for institutional execution desks.
 """
-tags = ["Quantitative Finance", "Optimal Execution", "Alpha Signals", "Market Microstructure"]
-featured = true
+tags = ["Optimal Execution", "Alpha Signals", "HJB Equation", "Stochastic Control", "LQG Regulation", "Quantitative Finance"]

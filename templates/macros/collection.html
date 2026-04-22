@@ -57,9 +57,24 @@
       <div class="collection-title">{{ item.title }}</div>
       {% endif %}
     </div>
-    {% if item.subtitle %}<div class="collection-subtitle">{{ item.subtitle }}</div>{% endif %}
+    {% if item.authors or item.venue or item.status %}
+    <div class="collection-subtitle">
+      {% if item.authors %}{{ item.authors }}{% endif %}{% if item.venue %}{% if item.authors %} · {% endif %}{{ item.venue }}{% endif %}{% if item.status %}{% if item.authors or item.venue %} · {% endif %}{{ item.status }}{% endif %}
+    </div>
+    {% endif %}
   </div>
-  {% if item.date %}<div class="collection-date">{{ item.date }}</div>{% endif %}
+  {% if item.date or item.pdf or item.link %}
+  <div class="collection-meta">
+    {% if item.date %}<div class="collection-date">{{ item.date }}</div>{% endif %}
+    {% if item.pdf or item.link %}
+    <div class="collection-links">
+      {% if item.pdf %}<a href="{{ item.pdf }}" target="_blank" rel="noreferrer noopener">PDF</a>{% endif %}
+      {% if item.pdf and item.link %}<span aria-hidden="true"> · </span>{% endif %}
+      {% if item.link %}<a href="{{ item.link }}" target="_blank" rel="noreferrer noopener">DOI</a>{% endif %}
+    </div>
+    {% endif %}
+  </div>
+  {% endif %}
   <details class="collection-details">
     <summary>Abstract</summary>
     <div class="collection-body">{{ item.content | markdown | safe }}</div>
