@@ -3,7 +3,7 @@ title = "Making Linear Algebra Make Sense with Gemini CLI"
 description = "How I used Gemini CLI to help an adult learner master linear algebra through sense-making and interactive intuition building."
 date = 2026-03-03
 updated = 2026-03-03
-draft = false
+draft = true
 aliases = ["/posts/2026-03-03-linear-algebra-sense-making/"]
 
 [taxonomies]
