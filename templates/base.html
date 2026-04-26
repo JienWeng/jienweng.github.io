@@ -16,30 +16,58 @@
   {% set og_type = "website" %}
   {% if page %}{% set og_type = "article" %}{% endif %}
 
+  {% set og_image = get_url(path='img/og-default.png') %}
+  {% if page and page.extra.cover %}{% set og_image = get_url(path=page.extra.cover) %}{% endif %}
+  {% if section and section.extra.cover %}{% set og_image = get_url(path=section.extra.cover) %}{% endif %}
+
+  {% set keywords_text = "" %}
+  {% if page and page.taxonomies and page.taxonomies.tags %}{% set keywords_text = page.taxonomies.tags | join(sep=", ") %}{% endif %}
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light">
   <meta name="description" content="{{ desc_text }}">
-  <meta name="robots" content="index,follow">
+  <meta name="author" content="{{ config.extra.author }}">
+  {% if keywords_text %}<meta name="keywords" content="{{ keywords_text }}">{% endif %}
+  <meta name="robots" content="index,follow,max-image-preview:large">
   <title>{% block title %}{{ title_text }}{% endblock title %}</title>
   <link rel="canonical" href="{{ canonical_url }}">
+  <link rel="alternate" hreflang="en" href="{{ canonical_url }}">
   <link rel="alternate" type="application/atom+xml" title="{{ config.title }} Atom Feed" href="{{ get_url(path='atom.xml') }}">
+  <link rel="sitemap" type="application/xml" href="{{ get_url(path='sitemap.xml') }}">
+
+  {% if config.extra.google_site_verification %}
+  <meta name="google-site-verification" content="{{ config.extra.google_site_verification }}">
+  {% endif %}
+  {% if config.extra.bing_site_verification %}
+  <meta name="msvalidate.01" content="{{ config.extra.bing_site_verification }}">
+  {% endif %}
 
   <meta property="og:title" content="{{ title_text }}">
   <meta property="og:description" content="{{ desc_text }}">
   <meta property="og:type" content="{{ og_type }}">
   <meta property="og:url" content="{{ canonical_url }}">
   <meta property="og:site_name" content="{{ config.title }}">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="{{ og_image }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
 
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{{ title_text }}">
   <meta name="twitter:description" content="{{ desc_text }}">
+  <meta name="twitter:image" content="{{ og_image }}">
 
   {% if page and page.date %}
   <meta property="article:published_time" content="{{ page.date }}">
+  <meta property="article:author" content="{{ config.extra.author }}">
   {% endif %}
   {% if page and page.updated %}
   <meta property="article:modified_time" content="{{ page.updated }}">
+  {% endif %}
+  {% if page and page.taxonomies and page.taxonomies.tags %}
+  {% for tag in page.taxonomies.tags %}<meta property="article:tag" content="{{ tag }}">
+  {% endfor %}
   {% endif %}
 
   <link id="syntax-theme" rel="stylesheet" href="{{ get_url(path='css/giallo-light.css') }}">
@@ -49,32 +77,73 @@
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
   {% endif %}
+  {% set same_as = [] %}
+  {% if config.extra.github %}{% set_global same_as = same_as | concat(with=config.extra.github) %}{% endif %}
+  {% if config.extra.linkedin %}{% set_global same_as = same_as | concat(with=config.extra.linkedin) %}{% endif %}
+  {% if config.extra.scholar %}{% set_global same_as = same_as | concat(with=config.extra.scholar) %}{% endif %}
+  {% if config.extra.orcid %}{% set_global same_as = same_as | concat(with=config.extra.orcid) %}{% endif %}
+
   <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      {% if page %}
-      "@type": "Article",
-      "headline": {{ page.title | json_encode | safe }},
-      "description": {{ desc_text | json_encode | safe }},
-      "url": {{ canonical_url | json_encode | safe }},
-      "mainEntityOfPage": {{ canonical_url | json_encode | safe }},
-      "author": {
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
         "@type": "Person",
-        "name": {{ config.extra.author | json_encode | safe }}
-      }{% if page.date %},
-      "datePublished": {{ page.date | json_encode | safe }}{% endif %}{% if page.updated %},
-      "dateModified": {{ page.updated | json_encode | safe }}{% endif %}
-      {% else %}
-      "@type": "WebSite",
-      "name": {{ config.title | json_encode | safe }},
-      "url": {{ config.base_url | json_encode | safe }},
-      "description": {{ config.description | json_encode | safe }},
-      "author": {
-        "@type": "Person",
-        "name": {{ config.extra.author | json_encode | safe }}
-      }
-      {% endif %}
-    }
+        "@id": {{ config.base_url ~ "/#person" | json_encode | safe }},
+        "name": {{ config.extra.author | json_encode | safe }},
+        "url": {{ config.base_url | json_encode | safe }},
+        "email": {{ config.extra.email | json_encode | safe }},
+        "sameAs": {{ same_as | json_encode | safe }}
+      },
+      {
+        "@type": "WebSite",
+        "@id": {{ config.base_url ~ "/#website" | json_encode | safe }},
+        "url": {{ config.base_url | json_encode | safe }},
+        "name": {{ config.title | json_encode | safe }},
+        "description": {{ config.description | json_encode | safe }},
+        "inLanguage": "en",
+        "publisher": { "@id": {{ config.base_url ~ "/#person" | json_encode | safe }} }
+      }{% if page %},
+      {
+        "@type": "Article",
+        "headline": {{ page.title | json_encode | safe }},
+        "description": {{ desc_text | json_encode | safe }},
+        "url": {{ canonical_url | json_encode | safe }},
+        "mainEntityOfPage": {{ canonical_url | json_encode | safe }},
+        "image": {{ og_image | json_encode | safe }},
+        "inLanguage": "en",
+        "author": { "@id": {{ config.base_url ~ "/#person" | json_encode | safe }} },
+        "publisher": { "@id": {{ config.base_url ~ "/#person" | json_encode | safe }} },
+        "isPartOf": { "@id": {{ config.base_url ~ "/#website" | json_encode | safe }} }{% if page.date %},
+        "datePublished": {{ page.date | json_encode | safe }}{% endif %}{% if page.updated %},
+        "dateModified": {{ page.updated | json_encode | safe }}{% endif %}{% if keywords_text %},
+        "keywords": {{ keywords_text | json_encode | safe }}{% endif %}
+      }{% if page.ancestors %},
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": {{ config.title | json_encode | safe }},
+            "item": {{ config.base_url | json_encode | safe }}
+          }{% for ancestor in page.ancestors %}{% set anc = get_section(path=ancestor) %},
+          {
+            "@type": "ListItem",
+            "position": {{ loop.index + 1 }},
+            "name": {{ anc.title | json_encode | safe }},
+            "item": {{ anc.permalink | json_encode | safe }}
+          }{% endfor %},
+          {
+            "@type": "ListItem",
+            "position": {{ page.ancestors | length + 2 }},
+            "name": {{ page.title | json_encode | safe }},
+            "item": {{ canonical_url | json_encode | safe }}
+          }
+        ]
+      }{% endif %}{% endif %}
+    ]
+  }
   </script>
   {% block head %}{% endblock head %}
 </head>
@@ -114,6 +183,7 @@
   </div>
 
   <script src="{{ get_url(path='site.js') }}"></script>
+  {% include "partials/analytics.html" %}
   {% if page and page.extra.math %}
   <script>
     document.addEventListener("DOMContentLoaded", function () {
