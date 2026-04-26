@@ -46,7 +46,7 @@ force_theme = ""
 goatcounter = "jienweng"
 
 # Search Console verification tokens (paste content values from the meta tag method)
-google_site_verification = "google-site-verification=FUjDYXaQ7zq0eH81_VT_Ehm_VNUS1pPlhF511m1GeL8"
+google_site_verification = "FUjDYXaQ7zq0eH81_VT_Ehm_VNUS1pPlhF511m1GeL8"
 bing_site_verification = "958D991A9C82A2EFB2FF8A29B9EB9115"
 
 [extra.giscus]
