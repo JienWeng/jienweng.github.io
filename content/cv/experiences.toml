@@ -9,10 +9,15 @@ featured = true  # optional
 
 [[collection]]
 type = "card_simple"
+title = "Quandatics M Sdn Bhd"
+date = "May 2026 - Present"
+content = "Contractor — Digital Transformation, Finance Department"
+featured = false  # optional
+
+[[collection]]
+type = "card_simple"
 title = "MMI Capital"
 date = "Aug 2025 - Present"
-# icon = ""
-# link = "https://jienweng.com" # optional
 content = "Frontend Web Developer"
 featured = false  # optional
 

@@ -32,6 +32,46 @@ link = "https://github.com/JienWeng/DecimalSat"
 
 [[collection]]
 type = "art"
+title = "stat-arb-bot"
+subtitle = "Statistical arbitrage trading bot."
+content = "A statistical arbitrage trading bot implementing pair trading and mean-reversion strategies on crypto assets."
+img = ""
+link = "https://github.com/JienWeng/stat-arb-bot"
+
+[[collection]]
+type = "art"
+title = "quant-lakehouse"
+subtitle = "Quantitative finance data lakehouse."
+content = "Data lakehouse architecture for quant finance — tick data ingestion, feature engineering, and backtesting pipeline."
+img = ""
+link = "https://github.com/JienWeng/quant-lakehouse"
+
+[[collection]]
+type = "art"
+title = "wwtp_pred"
+subtitle = "Wastewater treatment plant prediction."
+content = "Time-series prediction models for wastewater treatment plant sensor data — Transformer-based forecasting on 5-second interval data."
+img = ""
+link = "https://github.com/JienWeng/wwtp_pred"
+
+[[collection]]
+type = "art"
+title = "open-shazam"
+subtitle = "Audio fingerprinting — open Shazam."
+content = "Open-source audio fingerprinting and recognition system inspired by Shazam's core algorithm."
+img = ""
+link = "https://github.com/JienWeng/open-shazam"
+
+[[collection]]
+type = "art"
+title = "multi-agent-pgg"
+subtitle = "Multi-agent reinforcement learning on Public Goods Game."
+content = "Research on Q-learning and Double Q-learning based MARL on the Public Goods Game — investigating the effect of multiplication factor on cooperation."
+img = ""
+link = "https://github.com/JienWeng/multi-agent-pgg"
+
+[[collection]]
+type = "art"
 title = "Kepler.gl (fork)"
 subtitle = "Monash geospatial analysis and open-data platform."
 content = "A Monash-linked fork of kepler.gl for geospatial analysis and open-data sharing in the Klang Valley area. The project is still in progress."
