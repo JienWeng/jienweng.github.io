@@ -576,6 +576,41 @@ Incorporating reproducibility tools .green[**in your daily workflow**] will come
 
 
 ---
+class: middle
+## Hands-on &amp; resources
+
+.medium[Follow along and run it yourself 👇]
+
+.left-column[
+📖 **Written tutorial**  
+.small[step-by-step, with explanations]  
+.small[jienweng.github.io/notes/intro-to-mlops-tutorial]
+
+💻 **Code + notebook**  
+.small[clone, install, run]  
+.small[github.com/JienWeng/mlops-tutorial]
+]
+
+.right-column[
+```shell
+git clone \
+  https://github.com/JienWeng/mlops-tutorial
+cd mlops-tutorial
+pip install -r requirements.txt
+
+python train.py          # log a run
+# or: jupyter notebook notebook.ipynb
+
+mlflow ui \
+  --backend-store-uri sqlite:///mlflow.db
+```
+]
+
+.reset-column[
+.footnote[**Your hands-on:** run `train.py`, change `C` (e.g. to `0.01`), run again, then open the MLflow UI and **compare the two runs**.]
+]
+
+---
 class: center, middle
 
 # Thank .red[you] for your attention
