@@ -347,6 +347,24 @@ img {
   white-space: nowrap;
 }
 
+.slides-year {
+  font-family: var(--label);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: var(--space-5) 0 0.25rem;
+}
+
+.slides-page .slides-year:first-of-type {
+  margin-top: var(--space-4);
+}
+
+.edition-subtitle {
+  color: var(--ink-soft);
+  font-weight: 400;
+}
+
 .collection-list {
   display: flex;
   flex-direction: column;
