@@ -35,6 +35,8 @@ Once that chain is visible, forests and boosting stop feeling like magic. They a
 
 This note is intuition-first, but the math is explicit. The goal is that every formula feels earned, not memorized.
 
+> **Run it yourself.** The worked example is collected in a runnable notebook: [**download `tree-based-models.ipynb`**](/notebooks/tree-based-models.ipynb). It uses `numpy`, `scikit-learn`, and (optionally) `xgboost`.
+
 ## Why People Reach for Trees, Random Forests, and XGBoost
 
 The motivation usually looks like this:
@@ -274,7 +276,7 @@ To make this concrete, we use a small synthetic regression dataset from scikit-l
 
 {{ figure(src="/img/notes/tree-based-models/regression_overview.png", alt="Regression dataset overview", caption="A synthetic regression dataset with noise and nonlinear structure.") }}
 
-Below is a compact code snippet. The full notebook is provided separately so you can run it end-to-end.
+Below is a compact code snippet. The [full notebook](/notebooks/tree-based-models.ipynb) is provided separately so you can run it end-to-end.
 
 ```python
 import numpy as np
