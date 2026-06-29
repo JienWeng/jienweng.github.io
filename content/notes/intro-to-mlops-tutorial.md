@@ -93,6 +93,8 @@ MLflow has a few components, but for tracking you only need two ideas:
 
 Everything below is self-contained and runs on a laptop in under ten minutes. We will train two small classifiers, log them to MLflow, and compare them in the UI.
 
+> **Want to just clone and run?** The full source lives in the companion repo: [**github.com/JienWeng/mlops-tutorial**](https://github.com/JienWeng/mlops-tutorial). `git clone` it, `pip install -r requirements.txt`, and run `python train.py`. The steps below explain what that code does, line by line.
+
 ### 1. Install
 
 ```shell
