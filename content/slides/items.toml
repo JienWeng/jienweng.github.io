@@ -1,0 +1,10 @@
+# Slide decks, organized by year. Each deck is a standalone remark.js
+# presentation living under static/slides/<year>/<slug>/.
+# The listing template (templates/slides.html) groups these by `year`.
+
+[[collection]]
+year = 2026
+title = "An introduction to MLOps"
+subtitle = "Mirror of the LSST France deck by Alexandre Boucaud."
+content = "Lecture deck on MLOps: the ML development cycle, experiment tracking and reproducibility with MLflow (LSST France, Lyon, December 2023). Re-hosted with attribution under [CC BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0); [original here](https://aboucaud.github.io/slides/2023/lsst-france-mlops)."
+link = "/slides/2026/intro-to-mlops/"

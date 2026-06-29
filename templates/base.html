@@ -160,6 +160,7 @@
       <nav class="site-nav" aria-label="Primary">
         <a href="{{ get_url(path='/blog/') }}"{% if current is starting_with("blog/") %} aria-current="page"{% endif %}>Blog</a>
         <a href="{{ get_url(path='/notes/') }}"{% if current is starting_with("notes/") %} aria-current="page"{% endif %}>Notes</a>
+        <a href="{{ get_url(path='/slides/') }}"{% if current is starting_with("slides/") %} aria-current="page"{% endif %}>Slides</a>
         <a href="{{ get_url(path='/bio/') }}"{% if current == "bio.md" %} aria-current="page"{% endif %}>Bio</a>
         <a href="{{ get_url(path='/cv/') }}"{% if current is starting_with("cv/") %} aria-current="page"{% endif %}>CV</a>
         <a href="{{ get_url(path='/publications/') }}"{% if current is starting_with("publications/") %} aria-current="page"{% endif %}>Publications</a>
