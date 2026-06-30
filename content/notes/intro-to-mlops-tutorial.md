@@ -26,12 +26,16 @@ The chain the deck walks, and so will we:
 
 The starting motivation is research integrity. A result you cannot reproduce is hard to trust, hard to build on, and hard to defend. In software-heavy science this is why people publish code alongside papers (the [Papers with Code](https://paperswithcode.com) culture). But "publish the code" is not enough on its own.
 
+{{ figure(src="/slides/2026/intro-to-mlops/img/paper-with-code.png", alt="Papers with Code listing", caption="Sharing code with papers is a start. Credit: paperswithcode.com") }}
+
 Reproducibility really means being able to recreate a result from **all** of its ingredients:
 
 - the **code** (which commit?),
 - the **data** (which version, which split?),
 - the **environment** (which library versions?),
 - and the **parameters** that produced the run.
+
+{{ figure(src="/slides/2026/intro-to-mlops/img/mlops-trojan.png", alt="What reproducibility implies", caption="What reproducibility really implies: far more than just the code.") }}
 
 Machine learning makes this harder than ordinary software because **three things change over time**, not one:
 
@@ -59,6 +63,8 @@ Classic software development moves through repeating stages:
 
 Run those once, by hand, and you have traditional software delivery: slow, batched, and error-prone at the hand-offs.
 
+{{ figure(src="/slides/2026/intro-to-mlops/img/dev-cycle.png", alt="The software development cycle", caption="The stages of the software development cycle.") }}
+
 ## Automating it: DevOps and CI/CD
 
 DevOps is what you get when you **automate that cycle** so every change flows through it continuously instead of in big manual batches:
@@ -67,7 +73,7 @@ DevOps is what you get when you **automate that cycle** so every change flows th
 - **Continuous Delivery (CD)** — passing builds are automatically packaged and deployed.
 - **Continuous Monitoring** — the running system is watched for errors and feedback, which flows back into planning.
 
-{{ figure(src="/img/notes/intro-to-mlops/devops_loop.png", alt="The DevOps loop: Plan, Code, Build, Test on the Dev/CI side; Release, Deploy, Operate, Monitor on the Ops side, with feedback back to Plan", caption="The DevOps loop. Every change flows through the same automated cycle; monitoring feeds back into planning.") }}
+{{ figure(src="/slides/2026/intro-to-mlops/img/ci-cd-github.png", alt="CI/CD pipeline", caption="CI/CD automates the loop: every change is built, tested, and shipped continuously. Credit: resources.github.com/ci-cd") }}
 
 DevOps is usually described as resting on three legs — often drawn as a trident:
 
@@ -76,6 +82,8 @@ DevOps is usually described as resting on three legs — often drawn as a triden
 - **Tools** — the machinery that runs it (GitHub Actions, GitLab CI, containers, and so on).
 
 The tools get the attention, but the culture and the process are what make the automation stick.
+
+{{ figure(src="/slides/2026/intro-to-mlops/img/devops-trident.png", alt="DevOps trident: people, process, tools", caption="DevOps rests on three legs: people, process, and tools. Credit: aws.amazon.com/devops") }}
 
 ## The machine-learning lifecycle
 
@@ -90,7 +98,9 @@ Machine learning adds its own stages on top of the software cycle. A typical ML 
 7. **Model serving** — package and deploy it to make predictions.
 8. **Model monitoring** — watch performance and decide when to retrain.
 
-{{ figure(src="/img/notes/intro-to-mlops/ml_lifecycle.png", alt="The ML lifecycle from data extraction through serving and monitoring, with a feedback arrow from monitoring back to data", caption="The ML lifecycle. Data stages feed model stages; monitoring loops back to the start, so the system is never truly 'done'.") }}
+{{ figure(src="/slides/2026/intro-to-mlops/img/mlcycle.jpg", alt="The ML cycle", caption="The machine-learning cycle. Credit: ml-ops.org") }}
+
+{{ figure(src="/slides/2026/intro-to-mlops/img/mlops-end-to-end.png", alt="End-to-end ML lifecycle", caption="The same lifecycle, end to end — data stages feed model stages, and monitoring loops back to the start.") }}
 
 The loop at the end is the important part: monitoring feeds back into data and training. An ML system in production is a living thing, not a shipped artifact.
 
@@ -98,7 +108,7 @@ The loop at the end is the important part: monitoring feeds back into data and t
 
 Now overlay the DevOps loop onto the ML lifecycle. Each "continuous" practice gains an ML twist:
 
-{{ figure(src="/img/notes/intro-to-mlops/mlops_devops_ml.png", alt="Table mapping CI, CD, CT, CM to their ML-specific meaning, with Continuous Training and Continuous Monitoring marked as ML-only", caption="MLOps applies the DevOps loop to ML. Continuous Training and model/data monitoring are the parts with no equivalent in plain DevOps.") }}
+{{ figure(src="/slides/2026/intro-to-mlops/img/mlops-org.png", alt="MLOps as DevOps applied to ML", caption="MLOps = DevOps principles applied to ML systems. Credit: ml-ops.org") }}
 
 - **Continuous Integration** is no longer only about testing code — it now also **tests and validates data, schemas, and models**.
 - **Continuous Delivery** ships not a single package but **a whole pipeline** that can deploy a model-serving service.
@@ -118,6 +128,8 @@ Put concretely, a working MLOps setup wires together a handful of pieces:
 - a **CI/CD pipeline** that retrains and redeploys,
 - and **monitoring** that watches the served model and closes the loop.
 
+{{ figure(src="/slides/2026/intro-to-mlops/img/mymlops-workflow.png", alt="A concrete MLOps workflow", caption="A concrete MLOps workflow wiring the pieces together. Credit: mymlops.com") }}
+
 You do not build all of this on day one. The single highest-leverage habit — the one that pays off immediately even in a solo project — is **experiment tracking**. That is where we will get hands-on.
 
 ## MLflow: the tool we will use
@@ -126,7 +138,9 @@ You do not build all of this on day one. The single highest-leverage habit — t
 
 MLflow has four components:
 
-{{ figure(src="/img/notes/intro-to-mlops/mlflow_components.png", alt="MLflow components: Tracking, Projects, Models, and Model Registry", caption="MLflow's four components. We use Tracking — the entry point that pays off first.") }}
+{{ figure(src="/slides/2026/intro-to-mlops/img/mlflow-components.png", alt="MLflow components", caption="MLflow's components. Credit: mlflow.org") }}
+
+{{ figure(src="/slides/2026/intro-to-mlops/img/mlflow-overview.png", alt="MLflow overview", caption="How the pieces fit together when you track an experiment. Credit: mlflow.org") }}
 
 - **Tracking** — log parameters, metrics, and artifacts per run (our focus).
 - **Projects** — package code so a run is reproducible.
@@ -173,7 +187,7 @@ mlflow.log_artifact("loss.png")
 
 Before logging anything, MLflow needs to know *where* runs go. There are three options, in increasing order of scale:
 
-{{ figure(src="/img/notes/intro-to-mlops/mlflow_tracking_setup.png", alt="Three MLflow tracking setup options: local filesystem, local database, remote server", caption="Three ways to store runs. We use a local SQLite database — no server, but the backend MLflow recommends.") }}
+{{ figure(src="/slides/2026/intro-to-mlops/img/mlflow-tracking-setup-overview.png", alt="MLflow tracking setup overview", caption="MLflow tracking setup. We use the local-database option below. Credit: mlflow.org") }}
 
 - **Option 1 — local filesystem** (`./mlruns`): the simplest default.
 - **Option 2 — local database** (`sqlite:///mlflow.db`): still on your laptop, but the backend MLflow now recommends. **This is what we use below.**
@@ -275,7 +289,11 @@ From the same folder, start the UI — pointing it at the same SQLite store:
 mlflow ui --backend-store-uri sqlite:///mlflow.db
 ```
 
-Open <http://127.0.0.1:5000>. You will see the `intro-to-mlops` experiment with both runs. From here you can:
+Open <http://127.0.0.1:5000>. You will see the `intro-to-mlops` experiment with both runs — it looks like this:
+
+{{ figure(src="/slides/2026/intro-to-mlops/img/mlflow-ui.jpeg", alt="The MLflow tracking UI", caption="The MLflow UI: every run with its parameters and metrics, ready to sort and compare. Credit: mlflow.org") }}
+
+From here you can:
 
 - sort and filter runs by `accuracy` or `f1`,
 - tick two runs and click **Compare** to see parameters and metrics side by side,
@@ -302,4 +320,4 @@ Adopting these habits in your daily workflow pays off quickly: time saved in the
 
 ---
 
-.small[This tutorial follows and is adapted from the lecture **"An introduction to MLOps"** by [Alexandre Boucaud](https://aboucaud.github.io/slides/2023/lsst-france-mlops) (LSST France, Lyon, December 2023), licensed under [CC BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0). The accompanying [slides](/slides/2026/intro-to-mlops/) are re-hosted under the same license. The diagrams here are original redrawings of the concepts, and this written tutorial and hands-on are an original adaptation, likewise shared under CC BY-SA 4.0.]
+.small[This tutorial follows and is adapted from the lecture **"An introduction to MLOps"** by [Alexandre Boucaud](https://aboucaud.github.io/slides/2023/lsst-france-mlops) (LSST France, Lyon, December 2023), licensed under [CC BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0). The figures are taken from the accompanying [slides](/slides/2026/intro-to-mlops/), which are re-hosted under the same license; individual figures credit their original sources (ml-ops.org, mlflow.org, mymlops.com, GitHub, AWS) in their captions. This written tutorial and hands-on are an original adaptation, likewise shared under CC BY-SA 4.0.]
