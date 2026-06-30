@@ -16,11 +16,13 @@ lang = "en"
 toc = true
 +++
 
-This is the written companion to the [**Introduction to MLOps** slides](/slides/2026/intro-to-mlops/). It follows the deck section by section — the same chain of ideas, the same diagrams (redrawn), and then the hands-on the deck builds toward. The slides give the picture in a room; this note lets you read it at your own pace and, more importantly, **run** it. By the end you will have tracked a real machine-learning experiment, compared two runs, and inspected them in a web UI.
+This is the written companion to the [**Introduction to MLOps** slides](/slides/2026/intro-to-mlops/). It follows the deck section by section — the same chain of ideas, the same figures, and then the hands-on the deck builds toward. The slides give the picture in a room; this note lets you read it at your own pace and, more importantly, **run** it. By the end you will have tracked a real machine-learning experiment, compared two runs, and inspected them in a web UI.
 
 The chain the deck walks, and so will we:
 
 > **reproducibility → the software cycle → DevOps → the ML lifecycle → MLOps → MLflow → a hands-on.**
+
+> **In a hurry?** Skip straight to the [**hands-on**](#hands-on-track-your-first-experiment) — or just `git clone` the companion repo, [**github.com/JienWeng/mlops-tutorial**](https://github.com/JienWeng/mlops-tutorial), and run it. The sections above the hands-on are the *why*; the hands-on is the *how*.
 
 ## Why reproducibility — and why ML makes it hard
 
@@ -198,6 +200,8 @@ Before logging anything, MLflow needs to know *where* runs go. There are three o
 ## Hands-on: track your first experiment
 
 Everything below is self-contained and runs on a laptop in under ten minutes. We will train two small classifiers, log them to MLflow, and compare them in the UI.
+
+**Prerequisites:** Python 3.9+ and `pip`. No GPU, no cloud account, no prior MLflow setup. Five steps: install → write the script → run it → run it again → open the UI.
 
 > **Want to just clone and run?** The full source — script **and** notebook — lives in the companion repo: [**github.com/JienWeng/mlops-tutorial**](https://github.com/JienWeng/mlops-tutorial). `git clone` it, `pip install -r requirements.txt`, then `python train.py` (or open `notebook.ipynb`). The steps below explain what that code does.
 
