@@ -1,8 +1,8 @@
 +++
-title = "An Introduction to MLOps: A Short Tutorial with a Hands-On"
-description = "A plain-language tutorial on MLOps — reproducibility, the ML lifecycle, and DevOps for machine learning — with a runnable MLflow hands-on you can finish in ten minutes."
+title = "An Introduction to MLOps: A Complete Tutorial with a Hands-On"
+description = "A plain-language tutorial that follows the Intro to MLOps slides end to end — reproducibility, the software cycle, DevOps, the ML lifecycle, MLOps, and MLflow — with diagrams and a runnable hands-on."
 date = 2026-06-29
-updated = 2026-06-29
+updated = 2026-06-30
 draft = false
 aliases = ["/posts/intro-to-mlops-tutorial/"]
 
@@ -16,20 +16,24 @@ lang = "en"
 toc = true
 +++
 
-This is the written companion to the [**Introduction to MLOps** slides](/slides/2026/intro-to-mlops/). The slides give the picture; this note gives you something you can read at your own pace and, more importantly, **run**. By the end you will have tracked a real machine-learning experiment, compared two runs, and inspected them in a web UI — the smallest possible version of an MLOps workflow.
+This is the written companion to the [**Introduction to MLOps** slides](/slides/2026/intro-to-mlops/). It follows the deck section by section — the same chain of ideas, the same diagrams (redrawn), and then the hands-on the deck builds toward. The slides give the picture in a room; this note lets you read it at your own pace and, more importantly, **run** it. By the end you will have tracked a real machine-learning experiment, compared two runs, and inspected them in a web UI.
 
-It is deliberately short. The goal is to get the core idea into your hands, not to be exhaustive.
+The chain the deck walks, and so will we:
 
-## Why MLOps exists
+> **reproducibility → the software cycle → DevOps → the ML lifecycle → MLOps → MLflow → a hands-on.**
 
-A model that runs once, in one notebook, on your laptop, is not a system. The moment someone else needs to reproduce your result — or *you* need to, three months later — the questions start:
+## Why reproducibility — and why ML makes it hard
 
-- Which version of the **code** produced this model?
-- Which **data** did it train on?
-- Which **hyperparameters** were used?
-- What **score** did it actually get, and how does that compare to last week's attempt?
+The starting motivation is research integrity. A result you cannot reproduce is hard to trust, hard to build on, and hard to defend. In software-heavy science this is why people publish code alongside papers (the [Papers with Code](https://paperswithcode.com) culture). But "publish the code" is not enough on its own.
 
-In ordinary software you answer these with version control and tests. Machine learning is harder because **three things change over time**, not one:
+Reproducibility really means being able to recreate a result from **all** of its ingredients:
+
+- the **code** (which commit?),
+- the **data** (which version, which split?),
+- the **environment** (which library versions?),
+- and the **parameters** that produced the run.
+
+Machine learning makes this harder than ordinary software because **three things change over time**, not one:
 
 | Artifact | Changes because… |
 |----------|------------------|
@@ -37,23 +41,45 @@ In ordinary software you answer these with version control and tests. Machine le
 | **Data** | new data arrives, distributions drift, labels get corrected |
 | **Model** | it is retrained, fine-tuned, or replaced |
 
-MLOps is the practice of bringing the discipline of software engineering — automation, reproducibility, monitoring — to all three. The one-line definition worth memorising:
+Track only the code and you will still fail to reproduce a model, because the data and the trained model moved underneath you. MLOps is the practice of bringing software-engineering discipline — automation, reproducibility, monitoring — to all three. The one-line definition worth memorising:
 
 > **MLOps = DevOps principles applied to machine-learning systems.**
 
-## From the software cycle to the *automated* software cycle
+To get there, we first need the software-engineering half of that sentence.
 
-Classic software moves through a cycle: **plan → code → build → test → release → deploy → monitor**, then back to plan. DevOps automates that loop so that every change flows through it continuously instead of in big manual batches:
+## The software development cycle
+
+Classic software development moves through repeating stages:
+
+1. **Development** — planning and coding.
+2. **Integration** — quick tests and a build.
+3. **Testing** — deeper tests, validation, and a release.
+4. **Delivery** — final packaging and deployment to a running server.
+5. **Monitoring** — collecting data, watching each component, gathering user feedback.
+
+Run those once, by hand, and you have traditional software delivery: slow, batched, and error-prone at the hand-offs.
+
+## Automating it: DevOps and CI/CD
+
+DevOps is what you get when you **automate that cycle** so every change flows through it continuously instead of in big manual batches:
 
 - **Continuous Integration (CI)** — every commit is automatically built and tested.
 - **Continuous Delivery (CD)** — passing builds are automatically packaged and deployed.
-- **Continuous Monitoring** — the running system is watched for errors and feedback.
+- **Continuous Monitoring** — the running system is watched for errors and feedback, which flows back into planning.
 
-This is the "DevOps loop" you see drawn as an infinity symbol. CI/CD pipelines (GitHub Actions, GitLab CI, etc.) are the machinery that runs it.
+{{ figure(src="/img/notes/intro-to-mlops/devops_loop.png", alt="The DevOps loop: Plan, Code, Build, Test on the Dev/CI side; Release, Deploy, Operate, Monitor on the Ops side, with feedback back to Plan", caption="The DevOps loop. Every change flows through the same automated cycle; monitoring feeds back into planning.") }}
+
+DevOps is usually described as resting on three legs — often drawn as a trident:
+
+- **People** — a culture where development and operations share ownership.
+- **Process** — the automated CI/CD pipeline itself.
+- **Tools** — the machinery that runs it (GitHub Actions, GitLab CI, containers, and so on).
+
+The tools get the attention, but the culture and the process are what make the automation stick.
 
 ## The machine-learning lifecycle
 
-ML adds its own stages on top of the software cycle:
+Machine learning adds its own stages on top of the software cycle. A typical ML lifecycle runs:
 
 1. **Data extraction** — fetch the data.
 2. **Data analysis** — understand its nature and quirks.
@@ -64,29 +90,94 @@ ML adds its own stages on top of the software cycle:
 7. **Model serving** — package and deploy it to make predictions.
 8. **Model monitoring** — watch performance and decide when to retrain.
 
-Notice the loop at the end: monitoring feeds back into the data and training stages. An ML system is never "done."
+{{ figure(src="/img/notes/intro-to-mlops/ml_lifecycle.png", alt="The ML lifecycle from data extraction through serving and monitoring, with a feedback arrow from monitoring back to data", caption="The ML lifecycle. Data stages feed model stages; monitoring loops back to the start, so the system is never truly 'done'.") }}
+
+The loop at the end is the important part: monitoring feeds back into data and training. An ML system in production is a living thing, not a shipped artifact.
 
 ## MLOps = DevOps for ML
 
-When you apply the DevOps loop to that lifecycle, each "continuous" practice gains an ML twist:
+Now overlay the DevOps loop onto the ML lifecycle. Each "continuous" practice gains an ML twist:
+
+{{ figure(src="/img/notes/intro-to-mlops/mlops_devops_ml.png", alt="Table mapping CI, CD, CT, CM to their ML-specific meaning, with Continuous Training and Continuous Monitoring marked as ML-only", caption="MLOps applies the DevOps loop to ML. Continuous Training and model/data monitoring are the parts with no equivalent in plain DevOps.") }}
 
 - **Continuous Integration** is no longer only about testing code — it now also **tests and validates data, schemas, and models**.
 - **Continuous Delivery** ships not a single package but **a whole pipeline** that can deploy a model-serving service.
-- **Continuous Training (CT)** is unique to ML: the system can **automatically retrain** and redeploy models as new data arrives.
+- **Continuous Training (CT)** is unique to ML: the system can **automatically retrain** and redeploy as new data arrives.
 - **Continuous Monitoring** tracks **model decay** and can trigger retraining when quality drops.
 
-CT and model/data monitoring are the parts that have no equivalent in plain DevOps. They are what make MLOps its own discipline.
+CT and model/data monitoring are what make MLOps its own discipline rather than "DevOps with notebooks".
 
-## The first practical step: experiment tracking
+## What an MLOps workflow looks like in practice
 
-You do not adopt all of MLOps on day one. The single highest-leverage habit — the one that pays off immediately even in a solo project — is **experiment tracking**: recording, for every run, the parameters, metrics, artifacts, and code version that produced a result.
+Put concretely, a working MLOps setup wires together a handful of pieces:
 
-[**MLflow**](https://mlflow.org) is the open-source standard for this. Think of an ML experiment as *environment + data + code*, and MLflow as the logbook that records **hyperparameters + results + plots** for each run, so you can compare them later in a web UI. It is framework-agnostic (scikit-learn, PyTorch, TensorFlow, XGBoost…) and — usefully — it works for *any* software experiment, not just ML.
+- **version control** for code (git),
+- **data/version tracking** for datasets,
+- an **experiment-tracking** server that records every run,
+- a **model registry** that versions and stages models,
+- a **CI/CD pipeline** that retrains and redeploys,
+- and **monitoring** that watches the served model and closes the loop.
 
-MLflow has a few components, but for tracking you only need two ideas:
+You do not build all of this on day one. The single highest-leverage habit — the one that pays off immediately even in a solo project — is **experiment tracking**. That is where we will get hands-on.
 
-- A **tracking server / store** — where runs are saved (a local folder is fine to start).
-- The **tracking API** — `mlflow.log_param`, `mlflow.log_metric`, `mlflow.log_artifact`, wrapped in an `mlflow.start_run()` context.
+## MLflow: the tool we will use
+
+[**MLflow**](https://mlflow.org) is the open-source standard for experiment tracking. The mental model: an ML experiment is *environment + data + code*, and MLflow is the logbook that records, for each run, its **hyperparameters + results + plots** so you can compare runs later in a web UI. It is framework-agnostic (scikit-learn, PyTorch, TensorFlow, XGBoost…) and works for *any* computational experiment, not just ML.
+
+MLflow has four components:
+
+{{ figure(src="/img/notes/intro-to-mlops/mlflow_components.png", alt="MLflow components: Tracking, Projects, Models, and Model Registry", caption="MLflow's four components. We use Tracking — the entry point that pays off first.") }}
+
+- **Tracking** — log parameters, metrics, and artifacts per run (our focus).
+- **Projects** — package code so a run is reproducible.
+- **Models** — a standard packaging format so a trained model can be served anywhere.
+- **Model Registry** — version models and move them through stages (staging → production).
+
+## The MLflow tracking API
+
+Tracking comes down to a few calls. First, name an experiment to group related runs, then wrap each run in a context manager:
+
+```python
+import mlflow
+
+mlflow.set_experiment("intro-to-mlops")
+
+with mlflow.start_run(run_name="my-first-run"):
+    mlflow.log_param("learning_rate", 0.01)       # one hyperparameter
+    mlflow.log_params({"epochs": 20, "batch": 32}) # several at once
+    mlflow.log_metric("accuracy", 0.92)            # a result
+    mlflow.sklearn.log_model(model, name="model")  # the model itself
+```
+
+The three verbs you will use constantly:
+
+- `log_param` / `log_params` — key–value settings (hyperparameters, config).
+- `log_metric` — numeric results (loss, accuracy); these become plots in the UI so you can compare runs.
+- `log_model` — the trained model, in MLflow's portable format.
+
+**Too lazy to log by hand?** For supported libraries, a single `autolog()` call before `fit()` captures parameters, metrics, and the model automatically:
+
+```python
+mlflow.sklearn.autolog()      # or mlflow.tensorflow.autolog(), mlflow.pytorch.autolog()
+model.fit(X_train, y_train)   # params, metrics, and model are logged for you
+```
+
+Manual logging gives you the most control; `autolog` gives you most of the value for one line. And the feature people quietly love most — **logging plots as artifacts**, so a figure is stored with the run and viewable in the UI:
+
+```python
+plt.savefig("loss.png")
+mlflow.log_artifact("loss.png")
+```
+
+## Where MLflow stores runs: three setup options
+
+Before logging anything, MLflow needs to know *where* runs go. There are three options, in increasing order of scale:
+
+{{ figure(src="/img/notes/intro-to-mlops/mlflow_tracking_setup.png", alt="Three MLflow tracking setup options: local filesystem, local database, remote server", caption="Three ways to store runs. We use a local SQLite database — no server, but the backend MLflow recommends.") }}
+
+- **Option 1 — local filesystem** (`./mlruns`): the simplest default.
+- **Option 2 — local database** (`sqlite:///mlflow.db`): still on your laptop, but the backend MLflow now recommends. **This is what we use below.**
+- **Option 3 — remote server** (`http://server:5000`): a shared tracking server for a team.
 
 ---
 
@@ -94,7 +185,7 @@ MLflow has a few components, but for tracking you only need two ideas:
 
 Everything below is self-contained and runs on a laptop in under ten minutes. We will train two small classifiers, log them to MLflow, and compare them in the UI.
 
-> **Want to just clone and run?** The full source lives in the companion repo: [**github.com/JienWeng/mlops-tutorial**](https://github.com/JienWeng/mlops-tutorial). `git clone` it, `pip install -r requirements.txt`, and run `python train.py`. The steps below explain what that code does, line by line.
+> **Want to just clone and run?** The full source — script **and** notebook — lives in the companion repo: [**github.com/JienWeng/mlops-tutorial**](https://github.com/JienWeng/mlops-tutorial). `git clone` it, `pip install -r requirements.txt`, then `python train.py` (or open `notebook.ipynb`). The steps below explain what that code does.
 
 ### 1. Install
 
@@ -102,17 +193,17 @@ Everything below is self-contained and runs on a laptop in under ten minutes. We
 python -m pip install mlflow scikit-learn matplotlib
 ```
 
-### 2. Point MLflow at a store
+### 2. Choose a store (Option 2: local SQLite)
 
-We will use a local **SQLite** database as the tracking store. This keeps everything on your laptop — no server to run — while using the backend MLflow recommends.
+We use a local SQLite database — Option 2 above. It keeps everything on your laptop with no server to run.
 
-> **Heads-up (MLflow 3.x):** the old plain-folder store (`./mlruns` on its own) is now in maintenance mode and will raise an error unless you opt in. Using a SQLite URI like `sqlite:///mlflow.db` is the current, friction-free local setup, so that is what we do below. (On MLflow 2.x this same code still works.)
+> **Heads-up (MLflow 3.x):** the plain-folder store (`./mlruns` on its own) is now in maintenance mode and will raise an error unless you opt in. A SQLite URI like `sqlite:///mlflow.db` is the friction-free local setup, so that is what we use. (On MLflow 2.x this same code still works.)
 
-We set the store directly in the script (next step), so there is nothing to configure here.
+We set the store directly in the script, so there is nothing to configure separately.
 
 ### 3. The experiment script
 
-Save this as `train.py`. It trains a logistic-regression classifier on the classic breast-cancer dataset, then logs the parameters, the accuracy, the trained model, and a confusion-matrix plot.
+Save this as `train.py`. It trains a logistic-regression classifier on the classic breast-cancer dataset, then logs the parameters, the metrics, the trained model, and a confusion-matrix plot.
 
 ```python
 # train.py
@@ -170,13 +261,11 @@ Run it:
 python train.py
 ```
 
-You just produced your first tracked run. The parameters, metrics, the serialised model, and the plot are all saved under `./mlruns`.
+You just produced your first tracked run. The parameters, metrics, the serialised model, and the plot are all saved.
 
 ### 4. Make a second run to compare against
 
 Change one line — `C = 0.01` — and run `python train.py` again. (Stronger regularisation; the score should move.) Now you have **two runs to compare**, which is the whole point of tracking.
-
-> **Tip — skip the boilerplate.** For supported libraries, `mlflow.sklearn.autolog()` (or `mlflow.tensorflow.autolog()`, `mlflow.pytorch.autolog()`) auto-captures parameters, metrics, and the model with a single line, before you call `fit()`. Manual logging gives you the most control; autolog gives you 80% of the value for one line of code.
 
 ### 5. Inspect and compare in the UI
 
@@ -203,6 +292,8 @@ You have implemented the smallest real MLOps loop: **parameterise → run → lo
 3. **Automate the run in CI** so a push retrains and re-logs.
 4. **Serve the model** (`mlflow models serve`) and **monitor** its predictions, closing the loop back to data.
 
+That list is exactly the MLOps workflow from earlier — you have now built its first link.
+
 ## Take-home message
 
 Research — and production work — should be **reproducible** and, where possible, **open**. If your work involves machine learning, that means using dedicated tools to make experiments reproducible rather than relying on memory and scattered notebooks.
@@ -211,4 +302,4 @@ Adopting these habits in your daily workflow pays off quickly: time saved in the
 
 ---
 
-.small[This tutorial is adapted from the lecture **"An introduction to MLOps"** by [Alexandre Boucaud](https://aboucaud.github.io/slides/2023/lsst-france-mlops) (LSST France, Lyon, December 2023), licensed under [CC BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0). The accompanying [slides](/slides/2026/intro-to-mlops/) are re-hosted under the same license; this written tutorial and hands-on are an original adaptation and are likewise shared under CC BY-SA 4.0.]
+.small[This tutorial follows and is adapted from the lecture **"An introduction to MLOps"** by [Alexandre Boucaud](https://aboucaud.github.io/slides/2023/lsst-france-mlops) (LSST France, Lyon, December 2023), licensed under [CC BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0). The accompanying [slides](/slides/2026/intro-to-mlops/) are re-hosted under the same license. The diagrams here are original redrawings of the concepts, and this written tutorial and hands-on are an original adaptation, likewise shared under CC BY-SA 4.0.]
