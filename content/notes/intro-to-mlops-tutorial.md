@@ -11,6 +11,7 @@ categories = ["2026"]
 tags = ["mlops", "ai", "reproducibility", "tools", "mlflow"]
 
 [extra]
+topic = "Machine Learning"
 lang = "en"
 toc = true
 +++

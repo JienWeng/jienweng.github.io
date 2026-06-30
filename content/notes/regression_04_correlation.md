@@ -11,6 +11,7 @@ categories = ["2026"]
 tags = ["math", "statistics", "regression"]
 
 [extra]
+topic = "Regression"
 lang = "en"
 toc = false
 comment = true

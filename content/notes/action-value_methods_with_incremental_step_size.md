@@ -11,6 +11,7 @@ categories = ["2025"]
 tags = ["math", "reinforcement learning", "ai"]
 
 [extra]
+topic = "Reinforcement Learning"
 lang = "en"
 toc = true
 comment = true

@@ -2,7 +2,7 @@
 title = "Notes"
 description = "Technical notes, derivations, and working explanations."
 sort_by = "date"
-template = "section.html"
+template = "notes.html"
 page_template = "page.html"
 generate_feeds = true
 +++

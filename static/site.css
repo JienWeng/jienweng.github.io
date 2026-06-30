@@ -347,13 +347,35 @@ img {
   white-space: nowrap;
 }
 
-.slides-year {
+.slides-year,
+.notes-topic {
   font-family: var(--label);
   font-size: 0.78rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--ink-soft);
   margin: var(--space-5) 0 0.25rem;
+}
+
+.notes-page .notes-topic:first-of-type {
+  margin-top: var(--space-4);
+}
+
+.notes-topic-note {
+  text-transform: none;
+  letter-spacing: 0;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+.series-num {
+  display: inline-block;
+  min-width: 1.4em;
+  margin-right: 0.35em;
+  text-align: right;
+  font-family: var(--label);
+  font-size: 0.85em;
+  color: var(--ink-soft);
 }
 
 .slides-page .slides-year:first-of-type {

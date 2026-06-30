@@ -11,6 +11,7 @@ categories = ["2026"]
 tags = ["math", "signal processing", "fft", "dsp", "python"]
 
 [extra]
+topic = "Signal Processing"
 lang = "en"
 toc = true
 comment = true

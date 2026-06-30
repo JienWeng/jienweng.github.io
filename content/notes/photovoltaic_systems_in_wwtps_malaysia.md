@@ -11,6 +11,7 @@ categories = ["2025"]
 tags = ["WWTP"]
 
 [extra]
+topic = "Sustainability"
 lang = "en"
 toc = true
 comment = true

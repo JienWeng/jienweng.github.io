@@ -11,6 +11,7 @@ categories = ["2026"]
 tags = ["math", "ai", "machine learning", "trees", "ensemble", "classification", "optimization"]
 
 [extra]
+topic = "Machine Learning"
 lang = "en"
 toc = true
 comment = true

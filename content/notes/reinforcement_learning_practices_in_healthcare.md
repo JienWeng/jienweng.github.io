@@ -11,6 +11,7 @@ categories = ["2025"]
 tags = ["reinforcement learning","ai", "healthcare"]
 
 [extra]
+topic = "Reinforcement Learning"
 lang = "en"
 toc = true
 comment = true

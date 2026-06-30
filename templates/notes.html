@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}{{ section.title }} · {{ config.title }}{% endblock title %}
+{% block body_class %}section-page notes-page{% endblock body_class %}
+
+{% block content %}
+<main class="content-grid">
+  <aside class="rail">
+    <div class="rail-block">
+      <a class="back-link" href="{{ get_url(path='/') }}">Back to index</a>
+      <h1 class="section-title">{{ section.title }}</h1>
+    </div>
+  </aside>
+
+  <section class="well">
+    {% if section.content | trim %}
+    <article class="prose">
+      {{ section.content | safe }}
+    </article>
+    {% endif %}
+
+    {% set topics = ["Machine Learning", "Regression", "Signal Processing", "Reinforcement Learning", "Sustainability"] %}
+
+    {% for topic in topics %}
+      {% set group = section.pages | filter(attribute="extra.topic", value=topic) %}
+      {% if group | length > 0 %}
+        {% set is_series = topic == "Regression" %}
+        {% if is_series %}{% set group = group | sort(attribute="date") %}{% endif %}
+        <h2 class="notes-topic">{{ topic }}{% if is_series %} <span class="notes-topic-note">— read as a series</span>{% endif %}</h2>
+        <div class="edition-list section-list">
+          {% for item in group %}
+          <a class="edition-row" href="{{ item.permalink }}">
+            <span class="edition-title">{% if is_series %}<span class="series-num">{{ loop.index }}</span> {% endif %}{{ item.title }}</span>
+            <span class="edition-date">{% if item.date %}{{ item.date | date(format="%b %Y") }}{% endif %}</span>
+          </a>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endfor %}
+
+    {# Any note whose topic is unset or not in the list above #}
+    {% set_global has_other = false %}
+    {% for item in section.pages %}{% set tp = item.extra.topic | default(value="") %}{% if not (topics is containing(tp)) %}{% set_global has_other = true %}{% endif %}{% endfor %}
+    {% if has_other %}
+    <h2 class="notes-topic">Other</h2>
+    <div class="edition-list section-list">
+      {% for item in section.pages %}{% set tp = item.extra.topic | default(value="") %}{% if not (topics is containing(tp)) %}
+      <a class="edition-row" href="{{ item.permalink }}">
+        <span class="edition-title">{{ item.title }}</span>
+        <span class="edition-date">{% if item.date %}{{ item.date | date(format="%b %Y") }}{% endif %}</span>
+      </a>
+      {% endif %}{% endfor %}
+    </div>
+    {% endif %}
+  </section>
+</main>
+{% endblock content %}

@@ -11,6 +11,7 @@ categories = ["2026"]
 tags = ["math", "linear algebra", "ai", "gemini-cli"]
 
 [extra]
+topic = "Machine Learning"
 lang = "en"
 toc = true
 comment = true
