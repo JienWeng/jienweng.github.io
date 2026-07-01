@@ -4,50 +4,6 @@ class: center, middle
 # An introduction to .red[MLOps]
 
 .footnote[ Jien Weng &nbsp;·&nbsp; adapted from [Alexandre Boucaud](https://aboucaud.github.io/slides/2023/lsst-france-mlops) — CC BY-SA 4.0 ]
----
-
-## Jien Weng <img src="img/profile.webp" class="circle-image" alt="Jien Weng" style="float: right">
-
-Research, notes, working papers, and adjacent curiosities
-
-
-.left-column[
-  .medium.red[Main interests]
-
-.small[**reinforcement learning**]  
-.small[**information structure** & statistical modelling]  
-.small[**open source** scientific computing]  
-]
-
-.right-column[
-  .medium.red[Links]  
-
-  .small[https://jienweng.github.io]  
-  .small[https://github.com/jienweng]  
-
-  .center[👋 [laijienweng@gmail.com][mail]]
-]
-
-.footnote[Adapted from "An introduction to MLOps" by [Alexandre Boucaud](https://aboucaud.github.io/slides/2023/lsst-france-mlops), licensed under CC BY-SA 4.0]
-
-[mail]: mailto:laijienweng@gmail.com
-
----
-class: middle, center
-
-<img src="img/fcs.jpg" width="55%">
-
-.footnote[**Filter changer tests**  
-SLAC clean room   
-Summer 2023]
-
----
-exclude: true
-# PDF animation replacement
-
-.middle.center[<br><br><br><br>Animation .red[skipped] in PDF version, watch on [online slides][slides] 👈]
-
-[slides]: https://aboucaud.github.io/slides/2022/euclid-school-ml-cycle2
 
 ---
 

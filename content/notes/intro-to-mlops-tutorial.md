@@ -123,16 +123,19 @@ CT and model/data monitoring are what make MLOps its own discipline rather than 
 
 Put concretely, a working MLOps setup wires together a handful of pieces:
 
-- **version control** for code (git),
-- **data/version tracking** for datasets,
-- an **experiment-tracking** server that records every run,
-- a **model registry** that versions and stages models,
-- a **CI/CD pipeline** that retrains and redeploys,
-- and **monitoring** that watches the served model and closes the loop.
+- **code versioning** (git) and **data versioning** (DVC) — the two moving inputs, tracked like any other asset;
+- **experimentation** in notebooks (Jupyter), feeding an **experiment-tracking** server (MLflow) that records every run's parameters and metrics;
+- **artifact tracking** (also MLflow) — every *file* a run produces (the trained model, a confusion-matrix plot, a preprocessing pipeline) gets stored and linked to the run that made it;
+- a **model registry** (MLflow) that versions the best models and stages them (staging → production);
+- **pipeline orchestration** (Airflow) that wires the above into a scheduled, repeatable flow;
+- **model serving** (BentoML) that wraps a registered model in an API; and
+- **model monitoring** (Prometheus/Grafana) that watches the served model and closes the loop back to data.
 
 {{ figure(src="/slides/2026/intro-to-mlops/img/mymlops-workflow.png", alt="A concrete MLOps workflow", caption="A concrete MLOps workflow wiring the pieces together. Credit: mymlops.com") }}
 
-You do not build all of this on day one. The single highest-leverage habit — the one that pays off immediately even in a solo project — is **experiment tracking**. That is where we will get hands-on.
+Experiment tracking and artifact tracking are easy to conflate — MLflow happens to do both, which is why it appears three times in the diagram. The distinction matters: **experiment tracking** logs the *numbers* (`mlflow.log_metric("accuracy", acc)`), while **artifact tracking** stores the *files* a run produced (`mlflow.log_artifact("confusion_matrix.png")`). Same tool, two different jobs — you will use both in the hands-on below.
+
+You do not build all of this on day one. The single highest-leverage habit — the one that pays off immediately even in a solo project — is **experiment tracking**. That is where we will get hands-on, before bridging to model serving at the end.
 
 ## MLflow: the tool we will use
 
@@ -305,16 +308,63 @@ From here you can:
 
 That comparison view — *"which settings gave the best score, and exactly how were they produced?"* — is the question MLOps is built to answer, and you now have a reproducible record of it.
 
+### 6. Serve it: MLflow → BentoML (minimal)
+
+Tracking answers "what's the best run?" Serving answers "how do users call it?" This is the **model serving** box from the workflow diagram above, and [**BentoML**](https://www.bentoml.com) is the tool. The bridge is one call: load the model MLflow already tracked and stored, hand it to a Bento service.
+
+```shell
+python -m pip install bentoml
+```
+
+Save this as `service.py`, next to `mlflow.db` and `mlruns/` (also in the companion repo, alongside `train.py`):
+
+```python
+# service.py
+import bentoml
+import mlflow
+
+mlflow.set_tracking_uri("sqlite:///mlflow.db")
+
+# Grab the most recent run of the experiment — no run ID to copy by hand
+experiment = mlflow.get_experiment_by_name("intro-to-mlops")
+latest_run = mlflow.search_runs(
+    experiment.experiment_id, order_by=["start_time DESC"], max_results=1
+).iloc[0]
+model = mlflow.sklearn.load_model(f"runs:/{latest_run.run_id}/model")
+
+@bentoml.service
+class MLopsService:
+    @bentoml.api
+    def predict(self, features: list[list[float]]) -> list[int]:
+        return model.predict(features).tolist()
+```
+
+Run it:
+
+```shell
+bentoml serve service:MLopsService
+```
+
+That starts an HTTP API on <http://127.0.0.1:3000> with interactive docs. Call it:
+
+```shell
+curl -X POST http://127.0.0.1:3000/predict \
+  -H "Content-Type: application/json" \
+  -d '{"features": [[14.0, 20.0, 90.0, 600.0, 0.1, 0.1, 0.1, 0.05, 0.2, 0.06, 0.4, 1.0, 3.0, 40.0, 0.006, 0.02, 0.03, 0.01, 0.02, 0.003, 16.0, 25.0, 105.0, 900.0, 0.14, 0.25, 0.3, 0.12, 0.3, 0.08]]}'
+```
+
+That's the whole bridge: **MLflow tracks and stores the model; BentoML loads it by URI and serves it.** Everything past this — batching, Docker packaging (`bentoml build`), autoscaling — is the same idea scaled up.
+
 ### What you just built (and what comes next)
 
-You have implemented the smallest real MLOps loop: **parameterise → run → log → compare**. The natural extensions, in rough order of payoff:
+You have implemented the smallest real MLOps loop: **parameterise → run → log → compare → serve**. The natural extensions, in rough order of payoff:
 
 1. **Commit `train.py` to git** so each run is tied to a code version.
-2. **Register the best model** in MLflow's Model Registry to give it a name and version.
+2. **Register the best model** in MLflow's Model Registry to give it a name and version, instead of pasting a run ID.
 3. **Automate the run in CI** so a push retrains and re-logs.
-4. **Serve the model** (`mlflow models serve`) and **monitor** its predictions, closing the loop back to data.
+4. **Monitor** the served model's predictions, closing the loop back to data.
 
-That list is exactly the MLOps workflow from earlier — you have now built its first link.
+That list is exactly the MLOps workflow from earlier — you have now built its first two links.
 
 ## Take-home message
 
