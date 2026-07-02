@@ -14,3 +14,7 @@ My main interest is not just whether a learning algorithm works, but what kind o
 ## Selected Publications
 
 {{ collection(file="publications/items.toml") }}
+
+---
+
+If any of this is close to a problem you are working on, I am reachable by [email](mailto:laijienweng@gmail.com) — or see [Work With Me](/services/).

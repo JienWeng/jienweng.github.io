@@ -1,26 +1,20 @@
 +++
 title = "Work With Me"
-description = "ML/AI consulting, enablement, and MLOps for finance, insurance, and analytics teams."
+description = "The practical side of my work — helping teams get ML, data, and automation working inside a real business."
 +++
 
 # Work With Me
 
-I help finance, insurance, and analytics teams turn ML/AI from experiments into production business value — bringing quant rigor, MLOps discipline, and hands-on coaching.
+Some of my work is research. The rest is practical: helping teams get ML, data, and automation working inside a real business. This page is about the practical side.
 
-Alongside my research, I work directly with businesses. I am currently a Business Transformation Consultant with [Quandatics](https://quandatics.com), a data and AI consultancy, working on process enhancement and automation with their Business Transformation Office, and a Data Science & Machine Learning Trainer with [Quandatics Academy](https://academy.quandatics.com). I have delivered technical and analytical work across actuarial, insurance, and financial-services settings.
+Right now that means two things. I am a Business Transformation Consultant with [Quandatics](https://quandatics.com), a data and AI consultancy, working on process enhancement and automation with their Business Transformation Office. And I am a Data Science & Machine Learning Trainer with [Quandatics Academy](https://academy.quandatics.com), where I currently coach a telecommunications analytics team. Earlier work took me through actuarial, insurance, and financial-services settings.
 
-## What I do
+## Things I can help with
 
-- **ML/AI business transformation.** Taking a team from scattered experiments to a working, measurable ML capability: scoping the right problems, designing the roadmap, and staying hands-on through delivery.
-- **ML enablement and coaching.** Upskilling analytics teams to build and own their models — structured coaching grounded in the same material as my published [MLOps tutorial](/notes/intro-to-mlops-tutorial/) and technical notes. I currently coach a telecommunications analytics team in data science and machine learning.
-- **MLOps and production readiness.** Reproducibility, experiment tracking, and deployment discipline for small data teams that need their models to survive contact with production.
+- Getting ML out of the experiment stage — scoping the problem properly, building it, and staying around until it runs in production and someone actually uses it.
+- Coaching an analytics team to build and own its own models. The coaching material grows out of the same notes and tutorials I publish here, like the [MLOps tutorial](/notes/intro-to-mlops-tutorial/).
+- The unglamorous parts that decide whether any of it lasts: reproducibility, experiment tracking, deployment discipline, and process automation.
 
-## Why me
+## If you want to talk
 
-- Research grounding: publications in multi-agent reinforcement learning and optimal execution ([publications](/publications/)), and an MEng (research) in progress at Monash University Malaysia.
-- Domain exposure: business transformation and finance operations (Quandatics), actuarial solutions (ACTBuilder), and finance data engineering (Great Eastern).
-- Teaching record: technical [notes](/notes/) and tutorials, plus mentoring and judging at hackathons (KitaHack, CodeNection).
-
-## How to engage
-
-Email me at [laijienweng@gmail.com](mailto:laijienweng@gmail.com) with a short description of your team and what you are trying to make work. I will tell you honestly whether I can help.
+Email me at [laijienweng@gmail.com](mailto:laijienweng@gmail.com). A short note about your team and what you are stuck on is enough. If I am not the right person for it, I will say so.
