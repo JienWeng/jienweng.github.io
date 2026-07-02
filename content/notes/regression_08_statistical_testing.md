@@ -3,7 +3,7 @@ title = "Statistical Testing in Regression"
 description = "Performing hypothesis tests on regression coefficients using t-tests, p-values, and the connection to confidence intervals."
 date = 2026-02-20
 updated = 2026-02-20
-draft = true
+draft = false
 aliases = ["/posts/regression-08-statistical-testing/"]
 
 [taxonomies]
@@ -33,95 +33,95 @@ In the [previous post](/posts/regression-07-confidence-intervals), we constructe
 
 The most common test in regression asks whether a particular predictor has a significant linear effect on the response. For coefficient $\beta\_j$, the hypotheses are:
 
-$$H_0: \beta_j = 0 \quad \text{(the predictor has no effect)},$$
-$$H_1: \beta_j \neq 0 \quad \text{(the predictor has an effect)}.$$
+$$H\_0: \beta\_j = 0 \quad \text{(the predictor has no effect)},$$
+$$H\_1: \beta\_j \neq 0 \quad \text{(the predictor has an effect)}.$$
 
-This is a two-sided test. One-sided alternatives ($H_1: \beta_j > 0$ or $H_1: \beta_j < 0$) are also possible when the direction of the effect is of interest.
+This is a two-sided test. One-sided alternatives ($H\_1: \beta\_j > 0$ or $H\_1: \beta\_j < 0$) are also possible when the direction of the effect is of interest.
 
 ## The t-Test Statistic
 
-Under $H_0: \beta_j = 0$, the test statistic is:
+Under $H\_0: \beta\_j = 0$, the test statistic is:
 
 $$t = \frac{\hat{\beta}\_j - 0}{SE(\hat{\beta}\_j)} = \frac{\hat{\beta}\_j}{SE(\hat{\beta}\_j)}.$$
 
 Under the null hypothesis and the normality assumption, this statistic follows a t-distribution:
 
-$$t \sim t_{n-p},$$
+$$t \sim t\_{n-p},$$
 
 where $n - p$ is the residual degrees of freedom.
 
 ### For Simple Linear Regression
 
-Testing $H_0: \beta_1 = 0$ (the slope is zero):
+Testing $H\_0: \beta\_1 = 0$ (the slope is zero):
 
 $$t = \frac{\hat{\beta}\_1}{SE(\hat{\beta}\_1)} = \frac{\hat{\beta}\_1}{\sqrt{MSE/S\_{xx}}} = \frac{S\_{xy}/S\_{xx}}{\sqrt{MSE/S\_{xx}}} = \frac{S\_{xy}}{\sqrt{MSE \cdot S\_{xx}}}.$$
 
-This statistic follows $t_{n-2}$ under $H_0$.
+This statistic follows $t\_{n-2}$ under $H\_0$.
 
-Testing $H_0: \beta_0 = 0$ (the intercept is zero):
+Testing $H\_0: \beta\_0 = 0$ (the intercept is zero):
 
 $$t = \frac{\hat{\beta}\_0}{SE(\hat{\beta}\_0)} = \frac{\hat{\beta}\_0}{\sqrt{MSE(1/n + \bar{x}^2/S\_{xx})}}.$$
 
 ### For Multiple Regression
 
-Testing $H_0: \beta_i = 0$ for any coefficient $\beta_i$:
+Testing $H\_0: \beta\_i = 0$ for any coefficient $\beta\_i$:
 
-$$t = \frac{\hat{\beta}\_i}{SE(\hat{\beta}\_i)} = \frac{\hat{\beta}\_i}{\sqrt{MSE \cdot C_{ii}}},$$
+$$t = \frac{\hat{\beta}\_i}{SE(\hat{\beta}\_i)} = \frac{\hat{\beta}\_i}{\sqrt{MSE \cdot C\_{ii}}},$$
 
-where $C_{ii}$ is the appropriate diagonal element of $(\mathbf{X}^T\mathbf{X})^{-1}$.
+where $C\_{ii}$ is the appropriate diagonal element of $(\mathbf{X}^T\mathbf{X})^{-1}$.
 
 ## Decision Rule
 
 For a significance level $\alpha$ (commonly $\alpha = 0.05$):
 
-**Reject $H_0$** if $|t| > t_{\alpha/2, n-p}$.
+**Reject $H\_0$** if $|t| > t\_{\alpha/2, n-p}$.
 
-**Fail to reject $H_0$** if $|t| \leq t_{\alpha/2, n-p}$.
+**Fail to reject $H\_0$** if $|t| \leq t\_{\alpha/2, n-p}$.
 
-Rejecting $H_0$ means we have sufficient evidence that $\beta_j \neq 0$, suggesting that the predictor $x_j$ has a statistically significant effect on $y$.
+Rejecting $H\_0$ means we have sufficient evidence that $\beta\_j \neq 0$, suggesting that the predictor $x\_j$ has a statistically significant effect on $y$.
 
 ## P-Values
 
-The p-value provides a continuous measure of the evidence against $H_0$. For a two-sided test:
+The p-value provides a continuous measure of the evidence against $H\_0$. For a two-sided test:
 
-$$p\text{-value} = 2 \cdot P(T > |t_{\text{obs}}|),$$
+$$p\text{-value} = 2 \cdot P(T > |t\_{\text{obs}}|),$$
 
-where $T \sim t_{n-p}$ and $t_{\text{obs}}$ is the observed test statistic.
+where $T \sim t\_{n-p}$ and $t\_{\text{obs}}$ is the observed test statistic.
 
 Interpretation:
 
-- The p-value is the probability of observing a test statistic at least as extreme as the one computed, assuming $H_0$ is true.
-- A small p-value (typically $< 0.05$) provides evidence against $H_0$.
-- A large p-value does not prove $H_0$ is true; it simply means the data do not provide strong evidence against it.
+- The p-value is the probability of observing a test statistic at least as extreme as the one computed, assuming $H\_0$ is true.
+- A small p-value (typically $< 0.05$) provides evidence against $H\_0$.
+- A large p-value does not prove $H\_0$ is true; it simply means the data do not provide strong evidence against it.
 
-The decision rule using p-values is equivalent to using critical values: reject $H_0$ if $p\text{-value} < \alpha$.
+The decision rule using p-values is equivalent to using critical values: reject $H\_0$ if $p\text{-value} < \alpha$.
 
 ## Testing Against a Non-Zero Value
 
-More generally, we can test $H_0: \beta_j = \beta_{j,0}$ for any hypothesized value $\beta_{j,0}$:
+More generally, we can test $H\_0: \beta\_j = \beta\_{j,0}$ for any hypothesized value $\beta\_{j,0}$:
 
-$$t = \frac{\hat{\beta}\_j - \beta_{j,0}}{SE(\hat{\beta}\_j)}.$$
+$$t = \frac{\hat{\beta}\_j - \beta\_{j,0}}{SE(\hat{\beta}\_j)}.$$
 
-The test for $\beta_j = 0$ is simply the special case where $\beta_{j,0} = 0$.
+The test for $\beta\_j = 0$ is simply the special case where $\beta\_{j,0} = 0$.
 
 ## Connection to Confidence Intervals
 
 There is a direct equivalence between hypothesis tests and confidence intervals:
 
-- **Reject** $H_0: \beta_j = \beta_{j,0}$ at level $\alpha$ if and only if $\beta_{j,0}$ falls outside the $(1 - \alpha) \times 100\%$ confidence interval for $\beta\_j$.
-- **Fail to reject** $H_0$ if and only if $\beta_{j,0}$ falls inside the confidence interval.
+- **Reject** $H\_0: \beta\_j = \beta\_{j,0}$ at level $\alpha$ if and only if $\beta\_{j,0}$ falls outside the $(1 - \alpha) \times 100\%$ confidence interval for $\beta\_j$.
+- **Fail to reject** $H\_0$ if and only if $\beta\_{j,0}$ falls inside the confidence interval.
 
 This means that when we check whether a 95% confidence interval for $\beta\_1$ contains zero, we are implicitly performing a t-test at the $\alpha = 0.05$ level.
 
 ## Testing the Correlation
 
-For simple linear regression, testing $H_0: \beta_1 = 0$ is equivalent to testing $H_0: \rho = 0$ (the population correlation is zero). This is because $\hat{\beta}_1 = r \cdot S_y/S_x$, and $\hat{\beta}_1 = 0$ if and only if $r = 0$.
+For simple linear regression, testing $H\_0: \beta\_1 = 0$ is equivalent to testing $H\_0: \rho = 0$ (the population correlation is zero). This is because $\hat{\beta}\_1 = r \cdot S\_y/S\_x$, and $\hat{\beta}\_1 = 0$ if and only if $r = 0$.
 
 The test statistic can also be written in terms of $r$:
 
 $$t = r\sqrt{\frac{n - 2}{1 - r^2}},$$
 
-which follows $t_{n-2}$ under $H_0: \rho = 0$.
+which follows $t\_{n-2}$ under $H\_0: \rho = 0$.
 
 ## Practical vs. Statistical Significance
 
@@ -131,7 +131,7 @@ Conversely, a non-significant result does not mean the effect is zero; it may re
 
 When interpreting regression results, consider both:
 
-1. **Statistical significance**: Is the p-value small enough to reject $H_0$?
+1. **Statistical significance**: Is the p-value small enough to reject $H\_0$?
 2. **Practical significance**: Is the estimated effect $\hat{\beta}\_j$ large enough to matter in the context of the problem?
 
 The confidence interval is particularly helpful here because it shows both the direction and the plausible range of the effect size.
@@ -152,10 +152,10 @@ In regression, the overall model significance is typically assessed using the F-
 
 In this post, we covered hypothesis testing for regression coefficients:
 
-- The t-statistic $t = \hat{\beta}_j / SE(\hat{\beta}_j)$ follows $t_{n-p}$ under $H_0: \beta_j = 0$.
-- Reject $H_0$ when $|t| > t_{\alpha/2, n-p}$ or equivalently when $p\text{-value} < \alpha$.
-- For $\beta\_1$ in SLR: $t = S_{xy}/\sqrt{MSE \cdot S_{xx}}$ with $n - 2$ degrees of freedom.
-- Testing $\beta_1 = 0$ is equivalent to testing $\rho = 0$.
+- The t-statistic $t = \hat{\beta}\_j / SE(\hat{\beta}\_j)$ follows $t\_{n-p}$ under $H\_0: \beta\_j = 0$.
+- Reject $H\_0$ when $|t| > t\_{\alpha/2, n-p}$ or equivalently when $p\text{-value} < \alpha$.
+- For $\beta\_1$ in SLR: $t = S\_{xy}/\sqrt{MSE \cdot S\_{xx}}$ with $n - 2$ degrees of freedom.
+- Testing $\beta\_1 = 0$ is equivalent to testing $\rho = 0$.
 - Confidence intervals and hypothesis tests provide equivalent information.
 - Always consider practical significance alongside statistical significance.
 
