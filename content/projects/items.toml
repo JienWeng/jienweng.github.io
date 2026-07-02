@@ -2,14 +2,16 @@
 type = "art"
 title = "AI Video Generation Orchestration"
 subtitle = "Fully AI-powered video series pipeline."
-content = "An orchestration system for streamlined, end-to-end AI video generation — chaining generation stages into a fully AI-powered pipeline for producing video series. In progress."
+content = "An orchestration system for streamlined, end-to-end AI video generation, chaining generation stages into a fully AI-powered pipeline for producing video series."
+status = "In progress"
 # TODO: add link and image when there is something to show
 
 [[collection]]
 type = "art"
 title = "Custom CRM System"
 subtitle = "CRM built from scratch."
-content = "A custom customer-relationship-management system tailored to a specific workflow rather than adapting an off-the-shelf product. In progress."
+content = "A custom customer-relationship-management system tailored to a specific workflow rather than adapting an off-the-shelf product."
+status = "In progress"
 # TODO: add link and image when there is something to show
 
 [[collection]]

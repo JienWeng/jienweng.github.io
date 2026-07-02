@@ -665,8 +665,7 @@ img {
 }
 
 .home-file-note {
-  padding-top: var(--space-4);
-  border-top: 1px solid var(--rule);
+  padding-top: var(--space-2);
 }
 
 .zola-anchor {
@@ -907,6 +906,29 @@ button:focus-visible,
 summary:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
+}
+
+.edition-row:hover {
+  background: var(--accent-soft);
+}
+
+.collection-status {
+  display: inline-block;
+  font-family: var(--label);
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  border: 1px solid var(--rule);
+  padding: 0.15rem 0.5rem;
+  margin-top: var(--space-2);
+}
+
+@media (max-width: 920px) {
+  .home-marginalia {
+    gap: var(--space-3);
+    padding-top: 0;
+  }
 }
 
 @media print {

@@ -30,7 +30,7 @@
         {% set_global current_year = deck.year %}
       {% endif %}
       <a class="edition-row" href="{{ get_url(path=deck.link, trailing_slash=true) }}">
-        <span class="edition-title">{{ deck.title }}{% if deck.subtitle %} — <span class="edition-subtitle">{{ deck.subtitle }}</span>{% endif %}</span>
+        <span class="edition-title">{{ deck.title }}{% if deck.subtitle %} · <span class="edition-subtitle">{{ deck.subtitle }}</span>{% endif %}</span>
         <span class="edition-date">{{ deck.year }}</span>
       </a>
       {% if loop.last %}</div>{% endif %}

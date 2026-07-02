@@ -1,6 +1,6 @@
 +++
 title = "Work With Me"
-description = "The practical side of my work — helping teams get ML, data, and automation working inside a real business."
+description = "The practical side of my work: helping teams get ML, data, and automation working inside a real business."
 +++
 
 # Work With Me
@@ -11,7 +11,7 @@ Right now that means two things. I am a Business Transformation Consultant with 
 
 ## Things I can help with
 
-- Getting ML out of the experiment stage — scoping the problem properly, building it, and staying around until it runs in production and someone actually uses it.
+- Getting ML out of the experiment stage: scoping the problem properly, building it, and staying around until it runs in production and someone actually uses it.
 - Coaching an analytics team to build and own its own models. The coaching material grows out of the same notes and tutorials I publish here, like the [MLOps tutorial](/notes/intro-to-mlops-tutorial/).
 - The unglamorous parts that decide whether any of it lasts: reproducibility, experiment tracking, deployment discipline, and process automation.
 

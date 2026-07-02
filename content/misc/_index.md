@@ -8,8 +8,8 @@ This page is for material that is useful to return to but does not belong in the
 
 # Reading Notes and Papers Worth Re-reading
 
-- *Deep Learning* — Goodfellow, Bengio, Courville
-- *Reinforcement Learning: An Introduction* — Sutton and Barto
+- *Deep Learning*, by Goodfellow, Bengio, and Courville
+- *Reinforcement Learning: An Introduction*, by Sutton and Barto
 
 ## Essays Worth Returning To
 
@@ -25,9 +25,6 @@ This page is for material that is useful to return to but does not belong in the
 ## Questions I Keep Returning To
 
 - What information does an agent actually need to coordinate well?
-- When does prediction improve control, and when does it only decorate the model?
-- Which parts of finance are genuinely sequential decision problems?
-- When do simpler systems outperform richer ones because the regime is specified correctly?
 - Should we try to mimic a human way of thinking, or should we let a system learn by exploration without building that structure in first?
 
 ## Viewpoints Worth Keeping Around

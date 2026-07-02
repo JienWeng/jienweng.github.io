@@ -76,7 +76,7 @@
   </div>
   {% endif %}
   <details class="collection-details">
-    <summary>Abstract</summary>
+    <summary>{{ item.expand_label | default(value="Abstract") }}</summary>
     <div class="collection-body">{{ item.content | markdown | safe }}</div>
     {% if item.tags %}
     <ul class="tag-list inline-tags">
@@ -103,6 +103,7 @@
     <div class="collection-title">{{ item.title }}</div>
     {% endif %}
     {% if item.subtitle %}<div class="collection-subtitle">{{ item.subtitle }}</div>{% endif %}
+    {% if item.status %}<div class="collection-status">{{ item.status }}</div>{% endif %}
     {% if item.content %}<div class="collection-body">{{ item.content | markdown | safe }}</div>{% endif %}
     {% if item.link %}<div class="collection-linkline"><a href="{{ item.link }}" target="_blank" rel="noreferrer noopener">GitHub</a></div>{% endif %}
   </div>

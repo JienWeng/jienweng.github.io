@@ -26,7 +26,7 @@
       {% if group | length > 0 %}
         {% set is_series = topic == "Regression" %}
         {% if is_series %}{% set group = group | sort(attribute="date") %}{% endif %}
-        <h2 class="notes-topic">{{ topic }}{% if is_series %} <span class="notes-topic-note">— read as a series</span>{% endif %}</h2>
+        <h2 class="notes-topic">{{ topic }}{% if is_series %} <span class="notes-topic-note">(read as a series)</span>{% endif %}</h2>
         <div class="edition-list section-list">
           {% for item in group %}
           <a class="edition-row" href="{{ item.permalink }}">
