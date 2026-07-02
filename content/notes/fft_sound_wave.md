@@ -24,19 +24,15 @@ featured = false
 reaction = true
 +++
 
-Most explanations of the FFT start too late. They present the butterfly diagram, mention $O(N \log N)$, and move on. That is efficient, but it hides the idea.
+The butterfly diagram is usually the first thing people show you about the FFT. I think it should be the last. The FFT is nothing more than a fast way to compute the Discrete Fourier Transform, so none of it makes sense until the DFT does. And the DFT itself is easiest to see if you start from a sampled sound wave.
 
-The cleaner way to think about the FFT is to start one step earlier. First understand what the Discrete Fourier Transform actually does. And to understand the DFT properly, start from a sampled sound wave.
-
-So the real chain is:
+So this note goes:
 
 $$
 \text{sound wave} \to \text{samples} \to \text{DFT} \to \text{FFT} \to \text{spectrum}.
 $$
 
-Once that chain is visible, the FFT stops looking like a mysterious trick. It becomes the obvious recursive continuation of the same frequency-domain story.
-
-This note walks the full path. We start from an intuitive picture of sound as a sum of sinusoids, derive the DFT as the natural discrete analogue, and then derive the Cooley-Tukey FFT by exploiting the structure of the DFT matrix. We finish with a real sound-wave example implemented from scratch in Python.
+We build up the picture of sound as a sum of sinusoids, get the DFT as its discrete version, and then let the structure of the DFT matrix hand us the Cooley-Tukey FFT almost for free. At the end we run the whole thing on a real sound wave, implemented from scratch in Python.
 
 > **Run it yourself.** Every code block below is collected in a runnable Jupyter notebook: [**download `fft-sound-wave.ipynb`**](/notebooks/fft-sound-wave.ipynb). It only needs `numpy` and `matplotlib` (`pip install numpy matplotlib`), and runs top to bottom.
 
@@ -129,7 +125,7 @@ for $k = 0, 1, \ldots, N/2$, after which the bins fold by symmetry for real inpu
 
 ## What the Transform Actually Does: The Winding View
 
-The formula for $X_k$ is easy to write down but easy to stare at without seeing anything. Before we optimize *how* to compute it, here is a different perspective on *what* it computes — one that makes the whole transform intuitive.
+The formula for $X_k$ is easy to write down but easy to stare at without seeing anything. Before we optimize *how* to compute it, here is a different perspective on *what* it computes, one that makes the whole transform intuitive.
 
 Look again at a single term. The factor
 
@@ -141,7 +137,7 @@ is a unit vector in the complex plane that rotates clockwise as $n$ advances. Mu
 
 So $X_k / N$ is literally: *take the signal, wrap it around a circle at rate $k$, and find the center of mass of the resulting curve.*
 
-Now the key effect. When the winding rate **matches** a frequency that is actually present in the signal, the signal's peaks land on the same side of the circle on every turn. The wound points pile up on one side, and their center of mass sits far from the origin — a large $|X_k|$. When the winding rate **does not match**, the peaks land at different angles each turn, spread evenly around the circle, and cancel — the center of mass collapses to near zero.
+Now the key effect. When the winding rate **matches** a frequency that is actually present in the signal, the signal's peaks land on the same side of the circle on every turn. The wound points pile up on one side, and their center of mass sits far from the origin: a large $|X_k|$. When the winding rate **does not match**, the peaks land at different angles each turn, spread evenly around the circle, and cancel. The center of mass collapses to near zero.
 
 To see it, here is a simple two-component signal (a $2$ Hz plus a $3$ Hz cosine, chosen at low frequencies purely so the winding is visible) wound at four different rates:
 
@@ -155,7 +151,7 @@ The same picture is clearer in three dimensions. Stack each wound copy of the si
 
 {{ figure(src="/img/notes/fft-sound-wave/fft_3d_winding.png", alt="3D plot stacking the wound signal along a winding-frequency axis, with centers of mass bulging at 2 and 3 Hz", caption="The same winding viewed in 3D. Each slice is the signal wound at one frequency; the red centers of mass bulge out only at 2 and 3 Hz.") }}
 
-That is the one-sentence summary of the entire transform: **the DFT measures how well the signal lines up with a corkscrew of each frequency.** The complex exponential $e^{-i 2\pi k n / N}$ is that corkscrew, and the sum is the alignment score. Everything that follows — the matrix form, the even/odd split, the butterflies — is just machinery for computing all $N$ of these alignment scores quickly.
+That is the one-sentence summary of the entire transform: **the DFT measures how well the signal lines up with a corkscrew of each frequency.** The complex exponential $e^{-i 2\pi k n / N}$ is that corkscrew, and the sum is the alignment score. Everything that follows (the matrix form, the even/odd split, the butterflies) is just machinery for computing all $N$ of these alignment scores quickly.
 
 ## The DFT as a Matrix
 
@@ -607,6 +603,4 @@ Finally, we tested the whole pipeline on a synthetic sound wave and recovered th
 
 So in the end, the DFT is the definition and the FFT is the algorithm. The DFT says what we want. The FFT says how to get it quickly. The exponential keeps showing up for the same reason it does in logistic and softmax regression: it is the right basis when the underlying object has multiplicative structure. Roots of unity are multiplicative. Splitting them in half, again and again, is exactly what turns $N^2$ into $N \log N$.
 
-I think this topic reads better when the DFT is taken seriously first and the FFT is treated as its natural algorithmic consequence. The mathematics carries most of the weight, the sound-wave example makes the abstraction concrete, and the code closes the loop.
-
-If you think there is a better example, a better visualization, or a cleaner way to extend this note, feel free to suggest it. From here, the natural next steps are the short-time Fourier transform, spectrograms, and the jump from Fourier bases to wavelets.
+If I keep going with this, the next stops are the short-time Fourier transform and spectrograms, and after that the jump from Fourier bases to wavelets. Corrections and better examples are welcome in the comments.

@@ -160,7 +160,9 @@
   <div class="page-shell">
     <header class="site-header">
       <div class="site-brand">
+        {% if current != "/" %}
         <a href="{{ get_url(path='/') }}" class="site-title">{{ config.extra.site_title }}</a>
+        {% endif %}
       </div>
       <nav class="site-nav" aria-label="Primary">
         <a href="{{ get_url(path='/notes/') }}"{% if current is starting_with("/notes/") %} aria-current="page"{% endif %}>Notes</a>

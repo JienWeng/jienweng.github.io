@@ -39,6 +39,9 @@
   <section class="well">
     <article class="prose article-prose">
       {{ page.content | safe }}
+      {% if page.path is starting_with("/notes/") %}
+      <div class="tombstone" aria-hidden="true"></div>
+      {% endif %}
     </article>
 
     {% if page.extra.topic and page.extra.topic == "Regression" %}

@@ -24,17 +24,15 @@ featured = false
 reaction = true
 +++
 
-Most explanations of tree-based models also start too late. They show a Random Forest or XGBoost formula and skip the real chain of ideas.
+A single decision tree is powerful but unstable. Nearly everything about Random Forests and XGBoost follows from that one sentence, so that is where this note starts, not at the formulas. Forests and boosting are just two different answers to the instability problem.
 
-The clean chain is:
+The path is:
 
 $$
 \text{decision rules} \to \text{decision trees} \to \text{bagging} \to \text{Random Forest} \to \text{boosting} \to \text{XGBoost}.
 $$
 
-Once that chain is visible, forests and boosting stop feeling like magic. They are two different answers to the same problem: a single decision tree is powerful but unstable.
-
-This note is intuition-first, but the math is explicit. The goal is that every formula feels earned, not memorized.
+Intuition first, but the math is written out in full. I dislike formulas that appear from nowhere.
 
 > **Run it yourself.** The worked example is collected in a runnable notebook: [**download `tree-based-models.ipynb`**](/notebooks/tree-based-models.ipynb). It uses `numpy`, `scikit-learn`, and (optionally) `xgboost`.
 
@@ -341,6 +339,6 @@ Decision trees are powerful but unstable, so we average them. That gives us bagg
 
 Random Forests reduce variance but still leave bias on the table, so we build trees sequentially to correct errors. That gives us boosting, and XGBoost.
 
-In the end, the story is clean: trees define nonlinear partitions, bagging stabilizes them, and boosting makes them accurate. Once you keep that chain in view, the formulas stop looking random and start looking inevitable.
+Trees define nonlinear partitions, bagging stabilizes them, boosting makes them accurate. That is the whole story, and every formula above is one of those three moves written out.
 
-If you want a deeper dive into hyperparameter tuning or multi-class examples, say the word and I will extend the notebook.
+At some point I may extend the notebook with hyperparameter tuning and a multi-class example. If you want that sooner, leave a comment.

@@ -4,35 +4,33 @@ description = "Readings, essays, and a few durable side interests."
 template = "section.html"
 +++
 
-This page is for material that is useful to return to but does not belong in the formal research record.
+Things I keep coming back to that do not belong anywhere else on the site.
 
-# Reading Notes and Papers Worth Re-reading
+## Books
 
 - *Deep Learning*, by Goodfellow, Bengio, and Courville
 - *Reinforcement Learning: An Introduction*, by Sutton and Barto
 
-## Essays Worth Returning To
+## Essays
 
 - [The Bitter Lesson](http://incompleteideas.net/IncIdeas/BitterLesson.html)
 - [The Unreasonable Effectiveness of RNNs](https://karpathy.github.io/2015/05/21/rnn-effectiveness/)
 - [A Recipe for Training Neural Networks](https://karpathy.github.io/2019/04/25/recipe/)
 
-## Talks and Lectures Worth Watching
+## Talks and lectures
 
 - [3Blue1Brown: Essence of Linear Algebra](https://www.3blue1brown.com/topics/linear-algebra)
 - [Andrej Karpathy on YouTube](https://www.youtube.com/@AndrejKarpathy)
 
-## Questions I Keep Returning To
+## Questions I keep coming back to
 
 - What information does an agent actually need to coordinate well?
-- Should we try to mimic a human way of thinking, or should we let a system learn by exploration without building that structure in first?
+- Should we try to mimic a human way of thinking, or let a system learn by exploration without building that structure in first?
 
-## Viewpoints Worth Keeping Around
+## Two viewpoints
 
-Richard Sutton's argument in [The Bitter Lesson](http://incompleteideas.net/IncIdeas/BitterLesson.html) is still one of the clearest warnings against overvaluing hand-designed structure. The broad point is not only that compute and search scale well, but that many of our favorite clever constructions do not survive contact with systems that can keep learning, predicting, and improving from larger experience. I keep returning to that because it cuts against a common instinct: if a system feels more interpretable or more human-designed, we often assume it is more principled. Sutton's argument is that this can be exactly backwards.
+Richard Sutton's argument in [The Bitter Lesson](http://incompleteideas.net/IncIdeas/BitterLesson.html) is still one of the clearest warnings against overvaluing hand-designed structure. Compute and search scale; most of our clever constructions do not survive contact with systems that keep learning from more experience. I come back to it because it cuts against a common instinct. When a system feels more interpretable or more human-designed, we tend to assume it is more principled. Sutton says this can be exactly backwards.
 
-Andrej Karpathy's [Animals vs Ghosts](https://karpathy.bearblog.dev/animals-vs-ghosts/) adds another distinction that is useful to keep around. His framing is that present-day frontier systems may not be "animals" in Sutton's sense at all. They may instead be "ghosts", systems saturated with human text, human priors, and human engineering, yet still capable of doing real work in the world. That matters because it raises a genuine question for AI research. Should we try to imitate a human-like way of thinking, or should we let a system acquire competence through exploration and interaction without insisting that the internal route look familiar to us?
+Andrej Karpathy's [Animals vs Ghosts](https://karpathy.bearblog.dev/animals-vs-ghosts/) pushes back from another side. His framing is that current frontier systems may not be "animals" in Sutton's sense at all but "ghosts": saturated with human text, human priors, and human engineering, and still able to do real work in the world. Which leaves an honest open question. Do we imitate a human way of thinking, or let a system earn its competence through exploration, even if the internal route looks nothing like us?
 
-I do not think these viewpoints cancel each other out. Sutton is a useful corrective against premature attachment to human-crafted structure. Karpathy is a useful corrective against pretending that current systems are already clean examples of the bitter lesson carried through to its limit. One viewpoint says not to trust handcrafted stories too much; the other says not to confuse today's engineered systems with the final form of learnable intelligence.
-
-It's worth keeping the tension alive. It matters for reinforcement learning, for agent design, and even for mathematical modelling more generally. Sometimes the right question is not "what is the most human-looking way to do this?" but "what structure is actually necessary, and what should be left to learning?"
+I do not think the two cancel out. Sutton warns against trusting handcrafted stories too much. Karpathy warns against pretending today's engineered systems are already the bitter lesson carried to its limit. I find the tension useful, for reinforcement learning and for modelling generally. Often the real question is not what the most human-looking way to do something is, but what structure is actually necessary and what can be left to learning.

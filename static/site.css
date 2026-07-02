@@ -79,6 +79,7 @@ a {
   color: var(--accent);
   text-decoration-thickness: 1px;
   text-underline-offset: 0.18em;
+  transition: color 150ms ease;
 }
 
 a:hover {
@@ -95,7 +96,7 @@ img {
 }
 
 .page-shell {
-  width: min(100%, 104rem);
+  width: min(100%, 76rem);
   margin: 0 auto;
   padding: 0 var(--page-gutter) var(--space-7);
 }
@@ -107,7 +108,7 @@ img {
   gap: var(--space-3);
   align-items: start;
   padding: var(--space-4) 0;
-  border-bottom: 1px solid var(--rule);
+  border-bottom: 4px double var(--rule);
 }
 
 .site-footer {
@@ -908,8 +909,46 @@ summary:focus-visible {
   outline-offset: 2px;
 }
 
+.edition-row {
+  transition: background-color 150ms ease;
+}
+
 .edition-row:hover {
   background: var(--accent-soft);
+}
+
+.article-prose {
+  counter-reset: fig;
+}
+
+.article-prose figure figcaption::before {
+  counter-increment: fig;
+  content: "Figure " counter(fig) ". ";
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.tombstone {
+  max-width: var(--measure);
+  margin: var(--space-5) 0 0;
+  text-align: right;
+}
+
+.tombstone::after {
+  content: "";
+  display: inline-block;
+  width: 0.45em;
+  height: 0.45em;
+  background: var(--ink-soft);
+}
+
+.collection-project-thumb img {
+  filter: grayscale(1);
+  transition: filter 300ms ease;
+}
+
+.collection-project:hover .collection-project-thumb img {
+  filter: none;
 }
 
 .series-nav {

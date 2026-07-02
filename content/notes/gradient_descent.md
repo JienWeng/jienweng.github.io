@@ -24,11 +24,11 @@ featured = false
 reaction = true
 +++
 
-This note explains gradient descent as an optimization procedure for minimizing differentiable objectives and clarifies the role of the learning rate in convergence behavior. The practical question is not only how the rule works, but when it becomes unstable. The walkthrough focuses on the core math and interpretable examples.
+Gradient descent is simple to state and easy to get wrong in practice, almost always through the learning rate. This note works through the rule itself and then through what happens when the learning rate is too small, reasonable, and too large, with small examples you can follow by hand.
 
-## Mathematics Technical Parts
+## The Update Rule
 
-Consider a differentiable function $f: \mathbb{R}^n \to \mathbb{R}$. The gradient of $f$ at a point $x \in \mathbb{R}^n$ is denoted as $\nabla f(x)$, which is a vector of partial derivatives. The gradient points in the direction of the steepest ascent of the function. To find a local minimum, we need to move in the opposite direction of the gradient. Hence, the exploits this by moving in the opposite direction: 
+Consider a differentiable function $f: \mathbb{R}^n \to \mathbb{R}$. The gradient of $f$ at a point $x \in \mathbb{R}^n$ is denoted as $\nabla f(x)$, which is a vector of partial derivatives. The gradient points in the direction of steepest ascent. To find a local minimum, gradient descent simply moves the other way:
 
 $$x_{k+1} = x_k - \alpha \nabla f(x_k),$$
 
@@ -37,7 +37,7 @@ where:
 - $\alpha$ is the learning rate, where $\alpha > 0$,
 - $\nabla f(x_k)$ is the gradient of $f$ at point $x_k$.
 
-We simulate two different scenarios, one with postive gradient in loss function, and another with negative gradient in loss function.
+We simulate two scenarios, one where the loss has a positive gradient and one where it is negative.
 
 <hr>
 
@@ -194,7 +194,7 @@ where $x^*$ is the global minimum point of $f$. This indicates that as the numbe
 
 This completes the proof of convergence for the gradient descent algorithm under the assumptions of convexity and Lipschitz continuous gradients. The algorithm effectively finds a local minimum of the function $f(x)$ by iteratively updating the points in the direction of the steepest descent.
 
-But this is completely tied to the choice of learning rate $\alpha$. If $\alpha$ is too large, the algorithm may overshoot the minimum and diverge. If $\alpha$ is too small, the convergence will be very slow. Therefore, choosing an appropriate learning rate is crucial for the success of the gradient descent algorithm. They are various techniques to adaptively adjust the learning rate during the optimization process, such as learning rate schedules and adaptive optimization algorithms like Adam and RMSprop, which we can explore in future posts.
+But all of this hangs on the choice of learning rate $\alpha$. Too large and the algorithm overshoots the minimum and diverges. Too small and convergence crawls. There are various ways to adapt the learning rate during optimization, like schedules and optimizers such as Adam and RMSprop, which I may cover in a future post.
 
 <hr>
 
@@ -210,7 +210,7 @@ To mitigate the issues with saddle points, various techniques can be employed, s
 
 ## Conclusion
 
-Despite its simplicity, gradient descent is a powerful optimization algorithm that forms the backbone of many machine learning algorithms. By iteratively updating the parameters in the direction of the steepest descent, gradient descent effectively finds local minima of differentiable functions. Understanding its mathematical foundations and practical implementations is crucial for anyone working in the field of machine learning and optimization. 
+That is gradient descent: a one-line update rule that ends up as the backbone of most of machine learning. 
 
 It's remarkable how such a simple iterative process can lead optimize almost any complex function in real life applications. I truly cannot appreciate enough the beauty of this elegant mathematical concept. 
 
