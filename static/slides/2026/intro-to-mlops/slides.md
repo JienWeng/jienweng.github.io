@@ -14,7 +14,7 @@ As scientists, you must account for reproducibility.
 It is often done with code such as in https://paperswithcode.com/
 
 .center[
-    <img src="img/paper-with-code.png" width="75%" />
+    <img src="img/paper-with-code.webp" width="75%" />
 ]
 
 ---
@@ -22,7 +22,7 @@ It is often done with code such as in https://paperswithcode.com/
 ## What does reproducibility imply ?
 
 .center[
-    <img src="img/mlops-trojan.png" width="75%" />
+    <img src="img/mlops-trojan.webp" width="75%" />
 ]
 
 
@@ -30,7 +30,7 @@ It is often done with code such as in https://paperswithcode.com/
 ## Software development cycle
 
 .center[
-<img src="img/dev-cycle.png" width="90%" />
+<img src="img/dev-cycle.webp" width="90%" />
 ]
 
 ---
@@ -60,7 +60,7 @@ exclude: true
 ]
 
 .center[
-<img src="img/dev-cycle.png" width="45%" />
+<img src="img/dev-cycle.webp" width="45%" />
 ]
 
 ---
@@ -105,7 +105,7 @@ exclude: true
 ## DevOps
 
 .center[
-  <img src="img/devops-trident.png" width="50%" />
+  <img src="img/devops-trident.webp" width="50%" />
 ]
 
 .footnote[https://aws.amazon.com/devops/what-is-devops]
@@ -116,7 +116,7 @@ exclude: true
 
 
 .center[
-<img src="img/mlcycle.jpg" width="75%" />
+<img src="img/mlcycle.webp" width="75%" />
 ]
 
 

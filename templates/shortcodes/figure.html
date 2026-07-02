@@ -1,5 +1,5 @@
 <figure class="wide">
-  <img src="{{ src }}" alt="{{ alt | default(value='') }}">
+  <img src="{{ src }}" alt="{{ alt | default(value='') }}" loading="lazy" decoding="async">
   {% if caption %}
   <figcaption>{{ caption }}</figcaption>
   {% endif %}

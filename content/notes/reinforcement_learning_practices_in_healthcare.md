@@ -1,5 +1,5 @@
 +++
-title = "Reinforcement learning practices in healtcare applications"
+title = "Reinforcement learning practices in healthcare applications"
 description = "There are fundamentally 3 important practices to consider when applying reinforcement learning in healthcare settings."
 date = 2025-10-21
 updated = 2025-10-21
@@ -29,13 +29,13 @@ This note reviews practical reinforcement learning use cases in healthcare and t
 
 In healthcare applications, artificial intelligence (AI) plays a crucial role in transforming patient care, diagnostics, and treatment planning to make healthcare more efficient and effective. However, if AI is used improperly, it may leads to worse outcomes rather than improved ones.
 
-In the subset of AI, reinforcement learning (RL) has shown great promise in optimising sequential decision-making processes, which are common settings in healtcare industry. However, applying RL in healthcare settings requires careful consideration of several important practices to ensure a safety outcome. To illustrate the pitfalls of reinforcement learning, we consider the sepsis management, which remains wide uncertainty in the way clinicians make decisions. 
+In the subset of AI, reinforcement learning (RL) has shown great promise in optimising sequential decision-making processes, which are common settings in healthcare industry. However, applying RL in healthcare settings requires careful consideration of several important practices to ensure a safety outcome. To illustrate the pitfalls of reinforcement learning, we consider the sepsis management, which remains wide uncertainty in the way clinicians make decisions. 
 
 In the context of sepsis, a history may include a patient's vital signs, laboratory results, administered treatments, and other relevant clinical information over time. The actions could involve decisions such as administering fluids, vasopressors, or antibiotics at different time points. The rewards are typically defined based on patient outcomes, such as survival rates, length of hospital stay, or improvement in clinical scores. Note that defining ideal sepsis resuscitation strategies is challenging due to the complex and dynamic nature of the condition, as well as the variability in patient responses to treatments, therefore it is not straightforward to define short-term rewards for each action taken.
 
 Here are three fundamental concerns when applying reinforcement learning in healthcare:
 
-# Is the AI given access to all variables that infleunce decision making?
+# Is the AI given access to all variables that influence decision making?
 
 RL agent can only ook at the recorded data, however there are much more information and context that should be taken into consideration. Failing to consider all variables may result in esitmates that are confounded by spurious correlation.
 

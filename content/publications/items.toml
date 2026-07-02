@@ -4,7 +4,7 @@ title = "The Primacy of Information Design Over Algorithm Selection in Multi-Age
 authors = "Jien Weng Lai, Wei Lun Tan, Ying Loong Lee, Ming Fai Chow"
 status = "Under Review @ IEEE Social Computation"
 date = "Apr 2026"
-link = "https://doi.org/10.2139/ssrn.6323159"
+# TODO: add preprint/DOI link once the paper is public
 content = """
 A full-factorial experiment in the Public Goods Game shows that information regime and incentive strength explain 85.8% of cooperation-rate variance; algorithm choice accounts for just 3.8%. Agents with the least information cooperate most (83% vs 42% under full observation), attributable to state-space compression. TreeSHAP and Shapley-variance decomposition confirm information structure, not algorithm selection is the primary design lever for cooperation.
 """

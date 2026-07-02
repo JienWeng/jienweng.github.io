@@ -28,7 +28,7 @@ The chain the deck walks, and so will we:
 
 The starting motivation is research integrity. A result you cannot reproduce is hard to trust, hard to build on, and hard to defend. In software-heavy science this is why people publish code alongside papers (the [Papers with Code](https://paperswithcode.com) culture). But "publish the code" is not enough on its own.
 
-{{ figure(src="/slides/2026/intro-to-mlops/img/paper-with-code.png", alt="Papers with Code listing", caption="Sharing code with papers is a start. Credit: paperswithcode.com") }}
+{{ figure(src="/slides/2026/intro-to-mlops/img/paper-with-code.webp", alt="Papers with Code listing", caption="Sharing code with papers is a start. Credit: paperswithcode.com") }}
 
 Reproducibility really means being able to recreate a result from **all** of its ingredients:
 
@@ -37,7 +37,7 @@ Reproducibility really means being able to recreate a result from **all** of its
 - the **environment** (which library versions?),
 - and the **parameters** that produced the run.
 
-{{ figure(src="/slides/2026/intro-to-mlops/img/mlops-trojan.png", alt="What reproducibility implies", caption="What reproducibility really implies: far more than just the code.") }}
+{{ figure(src="/slides/2026/intro-to-mlops/img/mlops-trojan.webp", alt="What reproducibility implies", caption="What reproducibility really implies: far more than just the code.") }}
 
 Machine learning makes this harder than ordinary software because **three things change over time**, not one:
 
@@ -65,7 +65,7 @@ Classic software development moves through repeating stages:
 
 Run those once, by hand, and you have traditional software delivery: slow, batched, and error-prone at the hand-offs.
 
-{{ figure(src="/slides/2026/intro-to-mlops/img/dev-cycle.png", alt="The software development cycle", caption="The stages of the software development cycle.") }}
+{{ figure(src="/slides/2026/intro-to-mlops/img/dev-cycle.webp", alt="The software development cycle", caption="The stages of the software development cycle.") }}
 
 ## Automating it: DevOps and CI/CD
 
@@ -85,7 +85,7 @@ DevOps is usually described as resting on three legs — often drawn as a triden
 
 The tools get the attention, but the culture and the process are what make the automation stick.
 
-{{ figure(src="/slides/2026/intro-to-mlops/img/devops-trident.png", alt="DevOps trident: people, process, tools", caption="DevOps rests on three legs: people, process, and tools. Credit: aws.amazon.com/devops") }}
+{{ figure(src="/slides/2026/intro-to-mlops/img/devops-trident.webp", alt="DevOps trident: people, process, tools", caption="DevOps rests on three legs: people, process, and tools. Credit: aws.amazon.com/devops") }}
 
 ## The machine-learning lifecycle
 
@@ -100,7 +100,7 @@ Machine learning adds its own stages on top of the software cycle. A typical ML 
 7. **Model serving** — package and deploy it to make predictions.
 8. **Model monitoring** — watch performance and decide when to retrain.
 
-{{ figure(src="/slides/2026/intro-to-mlops/img/mlcycle.jpg", alt="The ML cycle", caption="The machine-learning cycle. Credit: ml-ops.org") }}
+{{ figure(src="/slides/2026/intro-to-mlops/img/mlcycle.webp", alt="The ML cycle", caption="The machine-learning cycle. Credit: ml-ops.org") }}
 
 {{ figure(src="/slides/2026/intro-to-mlops/img/mlops-end-to-end.png", alt="End-to-end ML lifecycle", caption="The same lifecycle, end to end — data stages feed model stages, and monitoring loops back to the start.") }}
 
