@@ -16,7 +16,7 @@ featured = true
 [[collection]]
 type = "card_simple"
 title = "Quandatics Academy"
-date = "Apr 2026 - Present" # TODO: confirm coaching engagement start date
+date = "Jun 2026 - Present"
 link = "https://academy.quandatics.com"
 content = "Data Science & Machine Learning Trainer"
 featured = true
