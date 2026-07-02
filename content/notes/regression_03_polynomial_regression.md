@@ -13,7 +13,7 @@ tags = ["math", "statistics", "regression"]
 [extra]
 topic = "Regression"
 lang = "en"
-toc = false
+toc = true
 comment = true
 copy = false
 outdate_alert = false

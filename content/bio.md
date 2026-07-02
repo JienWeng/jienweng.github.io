@@ -3,8 +3,6 @@ title = "Bio"
 description = "Background and research interests of Jien Weng."
 +++
 
-# Bio
-
 I am an AI researcher with Monash University Malaysia and a proprietary research team, and I help finance, insurance, and analytics teams make ML/AI work in production. The center of my work is mathematical modelling, especially where it meets learning, decision-making, finance, and environmental systems.
 
 Alongside research, I work with businesses on applied data and AI. I am currently a Business Transformation Consultant with [Quandatics](https://quandatics.com), a data and AI consultancy, and a Data Science & Machine Learning Trainer with [Quandatics Academy](https://academy.quandatics.com), with adjacent threads in actuarial solutions and finance data engineering. If that side of my work is what brought you here, see [Work With Me](/services/).

@@ -768,8 +768,8 @@ body.projects-page .collection-list {
 }
 
 body.projects-page .collection-project {
-  grid-template-columns: 5.5rem minmax(0, 1fr);
-  gap: var(--space-4);
+  grid-template-columns: 9rem minmax(0, 1fr);
+  gap: var(--space-5);
   align-items: start;
 }
 
@@ -910,6 +910,35 @@ summary:focus-visible {
 
 .edition-row:hover {
   background: var(--accent-soft);
+}
+
+.series-nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+  margin-top: var(--space-6);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--rule);
+  max-width: var(--measure);
+}
+
+.series-slot {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  font-size: 0.92rem;
+}
+
+.series-slot-next {
+  text-align: right;
+}
+
+.series-label {
+  font-family: var(--label);
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
 }
 
 .collection-status {

@@ -3,8 +3,6 @@ title = "Work With Me"
 description = "The practical side of my work: helping teams get ML, data, and automation working inside a real business."
 +++
 
-# Work With Me
-
 Some of my work is research. The rest is practical: helping teams get ML, data, and automation working inside a real business. This page is about the practical side.
 
 Right now that means two things. I am a Business Transformation Consultant with [Quandatics](https://quandatics.com), a data and AI consultancy, working on process enhancement and automation with their Business Transformation Office. And I am a Data Science & Machine Learning Trainer with [Quandatics Academy](https://academy.quandatics.com), where I currently coach a telecommunications analytics team. Earlier work took me through actuarial, insurance, and financial-services settings.
