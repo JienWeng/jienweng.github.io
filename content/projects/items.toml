@@ -1,9 +1,23 @@
 [[collection]]
 type = "art"
+title = "AI Video Generation Orchestration"
+subtitle = "Fully AI-powered video series pipeline."
+content = "An orchestration system for streamlined, end-to-end AI video generation — chaining generation stages into a fully AI-powered pipeline for producing video series. In progress."
+# TODO: add link and image when there is something to show
+
+[[collection]]
+type = "art"
+title = "Custom CRM System"
+subtitle = "CRM built from scratch."
+content = "A custom customer-relationship-management system tailored to a specific workflow rather than adapting an off-the-shelf product. In progress."
+# TODO: add link and image when there is something to show
+
+[[collection]]
+type = "art"
 title = "ZakatDAO"
 subtitle = "Smart-contract zakat distribution prototype."
 content = "A prototype for a more auditable zakat-distribution system. It uses smart-contract logic as the accounting and distribution layer."
-img = "/img/projects/zakatdao/banner.png"
+img = "/img/projects/zakatdao/banner.webp"
 link = "https://github.com/JienWeng/ZakatDAO"
 
 [[collection]]
@@ -35,5 +49,5 @@ type = "art"
 title = "Geospatial Analysis forked from Kepler.gl"
 subtitle = "Monash geospatial analysis and open-data platform."
 content = "A Monash-linked fork of kepler.gl for geospatial analysis and open-data sharing in the Klang Valley area. The project is still in progress."
-img = "https://d1a3f4spazzrp4.cloudfront.net/kepler.gl/website/hero/kepler.gl-contours.png"
+img = "/img/projects/kepler/kepler.png"
 link = "https://github.com/JienWeng/kepler.gl"

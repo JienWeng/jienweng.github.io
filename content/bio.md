@@ -5,7 +5,9 @@ description = "Background and research interests of Jien Weng."
 
 # Bio
 
-I am a research assistant at Monash University Malaysia. The center of my work is mathematical modelling, especially where it meets learning, decision-making, finance, and environmental systems.
+I help finance, insurance, and analytics teams make ML/AI work in production, and I am a research assistant at Monash University Malaysia. The center of my work is mathematical modelling, especially where it meets learning, decision-making, finance, and environmental systems.
+
+Alongside research, I work with businesses on applied data and AI. I am currently engaged with [Quandatics](https://quandatics.com), a data and AI consultancy, on finance and business-transformation work, with adjacent threads in actuarial solutions and finance data engineering. If that side of my work is what brought you here, see [Work With Me](/services/).
 
 I work on multi-agent reinforcement learning, market microstructure, and quantitative finance, but I do not think of those as isolated topics. I treat them as different settings in which modelling assumptions, information constraints, and regime structure determine what a system can actually learn or control.
 

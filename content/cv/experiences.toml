@@ -1,5 +1,28 @@
 [[collection]]
 type = "card_simple"
+title = "Proprietary Research Team"
+date = "Jun 2026 - Present"
+content = "Researcher (undisclosed engagement)"
+featured = false
+
+[[collection]]
+type = "card_simple"
+title = "Quandatics"
+date = "Apr 2026 - Present"
+link = "https://quandatics.com"
+content = "Business Transformation Consultant"
+featured = true
+
+[[collection]]
+type = "card_simple"
+title = "Quandatics Academy"
+date = "Apr 2026 - Present" # TODO: confirm coaching engagement start date
+link = "https://academy.quandatics.com"
+content = "Data Science & Machine Learning Trainer"
+featured = true
+
+[[collection]]
+type = "card_simple"
 title = "Monash University"
 date = "Dec 2025 - Present"
 icon = "https://retail.apps.monash.edu/retail/img/monash-logo-mono.png"

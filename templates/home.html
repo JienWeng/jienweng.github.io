@@ -1,30 +1,21 @@
 {% extends "base.html" %} {% block title %}{{ config.title }}{% endblock title
 %} {% block body_class %}home{% endblock body_class %} {% block content %} {%
-set notes = get_section(path="notes/_index.md") %} {% set blog =
-get_section(path="blog/_index.md") %}
+set notes = get_section(path="notes/_index.md") %}
 
 <main class="home-ledger">
     <section class="title-sheet">
         <h1 class="home-title">{{ config.extra.site_title }}</h1>
         <p class="home-abstract">
-            I work on reinforcement learning, information structure, and
-            statistical modelling. Most of my interest is in cases where the
-            informational regime changes the problem before algorithm choice
-            does. This site collects notes, essays, publications, and smaller
-            technical work around those interests. Some pieces are direct
-            research outputs, some are working explanations, and some are
-            smaller artifacts that were useful enough to keep.
+            I help finance, insurance, and analytics teams turn ML/AI from
+            experiments into production business value — bringing quant rigor,
+            MLOps discipline, and hands-on coaching. I am currently engaged
+            with <a href="https://quandatics.com" target="_blank" rel="noreferrer noopener">Quandatics</a>
+            on data and AI work in finance, alongside research in mathematical
+            modelling, multi-agent reinforcement learning, and market
+            microstructure at Monash University Malaysia. If you have a
+            business problem that needs ML/AI to actually work, see
+            <a href="{{ get_url(path='/services/') }}">Work With Me</a>.
         </p>
-        <div class="section-index" aria-label="Section index">
-            <a href="{{ blog.permalink }}">Blog / Essays</a>
-            <a href="{{ notes.permalink }}">Notes</a>
-            <a href="{{ get_url(path='/slides/') }}">Slides</a>
-            <a href="{{ get_url(path='/bio/') }}">Bio</a>
-            <a href="{{ get_url(path='/publications/') }}">Publications</a>
-            <a href="{{ get_url(path='/cv/') }}">CV</a>
-            <a href="{{ get_url(path='/projects/') }}">Pet Projects</a>
-            <a href="{{ get_url(path='/misc/') }}">Misc</a>
-        </div>
     </section>
 
     <aside class="home-marginalia">
@@ -60,24 +51,6 @@ get_section(path="blog/_index.md") %}
 
     <section class="ledger-main">
         <section class="index-block primary-index">
-            <div class="index-header">
-                <h2>Recent Blog / Essays</h2>
-                <a href="{{ blog.permalink }}">index</a>
-            </div>
-            <div class="edition-list">
-                {% for item in blog.pages | slice(end=config.extra.home_posts)
-                %}
-                <a class="edition-row" href="{{ item.permalink }}">
-                    <span class="edition-title">{{ item.title }}</span>
-                    <span class="edition-date"
-                        >{{ item.date | date(format="%b %-d, %Y") }}</span
-                    >
-                </a>
-                {% endfor %}
-            </div>
-        </section>
-
-        <section class="index-block">
             <div class="index-header">
                 <h2>Recent Notes</h2>
                 <a href="{{ notes.permalink }}">index</a>
