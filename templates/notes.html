@@ -19,7 +19,7 @@
     </article>
     {% endif %}
 
-    {% set topics = ["Machine Learning", "Regression", "Signal Processing", "Reinforcement Learning", "Sustainability"] %}
+    {% set topics = ["Machine Learning", "Regression", "Stochastic Modelling", "Signal Processing", "Reinforcement Learning", "Sustainability"] %}
 
     {% for topic in topics %}
       {% set group = section.pages | filter(attribute="extra.topic", value=topic) %}

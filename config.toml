@@ -30,7 +30,7 @@ anchors = "on"
 
 [extra]
 site_title = "Jien Weng"
-tagline = "Research, notes, working papers, and adjacent curiosities."
+tagline = ""
 author = "Jien Weng"
 email = "laijienweng@gmail.com"
 github = "https://github.com/jienweng"

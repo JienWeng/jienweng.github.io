@@ -11,7 +11,7 @@ Alongside research, I work with businesses on applied data and AI. I am currentl
 
 I work on multi-agent reinforcement learning, market microstructure, and quantitative finance, but I do not think of those as isolated topics. I treat them as different settings in which modelling assumptions, information constraints, and regime structure determine what a system can actually learn or control.
 
-The questions that keep showing up in my work are simple to state. What information does an agent actually need in order to act well? When does a change in regime matter more than a change in method? When does prediction improve control, and when does it only create the appearance of sophistication?
+The questions that keep showing up in my work are simple to state. What information does an agent actually need in order to act well? When does a change in regime matter more than a change in method?
 
 I am also building stronger foundations in stochastic modelling and environmental modelling. That is still an active direction of study rather than a finished claim to expertise, and I want to state that directly. It matters because I want my research record to connect reinforcement learning and finance to more classical modelling questions, including environmental systems and current wastewater treatment plant research.
 
