@@ -180,6 +180,7 @@
       <div>© {{ now() | date(format="%Y") }} {{ config.extra.author }}. Last built {{ now() | date(format="%b %Y") }}.</div>
       <div class="footer-links">
         <a href="{{ get_url(path='/now/') }}">Now</a>
+        <a href="{{ get_url(path='/log/') }}">Log</a>
         <a href="{{ get_url(path='/blog/') }}">Blog</a>
         <a href="{{ get_url(path='/misc/') }}">Misc</a>
         <a href="{{ get_url(path='atom.xml') }}">RSS</a>
