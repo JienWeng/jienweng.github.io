@@ -2,7 +2,7 @@
 title = "Optimal Execution with Alpha Signals, Explained from Almgren-Chriss"
 description = "The idea behind my SSRN paper: add a mean-reverting alpha signal to the optimal liquidation problem and a closed-form trading rule falls out of the HJB equation."
 date = 2026-07-03
-draft = true
+draft = false
 
 [taxonomies]
 categories = ["2026"]
@@ -33,8 +33,6 @@ Because the signal is random, the schedule can no longer be precomputed. The pro
 $$
 v_t^{*} = a(t)\, q_t + b(t)\, \alpha_t .
 $$
-
-<!-- TODO(Jien): if you want the coefficient ODEs for a(t), b(t) here, lift them from the paper. The note works without them. -->
 
 The first term is the familiar liquidation clock: it plays the same role as the Almgren-Chriss trajectory and reduces to it when the signal is switched off. The second term tilts execution toward the signal, trading faster when the drift is against you and more patiently when it is with you. And because $\alpha$ mean-reverts, the tilt is weighted by how long the signal lives: as $\kappa$ grows, $b(t)$ shrinks, and a rumour barely moves the schedule.
 

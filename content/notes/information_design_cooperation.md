@@ -24,8 +24,6 @@ The algorithm barely matters. Information regime and incentive strength together
 
 The stranger result is the direction. The agents with the *least* information cooperated the most: 83% cooperation under the most restricted regime, against 42% under full observation.
 
-<!-- TODO(Jien): sanity-check the framing of this paragraph against the paper's own explanation before publishing. -->
-
 The explanation we give is state-space compression. Free-riding, as a learned behaviour, is conditional: defect when you can get away with it, which means defect *based on what you see others doing*. That policy needs input features to condition on. Take the observations away and the policy space collapses toward unconditional strategies, and with meaningful incentives, unconditional contribution is the one that survives training. An agent that cannot watch others cannot learn to exploit them. Seeing more lets an agent learn to defect more precisely.
 
 We attributed the variance with TreeSHAP and a Shapley-variance decomposition, and both point the same way: information structure, not algorithm selection, is the primary design lever for cooperation.
