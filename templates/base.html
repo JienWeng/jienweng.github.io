@@ -177,8 +177,9 @@
     {% block content %}{% endblock content %}
 
     <footer class="site-footer">
-      <div>© 2026 {{ config.extra.author }}</div>
+      <div>© {{ now() | date(format="%Y") }} {{ config.extra.author }}. Last built {{ now() | date(format="%b %Y") }}.</div>
       <div class="footer-links">
+        <a href="{{ get_url(path='/now/') }}">Now</a>
         <a href="{{ get_url(path='/blog/') }}">Blog</a>
         <a href="{{ get_url(path='/misc/') }}">Misc</a>
         <a href="{{ get_url(path='atom.xml') }}">RSS</a>
@@ -186,6 +187,7 @@
         <a href="{{ config.extra.github }}" target="_blank" rel="noreferrer noopener">GitHub</a>
         <a href="{{ config.extra.linkedin }}" target="_blank" rel="noreferrer noopener">LinkedIn</a>
         <a href="{{ config.extra.orcid }}" target="_blank" rel="noreferrer noopener">ORCID</a>
+        <a href="{{ get_url(path='/colophon/') }}">Colophon</a>
       </div>
     </footer>
   </div>

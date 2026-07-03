@@ -942,6 +942,11 @@ summary:focus-visible {
   background: var(--ink-soft);
 }
 
+.bibtex {
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
 .collection-project-thumb img {
   filter: grayscale(1);
   transition: filter 300ms ease;

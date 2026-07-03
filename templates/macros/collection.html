@@ -86,6 +86,12 @@
     </ul>
     {% endif %}
   </details>
+  {% if item.bibtex %}
+  <details class="collection-details">
+    <summary>Cite</summary>
+    <pre class="bibtex">{{ item.bibtex }}</pre>
+  </details>
+  {% endif %}
 </article>
 {% endmacro %}
 
