@@ -1,6 +1,6 @@
 base_url = "https://jienweng.github.io"
 title = "Jien Weng"
-description = "Research notes, essays, publications, and working papers by Jien Weng."
+description = "Independent consultant and product manager working across business transformation, AI, data, and Web3."
 default_language = "en"
 output_dir = "public"
 compile_sass = true
@@ -30,7 +30,7 @@ anchors = "on"
 
 [extra]
 site_title = "Jien Weng"
-tagline = "Research, notes, working papers, and adjacent curiosities."
+tagline = "Business transformation, AI, data, Web3, and research."
 author = "Jien Weng"
 email = "laijienweng@gmail.com"
 github = "https://github.com/jienweng"

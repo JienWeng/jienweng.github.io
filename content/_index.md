@@ -1,18 +1,18 @@
 +++
 title = "Jien Weng"
-description = "Research, notes, publications, and essays by Jien Weng."
+description = "Independent consultant and product manager working across business transformation, AI, data, and Web3."
 template = "home.html"
 +++
 
-I am a research assistant working across mathematical modelling, multi-agent reinforcement learning, and market microstructure.
+I work across business transformation, AI, data, and Web3 product development. As an independent consultant, I help teams improve processes, build practical systems, and turn ideas into working products. I also conduct AI research and deliver data and machine-learning training.
 
-My main interest is not just whether a learning algorithm works, but what kind of information the agent receives and what kind of world that information makes visible. In many of the problems I care about, what the agent observes and what the model assumes matter more than the particular update rule used to train it.
+My work sits between business needs and technical delivery: understanding how a team works, identifying what can be improved, and shaping solutions that people can actually use. Depending on the problem, that may involve process redesign, product management, automation, data systems, applied AI, or Web3 technology.
 
-This pushes my work toward questions of regime design, credit assignment, prediction, and execution. I am also building deeper foundations in stochastic modelling and environmental modelling, partly through current wastewater treatment plant research. That is the thread connecting most of the work here, from cooperation problems in reinforcement learning to execution problems in quantitative finance and environmental systems.
+Alongside consulting and product work, I am a research assistant at Monash University Malaysia. My research covers mathematical modelling, multi-agent reinforcement learning, market microstructure, quantitative finance, and environmental systems.
 
 ## Start Here
 
-- [Bio](/bio/) for the short research background and current questions.
+- [Bio](/bio/) for my professional background and current areas of work.
 - [Notes](/notes/) for working explanations, derivations, and technical clarifications.
 - [Blog](/blog/) for essays, event write-ups, and less formal pieces.
 
@@ -24,6 +24,9 @@ This pushes my work toward questions of regime design, credit assignment, predic
 
 ## Current Work
 
+- Business transformation, process improvement, and practical systems
+- AI, data, and Web3 product development
+- Data and machine-learning training
 - Information design and credit assignment in multi-agent cooperation
 - Optimal execution with predictive alpha signals
 

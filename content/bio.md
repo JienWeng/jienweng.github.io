@@ -1,18 +1,20 @@
 +++
 title = "Bio"
-description = "Background and research interests of Jien Weng."
+description = "Professional background, consulting work, and research interests of Jien Weng."
 +++
 
 # Bio
 
-I am a research assistant at Monash University Malaysia. The center of my work is mathematical modelling, especially where it meets learning, decision-making, finance, and environmental systems.
+I work across business transformation, AI, data, and Web3 product development. As an independent consultant, I help teams improve processes, build practical systems, and turn ideas into working products. I also conduct AI research and deliver data and machine-learning training.
 
-I work on multi-agent reinforcement learning, market microstructure, and quantitative finance, but I do not think of those as isolated topics. I treat them as different settings in which modelling assumptions, information constraints, and regime structure determine what a system can actually learn or control.
+My consulting and product work focuses on making technology useful in practice. I work with teams to understand operational problems, improve how work gets done, and move from early ideas to systems and products that can be tested and used. This includes process improvement, automation, applied AI, data systems, and Web3 product work.
+
+I am also a research assistant at Monash University Malaysia. The center of my research is mathematical modelling, especially where it meets learning, decision-making, finance, and environmental systems. I work on multi-agent reinforcement learning, market microstructure, and quantitative finance, treating them as different settings in which modelling assumptions and information constraints determine what a system can actually learn or control.
 
 The questions that keep showing up in my work are simple to state. What information does an agent actually need in order to act well? When does a change in regime matter more than a change in method? When does prediction improve control, and when does it only create the appearance of sophistication?
 
-I am also building stronger foundations in stochastic modelling and environmental modelling. That is still an active direction of study rather than a finished claim to expertise, and I want to state that directly. It matters because I want my research record to connect reinforcement learning and finance to more classical modelling questions, including environmental systems and current wastewater treatment plant research.
+I am building stronger foundations in stochastic modelling and environmental modelling. This connects my work in reinforcement learning and finance to more classical modelling questions, including environmental systems and current wastewater treatment plant research.
 
 I hold a BSc. (Hons) in Applied Mathematics with Computing from UTAR. Alongside formal research, I keep a running notebook of derivations, clarifications, and working explanations in statistics, regression, optimization, and reinforcement learning.
 
-This site collects notes, essays, publications, and smaller technical artifacts around that line of work.
+This site brings together my professional background, research, notes, essays, publications, and technical projects.
