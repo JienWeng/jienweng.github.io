@@ -5,7 +5,7 @@ description = "Professional background, consulting work, and research interests 
 
 # Bio
 
-I work across business transformation, AI, data, and Web3 product development. As an independent consultant, I help teams improve processes, build practical systems, and turn ideas into working products. I also conduct AI research and deliver data and machine-learning training.
+I work across business transformation, AI, data, and Web3 product development. As an independent consultant and product manager, I help teams improve processes, build practical systems, and turn ideas into working products. My Web3 product work also involves proprietary AI research, and I deliver data and machine-learning training.
 
 My consulting and product work focuses on making technology useful in practice. I work with teams to understand operational problems, improve how work gets done, and move from early ideas to systems and products that can be tested and used. This includes process improvement, automation, applied AI, data systems, and Web3 product work.
 

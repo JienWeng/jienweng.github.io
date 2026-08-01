@@ -4,7 +4,7 @@ description = "Independent consultant and product manager working across busines
 template = "home.html"
 +++
 
-I work across business transformation, AI, data, and Web3 product development. As an independent consultant, I help teams improve processes, build practical systems, and turn ideas into working products. I also conduct AI research and deliver data and machine-learning training.
+I work across business transformation, AI, data, and Web3 product development. As an independent consultant and product manager, I help teams improve processes, build practical systems, and turn ideas into working products. My Web3 product work also involves proprietary AI research, and I deliver data and machine-learning training.
 
 My work sits between business needs and technical delivery: understanding how a team works, identifying what can be improved, and shaping solutions that people can actually use. Depending on the problem, that may involve process redesign, product management, automation, data systems, applied AI, or Web3 technology.
 
