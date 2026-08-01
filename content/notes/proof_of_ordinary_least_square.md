@@ -11,6 +11,7 @@ categories = ["2025"]
 tags = ["math", "ai"]
 
 [extra]
+topic = "Regression"
 lang = "en"
 toc = true
 comment = true

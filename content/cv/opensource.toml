@@ -1,7 +1,8 @@
 [[collection]]
 type = "card_expandable"
 title = "SymPy"
-subtitle = "PR #29376 — utilities: add type annotations to warning helpers"
+subtitle = "PR #29376 (utilities): add type annotations to warning helpers"
+expand_label = "Details"
 date = "12 Mar 2026"
 icon = "https://www.sympy.org/static/images/logo.png"
 link = "https://github.com/sympy/sympy/pull/29376"

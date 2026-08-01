@@ -3,7 +3,7 @@ type = "card"
 title = "KitaHack 2026"
 subtitle = "Mentor & Judge @ Google Developer Groups on Campus Malaysia"
 date = "Mar 2026"
-content = ""
+content = "Mentored participating teams and judged project submissions."
 featured = false
 
 [[collection]]
@@ -11,5 +11,5 @@ type = "card"
 title = "CodeNection Hackathon"
 subtitle = "Hackathon Mentor @ CodeNection"
 date = "Oct 2025"
-content = ""
+content = "Mentored student teams throughout the hackathon."
 featured = false

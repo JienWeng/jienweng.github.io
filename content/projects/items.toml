@@ -1,16 +1,32 @@
 [[collection]]
 type = "art"
+title = "AI Video Generation Orchestration"
+subtitle = "Pipeline for producing video series."
+content = "Chains AI generation stages together so a whole video series can be produced from start to finish with very little manual work in between. Still rough."
+status = "In progress"
+# TODO: add link and image when there is something to show
+
+[[collection]]
+type = "art"
+title = "Custom CRM System"
+subtitle = "Internal CRM for Quandatics."
+content = "A CRM for internal use at Quandatics. Off-the-shelf tools did not fit how they work, so this one is built around their actual workflow."
+status = "In progress"
+# TODO: add link and image when there is something to show
+
+[[collection]]
+type = "art"
 title = "ZakatDAO"
 subtitle = "Smart-contract zakat distribution prototype."
-content = "A prototype for a more auditable zakat-distribution system. It uses smart-contract logic as the accounting and distribution layer."
-img = "/img/projects/zakatdao/banner.png"
+content = "A prototype for making zakat distribution more auditable. Smart contracts do the accounting and the distribution."
+img = "/img/projects/zakatdao/banner.webp"
 link = "https://github.com/JienWeng/ZakatDAO"
 
 [[collection]]
 type = "art"
 title = "FacePay"
 subtitle = "Face-recognition payment prototype."
-content = "A small biometric-payments prototype. It tests face recognition as the identity check in a payment flow."
+content = "A small experiment with face recognition as the identity check in a payment flow."
 img = "/img/projects/facepay/facepay.jpg"
 link = "https://github.com/JienWeng/FacePay"
 
@@ -18,7 +34,7 @@ link = "https://github.com/JienWeng/FacePay"
 type = "art"
 title = "Yappy"
 subtitle = "Conversational app prototype."
-content = "A small conversational application prototype. It was built to test interaction flow and lightweight application structure."
+content = "A small chat app, built mainly to play with interaction flow. Nothing serious."
 img = "/img/projects/yappy/demo.gif"
 link = "https://github.com/JienWeng/Yappy"
 
@@ -26,7 +42,7 @@ link = "https://github.com/JienWeng/Yappy"
 type = "art"
 title = "DecimalSat"
 subtitle = "Ground-station and satellite build."
-content = "A small hardware build around a satellite and ground-station setup. The project includes assembly work and supporting communications pieces."
+content = "A hardware build: a small satellite and its ground station. Mostly assembly and getting the radio link to behave."
 img = "/img/projects/decimal-sat/assembled-sat.jpeg"
 link = "https://github.com/JienWeng/DecimalSat"
 
@@ -34,6 +50,6 @@ link = "https://github.com/JienWeng/DecimalSat"
 type = "art"
 title = "Geospatial Analysis forked from Kepler.gl"
 subtitle = "Monash geospatial analysis and open-data platform."
-content = "A Monash-linked fork of kepler.gl for geospatial analysis and open-data sharing in the Klang Valley area. The project is still in progress."
-img = "https://d1a3f4spazzrp4.cloudfront.net/kepler.gl/website/hero/kepler.gl-contours.png"
+content = "A fork of kepler.gl, tied to Monash work, for geospatial analysis and open-data sharing around the Klang Valley. Still in progress."
+img = "/img/projects/kepler/kepler.png"
 link = "https://github.com/JienWeng/kepler.gl"

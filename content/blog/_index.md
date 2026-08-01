@@ -7,4 +7,4 @@ page_template = "page.html"
 generate_feeds = true
 +++
 
-Shorter and less formal pieces live here. The register is looser than the notes, but still tied to things I am actually thinking through.
+Shorter, less formal writing. Hackathons, opinions, and whatever I was thinking about at the time.

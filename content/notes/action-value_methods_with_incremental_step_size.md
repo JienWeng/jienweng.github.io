@@ -1,6 +1,6 @@
 +++
 title = "Action-value methods with incremental step size in reinforcement learning"
-description = "How much we see on Internet is real?"
+description = "Deriving the incremental update rule for action-value estimation in k-armed bandits, and why constant step sizes suit nonstationary problems."
 date = 2025-10-17
 updated = 2025-10-17
 draft = false
@@ -11,6 +11,7 @@ categories = ["2025"]
 tags = ["math", "reinforcement learning", "ai"]
 
 [extra]
+topic = "Reinforcement Learning"
 lang = "en"
 toc = true
 comment = true

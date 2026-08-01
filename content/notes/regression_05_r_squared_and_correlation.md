@@ -3,7 +3,7 @@ title = "R-squared: SST, SSE, SSR and the Relationship with Correlation"
 description = "Defining the coefficient of determination from the sum of squares decomposition and proving that R-squared equals the square of the correlation coefficient."
 date = 2026-01-30
 updated = 2026-01-30
-draft = true
+draft = false
 aliases = ["/posts/regression-05-r-squared-and-correlation/"]
 
 [taxonomies]
@@ -11,8 +11,9 @@ categories = ["2026"]
 tags = ["math", "statistics", "regression"]
 
 [extra]
+topic = "Regression"
 lang = "en"
-toc = false
+toc = true
 comment = true
 copy = false
 outdate_alert = false
@@ -34,13 +35,13 @@ The total variability in the observed response values can be decomposed into two
 
 ### Total Sum of Squares (SST)
 
-$$SST = \sum^n_{i=1}(y_i - \bar{y})^2 = S\_{yy}.$$
+$$SST = \sum^n\_{i=1}(y\_i - \bar{y})^2 = S\_{yy}.$$
 
 This measures the total variability of $y$ around its mean.
 
 ### Sum of Squares due to Regression (SSR)
 
-$$SSR = \sum^n_{i=1}(\hat{y}_i - \bar{y})^2.$$
+$$SSR = \sum^n\_{i=1}(\hat{y}\_i - \bar{y})^2.$$
 
 This measures the variability in $y$ that is explained by the regression model.
 
@@ -58,15 +59,15 @@ $$SST = SSR + SSE.$$
 
 To see why this holds, write:
 
-$$y_i - \bar{y} = (\hat{y}_i - \bar{y}) + (y_i - \hat{y}_i).$$
+$$y\_i - \bar{y} = (\hat{y}\_i - \bar{y}) + (y\_i - \hat{y}\_i).$$
 
 Squaring both sides and summing over all observations:
 
-$$\sum_{i=1}^n (y_i - \bar{y})^2 = \sum_{i=1}^n (\hat{y}_i - \bar{y})^2 + \sum_{i=1}^n (y_i - \hat{y}_i)^2 + 2\sum_{i=1}^n (\hat{y}_i - \bar{y})(y_i - \hat{y}_i).$$
+$$\sum\_{i=1}^n (y\_i - \bar{y})^2 = \sum\_{i=1}^n (\hat{y}\_i - \bar{y})^2 + \sum\_{i=1}^n (y\_i - \hat{y}\_i)^2 + 2\sum\_{i=1}^n (\hat{y}\_i - \bar{y})(y\_i - \hat{y}\_i).$$
 
 The cross term vanishes because of the properties of OLS residuals:
 
-$$\sum_{i=1}^n (\hat{y}_i - \bar{y})(y_i - \hat{y}_i) = \sum_{i=1}^n (\hat{y}_i - \bar{y})\,e_i = 0.$$ 
+$$\sum\_{i=1}^n (\hat{y}\_i - \bar{y})(y\_i - \hat{y}\_i) = \sum\_{i=1}^n (\hat{y}\_i - \bar{y})\,e\_i = 0.$$ 
 
 This holds because OLS residuals are orthogonal to the fitted values. Therefore:
 
@@ -94,15 +95,15 @@ We now prove that for simple linear regression, the coefficient of determination
 
 For simple linear regression, the fitted values are:
 
-$$\hat{y}_i = \hat{\beta}\_0 + \hat{\beta}\_1 x_i = (\bar{y} - \hat{\beta}\_1\bar{x}) + \hat{\beta}\_1 x_i = \bar{y} + \hat{\beta}\_1(x_i - \bar{x}).$$
+$$\hat{y}\_i = \hat{\beta}\_0 + \hat{\beta}\_1 x\_i = (\bar{y} - \hat{\beta}\_1\bar{x}) + \hat{\beta}\_1 x\_i = \bar{y} + \hat{\beta}\_1(x\_i - \bar{x}).$$
 
 Therefore:
 
-$$\hat{y}_i - \bar{y} = \hat{\beta}\_1(x_i - \bar{x}).$$
+$$\hat{y}\_i - \bar{y} = \hat{\beta}\_1(x\_i - \bar{x}).$$
 
 Substituting into SSR:
 
-$$SSR = \sum_{i=1}^n (\hat{y}_i - \bar{y})^2 = \hat{\beta}\_1^2 \sum_{i=1}^n (x_i - \bar{x})^2 = \hat{\beta}\_1^2 \cdot S\_{xx}.$$ 
+$$SSR = \sum\_{i=1}^n (\hat{y}\_i - \bar{y})^2 = \hat{\beta}\_1^2 \sum\_{i=1}^n (x\_i - \bar{x})^2 = \hat{\beta}\_1^2 \cdot S\_{xx}.$$ 
 
 Since $\hat{\beta}\_1 = S\_{xy}/S\_{xx}$:
 
@@ -132,21 +133,21 @@ This result is elegant and important. It tells us that for simple linear regress
 
 We can also prove the result by expressing SSE in terms of $S\_{xx}$, $S\_{yy}$, $S\_{xy}$.
 
-Since $e_i = y_i - \hat{y}_i = y_i - \bar{y} - \hat{\beta}\_1(x_i - \bar{x})$:
+Since $e\_i = y\_i - \hat{y}\_i = y\_i - \bar{y} - \hat{\beta}\_1(x\_i - \bar{x})$:
 
-\begin{align*}
-SSE &= \sum_{i=1}^n \big[(y_i - \bar{y}) - \hat{\beta}\_1 (x_i - \bar{x})\big]^2 \\
-&= \sum_{i=1}^n (y_i - \bar{y})^2 - 2\hat{\beta}\_1 \sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y}) + \hat{\beta}\_1^2 \sum_{i=1}^n (x_i - \bar{x})^2 \\
+$$\begin{aligned}
+SSE &= \sum\_{i=1}^n \big[(y\_i - \bar{y}) - \hat{\beta}\_1 (x\_i - \bar{x})\big]^2 \\\\
+&= \sum\_{i=1}^n (y\_i - \bar{y})^2 - 2\hat{\beta}\_1 \sum\_{i=1}^n (x\_i - \bar{x})(y\_i - \bar{y}) + \hat{\beta}\_1^2 \sum\_{i=1}^n (x\_i - \bar{x})^2 \\\\
 &= S\_{yy} - 2\hat{\beta}\_1 S\_{xy} + \hat{\beta}\_1^2 S\_{xx}.
-\end{align*}
+\end{aligned}$$
 
 Substituting $\hat{\beta}\_1 = S\_{xy}/S\_{xx}$:
 
-\begin{align*}
-SSE &= S\_{yy} - 2\cdot\frac{S\_{xy}}{S\_{xx}}\cdot S\_{xy} + \frac{S\_{xy}^2}{S\_{xx}^2}\cdot S\_{xx} \\
-&= S\_{yy} - \frac{2S\_{xy}^2}{S\_{xx}} + \frac{S\_{xy}^2}{S\_{xx}} \\
+$$\begin{aligned}
+SSE &= S\_{yy} - 2\cdot\frac{S\_{xy}}{S\_{xx}}\cdot S\_{xy} + \frac{S\_{xy}^2}{S\_{xx}^2}\cdot S\_{xx} \\\\
+&= S\_{yy} - \frac{2S\_{xy}^2}{S\_{xx}} + \frac{S\_{xy}^2}{S\_{xx}} \\\\
 &= S\_{yy} - \frac{S\_{xy}^2}{S\_{xx}}.
-\end{align*}
+\end{aligned}$$
 
 Therefore:
 
@@ -156,11 +157,21 @@ $$R^2 = 1 - \frac{SSE}{SST} = 1 - \frac{S\_{yy} - S\_{xy}^2/S\_{xx}}{S\_{yy}} = 
 
 For multiple regression with $p$ parameters, $R^2$ always increases (or stays the same) when additional predictors are added, even if those predictors have no real relationship with $y$. To account for this, the adjusted $R^2$ penalizes for the number of predictors:
 
-$$R^2_{\text{adj}} = 1 - \frac{SSE/(n - p)}{SST/(n - 1)} = 1 - \frac{n - 1}{n - p}(1 - R^2).$$
+$$R^2\_{\text{adj}} = 1 - \frac{SSE/(n - p)}{SST/(n - 1)} = 1 - \frac{n - 1}{n - p}(1 - R^2).$$
 
 Unlike $R^2$, the adjusted version can decrease when an uninformative predictor is added, making it more suitable for model comparison.
 
-Note that for simple linear regression ($p = 2$), $R^2 = r^2$ still holds, and $R^2_{\text{adj}}$ simplifies accordingly.
+Note that for simple linear regression ($p = 2$), $R^2 = r^2$ still holds, and $R^2\_{\text{adj}}$ simplifies accordingly.
+
+## Where a High R-squared Can Mislead
+
+Everything above describes what $R^2$ measures. It is equally important to be clear about what it does not measure.
+
+First, $R^2$ quantifies fit, not correctness. It tells us how much of the variability in $y$ is captured by the fitted line, but it says nothing about whether a line was the right model to fit. A clearly nonlinear pattern can still produce a high $R^2$ if the linear component happens to be strong. Anscombe's quartet is the classic reference here: four datasets with essentially identical $R^2$ (and identical fitted lines), one of which is a clean linear relationship, one a perfect parabola, and two dominated by single outlying points. The residual plot distinguishes them; $R^2$ does not.
+
+Second, plain $R^2$ never decreases when a predictor is added. Since OLS minimizes SSE over a strictly larger space of models, SSE can only stay the same or shrink, so $R^2 = 1 - SSE/SST$ can only stay the same or grow, even when the new predictor is pure noise. This is exactly the problem the adjusted $R^2$ above is designed to correct.
+
+Third, a high $R^2$ is not evidence of causation, and it is not a measure of predictive performance on new data. It is computed on the same observations used to fit the model, so it says nothing about how the model generalizes out of sample.
 
 ## Summary
 

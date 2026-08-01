@@ -1,34 +1,36 @@
+# NOTE: descriptions below were drafted from the award titles; verify details before relying on them.
+
 [[collection]]
 type = "card_simple"
 title = "Kuok Foundation Scholar"
 date = "Oct 2024" # optional
-content = ""
+content = "Undergraduate scholarship awarded by the Kuok Foundation."
 featured = false  # optional
 
 [[collection]]
 type = "card_simple"
 title = "HuaZong Education Fund"
 date = "Apr 2024" # optional
-content = ""
+content = "Study grant awarded by the HuaZong Education Fund."
 featured = false  # optional
 
 [[collection]]
 type = "card_simple"
 title = "KIT Foundation Scholarship"
 date = "May 2023" # optional
-content = ""
+content = "Scholarship awarded by the KIT Foundation."
 featured = false  # optional
 
 [[collection]]
 type = "card_simple"
 title = "UTAR Scholarships for Top Achievers"
 date = "Oct 2022" # optional
-content = ""
+content = "Merit-based tuition scholarship for academic performance at UTAR."
 featured = false  # optional
 
 [[collection]]
 type = "card_simple"
 title = "UTAR Scholarships for Top Achievers (Pre-U)"
 date = "Oct 2021" # optional
-content = ""
+content = "Merit-based tuition scholarship for the UTAR Foundation programme."
 featured = false  # optional

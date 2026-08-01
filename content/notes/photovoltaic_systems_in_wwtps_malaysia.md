@@ -1,6 +1,6 @@
 +++
 title = "Let's talk about Solar Photovoltaic Systems in WWTPs Malaysia"
-description = "Discussion on Intergrating Solar Photovoltaic Systems in Wastewater Treatment Plants in Malaysia"
+description = "Discussion on Integrating Solar Photovoltaic Systems in Wastewater Treatment Plants in Malaysia"
 date = 2025-12-01
 updated = 2025-12-02
 draft = false
@@ -11,6 +11,7 @@ categories = ["2025"]
 tags = ["WWTP"]
 
 [extra]
+topic = "Sustainability"
 lang = "en"
 toc = true
 comment = true
@@ -22,7 +23,6 @@ mermaid = false
 featured = false
 reaction = false
 bibliography = true
-bibliography_file = "bibliography/wwtp_solar_overview.bib"
 +++
 
 This note reviews how solar photovoltaic systems can reduce energy cost and emissions in wastewater treatment plants (WWTPs) in Malaysia. The core problem is that WWTP operations are electricity-intensive and exposed to tariff volatility. I summarize constraints, control architecture, and where ML-based forecasting can improve deployment decisions.

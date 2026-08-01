@@ -11,6 +11,7 @@ categories = ["2026"]
 tags = ["math", "ai", "classification", "optimization"]
 
 [extra]
+topic = "Machine Learning"
 lang = "en"
 toc = true
 comment = true
@@ -23,23 +24,19 @@ featured = false
 reaction = true
 +++
 
-Most explanations of softmax regression start too late. They present the formula, maybe mention normalization, and move on. That is efficient, but it hides the idea.
-
-The cleaner way to think about it is to start one step earlier. First understand logistic regression properly. And to understand logistic regression properly, start from odds.
-
-So the real chain is:
+Softmax regression is what logistic regression grows into when there are more than two classes, and logistic regression itself only really makes sense once you understand odds. So instead of starting at the softmax formula, this note starts all the way back at odds and walks forward:
 
 $$
 \text{probability} \to \text{odds} \to \text{log-odds} \to \text{logistic regression} \to \text{softmax regression}.
 $$
 
-Once that chain is visible, softmax stops looking like a mysterious trick. It becomes the obvious multiclass continuation of the same probabilistic story.
+By the end, the exponential should not feel like a trick anymore. It is just the machine that turns unrestricted linear scores into positive ratios.
 
 If you want the full runnable walkthrough, the companion notebook lives on Kaggle:
 
 <https://www.kaggle.com/code/lyhatt/softmax-from-logistic-regression>
 
-That notebook was assisted by AI tools. This note is the more streamlined written version.
+That notebook was assisted by AI tools. This note is the written version.
 
 ## Start with Probability, Then Ask for More Structure
 
@@ -454,8 +451,6 @@ We modeled the log-odds linearly and solved for the probability, which produced 
 
 Then we asked what happens when there are many classes instead of two. The same need appears again: we must turn unrestricted scores into valid positive ratios, and then normalize them into probabilities. That requirement leads directly to the softmax formula.
 
-So in the end, logistic regression is a model for binary log-odds, softmax regression is the multiclass extension of that same idea, the exponential appears because it converts linear scores into positive ratios, and gradient descent remains the optimization engine underneath both models. That is why logistic regression and softmax regression are best learned together. Once the odds view is clear, softmax stops looking like a memorized formula and starts looking like the inevitable next step.
+So logistic regression is a model for binary log-odds, and softmax regression is the same idea with more classes. The exponential appears because it converts linear scores into positive ratios, and gradient descent is the engine underneath both. Learn them together; separately they both look more arbitrary than they are.
 
-I think this topic reads better in a slightly stripped-down form. The mathematics should carry most of the weight, and the figures should only appear when they sharpen the argument rather than interrupt it.
-
-If you think there is a better example, a better visualization, or a cleaner way to extend this note, feel free to suggest it. This topic has a nice property: once the odds viewpoint is in place, there are many directions to grow from here.
+Natural continuations from here: cross-entropy from maximum likelihood, and the step from softmax regression to a neural network, which is just softmax with learned features. Corrections welcome in the comments.

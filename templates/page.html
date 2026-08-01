@@ -39,10 +39,36 @@
   <section class="well">
     <article class="prose article-prose">
       {{ page.content | safe }}
+      {% if page.path is starting_with("/notes/") %}
+      <div class="tombstone" aria-hidden="true"></div>
+      {% endif %}
     </article>
 
+    {% if page.extra.topic and page.extra.topic == "Regression" %}
+    {% set notes_section = get_section(path="notes/_index.md") %}
+    {% set series = notes_section.pages | filter(attribute="extra.topic", value="Regression") | sort(attribute="date") %}
+    {% set_global prev_url = "" %}{% set_global prev_title = "" %}
+    {% set_global next_url = "" %}{% set_global next_title = "" %}
+    {% set_global found = false %}
+    {% for p in series %}
+      {% if found and next_url == "" %}{% set_global next_url = p.permalink %}{% set_global next_title = p.title %}{% endif %}
+      {% if p.permalink == page.permalink %}{% set_global found = true %}{% endif %}
+      {% if not found %}{% set_global prev_url = p.permalink %}{% set_global prev_title = p.title %}{% endif %}
+    {% endfor %}
+    {% if prev_url != "" or next_url != "" %}
+    <nav class="series-nav" aria-label="Series navigation">
+      <div class="series-slot">
+        {% if prev_url != "" %}<span class="series-label">Previous in series</span><a href="{{ prev_url }}">{{ prev_title }}</a>{% endif %}
+      </div>
+      <div class="series-slot series-slot-next">
+        {% if next_url != "" %}<span class="series-label">Next in series</span><a href="{{ next_url }}">{{ next_title }}</a>{% endif %}
+      </div>
+    </nav>
+    {% endif %}
+    {% endif %}
+
     {% set path = page.path %}
-    {% if path is starting_with("blog/") or path is starting_with("notes/") %}
+    {% if path is starting_with("/blog/") or path is starting_with("/notes/") %}
     <div class="comments-block">
       <div id="giscus-container"></div>
     </div>
@@ -53,7 +79,7 @@
 
 {% block script %}
 {% set path = page.path %}
-{% if path is starting_with("blog/") or path is starting_with("notes/") %}
+{% if path is starting_with("/blog/") or path is starting_with("/notes/") %}
 {% include "partials/giscus.html" %}
 {% endif %}
 {% endblock script %}

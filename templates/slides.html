@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}{{ section.title }} · {{ config.title }}{% endblock title %}
+{% block body_class %}section-page slides-page{% endblock body_class %}
+
+{% block content %}
+<main class="content-grid">
+  <aside class="rail">
+    <div class="rail-block">
+      <a class="back-link" href="{{ get_url(path='/') }}">Back to index</a>
+      <h1 class="section-title">{{ section.title }}</h1>
+    </div>
+  </aside>
+
+  <section class="well">
+    {% if section.content | trim %}
+    <article class="prose">
+      {{ section.content | safe }}
+    </article>
+    {% endif %}
+
+    {% set data = load_data(path="content/slides/items.toml", format="toml") %}
+    {% set decks = data.collection | sort(attribute="year") | reverse %}
+    {% set_global current_year = 0 %}
+    {% for deck in decks %}
+      {% if deck.year != current_year %}
+        {% if not loop.first %}</div>{% endif %}
+        <h2 class="slides-year">{{ deck.year }}</h2>
+        <div class="edition-list section-list">
+        {% set_global current_year = deck.year %}
+      {% endif %}
+      <a class="edition-row" href="{{ get_url(path=deck.link, trailing_slash=true) }}">
+        <span class="edition-title">{{ deck.title }}{% if deck.subtitle %} · <span class="edition-subtitle">{{ deck.subtitle }}</span>{% endif %}</span>
+        <span class="edition-date">{{ deck.year }}</span>
+      </a>
+      {% if loop.last %}</div>{% endif %}
+    {% endfor %}
+  </section>
+</main>
+{% endblock content %}

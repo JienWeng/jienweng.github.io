@@ -11,6 +11,7 @@ categories = ["2025"]
 tags = ["WWTP", "sustainability"]
 
 [extra]
+topic = "Sustainability"
 lang = "en"
 toc = true
 comment = true
@@ -22,7 +23,6 @@ mermaid = false
 featured = false
 reaction = false
 bibliography = true
-bibliography_file = "bibliography/wwtp_review.bib"
 +++
 
 This note summarizes the current sustainability literature on wastewater treatment plants (WWTPs) in Malaysia and identifies recurring technical bottlenecks. The objective is to synthesize trends across operations, emissions, and renewable integration. It is meant as a quick research map for readers entering the topic.
