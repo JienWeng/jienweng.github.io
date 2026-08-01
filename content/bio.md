@@ -1,16 +1,20 @@
 +++
 title = "Bio"
-description = "Background and research interests of Jien Weng."
+description = "Professional background, consulting work, and research interests of Jien Weng."
 +++
 
-I am an AI researcher with Monash University Malaysia and a proprietary research team. My background is applied mathematics, and most of what I do is mathematical modelling in one form or another. Lately that means learning and decision-making, finance, and some environmental systems.
+# Bio
 
-I also work with businesses on data and AI. I am a Business Transformation Consultant with [Quandatics](https://quandatics.com), a data and AI consultancy, and a Data Science & Machine Learning Trainer with [Quandatics Academy](https://academy.quandatics.com). Before that I did actuarial and finance data work. If that side is what brought you here, see [Work With Me](/services/).
+I work across business transformation, AI, data, and Web3 product development. As an independent consultant and product manager, I help teams improve processes, build practical systems, and turn ideas into working products. My Web3 product work also involves proprietary AI research, and I deliver data and machine-learning training.
 
-On paper the research topics are multi-agent reinforcement learning, market microstructure, and quantitative finance. In practice they blur together. The part that interests me is the same in each of them: what the model assumes, what information the agent is given, and how much of the outcome is already decided before any learning happens.
+My consulting and product work focuses on making technology useful in practice. I work with teams to understand operational problems, improve how work gets done, and move from early ideas to systems and products that can be tested and used. This includes process improvement, automation, applied AI, data systems, and Web3 product work.
 
-Two questions keep coming back. What information does an agent actually need to act well? And when does a change in regime matter more than a change in method?
+I am also a research assistant at Monash University Malaysia. The center of my research is mathematical modelling, especially where it meets learning, decision-making, finance, and environmental systems. I work on multi-agent reinforcement learning, market microstructure, and quantitative finance, treating them as different settings in which modelling assumptions and information constraints determine what a system can actually learn or control.
 
-I am still building up my foundations in stochastic and environmental modelling, and I am not claiming expertise there yet. I mention it because I want the research record to eventually connect the reinforcement learning and finance work back to more classical modelling, including some current wastewater treatment plant research.
+The questions that keep showing up in my work are simple to state. What information does an agent actually need in order to act well? When does a change in regime matter more than a change in method? When does prediction improve control, and when does it only create the appearance of sophistication?
 
-I hold a BSc. (Hons) in Applied Mathematics with Computing from UTAR. I keep a running notebook of derivations and working explanations in statistics, regression, optimization, and reinforcement learning; most of it ends up in the notes section here.
+I am building stronger foundations in stochastic modelling and environmental modelling. This connects my work in reinforcement learning and finance to more classical modelling questions, including environmental systems and current wastewater treatment plant research.
+
+I hold a BSc. (Hons) in Applied Mathematics with Computing from UTAR. Alongside formal research, I keep a running notebook of derivations, clarifications, and working explanations in statistics, regression, optimization, and reinforcement learning.
+
+This site brings together my professional background, research, notes, essays, publications, and technical projects.

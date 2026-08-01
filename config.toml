@@ -1,11 +1,11 @@
 base_url = "https://jienweng.github.io"
 title = "Jien Weng"
-description = "Research notes, essays, publications, and working papers by Jien Weng."
+description = "Independent consultant and product manager working across business transformation, AI, data, and Web3."
 default_language = "en"
 output_dir = "public"
 compile_sass = true
 minify_html = true
-build_search_index = false
+build_search_index = true
 generate_feeds = true
 feed_filenames = ["atom.xml"]
 taxonomies = [{ name = "tags" }, { name = "categories" }]
@@ -30,16 +30,17 @@ anchors = "on"
 
 [extra]
 site_title = "Jien Weng"
-tagline = ""
+tagline = "Business transformation, AI, data, Web3, and research."
 author = "Jien Weng"
 email = "laijienweng@gmail.com"
 github = "https://github.com/jienweng"
 linkedin = "https://linkedin.com/in/jienweng"
-scholar = "https://scholar.google.com/citations?user=2siljxAAAAAJ&hl=en"
+scholar = "https://scholar.google.com"
 orcid = "https://orcid.org/0009-0001-2543-3887"
 primary_accent = "ochre"
 home_posts = 3
 home_notes = 4
+force_theme = ""
 
 # Analytics: GoatCounter site code (e.g. "jienweng" -> https://jienweng.goatcounter.com)
 goatcounter = "jienweng"
