@@ -3,11 +3,15 @@ title = "Work With Me"
 description = "The practical side of my work: helping teams get ML, data, and automation working inside a real business."
 +++
 
-Some of my work is research. The rest is practical: helping teams get ML, data, and automation working inside a real business. This page is about the practical side.
+I work independently across business transformation, product management, AI, data, and Web3. The practical side of that work is helping teams improve how they operate and turn ideas into systems and products people can actually use.
 
-Right now that means two things. I am a Business Transformation Consultant with [Quandatics](https://quandatics.com), a data and AI consultancy, working on process enhancement and automation with their Business Transformation Office. And I am a Data Science & Machine Learning Trainer with [Quandatics Academy](https://academy.quandatics.com), where I currently coach a telecommunications analytics team. Before this I worked in actuarial, insurance, and finance data roles.
+My current independent work includes Web3 product management with proprietary AI research. My contractor engagements include business transformation consulting with [Quandatics](https://quandatics.com), where I work on process enhancement and automation, and data science and machine-learning training with [Quandatics Academy](https://academy.quandatics.com), where I coach an analytics team. Before this I worked in actuarial, insurance, and finance data roles.
 
 ## Things I can help with
+
+Business transformation and process improvement: understanding how work gets done, finding unnecessary friction, and shaping practical systems and automation around the team.
+
+Product discovery and delivery across AI, data, and Web3: defining the problem, aligning stakeholders, and moving from an early idea to something that can be tested and used.
 
 Getting ML past the experiment stage. That means scoping the problem, building it, and staying around until it runs in production and someone actually uses it.
 
