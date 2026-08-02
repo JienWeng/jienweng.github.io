@@ -600,6 +600,13 @@ img {
   align-items: start;
 }
 
+.home-main {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
 .title-sheet {
   min-width: 0;
 }
@@ -611,7 +618,7 @@ img {
 
 .home-abstract {
   max-width: 48rem;
-  margin: var(--space-4) 0 var(--space-5);
+  margin: var(--space-4) 0 0;
   font-size: 1.02rem;
 }
 
@@ -653,20 +660,26 @@ img {
   gap: var(--space-2);
 }
 
-.ledger-main {
-  grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: var(--space-6);
-  margin-top: var(--space-6);
-}
-
 .primary-index {
-  margin-top: var(--space-1);
+  margin-top: 0;
 }
 
 .home-file-note {
-  padding-top: var(--space-2);
+  padding-top: 0;
+  border-top: 1px solid var(--rule);
+}
+
+.featured-writing-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.edition-summary {
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+  line-height: 1.45;
+  max-width: 64ch;
 }
 
 .zola-anchor {
@@ -886,6 +899,14 @@ body.publications-page .collection-meta {
 
   .portrait {
     display: none;
+  }
+
+  .home-marginalia {
+    grid-column: 1;
+  }
+
+  .featured-writing-row {
+    gap: var(--space-1);
   }
 }
 

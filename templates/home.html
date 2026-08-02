@@ -3,18 +3,42 @@
 set notes = get_section(path="notes/_index.md") %}
 
 <main class="home-ledger">
-    <section class="title-sheet">
-        <h1 class="home-title">{{ config.extra.site_title }}</h1>
-        <p class="home-abstract">
-            I partner with founders, operators, and technical teams to turn
-            ambitious AI, data, and Web3 ideas into useful products and
-            practical business improvements. My work combines business
-            transformation, product management, hands-on systems thinking, and
-            research, especially when a problem sits between commercial
-            priorities and technical delivery.
-            <a href="{{ get_url(path='/services/') }}">Explore ways to partner</a>.
-        </p>
-    </section>
+    <div class="home-main">
+        <section class="title-sheet">
+            <h1 class="home-title">{{ config.extra.site_title }}</h1>
+            <p class="home-abstract">
+                I partner with founders, operators, and technical teams to turn
+                ambitious AI, data, and Web3 ideas into useful products and
+                practical business improvements. My work combines business
+                transformation, product management, hands-on systems thinking,
+                and research, especially when a problem sits between commercial
+                priorities and technical delivery.
+                <a href="{{ get_url(path='/services/') }}">Explore ways to partner</a>.
+            </p>
+        </section>
+
+        <section class="index-block primary-index">
+            <div class="index-header">
+                <h2>Latest Writing</h2>
+                <a href="{{ notes.permalink }}">all writing</a>
+            </div>
+            <div class="edition-list">
+                {% for item in notes.pages | slice(end=config.extra.home_notes) %}
+                <a class="edition-row featured-writing-row" href="{{ item.permalink }}">
+                    <span class="featured-writing-copy">
+                        <span class="edition-title">{{ item.title }}</span>
+                        {% if item.description %}<span class="edition-summary">{{ item.description }}</span>{% endif %}
+                    </span>
+                    <span class="edition-date">{{ item.date | date(format="%b %-d, %Y") }}</span>
+                </a>
+                {% endfor %}
+            </div>
+        </section>
+
+        <article class="prose home-file-note">
+            {{ section.content | safe }}
+        </article>
+    </div>
 
     <aside class="home-marginalia">
         <div class="marginal-block">
@@ -46,29 +70,5 @@ set notes = get_section(path="notes/_index.md") %}
             </ul>
         </div>
     </aside>
-
-    <section class="ledger-main">
-        <article class="prose home-file-note">
-            {{ section.content | safe }}
-        </article>
-
-        <section class="index-block primary-index">
-            <div class="index-header">
-                <h2>Latest Writing</h2>
-                <a href="{{ notes.permalink }}">all writing</a>
-            </div>
-            <div class="edition-list">
-                {% for item in notes.pages | slice(end=config.extra.home_notes)
-                %}
-                <a class="edition-row" href="{{ item.permalink }}">
-                    <span class="edition-title">{{ item.title }}</span>
-                    <span class="edition-date"
-                        >{{ item.date | date(format="%b %-d, %Y") }}</span
-                    >
-                </a>
-                {% endfor %}
-            </div>
-        </section>
-    </section>
 </main>
 {% endblock content %}
