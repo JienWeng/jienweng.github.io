@@ -665,8 +665,54 @@ img {
 }
 
 .home-file-note {
-  padding-top: 0;
+  padding-top: var(--space-5);
   border-top: 1px solid var(--rule);
+}
+
+.home-file-note h2 {
+  margin-top: 0;
+}
+
+.home-file-note ol {
+  max-width: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  margin: var(--space-4) 0 var(--space-5);
+  padding: 0;
+  list-style: none;
+  counter-reset: roadmap;
+  border-top: 1px solid var(--rule);
+}
+
+.home-file-note ol li {
+  counter-increment: roadmap;
+  min-width: 0;
+  padding: var(--space-3) var(--space-4) 0 0;
+}
+
+.home-file-note ol li + li {
+  padding-left: var(--space-4);
+  border-left: 1px solid var(--rule);
+}
+
+.home-file-note ol li::before {
+  content: "0" counter(roadmap);
+  display: block;
+  margin-bottom: var(--space-2);
+  color: var(--accent);
+  font-family: var(--label);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+}
+
+.home-file-note ol strong {
+  display: block;
+  margin-bottom: var(--space-1);
+}
+
+.home-file-note > p:last-child {
+  margin-bottom: 0;
 }
 
 .featured-writing-copy {
@@ -907,6 +953,17 @@ body.publications-page .collection-meta {
 
   .featured-writing-row {
     gap: var(--space-1);
+  }
+
+  .home-file-note ol {
+    grid-template-columns: 1fr;
+  }
+
+  .home-file-note ol li,
+  .home-file-note ol li + li {
+    padding: var(--space-3) 0;
+    border-left: 0;
+    border-bottom: 1px solid var(--rule);
   }
 }
 

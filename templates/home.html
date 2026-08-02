@@ -7,13 +7,10 @@ set notes = get_section(path="notes/_index.md") %}
         <section class="title-sheet">
             <h1 class="home-title">{{ config.extra.site_title }}</h1>
             <p class="home-abstract">
-                I partner with founders, operators, and technical teams to turn
-                ambitious AI, data, and Web3 ideas into useful products and
-                practical business improvements. My work combines business
-                transformation, product management, hands-on systems thinking,
-                and research, especially when a problem sits between commercial
-                priorities and technical delivery.
-                <a href="{{ get_url(path='/services/') }}">Explore ways to partner</a>.
+                I help teams turn complex business and technical problems into
+                useful products and better ways of working. My focus spans
+                business transformation, AI, data, and Web3.
+                <a href="{{ get_url(path='/services/') }}">See how I work</a>.
             </p>
         </section>
 
@@ -27,7 +24,6 @@ set notes = get_section(path="notes/_index.md") %}
                 <a class="edition-row featured-writing-row" href="{{ item.permalink }}">
                     <span class="featured-writing-copy">
                         <span class="edition-title">{{ item.title }}</span>
-                        {% if item.description %}<span class="edition-summary">{{ item.description }}</span>{% endif %}
                     </span>
                     <span class="edition-date">{{ item.date | date(format="%b %-d, %Y") }}</span>
                 </a>

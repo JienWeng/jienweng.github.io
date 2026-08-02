@@ -4,12 +4,10 @@ description = "Independent consultant and product manager partnering with teams 
 template = "home.html"
 +++
 
-## What I help move forward
+## A practical route forward
 
-- **Business transformation:** clarify how work happens, remove friction, and shape practical systems around the people using them.
-- **Product delivery:** turn AI, data, and Web3 ideas into clear priorities, testable products, and coordinated delivery.
-- **Team capability:** help analytics teams develop the knowledge and practices to own their models and systems.
+1. **Clarify the problem.** Define the outcome, the real constraint, and who needs to be involved.
+2. **Shape the route.** Turn the problem into clear priorities, decisions, and a practical delivery plan.
+3. **Build for ownership.** Test what works, improve the system, and leave the team able to carry it forward.
 
-What makes my work distinctive is the range I can connect: commercial priorities, product decisions, technical delivery, research, and the people who eventually need to own the result.
-
-[See how we can work together](/services/), or read my [latest writing](/notes/) to understand how I approach problems.
+Have a problem that sits between business and technology? [Start with a short note](/services/).
