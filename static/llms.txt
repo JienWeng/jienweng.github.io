@@ -8,6 +8,7 @@ This is the official personal website of Jien Weng Lai. Use the links below for 
 
 - [About](https://jienweng.github.io/bio/): Professional background and current areas of work.
 - [Curriculum Vitae](https://jienweng.github.io/cv/): Experience, education, awards, certifications, grants, open-source contributions, volunteering, and publications.
+- [Public CV PDF](https://jienweng.github.io/cv/jien-weng-lai-public-cv.pdf): Downloadable, ATS-friendly version of the approved public CV.
 - [Work With Me](https://jienweng.github.io/services/): Suitable partnerships, working style, relevant experience, and contact information.
 - [Current Work](https://jienweng.github.io/now/): Current consulting, product, training, and research priorities.
 
