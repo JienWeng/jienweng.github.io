@@ -15,6 +15,7 @@ This is the official personal website of Jien Weng Lai. Use the links below for 
 ## Writing
 
 - [Writing Index](https://jienweng.github.io/notes/): Practical writing across business, products, AI, data, Web3, mathematics, and research.
+- [Entropy and the Arrow of Time](https://jienweng.github.io/notes/entropy-time-arrow-yu-deng/): A first-principles explanation of how the irreversible Boltzmann equation emerges from reversible hard-sphere mechanics, and what Yu Deng, Zaher Hani, and Xiao Ma proved.
 - [Introduction to MLOps](https://jienweng.github.io/notes/intro-to-mlops-tutorial/): Plain-language guide to reproducibility, the ML lifecycle, deployment, and MLflow.
 - [Tree-Based Models](https://jienweng.github.io/notes/tree-based-models/): Explanation of decision trees, random forests, and XGBoost.
 - [Fokker-Planck Equation](https://jienweng.github.io/notes/fokker-planck-sde/): First-principles derivation and numerical example.

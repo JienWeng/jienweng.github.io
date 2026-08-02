@@ -27,7 +27,6 @@ set notes = get_section(path="notes/_index.md") %}
                 <a class="edition-row featured-writing-row" href="{{ item.permalink }}">
                     <span class="featured-writing-copy">
                         <span class="edition-title">{{ item.title }}</span>
-                        {% if item.description %}<span class="edition-summary">{{ item.description }}</span>{% endif %}
                     </span>
                     <span class="edition-date">{{ item.date | date(format="%b %-d, %Y") }}</span>
                 </a>
@@ -35,9 +34,6 @@ set notes = get_section(path="notes/_index.md") %}
             </div>
         </section>
 
-        <article class="prose home-file-note">
-            {{ section.content | safe }}
-        </article>
     </div>
 
     <aside class="home-marginalia">
