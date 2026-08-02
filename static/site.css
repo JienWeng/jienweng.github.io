@@ -622,21 +622,6 @@ img {
   font-size: 1.02rem;
 }
 
-.home-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-2) var(--space-5);
-  margin-top: var(--space-3);
-  font-family: var(--label);
-  font-size: 0.76rem;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-}
-
-.home-actions a {
-  text-decoration-thickness: 1px;
-}
-
 .section-index {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 14rem));
@@ -684,71 +669,60 @@ img {
   border-top: 0;
 }
 
-.home-file-note h2 {
+.audience-guide h2 {
   margin-top: 0;
 }
 
-.home-file-note ol {
+.guide-intro {
+  margin: 0 0 var(--space-4);
+  color: var(--ink-soft);
+}
+
+.audience-guide ol {
   max-width: none;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0;
-  margin: var(--space-4) 0 var(--space-5);
+  margin: 0 0 var(--space-4);
   padding: 0;
   list-style: none;
   counter-reset: roadmap;
   border-top: 1px solid var(--rule);
 }
 
-.home-file-note ol li {
+.audience-guide li {
   counter-increment: roadmap;
+  display: grid;
+  grid-template-columns: 2rem minmax(11rem, 0.8fr) minmax(18rem, 1.5fr) max-content;
+  gap: var(--space-3);
+  align-items: baseline;
   min-width: 0;
-  padding: var(--space-3) var(--space-4) 0 0;
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--rule);
 }
 
-.home-file-note ol li + li {
-  padding-left: var(--space-4);
-  border-left: 1px solid var(--rule);
-}
-
-.home-file-note ol li::before {
+.audience-guide li::before {
   content: "0" counter(roadmap);
-  display: block;
-  margin-bottom: var(--space-2);
   color: var(--accent);
   font-family: var(--label);
   font-size: 0.7rem;
   letter-spacing: 0.08em;
 }
 
-.home-file-note ol strong {
-  display: block;
-  margin-bottom: var(--space-1);
+.guide-audience {
+  font-weight: 700;
 }
 
-.home-file-note ol li::after {
-  display: block;
-  margin-top: var(--space-3);
+.guide-signal {
   color: var(--ink-soft);
+}
+
+.audience-guide li > a {
   font-family: var(--label);
-  font-size: 0.68rem;
+  font-size: 0.7rem;
   letter-spacing: 0.07em;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
-.home-file-note ol li:nth-child(1)::after {
-  content: "Idea to product";
-}
-
-.home-file-note ol li:nth-child(2)::after {
-  content: "Friction to flow";
-}
-
-.home-file-note ol li:nth-child(3)::after {
-  content: "Capability to ownership";
-}
-
-.home-file-note > p:last-child {
+.guide-contact {
   margin-bottom: 0;
 }
 
@@ -759,10 +733,6 @@ img {
 }
 
 .edition-summary {
-  display: -webkit-box;
-  overflow: hidden;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
   color: var(--ink-soft);
   font-size: 0.88rem;
   line-height: 1.45;
@@ -996,15 +966,18 @@ body.publications-page .collection-meta {
     gap: var(--space-1);
   }
 
-  .home-file-note ol {
-    grid-template-columns: 1fr;
+  .audience-guide li {
+    grid-template-columns: 2rem minmax(0, 1fr);
+    gap: var(--space-2) var(--space-3);
   }
 
-  .home-file-note ol li,
-  .home-file-note ol li + li {
-    padding: var(--space-3) 0;
-    border-left: 0;
-    border-bottom: 1px solid var(--rule);
+  .guide-signal,
+  .audience-guide li > a {
+    grid-column: 2;
+  }
+
+  .audience-guide li > a {
+    white-space: normal;
   }
 }
 

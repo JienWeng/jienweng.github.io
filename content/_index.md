@@ -4,13 +4,25 @@ description = "Independent consultant and product manager partnering with teams 
 template = "home.html"
 +++
 
-## Find your route
-
-1. **Founders & product leaders**
-   Shape an AI, data, or Web3 idea into a clear opportunity, focused roadmap, and testable first product.
-2. **Operators & transformation teams**
-   Find where work slows down, redesign the process, and build practical systems around the people using them.
-3. **Technical & analytics teams**
-   Connect models and systems to real decisions, improve delivery, and leave the team ready to own what comes next.
-
-Not sure which route fits? [See the full partnership approach](/services/) or [email me your situation](mailto:laijienweng@gmail.com?subject=Partnership%20enquiry). A short note is enough.
+<section class="audience-guide" aria-labelledby="audience-guide-title">
+  <h2 id="audience-guide-title">Choose your starting point</h2>
+  <p class="guide-intro">Find the situation closest to yours, then follow the next useful step.</p>
+  <ol>
+    <li>
+      <span class="guide-audience">Founders &amp; product leaders</span>
+      <span class="guide-signal">You have an AI, data, or Web3 idea, but the opportunity and first product are not yet clear.</span>
+      <a href="/services/">Shape the roadmap</a>
+    </li>
+    <li>
+      <span class="guide-audience">Operators &amp; transformation teams</span>
+      <span class="guide-signal">A process is slowing the team down, creating manual work, or making ownership unclear.</span>
+      <a href="/services/">Improve the operation</a>
+    </li>
+    <li>
+      <span class="guide-audience">Technical &amp; analytics teams</span>
+      <span class="guide-signal">The system exists, but adoption, delivery, or internal capability needs strengthening.</span>
+      <a href="/services/">Build lasting capability</a>
+    </li>
+  </ol>
+  <p class="guide-contact">If your situation crosses more than one route, <a href="mailto:laijienweng@gmail.com?subject=Partnership%20enquiry">send me a short note</a>.</p>
+</section>

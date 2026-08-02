@@ -8,14 +8,13 @@ set notes = get_section(path="notes/_index.md") %}
             <h1 class="home-title">{{ config.extra.site_title }}</h1>
             <p class="home-abstract">
                 I partner with founders, operators, and technical teams to turn
-                complex ideas into useful products and better ways of working.
-                My work spans business transformation, AI, data, and Web3,
-                especially where commercial priorities meet technical delivery.
+                ambitious AI, data, and Web3 ideas into useful products and
+                practical business improvements. My work combines business
+                transformation, product management, hands-on systems thinking,
+                and research, especially when a problem sits between commercial
+                priorities and technical delivery.
+                <a href="{{ get_url(path='/services/') }}">Explore ways to partner</a>.
             </p>
-            <nav class="home-actions" aria-label="Ways to learn more">
-                <a href="{{ get_url(path='/services/') }}">Explore working together</a>
-                <a href="{{ get_url(path='/bio/') }}">About my background</a>
-            </nav>
         </section>
 
         <section class="index-block primary-index">
@@ -28,7 +27,7 @@ set notes = get_section(path="notes/_index.md") %}
                 <a class="edition-row featured-writing-row" href="{{ item.permalink }}">
                     <span class="featured-writing-copy">
                         <span class="edition-title">{{ item.title }}</span>
-                        {% if loop.first and item.description %}<span class="edition-summary">{{ item.description }}</span>{% endif %}
+                        {% if item.description %}<span class="edition-summary">{{ item.description }}</span>{% endif %}
                     </span>
                     <span class="edition-date">{{ item.date | date(format="%b %-d, %Y") }}</span>
                 </a>
