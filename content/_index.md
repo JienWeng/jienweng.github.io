@@ -4,10 +4,13 @@ description = "Independent consultant and product manager partnering with teams 
 template = "home.html"
 +++
 
-## A practical route forward
+## Find your route
 
-1. **Clarify the problem.** Define the outcome, the real constraint, and who needs to be involved.
-2. **Shape the route.** Turn the problem into clear priorities, decisions, and a practical delivery plan.
-3. **Build for ownership.** Test what works, improve the system, and leave the team able to carry it forward.
+1. **Founders & product leaders**
+   Shape an AI, data, or Web3 idea into a clear opportunity, focused roadmap, and testable first product.
+2. **Operators & transformation teams**
+   Find where work slows down, redesign the process, and build practical systems around the people using them.
+3. **Technical & analytics teams**
+   Connect models and systems to real decisions, improve delivery, and leave the team ready to own what comes next.
 
-Have a problem that sits between business and technology? [Start with a short note](/services/).
+Not sure which route fits? [See the full partnership approach](/services/) or [email me your situation](mailto:laijienweng@gmail.com?subject=Partnership%20enquiry). A short note is enough.
