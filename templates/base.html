@@ -35,6 +35,7 @@
   <link rel="canonical" href="{{ canonical_url }}">
   <link rel="alternate" hreflang="en" href="{{ canonical_url }}">
   <link rel="alternate" type="application/atom+xml" title="{{ config.title }} Atom Feed" href="{{ get_url(path='atom.xml') }}">
+  <link rel="alternate" type="text/plain" title="LLM-readable site index" href="{{ get_url(path='llms.txt') }}">
   <link rel="sitemap" type="application/xml" href="{{ get_url(path='sitemap.xml') }}">
   <link rel="icon" href="{{ get_url(path='favicon.ico') }}" sizes="32x32">
   <link rel="icon" type="image/svg+xml" href="{{ get_url(path='img/favicon.svg') }}">
@@ -98,6 +99,8 @@
         "name": {{ config.extra.author | json_encode | safe }},
         "url": {{ config.base_url | json_encode | safe }},
         "email": {{ config.extra.email | json_encode | safe }},
+        "jobTitle": "Independent Consultant & Product Manager",
+        "knowsAbout": ["Business transformation", "Product management", "Artificial intelligence", "Data science", "Machine learning", "Web3"],
         "sameAs": {{ same_as | json_encode | safe }}
       },
       {
@@ -108,7 +111,16 @@
         "description": {{ config.description | json_encode | safe }},
         "inLanguage": "en",
         "publisher": { "@id": {{ config.base_url ~ "/#person" | json_encode | safe }} }
-      }{% if page %},
+      }{% if section and section.path == "/" %},
+      {
+        "@type": "ProfilePage",
+        "@id": {{ config.base_url ~ "/#profile" | json_encode | safe }},
+        "url": {{ config.base_url | json_encode | safe }},
+        "name": {{ config.title | json_encode | safe }},
+        "description": {{ config.description | json_encode | safe }},
+        "mainEntity": { "@id": {{ config.base_url ~ "/#person" | json_encode | safe }} },
+        "isPartOf": { "@id": {{ config.base_url ~ "/#website" | json_encode | safe }} }
+      }{% endif %}{% if page %},
       {
         "@type": "Article",
         "headline": {{ page.title | json_encode | safe }},
