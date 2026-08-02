@@ -1,25 +1,23 @@
 [[collection]]
 type = "card_simple"
 title = "Monash University Malaysia"
-content = "MEng (Research) · Engineering"
+content = "Master of Engineering by Research · Engineering"
 date = "Dec 2025 - Present"
 link = "https://www.monash.edu"
-featured = true  # optional
+featured = true
 
 [[collection]]
 type = "card_simple"
 title = "UTAR"
-content = "BSc. (Hons) Applied Mathematics with Computing, First Class Honours" 
+content = "BSc (Hons), First Class Honours · Applied Mathematics with Computing"
 date = "Oct 2022 - Oct 2025"
-# icon = ""
-link = "https://www.utar.edu.my" # optional
-featured = false  # optional
+link = "https://www.utar.edu.my"
+featured = false
 
 [[collection]]
 type = "card_simple"
 title = "UTAR"
-content = "Foundation in Science" 
+content = "Foundation · Science"
 date = "Oct 2021 - Oct 2022"
-# icon = ""
-link = "https://www.utar.edu.my" # optional
-featured = false  # optional
+link = "https://www.utar.edu.my"
+featured = false

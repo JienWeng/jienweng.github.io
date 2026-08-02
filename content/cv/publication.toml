@@ -1,23 +1,22 @@
 [[collection]]
 type = "card_expandable"
 title = "The Primacy of Information Design Over Algorithm Selection in Multi-Agent Cooperation"
-subtitle = "Jien Weng Lai, Wei Lun Tan, Ying Loong Lee, Ming Fai Chow · Under Review @ IEEE Social Computation"
+authors = "Jien Weng Lai, Wei Lun Tan, Ying Loong Lee and Ming Fai Chow"
+venue = "IEEE Social Computation"
+status = "Under review"
 date = "Apr 2026"
-# TODO: add preprint/DOI link once the paper is public
-content = """
-A full-factorial experiment in the Public Goods Game shows that information regime and incentive strength explain 85.8% of cooperation-rate variance; algorithm choice accounts for just 3.8%. Agents with the least information cooperate most (83% vs 42% under full observation), attributable to state-space compression. TreeSHAP and Shapley-variance decomposition confirm information structure, not algorithm selection is the primary design lever for cooperation.
-"""
+content = "A full-factorial experiment in the Public Goods Game shows that information regime and incentive strength explain 85.8% of cooperation-rate variance; algorithm choice accounts for just 3.8%. Agents with the least information cooperate most (83% versus 42% under full observation), attributable to state-space compression. TreeSHAP and Shapley-variance decomposition confirm information structure, not algorithm selection, as the primary design lever for cooperation."
 tags = ["Multi-Agent Reinforcement Learning", "Public Goods Game", "Information Design", "Cooperation"]
 featured = true
 
 [[collection]]
 type = "card_expandable"
 title = "Optimal Execution with Alpha Signals"
-subtitle = "Jien Weng Lai · SSRN · Published April 2026"
+authors = "Jien Weng Lai"
+venue = "SSRN"
+status = "Published"
 date = "Apr 2026"
 link = "https://doi.org/10.2139/ssrn.6323159"
-content = """
-Studies optimal trade execution strategies that incorporate predictive alpha signals, bridging market microstructure theory with practical quantitative trading. Preprint available on SSRN.
-"""
+content = "Studies optimal trade execution strategies that incorporate predictive alpha signals, bridging market microstructure theory with practical quantitative trading."
 tags = ["Quantitative Finance", "Optimal Execution", "Alpha Signals", "Market Microstructure"]
 featured = true

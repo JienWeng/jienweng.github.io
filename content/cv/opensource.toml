@@ -1,13 +1,10 @@
 [[collection]]
 type = "card_expandable"
 title = "SymPy"
-subtitle = "PR #29376 (utilities): add type annotations to warning helpers"
-expand_label = "Details"
+subtitle = "PR #29376: add type annotations to warning helpers"
 date = "12 Mar 2026"
-icon = "https://www.sympy.org/static/images/logo.png"
 link = "https://github.com/sympy/sympy/pull/29376"
-featured = true
-content = """
-Added type annotations to `sympy.utilities.exceptions`, covering `SymPyDeprecationWarning`, `sympy_deprecation_warning`, and `ignore_warnings`. The patch uses a `TYPE_CHECKING` guard to keep `collections.abc` out of the runtime import path. Reviewed and merged into `sympy:master` by maintainer [@oscarbenjamin](https://github.com/oscarbenjamin). Part of the broader typing effort tracked in [Issue #28806](https://github.com/sympy/sympy/issues/28806).
-"""
+expand_label = "Details"
+content = "Added type annotations to sympy.utilities.exceptions, covering SymPyDeprecationWarning, sympy_deprecation_warning and ignore_warnings. The patch uses a TYPE_CHECKING guard to keep collections.abc out of the runtime import path. It was reviewed and merged into SymPy master."
 tags = ["Python", "Type Annotations", "Open Source", "SymPy"]
+featured = true
