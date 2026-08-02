@@ -4,36 +4,12 @@ description = "Independent consultant and product manager partnering with teams 
 template = "home.html"
 +++
 
-I work across business transformation, AI, data, and Web3 product development. As an independent consultant and product manager, I help teams improve processes, build practical systems, and turn ideas into working products. My Web3 product work also involves proprietary AI research, and I deliver data and machine-learning training.
+## What I help move forward
 
-What makes this work distinctive is the range I can connect: business needs, product decisions, technical delivery, research, and the people who eventually need to own the system. Depending on the problem, that may involve process redesign, product management, automation, data systems, applied AI, Web3 technology, or capability building.
+- **Business transformation:** clarify how work happens, remove friction, and shape practical systems around the people using them.
+- **Product delivery:** turn AI, data, and Web3 ideas into clear priorities, testable products, and coordinated delivery.
+- **Team capability:** help analytics teams develop the knowledge and practices to own their models and systems.
 
-Alongside consulting and product work, I am a research assistant at Monash University Malaysia. My research covers mathematical modelling, multi-agent reinforcement learning, market microstructure, quantitative finance, and environmental systems.
+What makes my work distinctive is the range I can connect: commercial priorities, product decisions, technical delivery, research, and the people who eventually need to own the result.
 
-## Start Here
-
-- [Bio](/bio/) for my professional background and current areas of work.
-- [Notes](/notes/) for working explanations, derivations, and technical clarifications.
-- [Blog](/blog/) for essays, event write-ups, and less formal pieces.
-
-<!--## Selected Writing
-
-- [Making Linear Algebra Make Sense with Gemini CLI](/notes/2026-03-03-linear-algebra-sense-making/) on teaching from geometric intuition instead of notation first.
-- [Reinforcement learning practices in healthcare applications](/notes/reinforcement-learning-practices-in-healthcare/) on why reliability and observability matter more than benchmark-style optimism.
-- [Dead Internet Theory #1](/blog/dead_internet_theory_1/) on authenticity, automated content, and why generated prose often feels empty even when it is polished.-->
-
-## Current Work
-
-- Business transformation, process improvement, and practical systems
-- AI, data, and Web3 product development
-- Data and machine-learning training
-- Information design and credit assignment in multi-agent cooperation
-- Optimal execution with predictive alpha signals
-
-## Selected Publications
-
-{{ collection(file="publications/items.toml") }}
-
-## Pet Projects
-
-{{ collection(file="projects/items.toml") }}
+[See how we can work together](/services/), or read my [latest writing](/notes/) to understand how I approach problems.

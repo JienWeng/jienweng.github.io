@@ -31,13 +31,13 @@ But forget the drama for a second, because the best part? Deepseek is open-sourc
 
 So, I went ahead and do something I wanted to do for soooo long -- built a chatbot. It’s not packed with fancy features (yet), but through this little experiment, I’ve discovered some pretty interesting things about how the Deepseek R1 model works. You can try it out live [here](https://huggingface.co/spaces/jienweng/chatbot_v2).
 
-btw, we won’t dive into the technical aspects just yet—that’s coming up in the next section! Stay tuned for more details on how these improvements will work behind the scenes.
+btw, we won’t dive into the technical aspects just yet. That’s coming up in the next section! Stay tuned for more details on how these improvements will work behind the scenes.
 
 ### The Unique "Thinking" Approach
 
 What blows my mind the most about this whole setup is how I managed to separate the model’s thinking process from its final response. Most chatbots out there? They just spit out an answer, and you have no idea what’s happening behind the scenes. But with this, you can actually see how the model thinks through a problem before giving an answer. It’s like watching an AI have an inner monologue, refining its thoughts before speaking. And honestly? I’ve never seen this before in any LLMs I’ve used.
 
-At first, I didn’t even plan for this feature—it just happened while I was testing out different ways to improve response quality. I noticed that the model was generating some hidden reasoning steps before its final output. Instead of discarding them, I figured, Why not show them? And once I did, it was a game-changer. It made the AI feel so much more transparent—almost like it was thinking out loud.
+At first, I didn’t even plan for this feature. It just happened while I was testing out different ways to improve response quality. I noticed that the model was generating some hidden reasoning steps before its final output. Instead of discarding them, I figured, Why not show them? And once I did, it was a game-changer. It made the AI feel much more transparent, almost like it was thinking out loud.
 
 [![Fun Fact: The "thinking" parts are actually generated as HTML!](https://cdn.cosmos.so/b65be583-5569-41e4-ab62-b4bf500120e1?format=jpeg)](https://huggingface.co/spaces/jienweng/chatbot_v2)
 
@@ -48,13 +48,13 @@ For example, if you ask it something like, “What do you think about climate ch
 3. Forming logical connections
 4. Synthesizing a comprehensive response
 
-After seeing the model’s thinking process, what really stands out to me is how structured its response is. It doesn’t just throw out some generic take on climate change—it actually analyzes the question, breaks it down into different angles, and then builds a well-organized answer.
+After seeing the model’s thinking process, what really stands out to me is how structured its response is. It doesn’t just throw out some generic take on climate change. It actually analyzes the question, breaks it down into different angles, and then builds a well-organized answer.
 
-[![Interesting Observation: The model sometimes includes unexpected details—some accurate, some a bit off!](https://cdn.cosmos.so/6c9e3e2a-d318-4615-8786-7d60248fc049?format=jpeg)](https://huggingface.co/spaces/jienweng/chatbot_v2)
+[![Interesting Observation: The model sometimes includes unexpected details, some accurate and some a bit off!](https://cdn.cosmos.so/6c9e3e2a-d318-4615-8786-7d60248fc049?format=jpeg)](https://huggingface.co/spaces/jienweng/chatbot_v2)
 
-That said, while the response does sound solid, there are some oddities that make me wonder what’s going on under the hood. For example, it mentions “the subtropical Andaman and Nicobar Islands”—which, uh, aren’t even part of Malaysia. Also, “Ch bamboo” initiative? Never heard of that one. These small but noticeable mistakes show that while the model is good at structuring its answers, it still struggles with factual accuracy.
+That said, while the response does sound solid, there are some oddities that make me wonder what’s going on under the hood. For example, it mentions “the subtropical Andaman and Nicobar Islands,” which, uh, aren’t even part of Malaysia. Also, “Ch bamboo” initiative? Never heard of that one. These small but noticeable mistakes show that while the model is good at structuring its answers, it still struggles with factual accuracy.
 
-But that’s exactly what makes having a visible thought process so useful. Instead of just blindly trusting AI responses, we can now see how the model arrives at its conclusions—which means we can spot errors more easily. If it had **hallucinated** this stuff in a normal chatbot, I might not have even noticed. But because I can watch it reason through the problem, I can tell where things might be going wrong.
+But that’s exactly what makes having a visible thought process so useful. Instead of just blindly trusting AI responses, we can now see how the model arrives at its conclusions, which means we can spot errors more easily. If it had **hallucinated** this stuff in a normal chatbot, I might not have even noticed. But because I can watch it reason through the problem, I can tell where things might be going wrong.
 
 [![AI Hallucination Meme](https://cdn.cosmos.so/8cf44525-7111-4a09-87c7-ee6a09d3cb3b?format=jpeg)](https://huggingface.co/spaces/jienweng/chatbot_v2)
 
@@ -144,9 +144,9 @@ Due to iframe restrictions, you can access the live demo through these methods:
 
 ### Summary
 
-Deepseek has definitely shaken things up in the AI world, and the drama surrounding it is just the tip of the iceberg. Forget the finger-pointing—this move is a win for the AI community, especially since Deepseek is open-source. No more waiting around for companies to decide how we can use AI; now it’s out there for everyone to play with and improve.
+Deepseek has definitely shaken things up in the AI world, and the drama surrounding it is just the tip of the iceberg. Forget the finger-pointing. This move is a win for the AI community, especially since Deepseek is open-source. No more waiting around for companies to decide how we can use AI. Now it’s out there for everyone to play with and improve.
 
-And as for my little experiment—building a chatbot with the Deepseek R1 model—it’s not feature-packed yet, but it’s definitely been a fun ride. You can try it out live [here](\(https://huggingface.co/spaces/jienweng/chatbot_v2\)) and see how it works for yourself!
+And as for my little experiment building a chatbot with the Deepseek R1 model, it’s not feature-packed yet, but it’s definitely been a fun ride. You can try it out live [here](\(https://huggingface.co/spaces/jienweng/chatbot_v2\)) and see how it works for yourself!
 
 ### Additional Resources
 

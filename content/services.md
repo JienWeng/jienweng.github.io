@@ -1,32 +1,32 @@
 +++
 title = "Work With Me"
-description = "Partner with Jien Weng on business transformation, AI, data, and Web3 product work—from discovery and delivery to team capability building."
+description = "Partner with Jien Weng to turn complex business and technical work into clear decisions, useful products, and lasting team capability."
 +++
 
-I partner with founders, operators, consulting teams, and technical leaders on work that sits between business ambition and technical delivery. The goal is not technology for its own sake. It is a better way of working, a product people can use, or a team that can carry the capability forward.
+I help teams make progress when the work crosses business operations, product decisions, and technical delivery. My role is to bring structure to an unclear problem, align the people involved, and help move the work toward something useful.
 
-My current independent work includes Web3 product management with proprietary AI research. My contractor engagements include business transformation consulting with [Quandatics](https://quandatics.com), where I work on process enhancement and automation, and data science and machine-learning training with [Quandatics Academy](https://academy.quandatics.com), where I coach an analytics team. Before this I worked in actuarial, insurance, and finance data roles.
+I am most useful when a team has ambition and technical potential, but needs someone who can connect the commercial objective, the product direction, the delivery details, and the people who will own the result.
 
-## Ways to partner
+## A good fit
 
-- **Product and transformation partnerships:** understand how work gets done, find unnecessary friction, align stakeholders, and move from an early idea to a system or product that can be tested and used.
+- A process is slowing the team down and the right improvement is not yet clear.
+- An AI, data, or Web3 idea needs product direction and a realistic path to delivery.
+- A consulting or product team needs someone who can work across stakeholders and technical specialists.
+- An analytics team needs practical training and coaching so it can own what it builds.
 
-- **Specialist delivery partnerships:** complement a consulting or product team with business analysis, product management, applied AI, data, automation, or Web3 capability.
+## What I bring
 
-- **Capability-building partnerships:** design practical data and machine-learning training, coach analytics teams, and help internal teams become able to own what they build.
+- **Clarity before activity.** I start by understanding the real constraint, the people involved, and what a useful outcome looks like.
+- **Translation across disciplines.** I connect business needs, product decisions, research, and technical delivery without losing the practical details.
+- **Capability that remains.** I aim to leave the team with clearer systems, stronger judgment, and the ability to keep improving after the engagement.
 
-## Evidence in practice
+## Relevant experience
 
-- **Transformation grounded in real operations.** My Quandatics engagement covers process enhancement and automation, including shaping a custom CRM around the team's actual workflow when off-the-shelf tools did not fit.
+- Business transformation and process automation with [Quandatics](https://quandatics.com), including a custom CRM shaped around the team's operating workflow.
+- Web3 product management involving proprietary AI research, covering problem framing, prioritisation, technical collaboration, and delivery.
+- Data science and machine-learning coaching through [Quandatics Academy](https://academy.quandatics.com), supported by public resources such as my [hands-on MLOps tutorial](/notes/intro-to-mlops-tutorial/).
+- Applied research at Monash University Malaysia and an open-source contribution merged into [SymPy](https://github.com/sympy/sympy/pull/29376).
 
-- **Product leadership under confidentiality.** My current Web3 work combines product management with proprietary AI research. Public details are limited, but the role spans problem framing, prioritisation, technical collaboration, and delivery.
+## Start a conversation
 
-- **Technical depth made usable.** Through Quandatics Academy, I coach an analytics team in data science and machine learning. The material is reinforced by public technical resources such as my [hands-on MLOps tutorial](/notes/intro-to-mlops-tutorial/).
-
-- **Research and engineering credibility.** I conduct applied research at Monash University Malaysia, publish work in multi-agent systems and quantitative finance, and have contributed code merged into [SymPy](https://github.com/sympy/sympy/pull/29376).
-
-The common thread is translation: connecting commercial priorities, technical choices, and the people who need to use and own the result.
-
-## Discuss a partnership
-
-Email me at [laijienweng@gmail.com](mailto:laijienweng@gmail.com?subject=Partnership%20enquiry). A short note about your team, the opportunity, and what you are trying to move forward is enough. I am open to delivery partnerships, research collaborations, training partnerships, advisory work, and selected speaking opportunities.
+Email me at [laijienweng@gmail.com](mailto:laijienweng@gmail.com?subject=Partnership%20enquiry) with three things: what you are trying to achieve, what is currently getting in the way, and who is involved. A short note is enough.

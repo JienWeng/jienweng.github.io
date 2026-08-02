@@ -33,19 +33,19 @@ The looks we got when we arrived were priceless. "Are you guys from Computer Sci
 
 ![Our first breakfast together at PayHack 2024 - nervous but excited! The calm before the storm.](https://cdn.cosmos.so/25b6ad42-8235-45ae-9505-a2c296a8ca2a?format=jpeg)
 
-November 30th marked our first day, and it was a blur of ideation and learning. We came up with an innovative idea: creating an app to visualize transaction carbon footprints, with the ability to pool and trade carbon footprint surpluses with companies in need. On paper, it sounded promising—a perfect blend of fintech and environmental consciousness.
+November 30th marked our first day, and it was a blur of ideation and learning. We came up with an innovative idea: creating an app to visualize transaction carbon footprints, with the ability to pool and trade carbon footprint surpluses with companies in need. On paper, it sounded like a promising blend of fintech and environmental consciousness.
 
 ![Getting grilled during our mentoring session - each question pushed us to think deeper about our solution](https://cdn.cosmos.so/b16e0c66-cefb-4cc6-8bf6-de5a087cc513?format=jpeg)
 
-Then came the intense mentoring sessions with Johan Nasir. He didn't hold back. "What happens if the carbon credits are manipulated?" he'd challenge. "How do you ensure the authenticity of the footprint data?" Another round of rethinking. Each session felt like an intense rotan session—tough love at its finest. He'd poke holes in our solutions, push us to think deeper, and force us to confront real-world problems that actually needed solving.
+Then came the intense mentoring sessions with Johan Nasir. He didn't hold back. "What happens if the carbon credits are manipulated?" he'd challenge. "How do you ensure the authenticity of the footprint data?" Another round of rethinking. Each session felt like an intense rotan session, with tough love at its finest. He'd poke holes in our solutions, push us to think deeper, and force us to confront real-world problems that actually needed solving.
 
-The week before the hackathon was a rollercoaster. Competing against almost 100 teams from across Malaysia, we were shocked to make it to the Top 32. When we saw Johan's name among our judges and received the news of our advancement, our excitement was through the roof. But reality quickly set in—we had a major problem. None of us had real web development experience. My knowledge was limited to Python, SQL, and vanilla HTML/CSS/JavaScript.
+The week before the hackathon was a rollercoaster. Competing against almost 100 teams from across Malaysia, we were shocked to make it to the Top 32. When we saw Johan's name among our judges and received the news of our advancement, our excitement was through the roof. But reality quickly set in: we had a major problem. None of us had real web development experience. My knowledge was limited to Python, SQL, and vanilla HTML/CSS/JavaScript.
 
 With just four days between Tuesday and Friday, we had to make crucial technical decisions while juggling our internships. After intense research, we settled on Vue.js and Flask. Janice even traveled all the way from JB to KL for this. Every evening after our internships, we'd dive into tutorials, trying to absorb as much as we could about our chosen tech stack.
 
 ![3 AM and still debugging - running on determination and coffee](https://cdn.cosmos.so/0d444922-77c4-4d91-b645-fb96b7fd5d17?format=jpeg)
 
-The hackathon itself was intense. When exhaustion hit, we took turns napping wherever we could. I couldn't get a tent, so I made do with a random bench for quick 4-hour power naps before jumping back into coding. Everything seemed to be going smoothly until the morning of the submission. At 8:30 AM, just after breakfast and 90 minutes before the deadline, our backend crashed—the information couldn't be parsed properly. In a desperate move, we had to hardcode some components just to make the submission deadline at 10 AM.
+The hackathon itself was intense. When exhaustion hit, we took turns napping wherever we could. I couldn't get a tent, so I made do with a random bench for quick 4-hour power naps before jumping back into coding. Everything seemed to be going smoothly until the morning of the submission. At 8:30 AM, just after breakfast and 90 minutes before the deadline, our backend crashed because the information couldn't be parsed properly. In a desperate move, we had to hardcode some components just to make the submission deadline at 10 AM.
 
 ![Presenting our final product: MouManTai - tracking and trading carbon footprints from financial transactions](https://cdn.cosmos.so/0784bdc4-dc31-4b2b-9d5a-2e04677a9ba1?format=jpeg)
 
@@ -61,8 +61,8 @@ Looking back now, the sleepless nights and endless debugging sessions blur toget
 
 ![Jien Weng, Janice, Gwyn and Roius](https://cdn.cosmos.so/266c9030-58ad-4536-9e60-c88edb6df8a9?format=jpeg)
 
-To Janice, Roius, and Gwyn: thank you for taking this leap of faith with me. For believing that our mathematical minds could contribute something meaningful to the tech world. To Johan: your guidance went beyond mentorship—you showed us that innovation comes from daring to be different. And to PayNet and JomHack: thank you for creating a space where even mathematics students could discover their potential in technology.
+To Janice, Roius, and Gwyn: thank you for taking this leap of faith with me. For believing that our mathematical minds could contribute something meaningful to the tech world. To Johan: your guidance went beyond mentorship and showed us that innovation comes from daring to be different. And to PayNet and JomHack: thank you for creating a space where even mathematics students could discover their potential in technology.
 
-They say the best stories come from stepping out of your comfort zone. Well, we didn't just step—we took a giant leap. And while our first hackathon journey has ended, something tells me this is just the beginning of our adventure in the tech world. The equations and formulas we've studied for years are no longer just abstract concepts—they're tools waiting to be applied in the vast playground of technology.
+They say the best stories come from stepping out of your comfort zone. Well, we didn't just step. We took a giant leap. And while our first hackathon journey has ended, something tells me this is just the beginning of our adventure in the tech world. The equations and formulas we've studied for years are no longer just abstract concepts. They're tools waiting to be applied in the vast playground of technology.
 
 After all, who says mathematicians can't be hackers too? Sometimes the best innovations come from those who dare to cross the boundaries between disciplines, who bring fresh perspectives to old problems. And maybe, just maybe, that's exactly what the tech world needs more of.

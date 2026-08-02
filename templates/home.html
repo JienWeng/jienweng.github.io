@@ -10,7 +10,7 @@ set notes = get_section(path="notes/_index.md") %}
             ambitious AI, data, and Web3 ideas into useful products and
             practical business improvements. My work combines business
             transformation, product management, hands-on systems thinking, and
-            research—especially when a problem sits between commercial
+            research, especially when a problem sits between commercial
             priorities and technical delivery.
             <a href="{{ get_url(path='/services/') }}">Explore ways to partner</a>.
         </p>
@@ -48,10 +48,14 @@ set notes = get_section(path="notes/_index.md") %}
     </aside>
 
     <section class="ledger-main">
+        <article class="prose home-file-note">
+            {{ section.content | safe }}
+        </article>
+
         <section class="index-block primary-index">
             <div class="index-header">
-                <h2>Recent Notes</h2>
-                <a href="{{ notes.permalink }}">index</a>
+                <h2>Latest Writing</h2>
+                <a href="{{ notes.permalink }}">all writing</a>
             </div>
             <div class="edition-list">
                 {% for item in notes.pages | slice(end=config.extra.home_notes)
@@ -65,10 +69,6 @@ set notes = get_section(path="notes/_index.md") %}
                 {% endfor %}
             </div>
         </section>
-
-        <article class="prose home-file-note">
-            {{ section.content | safe }}
-        </article>
     </section>
 </main>
 {% endblock content %}

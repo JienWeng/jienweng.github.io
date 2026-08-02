@@ -16,7 +16,7 @@
   {% set og_type = "website" %}
   {% if page %}{% set og_type = "article" %}{% endif %}
 
-  {% set og_image = get_url(path='img/og-default.png') %}
+  {% set og_image = get_url(path='img/og-partner.png') %}
   {% if page and page.extra.cover %}{% set og_image = get_url(path=page.extra.cover) %}{% endif %}
   {% if section and section.extra.cover %}{% set og_image = get_url(path=section.extra.cover) %}{% endif %}
 
@@ -165,11 +165,10 @@
         {% endif %}
       </div>
       <nav class="site-nav" aria-label="Primary">
-        <a href="{{ get_url(path='/notes/') }}"{% if current is starting_with("/notes/") %} aria-current="page"{% endif %}>Notes</a>
-        <a href="{{ get_url(path='/publications/') }}"{% if current is starting_with("/publications/") %} aria-current="page"{% endif %}>Publications</a>
+        <a href="{{ get_url(path='/notes/') }}"{% if current is starting_with("/notes/") %} aria-current="page"{% endif %}>Writing</a>
+        <a href="{{ get_url(path='/publications/') }}"{% if current is starting_with("/publications/") %} aria-current="page"{% endif %}>Research</a>
         <a href="{{ get_url(path='/cv/') }}"{% if current is starting_with("/cv/") %} aria-current="page"{% endif %}>CV</a>
-        <a href="{{ get_url(path='/projects/') }}"{% if current is starting_with("/projects/") %} aria-current="page"{% endif %}>Projects</a>
-        <a href="{{ get_url(path='/bio/') }}"{% if current is starting_with("/bio/") %} aria-current="page"{% endif %}>Bio</a>
+        <a href="{{ get_url(path='/bio/') }}"{% if current is starting_with("/bio/") %} aria-current="page"{% endif %}>About</a>
         <a href="{{ get_url(path='/services/') }}"{% if current is starting_with("/services/") %} aria-current="page"{% endif %}>Work With Me</a>
       </nav>
     </header>
@@ -180,15 +179,11 @@
       <div>© {{ now() | date(format="%Y") }} {{ config.extra.author }}. Last built {{ now() | date(format="%b %Y") }}.</div>
       <div class="footer-links">
         <a href="{{ get_url(path='/now/') }}">Now</a>
-        <a href="{{ get_url(path='/log/') }}">Log</a>
-        <a href="{{ get_url(path='/blog/') }}">Blog</a>
-        <a href="{{ get_url(path='/misc/') }}">Misc</a>
         <a href="{{ get_url(path='atom.xml') }}">RSS</a>
         <a href="mailto:{{ config.extra.email }}">Email</a>
         <a href="{{ config.extra.github }}" target="_blank" rel="noreferrer noopener">GitHub</a>
         <a href="{{ config.extra.linkedin }}" target="_blank" rel="noreferrer noopener">LinkedIn</a>
         <a href="{{ config.extra.orcid }}" target="_blank" rel="noreferrer noopener">ORCID</a>
-        <a href="{{ get_url(path='/colophon/') }}">Colophon</a>
       </div>
     </footer>
   </div>

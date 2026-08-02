@@ -1,6 +1,6 @@
 +++
 title = "A Small Talk About Hackathons"
-description = "'What happens when passion turns into pressure — and how do you know when it’s time to pause, realign, and reset?"
+description = "What happens when passion turns into pressure, and how do you know when it is time to pause, realign, and reset?"
 date = 2025-08-07
 updated = 2025-08-07
 draft = false
