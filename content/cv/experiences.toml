@@ -2,7 +2,7 @@
 type = "card_simple"
 title = "Independent Consulting"
 date = "Apr 2026 - Present"
-content = "Independent Consultant & Product Manager — business transformation, Web3 product management, proprietary AI research, and data/ML training"
+content = "Independent Consultant & Product Manager: business transformation, Web3 product management, proprietary AI research, and data/ML training"
 featured = true
 
 [[collection]]
@@ -10,7 +10,7 @@ type = "card_simple"
 title = "Quandatics"
 date = "Apr 2026 - Present"
 link = "https://quandatics.com"
-content = "Contractor — Business Transformation Consultant"
+content = "Contractor: Business Transformation Consultant"
 featured = true
 
 [[collection]]
@@ -18,7 +18,7 @@ type = "card_simple"
 title = "Quandatics Academy"
 date = "Jun 2026 - Present"
 link = "https://academy.quandatics.com"
-content = "Contractor — Data Science & Machine Learning Trainer"
+content = "Contractor: Data Science & Machine Learning Trainer"
 featured = true
 
 [[collection]]
