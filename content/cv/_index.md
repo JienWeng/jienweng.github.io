@@ -4,8 +4,6 @@ description = "A web version of the current CV."
 template = "section.html"
 +++
 
-[Download the public CV as PDF](/cv/jien-weng-lai-public-cv.pdf)
-
 # Experience
 
 {{ collection(file="experiences.toml") }}
