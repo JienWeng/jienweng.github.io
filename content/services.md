@@ -1,24 +1,32 @@
 +++
 title = "Work With Me"
-description = "The practical side of my work: helping teams get ML, data, and automation working inside a real business."
+description = "Partner with Jien Weng on business transformation, AI, data, and Web3 product work—from discovery and delivery to team capability building."
 +++
 
-I work independently across business transformation, product management, AI, data, and Web3. The practical side of that work is helping teams improve how they operate and turn ideas into systems and products people can actually use.
+I partner with founders, operators, consulting teams, and technical leaders on work that sits between business ambition and technical delivery. The goal is not technology for its own sake. It is a better way of working, a product people can use, or a team that can carry the capability forward.
 
 My current independent work includes Web3 product management with proprietary AI research. My contractor engagements include business transformation consulting with [Quandatics](https://quandatics.com), where I work on process enhancement and automation, and data science and machine-learning training with [Quandatics Academy](https://academy.quandatics.com), where I coach an analytics team. Before this I worked in actuarial, insurance, and finance data roles.
 
-## Things I can help with
+## Ways to partner
 
-Business transformation and process improvement: understanding how work gets done, finding unnecessary friction, and shaping practical systems and automation around the team.
+- **Product and transformation partnerships:** understand how work gets done, find unnecessary friction, align stakeholders, and move from an early idea to a system or product that can be tested and used.
 
-Product discovery and delivery across AI, data, and Web3: defining the problem, aligning stakeholders, and moving from an early idea to something that can be tested and used.
+- **Specialist delivery partnerships:** complement a consulting or product team with business analysis, product management, applied AI, data, automation, or Web3 capability.
 
-Getting ML past the experiment stage. That means scoping the problem, building it, and staying around until it runs in production and someone actually uses it.
+- **Capability-building partnerships:** design practical data and machine-learning training, coach analytics teams, and help internal teams become able to own what they build.
 
-Coaching an analytics team until it can build and own its own models. The material grows out of the same notes and tutorials I publish here, like the [MLOps tutorial](/notes/intro-to-mlops-tutorial/).
+## Evidence in practice
 
-And the boring parts: reproducibility, experiment tracking, deployment, process automation. In my experience this is what decides whether any of it survives.
+- **Transformation grounded in real operations.** My Quandatics engagement covers process enhancement and automation, including shaping a custom CRM around the team's actual workflow when off-the-shelf tools did not fit.
 
-## If you want to talk
+- **Product leadership under confidentiality.** My current Web3 work combines product management with proprietary AI research. Public details are limited, but the role spans problem framing, prioritisation, technical collaboration, and delivery.
 
-Email me at [laijienweng@gmail.com](mailto:laijienweng@gmail.com). A short note about your team and what you are stuck on is enough. If I am not the right person for it, I will say so.
+- **Technical depth made usable.** Through Quandatics Academy, I coach an analytics team in data science and machine learning. The material is reinforced by public technical resources such as my [hands-on MLOps tutorial](/notes/intro-to-mlops-tutorial/).
+
+- **Research and engineering credibility.** I conduct applied research at Monash University Malaysia, publish work in multi-agent systems and quantitative finance, and have contributed code merged into [SymPy](https://github.com/sympy/sympy/pull/29376).
+
+The common thread is translation: connecting commercial priorities, technical choices, and the people who need to use and own the result.
+
+## Discuss a partnership
+
+Email me at [laijienweng@gmail.com](mailto:laijienweng@gmail.com?subject=Partnership%20enquiry). A short note about your team, the opportunity, and what you are trying to move forward is enough. I am open to delivery partnerships, research collaborations, training partnerships, advisory work, and selected speaking opportunities.
