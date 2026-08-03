@@ -614,11 +614,33 @@ img {
   align-items: start;
 }
 
+.home .page-shell {
+  width: min(100%, 68rem);
+}
+
+.home .site-header {
+  padding: 0.8rem 0 0.6rem;
+  border-bottom: 1px solid var(--ink-soft);
+}
+
+.home .site-nav {
+  gap: 0.35rem 0.9rem;
+  padding-top: 0;
+  font-size: 0.62rem;
+  letter-spacing: 0.075em;
+}
+
+.home .home-ledger {
+  grid-template-columns: minmax(0, 1fr) 7.5rem;
+  gap: clamp(2.5rem, 5vw, 4.5rem);
+  padding-top: 2.4rem;
+}
+
 .home-main {
   min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: var(--space-6);
+  gap: 2.6rem;
 }
 
 .title-sheet {
@@ -627,13 +649,26 @@ img {
 
 .home-title {
   margin: 0;
-  font-size: clamp(2.3rem, 2rem + 1vw, 3rem);
+  font-size: clamp(2rem, 1.85rem + 0.65vw, 2.55rem);
+  letter-spacing: -0.015em;
 }
 
 .home-abstract {
-  max-width: 48rem;
-  margin: var(--space-4) 0 0;
-  font-size: 1.02rem;
+  max-width: 65ch;
+  margin: 0.8rem 0 0;
+  font-size: 0.94rem;
+  line-height: 1.62;
+}
+
+.home-letterhead {
+  margin: 0 0 2rem;
+  color: var(--ink-soft);
+  font-family: var(--label);
+  font-size: 0.57rem;
+  font-weight: 600;
+  letter-spacing: 0.075em;
+  line-height: 1.4;
+  text-transform: uppercase;
 }
 
 .section-index {
@@ -664,8 +699,23 @@ img {
 .home-marginalia {
   display: flex;
   flex-direction: column;
-  gap: var(--space-5);
+  gap: 1.2rem;
   padding-top: 0.25rem;
+}
+
+.home .portrait {
+  width: 5.6rem;
+  border-color: var(--ink-soft);
+  filter: grayscale(0.35) saturate(0.45);
+}
+
+.home .profile-links {
+  font-size: 0.88rem;
+  line-height: 1.4;
+}
+
+.home .plain-list li + li {
+  margin-top: 0.42rem;
 }
 
 .marginal-block {
@@ -688,6 +738,11 @@ img {
   text-transform: uppercase;
 }
 
+.home .marginal-label {
+  font-size: 0.56rem;
+  font-weight: 600;
+}
+
 .profile-link-group + .profile-link-group {
   padding-top: var(--space-3);
   border-top: 1px solid var(--rule);
@@ -695,6 +750,44 @@ img {
 
 .primary-index {
   margin-top: 0;
+}
+
+.home .index-block + .index-block {
+  margin-top: 0;
+}
+
+.home .index-header {
+  margin-bottom: 0;
+  padding-bottom: 0.32rem;
+  border-bottom: 1px solid var(--ink-soft);
+}
+
+.home .index-header h2 {
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+.home .index-header > a {
+  font-size: 0.8rem;
+}
+
+.home .edition-list,
+.home .reading-index,
+.home .document-index {
+  border-top: none;
+}
+
+.home .edition-row {
+  padding: 0.48rem 0;
+  gap: 1rem;
+}
+
+.home .edition-title {
+  font-size: 0.9rem;
+}
+
+.home .edition-date {
+  font-size: 0.59rem;
 }
 
 .featured-writing-copy {
@@ -725,22 +818,21 @@ img {
 }
 
 .reading-entry {
-  display: flex;
+  display: block;
   min-width: 0;
-  flex-direction: column;
-  gap: 0.2rem;
 }
 
 .reading-entry strong {
   font-family: var(--display);
-  font-size: 1.04rem;
+  margin-right: 0.35rem;
+  font-size: 0.94rem;
   line-height: 1.25;
 }
 
 .reading-entry > span {
   color: var(--ink-soft);
-  font-size: 0.86rem;
-  line-height: 1.5;
+  font-size: 0.82rem;
+  line-height: 1.45;
 }
 
 .reading-subject {
@@ -754,9 +846,29 @@ img {
 
 .document-index {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  column-gap: var(--space-6);
+  grid-template-columns: minmax(0, 1fr);
   border-top: 1px solid var(--ink-soft);
+}
+
+.home .reading-index a {
+  padding: 0.58rem 0;
+}
+
+.home .document-index a {
+  padding: 0.48rem 0;
+  font-size: 0.88rem;
+}
+
+.home .reading-subject,
+.home .document-index span:last-child {
+  font-size: 0.56rem;
+}
+
+.home .site-footer {
+  margin-top: 2.8rem;
+  padding-top: 0.65rem;
+  font-size: 0.61rem;
+  letter-spacing: 0.055em;
 }
 
 .document-index a {
@@ -1021,6 +1133,12 @@ body.publications-page .collection-meta {
 
   .home-marginalia {
     grid-column: 1;
+  }
+
+  .home .home-ledger {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding-top: 2rem;
   }
 
   .featured-writing-row {
