@@ -44,27 +44,53 @@ set notes = get_section(path="notes/_index.md") %}
                 alt="Portrait of Jien Weng"
             />
         </div>
-        <div class="marginal-block">
-            <ul class="plain-list">
-                <li><a href="mailto:{{ config.extra.email }}">Email</a></li>
-                <li>
-                    <a
-                        href="{{ config.extra.github }}"
-                        target="_blank"
-                        rel="noreferrer noopener"
-                        >GitHub</a
-                    >
-                </li>
-                <li>
-                    <a
-                        href="{{ config.extra.linkedin }}"
-                        target="_blank"
-                        rel="noreferrer noopener"
-                        >LinkedIn</a
-                    >
-                </li>
-            </ul>
-        </div>
+        <nav class="marginal-block profile-links" aria-label="Profile and subscription links">
+            <div class="profile-link-group">
+                <p class="marginal-label">Find me</p>
+                <ul class="plain-list">
+                    <li><a href="mailto:{{ config.extra.email }}">Email</a></li>
+                    <li>
+                        <a
+                            href="{{ config.extra.linkedin }}"
+                            target="_blank"
+                            rel="noreferrer noopener"
+                            >LinkedIn</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="{{ config.extra.github }}"
+                            target="_blank"
+                            rel="noreferrer noopener"
+                            >GitHub</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="{{ config.extra.scholar }}"
+                            target="_blank"
+                            rel="noreferrer noopener"
+                            >Google Scholar</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="{{ config.extra.orcid }}"
+                            target="_blank"
+                            rel="noreferrer noopener"
+                            >ORCID</a
+                        >
+                    </li>
+                </ul>
+            </div>
+            <div class="profile-link-group">
+                <p class="marginal-label">Follow</p>
+                <ul class="plain-list">
+                    <li><a href="{{ get_url(path='atom.xml') }}">RSS feed</a></li>
+                    <li><a href="{{ get_url(path='/blog/') }}">Older blog</a></li>
+                </ul>
+            </div>
+        </nav>
     </aside>
 </main>
 {% endblock content %}
