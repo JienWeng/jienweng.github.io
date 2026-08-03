@@ -5,7 +5,6 @@ set notes = get_section(path="notes/_index.md") %}
 <main class="home-ledger">
     <div class="home-main">
         <section class="title-sheet">
-            <p class="home-letterhead">Business transformation · Product · AI · Data · Web3</p>
             <h1 class="home-title">{{ config.extra.site_title }}</h1>
             <p class="home-abstract">
                 I partner with founders, operators, and technical teams to turn
@@ -35,33 +34,32 @@ set notes = get_section(path="notes/_index.md") %}
             </div>
         </section>
 
-        <section class="index-block home-reading-paths">
+        <section class="index-block home-practice">
             <div class="index-header">
-                <h2>Selected Writing</h2>
-                <a href="{{ notes.permalink }}">complete index</a>
+                <h2>Scope of Work</h2>
+                <a href="{{ get_url(path='/services/') }}">details</a>
             </div>
-            <div class="reading-index">
-                <a href="{{ get_url(path='/notes/entropy-time-arrow-yu-deng/') }}">
-                    <span class="reading-entry">
-                        <strong>Why time does not run backwards</strong>
-                        <span>Entropy increase and the new hard-sphere result, read from first principles.</span>
-                    </span>
-                    <span class="reading-subject">Mathematics and physics</span>
-                </a>
-                <a href="{{ get_url(path='/notes/intro-to-mlops-tutorial/') }}">
-                    <span class="reading-entry">
-                        <strong>From model to working product</strong>
-                        <span>A practical MLOps guide with a complete MLflow example.</span>
-                    </span>
-                    <span class="reading-subject">Applied AI</span>
-                </a>
-                <a href="{{ get_url(path='/notes/fokker-planck-sde/') }}">
-                    <span class="reading-entry">
-                        <strong>How a probability density evolves</strong>
-                        <span>From one stochastic trajectory to the Fokker-Planck equation.</span>
-                    </span>
-                    <span class="reading-subject">Stochastic modelling</span>
-                </a>
+            <div class="practice-table" role="table" aria-label="Scope of work">
+                <div class="practice-head" role="row">
+                    <span role="columnheader">Area</span>
+                    <span role="columnheader">Focus</span>
+                </div>
+                <div role="row">
+                    <strong role="cell">Business transformation</strong>
+                    <span role="cell">Processes, operating systems, and practical automation</span>
+                </div>
+                <div role="row">
+                    <strong role="cell">Product delivery</strong>
+                    <span role="cell">AI, data, and Web3 products from direction to delivery</span>
+                </div>
+                <div role="row">
+                    <strong role="cell">Research and capability</strong>
+                    <span role="cell">Applied research, machine-learning training, and team ownership</span>
+                </div>
+            </div>
+            <div class="practice-enquiry">
+                <span>Have a problem between business and technology?</span>
+                <a href="mailto:{{ config.extra.email }}?subject=Partnership%20enquiry">Send a short note</a>
             </div>
         </section>
 
