@@ -39,38 +39,29 @@ set notes = get_section(path="notes/_index.md") %}
                 <h2>Selected Writing</h2>
                 <a href="{{ notes.permalink }}">complete index</a>
             </div>
-            <ol class="reading-index">
-                <li>
-                    <a href="{{ get_url(path='/notes/entropy-time-arrow-yu-deng/') }}">
-                        <span class="reading-number">I</span>
-                        <span class="reading-entry">
-                            <strong>Why time does not run backwards</strong>
-                            <span>Entropy increase and the new hard-sphere result, read from first principles.</span>
-                        </span>
-                        <span class="reading-subject">Mathematics and physics</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ get_url(path='/notes/intro-to-mlops-tutorial/') }}">
-                        <span class="reading-number">II</span>
-                        <span class="reading-entry">
-                            <strong>From model to working product</strong>
-                            <span>A practical MLOps guide with a complete MLflow example.</span>
-                        </span>
-                        <span class="reading-subject">Applied AI</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ get_url(path='/notes/fokker-planck-sde/') }}">
-                        <span class="reading-number">III</span>
-                        <span class="reading-entry">
-                            <strong>How a probability density evolves</strong>
-                            <span>From one stochastic trajectory to the Fokker-Planck equation.</span>
-                        </span>
-                        <span class="reading-subject">Stochastic modelling</span>
-                    </a>
-                </li>
-            </ol>
+            <div class="reading-index">
+                <a href="{{ get_url(path='/notes/entropy-time-arrow-yu-deng/') }}">
+                    <span class="reading-entry">
+                        <strong>Why time does not run backwards</strong>
+                        <span>Entropy increase and the new hard-sphere result, read from first principles.</span>
+                    </span>
+                    <span class="reading-subject">Mathematics and physics</span>
+                </a>
+                <a href="{{ get_url(path='/notes/intro-to-mlops-tutorial/') }}">
+                    <span class="reading-entry">
+                        <strong>From model to working product</strong>
+                        <span>A practical MLOps guide with a complete MLflow example.</span>
+                    </span>
+                    <span class="reading-subject">Applied AI</span>
+                </a>
+                <a href="{{ get_url(path='/notes/fokker-planck-sde/') }}">
+                    <span class="reading-entry">
+                        <strong>How a probability density evolves</strong>
+                        <span>From one stochastic trajectory to the Fokker-Planck equation.</span>
+                    </span>
+                    <span class="reading-subject">Stochastic modelling</span>
+                </a>
+            </div>
         </section>
 
         <section class="index-block home-site-index">
