@@ -108,7 +108,7 @@ The test for $\beta\_j = 0$ is simply the special case where $\beta\_{j,0} = 0$.
 
 There is a direct equivalence between hypothesis tests and confidence intervals:
 
-- **Reject** $H\_0: \beta\_j = \beta\_{j,0}$ at level $\alpha$ if and only if $\beta\_{j,0}$ falls outside the $(1 - \alpha) \times 100\%$ confidence interval for $\beta\_j$.
+- **Reject** $H\_0: \beta\_j = \beta\_{j,0}$ at level $\alpha$ if and only if $\beta\_{j,0}$ falls outside the confidence interval with confidence level $1 - \alpha$ for $\beta\_j$.
 - **Fail to reject** $H\_0$ if and only if $\beta\_{j,0}$ falls inside the confidence interval.
 
 This means that when we check whether a 95% confidence interval for $\beta\_1$ contains zero, we are implicitly performing a t-test at the $\alpha = 0.05$ level.

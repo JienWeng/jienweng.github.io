@@ -49,7 +49,7 @@ where $SE(\hat{\beta}\_j) = \sqrt{MSE \cdot C\_{jj}}$ and $n - p$ is the degrees
 
 ## Confidence Interval Formula
 
-A $(1 - \alpha) \times 100\%$ confidence interval for $\beta\_j$ is:
+A confidence interval with confidence level $1 - \alpha$ for $\beta\_j$ is:
 
 $$\hat{\beta}\_j \pm t\_{\alpha/2,\, n-p} \cdot SE(\hat{\beta}\_j),$$
 

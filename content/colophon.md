@@ -7,4 +7,4 @@ This site is built with [Zola](https://www.getzola.org), a static site generator
 
 There is no JavaScript framework and no build pipeline beyond Zola itself. Math is rendered with KaTeX on the pages that need it. Comments run on GitHub Discussions through [giscus](https://giscus.app). Analytics is [GoatCounter](https://www.goatcounter.com), which counts visits and nothing else. There is no cookie banner because there are no cookies.
 
-The whole site is a public repository, hosted on GitHub Pages: [github.com/JienWeng/jienweng.github.io](https://github.com/JienWeng/jienweng.github.io). If something is broken, [email me](mailto:laijienweng@gmail.com).
+The site is built with Zola and hosted on GitHub Pages. If something is broken, [email me](mailto:laijienweng@gmail.com).

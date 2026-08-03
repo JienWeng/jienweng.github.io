@@ -24,21 +24,29 @@ featured = false
 reaction = true
 +++
 
-This note derives the incremental update rule for action-value estimation in k-armed bandits and explains why it is preferable to recomputing full averages. The problem is memory and compute cost when rewards accumulate over time. By the end, you get a practical update equation you can implement directly in RL experiments.
+This note derives the incremental update rule for action-value estimation in k-armed bandits. The useful idea is simple: update an average using only the previous estimate and the newest reward, without storing the full reward history.
 
-Consider any [k-armed bandit problem](https://en.wikipedia.org/wiki/Multi-armed_bandit), we consider each actions taken as pulling an arm of a slot machine, and the machine gives us a reward based on the action taken. We denote the action selected at time step $t$ as $A_t$, and the correspondiong reward received as $R_t$. Among the $k$ actions, the expected value of each action $a$ is denoted as $q_\*(a)=\mathbb{E}[R_t|A_t=a]$, which is also known as the *value* of that action $a$. It is rationale to choose the action with the highest value, however in the practical applications, the value of each action is unknown. Therefore, we need to estimate the value of each action, denoted as $Q_t(a)$, read as the estimated value of action $a$ at time step $t$. The fundamental goal is to find such $Q_t(a)$ that is as close as possible to the $q_\*(a)$. It is commonly known as the *true value* by community.
+## The bandit setup
 
-To estimate the values of each action, which we collectively call as the *action-value methods*, we can use the sample-average method to update the estimated value of action $a$ at time step $t$ as follows:
+In a [k-armed bandit problem](https://en.wikipedia.org/wiki/Multi-armed_bandit), each action is like pulling one arm of a slot machine. At time step $t$, the agent selects action $A_t$ and receives reward $R_t$.
 
-$$Q_{t}(a)={{\text{sum of rewards when $a$ taken prior to $t$}} \over {\text{number of times $a$ taken prior to $t$}}}.$$
+The expected reward of action $a$ is
 
-This method simply takes the average of all the rewards received when action $a$ is taken prior to time step $t$. To simplify the notation, we focus on a single action. We denoted $R_i$ as the reward received the $i$-th time of this action is taken, and $n$ as the number of times action $a$ is taken prior to time step $t$. Logically, we can let $Q_n$ denote the estimate of its action value after it has been taken $n-1$ times. Therefore, we can rewrite the update rule as follows:
+$$q_*(a)=\mathbb{E}[R_t \mid A_t=a].$$
 
-$$Q_n = \frac{\sum_{i=1}^{n-1}R_i}{n-1} = \frac{R_1+R_2+\ldots+R_{n-1}}{n-1}.$$
+This is the action's true value. If we knew every $q_*(a)$, we could always choose the action with the highest value. In practice, those values are unknown, so the agent maintains an estimate $Q_t(a)$ and improves it as rewards arrive.
 
-As the number of times of the action, $n$ increases, the obvious wat to update the estimate is to recalculate the average by summing up all the previous rewards and dividing it by $n-1$. However, as the number of times of the action increases to a large number, this method becomes progressively more expensive as we need to store all the previos rewards and recalculate the sum every time we need to update the estimate. 
+## From a sample average to an incremental update
 
-But is there a better way to update the estimate without storing all the previous rewards? The answer is yes. We devise the incremental formulas for updating the estimate by
+The sample-average estimate for action $a$ is
+
+$$Q_t(a)=\frac{\text{sum of rewards observed after taking $a$}}{\text{number of times $a$ has been taken}}.$$
+
+Focus on one action. Let $R_i$ be the reward observed the $i$th time that action is selected, and let $Q_n$ be the estimate after the first $n-1$ rewards. Then
+
+$$Q_n = \frac{1}{n-1}\sum_{i=1}^{n-1}R_i.$$
+
+Recomputing this expression from the full history would require us to retain every reward. Instead, write the next estimate in terms of the current one:
 
 $$ 
 \begin{align*}
@@ -51,32 +59,33 @@ Q_{n+1} & = \frac{1}{n}\sum_{i=1}^{n}R_i \\\\
 \end{align*}
 $$
 
-This incremental formula allows us to update the estimate $Q_n$ to $Q_{n+1}$ by only using the most recent reward $R_n$ and the previous estimate $Q_n$, without the need to store all the previous rewards. The term $\frac{1}{n}$ serves as the step size, which decreases as $n$ increases, ensuring that the estimate converges to the true value over time.
+The update has a useful form:
 
-Even in $n=1$, we can still obtain $Q_2 = R_1$ for arbitrary initial estimate $Q_1$. In this case, the initial estimate $Q_1$ is completely ignored after the first update, as it should be. In processing the $n$th reward, the estimate is adjusted by a fraction of the error term $[R_n - Q_n]$, which is the difference between the received reward and the current estimate. This adjustment is scaled by the step size $\frac{1}{n}$, which ensures that as more data is collected, the updates become smaller, allowing the estimate to stabilize around the true value. Note that the step size here is not constant, it decreases as the number of times of the action increases.
+$$\text{new estimate}=\text{old estimate}+\text{step size}\times\text{prediction error}.$$
 
-Back to the bandit problem, the proposed simulation in for pseudo-code is as follows:
+Here, $R_n-Q_n$ is the prediction error and $1/n$ is the step size. The first update gives $Q_2=R_1$ regardless of the initial $Q_1$. Later updates become smaller as the action is sampled more often.
+
+For a stationary bandit, the sample average converges to the true action value under the usual law-of-large-numbers assumptions. In a nonstationary problem, however, the decreasing step size eventually makes the estimate slow to react. A constant step size $\alpha$, with $0<\alpha\leq1$, gives recent rewards more influence:
+
+$$Q_{n+1}=Q_n+\alpha[R_n-Q_n].$$
+
+## Pseudocode
 
 {% detail(title="Bandit Problem with Incremental Step Size", default_open=false) %}
 ```python
-Initialize Q(a) arbitrarily for all actions a
+Initialize Q(a) arbitrarily and N(a) = 0 for every action a
 For each time step t = 1, 2, ...
     Select action A_t using a policy derived from Q (e.g., ε-greedy)
     Take action A_t and observe reward R_t
-    Update the estimate Q(A_t) using:
-        n = number of times action A_t has been taken prior to time t
-        Q(A_t) = Q(A_t) + (1/n) * [R_t - Q(A_t)]
+    N(A_t) = N(A_t) + 1
+    Q(A_t) = Q(A_t) + (1 / N(A_t)) * [R_t - Q(A_t)]
 End For
 ```
 {% end %}
+## Takeaway
 
+The incremental rule reduces the memory cost from storing an entire reward history to storing one estimate and one counter per action. More importantly, it exposes a pattern that appears throughout reinforcement learning: update an estimate by moving it toward a new target in proportion to the current error.
 
+## Reference
 
-In the end of this post, we derived the incremental step size method for updating the aciton-value estimates which extensively applied in reinforcement learning. This method is computationally efficient as it does not require storing all previous rewards, and it ensures convergence to the true action values over time. 
-
-{{ figure(src="https://m.media-amazon.com/images/I/81EBg4xmLgL._UF1000,1000_QL80_.jpg", alt="Reinforcement Learning: An Introduction", caption="Reinforcement Learning: An Introduction") }}
-
-I want to express my gratitude to Sutton and Barto for their excellent book [Reinforcement Learning: An Introduction](https://web.stanford.edu/class/psych209/Readings/SuttonBartoIPRLBook2ndEd.pdf) that provides a comprehensive introduction to the concepts and algorithms of reinforcement learning.
-
-References:
-- Sutton, R. S., & Barto, A. G. (2018). Reinforcement Learning: An Introduction (2nd ed.). MIT Press. [https://web.stanford.edu/class/psych209/Readings/SuttonBartoIPRLBook2ndEd.pdf](https://web.stanford.edu/class/psych209/Readings/SuttonBartoIPRLBook2ndEd.pdf)
+- Sutton, R. S., & Barto, A. G. (2018). *[Reinforcement Learning: An Introduction](http://incompleteideas.net/book/the-book-2nd.html)* (2nd ed.). MIT Press.

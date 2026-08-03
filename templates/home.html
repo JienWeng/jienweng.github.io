@@ -34,6 +34,42 @@ set notes = get_section(path="notes/_index.md") %}
             </div>
         </section>
 
+        <section class="index-block home-reading-paths">
+            <div class="index-header">
+                <h2>Start Here</h2>
+                <a href="{{ notes.permalink }}">browse topics</a>
+            </div>
+            <div class="reading-path-grid">
+                <a class="reading-path" href="{{ get_url(path='/notes/entropy-time-arrow-yu-deng/') }}">
+                    <span class="reading-path-label">Math and physics</span>
+                    <strong>Why time does not run backwards</strong>
+                    <span>My first-principles reading of entropy increase and the new hard-sphere result.</span>
+                </a>
+                <a class="reading-path" href="{{ get_url(path='/notes/intro-to-mlops-tutorial/') }}">
+                    <span class="reading-path-label">Applied AI</span>
+                    <strong>Build the path from model to product</strong>
+                    <span>A practical MLOps guide with a working MLflow example.</span>
+                </a>
+                <a class="reading-path" href="{{ get_url(path='/notes/fokker-planck-sde/') }}">
+                    <span class="reading-path-label">Stochastic modelling</span>
+                    <strong>See how a probability density evolves</strong>
+                    <span>From one stochastic trajectory to the Fokker-Planck equation.</span>
+                </a>
+            </div>
+        </section>
+
+        <section class="index-block home-site-index">
+            <div class="index-header">
+                <h2>Around the Site</h2>
+            </div>
+            <nav class="section-index" aria-label="Explore the rest of the site">
+                <a href="{{ get_url(path='/now/') }}">What I am doing now</a>
+                <a href="{{ get_url(path='/publications/') }}">Research and publications</a>
+                <a href="{{ get_url(path='/projects/') }}">Projects and experiments</a>
+                <a href="{{ get_url(path='/services/') }}">Work with me</a>
+            </nav>
+        </section>
+
     </div>
 
     <aside class="home-marginalia">

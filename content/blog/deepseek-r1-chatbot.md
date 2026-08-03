@@ -74,8 +74,6 @@ The chatbot is currently hosted on Hugging Face Spaces, running on a basic-tier 
 
 You might notice that the [live preview](https://huggingface.co/spaces/jienweng/chatbot_v2) here can be a bit slow while generating responses. That’s because the hardware isn’t optimized for LLM inference, so it’s working with some limitations. Hope you can bear with it! 😆
 
-If you enjoy the project and want to see it run smoother, you can consider [sponsoring me](https://buymeacoffee.com/jianrong_jr). Who knows? With enough support, I might upgrade the resources for future projects and push this even further :D
-
 ### Efficient Model Architecture
 
 The chatbot uses the Deepseek R1 Distilled 1.5B model, which is a significantly compressed version of the original 685B parameter model. Despite having only 1.5 billion parameters, it maintains impressive performance for many tasks.
@@ -137,7 +135,7 @@ This balanced perspective shows why I chose this model for my chatbot implementa
 Due to iframe restrictions, you can access the live demo through these methods:
 
 1. [Direct Link to Demo](https://huggingface.co/spaces/jienweng/chatbot_v2)
-2. [API Documentation](https://huggingface.co/docs/hub/spaces-sdks-docker#rest-api)
+2. [Docker Spaces documentation](https://huggingface.co/docs/hub/spaces-sdks-docker)
 3. [Source Code](https://huggingface.co/spaces/jienweng/chatbot_v2/tree/main)
 
 [![Chatbot interface](https://cdn.cosmos.so/0eab3363-76da-4dab-b44b-a4a5d7cdc96f?format=jpeg)](https://huggingface.co/spaces/jienweng/chatbot_v2)
@@ -177,7 +175,7 @@ Feel free to experiment with the live demo and share your thoughts!
    [Source](https://huggingface.co/spaces/jienweng/chatbot_v2)
 6. **Hugging Face - API Documentation**\
    *Official API documentation for Hugging Face Spaces, helping developers interact with models and integrate them into applications.*\
-   [Source](https://huggingface.co/docs/hub/spaces-sdks-docker#rest-api)
+   [Source](https://huggingface.co/docs/hub/spaces-sdks-docker)
 7. **Hugging Face - Source Code**\
    *Direct access to the source code of the Deepseek R1 chatbot project on Hugging Face Spaces for those interested in contributing or learning.*\
    [Source](https://huggingface.co/spaces/jienweng/chatbot_v2/tree/main)

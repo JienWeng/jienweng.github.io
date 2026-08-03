@@ -31,7 +31,7 @@ Our project, Eco Finance, focuses on the implementation of a carbon tax expected
 
 European countries are already implementing ESG-centric policies in various industries, such as the automobile industry. These are just preliminary steps; now we want to delve deeper into the subject.
 
-[![Eco Finance Interface](https://cdn.cosmos.so/3034bd0a-9dae-4078-80a9-a641c747b58a?format=jpeg)](https://payhack-2024.vercel.app/)
+![Eco Finance Interface](https://cdn.cosmos.so/3034bd0a-9dae-4078-80a9-a641c747b58a?format=jpeg)
 
 ## Understanding the idea
 
@@ -76,9 +76,9 @@ Basically that's it.
 
 Now, it's about the random thingys of the project. We have the project hosted at this link. Although it is not fully complete, it serves as a prototype and is yet to be an MVP. Considering we had only 24 hours to complete this from idea to execution, I mean, it's good for a first-timer. Right...?
 
-You can access the hosted project prototype [here](https://payhack-2024.vercel.app/).
+This was a 24-hour hackathon prototype. The hosted demo is no longer maintained, so I have kept the screenshots here as an archive of what we built. If you would like to understand the product or implementation, feel free to email me.
 
-Feel free to browse through it. If you have any questions, please email me, and I'll personally explain it to you. You can also see the admin page by accessing [here](https://payhack-2024.vercel.app/admin) or by changing the `/dashboard` to `/admin`. It looks something like this:
+The admin view looked like this:
 
 ![Admin Dashboard](https://cdn.cosmos.so/7ee8a2c3-551c-4726-9551-f7d6ab743391?format=jpeg)
 

@@ -1,6 +1,6 @@
 +++
-title = "Reinforcement learning practices in healthcare applications"
-description = "There are fundamentally 3 important practices to consider when applying reinforcement learning in healthcare settings."
+title = "Three Questions for Reinforcement Learning in Healthcare"
+description = "A practical reading of three safety questions for reinforcement learning in clinical settings: confounding, effective sample size, and prospective behaviour."
 date = 2025-10-21
 updated = 2025-10-21
 draft = false
@@ -24,44 +24,42 @@ featured = false
 reaction = true
 +++
 
-This note reviews practical reinforcement learning use cases in healthcare and the constraints that matter in deployment. The challenge is that policy learning in clinical settings is high-stakes, partially observed, and often offline. I summarize where RL is promising and where reliability and safety dominate design choices.
+Reinforcement learning (RL) is attractive in healthcare because many clinical decisions are sequential. A treatment changes the patient's state, that new state shapes the next decision, and the consequences may appear much later. The same structure also makes clinical RL difficult to evaluate safely.
 
+Sepsis management is a useful example. A patient's history can include vital signs, laboratory results, fluids, vasopressors, antibiotics, and other interventions over time. An RL formulation turns those observations into states, treatment choices into actions, and patient outcomes into rewards. But there is no simple short-term reward that captures the full clinical objective.
 
-In healthcare applications, artificial intelligence (AI) plays a crucial role in transforming patient care, diagnostics, and treatment planning to make healthcare more efficient and effective. However, if AI is used improperly, it may leads to worse outcomes rather than improved ones.
+My reading of Gottesman et al. (2019) reduces the deployment problem to three questions.
 
-In the subset of AI, reinforcement learning (RL) has shown great promise in optimising sequential decision-making processes, which are common settings in healthcare industry. However, applying RL in healthcare settings requires careful consideration of several important practices to ensure a safety outcome. To illustrate the pitfalls of reinforcement learning, we consider the sepsis management, which remains wide uncertainty in the way clinicians make decisions. 
+## Does the model observe the variables that shaped each decision?
 
-In the context of sepsis, a history may include a patient's vital signs, laboratory results, administered treatments, and other relevant clinical information over time. The actions could involve decisions such as administering fluids, vasopressors, or antibiotics at different time points. The rewards are typically defined based on patient outcomes, such as survival rates, length of hospital stay, or improvement in clinical scores. Note that defining ideal sepsis resuscitation strategies is challenging due to the complex and dynamic nature of the condition, as well as the variability in patient responses to treatments, therefore it is not straightforward to define short-term rewards for each action taken.
+An RL agent can use only what was recorded. Clinical decisions, however, can depend on context that is absent or poorly represented in the dataset. This creates a confounding problem.
 
-Here are three fundamental concerns when applying reinforcement learning in healthcare:
+For example, severely ill patients may receive fluids earlier and still have worse outcomes. A model can mistake the association between fluid administration and mortality for a harmful treatment effect, when illness severity influenced both the treatment and the outcome. Because actions and patient states unfold over time, missing variables can distort both immediate and delayed effects.
 
-# Is the AI given access to all variables that influence decision making?
+The first question is therefore not whether the dataset is large. It is whether the recorded state is rich enough to support the causal interpretation the policy needs.
 
-RL agent can only ook at the recorded data, however there are much more information and context that should be taken into consideration. Failing to consider all variables may result in esitmates that are confounded by spurious correlation.
+## How large is the effective dataset?
 
-For instance, severely sick septic patients may receive fluids earlier than healthier patients yet have worse outcomes, which is clearly because of them being sicker in the first place, not because of fluids worsen the outcomes. Therefore, it is important to considers of pissble confounding factors, which even more than what is required for standard prediction studies, as the sequential nature of the problem could possibly lead to confounding effects in both long term and short term.
+Offline policy evaluation asks how a new policy would perform using trajectories generated by an older clinical policy. The more the new policy differs from the observed decisions, the less evidence the dataset contains for that policy.
 
-# How big was that big data?
+Gottesman et al. illustrate how quickly this support can collapse: in one sepsis example, a cohort of 3,855 patients produced an effective sample size of only a few dozen for evaluating a target policy. A large row count is not the same as broad coverage of long treatment trajectories.
 
-This is relatively straightfoward. For any AI training, its necessary to feed the model an adequate amount of useful information, so is RL model. Logically, for RL model to evaluate a new policy, it needs to find a long, continuous sequence of decisions in the historical data that matches its new policy. 
+This limits what observational data can justify. It may support careful refinement near existing practice, but it is weak evidence for a policy that repeatedly chooses actions rarely seen in the data.
 
-In clinical trials, the mismatches between new treatment policy against historical data, also known as off-policy evaluation, the effective sample size can become small. The mismatches grow with the number of decisions in a patient's history. For one sepsis study, a cohort of 3,855 patients yielded an effective sample size of only a few dozen. Therefore, instead of exploring new treatment approaches, observational data shall be used only to refining existing practices.
+## Will the policy behave as intended in practice?
 
-# Will the AI behave prospectively as intended?
+An RL system optimises the reward it is given, not the clinical intention behind it. Errors in reward design, data processing, or deployment context can therefore produce a policy that scores well in evaluation while making poor decisions.
 
-One of the core elements in the feedback loop of every RL is rewards. However, if the design of reward function is not handled properly (e.g. error in formulation, data processing etc.), the momdel will eventually laed to poor decisions.
+A reward centred on short-term blood-pressure targets, for example, may encourage excessive vasopressor use while ignoring longer-term harm. The policy can also become stale as treatment standards, patient populations, or data collection practices change.
 
-Often, an overly simple reward function may neglect the long-term effects. For instance, rewarding only blood pressure targets may result in agent that harms long-term benefit by dosing excessive vasopressors to patients. Additionally, the learned policy might decay after a period of time if there's changes in the treatment standards.
+Prospective use therefore requires more than an offline performance estimate. Clinicians and technical teams need to inspect learned policies, stress-test unusual states, monitor drift, and establish clear limits on autonomous action.
 
-Therefore, it is neccessary to use interpretable machine learning to interrogate and assess whether learned policies will behave as intended in a prospective clinincal setting
+## Conclusion
 
-# Conclusion
+RL may help with sequential treatment decisions, but the evidence burden is higher than for a conventional prediction model. Before deployment, I would ask whether the state captures the real decision context, whether the data support the proposed policy, and whether the reward and monitoring process constrain harmful behaviour. If any answer is unclear, the system is not ready for prospective clinical use.
 
-In the end, although RL offers such promising opportunities to optimising sequential treatments in medical industry, we shall be cautious in deploying into production and requires due diligence to safely realise its potential in revolutionalising this life-saving industry. 
+{{ figure(src="/img/posts/guidelines_for_reinforcement_learning_in_healthcare.jpg", alt="Three groups of guidelines for evaluating reinforcement learning in healthcare", caption="Guidelines for reinforcement learning in healthcare, adapted from Gottesman et al. (2019).") }}
 
-{{ figure(src="/img/posts/guidelines_for_reinforcement_learning_in_healthcare.jpg", alt="Guidelines for Reinforcement Learning in Healthcare", caption="Guidelines for Reinforcement Learning in Healthcare") }}
+## Reference
 
-In the end, I would like to express my gratitude to Omer Gottesman et al. for providing such practical viewpoint in standardising the application of reinforcement learning in clinical settings.
-
-References:
-- Gottesman, O., Johansson, F., Komorowski, M., Faisal, A., Sontag, D., Doshi-Velez, F., & Celi, L. A. (2019). Guidelines for reinforcement learning in healthcare. Nature Medicine, 25(1), 16–18. [https://doi.org/10.1038/s41591-018-0310-5](https://doi.org/10.1038/s41591-018-0310-5)
+- Gottesman, O., Johansson, F., Komorowski, M., Faisal, A., Sontag, D., Doshi-Velez, F., & Celi, L. A. (2019). Guidelines for reinforcement learning in healthcare. *Nature Medicine, 25*(1), 16–18. [https://doi.org/10.1038/s41591-018-0310-5](https://doi.org/10.1038/s41591-018-0310-5)

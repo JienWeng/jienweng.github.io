@@ -1,5 +1,5 @@
 +++
-title = "An Introduction to MLOps: A Complete Tutorial with a Hands-On"
+title = "An Introduction to MLOps: A Complete Tutorial with a Hands-On Example"
 description = "A plain-language tutorial that follows the Intro to MLOps slides end to end: reproducibility, the software cycle, DevOps, the ML lifecycle, MLOps, and MLflow, with diagrams and a runnable hands-on."
 date = 2026-06-29
 updated = 2026-06-30
@@ -296,7 +296,7 @@ From the same folder, start the UI, pointing it at the same SQLite store:
 mlflow ui --backend-store-uri sqlite:///mlflow.db
 ```
 
-Open <http://127.0.0.1:5000>. You will see the `intro-to-mlops` experiment with both runs. It looks like this:
+Open `http://127.0.0.1:5000`. You will see the `intro-to-mlops` experiment with both runs. It looks like this:
 
 {{ figure(src="/slides/2026/intro-to-mlops/img/mlflow-ui.jpeg", alt="The MLflow tracking UI", caption="The MLflow UI: every run with its parameters and metrics, ready to sort and compare. Credit: mlflow.org") }}
 
@@ -345,7 +345,7 @@ Run it:
 bentoml serve service:MLopsService
 ```
 
-That starts an HTTP API on <http://127.0.0.1:3000> with interactive docs. Call it:
+That starts an HTTP API on `http://127.0.0.1:3000` with interactive docs. Call it:
 
 ```shell
 curl -X POST http://127.0.0.1:3000/predict \
@@ -374,4 +374,4 @@ Adopting these habits in your daily workflow pays off quickly: time saved in the
 
 ---
 
-.small[This tutorial follows and is adapted from the lecture **"An introduction to MLOps"** by [Alexandre Boucaud](https://aboucaud.github.io/slides/2023/lsst-france-mlops) (LSST France, Lyon, December 2023), licensed under [CC BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0). The figures are taken from the accompanying [slides](/slides/2026/intro-to-mlops/), which are re-hosted under the same license; individual figures credit their original sources (ml-ops.org, mlflow.org, mymlops.com, GitHub, AWS) in their captions. This written tutorial and hands-on are an original adaptation, likewise shared under CC BY-SA 4.0.]
+> **Source and licence.** This tutorial follows and adapts the lecture [“An introduction to MLOps”](https://aboucaud.github.io/slides/2023/lsst-france-mlops) by Alexandre Boucaud (LSST France, Lyon, December 2023), licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). The figures come from the accompanying [slides](/slides/2026/intro-to-mlops/), re-hosted under the same licence; individual captions credit their original sources. This tutorial and hands-on example are my own adaptation and are also shared under CC BY-SA 4.0.
