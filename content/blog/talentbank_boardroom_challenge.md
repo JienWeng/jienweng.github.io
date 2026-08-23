@@ -23,7 +23,7 @@ featured = false
 reaction = true
 +++
 
-This post is a compact gallery plus debrief from the Talentbank Boardroom Challenge 2025. I keep the narrative focused on preparation, presentation decisions, and the specific lessons carried into later projects.
+These are a few photos from the Talentbank Boardroom Challenge 2025, along with the preparation and presentation decisions I still remember from the day.
 
 {{ figure(src="https://cdn.cosmos.so/757eebfe-bcda-458c-a666-bb88ff978ed2?format=jpeg", alt="Talentbank Boardroom Challenge 2025", caption="") }}
 

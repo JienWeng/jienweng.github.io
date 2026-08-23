@@ -415,7 +415,7 @@ So the honest softmax visualization is not a fake one-dimensional curve. It is a
 
 That is the mental model to keep: softmax takes a vector of scores and turns it into a probability distribution.
 
-In other words, softmax is less about drawing one magical curve and more about resolving competitions among classes. Some competitions are close, like car versus truck. Some are not, like car versus frog. The probability vector tells us how that competition ended for one specific input.
+Softmax is less about drawing one magical curve and more about resolving competitions among classes. Some competitions are close, like car versus truck. Some are not, like car versus frog. The probability vector tells us how that competition ended for one specific input.
 
 The training loss on Digits decreases as expected:
 

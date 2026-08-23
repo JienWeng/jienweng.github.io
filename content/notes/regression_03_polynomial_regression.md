@@ -24,7 +24,7 @@ featured = false
 reaction = true
 +++
 
-This note explains polynomial regression as a linear model in transformed features, not a different estimation framework. The motivation is to capture nonlinear trends while retaining familiar regression machinery. I highlight when polynomial terms help and when they mainly increase variance.
+Polynomial regression keeps the linear estimation machinery but feeds it transformed features such as $x^2$ and $x^3$. This note shows when those terms capture curvature and when they mostly add variance.
 
 
 In the [previous post](/posts/regression-02-multiple-linear-regression), we introduced multiple linear regression using matrix notation. One natural question arises: what if the relationship between $x$ and $y$ is not a straight line? Polynomial regression addresses this by fitting a polynomial function of a single variable $x$, and it turns out to be a special case of the multiple linear regression framework we have already developed.

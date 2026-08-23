@@ -23,7 +23,7 @@ featured = false
 reaction = false
 +++
 
-This post records what our first physical hackathon taught us as a math-heavy team entering a software-first environment. I focus on concrete lessons from ideation, mentoring, and pitching that we can reuse in future competitions.
+Our first physical hackathon put four mathematics students into a software-first environment with very little web development experience. The useful lessons came from the messy parts, especially ideation, mentoring, and pitching.
 
 I found myself staring at my phone, thumb hovering over the share button. "Am I really qualified for this?" I thought to myself. "What if we make fools of ourselves?" The doubts crept in like unwanted guests. But then another voice, stronger and more determined, pushed back: "When else will we get a chance like this? We might not be coders, but we know how to solve problems. Isn't that what hackathons are really about?"
 
@@ -41,7 +41,7 @@ Then came the intense mentoring sessions with Johan Nasir. He didn't hold back. 
 
 The week before the hackathon was a rollercoaster. Competing against almost 100 teams from across Malaysia, we were shocked to make it to the Top 32. When we saw Johan's name among our judges and received the news of our advancement, our excitement was through the roof. But reality quickly set in: we had a major problem. None of us had real web development experience. My knowledge was limited to Python, SQL, and vanilla HTML/CSS/JavaScript.
 
-With just four days between Tuesday and Friday, we had to make crucial technical decisions while juggling our internships. After intense research, we settled on Vue.js and Flask. Janice even traveled all the way from JB to KL for this. Every evening after our internships, we'd dive into tutorials, trying to absorb as much as we could about our chosen tech stack.
+With four days between Tuesday and Friday, we had to make technical decisions while juggling our internships. After researching our options, we settled on Vue.js and Flask. Janice even travelled from JB to KL for this. Every evening after our internships, we'd work through tutorials and try to learn the stack quickly.
 
 ![3 AM and still debugging - running on determination and coffee](https://cdn.cosmos.so/0d444922-77c4-4d91-b645-fb96b7fd5d17?format=jpeg)
 
@@ -49,7 +49,7 @@ The hackathon itself was intense. When exhaustion hit, we took turns napping whe
 
 ![Presenting our final product: MouManTai - tracking and trading carbon footprints from financial transactions](https://cdn.cosmos.so/0784bdc4-dc31-4b2b-9d5a-2e04677a9ba1?format=jpeg)
 
-While we didn't make it to the Top 10, watching the final pitches was an eye-opening experience. The winning teams showcased solutions that were not just technically impressive but also deeply thoughtful about real-world implementation. One team's blockchain-based remittance system particularly stood out - their attention to regulatory compliance and market research was incredible. "We should have done more market validation," I thought to myself. "Next time, we need to focus not just on the technical solution but on the whole business case."
+We did not make the Top 10, but the final pitches showed me how much the business case shaped the strongest projects. One team's blockchain remittance system stood out because its regulatory research and market validation were as careful as its technical work. I left thinking, "Next time, we need to validate the market earlier."
 
 The top teams also demonstrated masterful presentation skills. Their pitches weren't just about features - they told compelling stories about why their solutions mattered. Each slide was carefully crafted, each demo was flawlessly executed, and their responses to judges' questions showed deep understanding of both technical and business aspects. I made mental notes: "Practice the pitch more. Know your numbers. Be ready for any question."
 

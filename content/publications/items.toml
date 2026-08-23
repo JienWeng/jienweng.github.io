@@ -21,7 +21,7 @@ date = "Apr 2026"
 link = "https://doi.org/10.2139/ssrn.6323159"
 pdf = "https://ssrn.com/abstract=6323159"
 content = """
-The execution of large portfolio transactions requires balancing market impact and adverse price drift. The Almgren-Chriss (2001) framework provides a meanvariance trade-off for martingale price processes, but practitioners often utilize short-term alpha signals. This paper re-evaluates the optimal liquidation problem using Stochastic Optimal Control. By incorporating a mean-reverting alpha signal into the price dynamics, we derive a closed-form solution using the Hamilton-Jacobi-Bellman (HJB) equation. The resulting optimal trading rate is an affine function of the current inventory and the predictive signal. This results in a trajectory that adjusts execution speed to capture transient alpha. This work provides a transparent and additive framework for institutional execution desks.
+The execution of large portfolio transactions requires balancing market impact and adverse price drift. The Almgren-Chriss (2001) framework provides a mean-variance trade-off for martingale price processes, but practitioners often use short-term alpha signals. This paper re-evaluates optimal liquidation with Stochastic Optimal Control. Adding a mean-reverting alpha signal to the price dynamics produces a closed-form solution through the Hamilton-Jacobi-Bellman (HJB) equation. The resulting trading rate is affine in current inventory and the predictive signal, giving institutional execution desks a transparent additive framework.
 """
 tags = ["Optimal Execution", "Alpha Signals", "HJB Equation", "Stochastic Control", "LQG Regulation", "Quantitative Finance"]
 bibtex = """

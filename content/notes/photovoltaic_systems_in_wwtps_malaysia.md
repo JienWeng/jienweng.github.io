@@ -25,7 +25,7 @@ reaction = false
 bibliography = true
 +++
 
-This note reviews how solar photovoltaic systems can reduce energy cost and emissions in wastewater treatment plants (WWTPs) in Malaysia. The core problem is that WWTP operations are electricity-intensive and exposed to tariff volatility. I summarize constraints, control architecture, and where ML-based forecasting can improve deployment decisions.
+Solar photovoltaic systems could reduce the energy cost and emissions of Malaysian wastewater treatment plants (WWTPs), but the plants first need a clearer view of their demand. This note covers the operational constraints, control architecture, and the role of ML-based forecasting in deployment decisions.
 
 ## Why Solar PV in WWTPs?
 
@@ -35,23 +35,23 @@ IWK operates as Malaysia's national sewerage company and manages a vast network 
 
 ## Energy Demand Characteristics of WWTPs
 
-Before implementing solar PV systems, it is crucial to understand the energy demand characteristics of WWTPs to correctly sizing and optimizing a solar PV system. The energy consumption profile of WWTP is highly influence by the pkant scale and the dominant treatment technology used.
+Before implementing solar PV systems, it is important to understand the energy demand of WWTPs so the system can be sized correctly. Energy consumption depends heavily on plant scale and the treatment technology used.
 
 ### Specific Energy Consumption (SEC) and Categorization
 
 Energy intensity, generally measured as Specific Energy Consumption (SEC) in kilowatt-hour per cubic meter (kWh/m³) of treated wastewater, is a key metric for evaluating the energy efficiency of WWTPs. The SEC values can vary significantly based on the treatment processes employed and the plant's capacity. Data suggests that smaller WWTPs, particular those below $10,000 m^3/month$ capacity, tends to bear a disproportionately higher electricity cost, accounting for 30%-40% of their total running costs {% cite(path="bibliography/renewable_energy.bib") %}Muzaffar2022{% end %}. In contrast, larger WWTPs with capacities exceeding typically exhibit lower SEC values, accounting for 15%-30% of the total running costs.
 
-Specific data collected from village WWTPs in Romania indicated high annual average SEC values, ranging between $1.786 kWh/m^3$ to $2.334 kWh/m^3$ of treated wastewater {% cite(path="bibliography/renewable_energy.bib") %}Tokos2021{% end %}. Furthermore, the complexity of sewage sludge disposal capacity has increased rapidly alongside population growthm reaching 7 millions $m^3$ annually. Managing this sludge requires significant energy input, contributing to the sector's overall energy consumption, with sewage sludge treatment alone consuming an estimated $544,900 GWh$ across IWK operations between 2016 and 2019 {% cite(path="bibliography/renewable_energy.bib") %}Quan2022{% end %}.
+Specific data collected from village WWTPs in Romania indicated high annual average SEC values, ranging from $1.786 kWh/m^3$ to $2.334 kWh/m^3$ of treated wastewater {% cite(path="bibliography/renewable_energy.bib") %}Tokos2021{% end %}. The volume of sewage sludge has also grown alongside the population, reaching 7 million $m^3$ annually. Managing this sludge requires significant energy input, with sewage sludge treatment alone consuming an estimated $544,900 GWh$ across IWK operations between 2016 and 2019 {% cite(path="bibliography/renewable_energy.bib") %}Quan2022{% end %}.
 
-This observed variability indicates that the primary candidates for immediate solar PV intergartion are the small to medium sized conventional STPs. These plants have higher SEC values and higher dependence on expensive grid power, meaninf the marginal return from solar PV energy offset is maximized in this segment.
+This variability makes small- to medium-sized conventional STPs the strongest candidates for early solar PV integration. These plants have higher SEC values and greater dependence on grid power, so the marginal return from offsetting electricity use is likely highest in this segment.
 
 ### Identification of Energy-Intensive Processes
 
 The greatest energy concentration of electrical energy demand within a conventional WWTP is typically found in the biological treatment line (BgT), primarily driven by the aeration systems. This process is necessary for activated sludge processes to maintain adequate dissolved oxygen levels for microbial activity. Data confirms that BgT accounts for the majority of total energy consumption, ranging from 63.2% to 72.9% in surveyed WWTPs {% cite(path="bibliography/renewable_energy.bib") %}Tokos2021{% end %}.
 
-Whether thorugh diffused air of mechanical aerators (such as those used in [oxidation ditches](https://www.epa.gov/system/files/documents/2022-10/oxidation-ditch-factsheet.pdf)), aeration systems requires continuous operation to provide oxygen transfer, circulation, and mixing. This need for continuous, high-power during daytime operational hours, and we realized this characteristic is highly advantageous for solar PV integration. The steady daytime demand for blowers and aerators means that the generated solar power can be immediately and entirely consumed, leadning to high utilization rates, and diminish the need for Battery Energy Storage Systems (BESS), which is often a significant cost driver in renewable energy (RE) projects.
+Whether through diffused-air systems or mechanical aerators, such as those used in [oxidation ditches](https://www.epa.gov/system/files/documents/2022-10/oxidation-ditch-factsheet.pdf), aeration systems require continuous operation for oxygen transfer, circulation, and mixing. This daytime demand suits solar PV integration. Blowers and aerators can consume generated solar power immediately, improving utilization and reducing the need for Battery Energy Storage Systems (BESS), which are often a significant cost driver in renewable-energy projects.
 
-The high concentration of energy use in aeration suggests that before implementing solar PV systems, WWTP operators should measures energy efficiency in the aeration systems. Simply installing a large PV array without optimzing the blowers and biological processes may lead  to a larger and more costly system. Streamlining the anaerobic biological treatments is possible and should be prioritized to reduce the overall energy demand before sizing the solar PV system.
+The high concentration of energy use in aeration suggests that WWTP operators should measure aeration efficiency before installing solar PV. A large array will not solve inefficient blowers or biological processes. Improving those systems first can reduce demand before the PV system is sized.
 
 ## Advanced PV Power Forecasting and Control Systems
 

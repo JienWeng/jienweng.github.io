@@ -204,7 +204,7 @@ While gradient descent is a powerful optimization algorithm, it does have some k
 
 {{ figure(src="https://cdn.cosmos.so/41b26430-2fde-4cfb-8d2b-a9debca6d4ee?format=jpeg", alt="Gradient Descent Saddle Point", caption="Gradient Descent Saddle Point") }}
 
-To mitigate the issues with saddle points, various techniques can be employed, such as adding noise to the gradients, using momentum-based methods, or employing second-order optimization methods that consider the curvature of the function, which we can explore in future discussions. But overall, gradient descent remains a fundamental and widely used optimization algorithm in machine learning and various other fields.
+Saddle points can be handled with noise, momentum, or second-order methods that use the curvature of the function. Gradient descent remains useful because the rule is simple and works across many objectives.
 
 <hr>
 

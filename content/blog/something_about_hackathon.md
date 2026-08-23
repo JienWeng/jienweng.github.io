@@ -23,7 +23,7 @@ featured = false
 reaction = false
 +++
 
-This post is a short reflection on hackathon culture from a participant perspective: what helps teams learn fast, where teams usually waste time, and how to keep projects grounded under deadline pressure.
+Hackathons reward fast learning, but they also make it easy to waste time and mistake exhaustion for progress. After a few of them, I started thinking more seriously about what the pressure was doing to me.
 
 Along the way, I've met people who are far more experienced, far more knowledgeable than me. And honestly, I can't compete with them. It's easy to feel small in those moments.
 
@@ -35,7 +35,7 @@ Eventually, it all stated to feel a bit empty.
 
 There was also this lingering thought back in my mind: "Why am I comparing myself to people who are fully in this industry, who live and breathe in tech every single day, when I'm still just a student trying to explore things outside my field?"
 
-There's still one more hackathon coming up, and I'll give it what I can. but after that, I really need a break. A proper one. Not just from hackathons, but from the constant cycle of proving myself. I need to breathe, reset and work on my inner health, mentally and emotionally.
+There's still one more hackathon coming up, and I'll give it what I can. But after that, I need a proper break from hackathons and the constant cycle of proving myself. I need to breathe, reset, and work on my inner health.
 
 Not saying I'm quitting hackathons forever. Not at all. But I know I need some time to focus more on myself, rebuild myself, and come back stronger. 
 

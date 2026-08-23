@@ -24,7 +24,7 @@ featured = false
 reaction = true
 +++
 
-This note covers hypothesis testing for regression coefficients and model terms, with emphasis on what p-values can and cannot tell you. The practical problem is making defensible decisions under uncertainty without overclaiming. I focus on test setup, assumptions, and interpretation boundaries.
+Hypothesis tests ask whether the data provide enough evidence against a specified regression claim. This note covers test setup, assumptions, p-values, and the boundary between evidence and overclaiming.
 
 
 In the [previous post](/posts/regression-07-confidence-intervals), we constructed confidence intervals for regression coefficients. Confidence intervals and hypothesis tests are two sides of the same coin. In this post, we formalize the hypothesis testing framework for regression coefficients.

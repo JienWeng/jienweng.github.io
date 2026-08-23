@@ -24,7 +24,7 @@ featured = false
 reaction = true
 +++
 
-This note builds the ANOVA framework for regression and derives the F-test for overall model significance. The question it answers is whether the model as a whole explains anything, before asking which individual predictors matter. It also shows that in simple linear regression the F-test and the slope t-test are the same test.
+The regression F-test asks whether the model explains variation as a whole before we inspect individual predictors. This note builds the ANOVA table, derives the test, and shows why the F-test equals the slope t-test in simple linear regression.
 
 In the [previous post](/posts/regression-08-statistical-testing), we tested regression coefficients one at a time with t-tests. Each t-test asks a narrow question: does this particular predictor have an effect? The F-test asks the broader question first: does the model explain any of the variability in $y$ at all? The machinery for answering it is the Analysis of Variance (ANOVA), and it is built entirely from quantities we already have.
 
