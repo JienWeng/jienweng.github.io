@@ -40,11 +40,11 @@
 
     {# Any note whose topic is unset or not in the list above #}
     {% set_global has_other = false %}
-    {% for item in section.pages %}{% set tp = item.extra.topic | default(value="") %}{% if not (topics is containing(tp)) %}{% set_global has_other = true %}{% endif %}{% endfor %}
+    {% for item in section.pages %}{% set tp = item.extra.topic | default(value="") %}{% if tp not in topics %}{% set_global has_other = true %}{% endif %}{% endfor %}
     {% if has_other %}
     <h2 class="notes-topic">Other</h2>
     <div class="edition-list section-list">
-      {% for item in section.pages %}{% set tp = item.extra.topic | default(value="") %}{% if not (topics is containing(tp)) %}
+      {% for item in section.pages %}{% set tp = item.extra.topic | default(value="") %}{% if tp not in topics %}
       <a class="edition-row" href="{{ item.permalink }}">
         <span class="edition-title">{{ item.title }}</span>
         <span class="edition-date">{% if item.date %}{{ item.date | date(format="%b %Y") }}{% endif %}</span>
