@@ -24,7 +24,7 @@ featured = false
 reaction = true
 +++
 
-This note explains SST, SSR, SSE, and R-squared, then connects these quantities to correlation in the simple regression setting. The aim is to clarify what variance decomposition actually tells you about model fit. It also points out where high R-squared can still be misleading.
+SST, SSR, and SSE split the variation in a response into a fitted part and a residual part. This note uses that decomposition to derive $R^2$, connect it to correlation, and show why a high $R^2$ can still mislead.
 
 
 In the [previous post](/posts/regression-04-correlation), we introduced the Pearson correlation coefficient $r$. In this post, we define the coefficient of determination $R^2$ through the decomposition of total variability, and then prove that $R^2 = r^2$ for simple linear regression.

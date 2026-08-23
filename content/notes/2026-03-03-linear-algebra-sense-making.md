@@ -26,7 +26,7 @@ hero_image = "/static/img/posts/linear-algebra-sense-making-hero.png"
 author = "Jien Weng"
 +++
 
-This note shows a practical way to teach linear algebra to adult learners: start from geometric intuition, then move to notation only when needed. The goal is to make vectors, linear maps, and matrix multiplication operational rather than abstract. If you teach, self-study, or mentor beginners, this is a compact framework you can reuse.
+Teaching linear algebra works better when the learner can picture the operation before meeting the notation. This note starts with geometric intuition, then moves to vectors, linear maps, and matrix multiplication once the picture is useful.
 
 Linear algebra is the engine behind AI and 3D graphics. Most adult learners find it dry and abstract. Textbooks often assume you have endless patience for matrix operations. Adults need things to actually make sense. They have real jobs and limited time. They cannot spend weeks wondering why they are multiplying rows by columns.
 
@@ -53,7 +53,7 @@ The math is not the enemy. The lack of context is. By bringing the math into the
 
 The breakthrough happened during our last session. No more frustration. There was a clear aha moment. He was not just following a recipe. He understood the logic. He could see the vectors moving. He could feel the transformation happening in the space.
 
-Using LLMs to build mental models is a total game-changer for adult education. It turns the struggle into a productive exploration. It respects the learners time and intelligence. It does not treat them like a child. It treats them like a collaborator.
+Using LLMs to build mental models can change how adults learn. It turns the struggle into a productive exploration. It respects the learner's time and intelligence. It does not treat them like a child. It treats them like a collaborator.
 
 ## Final Thought
 

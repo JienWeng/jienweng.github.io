@@ -135,7 +135,7 @@ Put concretely, a working MLOps setup wires together a handful of pieces:
 
 Experiment tracking and artifact tracking are easy to conflate; MLflow happens to do both, which is why it appears three times in the diagram. The distinction matters: **experiment tracking** logs the *numbers* (`mlflow.log_metric("accuracy", acc)`), while **artifact tracking** stores the *files* a run produced (`mlflow.log_artifact("confusion_matrix.png")`). Same tool, two different jobs. You will use both in the hands-on below.
 
-You do not build all of this on day one. The single highest-leverage habit, the one that pays off immediately even in a solo project, is **experiment tracking**. That is where we will get hands-on, before bridging to model serving at the end.
+You do not build all of this on day one. The habit that pays off fastest, even in a solo project, is **experiment tracking**. We will work through that first, then connect it to model serving.
 
 ## MLflow: the tool we will use
 

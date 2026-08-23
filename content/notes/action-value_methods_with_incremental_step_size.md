@@ -24,7 +24,7 @@ featured = false
 reaction = true
 +++
 
-This note derives the incremental update rule for action-value estimation in k-armed bandits. The useful idea is simple: update an average using only the previous estimate and the newest reward, without storing the full reward history.
+In a k-armed bandit, an action-value estimate can use only the previous estimate and the newest reward. This note derives that incremental update and shows why it avoids storing the full reward history.
 
 ## The bandit setup
 

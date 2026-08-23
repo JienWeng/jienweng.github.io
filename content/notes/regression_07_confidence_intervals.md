@@ -24,7 +24,7 @@ featured = false
 reaction = true
 +++
 
-This note shows how confidence intervals for regression coefficients are constructed and how to interpret them correctly. The core issue is avoiding binary thinking around single-point estimates. The objective is to connect standard errors, critical values, and interval interpretation in a reproducible way.
+Confidence intervals turn a coefficient estimate into a range that reflects sampling uncertainty. This note connects standard errors and critical values to that range, then works through its interpretation.
 
 
 In the [previous post](/posts/regression-06-standard-error), we derived the standard errors of the regression coefficients. Standard errors tell us about the precision of our estimates, but they do not directly give us a range of plausible values for the true parameters. Confidence intervals do exactly that.

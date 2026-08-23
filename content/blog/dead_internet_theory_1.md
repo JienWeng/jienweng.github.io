@@ -23,7 +23,7 @@ featured = false
 reaction = false
 +++
 
-This post is a personal reflection on authenticity online: what feels different now, why AI-generated social content often feels hollow, and where I might be overreacting. The goal is not to claim a grand theory, but to document a concrete shift in reading experience across LinkedIn and Reddit.
+Lately, LinkedIn and Reddit have started to feel different to me. I keep seeing polished posts that say the right things but do not feel connected to a real person, and I am still unsure whether that is a real shift or my own overreaction.
 
 ![You can't tell whether the experience is real or not](https://cdn.cosmos.so/b77a432b-7713-4b10-879d-e8256d284766?format=jpeg)
 

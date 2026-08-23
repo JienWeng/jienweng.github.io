@@ -23,7 +23,7 @@ featured = false
 reaction = false
 +++
 
-This post documents a small DeepSeek-R1 chatbot build: why I chose the model, what setup decisions mattered, and what worked in practice. Instead of focusing on AI industry drama, I keep the write-up centered on implementation choices and takeaways for future iterations.
+I built a small chatbot with DeepSeek-R1 because I wanted to see how a local reasoning model behaved when its intermediate output was made visible. The useful parts were the setup decisions, the strange mistakes, and the few things I would change next time.
 
 [![“Good artists copy, great artists steal” - Steve Jobs](https://cdn.cosmos.so/d66e7a6d-8205-4e9c-ba4f-656971c79857?format=jpeg)](https://www.linkedin.com/feed/update/urn:li:activity:7291035071992520704/)
 
@@ -37,7 +37,7 @@ btw, we won’t dive into the technical aspects just yet. That’s coming up in 
 
 What blows my mind the most about this whole setup is how I managed to separate the model’s thinking process from its final response. Most chatbots out there? They just spit out an answer, and you have no idea what’s happening behind the scenes. But with this, you can actually see how the model thinks through a problem before giving an answer. It’s like watching an AI have an inner monologue, refining its thoughts before speaking. And honestly? I’ve never seen this before in any LLMs I’ve used.
 
-At first, I didn’t even plan for this feature. It just happened while I was testing out different ways to improve response quality. I noticed that the model was generating some hidden reasoning steps before its final output. Instead of discarding them, I figured, Why not show them? And once I did, it was a game-changer. It made the AI feel much more transparent, almost like it was thinking out loud.
+At first, I didn’t plan for this feature. It appeared while I was testing different ways to improve response quality. I noticed that the model was generating hidden reasoning steps before its final output. Instead of discarding them, I decided to show them. The result made the AI feel more transparent, almost like it was thinking out loud.
 
 [![Fun Fact: The "thinking" parts are actually generated as HTML!](https://cdn.cosmos.so/b65be583-5569-41e4-ab62-b4bf500120e1?format=jpeg)](https://huggingface.co/spaces/jienweng/chatbot_v2)
 
@@ -46,7 +46,7 @@ For example, if you ask it something like, “What do you think about climate ch
 1. Breaking down the question components
 2. Evaluating current knowledge
 3. Forming logical connections
-4. Synthesizing a comprehensive response
+4. Combining the pieces into a response
 
 After seeing the model’s thinking process, what really stands out to me is how structured its response is. It doesn’t just throw out some generic take on climate change. It actually analyzes the question, breaks it down into different angles, and then builds a well-organized answer.
 

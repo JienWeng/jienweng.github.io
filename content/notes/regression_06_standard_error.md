@@ -24,7 +24,7 @@ featured = false
 reaction = true
 +++
 
-This note explains standard error in regression as a measure of uncertainty in coefficient estimates, not model quality by itself. The practical question is how noisy your estimate is if the data-generating process were repeated. I connect residual variance, sample size, and confidence in coefficients.
+Standard error measures how much a coefficient estimate would vary if the data-generating process were repeated. This note connects residual variance, sample size, and coefficient uncertainty without treating standard error as a measure of model quality.
 
 ## Estimating the Error Variance
 

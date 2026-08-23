@@ -24,7 +24,7 @@ featured = false
 reaction = true
 +++
 
-This note extends linear regression to multiple predictors and explains how interpretation changes once features interact through a shared model. The practical challenge is understanding coefficients conditionally, not in isolation. I focus on the model form, estimation intuition, and common interpretation mistakes.
+With multiple predictors, each coefficient describes a change while the other predictors stay fixed. This note builds the model, derives the estimator, and works through the interpretation mistakes that follow from that condition.
 
 
 In the [previous post](/posts/regression-01-simple-linear-regression), we explored simple linear regression with a single predictor. In practice, the response variable $y$ often depends on more than one predictor. Multiple linear regression extends the framework to accommodate $p - 1$ independent variables.

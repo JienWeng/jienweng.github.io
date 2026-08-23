@@ -36,7 +36,7 @@ $$
 
 Once that chain is visible, the equation stops looking like a definition to memorize. It becomes the obvious bookkeeping for how probability mass flows: drift transports it, diffusion spreads it.
 
-This note walks the full path. We start from a concrete SDE and simulate it, watch a cloud of paths turn into a density, derive the Fokker-Planck equation from Ito's lemma, and then solve it from scratch in Python. We finish with an Ornstein-Uhlenbeck example whose answer we know in closed form, so we can check three independent routes against each other.
+Start with one stochastic differential equation, simulate many paths, and the cloud of points begins to look like a density. This note follows that path to the Fokker-Planck equation, solves it in Python, and checks the result against an Ornstein-Uhlenbeck example with a known closed form.
 
 > **Run it yourself.** Every code block below is collected in a runnable Jupyter notebook: [**download `fokker-planck-sde.ipynb`**](/notebooks/fokker-planck-sde.ipynb). It only needs `numpy` and `matplotlib` (`pip install numpy matplotlib`), and runs top to bottom.
 

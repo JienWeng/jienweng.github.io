@@ -24,7 +24,7 @@ featured = false
 reaction = true
 +++
 
-This note defines correlation clearly, explains how to compute it, and separates association from causation. The key issue is that correlation is often over-interpreted as evidence of mechanism. The goal is to make correlation a diagnostic tool, not a conclusion.
+Correlation measures the strength of an association, but it does not establish a mechanism. This note derives the coefficient, shows how to compute it, and keeps that boundary visible.
 
 
 In the previous posts, we built the regression framework using $S\_{xx}$ and $S\_{xy}$ to derive the OLS estimators. Before we move to deeper inferential topics, it is essential to formalize a measure of the strength of the linear association between two variables. This measure is the Pearson correlation coefficient.

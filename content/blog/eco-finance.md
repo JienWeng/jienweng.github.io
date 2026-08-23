@@ -23,13 +23,13 @@ featured = false
 reaction = false
 +++
 
-This post focuses on the Eco Finance prototype itself: the problem we targeted, the product concept, and what we learned from turning an idea into a demo under hackathon constraints. It is written as a project debrief rather than an event recap.
+Eco Finance started with a problem we could explain quickly, people could not see the carbon cost hidden inside ordinary spending. We built the prototype during PayHack 2024 and used it to test the idea under hackathon constraints.
 
 We participated in PayHack 2024, quite a big hackathon event with many talented individuals.
 
-Our project, Eco Finance, focuses on the implementation of a carbon tax expected to be released in 2026. Although it initially targets specific industries, it is crucial and trending to implement this for everyone in Malaysia. Read more about the 2026 carbon tax here.
+Our project, Eco Finance, focuses on a carbon tax expected in 2026. Although it initially targets specific industries, the same idea could eventually apply to everyday spending in Malaysia. Read more about the 2026 carbon tax here.
 
-European countries are already implementing ESG-centric policies in various industries, such as the automobile industry. These are just preliminary steps; now we want to delve deeper into the subject.
+European countries are already applying ESG policies in industries such as automobiles. We wanted to look more closely at what a similar idea could mean for everyday spending in Malaysia.
 
 ![Eco Finance Interface](https://cdn.cosmos.so/3034bd0a-9dae-4078-80a9-a641c747b58a?format=jpeg)
 
@@ -39,7 +39,7 @@ Do you know how much carbon footprint you generate from ordering a Shopee parcel
 
 ## How it works
 
-The OpenFinance API can seamlessly integrate people's transaction details, allowing us to aggregate a person's transactions and their carbon footprints. The calculation would be the emission factor times the amount, giving us the carbon footprint from those transactions.
+The OpenFinance API can connect to people's transaction details, allowing us to aggregate transactions and estimate their carbon footprints. The calculation would multiply the emission factor by the amount spent.
 
 For example, if the emission factor for a specific merchant category is 0.5 kg CO2 per RM, and a person spends RM 100, the carbon footprint would be 0.5 kg CO2/RM * 100 RM = 50 kg CO2.
 
@@ -86,7 +86,7 @@ Feel free to browse through it.
 
 ## Wrap-Up
 
-In conclusion, Eco Finance aims to make carbon footprints visible to individuals, encouraging eco-friendly spending habits and contributing to a greener Malaysia. By monetizing carbon credits and rewarding users, we create a sustainable ecosystem that benefits both the environment and the economy. It's really kesian that we couldn't make it to final though T.T
+Eco Finance was our attempt to make carbon footprints visible through a familiar object, a payment history. The carbon-credit idea gave the prototype a possible business model, although we did not make it to the final round T.T
 
 Hope you guys like it :D
 

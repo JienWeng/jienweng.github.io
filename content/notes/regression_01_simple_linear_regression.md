@@ -24,7 +24,7 @@ featured = false
 reaction = true
 +++
 
-This note introduces simple linear regression from first principles and focuses on how slope and intercept are estimated from data. The problem it solves is modeling a linear relationship between one predictor and one response. It is intended as the base layer for the later regression notes in this series.
+Simple linear regression estimates a line from one predictor and one response. This note derives the slope and intercept from first principles and sets up the later regression notes.
 
 
 In secondary school, we learn that the equation of a straight line is given by $y = mx + c$, where $m$ is the slope and $c$ is the y-intercept. In statistics and machine learning, we use a similar but more general form to model the relationship between a dependent variable $y$ and an independent variable $x$. This is known as simple linear regression.
