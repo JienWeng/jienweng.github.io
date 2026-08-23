@@ -1,5 +1,12 @@
 [[collection]]
 type = "card_simple"
+title = "CryptoRails"
+date = "Feb 2026 - Present"
+content = "Product Manager: coordinates an eight-person team, maintains the product backlog, and facilitates delivery for multi-chain crypto payment and wallet infrastructure."
+featured = true
+
+[[collection]]
+type = "card_simple"
 title = "Independent Consulting"
 date = "Apr 2026 - Present"
 content = "Independent Consultant & Product Manager: business transformation, Web3 product management, proprietary AI research, and data/ML training"
@@ -28,21 +35,6 @@ date = "Dec 2025 - Present"
 link = "https://www.monash.edu"
 content = "Research Assistant"
 featured = true
-
-[[collection]]
-type = "card_simple"
-title = "MMI Capital"
-date = "Aug 2025 - Present"
-content = "Frontend Web Developer"
-featured = false
-
-[[collection]]
-type = "card_simple"
-title = "ACTBuilder Actuarial Solution"
-date = "Jul 2025 - Present"
-link = "https://actbuilder.com.my"
-content = "Technical Support"
-featured = false
 
 [[collection]]
 type = "card_simple"

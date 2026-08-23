@@ -1,5 +1,16 @@
 [[collection]]
 type = "card_expandable"
+title = "Separating spatial support and observation effects in satellite rainfall monitoring over Malaysia"
+authors = "Jien Weng Lai"
+venue = "Environmental Monitoring and Assessment · Springer Nature"
+status = "Manuscript resubmission · Original Research Article"
+date = "Aug 2026"
+content = "Satellite rainfall products are often evaluated with gauges that sample different periods and spatial supports. We assessed daily IMERG Final V07 rainfall over Malaysia from October 2015 to September 2025, separating regional rainfall patterns from gauge-footprint and gauge-to-footprint effects. IMERG can screen regional rainfall patterns, but local high-intensity verification remains gauge-dependent."
+tags = ["Satellite Rainfall", "Environmental Monitoring", "Malaysia", "Remote Sensing"]
+featured = true
+
+[[collection]]
+type = "card_expandable"
 title = "The Primacy of Information Design Over Algorithm Selection in Multi-Agent Cooperation"
 authors = "Jien Weng Lai, Wei Lun Tan, Ying Loong Lee and Ming Fai Chow"
 venue = "IEEE Social Computation"

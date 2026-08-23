@@ -5,7 +5,7 @@ description = "What I am working on at the moment."
 
 This is a [now page](https://nownownow.com/about). Last updated July 2026.
 
-**Research.** An MEng at Monash University Malaysia on information design and cooperation in multi-agent reinforcement learning.
+**Research.** I am a Research Assistant at Monash University Malaysia, developing wastewater treatment prediction models with recurrent neural networks and Transformer architectures on time-series sensor data.
 
 **Independent work.** Web3 product management with proprietary AI research; process enhancement and automation through a contractor engagement with [Quandatics](https://quandatics.com); and data science and machine-learning training through a contractor engagement with [Quandatics Academy](https://academy.quandatics.com).
 

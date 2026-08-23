@@ -1,6 +1,6 @@
 # Jien Weng
 
-> Jien Weng is an independent consultant and product manager working across business transformation, AI, data, Web3 product development, machine-learning capability building, and applied research.
+> Jien Weng is a Web3 Product Manager, Business Transformation Consultant, and Data Science & Machine Learning Trainer working across product delivery, applied AI, data systems, and environmental research.
 
 This is the official personal website of Jien Weng Lai. Use the links below for current professional information, services, writing, research, and public technical work. Confidential Web3 and proprietary AI work is described only at a high level.
 
@@ -22,7 +22,7 @@ This is the official personal website of Jien Weng Lai. Use the links below for 
 
 ## Research
 
-- [Publications](https://jienweng.github.io/publications/): Research in multi-agent cooperation, information design, optimal execution, and quantitative finance.
+- [Publications](https://jienweng.github.io/publications/): Research in satellite rainfall monitoring, multi-agent cooperation, information design, optimal execution, and quantitative finance.
 - [Google Scholar](https://scholar.google.com/citations?user=2siljxAAAAAJ&hl=en): Author profile and indexed research.
 - [ORCID](https://orcid.org/0009-0001-2543-3887): Persistent researcher identifier.
 

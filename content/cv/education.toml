@@ -1,13 +1,5 @@
 [[collection]]
 type = "card_simple"
-title = "Monash University Malaysia"
-content = "Master of Engineering by Research · Engineering"
-date = "Dec 2025 - Present"
-link = "https://www.monash.edu"
-featured = true
-
-[[collection]]
-type = "card_simple"
 title = "UTAR"
 content = "BSc (Hons), First Class Honours · Applied Mathematics with Computing"
 date = "Oct 2022 - Oct 2025"

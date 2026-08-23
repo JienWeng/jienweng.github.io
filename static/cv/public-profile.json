@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-02",
-  "sourceReviewDate": "2026-08-02",
+  "generatedAt": "2026-08-24",
+  "sourceReviewDate": "2026-08-24",
   "basics": {
     "name": "Jien Weng Lai",
     "location": "Selangor, Malaysia",
@@ -11,9 +11,21 @@
     "orcid": "https://orcid.org/0009-0001-2543-3887",
     "googleScholar": "https://scholar.google.com/citations?user=2siljxAAAAAJ&hl=en"
   },
-  "summary": "I work across business transformation, AI, data and Web3 product development. As an independent consultant and product manager, I help teams improve processes, build practical systems and turn ideas into working products. My Web3 product work also involves proprietary AI research, and I deliver data and machine-learning training.",
-  "headline": "Independent Consultant & Product Manager",
+  "summary": "Web3 Product Manager, Business Transformation Consultant, and Data Science & Machine Learning Trainer. I work across product delivery, operational improvement, applied AI, data systems, and environmental research.",
+  "headline": "Web3 Product Manager | Business Transformation Consultant | Data Science & Machine Learning",
   "work": [
+    {
+      "id": "cryptorails",
+      "name": "CryptoRails",
+      "position": "Product Manager",
+      "startDate": "2026-02",
+      "endDate": "Present",
+      "displayDate": "Feb 2026 - Present",
+      "location": "Malaysia / remote",
+      "public": true,
+      "featured": true,
+      "publicDescription": "Product Manager: coordinates an eight-person team, maintains the product backlog, and facilitates delivery for multi-chain crypto payment and wallet infrastructure."
+    },
     {
       "id": "independent",
       "name": "Independent Consulting",
@@ -156,56 +168,6 @@
       ]
     },
     {
-      "id": "mmi",
-      "name": "MMI Capital",
-      "position": "Frontend Web Developer",
-      "startDate": "2025-08",
-      "endDate": "Present",
-      "displayDate": "Aug 2025 - Present",
-      "location": "Malaysia",
-      "public": true,
-      "featured": false,
-      "publicDescription": "Frontend Web Developer",
-      "evidence": [
-        {
-          "id": "mmi.frontend",
-          "text": "Contribute frontend implementation and product delivery for business-facing web applications.",
-          "tags": [
-            "frontend",
-            "React",
-            "product delivery"
-          ],
-          "public": true
-        }
-      ]
-    },
-    {
-      "id": "actbuilder",
-      "name": "ACTBuilder Actuarial Solution",
-      "position": "Technical Support",
-      "startDate": "2025-07",
-      "endDate": "Present",
-      "displayDate": "Jul 2025 - Present",
-      "location": "Malaysia",
-      "url": "https://actbuilder.com.my",
-      "public": true,
-      "featured": false,
-      "publicDescription": "Technical Support",
-      "evidence": [
-        {
-          "id": "actbuilder.automation",
-          "text": "Provide Python automation and infrastructure troubleshooting for client deployments.",
-          "tags": [
-            "Python",
-            "automation",
-            "infrastructure",
-            "support"
-          ],
-          "public": true
-        }
-      ]
-    },
-    {
       "id": "great-eastern",
       "name": "Great Eastern Life Assurance",
       "position": "Finance Analyst, Data Engineer Intern",
@@ -243,17 +205,6 @@
     }
   ],
   "education": [
-    {
-      "id": "monash-meng",
-      "institution": "Monash University Malaysia",
-      "area": "Engineering",
-      "studyType": "Master of Engineering by Research",
-      "startDate": "2025-12",
-      "endDate": "Present",
-      "displayDate": "Dec 2025 - Present",
-      "url": "https://www.monash.edu",
-      "public": true
-    },
     {
       "id": "utar-bsc",
       "institution": "Universiti Tunku Abdul Rahman",
@@ -477,6 +428,23 @@
     }
   ],
   "publications": [
+    {
+      "id": "satellite-rainfall-malaysia",
+      "name": "Separating spatial support and observation effects in satellite rainfall monitoring over Malaysia",
+      "authors": "Jien Weng Lai",
+      "publisher": "Environmental Monitoring and Assessment · Springer Nature",
+      "status": "Manuscript resubmission · Original Research Article",
+      "releaseDate": "2026-08",
+      "displayDate": "Aug 2026",
+      "summary": "Assesses daily IMERG Final V07 rainfall over Malaysia from October 2015 to September 2025, separating regional rainfall patterns from gauge-footprint and gauge-to-footprint effects. IMERG can screen regional rainfall patterns, but local high-intensity verification remains gauge-dependent.",
+      "keywords": [
+        "Satellite Rainfall",
+        "Environmental Monitoring",
+        "Malaysia",
+        "Remote Sensing"
+      ],
+      "public": true
+    },
     {
       "id": "information-design",
       "name": "The Primacy of Information Design Over Algorithm Selection in Multi-Agent Cooperation",
