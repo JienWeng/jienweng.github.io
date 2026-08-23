@@ -4,7 +4,7 @@ description = "A public case-study draft on how a Web3 payment moves from paymen
 date = 2026-08-02
 updated = 2026-08-02
 draft = false
-aliases = ["/posts/cryptorails-transaction-lifecycle/"]
+aliases = ["/posts/cryptorails-transaction-lifecycle/", "/blog/cryptorails-transaction-lifecycle/"]
 
 [taxonomies]
 categories = ["2026"]
@@ -21,6 +21,7 @@ math = false
 mermaid = false
 featured = false
 reaction = true
+topic = "Web3"
 +++
 
 A Web3 payment is not complete when a transaction is submitted. The backend still needs to match the request, check the chain result, and decide when the payment is safe to settle. This is a public case-study draft, so product-specific business details stay private.

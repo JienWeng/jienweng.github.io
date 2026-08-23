@@ -1,5 +1,18 @@
 [[collection]]
 type = "card_expandable"
+title = "Separating spatial support and observation effects in satellite rainfall monitoring over Malaysia"
+authors = "Jien Weng Lai"
+venue = "Environmental Monitoring and Assessment · Springer Nature"
+status = "Manuscript resubmission · Original Research Article"
+date = "Aug 2026"
+content = """
+Manuscript resubmission package examining how spatial support and observation effects should be separated when interpreting satellite rainfall monitoring over Malaysia. The submission package includes the manuscript, cover letter, online resources, metadata, checklist, figures, bibliography, and LaTeX source.
+"""
+tags = ["Satellite Rainfall", "Environmental Monitoring", "Malaysia", "Remote Sensing"]
+featured = true
+
+[[collection]]
+type = "card_expandable"
 title = "The Primacy of Information Design Over Algorithm Selection in Multi-Agent Cooperation"
 authors = "Jien Weng Lai, Wei Lun Tan, Ying Loong Lee, Ming Fai Chow"
 status = "Under Review @ IEEE Social Computation"
