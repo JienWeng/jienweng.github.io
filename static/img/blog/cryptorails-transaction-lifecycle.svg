@@ -14,8 +14,8 @@
       .node { fill: #f7f6f2; stroke: #302e2a; stroke-width: 1.5; }
       .final { fill: #6f2d1d; stroke: #6f2d1d; stroke-width: 1.5; }
       .failed { fill: #f7f6f2; stroke: #b7afa5; stroke-width: 1.5; stroke-dasharray: 5 5; }
-      .heading { font: 18px "Computer Modern Serif", Georgia, serif; }
-      .body { font: 12px "Helvetica Neue", Arial, sans-serif; letter-spacing: .04em; }
+      .heading { font: 16px "Computer Modern Serif", Georgia, serif; }
+      .body { font: 11px "Helvetica Neue", Arial, sans-serif; letter-spacing: .04em; }
       .number { font: 11px "Helvetica Neue", Arial, sans-serif; letter-spacing: .13em; }
     </style>
   </defs>
