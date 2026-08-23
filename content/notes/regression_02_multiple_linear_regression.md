@@ -27,7 +27,7 @@ reaction = true
 With multiple predictors, each coefficient describes a change while the other predictors stay fixed. This note builds the model, derives the estimator, and works through the interpretation mistakes that follow from that condition.
 
 
-In the [previous post](/posts/regression-01-simple-linear-regression), we explored simple linear regression with a single predictor. In practice, the response variable $y$ often depends on more than one predictor. Multiple linear regression extends the framework to accommodate $p - 1$ independent variables.
+The [previous note](/posts/regression-01-simple-linear-regression) used one predictor. In practice, the response variable $y$ often depends on more than one predictor, so multiple linear regression extends the framework to $p - 1$ independent variables.
 
 ## The Model
 
@@ -75,7 +75,7 @@ Provided that $\mathbf{X}^T\mathbf{X}$ is invertible (that is, the columns of $\
 
 $$\hat{\boldsymbol{\beta}} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{Y}.$$
 
-This single formula generalizes the simple linear regression result. When $p = 2$ (one predictor plus the intercept), this reduces to $\hat{\beta}_1 = S_{xy}/S_{xx}$ and $\hat{\beta}_0 = \bar{y} - \hat{\beta}_1\bar{x}$ as derived in the previous post.
+This single formula generalizes the simple linear regression result. When $p = 2$ (one predictor plus the intercept), it reduces to $\hat{\beta}_1 = S_{xy}/S_{xx}$ and $\hat{\beta}_0 = \bar{y} - \hat{\beta}_1\bar{x}$ from the previous note.
 
 ## Interpreting the Coefficients
 
@@ -117,11 +117,11 @@ Computing $(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{Y}$ in this case yie
 
 ## Summary
 
-In this post, we extended the regression framework to handle multiple predictors:
+The multiple-regression framework adds four pieces:
 
 - The model $\mathbf{Y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\varepsilon}$ uses matrix notation to express the relationship compactly.
 - The OLS estimator $\hat{\boldsymbol{\beta}} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{Y}$ generalizes the simple linear regression solution.
 - Each $\hat{\beta}\_j$ measures the effect of one predictor while holding the others constant.
 - The hat matrix $\mathbf{H}$ projects observed values onto fitted values.
 
-In the next post, we will explore polynomial regression, which is a special case of multiple linear regression where the predictors are powers of a single variable.
+The next note treats powers of one variable as multiple predictors in polynomial regression.

@@ -130,11 +130,11 @@ When these assumptions hold, OLS produces the Best Linear Unbiased Estimators (B
 
 ## Summary
 
-In this post, we covered the fundamentals of simple linear regression:
+Simple linear regression rests on four ideas:
 
 - The model $\hat{y}_i = \hat{\beta}_0 + \hat{\beta}_1 x_i$ describes the estimated linear relationship between $x$ and $y$.
 - OLS minimizes the sum of squared errors to find the best-fitting line.
 - The estimators $\hat{\beta}_1 = S_{xy}/S_{xx}$ and $\hat{\beta}_0 = \bar{y} - \hat{\beta}_1\bar{x}$ are derived from the normal equations.
 - The $S\_{xx}$ and $S\_{xy}$ notation provides a compact way to express these results.
 
-In the next post, we will extend this framework to handle multiple independent variables through multiple linear regression.
+The next note extends this framework to multiple independent variables.

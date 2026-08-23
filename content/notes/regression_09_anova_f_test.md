@@ -26,7 +26,7 @@ reaction = true
 
 The regression F-test asks whether the model explains variation as a whole before we inspect individual predictors. This note builds the ANOVA table, derives the test, and shows why the F-test equals the slope t-test in simple linear regression.
 
-In the [previous post](/posts/regression-08-statistical-testing), we tested regression coefficients one at a time with t-tests. Each t-test asks a narrow question: does this particular predictor have an effect? The F-test asks the broader question first: does the model explain any of the variability in $y$ at all? The machinery for answering it is the Analysis of Variance (ANOVA), and it is built entirely from quantities we already have.
+The [previous note](/posts/regression-08-statistical-testing) tested regression coefficients one at a time with t-tests. Each t-test asks whether a particular predictor has an effect. The F-test asks first whether the model explains any variability in $y$. The Analysis of Variance (ANOVA) answers that question using quantities already defined.
 
 ## The Question the F-Test Asks
 
@@ -39,7 +39,7 @@ The overall significance test puts every slope on trial simultaneously:
 $$H\_0: \beta\_1 = \beta\_2 = \cdots = \beta\_k = 0,$$
 $$H\_1: \text{at least one } \beta\_j \neq 0.$$
 
-Under $H\_0$, none of the predictors carries any linear information about $y$, and the best model is simply $\hat{y} = \bar{y}$. Under $H\_1$, at least one predictor helps. Note what the alternative does not say: it does not tell us which slope is nonzero, only that the model is not entirely useless. Identifying the responsible predictors is the job of the individual t-tests from the previous post.
+Under $H\_0$, none of the predictors carries any linear information about $y$, and the best model is simply $\hat{y} = \bar{y}$. Under $H\_1$, at least one predictor helps. The alternative does not identify which slope is nonzero; it only says that the model is not entirely useless. Individual t-tests identify the responsible predictors.
 
 ## Revisiting the Sum of Squares Decomposition
 
@@ -119,7 +119,7 @@ From the R-squared post, $SSR = S\_{xy}^2 / S\_{xx}$. With $p - 1 = 1$, we have 
 
 $$F = \frac{MSR}{MSE} = \frac{S\_{xy}^2 / S\_{xx}}{MSE} = \frac{S\_{xy}^2}{MSE \cdot S\_{xx}} = \left(\frac{S\_{xy}}{\sqrt{MSE \cdot S\_{xx}}}\right)^2.$$
 
-The quantity inside the parentheses is exactly the t-statistic for the slope derived in the previous post:
+The quantity inside the parentheses is exactly the t-statistic for the slope derived in the previous note:
 
 $$t = \frac{\hat{\beta}\_1}{SE(\hat{\beta}\_1)} = \frac{S\_{xy}}{\sqrt{MSE \cdot S\_{xx}}}.$$
 
@@ -157,7 +157,7 @@ With $n = 5$ and $p = 2$, the ANOVA table is:
 
 Here $MSE = 1.1/3 \approx 0.3667$ and $F = 28.9 / 0.3667 \approx 78.82$. The critical value at $\alpha = 0.05$ is $F\_{0.05,\, 1,\, 3} = 10.13$, so we reject $H\_0$ decisively: the regression explains a significant share of the variability in $y$. Consistently, $R^2 = 28.9/30 \approx 0.963$.
 
-To verify the $F = t^2$ identity, compute the slope t-test from the previous post:
+To verify the $F = t^2$ identity, compute the slope t-test from the previous note:
 
 $$t = \frac{\hat{\beta}\_1}{\sqrt{MSE / S\_{xx}}} = \frac{1.7}{\sqrt{0.3667 / 10}} \approx \frac{1.7}{0.1915} \approx 8.878,$$
 
@@ -165,7 +165,7 @@ and indeed $t^2 \approx 78.82 = F$. The critical values match too: $t\_{0.025,\,
 
 ## Summary
 
-In this post, we built the ANOVA framework for regression:
+The ANOVA framework gives six results:
 
 - The F-test asks whether the model explains anything at all: $H\_0: \beta\_1 = \cdots = \beta\_k = 0$ against the alternative that at least one slope is nonzero.
 - The decomposition $SST = SSR + SSE$ from the R-squared post carries over, with degrees of freedom $(n-1) = (p-1) + (n-p)$.

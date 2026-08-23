@@ -124,7 +124,7 @@ A small standard error relative to the coefficient estimate suggests that the es
 
 ## Summary
 
-In this post, we derived the standard errors of the regression coefficients:
+The standard-error derivation gives five practical results:
 
 - $MSE = SSE/(n-2)$ estimates the error variance $\sigma^2$ for simple linear regression, or $MSE = SSE/(n-p)$ for multiple regression.
 - $SE(\hat{\beta}\_1) = \sqrt{MSE/S\_{xx}}$ measures the precision of the slope estimate.
@@ -132,4 +132,4 @@ In this post, we derived the standard errors of the regression coefficients:
 - For multiple regression, $SE(\hat{\beta}\_j) = \sqrt{MSE \cdot C\_{jj}}$ where $C\_{jj}$ is the $(j+1)$-th diagonal element of $(\mathbf{X}^T\mathbf{X})^{-1}$.
 - Precision improves with larger $S\_{xx}$, smaller $MSE$, and larger $n$.
 
-In the next post, we will use these standard errors to construct confidence intervals for $\beta\_0$, $\beta\_1$, and $\beta\_i$.
+The next note uses these standard errors to construct confidence intervals for $\beta\_0$, $\beta\_1$, and $\beta\_i$.

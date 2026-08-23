@@ -27,7 +27,7 @@ reaction = true
 Polynomial regression keeps the linear estimation machinery but feeds it transformed features such as $x^2$ and $x^3$. This note shows when those terms capture curvature and when they mostly add variance.
 
 
-In the [previous post](/posts/regression-02-multiple-linear-regression), we introduced multiple linear regression using matrix notation. One natural question arises: what if the relationship between $x$ and $y$ is not a straight line? Polynomial regression addresses this by fitting a polynomial function of a single variable $x$, and it turns out to be a special case of the multiple linear regression framework we have already developed.
+The [previous note](/posts/regression-02-multiple-linear-regression) introduced multiple linear regression using matrix notation. If the relationship between $x$ and $y$ is not a straight line, polynomial regression fits a polynomial in one variable. It is a special case of the multiple-regression framework.
 
 ## The Polynomial Model
 
@@ -59,7 +59,7 @@ This is exactly the design matrix for a multiple linear regression with $d$ pred
 
 $$\hat{\boldsymbol{\beta}} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{Y},$$
 
-which is the same formula we derived in the previous post.
+which is the same formula derived in the previous note.
 
 ## Why Polynomial Regression is a Special Case of MLR
 
@@ -108,7 +108,7 @@ There are $p = 3$ parameters. The OLS solution $\hat{\boldsymbol{\beta}} = (\mat
 
 ## Summary
 
-In this post, we explored polynomial regression:
+Polynomial regression follows from five observations:
 
 - The polynomial model $y_i = \beta_0 + \beta_1 x_i + \beta_2 x_i^2 + \cdots + \beta_d x_i^d + \varepsilon_i$ is nonlinear in $x$ but linear in the parameters.
 - By treating each power of $x$ as a separate predictor, polynomial regression becomes a special case of multiple linear regression.
@@ -116,4 +116,4 @@ In this post, we explored polynomial regression:
 - Choosing the polynomial degree requires balancing fit and complexity to avoid overfitting.
 - Centering or using orthogonal polynomials helps address multicollinearity.
 
-In the next post, we will examine correlation, which quantifies the strength of the linear relationship between two variables using $S\_{xx}$, $S\_{yy}$, and $S\_{xy}$.
+The next note uses $S\_{xx}$, $S\_{yy}$, and $S\_{xy}$ to define correlation.

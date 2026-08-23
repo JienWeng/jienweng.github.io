@@ -27,7 +27,7 @@ reaction = true
 Hypothesis tests ask whether the data provide enough evidence against a specified regression claim. This note covers test setup, assumptions, p-values, and the boundary between evidence and overclaiming.
 
 
-In the [previous post](/posts/regression-07-confidence-intervals), we constructed confidence intervals for regression coefficients. Confidence intervals and hypothesis tests are two sides of the same coin. In this post, we formalize the hypothesis testing framework for regression coefficients.
+The [previous note](/posts/regression-07-confidence-intervals) constructed confidence intervals for regression coefficients. Confidence intervals and hypothesis tests answer related questions. Here, we formalize the hypothesis-testing framework for regression coefficients.
 
 ## Hypothesis Testing for Individual Coefficients
 
@@ -146,11 +146,11 @@ Common corrections include:
 - **Holm-Bonferroni method**: A sequential version that is less conservative.
 - **False Discovery Rate (FDR) control**: Controls the expected proportion of false rejections.
 
-In regression, the overall model significance is typically assessed using the F-test (covered in the next post), which tests all predictors simultaneously.
+In regression, the overall model significance is typically assessed using the F-test, which tests all predictors simultaneously. The next note develops that test through ANOVA.
 
 ## Summary
 
-In this post, we covered hypothesis testing for regression coefficients:
+Hypothesis testing for regression coefficients rests on six points:
 
 - The t-statistic $t = \hat{\beta}\_j / SE(\hat{\beta}\_j)$ follows $t\_{n-p}$ under $H\_0: \beta\_j = 0$.
 - Reject $H\_0$ when $|t| > t\_{\alpha/2, n-p}$ or equivalently when $p\text{-value} < \alpha$.
@@ -159,4 +159,4 @@ In this post, we covered hypothesis testing for regression coefficients:
 - Confidence intervals and hypothesis tests provide equivalent information.
 - Always consider practical significance alongside statistical significance.
 
-In the next post, we will examine the ANOVA framework, which tests the overall significance of the regression model using the F-test.
+The next note examines the ANOVA framework and its F-test for overall model significance.

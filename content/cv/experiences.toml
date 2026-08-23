@@ -2,7 +2,7 @@
 type = "card_simple"
 title = "CryptoRails"
 date = "Feb 2026 - Present"
-content = "Product Manager: coordinates an eight-person team, maintains the product backlog, and facilitates delivery for multi-chain crypto payment and wallet infrastructure."
+content = "Product Manager: coordinates an eight-person team, maintains the product backlog, and runs delivery for multi-chain crypto payment and wallet infrastructure."
 featured = true
 
 [[collection]]

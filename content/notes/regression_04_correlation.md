@@ -27,7 +27,7 @@ reaction = true
 Correlation measures the strength of an association, but it does not establish a mechanism. This note derives the coefficient, shows how to compute it, and keeps that boundary visible.
 
 
-In the previous posts, we built the regression framework using $S\_{xx}$ and $S\_{xy}$ to derive the OLS estimators. Before we move to deeper inferential topics, it is essential to formalize a measure of the strength of the linear association between two variables. This measure is the Pearson correlation coefficient.
+The earlier notes built the regression framework using $S\_{xx}$ and $S\_{xy}$ to derive the OLS estimators. The next useful quantity is a measure of linear association between two variables, the Pearson correlation coefficient.
 
 ## Recap of Key Notation
 
@@ -128,7 +128,7 @@ A strong correlation between two variables does not mean that one causes the oth
 
 ## Summary
 
-In this post, we introduced the Pearson correlation coefficient:
+The Pearson correlation coefficient can be summarized as follows:
 
 - $S_{yy} = \sum(y_i - \bar{y})^2$ completes the set of summary statistics alongside $S\_{xx}$ and $S\_{xy}$.
 - The sample standard deviations $S_x = \sqrt{S_{xx}/(n-1)}$ and $S_y = \sqrt{S_{yy}/(n-1)}$ measure spread.
@@ -136,4 +136,4 @@ In this post, we introduced the Pearson correlation coefficient:
 - $r$ is bounded between $-1$ and $1$, symmetric, and dimensionless.
 - The regression slope and correlation are related by $\hat{\beta}_1 = r \cdot S_y / S_x$.
 
-In the next post, we will define $R^2$ using SST, SSE, and SSR, and prove mathematically that $R^2 = r^2$ for simple linear regression.
+The next note defines $R^2$ with SST, SSE, and SSR, then proves that $R^2 = r^2$ for simple linear regression.

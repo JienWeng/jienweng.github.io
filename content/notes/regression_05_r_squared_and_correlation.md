@@ -27,7 +27,7 @@ reaction = true
 SST, SSR, and SSE split the variation in a response into a fitted part and a residual part. This note uses that decomposition to derive $R^2$, connect it to correlation, and show why a high $R^2$ can still mislead.
 
 
-In the [previous post](/posts/regression-04-correlation), we introduced the Pearson correlation coefficient $r$. In this post, we define the coefficient of determination $R^2$ through the decomposition of total variability, and then prove that $R^2 = r^2$ for simple linear regression.
+The [previous note](/posts/regression-04-correlation) introduced the Pearson correlation coefficient $r$. Here, the coefficient of determination $R^2$ comes from the decomposition of total variability, and for simple linear regression it satisfies $R^2 = r^2$.
 
 ## The Sum of Squares Decomposition
 
@@ -115,7 +115,7 @@ $$R^2 = \frac{SSR}{SST} = \frac{S\_{xy}^2 / S\_{xx}}{S\_{yy}} = \frac{S\_{xy}^2}
 
 ### Step 3: Compare with $r^2$
 
-From the [previous post](/posts/regression-04-correlation), the correlation coefficient is:
+From the [previous note](/posts/regression-04-correlation), the correlation coefficient is:
 
 $$r = \frac{S\_{xy}}{\sqrt{S\_{xx} \cdot S\_{yy}}}.$$
 
@@ -175,11 +175,11 @@ Third, a high $R^2$ is not evidence of causation, and it is not a measure of pre
 
 ## Summary
 
-In this post, we covered the sum of squares decomposition and the coefficient of determination:
+The sum-of-squares decomposition gives four useful results:
 
 - $SST = SSR + SSE$ decomposes total variability into explained and unexplained components.
 - $R^2 = SSR/SST = 1 - SSE/SST$ measures the proportion of variance explained.
 - For simple linear regression, $R^2 = r^2 = S\_{xy}^2/(S\_{xx} \cdot S\_{yy})$, proven by expressing SSR in terms of $S\_{xx}$ and $S\_{xy}$.
 - Adjusted $R^2$ penalizes for model complexity in multiple regression.
 
-In the next post, we will derive the standard errors of the regression coefficients $\hat{\beta}\_0$ and $\hat{\beta}\_1$ using $S\_{xx}$ and MSE.
+The next note derives the standard errors of $\hat{\beta}\_0$ and $\hat{\beta}\_1$ using $S\_{xx}$ and MSE.

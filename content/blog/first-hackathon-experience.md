@@ -29,7 +29,7 @@ I found myself staring at my phone, thumb hovering over the share button. "Am I 
 
 I reached out to my fellow mathematics coursemates: Janice, Roius, and Gwyn. "Hey, want to do something crazy?" I asked, half expecting them to laugh it off. To my surprise, their responses came quickly, filled with enthusiasm despite (or maybe because of) our collective inexperience. Only 2 of us had ever participated in a hackathon before, and Gwyn had never even written a line of code. But there we were, four mathematics students from UTAR, signing up for one of the most competitive hackathons in the country.
 
-The looks we got when we arrived were priceless. "Are you guys from Computer Science?" someone asked, eyeing our team with curiosity. We exchanged glances and grinned. "Nope, we're Math students, haha..." The mixture of surprise and skepticism on their faces was something I'll never forget. In those moments, our outsider status felt both terrifying and weirdly empowering.
+The looks we got when we arrived were priceless. "Are you guys from Computer Science?" someone asked, eyeing our team with curiosity. We exchanged glances and grinned. "Nope, we're Math students, haha..." The mixture of surprise and skepticism on their faces was something I'll never forget. In those moments, our outsider status felt both terrifying and strangely useful.
 
 ![Our first breakfast together at PayHack 2024 - nervous but excited! The calm before the storm.](https://cdn.cosmos.so/25b6ad42-8235-45ae-9505-a2c296a8ca2a?format=jpeg)
 

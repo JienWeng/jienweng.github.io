@@ -27,7 +27,7 @@ reaction = true
 Confidence intervals turn a coefficient estimate into a range that reflects sampling uncertainty. This note connects standard errors and critical values to that range, then works through its interpretation.
 
 
-In the [previous post](/posts/regression-06-standard-error), we derived the standard errors of the regression coefficients. Standard errors tell us about the precision of our estimates, but they do not directly give us a range of plausible values for the true parameters. Confidence intervals do exactly that.
+The [previous note](/posts/regression-06-standard-error) derived the standard errors of the regression coefficients. Standard errors describe estimate precision, but they do not give a range of plausible values for the true parameters. Confidence intervals do.
 
 ## The Sampling Distribution of $\hat{\beta}\_j$
 
@@ -115,7 +115,7 @@ The correct interpretation is: if we were to repeat the experiment many times an
 
 If the confidence interval for $\beta\_j$ includes zero, this suggests that the data are consistent with $\beta\_j = 0$, meaning the predictor $x\_j$ may not have a statistically significant linear effect on $y$ at the chosen confidence level.
 
-Conversely, if the interval does not include zero, we have evidence that the predictor has a significant effect. This connection between confidence intervals and hypothesis testing is explored in the next post.
+Conversely, if the interval does not include zero, we have evidence that the predictor has a significant effect. The next note connects this result to formal hypothesis tests.
 
 ## Confidence Interval for the Mean Response
 
@@ -135,7 +135,7 @@ Notice that this interval is narrowest when $x\_0 = \bar{x}$ and grows wider as 
 
 ## Summary
 
-In this post, we constructed confidence intervals for regression coefficients:
+Confidence intervals for regression coefficients follow from these five facts:
 
 - The pivotal quantity $(\hat{\beta}\_j - \beta\_j)/SE(\hat{\beta}\_j) \sim t\_{n-p}$ forms the basis for inference.
 - For $\beta\_1$: $\hat{\beta}\_1 \pm t\_{\alpha/2, n-2} \cdot \sqrt{MSE/S\_{xx}}$.
@@ -143,4 +143,4 @@ In this post, we constructed confidence intervals for regression coefficients:
 - For any $\beta\_i$ in multiple regression: $\hat{\beta}\_i \pm t\_{\alpha/2, n-p} \cdot \sqrt{MSE \cdot C\_{ii}}$.
 - Interval width depends on the confidence level, residual variability, predictor spread, and sample size.
 
-In the next post, we will use the same t-distribution framework to perform formal hypothesis tests on the regression coefficients.
+The next note uses the same t-distribution framework for formal hypothesis tests on regression coefficients.
