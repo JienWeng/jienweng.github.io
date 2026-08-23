@@ -39,7 +39,7 @@
   <section class="well">
     <article class="prose article-prose">
       {{ page.content | safe }}
-      {% if page.path is starting_with("/notes/") %}
+      {% if page.path == "/notes/" %}
       <div class="tombstone" aria-hidden="true"></div>
       {% endif %}
     </article>
@@ -68,7 +68,7 @@
     {% endif %}
 
     {% set path = page.path %}
-    {% if path is starting_with("/blog/") or path is starting_with("/notes/") %}
+    {% if path == "/blog/" or path == "/notes/" %}
     <div class="comments-block">
       <div id="giscus-container"></div>
     </div>
@@ -79,7 +79,7 @@
 
 {% block script %}
 {% set path = page.path %}
-{% if path is starting_with("/blog/") or path is starting_with("/notes/") %}
+{% if path == "/blog/" or path == "/notes/" %}
 {% include "partials/giscus.html" %}
 {% endif %}
 {% endblock script %}
