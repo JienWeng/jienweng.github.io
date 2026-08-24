@@ -1,6 +1,6 @@
 +++
 title = "A Small Talk About Hackathons"
-description = "What happens when passion turns into pressure, and how do you know when it is time to pause, realign, and reset?"
+description = "What repeated hackathons taught me about exhaustion, comparison, and taking a proper break."
 date = 2025-08-07
 updated = 2025-08-07
 draft = false
@@ -25,18 +25,18 @@ reaction = false
 
 Hackathons reward fast learning, but they also make it easy to waste time and mistake exhaustion for progress. After a few of them, I started thinking more seriously about what the pressure was doing to me.
 
-Along the way, I've met people who are far more experienced, far more knowledgeable than me. And honestly, I can't compete with them. It's easy to feel small in those moments.
+Along the way, I met people with much more experience than me. I cannot compete with them on their home ground, and it is easy to feel small in those moments.
 
-For anyone who's been through hackathons, you'll know. The amount of time, energy, effort you need to commit is just INSANE. Most competitions require you to go through multiple stages: prelim round, and sometimes a semi-final, and then the final round. Every round is like a mini-marathon, endless brainstorming, last-minute changes, and almost no sleep just to push through and deliver something that works.
+The time and energy they demand is insane. Most competitions have a preliminary round, sometimes a semi-final, and then a final. Each round becomes a mini-marathon of brainstorming, last-minute changes, and almost no sleep, all to deliver something that works.
 
-In the first few hackathons, I was genuinely excited. It was fun. Every time one ended, I was already looking forward to the next. But after round and round of hackathons, I started to feel the burn. Exhausted, Emptiness. YES, I still learned something new in every game, but the energy, the excitement just started to wear off.
+In the first few hackathons, I was genuinely excited. Every time one ended, I was already looking forward to the next. After enough rounds, though, the excitement wore off. I still learned something from every competition, but I was tired before the next one even started.
 
-Eventually, it all stated to feel a bit empty.
+Eventually, it all started to feel a bit empty.
 
 There was also this lingering thought back in my mind: "Why am I comparing myself to people who are fully in this industry, who live and breathe in tech every single day, when I'm still just a student trying to explore things outside my field?"
 
-There's still one more hackathon coming up, and I'll give it what I can. But after that, I need a proper break from hackathons and the constant cycle of proving myself. I need to breathe, reset, and work on my inner health.
+There is still one more hackathon coming up, and I will give it what I can. After that, I need a proper break from hackathons and the constant cycle of proving myself. I need to breathe, reset, and take care of my mental health.
 
-Not saying I'm quitting hackathons forever. Not at all. But I know I need some time to focus more on myself, rebuild myself, and come back stronger. 
+I am not quitting hackathons forever. I need some time away from them, though, to focus on myself and rebuild my energy.
 
-Thanks for reading until here. Sometimes, the best thing you can do for your growth is step back, realign, and then go again.
+That is where I am at the moment. I will see what the last one feels like, then take the break I should have taken earlier.

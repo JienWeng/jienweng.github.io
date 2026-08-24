@@ -27,12 +27,12 @@ Lately, LinkedIn and Reddit have started to feel different to me. I keep seeing 
 
 ![You can't tell whether the experience is real or not](https://cdn.cosmos.so/b77a432b-7713-4b10-879d-e8256d284766?format=jpeg)
 
-I do admit I used ChatGPT for my content in the past, but I realised that the content is not really what I’ve done before, the experience is basically “artificial”. I don’t deny AI as a productivity tool, but sometimes you just can’t tell the existence of the content written there. There’s a coldness, an emptiness that creeps in when scrolling through these posts, making it feel like shouting into a void where no real person listens. 
+I used ChatGPT to help write some content in the past. When I read it back, I could tell that it did not sound like anything I had actually experienced. The sentences were clean enough, but the experience behind them felt artificial. I am not against using AI as a tool. I am against publishing words that have no person left inside them.
 
-It is really different nowadays to scroll through social media, LinkedIn, and Reddit. You don’t feel people there. It makes me really feel like the dead Internet Theory is here, and everything is full of bot activity and automatically generated content manipulated by algorithms. The authenticity of online interactions seems to be fading, they replaced by automated perfection that feels disturbingly hollow.
+That is the part I notice while scrolling. The posts are polished, agreeable, and strangely empty. Reading them feels like shouting into a void where nobody is really listening.
 
-Chatbots or AI are really good for proofreading, but they are still only good at proofreading. Soon I think they will no longer have real content or real ideas when people are writing their experiences, their ideas; they just become full of BS nowadays. Now I even wish to find some long-ass article that is awfully organised, I find some fun to read through even though it was not good, but I can find authenticity there. 
+Social media, LinkedIn, and Reddit feel different now. I cannot tell whether there is more bot activity, more generated content, or whether I have become more sensitive to it. Either way, automated perfection is starting to replace the awkward signs that a person was actually there.
 
-Has anyone noticed this? You could share them with me or offer me a perspective I haven’t considered before. I’d be more than happy to discuss it. I think we’ll might have another follow-up episode on this. 
+Chatbots are useful for proofreading, restructuring, and catching the sentence I somehow wrote twice. They should not become the source of the experience itself. I would rather read a long-ass article that is badly organised but clearly written by someone who was there than another perfect post assembled from general opinions.
 
-Share me your thoughts: [contact@jienweng.com](mailto:contact@jienweng.com)
+I do not know whether this is the dead Internet Theory or only a change in my own attention. If you have noticed the same thing, email me at [contact@jienweng.com](mailto:contact@jienweng.com). I am curious what I am missing.

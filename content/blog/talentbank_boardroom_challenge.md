@@ -1,6 +1,6 @@
 +++
-title = "My Gallery of Talentbank Boardroom Challenge 2025"
-description = "Just some of my pictures from Talentbank Boardroom Challenge 2025"
+title = "Talentbank Boardroom Challenge 2025"
+description = "A small photo record from the Talentbank Boardroom Challenge 2025."
 date = 2025-11-14
 updated = 2025-11-14
 draft = false
@@ -23,7 +23,7 @@ featured = false
 reaction = true
 +++
 
-These are a few photos from the Talentbank Boardroom Challenge 2025, along with the preparation and presentation decisions I still remember from the day.
+These are a few photos from the Talentbank Boardroom Challenge 2025. I am keeping this one as a photo record rather than pretending I still remember every preparation decision from the day.
 
 {{ figure(src="https://cdn.cosmos.so/757eebfe-bcda-458c-a666-bb88ff978ed2?format=jpeg", alt="Talentbank Boardroom Challenge 2025", caption="") }}
 

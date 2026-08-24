@@ -51,18 +51,16 @@ The hackathon itself was intense. When exhaustion hit, we took turns napping whe
 
 We did not make the Top 10, but the final pitches showed me how much the business case shaped the strongest projects. One team's blockchain remittance system stood out because its regulatory research and market validation were as careful as its technical work. I left thinking, "Next time, we need to validate the market earlier."
 
-The top teams also demonstrated masterful presentation skills. Their pitches weren't just about features - they told compelling stories about why their solutions mattered. Each slide was carefully crafted, each demo was flawlessly executed, and their responses to judges' questions showed deep understanding of both technical and business aspects. I made mental notes: "Practice the pitch more. Know your numbers. Be ready for any question."
+The top teams also presented much better than we did. Their pitches connected each feature to a business problem, their demos survived the pressure, and they knew their numbers when the judges pushed back. I made mental notes: "Practice the pitch more. Know your numbers. Be ready for any question."
 
 Despite not making the finals, I did win a Samsung monitor in the lucky draw, a small consolation that brought some laughs to our tired team.
 
 ![A silver lining - winning a Samsung monitor in the lucky draw!](https://cdn.cosmos.so/3d119ab7-d3bf-4632-8675-6fbaf1963c08?format=jpeg)
 
-Looking back now, the sleepless nights and endless debugging sessions blur together, but certain moments stand crystal clear: the late-night breakthrough when our first feature finally worked, the proud smile on Johan's face during our final presentation, and most importantly, the unshakeable bond formed between four mathematicians who dared to dream.
+Looking back now, the sleepless nights and debugging sessions blur together. I remember the late-night breakthrough when our first feature worked, Johan's smile during the final presentation, and the four of us trying to keep the demo alive.
 
 ![Jien Weng, Janice, Gwyn and Roius](https://cdn.cosmos.so/266c9030-58ad-4536-9e60-c88edb6df8a9?format=jpeg)
 
-To Janice, Roius, and Gwyn: thank you for taking this leap of faith with me. For believing that our mathematical minds could contribute something meaningful to the tech world. To Johan: your guidance went beyond mentorship and showed us that innovation comes from daring to be different. And to PayNet and JomHack: thank you for creating a space where even mathematics students could discover their potential in technology.
+Janice, Roius, and Gwyn took the risk with me even though most of us had never built a web product. Johan kept asking the questions we wanted to avoid. PayNet and JomHack gave four mathematics students a place to test whether our ideas could survive outside a classroom.
 
-They say the best stories come from stepping out of your comfort zone. Well, we didn't just step. We took a giant leap. And while our first hackathon journey has ended, something tells me this is just the beginning of our adventure in the tech world. The equations and formulas we've studied for years are no longer just abstract concepts. They're tools waiting to be applied in the vast playground of technology.
-
-After all, who says mathematicians can't be hackers too? Sometimes the best innovations come from those who dare to cross the boundaries between disciplines, who bring fresh perspectives to old problems. And maybe, just maybe, that's exactly what the tech world needs more of.
+The equations and formulas we studied were not enough on their own, but they helped us break down a problem, test assumptions, and keep going when the interface failed. We did not become software engineers in 24 hours. We did learn that four mathematics students could still build something and present it.
