@@ -52,7 +52,7 @@ Each opportunity then moves through its own funnel. The stages are more than lab
 
 ![Quandatics deal-to-cash flow from qualified lead to payment received](/img/blog/quandatics/deal-to-cash.png)
 
-*The deal-to-cash flow from the roadmap. A qualified lead becomes the records that sales needs, the funnel advances through approval stages, and an accepted quotation becomes a sales order.*
+*Deal-to-cash flow.*
 
 When the opportunity is won, the quotation is finalised. The approved quotation becomes a numbered sales order. That sales order is the record that joins the commercial side to the delivery side. It binds one sale to one project, with the project carrying the item list, budget, team, phases, and milestones.
 
@@ -66,7 +66,7 @@ Management then approves the milestone. Once it is approved, finance can issue t
 
 ![Quandatics project-to-cash flow from sales order to milestone payment](/img/blog/quandatics/project-to-cash.png)
 
-*The project-to-cash flow. A sales order binds to a project, project phases produce milestone claims, and approved milestones move into invoicing and payment receipt.*
+*Project-to-cash flow.*
 
 The relationship between a project milestone and a payment is important. Finance needs to know which milestone is due, how much should be collected, how much has already been received, and what remains outstanding. The project team needs to know the same thing from the other direction. A project can be technically progressing while its billing is behind, or it can be billed while the delivery evidence is still incomplete.
 
@@ -78,7 +78,7 @@ At the same time, the money-out side is procure-to-pay. A purchase order goes to
 
 ![Quandatics order-to-cash and procure-to-pay flow](/img/blog/quandatics/o2c-p2p.png)
 
-*O2C and P2P run in parallel, linking customer receipts and supplier costs to the same project.*
+*O2C and P2P flow.*
 
 This is the part I find easy to miss when looking at a CRM as only a sales tool. The sales funnel is also connected to future revenue, project delivery, supplier costs, and margin. If those links are missing, management has to assemble the answer manually whenever they want to know what is happening.
 
