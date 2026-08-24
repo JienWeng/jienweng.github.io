@@ -24,145 +24,68 @@ reaction = true
 topic = "Web3"
 +++
 
-A Web3 payment is not complete when a transaction is submitted. The backend still needs to match the request, check the chain result, and decide when the payment is safe to settle. This is a public case-study draft, so product-specific business details stay private.
+The question I keep coming back to in Web3 payments is quite ordinary. When can we honestly tell someone that the money has arrived?
 
-The system still needs to know what payment was requested, which network and token were used, whether the blockchain confirmed it, and whether the same payment has already been processed before.
+The screen may show a transaction hash almost immediately. That is useful, but it is not the same as a confirmed payment. The backend still has to match the transaction to the original request, check what happened on-chain, and decide whether it is safe to settle.
 
-## The main idea
+That gap between “the wallet says something happened” and “the business can act on it” is where much of the product work lives.
 
-A Web3 payment moves through a few different systems before it can be treated as successful. It starts as a payment request, becomes an on-chain transaction, and only becomes a settled payment after the backend verifies the blockchain result.
+## A transaction hash is only one part of the story
 
-This matters because the user interface can see a transaction before the backend has enough evidence to credit a balance, release an item, or tell a merchant that the payment is complete.
+The flow starts with a payment request. The system needs to remember the amount, token, network, recipient, and expiry. It also needs a payment reference of its own.
 
-The public CryptoRails documentation describes the same principle in a practical way. A client-side deposit signal can be used for an immediate experience, but the verified server webhook is the authoritative signal for settlement.
+The hash belongs to the blockchain. The payment reference belongs to the business request. Keeping both is what lets the backend answer a fairly important question later: is this the payment we were expecting, or is it only a transaction that happens to exist?
 
-## The transaction lifecycle
+Before a wallet signs anything, the obvious mistakes should be caught. Is the network supported? Is the token configured for that network? Is the recipient correct? Has the request expired? It is much easier to explain “wrong network” before money moves than after.
 
 ![Web3 payment transaction lifecycle state machine](/img/blog/cryptorails-transaction-lifecycle.svg)
 
-*Client detection can start the experience. Verified confirmation settles the payment.*
+*Transaction lifecycle.*
 
-The diagram is a state machine because the important part is not only the order of events. It is also the boundary between a transaction that is still being processed, a transaction that failed, and a transaction that is authoritative enough to settle.
+After signing, the transaction is broadcast and the system records its hash. At that point I would still call it submitted or pending. The user may see progress, but the payment is not settled yet.
 
-### 1. Payment intent is created
+That distinction sounds obvious when written down. It becomes less obvious when a customer is waiting, a merchant is asking whether an order can be released, and the transaction is taking longer than expected.
 
-The first step is creating a payment request. This can come from a merchant or from the user, depending on the product flow.
+## The network changes the work
 
-The system records the amount, token, network, recipient, and expiry time. It also creates a unique payment reference so that the request can be followed across the rest of the system.
+Supporting EVM networks and TRON does not mean putting two names into a dropdown and calling the problem solved.
 
-This reference is important. A transaction hash identifies something on the blockchain, while the payment reference connects that blockchain activity back to the original business request.
+On an EVM network, the transaction normally needs the network's native coin to pay gas. A TRON token transfer depends on TRON resources, especially Energy, and may also use Bandwidth.
 
-### 2. Payment details are validated
+For TRON, the gateway applies Energy rental before a resource-heavy transaction is broadcast. Without enough Energy, the transfer can burn TRX to cover the missing resource. The transaction may succeed, but the cost can be surprisingly high. That makes Energy part of the product flow, not a detail to leave for the user to discover afterwards.
 
-Before the user signs anything, the system should validate the details that it can already know,
+The chain also affects monitoring, confirmation, wallet compatibility, error handling, and QA. The broad sequence is shared, but the conditions inside each step are not identical. Confirmation rules need to come from the implementation and the selected network, not from a label in the interface.
 
-- the network is supported;
-- the token is configured for that network;
-- the recipient address is correct;
-- the amount is still valid;
-- the payment has not expired.
+## The waiting part is part of the product
 
-This is where the system can reject a wrong network or unsupported asset early. It is much easier to explain a validation error before a transaction is signed than after funds have already moved.
+After broadcast, the system has to keep checking. Has the transaction appeared? Is it still processing? Did it fail? Has it reached the confirmation condition required by the product?
 
-### 3. The user interacts with a wallet
+The interface should make those states understandable. “Waiting for the network” gives the user something useful. A raw RPC error usually does not. At the same time, the interface should not turn a pending transaction into a success message just to make the screen feel finished.
 
-The user connects or selects a wallet and reviews the payment details. The amount and destination should be visible enough for the user to understand what they are signing.
+The gateway documentation describes a backend lifecycle with states such as `pending`, `processing`, `confirmed`, and `failed`. The exact names are less important than keeping submission separate from confirmation.
 
-The network also affects what has to be prepared before submission. EVM transactions use the network's native coin to pay gas. TRON token transactions depend on TRON resources, especially Energy, and may also consume Bandwidth.
+Once the transaction is confirmed, reconciliation begins. The backend checks the recipient, token, network, amount, and transaction hash against the payment reference. It also needs to be safe when the same transaction or webhook is seen twice. A customer should not receive credit twice because an event was delivered twice.
 
-For TRON, the gateway applies Energy rental as part of the transaction flow. Without enough Energy, the transfer can fall back to burning TRX to cover the resource cost, which can make the transaction unexpectedly expensive. This is therefore more than a fee estimate. The system needs to arrange the required Energy before broadcasting the transaction.
+The final signal is sent to the product through a signed webhook. The receiving backend should verify the HMAC signature against the raw request body before trusting the payload. That server-side event can then update a ledger, release an item, or tell a merchant that the payment is complete.
 
-The wallet then signs the transaction. At this point, the system has a signed transaction, but it does not yet have a confirmed payment.
+The client-side signal still has a job. It can tell the user that funds have been detected quickly. It should not be the authority for settlement.
 
-### 4. The transaction is submitted
+## The unhappy paths are where the design gets tested
 
-The signed transaction is broadcast to the selected blockchain. The system records the transaction hash and changes the payment state to something like `submitted` or `pending`.
+The payment can be sent on the wrong network, use the wrong token, or arrive with the wrong amount. The request can expire. The transaction can be delayed, dropped, or rejected by the wallet. An indexing service or RPC can be late. A webhook can be duplicated.
 
-For backend operations, the gateway documentation describes a more specific lifecycle, `pending`, `processing`, `confirmed`, or `failed`. The exact names can vary between products, but the idea is the same, submission and confirmation are different states.
+These are different problems. Some need a retry. Some need a manual review. Some should be rejected permanently. Putting all of them into one “failed” state makes the system easier to code and harder to operate.
 
-### 5. The blockchain is monitored
+This is also why I care about the payment state shown in the UI. It affects what the customer does next, what the merchant believes, and what the delivery team has to test.
 
-The system checks the blockchain or an indexing service for the transaction. It needs to distinguish between a transaction that has not appeared yet, one that is still being processed, one that failed, and one that has been confirmed.
+## Where I sit in the work
 
-The interface should turn these technical states into useful messages. “Waiting for the network” is more understandable than showing a raw RPC response, while still being honest that the payment is not complete yet.
+My role sits between the business owner and the delivery team. I contribute to the backlog and roadmap, run Scrum ceremonies, and coordinate an eight-person team working across payment flows, EVM and TRON integration, QA, and UI/UX testing.
 
-### 6. Confirmation and finality are reached
+The work is partly about writing requirements. It is also about asking the annoying question before the team has already built the wrong thing. What happens if the transaction is late? Which event is authoritative? What should the user see while the chain is still processing? What stops a retry from crediting the same payment twice?
 
-The system waits for the required confirmation condition before treating the transaction as successful. This condition may differ between EVM networks and TRON, so the exact rule should be defined by the implementation rather than assumed from the user interface.
-
-The important invariant is simple, a submitted transaction is not the same as a confirmed transaction. Only the required confirmation condition should move the payment into a final successful state.
-
-### 7. The payment is reconciled
-
-After confirmation, the backend matches the blockchain result to the original payment reference. It checks the recipient, token, network, amount, and transaction hash.
-
-The backend also needs to protect against duplicate processing. If the same deposit or transaction is observed more than once, the customer should not receive credit twice. The public documentation also recommends reusing the same transaction reference when retrying a write so that the operation remains idempotent.
-
-### 8. The result is sent to the product
-
-Once the transaction has been verified, the system updates the payment status and sends the result to the relevant product or merchant.
-
-CryptoRails uses a signed webhook for this settlement event. The receiving backend should verify the HMAC signature against the raw request body before trusting the payload. This gives the product a server-side signal that can be used for ledger crediting, releasing goods, or showing a final success state.
-
-The client-side signal still has value. It can show the user that funds have been detected quickly, but it should not be treated as proof of settlement by itself.
-
-## Where the lifecycle can fail
-
-The happy path is not the whole system. Some of the cases that need a clear outcome are,
-
-- wrong network or unsupported token;
-- underpayment or overpayment;
-- expired payment request;
-- failed transaction;
-- delayed or dropped transaction;
-- duplicate transaction or duplicate webhook;
-- wallet rejection or user interface error;
-- blockchain RPC or indexing delay.
-
-These cases do not all mean the same thing. Some need a retry, some need a manual review, and some should be rejected permanently. The product should make this distinction visible instead of placing every problem into one generic “failed” state.
-
-## EVM and TRON considerations
-
-The gateway supports multiple blockchain labels, including EVM networks and TRON networks. The broad lifecycle remains the same across them, but the implementation details are not identical.
-
-The parts that need to be handled carefully are,
-
-- address format and wallet compatibility;
-- correct network selection;
-- token and native-coin configuration;
-- transaction monitoring and indexing;
-- confirmation and finality rules;
-- EVM gas and TRON Energy or Bandwidth requirements;
-- TRON Energy rental before a resource-heavy transaction;
-- retry and error behaviour;
-- QA coverage for both successful and failed flows.
-
-The broad distinction is that an EVM flow mainly needs a gas balance in the network's native coin, while a TRON flow may need Energy to avoid burning TRX for a token transfer. Exact confirmation counts and rental rules still depend on the implementation and network, so those details should be documented separately from this public case study.
-
-## My contribution
-
-My role sat between the business owner and the delivery team. I contributed to the product backlog and roadmap, ran Scrum ceremonies, and coordinated an eight-person team.
-
-I also helped translate product priorities into technical requirements and coordinated work across the payment flows, EVM and TRON integration, QA, and UI/UX testing.
-
-I kept the business question tied to the technical state of the system. A payment status affects what the user sees, what the merchant believes, and what the team needs to test.
-
-## Quality and delivery
-
-I helped make sure that requirements were clear before implementation started. We also needed to check that the payment states were understandable to users and that the interface matched what was actually happening on-chain.
-
-QA therefore needed to cover both successful and unsuccessful paths. A transaction that confirms is important, but so is a transaction that is late, rejected, sent to the wrong network, or received twice.
-
-Keeping the business owner, product work, engineering work, QA, and UI/UX discussions aligned helped reduce the gap between the payment lifecycle in the system and the payment lifecycle experienced by the user.
-
-## Wrap-up
-
-The payment moves from intent, through wallet interaction and blockchain confirmation, into reconciliation and final notification. That sequence turns a submitted transaction into a settled payment.
-
-Client-side detection can start the experience. Verified server-side confirmation controls settlement.
-
-This case study covers the general transaction lifecycle and my responsibilities. Product-specific business details, implementation details, and performance results remain confidential.
+Those questions connect the technical state of the system to the experience people actually have. A payment is not complete because one screen says it is. It is complete when the system has enough verified evidence to treat it as settled.
 
 For the public technical reference, see the [CryptoRails payment gateway documentation](https://docs.cryptorails.tech/), especially the [integration guide](https://docs.cryptorails.tech/guide), [transaction overview](https://docs.cryptorails.tech/documentation/overview), and [webhook documentation](https://docs.cryptorails.tech/documentation/webhooks).
 
-Some parts are still open for now, which is okay, I suppose.
+This is a generalised case study. Product-specific business details, implementation details, and performance results remain confidential.
