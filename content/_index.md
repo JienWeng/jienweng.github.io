@@ -1,5 +1,5 @@
 +++
 title = "Jien Weng"
-description = "Web3 Product Manager, Business Transformation Consultant, and Data Science & Machine Learning Trainer."
+description = "Jien Weng helps teams turn unclear business and technical problems into clear decisions, useful products, and working processes across AI, data, and Web3."
 template = "home.html"
 +++
