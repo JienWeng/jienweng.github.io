@@ -44,6 +44,44 @@ This also explains why a field such as “project status” is not as simple as 
 
 These questions decide how the organisation wants work to move, even though they eventually appear as UI details.
 
+## The flow we are trying to represent
+
+The sales process starts with a lead. Once the lead is qualified, it becomes an account, a contact, and an opportunity. An account can have more than one opportunity, so the CRM cannot treat the customer record and the sales funnel as the same thing.
+
+Each opportunity then moves through its own funnel. The stages are more than labels for a salesperson. They carry information about what has been checked, what still needs approval, and whether the opportunity is ready to move forward. Management controls sit around the stages because a quotation should not become a commitment just because someone dragged a card across a screen.
+
+![Quandatics deal-to-cash flow from qualified lead to payment received](/img/blog/quandatics/deal-to-cash.png)
+
+*The deal-to-cash flow from the roadmap. A qualified lead becomes the records that sales needs, the funnel advances through approval stages, and an accepted quotation becomes a sales order.*
+
+When the opportunity is won, the quotation is finalised. The approved quotation becomes a numbered sales order. That sales order is the record that joins the commercial side to the delivery side. It binds one sale to one project, with the project carrying the item list, budget, team, phases, and milestones.
+
+This is where the data needs to stop being retyped. If the project team has to rebuild the project from an email or a PDF, the connection has already been lost.
+
+## The project has to agree with the sale
+
+The project does not disappear after the sales order is created. It opens from the order and moves through its delivery phases. Each phase has deliverables and a progress percentage. When a phase is complete, the team can submit a milestone claim with the evidence needed for approval.
+
+Management then approves the milestone. Once it is approved, finance can issue the sales invoice for that milestone. The project status and the payment status need to travel back to the same records, so the business can see whether a project is progressing, whether it has been billed, and whether the money has actually been collected.
+
+![Quandatics project-to-cash flow from sales order to milestone payment](/img/blog/quandatics/project-to-cash.png)
+
+*The project-to-cash flow. A sales order binds to a project, project phases produce milestone claims, and approved milestones move into invoicing and payment receipt.*
+
+The relationship between a project milestone and a payment is important. Finance needs to know which milestone is due, how much should be collected, how much has already been received, and what remains outstanding. The project team needs to know the same thing from the other direction. A project can be technically progressing while its billing is behind, or it can be billed while the delivery evidence is still incomplete.
+
+## Finance runs in two directions
+
+The money-in side is the order-to-cash process. A completed project milestone becomes a claim, then a sales invoice, then a payment receipt matched against that invoice. The accounting entry is posted to Autocount, with the relevant sales order and documents kept together.
+
+At the same time, the money-out side is procure-to-pay. A purchase order goes to a supplier or subcontractor against the sales order. The supplier invoice is captured and matched to the purchase order, then an approved payment voucher sends the payment through. The cost is posted back to the same project.
+
+![Quandatics order-to-cash and procure-to-pay flow](/img/blog/quandatics/o2c-p2p.png)
+
+*The O2C and P2P flows run alongside each other. One tracks money collected from the customer, while the other tracks supplier and subcontractor costs against the project.*
+
+This is the part I find easy to miss when looking at a CRM as only a sales tool. The sales funnel is also connected to future revenue, project delivery, supplier costs, and margin. If those links are missing, management has to assemble the answer manually whenever they want to know what is happening.
+
 ## I had to learn the process before designing the system
 
 My first instinct was to think about the screens. It is easy to imagine a dashboard and feel that the project is moving forward. The harder part is sitting with the workflow long enough to notice where the words stop matching the work.
@@ -56,7 +94,7 @@ Those are the moments where the product work happens. I translate the operating 
 
 The support part has been useful for the same reason. A workflow can look complete in a meeting and still break when a customer changes scope, an approval arrives late, or the previous handover leaves out an important detail. Those cases are not annoying side stories. They show us where our understanding of the process was incomplete.
 
-## Why not just make everyone follow the tool?
+## How much should the tool change the team?
 
 There is a reasonable argument for doing exactly that. Standardising a process can make it easier to train people and easier to report on. Sometimes the organisation really does need to change the way it works.
 
