@@ -68,6 +68,10 @@ This is where the system can reject a wrong network or unsupported asset early. 
 
 The user connects or selects a wallet and reviews the payment details. The amount and destination should be visible enough for the user to understand what they are signing.
 
+The network also affects what has to be prepared before submission. EVM transactions use the network's native coin to pay gas. TRON token transactions depend on TRON resources, especially Energy, and may also consume Bandwidth.
+
+For TRON, the gateway applies Energy rental as part of the transaction flow. Without enough Energy, the transfer can fall back to burning TRX to cover the resource cost, which can make the transaction unexpectedly expensive. This is therefore more than a fee estimate. The system needs to arrange the required Energy before broadcasting the transaction.
+
 The wallet then signs the transaction. At this point, the system has a signed transaction, but it does not yet have a confirmed payment.
 
 ### 4. The transaction is submitted
@@ -128,11 +132,12 @@ The parts that need to be handled carefully are,
 - token and native-coin configuration;
 - transaction monitoring and indexing;
 - confirmation and finality rules;
-- fee or resource assumptions;
+- EVM gas and TRON Energy or Bandwidth requirements;
+- TRON Energy rental before a resource-heavy transaction;
 - retry and error behaviour;
 - QA coverage for both successful and failed flows.
 
-I am leaving the exact confirmation counts and chain-specific fee rules out of this draft until they are confirmed against the implementation. Those details should not be guessed in a public case study.
+The broad distinction is that an EVM flow mainly needs a gas balance in the network's native coin, while a TRON flow may need Energy to avoid burning TRX for a token transfer. Exact confirmation counts and rental rules still depend on the implementation and network, so those details should be documented separately from this public case study.
 
 ## My contribution
 

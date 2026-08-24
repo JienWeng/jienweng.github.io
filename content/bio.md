@@ -16,5 +16,3 @@ The questions that keep showing up in my work are simple to state. What informat
 I am building stronger foundations in stochastic modelling and environmental modelling. This connects my work in reinforcement learning and finance to more classical modelling questions, including environmental systems and current wastewater treatment plant research.
 
 I hold a BSc. (Hons) in Applied Mathematics with Computing from UTAR. Alongside formal research, I keep a running notebook of derivations, clarifications, and working explanations in statistics, regression, optimization, and reinforcement learning.
-
-This site brings together my professional background, research, notes, essays, publications, and technical projects.

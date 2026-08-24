@@ -55,7 +55,7 @@ There is no microscopic instruction saying that one direction is the future. In 
 
 But this state is far too detailed for the questions we normally ask about a gas. We do not track $6N$ coordinates. We ask for a distribution $f(t,x,v)$, where $f$ describes how likely we are to find a particle near position $x$ with velocity $v$ at time $t$.
 
-This is the first important change. We move from one exact many-particle trajectory to a one-particle statistical description:
+The first change is the move from one exact many-particle trajectory to a one-particle statistical description:
 
 $$
 Z_N(t) \quad\longrightarrow\quad f(t,x,v).
@@ -99,7 +99,7 @@ $$
 
 This is the H-theorem. The inequality is not added as a separate law. It follows from the collision structure inside the Boltzmann equation.
 
-The key mathematical fact is elementary:
+The proof uses the elementary inequality:
 
 $$
 (a-b)\log\left(\frac{a}{b}\right) \geq 0
@@ -193,9 +193,7 @@ That distinction is not a weakness. It is the whole point.
 
 I used to think the arrow of time came from adding randomness to mechanics. Now I think that picture is too simple. The hard-sphere dynamics in this work are deterministic. The direction appears in the passage from an exact microscopic state to an effective statistical law, together with the assumptions on the initial ensemble and the mathematical control of correlations.
 
-The most interesting part is that Deng, Hani, and Ma made this passage rigorous without pretending the collision history was simple. They carried the history, organised it, and showed why the macroscopic equation still wins.
-
-In one sentence:
+Deng, Hani, and Ma made this passage rigorous without pretending the collision history was simple. They carried the history, organised it, and showed why the macroscopic equation still wins:
 
 > Irreversibility is what reversible mechanics looks like after we move from every coordinate to the statistical description we can actually use.
 

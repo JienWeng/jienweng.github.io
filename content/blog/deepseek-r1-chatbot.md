@@ -27,15 +27,15 @@ I built a small chatbot with DeepSeek-R1 because I wanted to see how a local rea
 
 [![“Good artists copy, great artists steal” - Steve Jobs](https://cdn.cosmos.so/d66e7a6d-8205-4e9c-ba4f-656971c79857?format=jpeg)](https://www.linkedin.com/feed/update/urn:li:activity:7291035071992520704/)
 
-But forget the drama for a second, because the best part? Deepseek is open-source. That’s a huge win for the AI community. No more being locked behind API paywalls or waiting for some corporate overlord to decide what we can or can’t do. It’s out there, free to tinker with, and you bet I had to try it out for myself.
+DeepSeek being open source was the main reason I wanted to try it. I did not need to wait for an API account or a company to decide how I could use the model. I could download it, tinker with it, and see what happened.
 
-So, I went ahead and do something I wanted to do for soooo long -- built a chatbot. It’s not packed with fancy features (yet), but through this little experiment, I’ve discovered some pretty interesting things about how the Deepseek R1 model works. You can try it out live [here](https://huggingface.co/spaces/jienweng/chatbot_v2).
+So I went ahead and built the chatbot I had wanted to make for a long time. It is not packed with fancy features yet, but the experiment gave me a better feel for how DeepSeek R1 behaves. You can try it out live [here](https://huggingface.co/spaces/jienweng/chatbot_v2).
 
-btw, we won’t dive into the technical aspects just yet. That’s coming up in the next section! Stay tuned for more details on how these improvements will work behind the scenes.
+The technical details are below.
 
-### The Unique "Thinking" Approach
+### Showing the model's reasoning output
 
-What blows my mind the most about this whole setup is how I managed to separate the model’s thinking process from its final response. Most chatbots out there? They just spit out an answer, and you have no idea what’s happening behind the scenes. But with this, you can actually see how the model thinks through a problem before giving an answer. It’s like watching an AI have an inner monologue, refining its thoughts before speaking. And honestly? I’ve never seen this before in any LLMs I’ve used.
+The part I found most surprising was separating the model’s reasoning output from its final response. In a conventional chatbot, the answer appears without the intermediate work. Here, the model produces a visible sequence of reasoning before the final response, so I could watch it break down a problem and revise its answer. I had not seen that behaviour in the other LLMs I had used.
 
 At first, I didn’t plan for this feature. It appeared while I was testing different ways to improve response quality. I noticed that the model was generating hidden reasoning steps before its final output. Instead of discarding them, I decided to show them. The result made the AI feel more transparent, almost like it was thinking out loud.
 
@@ -48,7 +48,7 @@ For example, if you ask it something like, “What do you think about climate ch
 3. Forming logical connections
 4. Combining the pieces into a response
 
-After seeing the model’s thinking process, what really stands out to me is how structured its response is. It doesn’t just throw out some generic take on climate change. It actually analyzes the question, breaks it down into different angles, and then builds a well-organized answer.
+The response was often structured. It analysed the question, split it into different angles, and then assembled an answer instead of jumping straight to a conclusion.
 
 [![Interesting Observation: The model sometimes includes unexpected details, some accurate and some a bit off!](https://cdn.cosmos.so/6c9e3e2a-d318-4615-8786-7d60248fc049?format=jpeg)](https://huggingface.co/spaces/jienweng/chatbot_v2)
 
@@ -58,7 +58,7 @@ But that’s exactly what makes having a visible thought process so useful. Inst
 
 [![AI Hallucination Meme](https://cdn.cosmos.so/8cf44525-7111-4a09-87c7-ee6a09d3cb3b?format=jpeg)](https://huggingface.co/spaces/jienweng/chatbot_v2)
 
-This kind of transparency is what makes AI feel less like a magic black box and more like an actual tool that we can guide, correct, and refine. And that’s honestly what excites me the most about this project.
+Seeing the intermediate output also made mistakes easier to catch. I could inspect the path to an answer, correct the prompt, and compare the next response instead of treating the final text as unexplained output.
 
 ### Deployment Specifications
 
@@ -76,7 +76,7 @@ You might notice that the [live preview](https://huggingface.co/spaces/jienweng/
 
 ### Efficient Model Architecture
 
-The chatbot uses the Deepseek R1 Distilled 1.5B model, which is a significantly compressed version of the original 685B parameter model. Despite having only 1.5 billion parameters, it maintains impressive performance for many tasks.
+The chatbot uses the DeepSeek R1 Distilled 1.5B model, a compressed version of the original 685B parameter model. Despite having only 1.5 billion parameters, it reports strong results on several reasoning tasks.
 
 Key points about the model:
 
@@ -86,14 +86,14 @@ Key points about the model:
 
 [![Model Architecture](https://cdn.cosmos.so/8eb746ad-784b-4892-9eb0-4cd26a82af13?format=jpeg)](https://huggingface.co/blog/open-r1)
 
-### Impressive Benchmark Results
+### Benchmark results
 
-What’s most fascinating about this model is how well it holds up when compared to much larger models. Despite having far fewer parameters, it manages to outperform some big names in the AI world for certain tasks.
+The model holds up well against much larger models on several published benchmarks, although that does not make it the best choice for every task.
 
 [![Model Comparison Results](https://cdn.cosmos.so/2ac19291-5c72-4a60-b290-bd140a61a4d4?format=jpeg)](https://medium.com/data-science-in-your-pocket/deepseek-r1-distill-qwen-1-5b-the-best-small-sized-llm-14eee304d94b)
 
 
-#### Outstanding Performance in Key Areas
+#### Selected results
 
 1. **AIME 2024 (Math Competition)**
    * DeepSeek R1 Distilled: 28.9% Pass\@1
@@ -140,11 +140,11 @@ Due to iframe restrictions, you can access the live demo through these methods:
 
 [![Chatbot interface](https://cdn.cosmos.so/0eab3363-76da-4dab-b44b-a4a5d7cdc96f?format=jpeg)](https://huggingface.co/spaces/jienweng/chatbot_v2)
 
-### Summary
+### What I learned
 
-Deepseek has definitely shaken things up in the AI world, and the drama surrounding it is just the tip of the iceberg. Forget the finger-pointing. This move is a win for the AI community, especially since Deepseek is open-source. No more waiting around for companies to decide how we can use AI. Now it’s out there for everyone to play with and improve.
+DeepSeek made it easier for me to experiment with a capable reasoning model without relying on a paid API. The open-source release also meant I could inspect the model card, run a local or hosted version, and change the interface around it.
 
-And as for my little experiment building a chatbot with the Deepseek R1 model, it’s not feature-packed yet, but it’s definitely been a fun ride. You can try it out live [here](\(https://huggingface.co/spaces/jienweng/chatbot_v2\)) and see how it works for yourself!
+My chatbot is still small and not feature-packed, but it gave me a practical way to study the model's reasoning output and its failure modes. You can try it out live [here](https://huggingface.co/spaces/jienweng/chatbot_v2).
 
 ### Additional Resources
 
@@ -153,8 +153,6 @@ And as for my little experiment building a chatbot with the Deepseek R1 model, i
 * [Performance Benchmarks](https://huggingface.co/spaces/mteb/leaderboard)
 * [Community Discussion](https://discuss.huggingface.co/)
 
-
-Feel free to experiment with the live demo and share your thoughts! 
 
 ### References
 

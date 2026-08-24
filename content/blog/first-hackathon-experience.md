@@ -1,6 +1,6 @@
 +++
 title = "First Physical Hackathon Experience"
-description = "Jien Weng shares insights from his first physical hackathon at Payhack 2024, organised by Paynet and JomHack, Utilising OpenFinance APIs to create a financial literacy app."
+description = "What I learned from my first physical hackathon at PayHack 2024, where we used OpenFinance APIs to prototype a financial-literacy app."
 date = 2024-12-02
 updated = 2024-12-02
 draft = false
@@ -33,7 +33,7 @@ The looks we got when we arrived were priceless. "Are you guys from Computer Sci
 
 ![Our first breakfast together at PayHack 2024 - nervous but excited! The calm before the storm.](https://cdn.cosmos.so/25b6ad42-8235-45ae-9505-a2c296a8ca2a?format=jpeg)
 
-November 30th marked our first day, and it was a blur of ideation and learning. We came up with an innovative idea: creating an app to visualize transaction carbon footprints, with the ability to pool and trade carbon footprint surpluses with companies in need. On paper, it sounded like a promising blend of fintech and environmental consciousness.
+November 30th marked our first day, and it was a blur of ideation and learning. We came up with an idea for an app that visualized transaction carbon footprints and pooled the estimated surplus for trading. On paper, it combined fintech with environmental accounting.
 
 ![Getting grilled during our mentoring session - each question pushed us to think deeper about our solution](https://cdn.cosmos.so/b16e0c66-cefb-4cc6-8bf6-de5a087cc513?format=jpeg)
 

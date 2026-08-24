@@ -29,7 +29,7 @@ WWTP research in Malaysia clusters around three problems, baseline efficiency, p
 
 1. The assessment of baseline efficiency and pollution control in Malaysia's existing infrastructure.
 
-2. Exploration of advanced technology to meet future sustainability goals.
+2. Exploration of newer technology to meet sustainability goals.
 
 # Current Trends in WWTP Studies in Malaysia
 
@@ -53,15 +53,15 @@ Research consistently identifies aeration in biological treatment, especially ac
 
 Research also focuses on retrofitting WWTPs with solar photovoltaic (PV) systems to reduce grid dependence. WWTPs cover large areas, making them suitable for PV installation {% cite(path="bibliography/wwtp_review.bib") %}Shao2024{% end %} {% cite(path="bibliography/wwtp_review.bib") %}Colacicco2020{% end %}. Cable-supported floating PV systems on aeration ponds may increase energy generation while minimizing land use {% cite(path="bibliography/wwtp_review.bib") %}Milani2024{% end %}. One study found that combining optimized operating parameters with PV systems reduced carbon emissions by 30-50% compared with conventional WWTPs {% cite(path="bibliography/wwtp_review.bib") %}Shao2024{% end %}. Its panels occupied 22,000 m² at a plant treating 100,000 m³/day, reducing electricity costs by 40-60%. Smaller WWTPs with flow rates below $1.89 \times 10^4 m^3/d$ may achieve energy self-sufficiency through solar PV, with solar supplying 30% to 100% of required energy {% cite(path="bibliography/wwtp_review.bib") %}Milani2024{% end %}.
 
-In machine learning applications, multiple sources agree that LSTM networks as superior for handling time-series data and capturing long-term dependencies in water quality parameters {% cite(path="bibliography/wwtp_review.bib") %}Zhang2025a{% end %} {% cite(path="bibliography/wwtp_review.bib") %}Wongburi2023{% end %}. Other than sequential models, ensemble learning methods, such as Random Forests and Gradient Boosting Machines, are consistently highlighted for their high accuracy and interpretability in predicting energy consumption and effluent quality, often outperforming their traditional counterparts like Support Vector Machines (SVM) and simple Artificial Neural Networks (ANN) {% cite(path="bibliography/wwtp_review.bib") %}Alali2023{% end %} {% cite(path="bibliography/wwtp_review.bib") %}Zamfir2025{% end %}.
+In machine learning applications, multiple sources report that LSTM networks handle time-series data and long-term dependencies in water-quality parameters well {% cite(path="bibliography/wwtp_review.bib") %}Zhang2025a{% end %} {% cite(path="bibliography/wwtp_review.bib") %}Wongburi2023{% end %}. Ensemble methods such as Random Forests and Gradient Boosting Machines are also used to predict energy consumption and effluent quality, with the cited studies reporting advantages over Support Vector Machines and simple Artificial Neural Networks {% cite(path="bibliography/wwtp_review.bib") %}Alali2023{% end %} {% cite(path="bibliography/wwtp_review.bib") %}Zamfir2025{% end %}.
 
 
 # Summary
 
 Current research points towards WWTPs that use renewable energy, especially solar PV, and predictive models to manage demand. Aeration remains the clearest place to look for efficiency gains. Future work should improve greenhouse-gas modelling and test these systems in Malaysian plants.
 
-Future research should address existing gaps, such as greenhouse gas emissions modeling using AI techniques, to further advance the sustainability of wastewater treatment in Malaysia and surrounding regions.
+Future research should address gaps such as greenhouse-gas modelling with AI methods, particularly for Malaysian plants and nearby regions.
 
 <br>
 
-_*This article do not represent the views of any organization I am affiliated with. It is solely my personal thoughts based on the review of existing literature._
+_*This article does not represent the views of any organisation I am affiliated with. It is my personal reading of the cited literature._

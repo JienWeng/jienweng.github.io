@@ -210,12 +210,10 @@ Saddle points can be handled with noise, momentum, or second-order methods that 
 
 ## Conclusion
 
-That is gradient descent: a one-line update rule that ends up as the backbone of most of machine learning. 
+That is gradient descent: a one-line update rule used throughout machine learning.
 
-It's remarkable how such a simple iterative process can lead optimize almost any complex function in real life applications. I truly cannot appreciate enough the beauty of this elegant mathematical concept. 
+The rule is simple, but its behaviour depends on the geometry of the objective and the choice of learning rate.
 
-For those who are interested to learn more about gradient descent, I highly recommend watching the following video by StatQuest, which provides an excellent visual explanation of the algorithm:
+For a visual explanation, this StatQuest video is useful:
 
 {{ youtube(id="sDv4f4s2SB8", caption="Gradient Descent, Step-by-Step | StatQuest") }}
-
-I hope this post has provided a clear understanding of the gradient descent.

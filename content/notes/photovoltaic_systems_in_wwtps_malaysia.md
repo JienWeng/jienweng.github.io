@@ -55,9 +55,9 @@ The high concentration of energy use in aeration suggests that WWTP operators sh
 
 ## Advanced PV Power Forecasting and Control Systems
 
-The modern integration of photovoltaic systems into WWTPs requires sophisticated forecasting and control architectures. Recent research demonstrates a clear evolution toward hybrid AI-based forecasting models that combine deep learning with optimization algorithms {% cite(path="bibliography/renewable_energy.bib") %}IturraldeCarrera2025{% end %}. These advanced models significantly outperform classical deterministic methods in handling the highly dynamic and non-linear conditions of real-world PV generation.
+Integrating photovoltaic systems into WWTPs requires forecasts and control systems that can handle changing generation and demand. Recent research describes hybrid forecasting models that combine deep learning with optimization algorithms {% cite(path="bibliography/renewable_energy.bib") %}IturraldeCarrera2025{% end %}. These models are designed for the non-linear and variable conditions of real-world PV generation.
 
-Machine learning ensemble algorithms such as XGBoost, LightGBM, and CatBoost have emerged as foundational tools for high-accuracy solar power prediction {% cite(path="bibliography/renewable_energy.bib") %}Nguyen2025{% end %}. A critical finding is that humidity and ambient temperature emerge as the most influential factors affecting PV module efficiency, particularly in tropical and humid climates.
+Ensemble algorithms such as XGBoost, LightGBM, and CatBoost are used for solar power prediction {% cite(path="bibliography/renewable_energy.bib") %}Nguyen2025{% end %}. The cited study identifies humidity and ambient temperature as important factors affecting PV module efficiency, especially in tropical and humid climates.
 
 ### Integrated Energy Management
 
@@ -77,6 +77,6 @@ The aquatic deployment environment introduces unique technical challenges requir
 
 ## Conclusion
 
-The successful integration of solar PV systems into Malaysian WWTPs needs a strategic of advanced forecasting. By combining accurate generation forecasting with sophisticated demand-side prediction, facilities can achieve near energy-autonomous operation while positioning themselves as flexible power assets responding to grid demands. 
+Successful solar PV integration at Malaysian WWTPs needs a strategy that connects generation forecasts to plant demand. Better forecasts can help facilities use more of their own generation and decide when storage or grid electricity is needed.
 
-In the future research we need to explore the details implementation of predictive modelling and control algorithms in WWTPs, as well as conducting in-depth literature reviews on case studies of existing energy predictive systems in WWTP.
+Future research should examine how predictive models and control algorithms are implemented in WWTPs, alongside detailed reviews of existing energy-prediction systems.

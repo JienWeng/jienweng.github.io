@@ -3,7 +3,7 @@ title = "Now"
 description = "What I am working on at the moment."
 +++
 
-This is a [now page](https://nownownow.com/about). Last updated July 2026.
+[Now page](https://nownownow.com/about). Last updated July 2026.
 
 **Research.** I am a Research Assistant at Monash University Malaysia, developing wastewater treatment prediction models with recurrent neural networks and Transformer architectures on time-series sensor data.
 

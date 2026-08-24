@@ -1,6 +1,6 @@
 +++
 title = "Eco Finance: A Sustainable Future Prototype"
-description = "Jien Weng shares sustainable reducing carbon footprint project from his first physical hackathon at Payhack 2024, organised by Paynet and JomHack, Utilising OpenFinance APIs to create a financial literacy app."
+description = "A carbon-footprint and financial-literacy prototype built during PayHack 2024 with OpenFinance APIs."
 date = 2024-12-29
 updated = 2024-12-29
 draft = false
@@ -25,7 +25,7 @@ reaction = false
 
 Eco Finance started with a problem we could explain quickly, people could not see the carbon cost hidden inside ordinary spending. We built the prototype during PayHack 2024 and used it to test the idea under hackathon constraints.
 
-We participated in PayHack 2024, quite a big hackathon event with many talented individuals.
+PayHack 2024 was our first physical hackathon, with teams building under a tight deadline.
 
 Our project, Eco Finance, focuses on a carbon tax expected in 2026. Although it initially targets specific industries, the same idea could eventually apply to everyday spending in Malaysia. Read more about the 2026 carbon tax here.
 
@@ -35,7 +35,7 @@ European countries are already applying ESG policies in industries such as autom
 
 ## Understanding the idea
 
-Do you know how much carbon footprint you generate from ordering a Shopee parcel? Or how much carbon you generate by driving to work instead of taking public transport? It's challenging for people to visualize their footprint. Hence, we're here to make this visible to people, increasing their awareness about this issue. According to Visa, 80% of Malaysians are aware of the environmental impact of consumption. With the release of Malaysia's largest payment gateway provider and the latest project linking banks.
+How much carbon is attached to a Shopee parcel or a drive to work? Most people do not see that information in their payment history. The prototype tried to make the estimate visible alongside the transaction. According to Visa, 80% of Malaysians are aware of the environmental impact of consumption, but awareness does not provide a number for a particular purchase.
 
 ## How it works
 
@@ -45,9 +45,9 @@ For example, if the emission factor for a specific merchant category is 0.5 kg C
 
 There's an established merchant category code (MCC) in transaction details, where we only need to fine-tune and investigate the actual emission factors for each merchant code. This could be done by collaborating with the Department of Statistics Malaysia (DOSM) to conduct surveys and research among Malaysians. In this project, we are using dummy variables based on this ideology only.
 
-## Monetizing the Ecosystem
+## A possible business model
 
-We circulate this whole ecosystem by monetizing it. We extract carbon credits from them using the formula from WORLDMETER, where the baseline of average carbon emission per person in Malaysia is 8 tons per year. With that, we can pool up carbon credits, extracted from the surplus from the calculation. There's a proven market potential with Bursa Carbon Exchange (BCX), established on 9 Dec 2022, which is available to trade carbon credits in Malaysia. Then we sell the carbon credits to major companies in Malaysia like Petronas and Maybank to help them offset their carbon credits. [Read more about BCX here](https://www.allenandgledhill.com/perspectives/publications/bulletins-malaysia/2023/bursa-malaysia-launches-voluntary-carbon-market-exchange/).
+The proposed model would pool the estimated surplus from users' activity and trade the resulting carbon credits. We used the Worldometer estimate of 8 tonnes of carbon emissions per person per year as a baseline. Bursa Carbon Exchange (BCX), established on 9 December 2022, provided the market reference for the idea. [Read more about BCX here](https://www.allenandgledhill.com/perspectives/publications/bulletins-malaysia/2023/bursa-malaysia-launches-voluntary-carbon-market-exchange/).
 
 <YouTube id="1QKwHFVsEXE" />
 
@@ -70,19 +70,17 @@ We can summarize the business circulation here and make it sustainable as well, 
 4. Sell carbon credits to companies who need them
 5. Reward users to encourage eco-friendly spending habits.
 
-Basically that's it.
 
 ## Project Random Thingy
 
 Now, it's about the random thingys of the project. We have the project hosted at this link. Although it is not fully complete, it serves as a prototype and is yet to be an MVP. Considering we had only 24 hours to complete this from idea to execution, I mean, it's good for a first-timer. Right...?
 
-This was a 24-hour hackathon prototype. The hosted demo is no longer maintained, so I have kept the screenshots here as an archive of what we built. If you would like to understand the product or implementation, feel free to email me.
+This was a 24-hour hackathon prototype. The hosted demo is no longer maintained, so I have kept the screenshots here as an archive of what we built. Email me if you want to discuss the product or implementation.
 
 The admin view looked like this:
 
 ![Admin Dashboard](https://cdn.cosmos.so/7ee8a2c3-551c-4726-9551-f7d6ab743391?format=jpeg)
 
-Feel free to browse through it.
 
 ## Wrap-Up
 
