@@ -24,32 +24,48 @@ reaction = true
 topic = "Business Transformation"
 +++
 
-The obvious question is why we did not use an outside CRM. The team had already tried Salesforce.
+When someone asks why we did not use an existing CRM, that is a fair question. The team had already tried Salesforce.
 
-Salesforce was not a bad product. The problem was the fit. The team had to keep adjusting its own workflow to match the way Salesforce expected the work to be organised. After a while, the CRM became another process to work around instead of a place that helped people do the work.
+Salesforce is not a bad product. It has more features than most teams will ever use, and that was part of the problem for us. The issue was not that Salesforce could not store a customer or track a deal. It could. The issue was that the team's way of working did not fit neatly into the structure Salesforce expected.
 
-That was the starting point for the internal CRM I am working on with Quandatics. It connects sales, finance, and project teams, but the first job was not to build a dashboard. It was to understand what actually happens between those teams.
+The more we tried to make it work, the more the workflow had to bend around the tool. A process that made sense to the people doing the work became a set of fields, stages, and workarounds. The CRM was there, but it was not really helping people understand what needed to happen next.
 
-## The workflow comes first
+That is the background to the internal CRM I am working on with Quandatics. It connects sales, finance, and project teams. I am not trying to build a smaller Salesforce for the sake of building one. The point is to start with the work and then decide what the system actually needs to remember.
 
-Sales may start with a customer conversation. Finance needs different information before money can move. A project team needs to know what was promised, who owns the next action, and whether something is blocked.
+## The messy part is between the teams
 
-Those details do not always fit neatly into one generic pipeline. The CRM needs to follow the handover between teams, including the parts that people currently keep in messages, spreadsheets, or memory.
+Sales may begin with a conversation with a customer. Finance may need a different set of information before anything can be invoiced. The project team then needs to know what was promised, what has been approved, and who is responsible for the next step.
 
-This is also why a project status is not just a dropdown. Someone has to own the status, the team has to agree on what it means, and the next person needs to know what to do with it. Otherwise, we have built a nicer-looking place to store ambiguity.
+On paper, these can look like separate processes. In real life, they are connected by handovers. Someone sends a message. Someone updates a spreadsheet. Someone remembers that a customer asked for a change three weeks ago. Then another person has to reconstruct the whole story before making a decision.
 
-## My part in the work
+That is the kind of problem an internal CRM can help with. It can make the important handovers visible without making every activity look uniform.
 
-I work across the requirements, design, development, production deployment, and support. I speak with the people using the process, translate the awkward parts into requirements, and then work through what can actually be built.
+This also explains why a field such as “project status” is not as simple as it sounds. Who is allowed to change it? Does “in progress” mean that work has started, or only that the project has been approved? What happens if the project is waiting for the customer? Who needs to know when the status changes?
 
-Some decisions are straightforward. Others need a few rounds because sales, finance, and project teams are looking at the same customer from different points in the process. A field that looks unnecessary to one person may be the thing another person needs before they can raise an invoice or start delivery.
+These questions decide how the organisation wants work to move, even though they eventually appear as UI details.
 
-The support work is where the real gaps appear. A workflow can look complete in a meeting and still fail when a customer changes scope, an approval arrives late, or information is missing from the previous handover. Those cases become the next product decision.
+## I had to learn the process before designing the system
 
-## What I have taken from it
+My first instinct was to think about the screens. It is easy to imagine a dashboard and feel that the project is moving forward. The harder part is sitting with the workflow long enough to notice where the words stop matching the work.
 
-The point of an internal CRM is not to have more screens than Salesforce. It is to reduce the amount of context people have to reconstruct before they can act.
+I have been working across requirements, design, development, production deployment, and support. That means moving between conversations with the people who operate the process and the technical decisions needed to turn it into a working system.
 
-Sometimes an established tool is the right answer. Sometimes the cost is not the licence. It is the amount of work required to make the organisation behave like the tool.
+Sometimes a requirement sounds clear until someone asks what happens in the exception. Sometimes two teams use the same word but mean different things by it. Sometimes a field exists because somebody needed it once, but nobody can explain who owns it now.
 
-This is a generalised case study. Client-specific workflows, implementation details, and operational results remain confidential.
+Those are the moments where the product work happens. I translate the operating problem into something the team can discuss, decide what belongs in the system, and help turn that decision into work that can be tested.
+
+The support part has been useful for the same reason. A workflow can look complete in a meeting and still break when a customer changes scope, an approval arrives late, or the previous handover leaves out an important detail. Those cases are not annoying side stories. They show us where our understanding of the process was incomplete.
+
+## Why not just make everyone follow the tool?
+
+There is a reasonable argument for doing exactly that. Standardising a process can make it easier to train people and easier to report on. Sometimes the organisation really does need to change the way it works.
+
+But there is a difference between choosing a better process and forcing a team to imitate the shape of a piece of software. If people have to maintain a second spreadsheet, keep private notes, or create workarounds just to make the CRM usable, then the standardisation has not solved much.
+
+The right answer is not always custom software. An established CRM may be the best choice when its assumptions match the business, or when changing the business process is worth the trade-off. In this case, the team had already felt the cost of adapting its workflow to Salesforce, so an internal system became worth exploring.
+
+The lesson I am taking from the project is quite simple. A CRM should reduce the amount of context people have to reconstruct before they can act. It should help someone see what happened, what is missing, and who owns the next step.
+
+That sounds less impressive than “digital transformation”, but it is much closer to what the work actually is.
+
+This post describes the general problem and my role. Client-specific workflows, implementation details, and operational results remain confidential.
