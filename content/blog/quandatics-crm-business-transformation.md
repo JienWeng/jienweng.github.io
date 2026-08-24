@@ -78,7 +78,7 @@ At the same time, the money-out side is procure-to-pay. A purchase order goes to
 
 ![Quandatics order-to-cash and procure-to-pay flow](/img/blog/quandatics/o2c-p2p.png)
 
-*The O2C and P2P flows run alongside each other. One tracks money collected from the customer, while the other tracks supplier and subcontractor costs against the project.*
+*O2C and P2P run in parallel, linking customer receipts and supplier costs to the same project.*
 
 This is the part I find easy to miss when looking at a CRM as only a sales tool. The sales funnel is also connected to future revenue, project delivery, supplier costs, and margin. If those links are missing, management has to assemble the answer manually whenever they want to know what is happening.
 
