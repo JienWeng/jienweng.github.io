@@ -1,6 +1,6 @@
 +++
-title = "An Internal CRM Is a Business Transformation Project"
-description = "What building an internal CRM taught me about requirements, adoption, and the gap between a workflow and a system."
+title = "Why We Built an Internal CRM After Trying Salesforce"
+description = "A personal case study on adapting a CRM to the way a team actually works."
 date = 2026-05-25
 updated = 2026-05-25
 draft = false
@@ -24,47 +24,32 @@ reaction = true
 topic = "Business Transformation"
 +++
 
-An internal CRM can look like a software project from the outside. The harder part is usually understanding how the team already works, where information gets lost, and which decisions are being made from incomplete data.
+The obvious question is why we did not use an outside CRM. The team had already tried Salesforce.
 
-That is the problem I am working on with Quandatics. The CRM connects sales, finance, and project teams, but the system is only useful if it matches the work those teams actually do.
+Salesforce was not a bad product. The problem was the fit. The team had to keep adjusting its own workflow to match the way Salesforce expected the work to be organised. After a while, the CRM became another process to work around instead of a place that helped people do the work.
 
-## Start with the workflow
+That was the starting point for the internal CRM I am working on with Quandatics. It connects sales, finance, and project teams, but the first job was not to build a dashboard. It was to understand what actually happens between those teams.
 
-The first temptation is to start with screens. A dashboard, a customer table, and a few status fields look like progress, but they do not answer the real questions.
+## The workflow comes first
 
-- Who owns the next action?
-- Which information does finance need before an invoice can move?
-- What does sales promise before a project is handed over?
-- Where does a project manager look when the original context is missing?
+Sales may start with a customer conversation. Finance needs different information before money can move. A project team needs to know what was promised, who owns the next action, and whether something is blocked.
 
-These questions connect to the larger finance processes around order-to-cash, procure-to-pay, and record-to-report. The CRM does not replace those processes. It gives the people involved a shared place to see what is happening and what still needs attention.
+Those details do not always fit neatly into one generic pipeline. The CRM needs to follow the handover between teams, including the parts that people currently keep in messages, spreadsheets, or memory.
 
-## Requirements are decisions
+This is also why a project status is not just a dropdown. Someone has to own the status, the team has to agree on what it means, and the next person needs to know what to do with it. Otherwise, we have built a nicer-looking place to store ambiguity.
 
-Good requirements do more than describe a field or a button. They record a decision about how the organisation wants work to move.
+## My part in the work
 
-For example, “add a project status” is incomplete. The team still needs to agree on who changes the status, what each status means, what happens when a project is blocked, and which other team should be notified.
+I work across the requirements, design, development, production deployment, and support. I speak with the people using the process, translate the awkward parts into requirements, and then work through what can actually be built.
 
-That is where business transformation and product work overlap. I translate the operating problem into requirements, work with the people who will use the system, and turn the agreed workflow into something that can be built and tested.
+Some decisions are straightforward. Others need a few rounds because sales, finance, and project teams are looking at the same customer from different points in the process. A field that looks unnecessary to one person may be the thing another person needs before they can raise an invoice or start delivery.
 
-## Build, deploy, support
+The support work is where the real gaps appear. A workflow can look complete in a meeting and still fail when a customer changes scope, an approval arrives late, or information is missing from the previous handover. Those cases become the next product decision.
 
-The work covers more than development. I am involved across requirements, design, implementation, production deployment, and support.
+## What I have taken from it
 
-Each stage changes the system in a different way.
+The point of an internal CRM is not to have more screens than Salesforce. It is to reduce the amount of context people have to reconstruct before they can act.
 
-- Requirements expose the assumptions in the current process.
-- Design makes those assumptions visible to the people who use them.
-- Development turns the agreed flow into a working tool.
-- Deployment introduces the tool to the real operating environment.
-- Support shows where the original model was incomplete.
-
-The last part is easy to underestimate. A workflow that looks correct in a meeting may fail when someone has an unusual customer, a late approval, or missing information from another team. Support is where those cases become the next product decision.
-
-## The lesson so far
-
-An internal CRM should not be judged by how many screens it contains. It should reduce the amount of context people have to reconstruct before they can act.
-
-That means the system has to follow the work, not force every team into a generic pipeline. The useful design is the one that makes ownership, handover, and missing information easier to see.
+Sometimes an established tool is the right answer. Sometimes the cost is not the licence. It is the amount of work required to make the organisation behave like the tool.
 
 This is a generalised case study. Client-specific workflows, implementation details, and operational results remain confidential.
