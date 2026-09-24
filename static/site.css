@@ -738,10 +738,6 @@ body.cv-page .collection-date {
   min-width: 7.5rem;
 }
 
-body.cv-page .collection-credential .collection-linkline {
-  margin-top: var(--space-1);
-}
-
 body.cv-page .collection-credential .collection-main {
   display: flex;
   align-items: flex-start;
@@ -761,6 +757,14 @@ body.cv-page .collection-credential .collection-main {
 
 .collection-credential-copy {
   min-width: 0;
+}
+
+.collection-credential-meta a {
+  color: inherit;
+}
+
+.collection-credential-meta a:hover {
+  color: var(--accent);
 }
 
 body.cv-page .cv-prose > .collection-list:nth-of-type(1) .collection-item,

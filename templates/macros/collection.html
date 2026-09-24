@@ -43,10 +43,15 @@
         <div class="collection-title">{{ item.title }}</div>
         {% endif %}
       </div>
-      {% if item.subtitle %}<div class="collection-subtitle">{{ item.subtitle }}</div>{% endif %}
+      {% if item.subtitle or item.link %}
+      <div class="collection-subtitle collection-credential-meta">
+        {% if item.subtitle %}{{ item.subtitle }}{% endif %}
+        {% if item.subtitle and item.link %}<span aria-hidden="true"> · </span>{% endif %}
+        {% if item.link %}<a href="{{ item.link }}" target="_blank" rel="noreferrer noopener">View credential</a>{% endif %}
+      </div>
+      {% endif %}
     </div>
   </div>
-  {% if item.link %}<div class="collection-linkline"><a href="{{ item.link }}" target="_blank" rel="noreferrer noopener">Credential</a></div>{% endif %}
 </article>
 {% endmacro %}
 
