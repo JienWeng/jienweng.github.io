@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-24",
+  "generatedAt": "2026-09-24",
   "sourceReviewDate": "2026-08-24",
   "basics": {
     "name": "Jien Weng Lai",
@@ -209,7 +209,7 @@
       "id": "utar-bsc",
       "institution": "Universiti Tunku Abdul Rahman",
       "area": "Applied Mathematics with Computing",
-      "studyType": "BSc (Hons), First Class Honours",
+      "studyType": "BSc (Hons), with Merit",
       "startDate": "2022-10",
       "endDate": "2025-10",
       "displayDate": "Oct 2022 - Oct 2025",
@@ -321,9 +321,47 @@
   ],
   "certificates": [
     {
+      "id": "google-agile-project-management",
+      "name": "Agile Project Management",
+      "issuer": "Google",
+      "date": "Sep 2026",
+      "credentialId": "V3O86KGTCBO7",
+      "skills": ["Scrum", "Project Management"],
+      "url": "https://www.coursera.org/account/accomplishments/verify/V3O86KGTCBO7",
+      "public": true
+    },
+    {
+      "id": "google-project-management",
+      "name": "Google Project Management Professional Certificate",
+      "issuer": "Google",
+      "date": "Sep 2026",
+      "credentialId": "90U3GKFA7YI9",
+      "skills": ["Project Management", "Scrum"],
+      "url": "https://www.coursera.org/account/accomplishments/professional-cert/90U3GKFA7YI9",
+      "public": true
+    },
+    {
+      "id": "aws-cloud-practitioner-essentials",
+      "name": "AWS Cloud Practitioner Essentials",
+      "issuer": "Amazon Web Services (AWS)",
+      "date": "Aug 2026",
+      "skills": ["Cloud Computing", "Amazon Web Services (AWS)"],
+      "url": "https://skillbuilder.aws/70a3bd99-baff-4e9c-9df8-596909eacbd8",
+      "public": true
+    },
+    {
       "id": "databricks",
       "name": "Databricks Fundamentals",
       "date": "Apr 2026",
+      "public": true
+    },
+    {
+      "id": "sidc-capital-market-essentials",
+      "name": "Capital Market Essentials Programme",
+      "issuer": "Securities Industry Development Corporation (SIDC)",
+      "date": "Oct 2025",
+      "credentialId": "CE-2025-6602-297077",
+      "url": "https://erp.sidc.com.my/index/certificate/searchserial?serial_number=CE-2025-6602-297077",
       "public": true
     },
     {

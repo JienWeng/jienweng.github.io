@@ -1,7 +1,45 @@
 [[collection]]
 type = "art_simple"
+title = "Agile Project Management"
+issuer = "Google"
+subtitle = "Issued Sep 2026"
+credential_id = "V3O86KGTCBO7"
+skills = ["Scrum", "Project Management"]
+logo = "/img/cv/logo-google.ico"
+link = "https://www.coursera.org/account/accomplishments/verify/V3O86KGTCBO7"
+
+[[collection]]
+type = "art_simple"
+title = "Google Project Management Professional Certificate"
+issuer = "Google"
+subtitle = "Issued Sep 2026"
+credential_id = "90U3GKFA7YI9"
+skills = ["Project Management", "Scrum"]
+logo = "/img/cv/logo-google.ico"
+link = "https://www.coursera.org/account/accomplishments/professional-cert/90U3GKFA7YI9"
+
+[[collection]]
+type = "art_simple"
+title = "AWS Cloud Practitioner Essentials"
+issuer = "Amazon Web Services (AWS)"
+subtitle = "Issued Aug 2026"
+skills = ["Cloud Computing", "Amazon Web Services (AWS)"]
+logo = "/img/cv/logo-aws.ico"
+link = "https://skillbuilder.aws/70a3bd99-baff-4e9c-9df8-596909eacbd8"
+
+[[collection]]
+type = "art_simple"
 title = "Databricks Fundamentals"
 subtitle = "Issued Apr 2026"
+
+[[collection]]
+type = "art_simple"
+title = "Capital Market Essentials Programme"
+issuer = "Securities Industry Development Corporation (SIDC)"
+subtitle = "Issued Oct 2025"
+credential_id = "CE-2025-6602-297077"
+logo = "/img/cv/logo-sidc.png"
+link = "https://erp.sidc.com.my/index/certificate/searchserial?serial_number=CE-2025-6602-297077"
 
 [[collection]]
 type = "art_simple"

@@ -742,6 +742,30 @@ body.cv-page .collection-credential .collection-linkline {
   margin-top: var(--space-1);
 }
 
+body.cv-page .collection-credential .collection-main {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+}
+
+.collection-credential-logo {
+  flex: none;
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.collection-credential-copy {
+  min-width: 0;
+}
+
+.collection-credential-issuer,
+.collection-credential-detail {
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
 body.cv-page .cv-prose > .collection-list:nth-of-type(1) .collection-item,
 body.cv-page .cv-prose > .collection-list:nth-of-type(2) .collection-item {
   border-top-color: color-mix(in oklch, var(--ink-soft) 30%, var(--rule));
