@@ -33,7 +33,7 @@ type = "card_simple"
 title = "Monash University Malaysia"
 date = "Dec 2025 - Present"
 link = "https://www.monash.edu"
-content = "Research Assistant"
+content = "Research Assistant: develops wastewater treatment plant prediction models using RNNs, Transformers, and Markov chain methods on time-series sensor data."
 featured = true
 
 [[collection]]

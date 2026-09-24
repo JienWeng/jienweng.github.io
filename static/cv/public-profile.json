@@ -142,14 +142,15 @@
       "url": "https://www.monash.edu",
       "public": true,
       "featured": true,
-      "publicDescription": "Research Assistant",
+      "publicDescription": "Research Assistant: develops wastewater treatment plant prediction models using RNNs, Transformers, and Markov chain methods on time-series sensor data.",
       "evidence": [
         {
           "id": "monash.models",
-          "text": "Develop wastewater treatment prediction models using recurrent neural networks and Transformer architectures on time-series sensor data.",
+          "text": "Develop wastewater treatment plant prediction models using RNNs, Transformers, and Markov chain methods on time-series sensor data.",
           "tags": [
             "RNN",
             "Transformers",
+            "Markov chains",
             "time series",
             "environmental systems"
           ],

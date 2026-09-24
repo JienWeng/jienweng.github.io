@@ -13,6 +13,6 @@ I am also a research assistant at Monash University Malaysia. The center of my r
 
 The questions that keep showing up in my work are simple to state. What information does an agent actually need in order to act well? When does a change in regime matter more than a change in method? When does prediction improve control, and when does it only create the appearance of sophistication?
 
-I am building stronger foundations in stochastic modelling and environmental modelling. This connects my work in reinforcement learning and finance to more classical modelling questions, including environmental systems and current wastewater treatment plant research.
+I am building stronger foundations in stochastic and environmental modelling. My current wastewater treatment plant research uses RNNs, Transformers, and Markov chain methods to model time-series sensor data and predict plant behaviour.
 
 I hold a BSc. (Hons) in Applied Mathematics with Computing from UTAR. Alongside formal research, I keep a running notebook of derivations, clarifications, and working explanations in statistics, regression, optimization, and reinforcement learning.
