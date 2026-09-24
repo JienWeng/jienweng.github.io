@@ -26,7 +26,7 @@ topic = "Product Management"
 
 Product management is often described as deciding what to build. In practice, a large part of the job is making sure the business question survives contact with the delivery team.
 
-In my current Web3 product work, I coordinate an eight-person team across payment flows, chain integrations, QA, and UI/UX testing. The work is technical, but the first problem is usually less technical than that. Someone needs to decide what matters now, what can wait, and what “done” should mean.
+In my current Web3 product work, I coordinate an engineering team across payment flows, chain integrations, QA, and UI/UX testing. The work is technical, but the first problem is usually less technical than that. Someone needs to decide what matters now, what can wait, and what “done” should mean.
 
 ## Turning a request into something buildable
 

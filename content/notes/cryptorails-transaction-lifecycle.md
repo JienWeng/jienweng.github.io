@@ -82,7 +82,7 @@ This is also why I care about the payment state shown in the UI. It affects what
 
 ## Where I sit in the work
 
-My role sits between the business owner and the delivery team. I contribute to the backlog and roadmap, run Scrum ceremonies, and coordinate an eight-person team working across payment flows, EVM and TRON integration, QA, and UI/UX testing.
+My role sits between the business owner and the delivery team. I contribute to the backlog and roadmap, run Scrum ceremonies, and coordinate an engineering team working across payment flows, EVM and TRON integration, QA, and UI/UX testing.
 
 The work is partly about writing requirements. It is also about asking the annoying question before the team has already built the wrong thing. What happens if the transaction is late? Which event is authoritative? What should the user see while the chain is still processing? What stops a retry from crediting the same payment twice?
 
