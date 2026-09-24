@@ -177,9 +177,10 @@
         {% endif %}
       </div>
       <nav class="site-nav" aria-label="Primary">
-        <a href="{{ get_url(path='/publications/') }}"{% if current == "/publications/" %} aria-current="page"{% endif %}>Research</a>
-        <a href="{{ get_url(path='/notes/') }}"{% if current == "/notes/" %} aria-current="page"{% endif %}>Writing</a>
         <a href="{{ get_url(path='/cv/') }}"{% if current == "/cv/" %} aria-current="page"{% endif %}>CV</a>
+        <a href="{{ get_url(path='/projects/') }}"{% if current == "/projects/" %} aria-current="page"{% endif %}>Projects</a>
+        <a href="{{ get_url(path='/notes/') }}"{% if current == "/notes/" %} aria-current="page"{% endif %}>Writing</a>
+        <a href="{{ get_url(path='/publications/') }}"{% if current == "/publications/" %} aria-current="page"{% endif %}>Research</a>
         <a href="{{ get_url(path='/bio/') }}"{% if current == "/bio/" %} aria-current="page"{% endif %}>About</a>
         <a href="{{ get_url(path='/services/') }}"{% if current == "/services/" %} aria-current="page"{% endif %}>Work With Me</a>
       </nav>

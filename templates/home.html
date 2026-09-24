@@ -7,19 +7,43 @@ set notes = get_section(path="notes/_index.md") %}
         <section class="title-sheet">
             <h1 class="home-title">{{ config.extra.site_title }}</h1>
             <p class="home-abstract">
-                I study how information and modelling choices shape decisions
-                in multi-agent systems, quantitative finance, and environmental
-                monitoring.
+                I am a product manager and business transformation consultant
+                working across Web3 payments, internal systems, AI, and data.
+                I turn unclear business needs into product decisions and
+                testable work for delivery teams.
             </p>
             <p class="home-actions">
-                <a href="{{ get_url(path='/publications/') }}">Explore research</a>
+                <a href="{{ get_url(path='/cv/') }}">View CV</a>
                 <span aria-hidden="true"> · </span>
-                <a href="mailto:{{ config.extra.email }}?subject=Research%20collaboration">Discuss a collaboration</a>
+                <a href="#selected-work">Selected work</a>
+                <span aria-hidden="true"> · </span>
+                <a href="mailto:{{ config.extra.email }}?subject=Opportunity">Contact me</a>
             </p>
             <p class="home-secondary">
-                I also help teams with product delivery, business processes,
-                AI, and data. <a href="{{ get_url(path='/services/') }}">Work with me</a>.
+                I also write and research mathematical modelling, machine
+                learning, and environmental systems. <a href="{{ get_url(path='/publications/') }}">Explore research</a>.
             </p>
+        </section>
+
+        <section class="index-block primary-index" id="selected-work">
+            <div class="index-header">
+                <h2>Selected work</h2>
+                <a href="{{ get_url(path='/projects/') }}">all projects</a>
+            </div>
+            <div class="edition-list">
+                <a class="edition-row" href="{{ get_url(path='/blog/product-manager-between-business-and-delivery/') }}">
+                    <span class="featured-writing-copy">
+                        <span class="edition-title">Web3 payment product delivery</span>
+                        <span class="edition-summary">Coordinating an eight-person team and turning payment questions into backlog decisions and acceptance conditions.</span>
+                    </span>
+                </a>
+                <a class="edition-row" href="{{ get_url(path='/blog/quandatics-crm-business-transformation/') }}">
+                    <span class="featured-writing-copy">
+                        <span class="edition-title">CRM for sales, delivery, and finance</span>
+                        <span class="edition-summary">Mapping the handovers between teams and helping translate them into an internal system.</span>
+                    </span>
+                </a>
+            </div>
         </section>
 
         <section class="index-block primary-index">

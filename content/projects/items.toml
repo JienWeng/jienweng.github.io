@@ -1,5 +1,23 @@
 [[collection]]
 type = "art"
+title = "Freelancy"
+subtitle = "Freelancer CRM for clients, projects, and billing."
+content = "A live workspace for managing freelance work in one place. Sign-in is required to explore the app."
+status = "Live app · Sign-in required"
+link = "https://freelancy-eta.vercel.app"
+link_label = "Live app"
+
+[[collection]]
+type = "art"
+title = "Finance"
+subtitle = "Personal finance dashboard."
+content = "A live dashboard for personal finances. Sign-in is required to explore the app."
+status = "Live app · Sign-in required"
+link = "https://finance-eight-drab.vercel.app"
+link_label = "Live app"
+
+[[collection]]
+type = "art"
 title = "AI Video Generation Orchestration"
 subtitle = "Pipeline for producing video series."
 content = "Chains AI generation stages together so a whole video series can be produced from start to finish with very little manual work in between. Still rough."

@@ -1,5 +1,5 @@
 +++
 title = "Jien Weng"
-description = "Jien Weng researches how information and modelling choices shape decisions in multi-agent systems, quantitative finance, and environmental monitoring."
+description = "Jien Weng is a product manager and business transformation consultant working across Web3 payments, internal systems, AI, and data."
 template = "home.html"
 +++

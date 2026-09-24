@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block title %}{{ section.title }} · {{ config.title }}{% endblock title %}
-{% block body_class %}section-page{% if section.title == "Curriculum Vitae" %} cv-page{% endif %}{% if section.title == "Pet Projects" %} projects-page{% endif %}{% if section.title == "Publications" %} publications-page{% endif %}{% endblock body_class %}
+{% block body_class %}section-page{% if section.title == "Curriculum Vitae" %} cv-page{% endif %}{% if section.title == "Projects" %} projects-page{% endif %}{% if section.title == "Publications" %} publications-page{% endif %}{% endblock body_class %}
 
 {% block content %}
 <main class="content-grid">

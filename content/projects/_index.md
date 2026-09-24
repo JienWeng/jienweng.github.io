@@ -1,9 +1,9 @@
 +++
-title = "Pet Projects"
-description = "Smaller technical projects, experiments, and side artifacts."
+title = "Projects"
+description = "Selected apps, technical projects, and experiments."
 template = "section.html"
 +++
 
-The rest of the repositories and half-finished experiments are on [GitHub](https://github.com/jienweng?tab=repositories).
+Selected apps and experiments. The live apps require sign-in; public repositories are linked where available.
 
 {{ collection(file="items.toml") }}

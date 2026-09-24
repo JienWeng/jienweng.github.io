@@ -6,11 +6,11 @@ brand
 
 ## Users
 
-Founders, operators, technical leaders, research collaborators, and potential partners who need to understand Jien Weng's work quickly. They visit to assess credibility, read useful thinking, or decide whether to begin a conversation.
+Recruiters and hiring managers who need to assess Jien Weng's role fit and evidence of work quickly. Potential clients, technical peers, and research collaborators are secondary readers.
 
 ## Product Purpose
 
-The site is Jien Weng's professional home. It connects practical business transformation and product work with AI, data, Web3, and research. Success means a visitor can understand what Jien Weng does, see how he thinks, and find a clear next step without reading a sales pitch.
+The site is Jien Weng's professional home. It connects product management and business transformation with AI, data, Web3, and research. Success means a recruiter can identify relevant roles, inspect work samples, and reach the CV or contact link quickly.
 
 ## Brand Personality
 
@@ -22,8 +22,8 @@ Avoid generic consulting landing pages, startup hype, dense capability lists, id
 
 ## Design Principles
 
-1. Lead with a clear point of view, then let evidence carry the detail.
-2. Make the route from visitor problem to useful collaboration obvious.
+1. Lead with role fit and concrete work, then let evidence carry the detail.
+2. Make the route to work samples, CV, and contact obvious.
 3. Keep writing and research central because they demonstrate judgment.
 4. Prefer concise, specific language over comprehensive marketing copy.
 5. Preserve the intentional publication-like character of the site.
