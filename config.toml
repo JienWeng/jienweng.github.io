@@ -39,7 +39,7 @@ scholar = "https://scholar.google.com/citations?user=2siljxAAAAAJ&hl=en"
 orcid = "https://orcid.org/0009-0001-2543-3887"
 primary_accent = "ochre"
 home_posts = 3
-home_notes = 3
+home_notes = 2
 force_theme = ""
 
 # Analytics: GoatCounter site code (e.g. "jienweng" -> https://jienweng.goatcounter.com)

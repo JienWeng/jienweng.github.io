@@ -7,40 +7,32 @@ set notes = get_section(path="notes/_index.md") %}
         <section class="title-sheet">
             <h1 class="home-title">{{ config.extra.site_title }}</h1>
             <p class="home-abstract">
-                I am a product manager and business transformation consultant
-                working across Web3 payments, internal systems, AI, and data.
-                I turn unclear business needs into product decisions and
-                testable work for delivery teams.
+                I manage product delivery across Web3 payments and internal
+                systems, turning business needs into clear decisions and
+                testable work.
             </p>
             <p class="home-actions">
                 <a href="{{ get_url(path='/cv/') }}">View CV</a>
                 <span aria-hidden="true"> · </span>
-                <a href="#selected-work">Selected work</a>
-                <span aria-hidden="true"> · </span>
                 <a href="mailto:{{ config.extra.email }}?subject=Opportunity">Contact me</a>
-            </p>
-            <p class="home-secondary">
-                I also write and research mathematical modelling, machine
-                learning, and environmental systems. <a href="{{ get_url(path='/publications/') }}">Explore research</a>.
             </p>
         </section>
 
         <section class="index-block primary-index" id="selected-work">
             <div class="index-header">
                 <h2>Selected work</h2>
-                <a href="{{ get_url(path='/projects/') }}">all projects</a>
             </div>
             <div class="edition-list">
                 <a class="edition-row" href="{{ get_url(path='/blog/product-manager-between-business-and-delivery/') }}">
                     <span class="featured-writing-copy">
                         <span class="edition-title">Web3 payment product delivery</span>
-                        <span class="edition-summary">Coordinating an eight-person team and turning payment questions into backlog decisions and acceptance conditions.</span>
+                        <span class="edition-summary">Coordinating an eight-person team; defining payment backlog and acceptance criteria.</span>
                     </span>
                 </a>
                 <a class="edition-row" href="{{ get_url(path='/blog/quandatics-crm-business-transformation/') }}">
                     <span class="featured-writing-copy">
                         <span class="edition-title">CRM for sales, delivery, and finance</span>
-                        <span class="edition-summary">Mapping the handovers between teams and helping translate them into an internal system.</span>
+                        <span class="edition-summary">Mapping sales, project, and finance handovers for an internal CRM.</span>
                     </span>
                 </a>
             </div>
@@ -66,60 +58,11 @@ set notes = get_section(path="notes/_index.md") %}
     </div>
 
     <aside class="home-marginalia">
-        <div class="marginal-block">
-            <img
-                class="portrait"
-                src="{{ get_url(path='img/profile.webp') }}"
-                alt="Portrait of Jien Weng"
-            />
-        </div>
-        <nav class="marginal-block profile-links" aria-label="Profile and subscription links">
-            <div class="profile-link-group">
-                <p class="marginal-label">Find me</p>
-                <ul class="plain-list">
-                    <li><a href="mailto:{{ config.extra.email }}">Email</a></li>
-                    <li>
-                        <a
-                            href="{{ config.extra.linkedin }}"
-                            target="_blank"
-                            rel="noreferrer noopener"
-                            >LinkedIn</a
-                        >
-                    </li>
-                    <li>
-                        <a
-                            href="{{ config.extra.github }}"
-                            target="_blank"
-                            rel="noreferrer noopener"
-                            >GitHub</a
-                        >
-                    </li>
-                    <li>
-                        <a
-                            href="{{ config.extra.scholar }}"
-                            target="_blank"
-                            rel="noreferrer noopener"
-                            >Google Scholar</a
-                        >
-                    </li>
-                    <li>
-                        <a
-                            href="{{ config.extra.orcid }}"
-                            target="_blank"
-                            rel="noreferrer noopener"
-                            >ORCID</a
-                        >
-                    </li>
-                </ul>
-            </div>
-            <div class="profile-link-group">
-                <p class="marginal-label">Follow</p>
-                <ul class="plain-list">
-                    <li><a href="{{ get_url(path='atom.xml') }}">RSS feed</a></li>
-                    <li><a href="{{ get_url(path='/blog/') }}">Older blog</a></li>
-                </ul>
-            </div>
-        </nav>
+        <img
+            class="portrait"
+            src="{{ get_url(path='img/profile.webp') }}"
+            alt="Portrait of Jien Weng"
+        />
     </aside>
 </main>
 {% endblock content %}
