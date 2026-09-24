@@ -750,20 +750,17 @@ body.cv-page .collection-credential .collection-main {
 
 .collection-credential-logo {
   flex: none;
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   object-fit: contain;
+  background: #fff;
+  border-radius: 3px;
+  padding: 3px;
+  box-sizing: border-box;
 }
 
 .collection-credential-copy {
   min-width: 0;
-}
-
-.collection-credential-issuer,
-.collection-credential-detail {
-  color: var(--ink-soft);
-  font-size: 0.88rem;
-  line-height: 1.45;
 }
 
 body.cv-page .cv-prose > .collection-list:nth-of-type(1) .collection-item,

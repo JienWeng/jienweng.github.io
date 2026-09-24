@@ -34,7 +34,7 @@
 {% macro art_simple(item) %}
 <article class="collection-item collection-simple collection-credential">
   <div class="collection-main">
-    {% if item.logo %}<img class="collection-credential-logo" src="{{ item.logo }}" alt="" width="32" height="32" loading="lazy">{% endif %}
+    {% if item.logo %}<img class="collection-credential-logo" src="{{ item.logo }}" alt="{{ item.issuer | default(value="") }}" width="36" height="36" loading="lazy">{% endif %}
     <div class="collection-credential-copy">
       <div class="collection-title-line">
         {% if item.link %}
@@ -43,10 +43,7 @@
         <div class="collection-title">{{ item.title }}</div>
         {% endif %}
       </div>
-      {% if item.issuer %}<div class="collection-credential-issuer">{{ item.issuer }}</div>{% endif %}
       {% if item.subtitle %}<div class="collection-subtitle">{{ item.subtitle }}</div>{% endif %}
-      {% if item.credential_id %}<div class="collection-credential-detail">Credential ID {{ item.credential_id }}</div>{% endif %}
-      {% if item.skills %}<div class="collection-credential-detail">Skills: {{ item.skills | join(sep=", ") }}</div>{% endif %}
     </div>
   </div>
   {% if item.link %}<div class="collection-linkline"><a href="{{ item.link }}" target="_blank" rel="noreferrer noopener">Credential</a></div>{% endif %}

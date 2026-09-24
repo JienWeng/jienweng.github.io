@@ -24,13 +24,15 @@ title = "AWS Cloud Practitioner Essentials"
 issuer = "Amazon Web Services (AWS)"
 subtitle = "Issued Aug 2026"
 skills = ["Cloud Computing", "Amazon Web Services (AWS)"]
-logo = "/img/cv/logo-aws.ico"
+logo = "/img/cv/logo-aws.svg"
 link = "https://skillbuilder.aws/70a3bd99-baff-4e9c-9df8-596909eacbd8"
 
 [[collection]]
 type = "art_simple"
 title = "Databricks Fundamentals"
+issuer = "Databricks"
 subtitle = "Issued Apr 2026"
+logo = "/img/cv/logo-databricks.svg"
 
 [[collection]]
 type = "art_simple"
@@ -44,29 +46,39 @@ link = "https://erp.sidc.com.my/index/certificate/searchserial?serial_number=CE-
 [[collection]]
 type = "art_simple"
 title = "Front End Development"
+issuer = "freeCodeCamp"
 subtitle = "Issued Jan 2025"
+logo = "/img/cv/logo-freecodecamp.svg"
 link = "https://www.freecodecamp.org/certification/JienWeng/front-end-development-libraries"
 
 [[collection]]
 type = "art_simple"
 title = "NVIDIA Deep Learning"
+issuer = "NVIDIA"
 subtitle = "Issued Dec 2024"
+logo = "/img/cv/logo-nvidia.svg"
 link = "https://learn.nvidia.com/certificates?id=vadb2mqrSgKGRqORxsa3KQ#"
 
 [[collection]]
 type = "art_simple"
 title = "IBM Data Science"
+issuer = "IBM"
 subtitle = "Issued Oct 2024"
+logo = "/img/cv/logo-ibm.svg"
 link = "https://www.coursera.org/account/accomplishments/specialization/VXTZ7EFLXX2V"
 
 [[collection]]
 type = "art_simple"
 title = "Google Data Analytics"
+issuer = "Google"
 subtitle = "Issued Jun 2024"
+logo = "/img/cv/logo-google.ico"
 link = "https://www.coursera.org/account/accomplishments/professional-cert/OSVLSAL5XQQL"
 
 [[collection]]
 type = "art_simple"
 title = "NLP for Machine Learning"
+issuer = "LinkedIn Learning"
 subtitle = "Issued Jun 2024"
+logo = "/img/cv/logo-linkedin.svg"
 link = "https://www.linkedin.com/learning/certificates/31163a64417d9ee58f69f9da29aa1f40cbc6a43247454a998787e9d5aa5bb3c7"
