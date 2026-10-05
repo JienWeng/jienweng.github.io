@@ -41,10 +41,10 @@ The hash belongs to the blockchain. The payment reference belongs to the busines
 Before a wallet signs anything, the obvious mistakes should be caught. Is the network supported? Is the token configured for that network? Is the recipient correct? Has the request expired? It is much easier to explain “wrong network” before money moves than after.
 
 <figure class="payment-artifact">
-  <a href="/img/projects/cryptorails-payment-flow.svg" aria-label="View the full-size CryptoRails payment workflow">
+  <a href="../../img/projects/cryptorails-payment-flow.svg" aria-label="View the full-size CryptoRails payment workflow">
     <picture>
-      <source media="(max-width: 640px)" srcset="/img/projects/cryptorails-payment-flow-mobile.svg">
-      <img src="/img/projects/cryptorails-payment-flow.svg" alt="CryptoRails payment workflow from merchant request and customer wallet signature through on-chain confirmation, payment verification, and settlement by signed webhook." loading="lazy">
+      <source media="(max-width: 640px)" srcset="../../img/projects/cryptorails-payment-flow-mobile.svg">
+      <img src="../../img/projects/cryptorails-payment-flow.svg" alt="CryptoRails payment workflow from merchant request and customer wallet signature through on-chain confirmation, payment verification, and settlement by signed webhook." loading="lazy">
     </picture>
   </a>
   <figcaption>The merchant receives a settlement signal only after the confirmed on-chain payment matches the original request.</figcaption>

@@ -107,7 +107,7 @@
 <article class="collection-item collection-art collection-project">
   {% if item.img %}
   <div class="collection-project-thumb">
-    <img class="collection-project-image{% if item.image_color %} collection-project-image--color{% endif %}" src="{{ item.img }}" alt="{{ item.image_alt | default(value=item.title) }}" loading="lazy" decoding="async">
+    <img class="collection-project-image{% if item.image_color %} collection-project-image--color{% endif %}" src="{{ get_url(path=item.img) }}" alt="{{ item.image_alt | default(value=item.title) }}" loading="lazy" decoding="async">
   </div>
   {% endif %}
   <div class="collection-art-copy">
@@ -119,6 +119,7 @@
     {% if item.subtitle %}<div class="collection-subtitle">{{ item.subtitle }}</div>{% endif %}
     {% if item.status %}<div class="collection-status">{{ item.status }}</div>{% endif %}
     {% if item.content %}<div class="collection-body">{{ item.content | markdown | safe }}</div>{% endif %}
+    {% if item.case_study %}<div class="collection-linkline"><a href="{{ get_url(path=item.case_study) }}">{{ item.case_study_label | default(value="Read the case study") }}</a></div>{% endif %}
     {% if item.link %}<div class="collection-linkline"><a href="{{ item.link }}" target="_blank" rel="noreferrer noopener">{{ item.link_label | default(value="GitHub") }}</a></div>{% endif %}
   </div>
 </article>

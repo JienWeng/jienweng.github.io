@@ -28,10 +28,11 @@ status = "In progress"
 type = "art"
 title = "Internal CRM"
 subtitle = "Sales, delivery, and finance in one workflow."
-content = "An internal CRM for Quandatics, designed around the handoffs between sales, delivery, and finance. [Read the case study](/blog/quandatics-crm-business-transformation/)."
+content = "An internal CRM for Quandatics, designed around the handoffs between sales, delivery, and finance."
 img = "/img/blog/quandatics/deal-to-cash-portfolio.png"
 image_alt = "CRM workflow from qualified lead through sales order and project delivery to payment received"
 image_color = true
+case_study = "blog/quandatics-crm-business-transformation/"
 status = "In progress"
 
 [[collection]]
