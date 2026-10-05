@@ -37,6 +37,6 @@ jobs:
           source-dir: ./public/
           preview-branch: gh-pages
           umbrella-dir: pr-preview
-          pages-base-url: jienweng.github.io/
+          pages-base-url: jienweng.github.io
           wait-for-pages-deployment: true
           qr-code: false
