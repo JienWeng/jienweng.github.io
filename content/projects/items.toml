@@ -26,11 +26,13 @@ status = "In progress"
 
 [[collection]]
 type = "art"
-title = "Custom CRM System"
-subtitle = "Internal CRM for Quandatics."
-content = "A CRM for internal use at Quandatics. Off-the-shelf tools did not fit how they work, so this one is built around their actual workflow."
+title = "Internal CRM"
+subtitle = "Sales, delivery, and finance in one workflow."
+content = "An internal CRM for Quandatics, designed around the handoffs between sales, delivery, and finance. [Read the case study](/blog/quandatics-crm-business-transformation/)."
+img = "/img/blog/quandatics/deal-to-cash-portfolio.png"
+image_alt = "CRM workflow from qualified lead through sales order and project delivery to payment received"
+image_color = true
 status = "In progress"
-# TODO: add link and image when there is something to show
 
 [[collection]]
 type = "art"

@@ -1020,6 +1020,10 @@ summary:focus-visible {
   filter: none;
 }
 
+.collection-project-thumb img.collection-project-image--color {
+  filter: none;
+}
+
 .series-nav {
   display: grid;
   grid-template-columns: 1fr 1fr;
