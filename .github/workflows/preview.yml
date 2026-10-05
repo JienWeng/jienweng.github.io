@@ -4,9 +4,20 @@ on:
   pull_request:
     branches: [main]
     types: [opened, synchronize, reopened, closed]
+  workflow_dispatch:
+    inputs:
+      preview_ref:
+        description: Branch or commit to build for a one-off preview
+        required: true
+        type: string
+      preview_pr_number:
+        description: Pull request number used in the preview URL
+        required: true
+        type: number
 
 permissions:
   contents: write
+  deployments: read
   pull-requests: write
 
 concurrency:
@@ -20,6 +31,8 @@ jobs:
       - name: Check out pull request
         if: github.event.action != 'closed'
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event_name == 'workflow_dispatch' && inputs.preview_ref || github.event.pull_request.head.sha }}
 
       - name: Install Zola
         if: github.event.action != 'closed'
@@ -29,7 +42,9 @@ jobs:
 
       - name: Build preview site
         if: github.event.action != 'closed'
-        run: zola build --base-url "https://jienweng.github.io/pr-preview/pr-${{ github.event.pull_request.number }}/"
+        run: |
+          zola build --base-url "https://jienweng.github.io/pr-preview/pr-${{ inputs.preview_pr_number || github.event.pull_request.number }}/"
+          touch public/.nojekyll
 
       - name: Publish or remove preview
         uses: rossjrw/pr-preview-action@v1
@@ -37,6 +52,8 @@ jobs:
           source-dir: ./public/
           preview-branch: gh-pages
           umbrella-dir: pr-preview
+          pr-number: ${{ inputs.preview_pr_number || github.event.pull_request.number }}
           pages-base-url: jienweng.github.io
+          action: ${{ github.event_name == 'workflow_dispatch' && 'deploy' || 'auto' }}
           wait-for-pages-deployment: true
           qr-code: false

@@ -25,7 +25,9 @@ jobs:
           tool: zola@0.22.1
 
       - name: Build site
-        run: zola build
+        run: |
+          zola build
+          touch public/.nojekyll
 
       - name: Publish site while preserving pull request previews
         uses: JamesIves/github-pages-deploy-action@v4
