@@ -34,23 +34,23 @@ That gap between “the wallet says something happened” and “the business ca
 
 ## A transaction hash is only one part of the story
 
-The flow starts with a payment request. The system needs to remember the amount, token, network, recipient, and expiry. It also needs a payment reference of its own.
+In the documented integration, the merchant generates a deposit address for each customer and stores it in its own backend. The frontend shows that address through a deposit modal or a custom interface. The API key stays on the server.
 
 The hash belongs to the blockchain. The payment reference belongs to the business request. Keeping both is what lets the backend answer a fairly important question later: is this the payment we were expecting, or is it only a transaction that happens to exist?
 
-Before a wallet signs anything, the obvious mistakes should be caught. Is the network supported? Is the token configured for that network? Is the recipient correct? Has the request expired? It is much easier to explain “wrong network” before money moves than after.
+The customer sends funds to the deposit address. The browser’s `deposit-watch` SDK polls the chain and fires `onDeposit` when funds appear. That callback gives immediate feedback and notifies the merchant’s backend; it is not proof of settlement.
 
 <figure class="payment-artifact">
-  <a href="../../img/projects/cryptorails-payment-flow.svg" aria-label="View the full-size CryptoRails payment workflow">
+  <a href="../../img/projects/cryptorails-deposit-flow.png" aria-label="View the full-size CryptoRails payment workflow">
     <picture>
-      <source media="(max-width: 640px)" srcset="../../img/projects/cryptorails-payment-flow-mobile.svg">
-      <img src="../../img/projects/cryptorails-payment-flow.svg" alt="CryptoRails payment workflow from merchant request and customer wallet signature through on-chain confirmation, payment verification, and settlement by signed webhook." loading="lazy">
+      <source media="(max-width: 640px)" width="1440" height="3520" srcset="../../img/projects/cryptorails-deposit-flow-mobile.png">
+      <img width="3600" height="2060" src="../../img/projects/cryptorails-deposit-flow.png" alt="CryptoRails deposit flow: customer address, browser detection, server-side consolidation, and settlement through a verified signed webhook." loading="lazy">
     </picture>
   </a>
-  <figcaption>The merchant receives a settlement signal only after the confirmed on-chain payment matches the original request.</figcaption>
+  <figcaption><span>Redrawn from the <a href="https://docs.cryptorails.tech/guide">public integration guide</a>: detection provides feedback; a verified webhook authorises settlement.</span></figcaption>
 </figure>
 
-After signing, the transaction is broadcast and the system records its hash. At that point I would still call it submitted or pending. The user may see progress, but the payment is not settled yet.
+The merchant’s backend requests consolidation. CryptoRails validates the on-chain funds and sweeps them from the deposit address to the tenant’s consolidation wallet. The gateway tracks this transaction through confirmation before sending the signed webhook.
 
 That distinction sounds obvious when written down. It becomes less obvious when a customer is waiting, a merchant is asking whether an order can be released, and the transaction is taking longer than expected.
 
@@ -70,9 +70,9 @@ After broadcast, the system has to keep checking. Has the transaction appeared? 
 
 The interface should make those states understandable. “Waiting for the network” gives the user something useful. A raw RPC error usually does not. At the same time, the interface should not turn a pending transaction into a success message just to make the screen feel finished.
 
-The gateway documentation describes a backend lifecycle with states such as `pending`, `processing`, `confirmed`, and `failed`. The exact names are less important than keeping submission separate from confirmation.
+The gateway documentation describes a backend lifecycle with states such as `pending`, `wait_for_confirmation`, `confirmed`, and `failed`. These describe the gateway’s consolidation or withdrawal transaction, rather than the browser’s deposit detection.
 
-Once the transaction is confirmed, reconciliation begins. The backend checks the recipient, token, network, amount, and transaction hash against the payment reference. It also needs to be safe when the same transaction or webhook is seen twice. A customer should not receive credit twice because an event was delivered twice.
+When the consolidation confirms, the merchant can reconcile the signed webhook with the deposit recorded earlier, using the address and reference. This must remain safe when the same webhook is delivered twice. A customer should not receive credit twice because an event was delivered twice.
 
 The final signal is sent to the product through a signed webhook. The receiving backend should verify the HMAC signature against the raw request body before trusting the payload. That server-side event can then update a ledger, release an item, or tell a merchant that the payment is complete.
 
@@ -93,6 +93,8 @@ My role sits between the business owner and the delivery team. I contribute to t
 The work is partly about writing requirements. It is also about asking the annoying question before the team has already built the wrong thing. What happens if the transaction is late? Which event is authoritative? What should the user see while the chain is still processing? What stops a retry from crediting the same payment twice?
 
 Those questions connect the technical state of the system to the experience people actually have. The gateway is simple for now, but it is already usable. A payment is not complete because one screen says it is. It is complete when the system has enough verified evidence to treat it as settled.
+
+To see the actual deposit interface, try the [live SDK playground](https://docs.cryptorails.tech/guide/playground).
 
 For the public technical reference, see the [CryptoRails payment gateway documentation](https://docs.cryptorails.tech/), especially the [integration guide](https://docs.cryptorails.tech/guide), [transaction overview](https://docs.cryptorails.tech/documentation/overview), and [webhook documentation](https://docs.cryptorails.tech/documentation/webhooks).
 
