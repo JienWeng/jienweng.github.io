@@ -32,10 +32,10 @@
 &lt;p&gt;The hash belongs to the blockchain. The payment reference belongs to the business request. Keeping both is what lets the backend answer a fairly important question later: is this the payment we were expecting, or is it only a transaction that happens to exist?&lt;&#x2F;p&gt;
 &lt;p&gt;Before a wallet signs anything, the obvious mistakes should be caught. Is the network supported? Is the token configured for that network? Is the recipient correct? Has the request expired? It is much easier to explain “wrong network” before money moves than after.&lt;&#x2F;p&gt;
 &lt;figure class=&quot;payment-artifact&quot;&gt;
-  &lt;a href=&quot;&#x2F;img&#x2F;projects&#x2F;cryptorails-payment-flow.svg&quot; aria-label=&quot;View the full-size CryptoRails payment workflow&quot;&gt;
+  &lt;a href=&quot;..&#x2F;..&#x2F;img&#x2F;projects&#x2F;cryptorails-payment-flow.svg&quot; aria-label=&quot;View the full-size CryptoRails payment workflow&quot;&gt;
     &lt;picture&gt;
-      &lt;source media=&quot;(max-width: 640px)&quot; srcset=&quot;&#x2F;img&#x2F;projects&#x2F;cryptorails-payment-flow-mobile.svg&quot;&gt;
-      &lt;img src=&quot;&#x2F;img&#x2F;projects&#x2F;cryptorails-payment-flow.svg&quot; alt=&quot;CryptoRails payment workflow from merchant request and customer wallet signature through on-chain confirmation, payment verification, and settlement by signed webhook.&quot; loading=&quot;lazy&quot;&gt;
+      &lt;source media=&quot;(max-width: 640px)&quot; srcset=&quot;..&#x2F;..&#x2F;img&#x2F;projects&#x2F;cryptorails-payment-flow-mobile.svg&quot;&gt;
+      &lt;img src=&quot;..&#x2F;..&#x2F;img&#x2F;projects&#x2F;cryptorails-payment-flow.svg&quot; alt=&quot;CryptoRails payment workflow from merchant request and customer wallet signature through on-chain confirmation, payment verification, and settlement by signed webhook.&quot; loading=&quot;lazy&quot;&gt;
     &lt;&#x2F;picture&gt;
   &lt;&#x2F;a&gt;
   &lt;figcaption&gt;The merchant receives a settlement signal only after the confirmed on-chain payment matches the original request.&lt;&#x2F;figcaption&gt;
