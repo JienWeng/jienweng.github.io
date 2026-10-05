@@ -1,0 +1,276 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-05T15:12:55.969213+00:00",
+  "title": "Design System: Jien Weng Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Warm Paper",
+        "canonical": "#f6f3ec",
+        "tonalRamp": [
+          "oklch(15% 0.018 85)",
+          "oklch(26% 0.018 85)",
+          "oklch(38% 0.018 85)",
+          "oklch(49% 0.018 85)",
+          "oklch(61% 0.018 85)",
+          "oklch(72% 0.018 85)",
+          "oklch(84% 0.018 85)",
+          "oklch(95% 0.018 85)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Charcoal",
+        "canonical": "#20201e",
+        "tonalRamp": [
+          "oklch(15% 0.004 105)",
+          "oklch(26% 0.004 105)",
+          "oklch(38% 0.004 105)",
+          "oklch(49% 0.004 105)",
+          "oklch(61% 0.004 105)",
+          "oklch(72% 0.004 105)",
+          "oklch(84% 0.004 105)",
+          "oklch(95% 0.004 105)"
+        ]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Soft Charcoal",
+        "canonical": "#494944",
+        "tonalRamp": [
+          "oklch(15% 0.009 105)",
+          "oklch(26% 0.009 105)",
+          "oklch(38% 0.009 105)",
+          "oklch(49% 0.009 105)",
+          "oklch(61% 0.009 105)",
+          "oklch(72% 0.009 105)",
+          "oklch(84% 0.009 105)",
+          "oklch(95% 0.009 105)"
+        ]
+      },
+      "accent": {
+        "role": "primary",
+        "displayName": "Rust",
+        "canonical": "#b83e12",
+        "tonalRamp": [
+          "oklch(15% 0.17 40)",
+          "oklch(26% 0.17 40)",
+          "oklch(38% 0.17 40)",
+          "oklch(49% 0.17 40)",
+          "oklch(61% 0.17 40)",
+          "oklch(72% 0.17 40)",
+          "oklch(84% 0.17 40)",
+          "oklch(95% 0.17 40)"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Warm Rule",
+        "canonical": "#a6a49d",
+        "tonalRamp": [
+          "oklch(15% 0.012 95)",
+          "oklch(26% 0.012 95)",
+          "oklch(38% 0.012 95)",
+          "oklch(49% 0.012 95)",
+          "oklch(61% 0.012 95)",
+          "oklch(72% 0.012 95)",
+          "oklch(84% 0.012 95)",
+          "oklch(95% 0.012 95)"
+        ]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "White",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "oklch(15% 0 0)",
+          "oklch(26% 0 0)",
+          "oklch(38% 0 0)",
+          "oklch(49% 0 0)",
+          "oklch(61% 0 0)",
+          "oklch(72% 0 0)",
+          "oklch(84% 0 0)",
+          "oklch(95% 0 0)"
+        ]
+      },
+      "paper-2": {
+        "role": "neutral",
+        "displayName": "Inset Paper",
+        "canonical": "#eee9df",
+        "tonalRamp": [
+          "oklch(15% 0.018 85)",
+          "oklch(26% 0.018 85)",
+          "oklch(38% 0.018 85)",
+          "oklch(49% 0.018 85)",
+          "oklch(61% 0.018 85)",
+          "oklch(72% 0.018 85)",
+          "oklch(84% 0.018 85)",
+          "oklch(95% 0.018 85)"
+        ]
+      },
+      "accent-soft": {
+        "role": "primary",
+        "displayName": "Soft Rust",
+        "canonical": "#eed1bd",
+        "tonalRamp": [
+          "oklch(15% 0.045 55)",
+          "oklch(26% 0.045 55)",
+          "oklch(38% 0.045 55)",
+          "oklch(49% 0.045 55)",
+          "oklch(61% 0.045 55)",
+          "oklch(72% 0.045 55)",
+          "oklch(84% 0.045 55)",
+          "oklch(95% 0.045 55)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Oversized Editorial Display",
+        "purpose": "Homepage hero only."
+      },
+      "body": {
+        "displayName": "Practical Body",
+        "purpose": "Shared template-page navigation and compact prose."
+      },
+      "reading": {
+        "displayName": "Reading Body",
+        "purpose": "Long-form prose; 16px below the reading breakpoint."
+      },
+      "reading-h2": {
+        "displayName": "Reading Section",
+        "purpose": "Second-level article headings."
+      },
+      "reading-h3": {
+        "displayName": "Reading Subsection",
+        "purpose": "Third-level article headings."
+      },
+      "article-title": {
+        "displayName": "Article Title",
+        "purpose": "Full-width heading above the rail and reading column."
+      },
+      "collection-title": {
+        "displayName": "Collection Title",
+        "purpose": "Titles in collection and edition rows."
+      },
+      "caption": {
+        "displayName": "Caption and Date",
+        "purpose": "Diagram captions and collection dates."
+      },
+      "reading-meta": {
+        "displayName": "Reading Metadata",
+        "purpose": "Article dates, topic notes, and contents links."
+      },
+      "back-link": {
+        "displayName": "Back Link",
+        "purpose": "Parent-page navigation."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "arrow-hover",
+        "value": "transform 180ms ease-out",
+        "purpose": "Text action arrows shift 4px; disabled for reduced motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "mobile",
+        "value": "640px"
+      },
+      {
+        "name": "reading-stack",
+        "value": "920px"
+      },
+      {
+        "name": "compact-desktop",
+        "value": "1100px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary action",
+      "kind": "button",
+      "description": "Square filled link for CV and contact.",
+      "html": "<a class=\"ds-primary\" href=\"#\">View CV <svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" aria-hidden=\"true\"><path d=\"M3 12h17m-6-6 6 6-6 6\"/></svg></a>",
+      "css": ".ds-primary{display:inline-flex;align-items:center;gap:14px;min-height:44px;padding:10px 20px;background:#b83e12;color:white;border:1px solid #b83e12;text-decoration:none;font:550 16px Archivo,sans-serif}.ds-primary:hover{background:#20201e;border-color:#20201e}.ds-primary:focus-visible{outline:2px solid #b83e12;outline-offset:5px}",
+      "refersTo": "button-primary"
+    },
+    {
+      "name": "Text action",
+      "kind": "button",
+      "description": "Underlined action with a small arrow movement.",
+      "html": "<a class=\"ds-link\" href=\"#\">Read case study <svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" aria-hidden=\"true\"><path d=\"M3 12h17m-6-6 6 6-6 6\"/></svg></a>",
+      "css": ".ds-link{display:inline-flex;align-items:center;gap:14px;min-height:44px;color:#20201e;text-underline-offset:.25em;font:550 16px Archivo,sans-serif}.ds-link svg{transition:transform 180ms ease-out}.ds-link:hover svg{transform:translateX(4px)}.ds-link:focus-visible{outline:2px solid #b83e12;outline-offset:5px}@media(prefers-reduced-motion:reduce){.ds-link svg{transition:none}}"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "description": "Direct desktop destinations.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Example\"><a href=\"#\">Work</a><a href=\"#\">Writing</a><a href=\"#\">About</a></nav>",
+      "css": ".ds-nav{display:flex;gap:24px;font:16px Archivo,sans-serif}.ds-nav a{display:inline-flex;align-items:center;min-height:44px;color:#20201e;text-decoration:none}.ds-nav a:hover{color:#b83e12;text-decoration:underline}.ds-nav a:focus-visible{outline:2px solid #b83e12;outline-offset:5px}"
+    },
+    {
+      "name": "Numbered work rail",
+      "kind": "custom",
+      "description": "Rust index accompanying evidence.",
+      "html": "<div class=\"ds-rail\"><strong>01</strong><span></span><small>PRODUCT<br>DELIVERY<br>WEB3<br>PAYMENTS</small></div>",
+      "css": ".ds-rail{display:flex;flex-direction:column;align-items:flex-start;width:70px;min-height:220px;padding:14px 20px 22px;background:#b83e12;color:white;font-family:Archivo,sans-serif}.ds-rail strong{font-size:40px;font-weight:650}.ds-rail span{width:1px;flex:1;background:#ffffffa6;margin:18px 0}.ds-rail small{font-size:11px;letter-spacing:.11em;line-height:1.65}",
+      "refersTo": "project-rail"
+    },
+    {
+      "name": "Writing row",
+      "kind": "custom",
+      "description": "Ruled publication link.",
+      "html": "<a href=\"#\" class=\"ds-writing\"><span>Product management between business and delivery</span><time>Oct 5, 2026</time><svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" aria-hidden=\"true\"><path d=\"M3 12h17m-6-6 6 6-6 6\"/></svg></a>",
+      "css": ".ds-writing{display:grid;grid-template-columns:minmax(0,1fr) auto 24px;gap:24px;align-items:center;padding:24px 0;border-top:1px solid #a6a49d;color:#20201e;text-decoration:none;font:550 20.8px/1.35 Archivo,sans-serif}.ds-writing time{font-size:13px;color:#494944}.ds-writing:hover{color:#b83e12}.ds-writing:focus-visible{outline:2px solid #b83e12;outline-offset:5px}"
+    },
+    {
+      "name": "Illustrative workflow",
+      "kind": "custom",
+      "description": "Semantic stages within a bordered figure.",
+      "html": "<figure class=\"ds-flow\"><figcaption>Illustrative workflow</figcaption><ol><li>Created</li><li>Pending</li><li>Confirmed</li><li>Completed</li></ol></figure>",
+      "css": ".ds-flow{margin:0;border:1px solid #494944;padding:8px 14px 16px;color:#20201e;font:16px Archivo,sans-serif}.ds-flow figcaption{font-size:13px;margin-bottom:12px}.ds-flow ol{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6%;list-style:none;margin:0;padding:0}.ds-flow li{border:1px solid #494944;padding:9px 5px;text-align:center;font-weight:700}@media(max-width:640px){.ds-flow ol{grid-template-columns:1fr;gap:24px}}",
+      "refersTo": "workflow"
+    },
+    {
+      "name": "Article contents",
+      "kind": "nav",
+      "description": "Native disclosure for article section navigation.",
+      "html": "<details class=\"ds-contents\"><summary>On this page</summary><nav aria-label=\"Table of contents\"><a href=\"#\">Requirements to delivery</a><a href=\"#\">Lessons learned</a></nav></details>",
+      "css": ".ds-contents{border-top:1px solid #a6a49d;padding-top:8px;margin-top:20px;color:#20201e;font:16px Archivo,sans-serif}.ds-contents summary{min-height:44px;padding:10px 0;cursor:pointer;font-weight:600}.ds-contents nav{margin-top:4px;font-size:.875rem;line-height:1.5}.ds-contents a{display:block;padding:6px 0;color:#20201e;text-underline-offset:.25em}.ds-contents a:hover{color:#b83e12}.ds-contents summary:focus-visible,.ds-contents a:focus-visible{outline:2px solid #b83e12;outline-offset:5px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Practical Editorial Portfolio",
+    "overview": "The homepage uses a confident editorial composition: oversized type, warm paper, charcoal rules, and rust numbered work rails. Practical evidence and direct navigation carry the professional identity. The same Archivo, warm paper, charcoal, and rust identity extends across template-based content and collection pages. Standalone slide decks retain their own designs.\n\nThe approved visual reference is `.impeccable/mocks/desktop-recommended.png`, with the headline \u201cBusiness needs. Buildable products.\u201d Implementation sources are `templates/base.html`, `templates/partials/portfolio-header.html`, `templates/home.html`, `templates/page.html`, `static/site.css`, `static/portfolio.css`, and `static/portfolio.js`. The base template preloads Archivo and loads the shared portfolio CSS and menu script on every template-based page.",
+    "keyCharacteristics": [
+      "Oversized, tightly set sans-serif display type.",
+      "Flat paper surfaces, thin rules, and square corners.",
+      "Numbered rust rails paired with work evidence.",
+      "Responsive semantic diagrams and direct text links."
+    ],
+    "rules": [
+      {
+        "name": "The Evidence Rule",
+        "body": "Color organizes the reading sequence; evidence remains understandable without color.",
+        "section": "colors"
+      }
+    ],
+    "dos": [
+      "Do preserve visible keyboard focus and the 44px minimum for primary actions and disclosure controls.",
+      "Do label the payment workflow as illustrative and retain provenance for the restyled CRM workflow.",
+      "Do retain the native mobile menu and reduced-motion behavior.",
+      "Do use the shared Archivo identity across template pages and preserve standalone slide designs.",
+      "Do make each label and sentence explain a destination, role, decision, or piece of evidence."
+    ],
+    "donts": [
+      "Don't introduce shadows, rounded card grids, or decorative technology imagery across template pages.",
+      "Don't present illustrative workflows as product screenshots.",
+      "Don't treat this documentation as a passed formal quantitative build-state specification."
+    ]
+  }
+}
