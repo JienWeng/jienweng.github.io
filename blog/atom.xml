@@ -118,21 +118,33 @@
 &lt;h2 id=&quot;the-flow-we-are-trying-to-represent&quot;&gt;The flow we are trying to represent&lt;&#x2F;h2&gt;
 &lt;p&gt;The sales process starts with a lead. Once the lead is qualified, it becomes an account, a contact, and an opportunity. An account can have more than one opportunity, so the CRM cannot treat the customer record and the sales funnel as the same thing.&lt;&#x2F;p&gt;
 &lt;p&gt;Each opportunity then moves through its own funnel. The stages are more than labels for a salesperson. They carry information about what has been checked, what still needs approval, and whether the opportunity is ready to move forward. Management controls sit around the stages because a quotation should not become a commitment just because someone dragged a card across a screen.&lt;&#x2F;p&gt;
-&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;blog&#x2F;quandatics&#x2F;deal-to-cash.png&quot; alt=&quot;Quandatics deal-to-cash flow from qualified lead to payment received&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
-&lt;p&gt;&lt;em&gt;Deal-to-cash flow.&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+&lt;figure class=&quot;crm-artifact&quot;&gt;
+  &lt;a href=&quot;..&#x2F;..&#x2F;img&#x2F;blog&#x2F;quandatics&#x2F;deal-to-cash-portfolio.png&quot; aria-label=&quot;View the full-size CRM deal-to-cash diagram&quot;&gt;
+    &lt;picture&gt;&lt;source media=&quot;(max-width: 640px)&quot; srcset=&quot;..&#x2F;..&#x2F;img&#x2F;blog&#x2F;quandatics&#x2F;deal-to-cash-mobile.svg&quot;&gt;&lt;img src=&quot;..&#x2F;..&#x2F;img&#x2F;blog&#x2F;quandatics&#x2F;deal-to-cash-portfolio.png&quot; width=&quot;1666&quot; height=&quot;944&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; alt=&quot;Deal-to-cash flow from qualified lead through account, opportunity, approved sales order, project delivery, and payment received.&quot;&gt;&lt;&#x2F;picture&gt;
+  &lt;&#x2F;a&gt;
+  &lt;figcaption&gt;&lt;span&gt;01 · Lead to approved sales order&lt;&#x2F;span&gt;&lt;a href=&quot;..&#x2F;..&#x2F;img&#x2F;blog&#x2F;quandatics&#x2F;deal-to-cash-portfolio.png&quot;&gt;View full-size diagram&lt;&#x2F;a&gt;&lt;&#x2F;figcaption&gt;
+&lt;&#x2F;figure&gt;
 &lt;p&gt;When the opportunity is won, the quotation is finalised. The approved quotation becomes a numbered sales order. That sales order is the record that joins the commercial side to the delivery side. It binds one sale to one project, with the project carrying the item list, budget, team, phases, and milestones.&lt;&#x2F;p&gt;
 &lt;p&gt;This is where the data needs to stop being retyped. If the project team has to rebuild the project from an email or a PDF, the connection has already been lost.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;the-project-has-to-agree-with-the-sale&quot;&gt;The project has to agree with the sale&lt;&#x2F;h2&gt;
 &lt;p&gt;The project does not disappear after the sales order is created. It opens from the order and moves through its delivery phases. Each phase has deliverables and a progress percentage. When a phase is complete, the team can submit a milestone claim with the evidence needed for approval.&lt;&#x2F;p&gt;
 &lt;p&gt;Management then approves the milestone. Once it is approved, finance can issue the sales invoice for that milestone. The project status and the payment status need to travel back to the same records, so the business can see whether a project is progressing, whether it has been billed, and whether the money has actually been collected.&lt;&#x2F;p&gt;
-&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;blog&#x2F;quandatics&#x2F;project-to-cash.png&quot; alt=&quot;Quandatics project-to-cash flow from sales order to milestone payment&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
-&lt;p&gt;&lt;em&gt;Project-to-cash flow.&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+&lt;figure class=&quot;crm-artifact&quot;&gt;
+  &lt;a href=&quot;..&#x2F;..&#x2F;img&#x2F;blog&#x2F;quandatics&#x2F;project-to-cash.svg&quot; aria-label=&quot;View the full-size CRM project-to-cash diagram&quot;&gt;
+    &lt;picture&gt;&lt;source media=&quot;(max-width: 640px)&quot; srcset=&quot;..&#x2F;..&#x2F;img&#x2F;blog&#x2F;quandatics&#x2F;project-to-cash-mobile.svg&quot;&gt;&lt;img src=&quot;..&#x2F;..&#x2F;img&#x2F;blog&#x2F;quandatics&#x2F;project-to-cash.svg&quot; width=&quot;1600&quot; height=&quot;920&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; alt=&quot;Project-to-cash flow from an approved sales order through project phases, milestone approval, invoicing, payment receipt, and margin update.&quot;&gt;&lt;&#x2F;picture&gt;
+  &lt;&#x2F;a&gt;
+  &lt;figcaption&gt;&lt;span&gt;02 · Delivery milestone to collected payment&lt;&#x2F;span&gt;&lt;a href=&quot;..&#x2F;..&#x2F;img&#x2F;blog&#x2F;quandatics&#x2F;project-to-cash.svg&quot;&gt;View full-size diagram&lt;&#x2F;a&gt;&lt;&#x2F;figcaption&gt;
+&lt;&#x2F;figure&gt;
 &lt;p&gt;The relationship between a project milestone and a payment is important. Finance needs to know which milestone is due, how much should be collected, how much has already been received, and what remains outstanding. The project team needs to know the same thing from the other direction. A project can be technically progressing while its billing is behind, or it can be billed while the delivery evidence is still incomplete.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;finance-runs-in-two-directions&quot;&gt;Finance runs in two directions&lt;&#x2F;h2&gt;
 &lt;p&gt;The money-in side is the order-to-cash process. A completed project milestone becomes a claim, then a sales invoice, then a payment receipt matched against that invoice. The accounting entry is posted to Autocount, with the relevant sales order and documents kept together.&lt;&#x2F;p&gt;
 &lt;p&gt;At the same time, the money-out side is procure-to-pay. A purchase order goes to a supplier or subcontractor against the sales order. The supplier invoice is captured and matched to the purchase order, then an approved payment voucher sends the payment through. The cost is posted back to the same project.&lt;&#x2F;p&gt;
-&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;blog&#x2F;quandatics&#x2F;o2c-p2p.png&quot; alt=&quot;Quandatics order-to-cash and procure-to-pay flow&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
-&lt;p&gt;&lt;em&gt;O2C and P2P flow.&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+&lt;figure class=&quot;crm-artifact&quot;&gt;
+  &lt;a href=&quot;..&#x2F;..&#x2F;img&#x2F;blog&#x2F;quandatics&#x2F;o2c-p2p.svg&quot; aria-label=&quot;View the full-size order-to-cash and procure-to-pay diagram&quot;&gt;
+    &lt;picture&gt;&lt;source media=&quot;(max-width: 640px)&quot; srcset=&quot;..&#x2F;..&#x2F;img&#x2F;blog&#x2F;quandatics&#x2F;o2c-p2p-mobile.svg&quot;&gt;&lt;img src=&quot;..&#x2F;..&#x2F;img&#x2F;blog&#x2F;quandatics&#x2F;o2c-p2p.svg&quot; width=&quot;1600&quot; height=&quot;960&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; alt=&quot;Two finance flows linked to one sales order: customer milestone claim through invoice and receipt; supplier purchase order through invoice and approved payment voucher. Both post to Autocount and the same project.&quot;&gt;&lt;&#x2F;picture&gt;
+  &lt;&#x2F;a&gt;
+  &lt;figcaption&gt;&lt;span&gt;03 · Money in and money out&lt;&#x2F;span&gt;&lt;a href=&quot;..&#x2F;..&#x2F;img&#x2F;blog&#x2F;quandatics&#x2F;o2c-p2p.svg&quot;&gt;View full-size diagram&lt;&#x2F;a&gt;&lt;&#x2F;figcaption&gt;
+&lt;&#x2F;figure&gt;
 &lt;p&gt;This is the part I find easy to miss when looking at a CRM as only a sales tool. The sales funnel is also connected to future revenue, project delivery, supplier costs, and margin. If those links are missing, management has to assemble the answer manually whenever they want to know what is happening.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;i-had-to-learn-the-process-before-designing-the-system&quot;&gt;I had to learn the process before designing the system&lt;&#x2F;h2&gt;
 &lt;p&gt;My first instinct was to think about the screens. It is easy to imagine a dashboard and feel that the project is moving forward. The harder part is sitting with the workflow long enough to notice where the words stop matching the work.&lt;&#x2F;p&gt;
@@ -193,7 +205,7 @@
 &lt;li&gt;Retrying a write does not credit the same payment twice.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;This is not glamorous product work. It is the part that stops a payment demo from becoming a support problem later.&lt;&#x2F;p&gt;
-&lt;p&gt;The full cross-chain flow is documented in my &lt;a href=&quot;&#x2F;notes&#x2F;cryptorails-transaction-lifecycle&#x2F;&quot;&gt;Web3 payment transaction lifecycle note&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;The full cross-chain flow is documented in my &lt;a href=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;notes&#x2F;cryptorails-transaction-lifecycle&#x2F;&quot;&gt;Web3 payment transaction lifecycle note&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;p&gt;This is a generalised case study. Product-specific business details, implementation details, and performance results remain confidential.&lt;&#x2F;p&gt;
 </content>
         
@@ -506,7 +518,7 @@
 &lt;h2 id=&quot;wrap-up&quot;&gt;Wrap-Up&lt;&#x2F;h2&gt;
 &lt;p&gt;Eco Finance was our attempt to make carbon footprints visible through a familiar object, a payment history. The carbon-credit idea gave the prototype a possible business model, although we did not make it to the final round T.T&lt;&#x2F;p&gt;
 &lt;p&gt;Hope you guys like it :D&lt;&#x2F;p&gt;
-&lt;p&gt;Oh btw! Once again.. You can read the full story &lt;a href=&quot;&#x2F;posts&#x2F;first-hackathon-experience&quot;&gt;here&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Oh btw! Once again.. You can read the full story &lt;a href=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;blog&#x2F;first-hackathon-experience&#x2F;&quot;&gt;here&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 </content>
         
     </entry>
