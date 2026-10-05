@@ -1,0 +1,49 @@
+[[collection]]
+type = "card_expandable"
+title = "Separating spatial support and observation effects in satellite rainfall monitoring over Malaysia"
+authors = "Jien Weng Lai"
+venue = "Environmental Monitoring and Assessment · Springer Nature"
+status = "Manuscript resubmission · Original Research Article"
+date = "Aug 2026"
+content = """
+Satellite rainfall products are often evaluated with gauges that sample different periods and spatial supports. We assessed daily Integrated Multi-satellitE Retrievals for GPM (IMERG) Final V07 rainfall over Malaysia from October 2015 to September 2025. National and six regional means were summarized with observed percentiles, leave-one-hydrological-year-out influence, and complete-year bootstrap uncertainty. Validation used a common seven-year period, gauges with at least 90% cell availability, and 2,420 dates meeting the coverage rule in all regions. Colocated gauges were averaged within each IMERG cell. We compared cell-aggregated gauges with IMERG on the same dates and cells, then compared gauge-footprint IMERG with full-region IMERG. The national 99th percentile was 25.24 mm day⁻¹; regional values ranged from 31.92 to 50.09 mm day⁻¹. East Coast and Southern Peninsular Malaysia together accounted for the highest P99 in 99.8% of full-archive year resamples, although their intervals overlapped. In the stable gauge design, footprint effects ranged from −6.2% to 11.5%, and gauge-to-footprint differences ranged from −27.2% to 12.8%. East Coast gauges ranked first in 99.8% of matched-period resamples. At 593 evaluable cells, median all-day P99 bias ranged from −13.3% to −24.2% and remained negative under two alternative event definitions and 12 spatial-block designs. Median probability of detection declined from 0.51–0.63 at 10 mm day⁻¹ to 0.09–0.31 at 50 mm day⁻¹. IMERG can screen regional rainfall patterns, but local high-intensity verification remains gauge-dependent.
+"""
+tags = ["Satellite Rainfall", "Environmental Monitoring", "Malaysia", "Remote Sensing"]
+featured = true
+
+[[collection]]
+type = "card_expandable"
+title = "The Primacy of Information Design Over Algorithm Selection in Multi-Agent Cooperation"
+authors = "Jien Weng Lai, Wei Lun Tan, Ying Loong Lee, Ming Fai Chow"
+status = "Under Review @ IEEE Social Computation"
+date = "Apr 2026"
+# TODO: add preprint/DOI link once the paper is public
+content = """
+A full-factorial experiment in the Public Goods Game shows that information regime and incentive strength explain 85.8% of cooperation-rate variance; algorithm choice accounts for just 3.8%. Agents with the least information cooperate most (83% vs 42% under full observation), attributable to state-space compression. TreeSHAP and Shapley-variance decomposition confirm information structure, not algorithm selection is the primary design lever for cooperation.
+"""
+tags = ["Multi-Agent Reinforcement Learning", "Public Goods Game", "Information Design", "Cooperation"]
+featured = true
+
+[[collection]]
+type = "card_expandable"
+title = "Optimal Execution with Alpha Signals"
+authors = "Jien Weng Lai"
+venue = "SSRN"
+status = "Published"
+date = "Apr 2026"
+link = "https://doi.org/10.2139/ssrn.6323159"
+pdf = "https://ssrn.com/abstract=6323159"
+content = """
+The execution of large portfolio transactions requires balancing market impact and adverse price drift. The Almgren-Chriss (2001) framework provides a mean-variance trade-off for martingale price processes, but practitioners often use short-term alpha signals. This paper re-evaluates optimal liquidation with Stochastic Optimal Control. Adding a mean-reverting alpha signal to the price dynamics produces a closed-form solution through the Hamilton-Jacobi-Bellman (HJB) equation. The resulting trading rate is affine in current inventory and the predictive signal, giving institutional execution desks a transparent additive framework.
+"""
+tags = ["Optimal Execution", "Alpha Signals", "HJB Equation", "Stochastic Control", "LQG Regulation", "Quantitative Finance"]
+bibtex = """
+@misc{lai2026execution,
+  title        = {Optimal Execution with Alpha Signals},
+  author       = {Lai, Jien Weng},
+  year         = {2026},
+  howpublished = {SSRN Working Paper},
+  doi          = {10.2139/ssrn.6323159},
+  url          = {https://ssrn.com/abstract=6323159}
+}
+"""

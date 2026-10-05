@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Jien Weng - Blog</title>
+    <subtitle>Web3 Product Manager, Business Transformation Consultant, and Data Science &amp; Machine Learning Trainer.</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://jienweng.github.io/pr-preview/pr-11/blog/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://jienweng.github.io/pr-preview/pr-11/blog/"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2026-07-20T00:00:00+00:00</updated>
+    <id>https://jienweng.github.io/pr-preview/pr-11/blog/atom.xml</id>
+    <entry xml:lang="en">
+        <title>The Product Manager Sits Between the Business Question and the Delivery Queue</title>
+        <published>2026-07-20T00:00:00+00:00</published>
+        <updated>2026-07-20T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://jienweng.github.io/pr-preview/pr-11/blog/product-manager-between-business-and-delivery/"/>
+        <id>https://jienweng.github.io/pr-preview/pr-11/blog/product-manager-between-business-and-delivery/</id>
+        
+        <content type="html" xml:base="https://jienweng.github.io/pr-preview/pr-11/blog/product-manager-between-business-and-delivery/">&lt;p&gt;Product management is often described as deciding what to build. In practice, a large part of the job is making sure the business question survives contact with the delivery team.&lt;&#x2F;p&gt;
+&lt;p&gt;In my current Web3 product work, I coordinate an engineering team across payment flows, chain integrations, QA, and UI&#x2F;UX testing. The work is technical, but the first problem is usually less technical than that. Someone needs to decide what matters now, what can wait, and what “done” should mean.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;turning-a-request-into-something-buildable&quot;&gt;Turning a request into something buildable&lt;&#x2F;h2&gt;
+&lt;p&gt;A business request often arrives as an outcome rather than a feature.&lt;&#x2F;p&gt;
+&lt;p&gt;“Make deposits more reliable” is a useful concern, but it is not yet a backlog item. The team still needs to know which networks are involved, which failure cases matter, what the user should see, and which event allows the business to settle the payment.&lt;&#x2F;p&gt;
+&lt;p&gt;My job is to keep asking those questions until the request has a shape that the team can discuss and test.&lt;&#x2F;p&gt;
+&lt;p&gt;That usually means connecting four things.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;The business outcome&lt;&#x2F;li&gt;
+&lt;li&gt;The user or merchant problem&lt;&#x2F;li&gt;
+&lt;li&gt;The technical constraint&lt;&#x2F;li&gt;
+&lt;li&gt;The acceptance condition&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;If one of these is missing, the team can still start work, but it will probably discover the missing piece halfway through the sprint.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-delivery-rhythm&quot;&gt;The delivery rhythm&lt;&#x2F;h2&gt;
+&lt;p&gt;I maintain the backlog and roadmap, run Scrum ceremonies, and keep the business owner and team members connected. The ceremonies are useful, but the practical work happens between them.&lt;&#x2F;p&gt;
+&lt;p&gt;I track dependencies, clarify decisions, surface blocked work, and keep new requests from quietly displacing the work already agreed. Sometimes the right decision is to add a story. Sometimes it is to reject a shortcut that would make reconciliation or QA harder later.&lt;&#x2F;p&gt;
+&lt;p&gt;The product manager is not there to remove every disagreement. The role is to make the disagreement visible early enough that the team can make a deliberate trade-off.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-i-have-learned&quot;&gt;What I have learned&lt;&#x2F;h2&gt;
+&lt;p&gt;The best backlog is not the one with the most detail. It is the one where the team understands the problem, the boundary of the work, and the evidence needed to call it complete.&lt;&#x2F;p&gt;
+&lt;p&gt;That is especially true for Web3 payments. A feature can look finished in the interface while the transaction is still pending, the wrong network was used, or a duplicate webhook can still credit the same payment twice.&lt;&#x2F;p&gt;
+&lt;p&gt;Product work sits in that gap between what the business wants to happen and what the system can prove has happened.&lt;&#x2F;p&gt;
+&lt;p&gt;This is a generalised case study. Product-specific business details, internal metrics, and implementation details remain confidential.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>TRON Energy Is a Product Requirement</title>
+        <published>2026-06-22T00:00:00+00:00</published>
+        <updated>2026-06-22T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://jienweng.github.io/pr-preview/pr-11/blog/tron-energy-product-requirement/"/>
+        <id>https://jienweng.github.io/pr-preview/pr-11/blog/tron-energy-product-requirement/</id>
+        
+        <content type="html" xml:base="https://jienweng.github.io/pr-preview/pr-11/blog/tron-energy-product-requirement/">&lt;p&gt;One of the easiest ways to make a multi-chain payment flow look simpler than it is is to call every network cost “gas”. EVM networks and TRON do not behave the same way here.&lt;&#x2F;p&gt;
+&lt;p&gt;On an EVM network, a transaction normally needs the network&#x27;s native coin to pay gas. On TRON, a token transfer uses network resources, especially Energy, and may also consume Bandwidth.&lt;&#x2F;p&gt;
+&lt;p&gt;If a TRON account does not have enough Energy, the transaction can burn TRX to cover the missing resource. The transfer may still work, but the cost can be much higher than the user expected.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;why-this-belongs-in-the-product-flow&quot;&gt;Why this belongs in the product flow&lt;&#x2F;h2&gt;
+&lt;p&gt;Energy is not only a blockchain implementation detail. It affects whether a transaction should be submitted, how fees should be explained, and what the system should do when the account does not have enough resources.&lt;&#x2F;p&gt;
+&lt;p&gt;For the payment flow, we apply Energy rental before a resource-heavy TRON transaction is broadcast. That makes the cost more predictable and avoids leaving the user with a transaction that succeeds by burning an unexpected amount of TRX.&lt;&#x2F;p&gt;
+&lt;p&gt;The sequence is therefore different from a basic EVM flow.&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Validate the payment and the selected network.&lt;&#x2F;li&gt;
+&lt;li&gt;Check the resource requirement for the TRON transaction.&lt;&#x2F;li&gt;
+&lt;li&gt;Arrange rented Energy when the account does not have enough.&lt;&#x2F;li&gt;
+&lt;li&gt;Broadcast the transaction.&lt;&#x2F;li&gt;
+&lt;li&gt;Monitor the result and wait for the required confirmation condition.&lt;&#x2F;li&gt;
+&lt;li&gt;Reconcile the confirmed transfer with the original payment request.&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;The user does not need to understand every resource calculation, but the product team does. Otherwise, an error that looks like a wallet problem may actually be a resource-planning problem.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-product-lesson&quot;&gt;The product lesson&lt;&#x2F;h2&gt;
+&lt;p&gt;Multi-chain support is not only a list of networks in a dropdown. Each chain brings its own address rules, fee model, confirmation behaviour, failure modes, and testing needs.&lt;&#x2F;p&gt;
+&lt;p&gt;The cleanest interface can still produce a poor payment experience if the system hides a chain-specific requirement until after the transaction has failed or become expensive.&lt;&#x2F;p&gt;
+&lt;p&gt;This is one of the details I now check earlier when thinking about Web3 payment requirements. The chain&#x27;s execution model should appear in the backlog, the acceptance criteria, and the user-facing error states.&lt;&#x2F;p&gt;
+&lt;p&gt;This is a generalised case study. Exact rental rules, internal implementation details, and product-specific business information remain confidential.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Why We Built an Internal CRM After Trying Salesforce</title>
+        <published>2026-05-25T00:00:00+00:00</published>
+        <updated>2026-05-25T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://jienweng.github.io/pr-preview/pr-11/blog/quandatics-crm-business-transformation/"/>
+        <id>https://jienweng.github.io/pr-preview/pr-11/blog/quandatics-crm-business-transformation/</id>
+        
+        <content type="html" xml:base="https://jienweng.github.io/pr-preview/pr-11/blog/quandatics-crm-business-transformation/">&lt;p&gt;When someone asks why we did not use an existing CRM, that is a fair question. The team had already tried Salesforce.&lt;&#x2F;p&gt;
+&lt;p&gt;Salesforce is not a bad product. It has more features than most teams will ever use, and that was part of the problem for us. The issue was not that Salesforce could not store a customer or track a deal. It could. The issue was that the team&#x27;s way of working did not fit neatly into the structure Salesforce expected.&lt;&#x2F;p&gt;
+&lt;p&gt;The more we tried to make it work, the more the workflow had to bend around the tool. A process that made sense to the people doing the work became a set of fields, stages, and workarounds. The CRM was there, but it was not really helping people understand what needed to happen next.&lt;&#x2F;p&gt;
+&lt;p&gt;That is the background to the internal CRM I am working on with Quandatics. It connects sales, finance, and project teams. I am not trying to build a smaller Salesforce for the sake of building one. The point is to start with the work and then decide what the system actually needs to remember.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-messy-part-is-between-the-teams&quot;&gt;The messy part is between the teams&lt;&#x2F;h2&gt;
+&lt;p&gt;Sales may begin with a conversation with a customer. Finance may need a different set of information before anything can be invoiced. The project team then needs to know what was promised, what has been approved, and who is responsible for the next step.&lt;&#x2F;p&gt;
+&lt;p&gt;On paper, these can look like separate processes. In real life, they are connected by handovers. Someone sends a message. Someone updates a spreadsheet. Someone remembers that a customer asked for a change three weeks ago. Then another person has to reconstruct the whole story before making a decision.&lt;&#x2F;p&gt;
+&lt;p&gt;That is the kind of problem an internal CRM can help with. It can make the important handovers visible without making every activity look uniform.&lt;&#x2F;p&gt;
+&lt;p&gt;This also explains why a field such as “project status” is not as simple as it sounds. Who is allowed to change it? Does “in progress” mean that work has started, or only that the project has been approved? What happens if the project is waiting for the customer? Who needs to know when the status changes?&lt;&#x2F;p&gt;
+&lt;p&gt;These questions decide how the organisation wants work to move, even though they eventually appear as UI details.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-flow-we-are-trying-to-represent&quot;&gt;The flow we are trying to represent&lt;&#x2F;h2&gt;
+&lt;p&gt;The sales process starts with a lead. Once the lead is qualified, it becomes an account, a contact, and an opportunity. An account can have more than one opportunity, so the CRM cannot treat the customer record and the sales funnel as the same thing.&lt;&#x2F;p&gt;
+&lt;p&gt;Each opportunity then moves through its own funnel. The stages are more than labels for a salesperson. They carry information about what has been checked, what still needs approval, and whether the opportunity is ready to move forward. Management controls sit around the stages because a quotation should not become a commitment just because someone dragged a card across a screen.&lt;&#x2F;p&gt;
+&lt;figure class=&quot;crm-artifact&quot;&gt;
+  &lt;a href=&quot;&#x2F;img&#x2F;blog&#x2F;quandatics&#x2F;deal-to-cash-portfolio.png&quot; aria-label=&quot;View the full-size CRM deal-to-cash diagram&quot;&gt;
+    &lt;picture&gt;&lt;source media=&quot;(max-width: 640px)&quot; srcset=&quot;&#x2F;img&#x2F;blog&#x2F;quandatics&#x2F;deal-to-cash-mobile.svg&quot;&gt;&lt;img src=&quot;&#x2F;img&#x2F;blog&#x2F;quandatics&#x2F;deal-to-cash-portfolio.png&quot; width=&quot;1666&quot; height=&quot;944&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; alt=&quot;Deal-to-cash flow from qualified lead through account, opportunity, approved sales order, project delivery, and payment received.&quot;&gt;&lt;&#x2F;picture&gt;
+  &lt;&#x2F;a&gt;
+  &lt;figcaption&gt;&lt;span&gt;01 · Lead to approved sales order&lt;&#x2F;span&gt;&lt;a href=&quot;&#x2F;img&#x2F;blog&#x2F;quandatics&#x2F;deal-to-cash-portfolio.png&quot;&gt;View full-size diagram&lt;&#x2F;a&gt;&lt;&#x2F;figcaption&gt;
+&lt;&#x2F;figure&gt;
+&lt;p&gt;When the opportunity is won, the quotation is finalised. The approved quotation becomes a numbered sales order. That sales order is the record that joins the commercial side to the delivery side. It binds one sale to one project, with the project carrying the item list, budget, team, phases, and milestones.&lt;&#x2F;p&gt;
+&lt;p&gt;This is where the data needs to stop being retyped. If the project team has to rebuild the project from an email or a PDF, the connection has already been lost.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-project-has-to-agree-with-the-sale&quot;&gt;The project has to agree with the sale&lt;&#x2F;h2&gt;
+&lt;p&gt;The project does not disappear after the sales order is created. It opens from the order and moves through its delivery phases. Each phase has deliverables and a progress percentage. When a phase is complete, the team can submit a milestone claim with the evidence needed for approval.&lt;&#x2F;p&gt;
+&lt;p&gt;Management then approves the milestone. Once it is approved, finance can issue the sales invoice for that milestone. The project status and the payment status need to travel back to the same records, so the business can see whether a project is progressing, whether it has been billed, and whether the money has actually been collected.&lt;&#x2F;p&gt;
+&lt;figure class=&quot;crm-artifact&quot;&gt;
+  &lt;a href=&quot;&#x2F;img&#x2F;blog&#x2F;quandatics&#x2F;project-to-cash.svg&quot; aria-label=&quot;View the full-size CRM project-to-cash diagram&quot;&gt;
+    &lt;picture&gt;&lt;source media=&quot;(max-width: 640px)&quot; srcset=&quot;&#x2F;img&#x2F;blog&#x2F;quandatics&#x2F;project-to-cash-mobile.svg&quot;&gt;&lt;img src=&quot;&#x2F;img&#x2F;blog&#x2F;quandatics&#x2F;project-to-cash.svg&quot; width=&quot;1600&quot; height=&quot;920&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; alt=&quot;Project-to-cash flow from an approved sales order through project phases, milestone approval, invoicing, payment receipt, and margin update.&quot;&gt;&lt;&#x2F;picture&gt;
+  &lt;&#x2F;a&gt;
+  &lt;figcaption&gt;&lt;span&gt;02 · Delivery milestone to collected payment&lt;&#x2F;span&gt;&lt;a href=&quot;&#x2F;img&#x2F;blog&#x2F;quandatics&#x2F;project-to-cash.svg&quot;&gt;View full-size diagram&lt;&#x2F;a&gt;&lt;&#x2F;figcaption&gt;
+&lt;&#x2F;figure&gt;
+&lt;p&gt;The relationship between a project milestone and a payment is important. Finance needs to know which milestone is due, how much should be collected, how much has already been received, and what remains outstanding. The project team needs to know the same thing from the other direction. A project can be technically progressing while its billing is behind, or it can be billed while the delivery evidence is still incomplete.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;finance-runs-in-two-directions&quot;&gt;Finance runs in two directions&lt;&#x2F;h2&gt;
+&lt;p&gt;The money-in side is the order-to-cash process. A completed project milestone becomes a claim, then a sales invoice, then a payment receipt matched against that invoice. The accounting entry is posted to Autocount, with the relevant sales order and documents kept together.&lt;&#x2F;p&gt;
+&lt;p&gt;At the same time, the money-out side is procure-to-pay. A purchase order goes to a supplier or subcontractor against the sales order. The supplier invoice is captured and matched to the purchase order, then an approved payment voucher sends the payment through. The cost is posted back to the same project.&lt;&#x2F;p&gt;
+&lt;figure class=&quot;crm-artifact&quot;&gt;
+  &lt;a href=&quot;&#x2F;img&#x2F;blog&#x2F;quandatics&#x2F;o2c-p2p.svg&quot; aria-label=&quot;View the full-size order-to-cash and procure-to-pay diagram&quot;&gt;
+    &lt;picture&gt;&lt;source media=&quot;(max-width: 640px)&quot; srcset=&quot;&#x2F;img&#x2F;blog&#x2F;quandatics&#x2F;o2c-p2p-mobile.svg&quot;&gt;&lt;img src=&quot;&#x2F;img&#x2F;blog&#x2F;quandatics&#x2F;o2c-p2p.svg&quot; width=&quot;1600&quot; height=&quot;960&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; alt=&quot;Two finance flows linked to one sales order: customer milestone claim through invoice and receipt; supplier purchase order through invoice and approved payment voucher. Both post to Autocount and the same project.&quot;&gt;&lt;&#x2F;picture&gt;
+  &lt;&#x2F;a&gt;
+  &lt;figcaption&gt;&lt;span&gt;03 · Money in and money out&lt;&#x2F;span&gt;&lt;a href=&quot;&#x2F;img&#x2F;blog&#x2F;quandatics&#x2F;o2c-p2p.svg&quot;&gt;View full-size diagram&lt;&#x2F;a&gt;&lt;&#x2F;figcaption&gt;
+&lt;&#x2F;figure&gt;
+&lt;p&gt;This is the part I find easy to miss when looking at a CRM as only a sales tool. The sales funnel is also connected to future revenue, project delivery, supplier costs, and margin. If those links are missing, management has to assemble the answer manually whenever they want to know what is happening.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;i-had-to-learn-the-process-before-designing-the-system&quot;&gt;I had to learn the process before designing the system&lt;&#x2F;h2&gt;
+&lt;p&gt;My first instinct was to think about the screens. It is easy to imagine a dashboard and feel that the project is moving forward. The harder part is sitting with the workflow long enough to notice where the words stop matching the work.&lt;&#x2F;p&gt;
+&lt;p&gt;I have been working across requirements, design, development, production deployment, and support. That means moving between conversations with the people who operate the process and the technical decisions needed to turn it into a working system.&lt;&#x2F;p&gt;
+&lt;p&gt;Sometimes a requirement sounds clear until someone asks what happens in the exception. Sometimes two teams use the same word but mean different things by it. Sometimes a field exists because somebody needed it once, but nobody can explain who owns it now.&lt;&#x2F;p&gt;
+&lt;p&gt;Those are the moments where the product work happens. I translate the operating problem into something the team can discuss, decide what belongs in the system, and help turn that decision into work that can be tested.&lt;&#x2F;p&gt;
+&lt;p&gt;The support part has been useful for the same reason. A workflow can look complete in a meeting and still break when a customer changes scope, an approval arrives late, or the previous handover leaves out an important detail. Those cases are not annoying side stories. They show us where our understanding of the process was incomplete.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;how-much-should-the-tool-change-the-team&quot;&gt;How much should the tool change the team?&lt;&#x2F;h2&gt;
+&lt;p&gt;There is a reasonable argument for doing exactly that. Standardising a process can make it easier to train people and easier to report on. Sometimes the organisation really does need to change the way it works.&lt;&#x2F;p&gt;
+&lt;p&gt;But there is a difference between choosing a better process and forcing a team to imitate the shape of a piece of software. If people have to maintain a second spreadsheet, keep private notes, or create workarounds just to make the CRM usable, then the standardisation has not solved much.&lt;&#x2F;p&gt;
+&lt;p&gt;The right answer is not always custom software. An established CRM may be the best choice when its assumptions match the business, or when changing the business process is worth the trade-off. In this case, the team had already felt the cost of adapting its workflow to Salesforce, so an internal system became worth exploring.&lt;&#x2F;p&gt;
+&lt;p&gt;The lesson I am taking from the project is quite simple. A CRM should reduce the amount of context people have to reconstruct before they can act. It should help someone see what happened, what is missing, and who owns the next step.&lt;&#x2F;p&gt;
+&lt;p&gt;That sounds less impressive than “digital transformation”, but it is much closer to what the work actually is.&lt;&#x2F;p&gt;
+&lt;p&gt;This post describes the general problem and my role. Client-specific workflows, implementation details, and operational results remain confidential.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>A Web3 Payment Needs More Than a Transaction Hash</title>
+        <published>2026-05-18T00:00:00+00:00</published>
+        <updated>2026-05-18T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://jienweng.github.io/pr-preview/pr-11/blog/web3-payment-status-product/"/>
+        <id>https://jienweng.github.io/pr-preview/pr-11/blog/web3-payment-status-product/</id>
+        
+        <content type="html" xml:base="https://jienweng.github.io/pr-preview/pr-11/blog/web3-payment-status-product/">&lt;p&gt;A transaction hash is evidence that something was submitted. It is not, by itself, evidence that a payment is safe to settle.&lt;&#x2F;p&gt;
+&lt;p&gt;That distinction became one of the product questions I kept returning to while working on a multi-chain payment gateway. The interface wants to show progress quickly. The backend needs stronger evidence before it credits a ledger, releases an item, or tells a merchant that the payment is complete.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-states-are-part-of-the-product&quot;&gt;The states are part of the product&lt;&#x2F;h2&gt;
+&lt;p&gt;A payment needs more than a green tick or a red cross. At minimum, the system has to distinguish between a request that is waiting to be submitted, a transaction that has been broadcast, a transaction that is still being checked, a confirmed payment, and a failure that needs action.&lt;&#x2F;p&gt;
+&lt;p&gt;These states affect different people in different ways.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;The user wants to know whether they should wait or try again.&lt;&#x2F;li&gt;
+&lt;li&gt;The merchant wants to know whether an order can be released.&lt;&#x2F;li&gt;
+&lt;li&gt;The backend needs to know whether it can update the ledger.&lt;&#x2F;li&gt;
+&lt;li&gt;The delivery team needs acceptance criteria for every transition.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;When these states are vague, the UI, webhook handler, and support process all start making different assumptions.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-useful-boundary&quot;&gt;The useful boundary&lt;&#x2F;h2&gt;
+&lt;p&gt;Client-side detection can make the experience feel responsive. It can tell the user that funds have been noticed or that a wallet has submitted a transaction.&lt;&#x2F;p&gt;
+&lt;p&gt;Settlement needs a server-side signal that has been verified. The backend should check the network, token, recipient, amount, transaction status, and duplicate-processing rules before moving the payment into a final state.&lt;&#x2F;p&gt;
+&lt;p&gt;That boundary is a product decision as much as a technical one. It decides when the business is willing to treat an on-chain event as money received.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-i-would-put-in-the-backlog&quot;&gt;What I would put in the backlog&lt;&#x2F;h2&gt;
+&lt;p&gt;For a payment lifecycle, I would turn the following into explicit stories and acceptance criteria.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;A payment request has a unique reference and an expiry.&lt;&#x2F;li&gt;
+&lt;li&gt;The selected token and network are checked before signing.&lt;&#x2F;li&gt;
+&lt;li&gt;A submitted transaction records its hash without becoming settled.&lt;&#x2F;li&gt;
+&lt;li&gt;Delayed, failed, and duplicated transactions have different outcomes.&lt;&#x2F;li&gt;
+&lt;li&gt;A webhook is verified before it can trigger a ledger update.&lt;&#x2F;li&gt;
+&lt;li&gt;Retrying a write does not credit the same payment twice.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;This is not glamorous product work. It is the part that stops a payment demo from becoming a support problem later.&lt;&#x2F;p&gt;
+&lt;p&gt;The full cross-chain flow is documented in my &lt;a href=&quot;&#x2F;notes&#x2F;cryptorails-transaction-lifecycle&#x2F;&quot;&gt;Web3 payment transaction lifecycle note&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;This is a generalised case study. Product-specific business details, implementation details, and performance results remain confidential.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Talentbank Boardroom Challenge 2025</title>
+        <published>2025-11-14T00:00:00+00:00</published>
+        <updated>2025-11-14T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://jienweng.github.io/pr-preview/pr-11/blog/talentbank-boardroom-challenge/"/>
+        <id>https://jienweng.github.io/pr-preview/pr-11/blog/talentbank-boardroom-challenge/</id>
+        
+        <content type="html" xml:base="https://jienweng.github.io/pr-preview/pr-11/blog/talentbank-boardroom-challenge/">&lt;p&gt;These are a few photos from the Talentbank Boardroom Challenge 2025. I am keeping this one as a photo record rather than pretending I still remember every preparation decision from the day.&lt;&#x2F;p&gt;
+&lt;figure class=&quot;wide&quot;&gt;
+  &lt;img src=&quot;https:&amp;#x2F;&amp;#x2F;cdn.cosmos.so&amp;#x2F;757eebfe-bcda-458c-a666-bb88ff978ed2?format=jpeg&quot; alt=&quot;Talentbank Boardroom Challenge 2025&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+  
+&lt;&#x2F;figure&gt;
+&lt;figure class=&quot;wide&quot;&gt;
+  &lt;img src=&quot;https:&amp;#x2F;&amp;#x2F;cdn.cosmos.so&amp;#x2F;e9ab40f7-f55a-40b0-90f9-43afddce3592?format=jpeg&quot; alt=&quot;Talentbank Boardroom Challenge 2025&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+  
+&lt;&#x2F;figure&gt;
+&lt;figure class=&quot;wide&quot;&gt;
+  &lt;img src=&quot;https:&amp;#x2F;&amp;#x2F;cdn.cosmos.so&amp;#x2F;22cf9c61-bcc4-4cb3-a5d3-901668997566?format=jpeg&quot; alt=&quot;Talentbank Boardroom Challenge 2025&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+  
+&lt;&#x2F;figure&gt;
+&lt;figure class=&quot;wide&quot;&gt;
+  &lt;img src=&quot;https:&amp;#x2F;&amp;#x2F;cdn.cosmos.so&amp;#x2F;e06b9475-0616-4202-b7cb-7644eefba819?format=jpeg&quot; alt=&quot;Talentbank Boardroom Challenge 2025&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+  
+&lt;&#x2F;figure&gt;
+&lt;figure class=&quot;wide&quot;&gt;
+  &lt;img src=&quot;https:&amp;#x2F;&amp;#x2F;cdn.cosmos.so&amp;#x2F;dc8979eb-c7e4-4c5a-9530-921feb0b0ae4?format=jpeg&quot; alt=&quot;Talentbank Boardroom Challenge 2025&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+  
+&lt;&#x2F;figure&gt;
+&lt;figure class=&quot;wide&quot;&gt;
+  &lt;img src=&quot;https:&amp;#x2F;&amp;#x2F;cdn.cosmos.so&amp;#x2F;4a589e9c-6ab9-458d-a659-7c47b8f8b583?format=jpeg&quot; alt=&quot;Talentbank Boardroom Challenge 2025&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+  
+&lt;&#x2F;figure&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>A Small Talk About Hackathons</title>
+        <published>2025-08-07T00:00:00+00:00</published>
+        <updated>2025-08-07T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://jienweng.github.io/pr-preview/pr-11/blog/something-about-hackathon/"/>
+        <id>https://jienweng.github.io/pr-preview/pr-11/blog/something-about-hackathon/</id>
+        
+        <content type="html" xml:base="https://jienweng.github.io/pr-preview/pr-11/blog/something-about-hackathon/">&lt;p&gt;Hackathons reward fast learning, but they also make it easy to waste time and mistake exhaustion for progress. After a few of them, I started thinking more seriously about what the pressure was doing to me.&lt;&#x2F;p&gt;
+&lt;p&gt;Along the way, I met people with much more experience than me. I cannot compete with them on their home ground, and it is easy to feel small in those moments.&lt;&#x2F;p&gt;
+&lt;p&gt;The time and energy they demand is insane. Most competitions have a preliminary round, sometimes a semi-final, and then a final. Each round becomes a mini-marathon of brainstorming, last-minute changes, and almost no sleep, all to deliver something that works.&lt;&#x2F;p&gt;
+&lt;p&gt;In the first few hackathons, I was genuinely excited. Every time one ended, I was already looking forward to the next. After enough rounds, though, the excitement wore off. I still learned something from every competition, but I was tired before the next one even started.&lt;&#x2F;p&gt;
+&lt;p&gt;Eventually, it all started to feel a bit empty.&lt;&#x2F;p&gt;
+&lt;p&gt;There was also this lingering thought back in my mind: &quot;Why am I comparing myself to people who are fully in this industry, who live and breathe in tech every single day, when I&#x27;m still just a student trying to explore things outside my field?&quot;&lt;&#x2F;p&gt;
+&lt;p&gt;There is still one more hackathon coming up, and I will give it what I can. After that, I need a proper break from hackathons and the constant cycle of proving myself. I need to breathe, reset, and take care of my mental health.&lt;&#x2F;p&gt;
+&lt;p&gt;I am not quitting hackathons forever. I need some time away from them, though, to focus on myself and rebuild my energy.&lt;&#x2F;p&gt;
+&lt;p&gt;That is where I am at the moment. I will see what the last one feels like, then take the break I should have taken earlier.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Dead Internet Theory #1</title>
+        <published>2025-07-22T00:00:00+00:00</published>
+        <updated>2025-07-22T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://jienweng.github.io/pr-preview/pr-11/blog/dead-internet-theory-1/"/>
+        <id>https://jienweng.github.io/pr-preview/pr-11/blog/dead-internet-theory-1/</id>
+        
+        <content type="html" xml:base="https://jienweng.github.io/pr-preview/pr-11/blog/dead-internet-theory-1/">&lt;p&gt;Lately, LinkedIn and Reddit have started to feel different to me. I keep seeing polished posts that say the right things but do not feel connected to a real person, and I am still unsure whether that is a real shift or my own overreaction.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;cdn.cosmos.so&#x2F;b77a432b-7713-4b10-879d-e8256d284766?format=jpeg&quot; alt=&quot;You can&amp;#39;t tell whether the experience is real or not&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;I used ChatGPT to help write some content in the past. When I read it back, I could tell that it did not sound like anything I had actually experienced. The sentences were clean enough, but the experience behind them felt artificial. I am not against using AI as a tool. I am against publishing words that have no person left inside them.&lt;&#x2F;p&gt;
+&lt;p&gt;That is the part I notice while scrolling. The posts are polished, agreeable, and strangely empty. Reading them feels like shouting into a void where nobody is really listening.&lt;&#x2F;p&gt;
+&lt;p&gt;Social media, LinkedIn, and Reddit feel different now. I cannot tell whether there is more bot activity, more generated content, or whether I have become more sensitive to it. Either way, automated perfection is starting to replace the awkward signs that a person was actually there.&lt;&#x2F;p&gt;
+&lt;p&gt;Chatbots are useful for proofreading, restructuring, and catching the sentence I somehow wrote twice. They should not become the source of the experience itself. I would rather read a long-ass article that is badly organised but clearly written by someone who was there than another perfect post assembled from general opinions.&lt;&#x2F;p&gt;
+&lt;p&gt;I do not know whether this is the dead Internet Theory or only a change in my own attention. If you have noticed the same thing, email me at &lt;a href=&quot;mailto:contact@jienweng.com&quot;&gt;contact@jienweng.com&lt;&#x2F;a&gt;. I am curious what I am missing.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Making Deepseek R1 ChatBot</title>
+        <published>2024-12-30T00:00:00+00:00</published>
+        <updated>2024-12-30T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://jienweng.github.io/pr-preview/pr-11/blog/deepseek-r1-chatbot/"/>
+        <id>https://jienweng.github.io/pr-preview/pr-11/blog/deepseek-r1-chatbot/</id>
+        
+        <content type="html" xml:base="https://jienweng.github.io/pr-preview/pr-11/blog/deepseek-r1-chatbot/">&lt;p&gt;I built a small chatbot with DeepSeek-R1 because I wanted to see how a local reasoning model behaved when its intermediate output was made visible. The useful parts were the setup decisions, the strange mistakes, and the few things I would change next time.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.linkedin.com&#x2F;feed&#x2F;update&#x2F;urn:li:activity:7291035071992520704&#x2F;&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;cdn.cosmos.so&#x2F;d66e7a6d-8205-4e9c-ba4f-656971c79857?format=jpeg&quot; alt=&quot;“Good artists copy, great artists steal” - Steve Jobs&quot; &#x2F;&gt;&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;DeepSeek being open source was the main reason I wanted to try it. I did not need to wait for an API account or a company to decide how I could use the model. I could download it, tinker with it, and see what happened.&lt;&#x2F;p&gt;
+&lt;p&gt;So I went ahead and built the chatbot I had wanted to make for a long time. It is not packed with fancy features yet, but the experiment gave me a better feel for how DeepSeek R1 behaves. You can try it out live &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;huggingface.co&#x2F;spaces&#x2F;jienweng&#x2F;chatbot_v2&quot;&gt;here&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;The technical details are below.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;showing-the-model-s-reasoning-output&quot;&gt;Showing the model&#x27;s reasoning output&lt;&#x2F;h3&gt;
+&lt;p&gt;The part I found most surprising was separating the model’s reasoning output from its final response. In a conventional chatbot, the answer appears without the intermediate work. Here, the model produces a visible sequence of reasoning before the final response, so I could watch it break down a problem and revise its answer. I had not seen that behaviour in the other LLMs I had used.&lt;&#x2F;p&gt;
+&lt;p&gt;At first, I didn’t plan for this feature. It appeared while I was testing different ways to improve response quality. I noticed that the model was generating hidden reasoning steps before its final output. Instead of discarding them, I decided to show them. The result made the AI feel more transparent, almost like it was thinking out loud.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;huggingface.co&#x2F;spaces&#x2F;jienweng&#x2F;chatbot_v2&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;cdn.cosmos.so&#x2F;b65be583-5569-41e4-ab62-b4bf500120e1?format=jpeg&quot; alt=&quot;Fun Fact: The &amp;quot;thinking&amp;quot; parts are actually generated as HTML!&quot; &#x2F;&gt;&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;For example, if you ask it something like, “What do you think about climate change in Malaysia?”, you won’t just get a final answer out of nowhere. You’ll actually see the model go through a step-by-step breakdown of its thought process:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Breaking down the question components&lt;&#x2F;li&gt;
+&lt;li&gt;Evaluating current knowledge&lt;&#x2F;li&gt;
+&lt;li&gt;Forming logical connections&lt;&#x2F;li&gt;
+&lt;li&gt;Combining the pieces into a response&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;The response was often structured. It analysed the question, split it into different angles, and then assembled an answer instead of jumping straight to a conclusion.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;huggingface.co&#x2F;spaces&#x2F;jienweng&#x2F;chatbot_v2&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;cdn.cosmos.so&#x2F;6c9e3e2a-d318-4615-8786-7d60248fc049?format=jpeg&quot; alt=&quot;Interesting Observation: The model sometimes includes unexpected details, some accurate and some a bit off!&quot; &#x2F;&gt;&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;That said, while the response does sound solid, there are some oddities that make me wonder what’s going on under the hood. For example, it mentions “the subtropical Andaman and Nicobar Islands,” which, uh, aren’t even part of Malaysia. Also, “Ch bamboo” initiative? Never heard of that one. These small but noticeable mistakes show that while the model is good at structuring its answers, it still struggles with factual accuracy.&lt;&#x2F;p&gt;
+&lt;p&gt;But that’s exactly what makes having a visible thought process so useful. Instead of just blindly trusting AI responses, we can now see how the model arrives at its conclusions, which means we can spot errors more easily. If it had &lt;strong&gt;hallucinated&lt;&#x2F;strong&gt; this stuff in a normal chatbot, I might not have even noticed. But because I can watch it reason through the problem, I can tell where things might be going wrong.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;huggingface.co&#x2F;spaces&#x2F;jienweng&#x2F;chatbot_v2&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;cdn.cosmos.so&#x2F;8cf44525-7111-4a09-87c7-ee6a09d3cb3b?format=jpeg&quot; alt=&quot;AI Hallucination Meme&quot; &#x2F;&gt;&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Seeing the intermediate output also made mistakes easier to catch. I could inspect the path to an answer, correct the prompt, and compare the next response instead of treating the final text as unexplained output.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;deployment-specifications&quot;&gt;Deployment Specifications&lt;&#x2F;h3&gt;
+&lt;p&gt;The chatbot is currently hosted on Hugging Face Spaces, running on a basic-tier instance, which means it’s not exactly a powerhouse but still gets the job done. Here’s what it’s running on:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;CPU: 2 vCPUs&lt;&#x2F;li&gt;
+&lt;li&gt;RAM: 16GB&lt;&#x2F;li&gt;
+&lt;li&gt;Storage: Basic instance storage&lt;&#x2F;li&gt;
+&lt;li&gt;Framework: Gradio&lt;&#x2F;li&gt;
+&lt;li&gt;Inference Optimization: FP16 quantization&lt;&#x2F;li&gt;
+&lt;li&gt;Average Response Time: 2-3 seconds&lt;&#x2F;li&gt;
+&lt;li&gt;Concurrent Users Supported: Up to 10&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;You might notice that the &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;huggingface.co&#x2F;spaces&#x2F;jienweng&#x2F;chatbot_v2&quot;&gt;live preview&lt;&#x2F;a&gt; here can be a bit slow while generating responses. That’s because the hardware isn’t optimized for LLM inference, so it’s working with some limitations. Hope you can bear with it! 😆&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;efficient-model-architecture&quot;&gt;Efficient Model Architecture&lt;&#x2F;h3&gt;
+&lt;p&gt;The chatbot uses the DeepSeek R1 Distilled 1.5B model, a compressed version of the original 685B parameter model. Despite having only 1.5 billion parameters, it reports strong results on several reasoning tasks.&lt;&#x2F;p&gt;
+&lt;p&gt;Key points about the model:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Original model: &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;huggingface.co&#x2F;deepseek-ai&#x2F;DeepSeek-R1&quot;&gt;DeepSeek R1 (685B)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Distilled version: &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;huggingface.co&#x2F;deepseek-ai&#x2F;DeepSeek-R1-Distill-Qwen-1.5B&quot;&gt;DeepSeek R1 Distill Qwen 1.5B&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;440x parameter reduction while maintaining core capabilities&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;huggingface.co&#x2F;blog&#x2F;open-r1&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;cdn.cosmos.so&#x2F;8eb746ad-784b-4892-9eb0-4cd26a82af13?format=jpeg&quot; alt=&quot;Model Architecture&quot; &#x2F;&gt;&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;benchmark-results&quot;&gt;Benchmark results&lt;&#x2F;h3&gt;
+&lt;p&gt;The model holds up well against much larger models on several published benchmarks, although that does not make it the best choice for every task.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;medium.com&#x2F;data-science-in-your-pocket&#x2F;deepseek-r1-distill-qwen-1-5b-the-best-small-sized-llm-14eee304d94b&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;cdn.cosmos.so&#x2F;2ac19291-5c72-4a60-b290-bd140a61a4d4?format=jpeg&quot; alt=&quot;Model Comparison Results&quot; &#x2F;&gt;&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;selected-results&quot;&gt;Selected results&lt;&#x2F;h4&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;AIME 2024 (Math Competition)&lt;&#x2F;strong&gt;
+&lt;ul&gt;
+&lt;li&gt;DeepSeek R1 Distilled: 28.9% Pass@1&lt;&#x2F;li&gt;
+&lt;li&gt;GPT-4o: 9.3% Pass@1&lt;&#x2F;li&gt;
+&lt;li&gt;Claude 3.5: 16.0% Pass@1&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;MATH-500 (Mathematical Reasoning)&lt;&#x2F;strong&gt;
+&lt;ul&gt;
+&lt;li&gt;DeepSeek R1 Distilled: 83.9% Pass@1&lt;&#x2F;li&gt;
+&lt;li&gt;GPT-4o: 74.6% Pass@1&lt;&#x2F;li&gt;
+&lt;li&gt;Claude 3.5: 78.3% Pass@1&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Codeforces (Competitive Programming)&lt;&#x2F;strong&gt;
+&lt;ul&gt;
+&lt;li&gt;DeepSeek R1 Distilled: 954 Rating&lt;&#x2F;li&gt;
+&lt;li&gt;GPT-4o: 759 Rating&lt;&#x2F;li&gt;
+&lt;li&gt;Claude 3.5: 717 Rating&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h3 id=&quot;model-strengths-limitations&quot;&gt;Model Strengths &amp;amp; Limitations&lt;&#x2F;h3&gt;
+&lt;p&gt;&lt;strong&gt;Strengths:&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Superior reasoning capabilities, especially in mathematics&lt;&#x2F;li&gt;
+&lt;li&gt;Highly efficient with only 1.5B parameters&lt;&#x2F;li&gt;
+&lt;li&gt;Effective knowledge distillation from larger models&lt;&#x2F;li&gt;
+&lt;li&gt;Excellent performance in zero-shot scenarios&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;strong&gt;Limitations:&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Lower performance in general coding tasks&lt;&#x2F;li&gt;
+&lt;li&gt;Potential language mixing issues&lt;&#x2F;li&gt;
+&lt;li&gt;Sensitivity to prompt formatting&lt;&#x2F;li&gt;
+&lt;li&gt;Limited performance in broader general knowledge tasks&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;This balanced perspective shows why I chose this model for my chatbot implementation - it provides exceptional reasoning capabilities while remaining lightweight enough for practical deployment.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;try-it-yourself&quot;&gt;Try It Yourself&lt;&#x2F;h3&gt;
+&lt;p&gt;Due to iframe restrictions, you can access the live demo through these methods:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;huggingface.co&#x2F;spaces&#x2F;jienweng&#x2F;chatbot_v2&quot;&gt;Direct Link to Demo&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;huggingface.co&#x2F;docs&#x2F;hub&#x2F;spaces-sdks-docker&quot;&gt;Docker Spaces documentation&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;huggingface.co&#x2F;spaces&#x2F;jienweng&#x2F;chatbot_v2&#x2F;tree&#x2F;main&quot;&gt;Source Code&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;&lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;huggingface.co&#x2F;spaces&#x2F;jienweng&#x2F;chatbot_v2&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;cdn.cosmos.so&#x2F;0eab3363-76da-4dab-b44b-a4a5d7cdc96f?format=jpeg&quot; alt=&quot;Chatbot interface&quot; &#x2F;&gt;&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;what-i-learned&quot;&gt;What I learned&lt;&#x2F;h3&gt;
+&lt;p&gt;DeepSeek made it easier for me to experiment with a capable reasoning model without relying on a paid API. The open-source release also meant I could inspect the model card, run a local or hosted version, and change the interface around it.&lt;&#x2F;p&gt;
+&lt;p&gt;My chatbot is still small and not feature-packed, but it gave me a practical way to study the model&#x27;s reasoning output and its failure modes. You can try it out live &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;huggingface.co&#x2F;spaces&#x2F;jienweng&#x2F;chatbot_v2&quot;&gt;here&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;additional-resources&quot;&gt;Additional Resources&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;huggingface.co&#x2F;deepseek-ai&#x2F;DeepSeek-R1-Distill-Qwen-1.5B&quot;&gt;Model Card&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;huggingface.co&#x2F;docs&#x2F;hub&#x2F;spaces-overview&quot;&gt;Deployment Guide&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;huggingface.co&#x2F;spaces&#x2F;mteb&#x2F;leaderboard&quot;&gt;Performance Benchmarks&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;discuss.huggingface.co&#x2F;&quot;&gt;Community Discussion&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;references&quot;&gt;References&lt;&#x2F;h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;DeepSeek R1 (685B)&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+&lt;em&gt;The original DeepSeek R1 model, a large-scale AI model with 685 billion parameters, was the precursor to the distilled 1.5B version used in the chatbot.&lt;&#x2F;em&gt;&lt;br &#x2F;&gt;
+&lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;huggingface.co&#x2F;deepseek-ai&#x2F;DeepSeek-R1&quot;&gt;Source&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;DeepSeek R1 Distill Qwen 1.5B&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+&lt;em&gt;This is the distilled version of the DeepSeek R1 model, compressed to 1.5 billion parameters while retaining core capabilities.&lt;&#x2F;em&gt;&lt;br &#x2F;&gt;
+&lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;huggingface.co&#x2F;deepseek-ai&#x2F;DeepSeek-R1-Distill-Qwen-1.5B&quot;&gt;Source&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Open R1 Model Architecture&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+&lt;em&gt;Explore the detailed architecture of the DeepSeek R1 model, showcasing its design and structure.&lt;&#x2F;em&gt;&lt;br &#x2F;&gt;
+&lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;huggingface.co&#x2F;blog&#x2F;open-r1&quot;&gt;Source&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Medium - Deepseek R1 Distill Qwen 1.5B Performance&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+&lt;em&gt;A comparison of the performance between Deepseek R1 Distilled and other models, showing its impressive results in multiple domains.&lt;&#x2F;em&gt;&lt;br &#x2F;&gt;
+&lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;medium.com&#x2F;data-science-in-your-pocket&#x2F;deepseek-r1-distill-qwen-1-5b-the-best-small-sized-llm-14eee304d94b&quot;&gt;Source&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Hugging Face Space - Chatbot Demo&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+&lt;em&gt;Live demo of the Deepseek R1 chatbot that showcases the model’s response and reasoning capabilities.&lt;&#x2F;em&gt;&lt;br &#x2F;&gt;
+&lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;huggingface.co&#x2F;spaces&#x2F;jienweng&#x2F;chatbot_v2&quot;&gt;Source&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Hugging Face - API Documentation&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+&lt;em&gt;Official API documentation for Hugging Face Spaces, helping developers interact with models and integrate them into applications.&lt;&#x2F;em&gt;&lt;br &#x2F;&gt;
+&lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;huggingface.co&#x2F;docs&#x2F;hub&#x2F;spaces-sdks-docker&quot;&gt;Source&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Hugging Face - Source Code&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+&lt;em&gt;Direct access to the source code of the Deepseek R1 chatbot project on Hugging Face Spaces for those interested in contributing or learning.&lt;&#x2F;em&gt;&lt;br &#x2F;&gt;
+&lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;huggingface.co&#x2F;spaces&#x2F;jienweng&#x2F;chatbot_v2&#x2F;tree&#x2F;main&quot;&gt;Source&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Hugging Face - Model Card&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+&lt;em&gt;Official card for the Deepseek R1 Distilled model, providing details on its functionality and training specifications.&lt;&#x2F;em&gt;&lt;br &#x2F;&gt;
+&lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;huggingface.co&#x2F;deepseek-ai&#x2F;DeepSeek-R1-Distill-Qwen-1.5B&quot;&gt;Source&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Hugging Face - Deployment Guide&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+&lt;em&gt;Guidelines for deploying models and applications using Hugging Face Spaces.&lt;&#x2F;em&gt;&lt;br &#x2F;&gt;
+&lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;huggingface.co&#x2F;docs&#x2F;hub&#x2F;spaces-overview&quot;&gt;Source&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Hugging Face - Performance Benchmarks&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+&lt;em&gt;An overview of the model performance across various tasks and benchmarks, showcasing the strengths and weaknesses of different models.&lt;&#x2F;em&gt;&lt;br &#x2F;&gt;
+&lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;huggingface.co&#x2F;spaces&#x2F;mteb&#x2F;leaderboard&quot;&gt;Source&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Hugging Face - Community Discussion&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+&lt;em&gt;Join the community discussions on Hugging Face, where users can ask questions, share insights, and discuss AI-related topics.&lt;&#x2F;em&gt;&lt;br &#x2F;&gt;
+&lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;discuss.huggingface.co&#x2F;&quot;&gt;Source&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Eco Finance: A Sustainable Future Prototype</title>
+        <published>2024-12-29T00:00:00+00:00</published>
+        <updated>2024-12-29T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://jienweng.github.io/pr-preview/pr-11/blog/eco-finance/"/>
+        <id>https://jienweng.github.io/pr-preview/pr-11/blog/eco-finance/</id>
+        
+        <content type="html" xml:base="https://jienweng.github.io/pr-preview/pr-11/blog/eco-finance/">&lt;p&gt;Eco Finance started with a problem we could explain quickly, people could not see the carbon cost hidden inside ordinary spending. We built the prototype during PayHack 2024 and used it to test the idea under hackathon constraints.&lt;&#x2F;p&gt;
+&lt;p&gt;PayHack 2024 was our first physical hackathon, with teams building under a tight deadline.&lt;&#x2F;p&gt;
+&lt;p&gt;Our project, Eco Finance, focuses on a carbon tax expected in 2026. Although it initially targets specific industries, the same idea could eventually apply to everyday spending in Malaysia. Read more about the 2026 carbon tax here.&lt;&#x2F;p&gt;
+&lt;p&gt;European countries are already applying ESG policies in industries such as automobiles. We wanted to look more closely at what a similar idea could mean for everyday spending in Malaysia.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;cdn.cosmos.so&#x2F;3034bd0a-9dae-4078-80a9-a641c747b58a?format=jpeg&quot; alt=&quot;Eco Finance Interface&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;understanding-the-idea&quot;&gt;Understanding the idea&lt;&#x2F;h2&gt;
+&lt;p&gt;How much carbon is attached to a Shopee parcel or a drive to work? Most people do not see that information in their payment history. The prototype tried to make the estimate visible alongside the transaction. According to Visa, 80% of Malaysians are aware of the environmental impact of consumption, but awareness does not provide a number for a particular purchase.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;how-it-works&quot;&gt;How it works&lt;&#x2F;h2&gt;
+&lt;p&gt;The OpenFinance API can connect to people&#x27;s transaction details, allowing us to aggregate transactions and estimate their carbon footprints. The calculation would multiply the emission factor by the amount spent.&lt;&#x2F;p&gt;
+&lt;p&gt;For example, if the emission factor for a specific merchant category is 0.5 kg CO2 per RM, and a person spends RM 100, the carbon footprint would be 0.5 kg CO2&#x2F;RM * 100 RM = 50 kg CO2.&lt;&#x2F;p&gt;
+&lt;p&gt;There&#x27;s an established merchant category code (MCC) in transaction details, where we only need to fine-tune and investigate the actual emission factors for each merchant code. This could be done by collaborating with the Department of Statistics Malaysia (DOSM) to conduct surveys and research among Malaysians. In this project, we are using dummy variables based on this ideology only.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;a-possible-business-model&quot;&gt;A possible business model&lt;&#x2F;h2&gt;
+&lt;p&gt;The proposed model would pool the estimated surplus from users&#x27; activity and trade the resulting carbon credits. We used the Worldometer estimate of 8 tonnes of carbon emissions per person per year as a baseline. Bursa Carbon Exchange (BCX), established on 9 December 2022, provided the market reference for the idea. &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.allenandgledhill.com&#x2F;perspectives&#x2F;publications&#x2F;bulletins-malaysia&#x2F;2023&#x2F;bursa-malaysia-launches-voluntary-carbon-market-exchange&#x2F;&quot;&gt;Read more about BCX here&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;YouTube id=&quot;1QKwHFVsEXE&quot; &#x2F;&gt;
+&lt;p&gt;From &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.petronas.com&#x2F;sustainability&#x2F;delivering-net-zero&quot;&gt;Petronas&lt;&#x2F;a&gt;, it&#x27;s evident that their future plan aims for net-zero carbon emission by 2050. This proves there is a market in Malaysia, and more people will enter the market and participate.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;encouraging-eco-friendly-practices&quot;&gt;Encouraging Eco-Friendly Practices&lt;&#x2F;h2&gt;
+&lt;p&gt;How do we encourage eco-friendly spending habits in Malaysia? We aim to attract more people, even those who are not initially interested in eco-friendly practices, to join us. We can make Malaysia greener and more sustainable, at least in the sense of ESG. We choose to reward users with healthy spending habits in terms of eco-friendly spending and reward them with cash for being environmentally friendly.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;cdn.cosmos.so&#x2F;f54512bd-f014-43ac-a1b1-39628b5990d7?format=jpeg&quot; alt=&quot;The whole business plan of eco-finance&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;sustainable-business-model&quot;&gt;Sustainable Business Model&lt;&#x2F;h2&gt;
+&lt;p&gt;We can summarize the business circulation here and make it sustainable as well, where we can become self-sustaining:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Collect carbon credits from users&lt;&#x2F;li&gt;
+&lt;li&gt;Pool up carbon credits&lt;&#x2F;li&gt;
+&lt;li&gt;Certify carbon credits with Bursa Carbon Exchange (BCX)&lt;&#x2F;li&gt;
+&lt;li&gt;Sell carbon credits to companies who need them&lt;&#x2F;li&gt;
+&lt;li&gt;Reward users to encourage eco-friendly spending habits.&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;project-random-thingy&quot;&gt;Project Random Thingy&lt;&#x2F;h2&gt;
+&lt;p&gt;Now, it&#x27;s about the random thingys of the project. We have the project hosted at this link. Although it is not fully complete, it serves as a prototype and is yet to be an MVP. Considering we had only 24 hours to complete this from idea to execution, I mean, it&#x27;s good for a first-timer. Right...?&lt;&#x2F;p&gt;
+&lt;p&gt;This was a 24-hour hackathon prototype. The hosted demo is no longer maintained, so I have kept the screenshots here as an archive of what we built. Email me if you want to discuss the product or implementation.&lt;&#x2F;p&gt;
+&lt;p&gt;The admin view looked like this:&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;cdn.cosmos.so&#x2F;7ee8a2c3-551c-4726-9551-f7d6ab743391?format=jpeg&quot; alt=&quot;Admin Dashboard&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;wrap-up&quot;&gt;Wrap-Up&lt;&#x2F;h2&gt;
+&lt;p&gt;Eco Finance was our attempt to make carbon footprints visible through a familiar object, a payment history. The carbon-credit idea gave the prototype a possible business model, although we did not make it to the final round T.T&lt;&#x2F;p&gt;
+&lt;p&gt;Hope you guys like it :D&lt;&#x2F;p&gt;
+&lt;p&gt;Oh btw! Once again.. You can read the full story &lt;a href=&quot;&#x2F;posts&#x2F;first-hackathon-experience&quot;&gt;here&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>First Physical Hackathon Experience</title>
+        <published>2024-12-02T00:00:00+00:00</published>
+        <updated>2024-12-02T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://jienweng.github.io/pr-preview/pr-11/blog/first-hackathon-experience/"/>
+        <id>https://jienweng.github.io/pr-preview/pr-11/blog/first-hackathon-experience/</id>
+        
+        <content type="html" xml:base="https://jienweng.github.io/pr-preview/pr-11/blog/first-hackathon-experience/">&lt;p&gt;Our first physical hackathon put four mathematics students into a software-first environment with very little web development experience. The useful lessons came from the messy parts, especially ideation, mentoring, and pitching.&lt;&#x2F;p&gt;
+&lt;p&gt;I found myself staring at my phone, thumb hovering over the share button. &quot;Am I really qualified for this?&quot; I thought to myself. &quot;What if we make fools of ourselves?&quot; The doubts crept in like unwanted guests. But then another voice, stronger and more determined, pushed back: &quot;When else will we get a chance like this? We might not be coders, but we know how to solve problems. Isn&#x27;t that what hackathons are really about?&quot;&lt;&#x2F;p&gt;
+&lt;p&gt;I reached out to my fellow mathematics coursemates: Janice, Roius, and Gwyn. &quot;Hey, want to do something crazy?&quot; I asked, half expecting them to laugh it off. To my surprise, their responses came quickly, filled with enthusiasm despite (or maybe because of) our collective inexperience. Only 2 of us had ever participated in a hackathon before, and Gwyn had never even written a line of code. But there we were, four mathematics students from UTAR, signing up for one of the most competitive hackathons in the country.&lt;&#x2F;p&gt;
+&lt;p&gt;The looks we got when we arrived were priceless. &quot;Are you guys from Computer Science?&quot; someone asked, eyeing our team with curiosity. We exchanged glances and grinned. &quot;Nope, we&#x27;re Math students, haha...&quot; The mixture of surprise and skepticism on their faces was something I&#x27;ll never forget. In those moments, our outsider status felt both terrifying and strangely useful.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;cdn.cosmos.so&#x2F;25b6ad42-8235-45ae-9505-a2c296a8ca2a?format=jpeg&quot; alt=&quot;Our first breakfast together at PayHack 2024 - nervous but excited! The calm before the storm.&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;November 30th marked our first day, and it was a blur of ideation and learning. We came up with an idea for an app that visualized transaction carbon footprints and pooled the estimated surplus for trading. On paper, it combined fintech with environmental accounting.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;cdn.cosmos.so&#x2F;b16e0c66-cefb-4cc6-8bf6-de5a087cc513?format=jpeg&quot; alt=&quot;Getting grilled during our mentoring session - each question pushed us to think deeper about our solution&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Then came the intense mentoring sessions with Johan Nasir. He didn&#x27;t hold back. &quot;What happens if the carbon credits are manipulated?&quot; he&#x27;d challenge. &quot;How do you ensure the authenticity of the footprint data?&quot; Another round of rethinking. Each session felt like an intense rotan session, with tough love at its finest. He&#x27;d poke holes in our solutions, push us to think deeper, and force us to confront real-world problems that actually needed solving.&lt;&#x2F;p&gt;
+&lt;p&gt;The week before the hackathon was a rollercoaster. Competing against almost 100 teams from across Malaysia, we were shocked to make it to the Top 32. When we saw Johan&#x27;s name among our judges and received the news of our advancement, our excitement was through the roof. But reality quickly set in: we had a major problem. None of us had real web development experience. My knowledge was limited to Python, SQL, and vanilla HTML&#x2F;CSS&#x2F;JavaScript.&lt;&#x2F;p&gt;
+&lt;p&gt;With four days between Tuesday and Friday, we had to make technical decisions while juggling our internships. After researching our options, we settled on Vue.js and Flask. Janice even travelled from JB to KL for this. Every evening after our internships, we&#x27;d work through tutorials and try to learn the stack quickly.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;cdn.cosmos.so&#x2F;0d444922-77c4-4d91-b645-fb96b7fd5d17?format=jpeg&quot; alt=&quot;3 AM and still debugging - running on determination and coffee&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;The hackathon itself was intense. When exhaustion hit, we took turns napping wherever we could. I couldn&#x27;t get a tent, so I made do with a random bench for quick 4-hour power naps before jumping back into coding. Everything seemed to be going smoothly until the morning of the submission. At 8:30 AM, just after breakfast and 90 minutes before the deadline, our backend crashed because the information couldn&#x27;t be parsed properly. In a desperate move, we had to hardcode some components just to make the submission deadline at 10 AM.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;cdn.cosmos.so&#x2F;0784bdc4-dc31-4b2b-9d5a-2e04677a9ba1?format=jpeg&quot; alt=&quot;Presenting our final product: MouManTai - tracking and trading carbon footprints from financial transactions&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;We did not make the Top 10, but the final pitches showed me how much the business case shaped the strongest projects. One team&#x27;s blockchain remittance system stood out because its regulatory research and market validation were as careful as its technical work. I left thinking, &quot;Next time, we need to validate the market earlier.&quot;&lt;&#x2F;p&gt;
+&lt;p&gt;The top teams also presented much better than we did. Their pitches connected each feature to a business problem, their demos survived the pressure, and they knew their numbers when the judges pushed back. I made mental notes: &quot;Practice the pitch more. Know your numbers. Be ready for any question.&quot;&lt;&#x2F;p&gt;
+&lt;p&gt;Despite not making the finals, I did win a Samsung monitor in the lucky draw, a small consolation that brought some laughs to our tired team.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;cdn.cosmos.so&#x2F;3d119ab7-d3bf-4632-8675-6fbaf1963c08?format=jpeg&quot; alt=&quot;A silver lining - winning a Samsung monitor in the lucky draw!&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Looking back now, the sleepless nights and debugging sessions blur together. I remember the late-night breakthrough when our first feature worked, Johan&#x27;s smile during the final presentation, and the four of us trying to keep the demo alive.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;cdn.cosmos.so&#x2F;266c9030-58ad-4536-9e60-c88edb6df8a9?format=jpeg&quot; alt=&quot;Jien Weng, Janice, Gwyn and Roius&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Janice, Roius, and Gwyn took the risk with me even though most of us had never built a web product. Johan kept asking the questions we wanted to avoid. PayNet and JomHack gave four mathematics students a place to test whether our ideas could survive outside a classroom.&lt;&#x2F;p&gt;
+&lt;p&gt;The equations and formulas we studied were not enough on their own, but they helped us break down a problem, test assumptions, and keep going when the interface failed. We did not become software engineers in 24 hours. We did learn that four mathematics students could still build something and present it.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>

@@ -1,0 +1,542 @@
+{
+  "generatedAt": "2026-09-24",
+  "sourceReviewDate": "2026-08-24",
+  "basics": {
+    "name": "Jien Weng Lai",
+    "location": "Selangor, Malaysia",
+    "email": "laijienweng@gmail.com",
+    "website": "https://jienweng.github.io",
+    "linkedin": "https://linkedin.com/in/jienweng",
+    "github": "https://github.com/JienWeng",
+    "orcid": "https://orcid.org/0009-0001-2543-3887",
+    "googleScholar": "https://scholar.google.com/citations?user=2siljxAAAAAJ&hl=en"
+  },
+  "summary": "Web3 Product Manager, Business Transformation Consultant, and Data Science & Machine Learning Trainer. I work across product delivery, operational improvement, applied AI, data systems, and environmental research.",
+  "headline": "Web3 Product Manager | Business Transformation Consultant | Data Science & Machine Learning",
+  "work": [
+    {
+      "id": "cryptorails",
+      "name": "CryptoRails",
+      "position": "Product Manager",
+      "startDate": "2026-02",
+      "endDate": "Present",
+      "displayDate": "Feb 2026 - Present",
+      "location": "Malaysia / remote",
+      "public": true,
+      "featured": true,
+      "publicDescription": "Product Manager: coordinates an engineering team, maintains the product backlog, and facilitates delivery for multi-chain crypto payment and wallet infrastructure."
+    },
+    {
+      "id": "independent",
+      "name": "Independent Consulting",
+      "position": "Independent Consultant & Product Manager",
+      "startDate": "2026-04",
+      "endDate": "Present",
+      "displayDate": "Apr 2026 - Present",
+      "public": true,
+      "featured": true,
+      "publicDescription": "Independent Consultant & Product Manager: business transformation, Web3 product management, proprietary AI research, and data/ML training",
+      "evidence": [
+        {
+          "id": "independent.transformation",
+          "text": "Help teams clarify operational problems, improve processes and translate business priorities into practical systems.",
+          "tags": [
+            "business transformation",
+            "process improvement",
+            "consulting"
+          ],
+          "public": true
+        },
+        {
+          "id": "independent.web3-product",
+          "text": "Manage Web3 product work involving proprietary AI research, product decisions and coordination between commercial and technical contributors.",
+          "tags": [
+            "product management",
+            "Web3",
+            "AI research"
+          ],
+          "public": true
+        },
+        {
+          "id": "independent.training",
+          "text": "Deliver data science and machine-learning training for teams building internal analytics capability.",
+          "tags": [
+            "training",
+            "machine learning",
+            "data science"
+          ],
+          "public": true
+        }
+      ]
+    },
+    {
+      "id": "quandatics",
+      "name": "Quandatics",
+      "position": "Contractor, Business Transformation Consultant",
+      "startDate": "2026-04",
+      "endDate": "Present",
+      "displayDate": "Apr 2026 - Present",
+      "location": "Kuala Lumpur, Malaysia",
+      "url": "https://quandatics.com",
+      "public": true,
+      "featured": true,
+      "publicDescription": "Contractor: Business Transformation Consultant",
+      "evidence": [
+        {
+          "id": "quandatics.finance-processes",
+          "text": "Support finance transformation across order-to-cash, procure-to-pay and record-to-report processes.",
+          "tags": [
+            "finance transformation",
+            "O2C",
+            "P2P",
+            "R2R"
+          ],
+          "public": true
+        },
+        {
+          "id": "quandatics.automation",
+          "text": "Build data pipelines, workflow automation and reporting improvements around the people responsible for operating them.",
+          "tags": [
+            "data pipelines",
+            "automation",
+            "reporting",
+            "adoption"
+          ],
+          "public": true
+        }
+      ]
+    },
+    {
+      "id": "quandatics-academy",
+      "name": "Quandatics Academy",
+      "position": "Contractor, Data Science & Machine Learning Trainer",
+      "startDate": "2026-06",
+      "endDate": "Present",
+      "displayDate": "Jun 2026 - Present",
+      "location": "Kuala Lumpur, Malaysia",
+      "url": "https://academy.quandatics.com",
+      "public": true,
+      "featured": true,
+      "publicDescription": "Contractor: Data Science & Machine Learning Trainer",
+      "evidence": [
+        {
+          "id": "academy.training",
+          "text": "Deliver practical data science and machine-learning training that connects technical methods to real operating problems.",
+          "tags": [
+            "training",
+            "data science",
+            "machine learning"
+          ],
+          "public": true
+        }
+      ]
+    },
+    {
+      "id": "monash",
+      "name": "Monash University Malaysia",
+      "position": "Research Assistant",
+      "startDate": "2025-12",
+      "endDate": "Present",
+      "displayDate": "Dec 2025 - Present",
+      "location": "Subang Jaya, Malaysia",
+      "url": "https://www.monash.edu",
+      "public": true,
+      "featured": true,
+      "publicDescription": "Research Assistant: develops wastewater treatment plant prediction models using RNNs, Transformers, and Markov chain methods on time-series sensor data.",
+      "evidence": [
+        {
+          "id": "monash.models",
+          "text": "Develop wastewater treatment plant prediction models using RNNs, Transformers, and Markov chain methods on time-series sensor data.",
+          "tags": [
+            "RNN",
+            "Transformers",
+            "Markov chains",
+            "time series",
+            "environmental systems"
+          ],
+          "public": true
+        },
+        {
+          "id": "monash.data-infrastructure",
+          "text": "Work on data infrastructure for continuous sensor ingestion, model development and downstream analytics.",
+          "tags": [
+            "data infrastructure",
+            "sensor data",
+            "analytics"
+          ],
+          "public": true
+        }
+      ]
+    },
+    {
+      "id": "great-eastern",
+      "name": "Great Eastern Life Assurance",
+      "position": "Finance Analyst, Data Engineer Intern",
+      "startDate": "2024-10",
+      "endDate": "2025-01",
+      "displayDate": "Oct 2024 - Jan 2025",
+      "location": "Kuala Lumpur, Malaysia",
+      "url": "https://www.greateasternlife.com/my/en/personal-insurance.html",
+      "public": true,
+      "featured": false,
+      "publicDescription": "Finance Analyst - Data Engineer Intern",
+      "evidence": [
+        {
+          "id": "great-eastern.ocr",
+          "text": "Built a PaddleOCR document extraction system with orientation detection and table parsing for unstructured medical bills, reaching 97% extraction accuracy.",
+          "tags": [
+            "PaddleOCR",
+            "document AI",
+            "data engineering"
+          ],
+          "public": true
+        },
+        {
+          "id": "great-eastern.etl",
+          "text": "Developed repeatable Python and SQL workflows for data preparation, quality control and reporting.",
+          "tags": [
+            "Python",
+            "SQL",
+            "ETL",
+            "data quality"
+          ],
+          "public": true
+        }
+      ]
+    }
+  ],
+  "education": [
+    {
+      "id": "utar-bsc",
+      "institution": "Universiti Tunku Abdul Rahman",
+      "area": "Applied Mathematics with Computing",
+      "studyType": "BSc (Hons), with Merit",
+      "startDate": "2022-10",
+      "endDate": "2025-10",
+      "displayDate": "Oct 2022 - Oct 2025",
+      "url": "https://www.utar.edu.my",
+      "public": true,
+      "highlights": [
+        "Research focus in cooperative AI and reinforcement learning."
+      ]
+    },
+    {
+      "id": "utar-foundation",
+      "institution": "Universiti Tunku Abdul Rahman",
+      "area": "Science",
+      "studyType": "Foundation",
+      "startDate": "2021-10",
+      "endDate": "2022-10",
+      "displayDate": "Oct 2021 - Oct 2022",
+      "url": "https://www.utar.edu.my",
+      "public": true
+    }
+  ],
+  "awards": [
+    {
+      "id": "kpj-kraft",
+      "title": "KPJ Healthcare K.R.A.F.T. Challenge 2025",
+      "award": "Top 12",
+      "date": "Nov 2025",
+      "public": true
+    },
+    {
+      "id": "talentbank",
+      "title": "Talentbank Boardroom Challenge 2025",
+      "award": "Future Founder Award, Top 15 Finalist",
+      "date": "Nov 2025",
+      "public": true
+    },
+    {
+      "id": "codenection",
+      "title": "CodeNection Hackathon 2025",
+      "award": "Mentor",
+      "date": "Oct 2025",
+      "public": true
+    },
+    {
+      "id": "ipcc",
+      "title": "4th International Process Control Competition",
+      "award": "Best Visualisation Award",
+      "date": "Aug 2025",
+      "public": true,
+      "url": "https://www.facebook.com/cheme.utp/posts/-empowering-future-engineers-ipcc-2025-ignites-innovation-at-utp-from-22nd-to-24/1178536717631535/"
+    },
+    {
+      "id": "payhack-2025",
+      "title": "PayHack 2025",
+      "award": "Consolation Prize",
+      "date": "Aug 2025",
+      "public": true
+    },
+    {
+      "id": "alibaba",
+      "title": "Alibaba Cloud AI Hackathon 2025",
+      "award": "Top 13 Finalist",
+      "date": "May 2025",
+      "public": true
+    },
+    {
+      "id": "hack-future",
+      "title": "Hack The Future",
+      "award": "Best Presenter",
+      "date": "May 2025",
+      "public": true
+    },
+    {
+      "id": "jomhack",
+      "title": "JomHack Varsity Challenge 2025",
+      "award": "Participant",
+      "date": "Apr 2025",
+      "public": true
+    },
+    {
+      "id": "um-hackathon",
+      "title": "Universiti Malaya Hackathon 2025",
+      "award": "4th runner-up",
+      "date": "Apr 2025",
+      "public": true
+    },
+    {
+      "id": "liam",
+      "title": "20th LIAM Structured Workshop",
+      "award": "Best Presenter Award, Best Team Award",
+      "date": "Dec 2024",
+      "public": true,
+      "url": "https://www.linkedin.com/posts/jienweng_liam-teamwork-insurance-activity-7278028877585596417-49cL"
+    },
+    {
+      "id": "payhack-2024",
+      "title": "PayHack 2024",
+      "award": "Semi-finalist",
+      "date": "Dec 2024",
+      "public": true
+    },
+    {
+      "id": "ds-race",
+      "title": "Data Science Digital Race 2024",
+      "award": "Finalist",
+      "date": "Oct 2024",
+      "public": true
+    }
+  ],
+  "certificates": [
+    {
+      "id": "google-agile-project-management",
+      "name": "Agile Project Management",
+      "issuer": "Google",
+      "date": "Sep 2026",
+      "credentialId": "V3O86KGTCBO7",
+      "skills": ["Scrum", "Project Management"],
+      "url": "https://www.coursera.org/account/accomplishments/verify/V3O86KGTCBO7",
+      "public": true
+    },
+    {
+      "id": "google-project-management",
+      "name": "Google Project Management",
+      "issuer": "Google",
+      "date": "Sep 2026",
+      "credentialId": "90U3GKFA7YI9",
+      "skills": ["Project Management", "Scrum"],
+      "url": "https://www.coursera.org/account/accomplishments/professional-cert/90U3GKFA7YI9",
+      "public": true
+    },
+    {
+      "id": "aws-cloud-practitioner-essentials",
+      "name": "AWS Cloud Practitioner Essentials",
+      "issuer": "Amazon Web Services (AWS)",
+      "date": "Aug 2026",
+      "skills": ["Cloud Computing", "Amazon Web Services (AWS)"],
+      "url": "https://skillbuilder.aws/70a3bd99-baff-4e9c-9df8-596909eacbd8",
+      "public": true
+    },
+    {
+      "id": "databricks",
+      "name": "Databricks Fundamentals",
+      "date": "Apr 2026",
+      "public": true
+    },
+    {
+      "id": "sidc-capital-market-essentials",
+      "name": "Capital Market Essentials Programme",
+      "issuer": "Securities Industry Development Corporation (SIDC)",
+      "date": "Oct 2025",
+      "credentialId": "CE-2025-6602-297077",
+      "url": "https://erp.sidc.com.my/index/certificate/searchserial?serial_number=CE-2025-6602-297077",
+      "public": true
+    },
+    {
+      "id": "frontend",
+      "name": "Front End Development",
+      "date": "Jan 2025",
+      "url": "https://www.freecodecamp.org/certification/JienWeng/front-end-development-libraries",
+      "public": true
+    },
+    {
+      "id": "nvidia",
+      "name": "NVIDIA Deep Learning",
+      "date": "Dec 2024",
+      "url": "https://learn.nvidia.com/certificates?id=vadb2mqrSgKGRqORxsa3KQ#",
+      "public": true
+    },
+    {
+      "id": "ibm-data",
+      "name": "IBM Data Science",
+      "date": "Oct 2024",
+      "url": "https://www.coursera.org/account/accomplishments/specialization/VXTZ7EFLXX2V",
+      "public": true
+    },
+    {
+      "id": "google-data",
+      "name": "Google Data Analytics",
+      "date": "Jun 2024",
+      "url": "https://www.coursera.org/account/accomplishments/professional-cert/OSVLSAL5XQQL",
+      "public": true
+    },
+    {
+      "id": "nlp",
+      "name": "NLP for Machine Learning",
+      "issuer": "LinkedIn Learning",
+      "date": "Jun 2024",
+      "url": "https://www.linkedin.com/learning/certificates/31163a64417d9ee58f69f9da29aa1f40cbc6a43247454a998787e9d5aa5bb3c7",
+      "public": true
+    }
+  ],
+  "grants": [
+    {
+      "id": "kuok",
+      "name": "Kuok Foundation Scholar",
+      "date": "Oct 2024",
+      "summary": "Undergraduate scholarship awarded by the Kuok Foundation.",
+      "public": true
+    },
+    {
+      "id": "huazong",
+      "name": "HuaZong Education Fund",
+      "date": "Apr 2024",
+      "summary": "Study grant awarded by the HuaZong Education Fund.",
+      "public": true
+    },
+    {
+      "id": "kit",
+      "name": "KIT Foundation Scholarship",
+      "date": "May 2023",
+      "summary": "Scholarship awarded by the KIT Foundation.",
+      "public": true
+    },
+    {
+      "id": "utar-scholar",
+      "name": "UTAR Scholarships for Top Achievers",
+      "date": "Oct 2022",
+      "summary": "Merit-based tuition scholarship for academic performance at UTAR.",
+      "public": true
+    },
+    {
+      "id": "utar-preu",
+      "name": "UTAR Scholarships for Top Achievers (Pre-U)",
+      "date": "Oct 2021",
+      "summary": "Merit-based tuition scholarship for the UTAR Foundation programme.",
+      "public": true
+    }
+  ],
+  "volunteer": [
+    {
+      "id": "kitahack",
+      "organization": "Google Developer Groups on Campus Malaysia",
+      "position": "Mentor & Judge, KitaHack 2026",
+      "date": "Mar 2026",
+      "summary": "Mentored participating teams and judged project submissions.",
+      "public": true
+    },
+    {
+      "id": "codenection-mentor",
+      "organization": "CodeNection",
+      "position": "Hackathon Mentor",
+      "date": "Oct 2025",
+      "summary": "Mentored student teams throughout the hackathon.",
+      "public": true
+    }
+  ],
+  "memberships": [
+    {
+      "id": "kuok-community",
+      "name": "Kuok Foundation",
+      "role": "Kuok Foundation Scholar",
+      "date": "2025 - Present",
+      "summary": "Member of the Kuok Foundation scholars community.",
+      "public": true
+    }
+  ],
+  "publications": [
+    {
+      "id": "satellite-rainfall-malaysia",
+      "name": "Separating spatial support and observation effects in satellite rainfall monitoring over Malaysia",
+      "authors": "Jien Weng Lai",
+      "publisher": "Environmental Monitoring and Assessment · Springer Nature",
+      "status": "Manuscript resubmission · Original Research Article",
+      "releaseDate": "2026-08",
+      "displayDate": "Aug 2026",
+      "summary": "Assesses daily IMERG Final V07 rainfall over Malaysia from October 2015 to September 2025, separating regional rainfall patterns from gauge-footprint and gauge-to-footprint effects. IMERG can screen regional rainfall patterns, but local high-intensity verification remains gauge-dependent.",
+      "keywords": [
+        "Satellite Rainfall",
+        "Environmental Monitoring",
+        "Malaysia",
+        "Remote Sensing"
+      ],
+      "public": true
+    },
+    {
+      "id": "information-design",
+      "name": "The Primacy of Information Design Over Algorithm Selection in Multi-Agent Cooperation",
+      "authors": "Jien Weng Lai, Wei Lun Tan, Ying Loong Lee and Ming Fai Chow",
+      "publisher": "IEEE Social Computation",
+      "status": "Under review",
+      "releaseDate": "2026-04",
+      "displayDate": "Apr 2026",
+      "summary": "A full-factorial experiment in the Public Goods Game shows that information regime and incentive strength explain 85.8% of cooperation-rate variance; algorithm choice accounts for just 3.8%. Agents with the least information cooperate most (83% versus 42% under full observation), attributable to state-space compression. TreeSHAP and Shapley-variance decomposition confirm information structure, not algorithm selection, as the primary design lever for cooperation.",
+      "cvSummary": "Full-factorial Public Goods Game experiments examining how information regimes, incentives and algorithm selection affect cooperation.",
+      "keywords": [
+        "Multi-Agent Reinforcement Learning",
+        "Public Goods Game",
+        "Information Design",
+        "Cooperation"
+      ],
+      "public": true
+    },
+    {
+      "id": "optimal-execution",
+      "name": "Optimal Execution with Alpha Signals",
+      "authors": "Jien Weng Lai",
+      "publisher": "SSRN",
+      "status": "Published",
+      "releaseDate": "2026-04",
+      "displayDate": "Apr 2026",
+      "url": "https://doi.org/10.2139/ssrn.6323159",
+      "summary": "Studies optimal trade execution strategies that incorporate predictive alpha signals, bridging market microstructure theory with practical quantitative trading.",
+      "keywords": [
+        "Quantitative Finance",
+        "Optimal Execution",
+        "Alpha Signals",
+        "Market Microstructure"
+      ],
+      "public": true
+    }
+  ],
+  "openSource": [
+    {
+      "id": "sympy-29376",
+      "name": "SymPy",
+      "role": "PR #29376: add type annotations to warning helpers",
+      "date": "12 Mar 2026",
+      "url": "https://github.com/sympy/sympy/pull/29376",
+      "summary": "Added type annotations to sympy.utilities.exceptions, covering SymPyDeprecationWarning, sympy_deprecation_warning and ignore_warnings. The patch uses a TYPE_CHECKING guard to keep collections.abc out of the runtime import path. It was reviewed and merged into SymPy master.",
+      "keywords": [
+        "Python",
+        "Type Annotations",
+        "Open Source",
+        "SymPy"
+      ],
+      "public": true
+    }
+  ]
+}
