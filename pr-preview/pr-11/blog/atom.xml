@@ -205,7 +205,7 @@
 &lt;li&gt;Retrying a write does not credit the same payment twice.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;This is not glamorous product work. It is the part that stops a payment demo from becoming a support problem later.&lt;&#x2F;p&gt;
-&lt;p&gt;The full cross-chain flow is documented in my &lt;a href=&quot;&#x2F;notes&#x2F;cryptorails-transaction-lifecycle&#x2F;&quot;&gt;Web3 payment transaction lifecycle note&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;The full cross-chain flow is documented in my &lt;a href=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;pr-preview&#x2F;pr-11&#x2F;notes&#x2F;cryptorails-transaction-lifecycle&#x2F;&quot;&gt;Web3 payment transaction lifecycle note&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;p&gt;This is a generalised case study. Product-specific business details, implementation details, and performance results remain confidential.&lt;&#x2F;p&gt;
 </content>
         
@@ -518,7 +518,7 @@
 &lt;h2 id=&quot;wrap-up&quot;&gt;Wrap-Up&lt;&#x2F;h2&gt;
 &lt;p&gt;Eco Finance was our attempt to make carbon footprints visible through a familiar object, a payment history. The carbon-credit idea gave the prototype a possible business model, although we did not make it to the final round T.T&lt;&#x2F;p&gt;
 &lt;p&gt;Hope you guys like it :D&lt;&#x2F;p&gt;
-&lt;p&gt;Oh btw! Once again.. You can read the full story &lt;a href=&quot;&#x2F;posts&#x2F;first-hackathon-experience&quot;&gt;here&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Oh btw! Once again.. You can read the full story &lt;a href=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;pr-preview&#x2F;pr-11&#x2F;blog&#x2F;first-hackathon-experience&#x2F;&quot;&gt;here&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 </content>
         
     </entry>

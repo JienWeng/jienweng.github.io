@@ -227,7 +227,7 @@ $$&lt;&#x2F;p&gt;
 &lt;p&gt;Once that chain is visible, the equation stops looking like a definition to memorize. It becomes the obvious bookkeeping for how probability mass flows: drift transports it, diffusion spreads it.&lt;&#x2F;p&gt;
 &lt;p&gt;Start with one stochastic differential equation, simulate many paths, and the cloud of points begins to look like a density. This note follows that path to the Fokker-Planck equation, solves it in Python, and checks the result against an Ornstein-Uhlenbeck example with a known closed form.&lt;&#x2F;p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Run it yourself.&lt;&#x2F;strong&gt; Every code block below is collected in a runnable Jupyter notebook: &lt;a href=&quot;&#x2F;notebooks&#x2F;fokker-planck-sde.ipynb&quot;&gt;&lt;strong&gt;download &lt;code&gt;fokker-planck-sde.ipynb&lt;&#x2F;code&gt;&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;. It only needs &lt;code&gt;numpy&lt;&#x2F;code&gt; and &lt;code&gt;matplotlib&lt;&#x2F;code&gt; (&lt;code&gt;pip install numpy matplotlib&lt;&#x2F;code&gt;), and runs top to bottom.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Run it yourself.&lt;&#x2F;strong&gt; Every code block below is collected in a runnable Jupyter notebook: &lt;a href=&quot;..&#x2F;..&#x2F;notebooks&#x2F;fokker-planck-sde.ipynb&quot;&gt;&lt;strong&gt;download &lt;code&gt;fokker-planck-sde.ipynb&lt;&#x2F;code&gt;&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;. It only needs &lt;code&gt;numpy&lt;&#x2F;code&gt; and &lt;code&gt;matplotlib&lt;&#x2F;code&gt; (&lt;code&gt;pip install numpy matplotlib&lt;&#x2F;code&gt;), and runs top to bottom.&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
 &lt;h2 id=&quot;start-with-a-single-trajectory&quot;&gt;Start with a Single Trajectory&lt;&#x2F;h2&gt;
 &lt;p&gt;A stochastic differential equation in one dimension has the form&lt;&#x2F;p&gt;
@@ -268,7 +268,7 @@ $$&lt;&#x2F;p&gt;
 &lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;traj&lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword&quot;&gt; =&lt;&#x2F;span&gt;&lt;span&gt; euler_maruyama&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span&gt;mu&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span&gt; sig&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span&gt; x0&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span class=&quot;z-variable&quot;&gt; T&lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword&quot;&gt;=&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant&quot;&gt;4.0&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span class=&quot;z-variable&quot;&gt; dt&lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword&quot;&gt;=&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant&quot;&gt;1e-3&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span class=&quot;z-variable&quot;&gt; n_paths&lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword&quot;&gt;=&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant&quot;&gt;20000&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span class=&quot;z-variable&quot;&gt; rng&lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt;rng&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;A handful of these paths, plotted over time, all start at $2$ and get dragged toward zero while jittering:&lt;&#x2F;p&gt;
 &lt;figure class=&quot;wide&quot;&gt;
-  &lt;img src=&quot;&amp;#x2F;img&amp;#x2F;notes&amp;#x2F;fokker-planck-sde&amp;#x2F;ou_paths.png&quot; alt=&quot;Several simulated Ornstein-Uhlenbeck sample paths starting at x=2 and relaxing toward zero&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+  &lt;img src=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;pr-preview&#x2F;pr-11&#x2F;img&#x2F;notes&#x2F;fokker-planck-sde&#x2F;ou_paths.png&quot; alt=&quot;Several simulated Ornstein-Uhlenbeck sample paths starting at x=2 and relaxing toward zero&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
   
   &lt;figcaption&gt;Twelve OU sample paths. Each starts at X_0 = 2, is pulled toward zero by the drift, and jitters under the diffusion. No single path is predictable; the ensemble is.&lt;&#x2F;figcaption&gt;
   
@@ -278,7 +278,7 @@ $$&lt;&#x2F;p&gt;
 &lt;p&gt;Fix a time $t$ and forget the ordering of the paths. What we have is a cloud of values $X_t^{(1)}, X_t^{(2)}, \ldots$, one per path. Their histogram approximates a probability density $p(x, t)$: the probability of finding the process near $x$ at time $t$.&lt;&#x2F;p&gt;
 &lt;p&gt;At $t = 0$ that density is a spike at $x = 2$, because every path starts there. As time runs, two things happen at once. The whole cloud drifts left toward zero, following the mean reversion. And it spreads out, because the noise accumulates. Eventually the inward pull and the outward spreading balance, and the density stops changing. That limiting shape is the &lt;strong&gt;stationary distribution&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
 &lt;figure class=&quot;wide&quot;&gt;
-  &lt;img src=&quot;&amp;#x2F;img&amp;#x2F;notes&amp;#x2F;fokker-planck-sde&amp;#x2F;density_evolution.png&quot; alt=&quot;Histogram of the OU ensemble at several times, shifting from a spike at x=2 toward a fixed bell curve centered at zero&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+  &lt;img src=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;pr-preview&#x2F;pr-11&#x2F;img&#x2F;notes&#x2F;fokker-planck-sde&#x2F;density_evolution.png&quot; alt=&quot;Histogram of the OU ensemble at several times, shifting from a spike at x=2 toward a fixed bell curve centered at zero&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
   
   &lt;figcaption&gt;The ensemble density at four times. It starts concentrated at X_0 = 2, then drifts toward zero and broadens, settling into a fixed bell curve. The Fokker-Planck equation is the law governing this whole movie.&lt;&#x2F;figcaption&gt;
   
@@ -423,7 +423,7 @@ $$&lt;&#x2F;p&gt;
 &lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;pde grid    mean=0.735715  std=0.658482&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;Overlaid on the same axes, the Monte Carlo histogram, the PDE solution, and the analytic Gaussian sit on top of each other:&lt;&#x2F;p&gt;
 &lt;figure class=&quot;wide&quot;&gt;
-  &lt;img src=&quot;&amp;#x2F;img&amp;#x2F;notes&amp;#x2F;fokker-planck-sde&amp;#x2F;three_way_overlay.png&quot; alt=&quot;At t=1, the Monte Carlo histogram, the finite-volume PDE solution, and the exact Gaussian all coincide&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+  &lt;img src=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;pr-preview&#x2F;pr-11&#x2F;img&#x2F;notes&#x2F;fokker-planck-sde&#x2F;three_way_overlay.png&quot; alt=&quot;At t=1, the Monte Carlo histogram, the finite-volume PDE solution, and the exact Gaussian all coincide&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
   
   &lt;figcaption&gt;The density at t = 1, computed three independent ways. The Monte Carlo histogram (bars), the Fokker-Planck PDE solution (solid), and the closed-form Gaussian (dashed) agree because they describe the same object from different directions.&lt;&#x2F;figcaption&gt;
   
@@ -432,7 +432,7 @@ $$&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;the-stationary-distribution&quot;&gt;The Stationary Distribution&lt;&#x2F;h2&gt;
 &lt;p&gt;Let the same three methods run out to $t = 4$ and the density settles onto the stationary law $\mathcal{N}(0, \tfrac12)$ we derived by setting the probability current to zero:&lt;&#x2F;p&gt;
 &lt;figure class=&quot;wide&quot;&gt;
-  &lt;img src=&quot;&amp;#x2F;img&amp;#x2F;notes&amp;#x2F;fokker-planck-sde&amp;#x2F;stationary_distribution.png&quot; alt=&quot;At t=4 the density matches the stationary Gaussian N(0, 1&amp;#x2F;2)&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+  &lt;img src=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;pr-preview&#x2F;pr-11&#x2F;img&#x2F;notes&#x2F;fokker-planck-sde&#x2F;stationary_distribution.png&quot; alt=&quot;At t=4 the density matches the stationary Gaussian N(0, 1&amp;#x2F;2)&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
   
   &lt;figcaption&gt;By t = 4 the ensemble has forgotten where it started. The long-time density (bars and solid) matches the stationary Gaussian N(0, 1&amp;#x2F;2) (dashed), the balance point where drift and diffusion cancel.&lt;&#x2F;figcaption&gt;
   
@@ -473,7 +473,7 @@ $$&lt;&#x2F;p&gt;
         <link rel="alternate" type="text/html" href="https://jienweng.github.io/pr-preview/pr-11/notes/intro-to-mlops-tutorial/"/>
         <id>https://jienweng.github.io/pr-preview/pr-11/notes/intro-to-mlops-tutorial/</id>
         
-        <content type="html" xml:base="https://jienweng.github.io/pr-preview/pr-11/notes/intro-to-mlops-tutorial/">&lt;p&gt;This is the written companion to the &lt;a href=&quot;&#x2F;slides&#x2F;2026&#x2F;intro-to-mlops&#x2F;&quot;&gt;&lt;strong&gt;Introduction to MLOps&lt;&#x2F;strong&gt; slides&lt;&#x2F;a&gt;. It follows the deck section by section: the same chain of ideas, the same figures, and then the hands-on the deck builds toward. The slides give the picture in a room; this note lets you read it at your own pace and, more importantly, &lt;strong&gt;run&lt;&#x2F;strong&gt; it. By the end you will have tracked a real machine-learning experiment, compared two runs, and inspected them in a web UI.&lt;&#x2F;p&gt;
+        <content type="html" xml:base="https://jienweng.github.io/pr-preview/pr-11/notes/intro-to-mlops-tutorial/">&lt;p&gt;This is the written companion to the &lt;a href=&quot;..&#x2F;..&#x2F;slides&#x2F;2026&#x2F;intro-to-mlops&#x2F;&quot;&gt;&lt;strong&gt;Introduction to MLOps&lt;&#x2F;strong&gt; slides&lt;&#x2F;a&gt;. It follows the deck section by section: the same chain of ideas, the same figures, and then the hands-on the deck builds toward. The slides give the picture in a room; this note lets you read it at your own pace and, more importantly, &lt;strong&gt;run&lt;&#x2F;strong&gt; it. By the end you will have tracked a real machine-learning experiment, compared two runs, and inspected them in a web UI.&lt;&#x2F;p&gt;
 &lt;p&gt;The chain the deck walks, and so will we:&lt;&#x2F;p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;reproducibility → the software cycle → DevOps → the ML lifecycle → MLOps → MLflow → a hands-on.&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
@@ -484,7 +484,7 @@ $$&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;why-reproducibility-and-why-ml-makes-it-hard&quot;&gt;Why reproducibility, and why ML makes it hard&lt;&#x2F;h2&gt;
 &lt;p&gt;The starting motivation is research integrity. A result you cannot reproduce is hard to trust, hard to build on, and hard to defend. In software-heavy science this is why people publish code alongside papers (the &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;paperswithcode.com&quot;&gt;Papers with Code&lt;&#x2F;a&gt; culture). But &quot;publish the code&quot; is not enough on its own.&lt;&#x2F;p&gt;
 &lt;figure class=&quot;wide&quot;&gt;
-  &lt;img src=&quot;&amp;#x2F;slides&amp;#x2F;2026&amp;#x2F;intro-to-mlops&amp;#x2F;img&amp;#x2F;paper-with-code.webp&quot; alt=&quot;Papers with Code listing&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+  &lt;img src=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;pr-preview&#x2F;pr-11&#x2F;slides&#x2F;2026&#x2F;intro-to-mlops&#x2F;img&#x2F;paper-with-code.webp&quot; alt=&quot;Papers with Code listing&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
   
   &lt;figcaption&gt;Sharing code with papers is a start. Credit: paperswithcode.com&lt;&#x2F;figcaption&gt;
   
@@ -497,7 +497,7 @@ $$&lt;&#x2F;p&gt;
 &lt;li&gt;and the &lt;strong&gt;parameters&lt;&#x2F;strong&gt; that produced the run.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;figure class=&quot;wide&quot;&gt;
-  &lt;img src=&quot;&amp;#x2F;slides&amp;#x2F;2026&amp;#x2F;intro-to-mlops&amp;#x2F;img&amp;#x2F;mlops-trojan.webp&quot; alt=&quot;What reproducibility implies&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+  &lt;img src=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;pr-preview&#x2F;pr-11&#x2F;slides&#x2F;2026&#x2F;intro-to-mlops&#x2F;img&#x2F;mlops-trojan.webp&quot; alt=&quot;What reproducibility implies&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
   
   &lt;figcaption&gt;What reproducibility really implies: far more than just the code.&lt;&#x2F;figcaption&gt;
   
@@ -524,7 +524,7 @@ $$&lt;&#x2F;p&gt;
 &lt;&#x2F;ol&gt;
 &lt;p&gt;Run those once, by hand, and you have traditional software delivery: slow, batched, and error-prone at the hand-offs.&lt;&#x2F;p&gt;
 &lt;figure class=&quot;wide&quot;&gt;
-  &lt;img src=&quot;&amp;#x2F;slides&amp;#x2F;2026&amp;#x2F;intro-to-mlops&amp;#x2F;img&amp;#x2F;dev-cycle.webp&quot; alt=&quot;The software development cycle&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+  &lt;img src=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;pr-preview&#x2F;pr-11&#x2F;slides&#x2F;2026&#x2F;intro-to-mlops&#x2F;img&#x2F;dev-cycle.webp&quot; alt=&quot;The software development cycle&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
   
   &lt;figcaption&gt;The stages of the software development cycle.&lt;&#x2F;figcaption&gt;
   
@@ -537,7 +537,7 @@ $$&lt;&#x2F;p&gt;
 &lt;li&gt;&lt;strong&gt;Continuous Monitoring&lt;&#x2F;strong&gt;: the running system is watched for errors and feedback, which flows back into planning.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;figure class=&quot;wide&quot;&gt;
-  &lt;img src=&quot;&amp;#x2F;slides&amp;#x2F;2026&amp;#x2F;intro-to-mlops&amp;#x2F;img&amp;#x2F;ci-cd-github.png&quot; alt=&quot;CI&amp;#x2F;CD pipeline&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+  &lt;img src=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;pr-preview&#x2F;pr-11&#x2F;slides&#x2F;2026&#x2F;intro-to-mlops&#x2F;img&#x2F;ci-cd-github.png&quot; alt=&quot;CI&amp;#x2F;CD pipeline&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
   
   &lt;figcaption&gt;CI&amp;#x2F;CD automates the loop: every change is built, tested, and shipped continuously. Credit: resources.github.com&amp;#x2F;ci-cd&lt;&#x2F;figcaption&gt;
   
@@ -550,7 +550,7 @@ $$&lt;&#x2F;p&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;The tools get the attention, but the culture and the process are what make the automation stick.&lt;&#x2F;p&gt;
 &lt;figure class=&quot;wide&quot;&gt;
-  &lt;img src=&quot;&amp;#x2F;slides&amp;#x2F;2026&amp;#x2F;intro-to-mlops&amp;#x2F;img&amp;#x2F;devops-trident.webp&quot; alt=&quot;DevOps trident: people, process, tools&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+  &lt;img src=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;pr-preview&#x2F;pr-11&#x2F;slides&#x2F;2026&#x2F;intro-to-mlops&#x2F;img&#x2F;devops-trident.webp&quot; alt=&quot;DevOps trident: people, process, tools&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
   
   &lt;figcaption&gt;DevOps rests on three legs: people, process, and tools. Credit: aws.amazon.com&amp;#x2F;devops&lt;&#x2F;figcaption&gt;
   
@@ -568,13 +568,13 @@ $$&lt;&#x2F;p&gt;
 &lt;li&gt;&lt;strong&gt;Model monitoring&lt;&#x2F;strong&gt;: watch performance and decide when to retrain.&lt;&#x2F;li&gt;
 &lt;&#x2F;ol&gt;
 &lt;figure class=&quot;wide&quot;&gt;
-  &lt;img src=&quot;&amp;#x2F;slides&amp;#x2F;2026&amp;#x2F;intro-to-mlops&amp;#x2F;img&amp;#x2F;mlcycle.webp&quot; alt=&quot;The ML cycle&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+  &lt;img src=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;pr-preview&#x2F;pr-11&#x2F;slides&#x2F;2026&#x2F;intro-to-mlops&#x2F;img&#x2F;mlcycle.webp&quot; alt=&quot;The ML cycle&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
   
   &lt;figcaption&gt;The machine-learning cycle. Credit: ml-ops.org&lt;&#x2F;figcaption&gt;
   
 &lt;&#x2F;figure&gt;
 &lt;figure class=&quot;wide&quot;&gt;
-  &lt;img src=&quot;&amp;#x2F;slides&amp;#x2F;2026&amp;#x2F;intro-to-mlops&amp;#x2F;img&amp;#x2F;mlops-end-to-end.png&quot; alt=&quot;End-to-end ML lifecycle&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+  &lt;img src=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;pr-preview&#x2F;pr-11&#x2F;slides&#x2F;2026&#x2F;intro-to-mlops&#x2F;img&#x2F;mlops-end-to-end.png&quot; alt=&quot;End-to-end ML lifecycle&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
   
   &lt;figcaption&gt;The same lifecycle, end to end: data stages feed model stages, and monitoring loops back to the start.&lt;&#x2F;figcaption&gt;
   
@@ -583,7 +583,7 @@ $$&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;mlops-devops-for-ml&quot;&gt;MLOps = DevOps for ML&lt;&#x2F;h2&gt;
 &lt;p&gt;Now overlay the DevOps loop onto the ML lifecycle. Each &quot;continuous&quot; practice gains an ML twist:&lt;&#x2F;p&gt;
 &lt;figure class=&quot;wide&quot;&gt;
-  &lt;img src=&quot;&amp;#x2F;slides&amp;#x2F;2026&amp;#x2F;intro-to-mlops&amp;#x2F;img&amp;#x2F;mlops-org.png&quot; alt=&quot;MLOps as DevOps applied to ML&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+  &lt;img src=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;pr-preview&#x2F;pr-11&#x2F;slides&#x2F;2026&#x2F;intro-to-mlops&#x2F;img&#x2F;mlops-org.png&quot; alt=&quot;MLOps as DevOps applied to ML&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
   
   &lt;figcaption&gt;MLOps = DevOps principles applied to ML systems. Credit: ml-ops.org&lt;&#x2F;figcaption&gt;
   
@@ -607,7 +607,7 @@ $$&lt;&#x2F;p&gt;
 &lt;li&gt;&lt;strong&gt;model monitoring&lt;&#x2F;strong&gt; (Prometheus&#x2F;Grafana) that watches the served model and closes the loop back to data.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;figure class=&quot;wide&quot;&gt;
-  &lt;img src=&quot;&amp;#x2F;slides&amp;#x2F;2026&amp;#x2F;intro-to-mlops&amp;#x2F;img&amp;#x2F;mymlops-workflow.png&quot; alt=&quot;A concrete MLOps workflow&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+  &lt;img src=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;pr-preview&#x2F;pr-11&#x2F;slides&#x2F;2026&#x2F;intro-to-mlops&#x2F;img&#x2F;mymlops-workflow.png&quot; alt=&quot;A concrete MLOps workflow&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
   
   &lt;figcaption&gt;A concrete MLOps workflow wiring the pieces together. Credit: mymlops.com&lt;&#x2F;figcaption&gt;
   
@@ -618,13 +618,13 @@ $$&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;mlflow.org&quot;&gt;&lt;strong&gt;MLflow&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; is the open-source standard for experiment tracking. The mental model: an ML experiment is &lt;em&gt;environment + data + code&lt;&#x2F;em&gt;, and MLflow is the logbook that records, for each run, its &lt;strong&gt;hyperparameters + results + plots&lt;&#x2F;strong&gt; so you can compare runs later in a web UI. It is framework-agnostic (scikit-learn, PyTorch, TensorFlow, XGBoost…) and works for &lt;em&gt;any&lt;&#x2F;em&gt; computational experiment, not just ML.&lt;&#x2F;p&gt;
 &lt;p&gt;MLflow has four components:&lt;&#x2F;p&gt;
 &lt;figure class=&quot;wide&quot;&gt;
-  &lt;img src=&quot;&amp;#x2F;slides&amp;#x2F;2026&amp;#x2F;intro-to-mlops&amp;#x2F;img&amp;#x2F;mlflow-components.png&quot; alt=&quot;MLflow components&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+  &lt;img src=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;pr-preview&#x2F;pr-11&#x2F;slides&#x2F;2026&#x2F;intro-to-mlops&#x2F;img&#x2F;mlflow-components.png&quot; alt=&quot;MLflow components&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
   
   &lt;figcaption&gt;MLflow&amp;#x27;s components. Credit: mlflow.org&lt;&#x2F;figcaption&gt;
   
 &lt;&#x2F;figure&gt;
 &lt;figure class=&quot;wide&quot;&gt;
-  &lt;img src=&quot;&amp;#x2F;slides&amp;#x2F;2026&amp;#x2F;intro-to-mlops&amp;#x2F;img&amp;#x2F;mlflow-overview.png&quot; alt=&quot;MLflow overview&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+  &lt;img src=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;pr-preview&#x2F;pr-11&#x2F;slides&#x2F;2026&#x2F;intro-to-mlops&#x2F;img&#x2F;mlflow-overview.png&quot; alt=&quot;MLflow overview&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
   
   &lt;figcaption&gt;How the pieces fit together when you track an experiment. Credit: mlflow.org&lt;&#x2F;figcaption&gt;
   
@@ -660,7 +660,7 @@ $$&lt;&#x2F;p&gt;
 &lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;mlflow&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span&gt;log_artifact&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-definition z-string&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;loss.png&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-definition z-string&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h2 id=&quot;where-mlflow-stores-runs-three-setup-options&quot;&gt;Where MLflow stores runs: three setup options&lt;&#x2F;h2&gt;
 &lt;p&gt;Before logging anything, MLflow needs to know &lt;em&gt;where&lt;&#x2F;em&gt; runs go. There are three options, in increasing order of scale:&lt;&#x2F;p&gt;
 &lt;figure class=&quot;wide&quot;&gt;
-  &lt;img src=&quot;&amp;#x2F;slides&amp;#x2F;2026&amp;#x2F;intro-to-mlops&amp;#x2F;img&amp;#x2F;mlflow-tracking-setup-overview.png&quot; alt=&quot;MLflow tracking setup overview&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+  &lt;img src=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;pr-preview&#x2F;pr-11&#x2F;slides&#x2F;2026&#x2F;intro-to-mlops&#x2F;img&#x2F;mlflow-tracking-setup-overview.png&quot; alt=&quot;MLflow tracking setup overview&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
   
   &lt;figcaption&gt;MLflow tracking setup. We use the local-database option below. Credit: mlflow.org&lt;&#x2F;figcaption&gt;
   
@@ -743,7 +743,7 @@ $$&lt;&#x2F;p&gt;
 &lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name&quot;&gt;mlflow&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; ui&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant&quot;&gt; -&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant&quot;&gt;-backend-store-uri&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; sqlite:&#x2F;&#x2F;&#x2F;mlflow.db&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;Open &lt;code&gt;http:&#x2F;&#x2F;127.0.0.1:5000&lt;&#x2F;code&gt;. You will see the &lt;code&gt;intro-to-mlops&lt;&#x2F;code&gt; experiment with both runs. It looks like this:&lt;&#x2F;p&gt;
 &lt;figure class=&quot;wide&quot;&gt;
-  &lt;img src=&quot;&amp;#x2F;slides&amp;#x2F;2026&amp;#x2F;intro-to-mlops&amp;#x2F;img&amp;#x2F;mlflow-ui.jpeg&quot; alt=&quot;The MLflow tracking UI&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+  &lt;img src=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;pr-preview&#x2F;pr-11&#x2F;slides&#x2F;2026&#x2F;intro-to-mlops&#x2F;img&#x2F;mlflow-ui.jpeg&quot; alt=&quot;The MLflow tracking UI&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
   
   &lt;figcaption&gt;The MLflow UI: every run with its parameters and metrics, ready to sort and compare. Credit: mlflow.org&lt;&#x2F;figcaption&gt;
   
@@ -798,7 +798,7 @@ $$&lt;&#x2F;p&gt;
 &lt;p&gt;Adopting these habits in your daily workflow pays off quickly: time saved in the long run, engineering skill gained, and trust earned among collaborators. And MLflow in particular is &lt;strong&gt;not just for machine learning&lt;&#x2F;strong&gt;: it is a capable logbook for tracking &lt;em&gt;any&lt;&#x2F;em&gt; computational experiment and keeping your results reproducible over time.&lt;&#x2F;p&gt;
 &lt;hr &#x2F;&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Source and licence.&lt;&#x2F;strong&gt; This tutorial follows and adapts the lecture &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;aboucaud.github.io&#x2F;slides&#x2F;2023&#x2F;lsst-france-mlops&quot;&gt;“An introduction to MLOps”&lt;&#x2F;a&gt; by Alexandre Boucaud (LSST France, Lyon, December 2023), licensed under &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;creativecommons.org&#x2F;licenses&#x2F;by-sa&#x2F;4.0&#x2F;&quot;&gt;CC BY-SA 4.0&lt;&#x2F;a&gt;. The figures come from the accompanying &lt;a href=&quot;&#x2F;slides&#x2F;2026&#x2F;intro-to-mlops&#x2F;&quot;&gt;slides&lt;&#x2F;a&gt;, re-hosted under the same licence; individual captions credit their original sources. This tutorial and hands-on example are my own adaptation and are also shared under CC BY-SA 4.0.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Source and licence.&lt;&#x2F;strong&gt; This tutorial follows and adapts the lecture &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;aboucaud.github.io&#x2F;slides&#x2F;2023&#x2F;lsst-france-mlops&quot;&gt;“An introduction to MLOps”&lt;&#x2F;a&gt; by Alexandre Boucaud (LSST France, Lyon, December 2023), licensed under &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;creativecommons.org&#x2F;licenses&#x2F;by-sa&#x2F;4.0&#x2F;&quot;&gt;CC BY-SA 4.0&lt;&#x2F;a&gt;. The figures come from the accompanying &lt;a href=&quot;..&#x2F;..&#x2F;slides&#x2F;2026&#x2F;intro-to-mlops&#x2F;&quot;&gt;slides&lt;&#x2F;a&gt;, re-hosted under the same licence; individual captions credit their original sources. This tutorial and hands-on example are my own adaptation and are also shared under CC BY-SA 4.0.&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
 </content>
         
@@ -826,7 +826,7 @@ $$&lt;&#x2F;p&gt;
 $$&lt;&#x2F;p&gt;
 &lt;p&gt;Intuition first, but the math is written out in full. I dislike formulas that appear from nowhere.&lt;&#x2F;p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Run it yourself.&lt;&#x2F;strong&gt; The worked example is collected in a runnable notebook: &lt;a href=&quot;&#x2F;notebooks&#x2F;tree-based-models.ipynb&quot;&gt;&lt;strong&gt;download &lt;code&gt;tree-based-models.ipynb&lt;&#x2F;code&gt;&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;. It uses &lt;code&gt;numpy&lt;&#x2F;code&gt;, &lt;code&gt;scikit-learn&lt;&#x2F;code&gt;, and (optionally) &lt;code&gt;xgboost&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Run it yourself.&lt;&#x2F;strong&gt; The worked example is collected in a runnable notebook: &lt;a href=&quot;..&#x2F;..&#x2F;notebooks&#x2F;tree-based-models.ipynb&quot;&gt;&lt;strong&gt;download &lt;code&gt;tree-based-models.ipynb&lt;&#x2F;code&gt;&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;. It uses &lt;code&gt;numpy&lt;&#x2F;code&gt;, &lt;code&gt;scikit-learn&lt;&#x2F;code&gt;, and (optionally) &lt;code&gt;xgboost&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
 &lt;h2 id=&quot;why-people-reach-for-trees-random-forests-and-xgboost&quot;&gt;Why People Reach for Trees, Random Forests, and XGBoost&lt;&#x2F;h2&gt;
 &lt;p&gt;The motivation usually looks like this:&lt;&#x2F;p&gt;
@@ -850,7 +850,7 @@ $$&lt;&#x2F;p&gt;
 &lt;p&gt;This is a decision stump. It is weak, but it is easy to interpret. The point is not accuracy. The point is that rules like this are already nonlinear in the raw feature space.&lt;&#x2F;p&gt;
 &lt;p&gt;Now chain many rules in sequence, and you get a decision tree.&lt;&#x2F;p&gt;
 &lt;figure class=&quot;wide&quot;&gt;
-  &lt;img src=&quot;&amp;#x2F;img&amp;#x2F;notes&amp;#x2F;tree-based-models&amp;#x2F;single_split_2d.png&quot; alt=&quot;Single split in 2D&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+  &lt;img src=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;pr-preview&#x2F;pr-11&#x2F;img&#x2F;notes&#x2F;tree-based-models&#x2F;single_split_2d.png&quot; alt=&quot;Single split in 2D&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
   
   &lt;figcaption&gt;A single decision rule creates a nonlinear boundary from a linear threshold.&lt;&#x2F;figcaption&gt;
   
@@ -886,7 +886,7 @@ $$&lt;&#x2F;p&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;Compute $H(S_L)$ and $H(S_R)$, and you get a positive information gain. The split is not perfect, but it is better than the parent. That is enough to move the algorithm forward.&lt;&#x2F;p&gt;
 &lt;figure class=&quot;wide&quot;&gt;
-  &lt;img src=&quot;&amp;#x2F;img&amp;#x2F;notes&amp;#x2F;tree-based-models&amp;#x2F;tree_impurity_reduction.png&quot; alt=&quot;Impurity reduction example&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+  &lt;img src=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;pr-preview&#x2F;pr-11&#x2F;img&#x2F;notes&#x2F;tree-based-models&#x2F;tree_impurity_reduction.png&quot; alt=&quot;Impurity reduction example&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
   
   &lt;figcaption&gt;A split is chosen because it reduces impurity, not because it is globally optimal.&lt;&#x2F;figcaption&gt;
   
@@ -924,7 +924,7 @@ $$&lt;&#x2F;p&gt;
 &lt;&#x2F;ol&gt;
 &lt;p&gt;The forest prediction is still an average (regression) or a majority vote (classification). The math is the same as bagging, but the diversity is higher.&lt;&#x2F;p&gt;
 &lt;figure class=&quot;wide&quot;&gt;
-  &lt;img src=&quot;&amp;#x2F;img&amp;#x2F;notes&amp;#x2F;tree-based-models&amp;#x2F;random_forest_bagging.png&quot; alt=&quot;Bootstrap aggregation&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+  &lt;img src=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;pr-preview&#x2F;pr-11&#x2F;img&#x2F;notes&#x2F;tree-based-models&#x2F;random_forest_bagging.png&quot; alt=&quot;Bootstrap aggregation&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
   
   &lt;figcaption&gt;Random Forests reduce variance by averaging many decorrelated trees.&lt;&#x2F;figcaption&gt;
   
@@ -978,7 +978,7 @@ $$&lt;&#x2F;p&gt;
 $$&lt;&#x2F;p&gt;
 &lt;p&gt;This is the exact reason XGBoost splits where it does. The split is not only about purity. It is about how much the second-order objective improves after regularization.&lt;&#x2F;p&gt;
 &lt;figure class=&quot;wide&quot;&gt;
-  &lt;img src=&quot;&amp;#x2F;img&amp;#x2F;notes&amp;#x2F;tree-based-models&amp;#x2F;xgboost_gain_split.png&quot; alt=&quot;XGBoost split gain&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+  &lt;img src=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;pr-preview&#x2F;pr-11&#x2F;img&#x2F;notes&#x2F;tree-based-models&#x2F;xgboost_gain_split.png&quot; alt=&quot;XGBoost split gain&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
   
   &lt;figcaption&gt;XGBoost chooses splits by maximizing second-order gain with regularization.&lt;&#x2F;figcaption&gt;
   
@@ -993,7 +993,7 @@ $$&lt;&#x2F;p&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;In practice, these ideas mean the model stays expressive without exploding in variance.&lt;&#x2F;p&gt;
 &lt;figure class=&quot;wide&quot;&gt;
-  &lt;img src=&quot;&amp;#x2F;img&amp;#x2F;notes&amp;#x2F;tree-based-models&amp;#x2F;boosting_stages.png&quot; alt=&quot;Boosting stages&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+  &lt;img src=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;pr-preview&#x2F;pr-11&#x2F;img&#x2F;notes&#x2F;tree-based-models&#x2F;boosting_stages.png&quot; alt=&quot;Boosting stages&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
   
   &lt;figcaption&gt;Boosting builds an additive model one small tree at a time.&lt;&#x2F;figcaption&gt;
   
@@ -1011,12 +1011,12 @@ $$&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;a-worked-dataset-example-synthetic-regression&quot;&gt;A Worked Dataset Example (Synthetic Regression)&lt;&#x2F;h2&gt;
 &lt;p&gt;To make this concrete, we use a small synthetic regression dataset from scikit-learn. It is numeric, quick to run, and avoids any external downloads. The idea is to compare a single tree, a Random Forest, and XGBoost on the same train&#x2F;test split.&lt;&#x2F;p&gt;
 &lt;figure class=&quot;wide&quot;&gt;
-  &lt;img src=&quot;&amp;#x2F;img&amp;#x2F;notes&amp;#x2F;tree-based-models&amp;#x2F;regression_overview.png&quot; alt=&quot;Regression dataset overview&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+  &lt;img src=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;pr-preview&#x2F;pr-11&#x2F;img&#x2F;notes&#x2F;tree-based-models&#x2F;regression_overview.png&quot; alt=&quot;Regression dataset overview&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
   
   &lt;figcaption&gt;A synthetic regression dataset with noise and nonlinear structure.&lt;&#x2F;figcaption&gt;
   
 &lt;&#x2F;figure&gt;
-&lt;p&gt;Below is a compact code snippet. The &lt;a href=&quot;&#x2F;notebooks&#x2F;tree-based-models.ipynb&quot;&gt;full notebook&lt;&#x2F;a&gt; is provided separately so you can run it end-to-end.&lt;&#x2F;p&gt;
+&lt;p&gt;Below is a compact code snippet. The &lt;a href=&quot;..&#x2F;..&#x2F;notebooks&#x2F;tree-based-models.ipynb&quot;&gt;full notebook&lt;&#x2F;a&gt; is provided separately so you can run it end-to-end.&lt;&#x2F;p&gt;
 &lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;python&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword&quot;&gt;import&lt;&#x2F;span&gt;&lt;span&gt; numpy&lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword&quot;&gt; as&lt;&#x2F;span&gt;&lt;span&gt; np&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
 &lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword&quot;&gt;from&lt;&#x2F;span&gt;&lt;span&gt; sklearn&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span&gt;datasets&lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword&quot;&gt; import&lt;&#x2F;span&gt;&lt;span&gt; make_regression&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
 &lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword&quot;&gt;from&lt;&#x2F;span&gt;&lt;span&gt; sklearn&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span&gt;model_selection&lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword&quot;&gt; import&lt;&#x2F;span&gt;&lt;span&gt; train_test_split&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
@@ -1056,13 +1056,13 @@ $$&lt;&#x2F;p&gt;
 &lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;	rmse&lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword&quot;&gt; =&lt;&#x2F;span&gt;&lt;span&gt; np&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span&gt;sqrt&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span&gt;mean_squared_error&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span&gt;y_test&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span&gt; preds&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
 &lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;	mae&lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword&quot;&gt; =&lt;&#x2F;span&gt;&lt;span&gt; mean_absolute_error&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span&gt;y_test&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span&gt; preds&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
 &lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-support&quot;&gt;	print&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span&gt;name&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-definition z-string&quot;&gt; &amp;quot;&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;rmse&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-definition z-string&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span class=&quot;z-support&quot;&gt; round&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span&gt;rmse&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant&quot;&gt; 3&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-definition z-string&quot;&gt; &amp;quot;&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;mae&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-definition z-string&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span class=&quot;z-support&quot;&gt; round&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span&gt;mae&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant&quot;&gt; 3&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;figure class=&quot;wide&quot;&gt;
-  &lt;img src=&quot;&amp;#x2F;img&amp;#x2F;notes&amp;#x2F;tree-based-models&amp;#x2F;model_comparison_bars.png&quot; alt=&quot;Model comparison&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+  &lt;img src=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;pr-preview&#x2F;pr-11&#x2F;img&#x2F;notes&#x2F;tree-based-models&#x2F;model_comparison_bars.png&quot; alt=&quot;Model comparison&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
   
   &lt;figcaption&gt;RMSE and MAE comparison across a single tree, Random Forest, and XGBoost.&lt;&#x2F;figcaption&gt;
   
 &lt;&#x2F;figure&gt;
 &lt;figure class=&quot;wide&quot;&gt;
-  &lt;img src=&quot;&amp;#x2F;img&amp;#x2F;notes&amp;#x2F;tree-based-models&amp;#x2F;feature_importance.png&quot; alt=&quot;Feature importances&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+  &lt;img src=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;pr-preview&#x2F;pr-11&#x2F;img&#x2F;notes&#x2F;tree-based-models&#x2F;feature_importance.png&quot; alt=&quot;Feature importances&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
   
   &lt;figcaption&gt;Feature importance comparison for Random Forest and XGBoost.&lt;&#x2F;figcaption&gt;
   
@@ -1106,7 +1106,7 @@ $$&lt;&#x2F;p&gt;
 $$&lt;&#x2F;p&gt;
 &lt;p&gt;We build up the picture of sound as a sum of sinusoids, get the DFT as its discrete version, and then let the structure of the DFT matrix hand us the Cooley-Tukey FFT almost for free. At the end we run the whole thing on a real sound wave, implemented from scratch in Python.&lt;&#x2F;p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Run it yourself.&lt;&#x2F;strong&gt; Every code block below is collected in a runnable Jupyter notebook: &lt;a href=&quot;&#x2F;notebooks&#x2F;fft-sound-wave.ipynb&quot;&gt;&lt;strong&gt;download &lt;code&gt;fft-sound-wave.ipynb&lt;&#x2F;code&gt;&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;. It only needs &lt;code&gt;numpy&lt;&#x2F;code&gt; and &lt;code&gt;matplotlib&lt;&#x2F;code&gt; (&lt;code&gt;pip install numpy matplotlib&lt;&#x2F;code&gt;), and runs top to bottom.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Run it yourself.&lt;&#x2F;strong&gt; Every code block below is collected in a runnable Jupyter notebook: &lt;a href=&quot;..&#x2F;..&#x2F;notebooks&#x2F;fft-sound-wave.ipynb&quot;&gt;&lt;strong&gt;download &lt;code&gt;fft-sound-wave.ipynb&lt;&#x2F;code&gt;&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;. It only needs &lt;code&gt;numpy&lt;&#x2F;code&gt; and &lt;code&gt;matplotlib&lt;&#x2F;code&gt; (&lt;code&gt;pip install numpy matplotlib&lt;&#x2F;code&gt;), and runs top to bottom.&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
 &lt;h2 id=&quot;start-with-a-sound-wave&quot;&gt;Start with a Sound Wave&lt;&#x2F;h2&gt;
 &lt;p&gt;Think of a pure musical tone. When a tuning fork vibrates at $440$ Hz, it displaces air molecules in a nearly sinusoidal way. The pressure at a fixed point in space looks like&lt;&#x2F;p&gt;
@@ -1174,21 +1174,21 @@ $$&lt;&#x2F;p&gt;
 &lt;p&gt;Now the key effect. When the winding rate &lt;strong&gt;matches&lt;&#x2F;strong&gt; a frequency that is actually present in the signal, the signal&#x27;s peaks land on the same side of the circle on every turn. The wound points pile up on one side, and their center of mass sits far from the origin: a large $|X_k|$. When the winding rate &lt;strong&gt;does not match&lt;&#x2F;strong&gt;, the peaks land at different angles each turn, spread evenly around the circle, and cancel. The center of mass collapses to near zero.&lt;&#x2F;p&gt;
 &lt;p&gt;To see it, here is a simple two-component signal (a $2$ Hz plus a $3$ Hz cosine, chosen at low frequencies purely so the winding is visible) wound at four different rates:&lt;&#x2F;p&gt;
 &lt;figure class=&quot;wide&quot;&gt;
-  &lt;img src=&quot;&amp;#x2F;img&amp;#x2F;notes&amp;#x2F;fft-sound-wave&amp;#x2F;fft_winding_frequencies.png&quot; alt=&quot;The signal wound around the origin at four winding frequencies, with the center of mass marked&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+  &lt;img src=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;pr-preview&#x2F;pr-11&#x2F;img&#x2F;notes&#x2F;fft-sound-wave&#x2F;fft_winding_frequencies.png&quot; alt=&quot;The signal wound around the origin at four winding frequencies, with the center of mass marked&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
   
   &lt;figcaption&gt;Winding a 2 Hz + 3 Hz signal. At 2 Hz and 3 Hz the center of mass (red) pulls away from the origin; at 1 Hz and 2.5 Hz it cancels back to the center.&lt;&#x2F;figcaption&gt;
   
 &lt;&#x2F;figure&gt;
 &lt;p&gt;Sweep the winding rate continuously and record how far the center of mass sits from the origin at each rate, and you trace out the Fourier transform magnitude directly: flat and near zero everywhere except sharp bumps at exactly the frequencies the signal contains.&lt;&#x2F;p&gt;
 &lt;figure class=&quot;wide&quot;&gt;
-  &lt;img src=&quot;&amp;#x2F;img&amp;#x2F;notes&amp;#x2F;fft-sound-wave&amp;#x2F;fft_winding_spectrum.png&quot; alt=&quot;Magnitude of the center of mass as a function of winding frequency, peaking at 2 and 3 Hz&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+  &lt;img src=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;pr-preview&#x2F;pr-11&#x2F;img&#x2F;notes&#x2F;fft-sound-wave&#x2F;fft_winding_spectrum.png&quot; alt=&quot;Magnitude of the center of mass as a function of winding frequency, peaking at 2 and 3 Hz&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
   
   &lt;figcaption&gt;Sweeping the winding frequency reproduces the spectrum: peaks at 2 and 3 Hz, near-zero elsewhere. This curve *is* the Fourier transform.&lt;&#x2F;figcaption&gt;
   
 &lt;&#x2F;figure&gt;
 &lt;p&gt;The same picture is clearer in three dimensions. Stack each wound copy of the signal along a third axis given by its winding frequency. Most slices are balanced loops centered on the axis; only at the true frequencies does the center of mass bulge outward.&lt;&#x2F;p&gt;
 &lt;figure class=&quot;wide&quot;&gt;
-  &lt;img src=&quot;&amp;#x2F;img&amp;#x2F;notes&amp;#x2F;fft-sound-wave&amp;#x2F;fft_3d_winding.png&quot; alt=&quot;3D plot stacking the wound signal along a winding-frequency axis, with centers of mass bulging at 2 and 3 Hz&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+  &lt;img src=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;pr-preview&#x2F;pr-11&#x2F;img&#x2F;notes&#x2F;fft-sound-wave&#x2F;fft_3d_winding.png&quot; alt=&quot;3D plot stacking the wound signal along a winding-frequency axis, with centers of mass bulging at 2 and 3 Hz&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
   
   &lt;figcaption&gt;The same winding viewed in 3D. Each slice is the signal wound at one frequency; the red centers of mass bulge out only at 2 and 3 Hz.&lt;&#x2F;figcaption&gt;
   
@@ -1424,7 +1424,7 @@ $$&lt;&#x2F;p&gt;
 &lt;p&gt;The signal &lt;code&gt;x&lt;&#x2F;code&gt; contains a strong $220$ Hz tone, a medium $440$ Hz tone, a weaker $880$ Hz tone, and a small amount of noise.&lt;&#x2F;p&gt;
 &lt;p&gt;In the time domain the waveform looks periodic but visually messy. That is expected. Time domain is not the right view for this question.&lt;&#x2F;p&gt;
 &lt;figure class=&quot;wide&quot;&gt;
-  &lt;img src=&quot;&amp;#x2F;img&amp;#x2F;notes&amp;#x2F;fft-sound-wave&amp;#x2F;time_domain_signal.png&quot; alt=&quot;Synthetic sound wave in the time domain&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+  &lt;img src=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;pr-preview&#x2F;pr-11&#x2F;img&#x2F;notes&#x2F;fft-sound-wave&#x2F;time_domain_signal.png&quot; alt=&quot;Synthetic sound wave in the time domain&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
   
   &lt;figcaption&gt;A short window of the synthetic three-tone signal in the time domain.&lt;&#x2F;figcaption&gt;
   
@@ -1450,7 +1450,7 @@ $$&lt;&#x2F;p&gt;
 &lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;plt&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span&gt;show&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;The spectrum shows three clean peaks, at $220$, $440$, and $880$ Hz, with heights roughly proportional to the amplitudes we put in. The noise spreads thinly across all other bins and stays small.&lt;&#x2F;p&gt;
 &lt;figure class=&quot;wide&quot;&gt;
-  &lt;img src=&quot;&amp;#x2F;img&amp;#x2F;notes&amp;#x2F;fft-sound-wave&amp;#x2F;frequency_spectrum.png&quot; alt=&quot;Magnitude spectrum with three peaks&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+  &lt;img src=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;pr-preview&#x2F;pr-11&#x2F;img&#x2F;notes&#x2F;fft-sound-wave&#x2F;frequency_spectrum.png&quot; alt=&quot;Magnitude spectrum with three peaks&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
   
   &lt;figcaption&gt;The DFT magnitude spectrum. The three input sinusoids appear as isolated peaks at 220, 440, and 880 Hz.&lt;&#x2F;figcaption&gt;
   
@@ -1485,7 +1485,7 @@ $$&lt;&#x2F;p&gt;
 &lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;plt&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span&gt;show&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;On a log-log plot, the naive DFT has slope close to $2$ and the recursive FFT has slope close to $1$. That is the $O(N^2)$ versus $O(N \log N)$ gap, visualized directly.&lt;&#x2F;p&gt;
 &lt;figure class=&quot;wide&quot;&gt;
-  &lt;img src=&quot;&amp;#x2F;img&amp;#x2F;notes&amp;#x2F;fft-sound-wave&amp;#x2F;naive_vs_fft_timing.png&quot; alt=&quot;Naive DFT vs FFT runtime on log-log axes&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+  &lt;img src=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;pr-preview&#x2F;pr-11&#x2F;img&#x2F;notes&#x2F;fft-sound-wave&#x2F;naive_vs_fft_timing.png&quot; alt=&quot;Naive DFT vs FFT runtime on log-log axes&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
   
   &lt;figcaption&gt;Empirical runtime comparison. The naive DFT grows quadratically while the recursive FFT grows close to linearly in N log N.&lt;&#x2F;figcaption&gt;
   
@@ -1615,7 +1615,7 @@ $$&lt;&#x2F;p&gt;
 &lt;p&gt;Here $z = w^T x + b$ is often called the &lt;strong&gt;logit&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
 &lt;p&gt;The interpretation is immediate once you remember that $z$ is a logit. If $z \gg 0$, then $\sigma(z)$ is close to $1$. If $z = 0$, then $\sigma(z)=0.5$. If $z \ll 0$, then $\sigma(z)$ is close to $0$. So the sigmoid is the map from linear evidence to probability. That is why logistic regression has the familiar S-curve.&lt;&#x2F;p&gt;
 &lt;figure class=&quot;wide&quot;&gt;
-  &lt;img src=&quot;&amp;#x2F;img&amp;#x2F;notes&amp;#x2F;softmax-regression&amp;#x2F;logistic_sigmoid_curve.png&quot; alt=&quot;Sigmoid function&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+  &lt;img src=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;pr-preview&#x2F;pr-11&#x2F;img&#x2F;notes&#x2F;softmax-regression&#x2F;logistic_sigmoid_curve.png&quot; alt=&quot;Sigmoid function&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
   
   &lt;figcaption&gt;The sigmoid curve appears after solving the log-odds equation for the probability.&lt;&#x2F;figcaption&gt;
   
@@ -1635,7 +1635,7 @@ L = -\frac{1}{m} \sum_{i=1}^m \left[y^{(i)} \log \hat{y}^{(i)} + (1-y^{(i)})\log
 $$&lt;&#x2F;p&gt;
 &lt;p&gt;This loss is worth staring at for a moment. It tells you exactly what the model fears: confident mistakes.&lt;&#x2F;p&gt;
 &lt;figure class=&quot;wide&quot;&gt;
-  &lt;img src=&quot;&amp;#x2F;img&amp;#x2F;notes&amp;#x2F;softmax-regression&amp;#x2F;logistic_bce_curve.png&quot; alt=&quot;Binary cross entropy curves&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+  &lt;img src=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;pr-preview&#x2F;pr-11&#x2F;img&#x2F;notes&#x2F;softmax-regression&#x2F;logistic_bce_curve.png&quot; alt=&quot;Binary cross entropy curves&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
   
   &lt;figcaption&gt;Binary cross-entropy for the two possible true labels.&lt;&#x2F;figcaption&gt;
   
@@ -1659,7 +1659,7 @@ $$&lt;&#x2F;p&gt;
 &lt;p&gt;To make the binary story concrete, we use the Breast Cancer Wisconsin dataset. It has 569 samples, 30 numerical features, and two target classes: &lt;code&gt;0&lt;&#x2F;code&gt; for malignant and &lt;code&gt;1&lt;&#x2F;code&gt; for benign.&lt;&#x2F;p&gt;
 &lt;p&gt;Before fitting anything, it helps to get a feel for the data itself.&lt;&#x2F;p&gt;
 &lt;figure class=&quot;wide&quot;&gt;
-  &lt;img src=&quot;&amp;#x2F;img&amp;#x2F;notes&amp;#x2F;softmax-regression&amp;#x2F;breast_cancer_overview.png&quot; alt=&quot;Breast Cancer dataset overview&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+  &lt;img src=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;pr-preview&#x2F;pr-11&#x2F;img&#x2F;notes&#x2F;softmax-regression&#x2F;breast_cancer_overview.png&quot; alt=&quot;Breast Cancer dataset overview&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
   
   &lt;figcaption&gt;Class balance and a two-feature raw view of the Breast Cancer dataset.&lt;&#x2F;figcaption&gt;
   
@@ -1695,14 +1695,14 @@ $$&lt;&#x2F;p&gt;
 &lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword&quot;&gt;    return&lt;&#x2F;span&gt;&lt;span&gt; weights&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span&gt; bias&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span&gt; np&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span&gt;array&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span&gt;history&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;The training loss falls in the way we expect:&lt;&#x2F;p&gt;
 &lt;figure class=&quot;wide&quot;&gt;
-  &lt;img src=&quot;&amp;#x2F;img&amp;#x2F;notes&amp;#x2F;softmax-regression&amp;#x2F;logistic_loss_curve.png&quot; alt=&quot;Logistic regression loss curve&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+  &lt;img src=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;pr-preview&#x2F;pr-11&#x2F;img&#x2F;notes&#x2F;softmax-regression&#x2F;logistic_loss_curve.png&quot; alt=&quot;Logistic regression loss curve&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
   
   &lt;figcaption&gt;Training loss for from-scratch logistic regression.&lt;&#x2F;figcaption&gt;
   
 &lt;&#x2F;figure&gt;
 &lt;p&gt;If we restrict ourselves to two features, we can also draw the probability surface directly:&lt;&#x2F;p&gt;
 &lt;figure class=&quot;wide&quot;&gt;
-  &lt;img src=&quot;&amp;#x2F;img&amp;#x2F;notes&amp;#x2F;softmax-regression&amp;#x2F;logistic_decision_boundary.png&quot; alt=&quot;Logistic regression decision boundary&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+  &lt;img src=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;pr-preview&#x2F;pr-11&#x2F;img&#x2F;notes&#x2F;softmax-regression&#x2F;logistic_decision_boundary.png&quot; alt=&quot;Logistic regression decision boundary&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
   
   &lt;figcaption&gt;A two-feature probability surface for logistic regression.&lt;&#x2F;figcaption&gt;
   
@@ -1777,7 +1777,7 @@ $$&lt;&#x2F;p&gt;
 &lt;p&gt;Each digit image is an $8 \times 8$ grayscale grid, flattened into a 64-dimensional vector.&lt;&#x2F;p&gt;
 &lt;p&gt;Before fitting the model, it is worth seeing both raw samples and class averages:&lt;&#x2F;p&gt;
 &lt;figure class=&quot;wide&quot;&gt;
-  &lt;img src=&quot;&amp;#x2F;img&amp;#x2F;notes&amp;#x2F;softmax-regression&amp;#x2F;digits_overview.png&quot; alt=&quot;Digits dataset overview&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+  &lt;img src=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;pr-preview&#x2F;pr-11&#x2F;img&#x2F;notes&#x2F;softmax-regression&#x2F;digits_overview.png&quot; alt=&quot;Digits dataset overview&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
   
   &lt;figcaption&gt;Raw digits samples and average digit images by class.&lt;&#x2F;figcaption&gt;
   
@@ -1817,7 +1817,7 @@ $$&lt;&#x2F;p&gt;
 &lt;p&gt;Sigmoid has a universal curve. Softmax does not.&lt;&#x2F;p&gt;
 &lt;p&gt;So the honest softmax visualization is not a fake one-dimensional curve. It is a sample-level transformation: start from a real digit image, compute one raw logit per class, and then exponentiate and normalize into probabilities. That is exactly what the next figure shows:&lt;&#x2F;p&gt;
 &lt;figure class=&quot;wide&quot;&gt;
-  &lt;img src=&quot;&amp;#x2F;img&amp;#x2F;notes&amp;#x2F;softmax-regression&amp;#x2F;softmax_real_transformation.png&quot; alt=&quot;Softmax transformation on a real digit&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+  &lt;img src=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;pr-preview&#x2F;pr-11&#x2F;img&#x2F;notes&#x2F;softmax-regression&#x2F;softmax_real_transformation.png&quot; alt=&quot;Softmax transformation on a real digit&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
   
   &lt;figcaption&gt;A real digit mapped into logits and then into softmax probabilities.&lt;&#x2F;figcaption&gt;
   
@@ -1826,7 +1826,7 @@ $$&lt;&#x2F;p&gt;
 &lt;p&gt;Softmax is less about drawing one magical curve and more about resolving competitions among classes. Some competitions are close, like car versus truck. Some are not, like car versus frog. The probability vector tells us how that competition ended for one specific input.&lt;&#x2F;p&gt;
 &lt;p&gt;The training loss on Digits decreases as expected:&lt;&#x2F;p&gt;
 &lt;figure class=&quot;wide&quot;&gt;
-  &lt;img src=&quot;&amp;#x2F;img&amp;#x2F;notes&amp;#x2F;softmax-regression&amp;#x2F;softmax_loss_curve.png&quot; alt=&quot;Softmax loss curve&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+  &lt;img src=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;pr-preview&#x2F;pr-11&#x2F;img&#x2F;notes&#x2F;softmax-regression&#x2F;softmax_loss_curve.png&quot; alt=&quot;Softmax loss curve&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
   
   &lt;figcaption&gt;Training loss for from-scratch softmax regression on Digits.&lt;&#x2F;figcaption&gt;
   
@@ -1870,7 +1870,7 @@ $$&lt;&#x2F;p&gt;
         <id>https://jienweng.github.io/pr-preview/pr-11/notes/regression-08-statistical-testing/</id>
         
         <content type="html" xml:base="https://jienweng.github.io/pr-preview/pr-11/notes/regression-08-statistical-testing/">&lt;p&gt;Hypothesis tests ask whether the data provide enough evidence against a specified regression claim. This note covers test setup, assumptions, p-values, and the boundary between evidence and overclaiming.&lt;&#x2F;p&gt;
-&lt;p&gt;The &lt;a href=&quot;&#x2F;posts&#x2F;regression-07-confidence-intervals&quot;&gt;previous note&lt;&#x2F;a&gt; constructed confidence intervals for regression coefficients. Confidence intervals and hypothesis tests answer related questions. Here, we formalize the hypothesis-testing framework for regression coefficients.&lt;&#x2F;p&gt;
+&lt;p&gt;The &lt;a href=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;pr-preview&#x2F;pr-11&#x2F;notes&#x2F;regression-07-confidence-intervals&#x2F;&quot;&gt;previous note&lt;&#x2F;a&gt; constructed confidence intervals for regression coefficients. Confidence intervals and hypothesis tests answer related questions. Here, we formalize the hypothesis-testing framework for regression coefficients.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;hypothesis-testing-for-individual-coefficients&quot;&gt;Hypothesis Testing for Individual Coefficients&lt;&#x2F;h2&gt;
 &lt;p&gt;The most common test in regression asks whether a particular predictor has a significant linear effect on the response. For coefficient $\beta_j$, the hypotheses are:&lt;&#x2F;p&gt;
 &lt;p&gt;$$H_0: \beta_j = 0 \quad \text{(the predictor has no effect)},$$
@@ -1973,7 +1973,7 @@ $$H_1: \beta_j \neq 0 \quad \text{(the predictor has an effect)}.$$&lt;&#x2F;p&g
         <id>https://jienweng.github.io/pr-preview/pr-11/notes/regression-07-confidence-intervals/</id>
         
         <content type="html" xml:base="https://jienweng.github.io/pr-preview/pr-11/notes/regression-07-confidence-intervals/">&lt;p&gt;Confidence intervals turn a coefficient estimate into a range that reflects sampling uncertainty. This note connects standard errors and critical values to that range, then works through its interpretation.&lt;&#x2F;p&gt;
-&lt;p&gt;The &lt;a href=&quot;&#x2F;posts&#x2F;regression-06-standard-error&quot;&gt;previous note&lt;&#x2F;a&gt; derived the standard errors of the regression coefficients. Standard errors describe estimate precision, but they do not give a range of plausible values for the true parameters. Confidence intervals do.&lt;&#x2F;p&gt;
+&lt;p&gt;The &lt;a href=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;pr-preview&#x2F;pr-11&#x2F;notes&#x2F;regression-06-standard-error&#x2F;&quot;&gt;previous note&lt;&#x2F;a&gt; derived the standard errors of the regression coefficients. Standard errors describe estimate precision, but they do not give a range of plausible values for the true parameters. Confidence intervals do.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;the-sampling-distribution-of-hat-beta-j&quot;&gt;The Sampling Distribution of $\hat{\beta}_j$&lt;&#x2F;h2&gt;
 &lt;p&gt;Under the normality assumption $\varepsilon_i \sim N(0, \sigma^2)$, the OLS estimators are also normally distributed:&lt;&#x2F;p&gt;
 &lt;p&gt;$$\hat{\beta}_j \sim N\left(\beta_j, \sigma^2 C_{jj}\right),$$&lt;&#x2F;p&gt;
@@ -2140,7 +2140,7 @@ $$H_1: \beta_j \neq 0 \quad \text{(the predictor has an effect)}.$$&lt;&#x2F;p&g
         <id>https://jienweng.github.io/pr-preview/pr-11/notes/regression-05-r-squared-and-correlation/</id>
         
         <content type="html" xml:base="https://jienweng.github.io/pr-preview/pr-11/notes/regression-05-r-squared-and-correlation/">&lt;p&gt;SST, SSR, and SSE split the variation in a response into a fitted part and a residual part. This note uses that decomposition to derive $R^2$, connect it to correlation, and show why a high $R^2$ can still mislead.&lt;&#x2F;p&gt;
-&lt;p&gt;The &lt;a href=&quot;&#x2F;posts&#x2F;regression-04-correlation&quot;&gt;previous note&lt;&#x2F;a&gt; introduced the Pearson correlation coefficient $r$. Here, the coefficient of determination $R^2$ comes from the decomposition of total variability, and for simple linear regression it satisfies $R^2 = r^2$.&lt;&#x2F;p&gt;
+&lt;p&gt;The &lt;a href=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;pr-preview&#x2F;pr-11&#x2F;notes&#x2F;regression-04-correlation&#x2F;&quot;&gt;previous note&lt;&#x2F;a&gt; introduced the Pearson correlation coefficient $r$. Here, the coefficient of determination $R^2$ comes from the decomposition of total variability, and for simple linear regression it satisfies $R^2 = r^2$.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;the-sum-of-squares-decomposition&quot;&gt;The Sum of Squares Decomposition&lt;&#x2F;h2&gt;
 &lt;p&gt;The total variability in the observed response values can be decomposed into two components: the variability explained by the regression model and the variability left unexplained (the residuals).&lt;&#x2F;p&gt;
 &lt;h3 id=&quot;total-sum-of-squares-sst&quot;&gt;Total Sum of Squares (SST)&lt;&#x2F;h3&gt;
@@ -2187,7 +2187,7 @@ $$H_1: \beta_j \neq 0 \quad \text{(the predictor has an effect)}.$$&lt;&#x2F;p&g
 &lt;h3 id=&quot;step-2-compute-r-2&quot;&gt;Step 2: Compute $R^2$&lt;&#x2F;h3&gt;
 &lt;p&gt;$$R^2 = \frac{SSR}{SST} = \frac{S_{xy}^2 &#x2F; S_{xx}}{S_{yy}} = \frac{S_{xy}^2}{S_{xx} \cdot S_{yy}}.$$&lt;&#x2F;p&gt;
 &lt;h3 id=&quot;step-3-compare-with-r-2&quot;&gt;Step 3: Compare with $r^2$&lt;&#x2F;h3&gt;
-&lt;p&gt;From the &lt;a href=&quot;&#x2F;posts&#x2F;regression-04-correlation&quot;&gt;previous note&lt;&#x2F;a&gt;, the correlation coefficient is:&lt;&#x2F;p&gt;
+&lt;p&gt;From the &lt;a href=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;pr-preview&#x2F;pr-11&#x2F;notes&#x2F;regression-04-correlation&#x2F;&quot;&gt;previous note&lt;&#x2F;a&gt;, the correlation coefficient is:&lt;&#x2F;p&gt;
 &lt;p&gt;$$r = \frac{S_{xy}}{\sqrt{S_{xx} \cdot S_{yy}}}.$$&lt;&#x2F;p&gt;
 &lt;p&gt;Squaring both sides:&lt;&#x2F;p&gt;
 &lt;p&gt;$$r^2 = \frac{S_{xy}^2}{S_{xx} \cdot S_{yy}}.$$&lt;&#x2F;p&gt;
@@ -2251,7 +2251,7 @@ SSE &amp;amp;= S_{yy} - 2\cdot\frac{S_{xy}}{S_{xx}}\cdot S_{xy} + \frac{S_{xy}^2
         <content type="html" xml:base="https://jienweng.github.io/pr-preview/pr-11/notes/regression-04-correlation/">&lt;p&gt;Correlation measures the strength of an association, but it does not establish a mechanism. This note derives the coefficient, shows how to compute it, and keeps that boundary visible.&lt;&#x2F;p&gt;
 &lt;p&gt;The earlier notes built the regression framework using $S_{xx}$ and $S_{xy}$ to derive the OLS estimators. The next useful quantity is a measure of linear association between two variables, the Pearson correlation coefficient.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;recap-of-key-notation&quot;&gt;Recap of Key Notation&lt;&#x2F;h2&gt;
-&lt;p&gt;In &lt;a href=&quot;&#x2F;posts&#x2F;regression-01-simple-linear-regression&quot;&gt;Simple Linear Regression&lt;&#x2F;a&gt;, we introduced:&lt;&#x2F;p&gt;
+&lt;p&gt;In &lt;a href=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;pr-preview&#x2F;pr-11&#x2F;notes&#x2F;regression-01-simple-linear-regression&#x2F;&quot;&gt;Simple Linear Regression&lt;&#x2F;a&gt;, we introduced:&lt;&#x2F;p&gt;
 &lt;p&gt;$$S_{xx} = \sum^n_{i=1}(x_i - \bar{x})^2,$$&lt;&#x2F;p&gt;
 &lt;p&gt;$$S_{xy} = \sum^n_{i=1}(x_i - \bar{x})(y_i - \bar{y}).$$&lt;&#x2F;p&gt;
 &lt;p&gt;We now introduce the remaining quantity:&lt;&#x2F;p&gt;
@@ -2332,7 +2332,7 @@ SSE &amp;amp;= S_{yy} - 2\cdot\frac{S_{xy}}{S_{xx}}\cdot S_{xy} + \frac{S_{xy}^2
         <id>https://jienweng.github.io/pr-preview/pr-11/notes/regression-03-polynomial-regression/</id>
         
         <content type="html" xml:base="https://jienweng.github.io/pr-preview/pr-11/notes/regression-03-polynomial-regression/">&lt;p&gt;Polynomial regression keeps the linear estimation machinery but feeds it transformed features such as $x^2$ and $x^3$. This note shows when those terms capture curvature and when they mostly add variance.&lt;&#x2F;p&gt;
-&lt;p&gt;The &lt;a href=&quot;&#x2F;posts&#x2F;regression-02-multiple-linear-regression&quot;&gt;previous note&lt;&#x2F;a&gt; introduced multiple linear regression using matrix notation. If the relationship between $x$ and $y$ is not a straight line, polynomial regression fits a polynomial in one variable. It is a special case of the multiple-regression framework.&lt;&#x2F;p&gt;
+&lt;p&gt;The &lt;a href=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;pr-preview&#x2F;pr-11&#x2F;notes&#x2F;regression-02-multiple-linear-regression&#x2F;&quot;&gt;previous note&lt;&#x2F;a&gt; introduced multiple linear regression using matrix notation. If the relationship between $x$ and $y$ is not a straight line, polynomial regression fits a polynomial in one variable. It is a special case of the multiple-regression framework.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;the-polynomial-model&quot;&gt;The Polynomial Model&lt;&#x2F;h2&gt;
 &lt;p&gt;A polynomial regression model of degree $d$ takes the form:&lt;&#x2F;p&gt;
 &lt;p&gt;$$y_i = \beta_0 + \beta_1 x_i + \beta_2 x_i^2 + \cdots + \beta_d x_i^d + \varepsilon_i.$$&lt;&#x2F;p&gt;
@@ -2410,7 +2410,7 @@ SSE &amp;amp;= S_{yy} - 2\cdot\frac{S_{xy}}{S_{xx}}\cdot S_{xy} + \frac{S_{xy}^2
         <id>https://jienweng.github.io/pr-preview/pr-11/notes/regression-02-multiple-linear-regression/</id>
         
         <content type="html" xml:base="https://jienweng.github.io/pr-preview/pr-11/notes/regression-02-multiple-linear-regression/">&lt;p&gt;With multiple predictors, each coefficient describes a change while the other predictors stay fixed. This note builds the model, derives the estimator, and works through the interpretation mistakes that follow from that condition.&lt;&#x2F;p&gt;
-&lt;p&gt;The &lt;a href=&quot;&#x2F;posts&#x2F;regression-01-simple-linear-regression&quot;&gt;previous note&lt;&#x2F;a&gt; used one predictor. In practice, the response variable $y$ often depends on more than one predictor, so multiple linear regression extends the framework to $p - 1$ independent variables.&lt;&#x2F;p&gt;
+&lt;p&gt;The &lt;a href=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;pr-preview&#x2F;pr-11&#x2F;notes&#x2F;regression-01-simple-linear-regression&#x2F;&quot;&gt;previous note&lt;&#x2F;a&gt; used one predictor. In practice, the response variable $y$ often depends on more than one predictor, so multiple linear regression extends the framework to $p - 1$ independent variables.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;the-model&quot;&gt;The Model&lt;&#x2F;h2&gt;
 &lt;p&gt;The multiple linear regression model for the $i$-th observation is:&lt;&#x2F;p&gt;
 &lt;p&gt;$$y_i = \beta_0 + \beta_1 x_{i1} + \beta_2 x_{i2} + \cdots + \beta_{p-1} x_{i,p-1} + \varepsilon_i,$$&lt;&#x2F;p&gt;
@@ -2838,12 +2838,6 @@ $$&lt;&#x2F;p&gt;
 &lt;p&gt;Prospective use therefore requires more than an offline performance estimate. Clinicians and technical teams need to inspect learned policies, stress-test unusual states, monitor drift, and establish clear limits on autonomous action.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
 &lt;p&gt;RL may help with sequential treatment decisions, but the evidence burden is higher than for a conventional prediction model. Before deployment, I would ask whether the state captures the real decision context, whether the data support the proposed policy, and whether the reward and monitoring process constrain harmful behaviour. If any answer is unclear, the system is not ready for prospective clinical use.&lt;&#x2F;p&gt;
-&lt;figure class=&quot;wide&quot;&gt;
-  &lt;img src=&quot;&amp;#x2F;img&amp;#x2F;posts&amp;#x2F;guidelines_for_reinforcement_learning_in_healthcare.jpg&quot; alt=&quot;Three groups of guidelines for evaluating reinforcement learning in healthcare&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
-  
-  &lt;figcaption&gt;Guidelines for reinforcement learning in healthcare, adapted from Gottesman et al. (2019).&lt;&#x2F;figcaption&gt;
-  
-&lt;&#x2F;figure&gt;
 &lt;h2 id=&quot;reference&quot;&gt;Reference&lt;&#x2F;h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Gottesman, O., Johansson, F., Komorowski, M., Faisal, A., Sontag, D., Doshi-Velez, F., &amp;amp; Celi, L. A. (2019). Guidelines for reinforcement learning in healthcare. &lt;em&gt;Nature Medicine, 25&lt;&#x2F;em&gt;(1), 16–18. &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;doi.org&#x2F;10.1038&#x2F;s41591-018-0310-5&quot;&gt;https:&#x2F;&#x2F;doi.org&#x2F;10.1038&#x2F;s41591-018-0310-5&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
