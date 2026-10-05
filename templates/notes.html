@@ -4,10 +4,10 @@
 {% block body_class %}section-page notes-page{% endblock body_class %}
 
 {% block content %}
-<main class="content-grid">
+<main id="main" class="content-grid">
   <aside class="rail">
     <div class="rail-block">
-      <a class="back-link" href="{{ get_url(path='/') }}">Back to index</a>
+      <a class="back-link" href="{{ get_url(path='/') }}">Home</a>
       <h1 class="section-title">{{ section.title }}</h1>
     </div>
   </aside>
@@ -42,7 +42,7 @@
     {% set_global has_other = false %}
     {% for item in section.pages %}{% set tp = item.extra.topic | default(value="") %}{% if tp not in topics %}{% set_global has_other = true %}{% endif %}{% endfor %}
     {% if has_other %}
-    <h2 class="notes-topic">Other</h2>
+    <h2 class="notes-topic">More writing</h2>
     <div class="edition-list section-list">
       {% for item in section.pages %}{% set tp = item.extra.topic | default(value="") %}{% if tp not in topics %}
       <a class="edition-row" href="{{ item.permalink }}">

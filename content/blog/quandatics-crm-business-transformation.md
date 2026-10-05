@@ -50,7 +50,7 @@ The sales process starts with a lead. Once the lead is qualified, it becomes an 
 
 Each opportunity then moves through its own funnel. The stages are more than labels for a salesperson. They carry information about what has been checked, what still needs approval, and whether the opportunity is ready to move forward. Management controls sit around the stages because a quotation should not become a commitment just because someone dragged a card across a screen.
 
-![Quandatics deal-to-cash flow from qualified lead to payment received](/img/blog/quandatics/deal-to-cash.png)
+![Quandatics deal-to-cash flow from qualified lead to payment received](/img/blog/quandatics/deal-to-cash-portfolio.png)
 
 *Deal-to-cash flow.*
 

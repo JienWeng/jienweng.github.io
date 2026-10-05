@@ -3,9 +3,7 @@ title = "Work With Me"
 description = "Partner with Jien Weng to turn complex business and technical work into clear decisions, useful products, and lasting team capability."
 +++
 
-I help teams make progress when the work crosses business operations, product decisions, and technical delivery. My role is to bring structure to an unclear problem, align the people involved, and help move the work toward something useful.
-
-I am most useful when a team has ambition and technical potential, but needs someone who can connect the commercial objective, the product direction, the delivery details, and the people who will own the result.
+I help teams turn business requirements into product decisions, delivery plans, and testable work. My work spans internal systems, Web3 payments, and data and machine-learning training.
 
 ## A good fit
 
@@ -13,12 +11,6 @@ I am most useful when a team has ambition and technical potential, but needs som
 - An AI, data, or Web3 idea needs product direction and a realistic path to delivery.
 - A consulting or product team needs someone who can work across stakeholders and technical specialists.
 - An analytics team needs practical training and coaching so it can own what it builds.
-
-## What I bring
-
-- **Clarity before activity.** I start by understanding the real constraint, the people involved, and what a useful outcome looks like.
-- **Translation across disciplines.** I connect business needs, product decisions, research, and technical delivery without losing the practical details.
-- **Capability that remains.** I aim to leave the team with clearer systems, stronger judgment, and the ability to keep improving after the engagement.
 
 ## Relevant work
 
