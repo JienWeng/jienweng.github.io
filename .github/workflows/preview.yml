@@ -6,9 +6,8 @@ on:
     types: [opened, synchronize, reopened, closed]
 
 permissions:
-  contents: read
+  contents: write
   pull-requests: write
-  deployments: write
 
 concurrency:
   group: pr-preview-${{ github.event.pull_request.number }}
@@ -16,47 +15,27 @@ concurrency:
 
 jobs:
   preview:
-    if: github.event.action != 'closed'
     runs-on: ubuntu-latest
-    environment:
-      name: pr-preview-${{ github.event.pull_request.number }}
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Checkout
+      - name: Check out pull request
+        if: github.event.action != 'closed'
         uses: actions/checkout@v4
 
       - name: Install Zola
+        if: github.event.action != 'closed'
         uses: taiki-e/install-action@v2
         with:
           tool: zola@0.22.1
 
       - name: Build preview site
-        run: zola build --base-url "https://jienweng.github.io/previews/pr-${{ github.event.pull_request.number }}/"
+        if: github.event.action != 'closed'
+        run: zola build --base-url "https://jienweng.github.io/pr-preview/pr-${{ github.event.pull_request.number }}/"
 
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Publish or remove preview
+        uses: rossjrw/pr-preview-action@v1
         with:
-          path: ./public
-
-      - name: Deploy preview
-        id: deployment
-        uses: actions/deploy-pages@v4
-        with:
-          preview: true
-
-      - name: Add preview URL to pull request
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PR_NUMBER: ${{ github.event.pull_request.number }}
-          PREVIEW_URL: ${{ steps.deployment.outputs.page_url }}
-        run: gh pr comment "$PR_NUMBER" --repo "$GITHUB_REPOSITORY" --edit-last --body "Preview ready: $PREVIEW_URL" || gh pr comment "$PR_NUMBER" --repo "$GITHUB_REPOSITORY" --body "Preview ready: $PREVIEW_URL"
-
-  cleanup:
-    if: github.event.action == 'closed'
-    runs-on: ubuntu-latest
-    steps:
-      - name: Delete preview deployment
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PR_NUMBER: ${{ github.event.pull_request.number }}
-        run: gh api --method DELETE "repos/$GITHUB_REPOSITORY/pages/deployments/pr-preview-$PR_NUMBER" || true
+          source-dir: ./public/
+          preview-branch: gh-pages
+          umbrella-dir: pr-preview
+          wait-for-pages-deployment: true
+          qr-code: false
