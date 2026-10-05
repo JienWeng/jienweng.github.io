@@ -41,13 +41,10 @@ The hash belongs to the blockchain. The payment reference belongs to the busines
 The customer sends funds to the deposit address. The browser’s `deposit-watch` SDK polls the chain and fires `onDeposit` when funds appear. That callback gives immediate feedback and notifies the merchant’s backend; it is not proof of settlement.
 
 <figure class="payment-artifact">
-  <a href="../../img/projects/cryptorails-deposit-flow.png" aria-label="View the full-size CryptoRails payment workflow">
-
-
-      <img width="3600" height="2060" src="../../img/projects/cryptorails-deposit-flow.png" alt="CryptoRails deposit flow: customer address, browser detection, server-side consolidation, and settlement through a verified signed webhook." loading="lazy">
-
-  </a>
-  <figcaption><span>Redrawn from the <a href="https://docs.cryptorails.tech/guide">public integration guide</a>: detection provides feedback; a verified webhook authorises settlement.</span></figcaption>
+<a href="../../img/projects/cryptorails-deposit-flow.png" aria-label="View the full-size CryptoRails payment workflow">
+<img width="3600" height="2060" src="../../img/projects/cryptorails-deposit-flow.png" alt="CryptoRails deposit flow: customer address, browser detection, server-side consolidation, and settlement through a verified signed webhook." loading="lazy">
+</a>
+<figcaption><span>Redrawn from the <a href="https://docs.cryptorails.tech/guide">public integration guide</a>: detection provides feedback; a verified webhook authorises settlement.</span></figcaption>
 </figure>
 
 The merchant’s backend requests consolidation. CryptoRails validates the on-chain funds and sweeps them from the deposit address to the tenant’s consolidation wallet. The gateway tracks this transaction through confirmation before sending the signed webhook.
