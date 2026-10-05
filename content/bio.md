@@ -1,13 +1,9 @@
 +++
-title = "Bio"
+title = "About"
 description = "Professional background, consulting work, and research interests of Jien Weng."
 +++
 
-# Bio
-
 I work across business transformation, AI, data, and Web3 product development. As an independent consultant and product manager, I help teams improve processes, build practical systems, and turn ideas into working products. My Web3 product work also involves proprietary AI research, and I deliver data and machine-learning training.
-
-My consulting and product work focuses on making technology useful in practice. I work with teams to understand operational problems, improve how work gets done, and move from early ideas to systems and products that can be tested and used. This includes process improvement, automation, applied AI, data systems, and Web3 product work.
 
 I am also a research assistant at Monash University Malaysia. The center of my research is mathematical modelling, especially where it meets learning, decision-making, finance, and environmental systems. I work on multi-agent reinforcement learning, market microstructure, and quantitative finance, treating them as different settings in which modelling assumptions and information constraints determine what a system can actually learn or control.
 

@@ -4,11 +4,11 @@
 {% block body_class %}taxonomy-page{% endblock body_class %}
 
 {% block content %}
-<main class="content-grid">
+<main id="main" class="content-grid">
   <aside class="rail">
     <div class="rail-block">
-      <a class="back-link" href="{{ get_url(path='/' ~ taxonomy.name ~ '/') }}">Back to {{ taxonomy.name }}</a>
-      <div class="eyebrow">{{ taxonomy.name | title }}</div>
+      <a class="back-link" href="{{ get_url(path='/' ~ taxonomy.name ~ '/') }}">All {{ taxonomy.name }}</a>
+
       <h1 class="section-title">{{ term.name }}</h1>
     </div>
   </aside>

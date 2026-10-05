@@ -4,19 +4,21 @@
 {% block body_class %}article-page{% endblock body_class %}
 
 {% block content %}
-<main class="content-grid">
-  <aside class="rail">
-    <div class="rail-block article-rail">
+<main id="main" class="content-grid article-layout">
+  <header class="article-heading">
       {% if page.ancestors %}
       {% set parent = get_section(path=page.ancestors | last) %}
-      <a class="back-link" href="{{ parent.permalink }}">Back</a>
+      <a class="back-link" href="{{ parent.permalink }}">{{ parent.title | default(value="Home") }}</a>
       {% else %}
-      <a class="back-link" href="{{ get_url(path='/') }}">Back</a>
+      <a class="back-link" href="{{ get_url(path='/') }}">Home</a>
       {% endif %}
-      <h1 class="section-title">{{ page.title }}</h1>
+      <h1 class="article-title">{{ page.title }}</h1>
       {% if page.date %}
       <p class="rail-note">{{ page.date | date(format="%b %-d, %Y") }}</p>
       {% endif %}
+  </header>
+  <aside class="rail">
+    <div class="rail-block article-rail">
       {% if page.taxonomies.tags %}
       <ul class="tag-list">
         {% for tag in page.taxonomies.tags %}
@@ -25,6 +27,8 @@
       </ul>
       {% endif %}
       {% if page.toc and page.extra.toc %}
+      <details class="article-contents">
+      <summary>On this page</summary>
       <nav class="toc" aria-label="Table of contents">
         <ul class="plain-list">
           {% for h2 in page.toc %}
@@ -32,6 +36,7 @@
           {% endfor %}
         </ul>
       </nav>
+      </details>
       {% endif %}
     </div>
   </aside>

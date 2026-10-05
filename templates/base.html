@@ -26,7 +26,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light">
-  <meta name="theme-color" content="#F5F5F2">
+  <meta name="theme-color" content="#f6f3ec">
   <meta name="description" content="{{ desc_text }}">
   <meta name="author" content="{{ config.extra.author }}">
   {% if keywords_text %}<meta name="keywords" content="{{ keywords_text }}">{% endif %}
@@ -75,9 +75,10 @@
   {% endfor %}
   {% endif %}
 
-  <link rel="preload" href="{{ get_url(path='fonts/lmroman-regular.woff2') }}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{ get_url(path='fonts/archivo-variable.woff2') }}" as="font" type="font/woff2" crossorigin>
   <link id="syntax-theme" rel="stylesheet" href="{{ get_url(path='css/giallo-light.css') }}">
   <link rel="stylesheet" href="{{ get_url(path='site.css') }}?v=20260924-home-simplified">
+  <link rel="stylesheet" href="{{ get_url(path='portfolio.css') }}">
   {% if page and page.extra.math %}
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
@@ -164,33 +165,21 @@
   </script>
   {% block head %}{% endblock head %}
 </head>
-<body class="{% block body_class %}default{% endblock body_class %}">
+<body class="portfolio {% block body_class %}default{% endblock body_class %}">
   {% set current = "/" %}
   {% if page %}{% set current = page.path %}{% endif %}
   {% if section and section.path != "/" %}{% set current = section.path %}{% endif %}
 
   <div class="page-shell">
-    <header class="site-header">
-      <div class="site-brand">
-        {% if current != "/" %}
-        <a href="{{ get_url(path='/') }}" class="site-title">{{ config.extra.site_title }}</a>
-        {% endif %}
-      </div>
-      <nav class="site-nav" aria-label="Primary">
-        <a href="{{ get_url(path='/cv/') }}"{% if current == "/cv/" %} aria-current="page"{% endif %}>CV</a>
-        <a href="{{ get_url(path='/projects/') }}"{% if current == "/projects/" %} aria-current="page"{% endif %}>Projects</a>
-        <a href="{{ get_url(path='/notes/') }}"{% if current == "/notes/" %} aria-current="page"{% endif %}>Writing</a>
-        <a href="{{ get_url(path='/publications/') }}"{% if current == "/publications/" %} aria-current="page"{% endif %}>Research</a>
-        <a href="{{ get_url(path='/bio/') }}"{% if current == "/bio/" %} aria-current="page"{% endif %}>About</a>
-        <a href="{{ get_url(path='/services/') }}"{% if current == "/services/" %} aria-current="page"{% endif %}>Work With Me</a>
-      </nav>
-    </header>
+    {% block header %}{% include "partials/portfolio-header.html" %}{% endblock header %}
 
     {% block content %}{% endblock content %}
 
     <footer class="site-footer">
-      <div>© {{ now() | date(format="%Y") }} {{ config.extra.author }}. Last built {{ now() | date(format="%b %Y") }}.</div>
+      <div>© {{ now() | date(format="%Y") }} {{ config.extra.author }}.</div>
       <div class="footer-links">
+        <a href="{{ get_url(path='/publications/') }}">Research</a>
+        <a href="{{ get_url(path='/services/') }}">Work with me</a>
         <a href="{{ get_url(path='/now/') }}">Now</a>
         <a href="{{ get_url(path='atom.xml') }}">RSS</a>
         <a href="mailto:{{ config.extra.email }}">Email</a>
@@ -202,6 +191,7 @@
   </div>
 
   <script src="{{ get_url(path='site.js') }}"></script>
+  <script src="{{ get_url(path='portfolio.js') }}" defer></script>
   {% include "partials/analytics.html" %}
   {% if page and page.extra.math %}
   <script>
