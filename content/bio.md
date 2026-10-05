@@ -1,6 +1,9 @@
 +++
 title = "About"
 description = "Professional background, consulting work, and research interests of Jien Weng."
+
+[extra]
+portrait = "img/profile.webp"
 +++
 
 I work across business transformation, AI, data, and Web3 product development. As an independent consultant and product manager, I help teams improve processes, build practical systems, and turn ideas into working products. My Web3 product work also involves proprietary AI research, and I deliver data and machine-learning training.
