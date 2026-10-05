@@ -27,7 +27,7 @@ reaction = true
 Confidence intervals turn a coefficient estimate into a range that reflects sampling uncertainty. This note connects standard errors and critical values to that range, then works through its interpretation.
 
 
-The [previous note](/posts/regression-06-standard-error) derived the standard errors of the regression coefficients. Standard errors describe estimate precision, but they do not give a range of plausible values for the true parameters. Confidence intervals do.
+The [previous note](@/notes/regression_06_standard_error.md) derived the standard errors of the regression coefficients. Standard errors describe estimate precision, but they do not give a range of plausible values for the true parameters. Confidence intervals do.
 
 ## The Sampling Distribution of $\hat{\beta}\_j$
 

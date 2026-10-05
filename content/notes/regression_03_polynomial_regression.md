@@ -27,7 +27,7 @@ reaction = true
 Polynomial regression keeps the linear estimation machinery but feeds it transformed features such as $x^2$ and $x^3$. This note shows when those terms capture curvature and when they mostly add variance.
 
 
-The [previous note](/posts/regression-02-multiple-linear-regression) introduced multiple linear regression using matrix notation. If the relationship between $x$ and $y$ is not a straight line, polynomial regression fits a polynomial in one variable. It is a special case of the multiple-regression framework.
+The [previous note](@/notes/regression_02_multiple_linear_regression.md) introduced multiple linear regression using matrix notation. If the relationship between $x$ and $y$ is not a straight line, polynomial regression fits a polynomial in one variable. It is a special case of the multiple-regression framework.
 
 ## The Polynomial Model
 

@@ -27,7 +27,7 @@ reaction = true
 With multiple predictors, each coefficient describes a change while the other predictors stay fixed. This note builds the model, derives the estimator, and works through the interpretation mistakes that follow from that condition.
 
 
-The [previous note](/posts/regression-01-simple-linear-regression) used one predictor. In practice, the response variable $y$ often depends on more than one predictor, so multiple linear regression extends the framework to $p - 1$ independent variables.
+The [previous note](@/notes/regression_01_simple_linear_regression.md) used one predictor. In practice, the response variable $y$ often depends on more than one predictor, so multiple linear regression extends the framework to $p - 1$ independent variables.
 
 ## The Model
 

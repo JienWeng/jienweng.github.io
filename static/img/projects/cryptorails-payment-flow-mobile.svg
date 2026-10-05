@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="1430" viewBox="0 0 420 1430" role="img" aria-labelledby="title desc">
+  <title id="title">CryptoRails payment workflow</title>
+  <desc id="desc">Five mobile-sized stages: create a payment request, review and sign it, track it on-chain, verify the request details, then settle through a signed webhook. A failed, delayed, expired, or mismatched payment goes to recovery or review.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M1 1 8 5 1 9" fill="none" stroke="#b83e12" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <style>
+      .paper{fill:#f6f3ec}.lane{fill:#faf8f3;stroke:#b9b2a8;stroke-width:1.5}.lane-alt{fill:#f2eee6;stroke:#b9b2a8;stroke-width:1.5}.ink{fill:#242321}.muted{fill:#706b64}.rust{fill:#b83e12}.white{fill:#fffaf4}
+      .card{fill:#fffdfa;stroke:#242321;stroke-width:2}.final{fill:#b83e12;stroke:#b83e12;stroke-width:2}.recovery{fill:#fffdfa;stroke:#b9b2a8;stroke-width:2;stroke-dasharray:8 7}
+      .arrow{fill:none;stroke:#b83e12;stroke-width:3;marker-end:url(#arrow)}
+      .title{font:700 25px Arial,sans-serif;letter-spacing:-.3px}.subtitle{font:16px Arial,sans-serif}.lane-label{font:700 13px Arial,sans-serif;letter-spacing:1px}.step{font:700 13px Arial,sans-serif;letter-spacing:1px}.card-title{font:700 21px Arial,sans-serif;letter-spacing:-.2px}.copy{font:17px Arial,sans-serif}.small{font:15px Arial,sans-serif}.note{font:italic 14px Arial,sans-serif}
+    </style>
+  </defs>
+  <rect class="paper" width="420" height="1430"/>
+  <text x="20" y="42" class="title ink">Payment to settlement</text>
+  <text x="21" y="68" class="subtitle muted">Follow the verified evidence.</text>
+
+  <rect x="16" y="92" width="388" height="194" class="lane"/>
+  <rect x="16" y="286" width="388" height="194" class="lane-alt"/>
+  <rect x="16" y="480" width="388" height="194" class="lane"/>
+  <rect x="16" y="674" width="388" height="194" class="lane-alt"/>
+  <rect x="16" y="868" width="388" height="194" class="lane"/>
+
+  <text x="32" y="116" class="lane-label ink">MERCHANT · 1</text>
+  <rect x="40" y="130" width="340" height="130" rx="5" class="card"/>
+  <text x="62" y="163" class="step rust">REQUEST</text>
+  <text x="62" y="192" class="card-title ink">Create payment</text>
+  <text x="62" y="220" class="copy muted">amount · token · network</text>
+  <text x="62" y="244" class="copy muted">recipient · expiry · reference</text>
+
+  <path d="M210 260 V306" class="arrow"/>
+  <text x="32" y="310" class="lane-label ink">CUSTOMER · 2</text>
+  <rect x="40" y="324" width="340" height="130" rx="5" class="card"/>
+  <text x="62" y="357" class="step rust">WALLET</text>
+  <text x="62" y="386" class="card-title ink">Review and sign</text>
+  <text x="62" y="414" class="copy muted">check payment details</text>
+  <text x="62" y="438" class="copy muted">approve transfer in wallet</text>
+
+  <path d="M210 454 V500" class="arrow"/>
+  <text x="32" y="504" class="lane-label ink">BLOCKCHAIN · 3</text>
+  <rect x="40" y="518" width="340" height="130" rx="5" class="card"/>
+  <text x="62" y="551" class="step rust">ON-CHAIN</text>
+  <text x="62" y="580" class="card-title ink">Track transaction</text>
+  <text x="62" y="608" class="copy muted">hash · pending · processing</text>
+  <text x="62" y="632" class="copy muted">confirmed or failed</text>
+
+  <path d="M210 648 V694" class="arrow"/>
+  <text x="32" y="698" class="lane-label ink">CRYPTORAILS · 4</text>
+  <rect x="40" y="712" width="340" height="130" rx="5" class="card"/>
+  <text x="62" y="745" class="step rust">RECONCILE</text>
+  <text x="62" y="774" class="card-title ink">Verify the match</text>
+  <text x="62" y="802" class="copy muted">ref · amount · token</text>
+  <text x="62" y="826" class="copy muted">recipient · chain · hash</text>
+
+  <path d="M210 842 V888" class="arrow"/>
+  <text x="32" y="892" class="lane-label ink">MERCHANT BACKEND · 5</text>
+  <rect x="40" y="906" width="340" height="130" rx="5" class="final"/>
+  <text x="62" y="939" class="step white">SETTLE</text>
+  <text x="62" y="968" class="card-title white">Notify merchant</text>
+  <text x="62" y="996" class="copy white">signed HMAC webhook</text>
+  <text x="62" y="1020" class="copy white">updates its order</text>
+
+  <rect x="20" y="1084" width="380" height="210" rx="5" class="recovery"/>
+  <text x="40" y="1120" class="step rust">RECOVER OR REVIEW</text>
+  <text x="40" y="1155" class="card-title ink">If payment fails</text>
+  <text x="40" y="1184" class="copy muted">Rejected, delayed, expired,</text>
+  <text x="40" y="1208" class="copy muted">or mismatched? Retry or review.</text>
+  <text x="40" y="1248" class="small muted">Never settle from browser status alone.</text>
+  <text x="400" y="1340" text-anchor="end" class="note muted">EVM gas · TRON Energy rental + Bandwidth</text>
+</svg>

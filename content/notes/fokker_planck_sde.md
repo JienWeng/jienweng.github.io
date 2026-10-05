@@ -38,7 +38,7 @@ Once that chain is visible, the equation stops looking like a definition to memo
 
 Start with one stochastic differential equation, simulate many paths, and the cloud of points begins to look like a density. This note follows that path to the Fokker-Planck equation, solves it in Python, and checks the result against an Ornstein-Uhlenbeck example with a known closed form.
 
-> **Run it yourself.** Every code block below is collected in a runnable Jupyter notebook: [**download `fokker-planck-sde.ipynb`**](/notebooks/fokker-planck-sde.ipynb). It only needs `numpy` and `matplotlib` (`pip install numpy matplotlib`), and runs top to bottom.
+> **Run it yourself.** Every code block below is collected in a runnable Jupyter notebook: [**download `fokker-planck-sde.ipynb`**](../../notebooks/fokker-planck-sde.ipynb). It only needs `numpy` and `matplotlib` (`pip install numpy matplotlib`), and runs top to bottom.
 
 ## Start with a Single Trajectory
 
