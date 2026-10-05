@@ -1,0 +1,38 @@
+# Jien Weng
+
+> Jien Weng is a Web3 Product Manager, Business Transformation Consultant, and Data Science & Machine Learning Trainer working across product delivery, applied AI, data systems, and environmental research.
+
+This is the official personal website of Jien Weng Lai. Use the links below for current professional information, services, writing, research, and public technical work. Confidential Web3 and proprietary AI work is described only at a high level.
+
+## Professional Profile
+
+- [About](https://jienweng.github.io/bio/): Professional background and current areas of work.
+- [Curriculum Vitae](https://jienweng.github.io/cv/): Experience, education, awards, certifications, grants, open-source contributions, volunteering, and publications.
+- [Public CV PDF](https://jienweng.github.io/cv/jien-weng-lai-public-cv.pdf): Downloadable, ATS-friendly version of the approved public CV.
+- [Work With Me](https://jienweng.github.io/services/): Suitable partnerships, working style, relevant experience, and contact information.
+- [Current Work](https://jienweng.github.io/now/): Current consulting, product, training, and research priorities.
+
+## Writing
+
+- [Writing Index](https://jienweng.github.io/notes/): Practical writing across business, products, AI, data, Web3, mathematics, and research.
+- [Entropy and the Arrow of Time](https://jienweng.github.io/notes/entropy-time-arrow-yu-deng/): A first-principles explanation of how the irreversible Boltzmann equation emerges from reversible hard-sphere mechanics, and what Yu Deng, Zaher Hani, and Xiao Ma proved.
+- [Introduction to MLOps](https://jienweng.github.io/notes/intro-to-mlops-tutorial/): Plain-language guide to reproducibility, the ML lifecycle, deployment, and MLflow.
+- [Tree-Based Models](https://jienweng.github.io/notes/tree-based-models/): Explanation of decision trees, random forests, and XGBoost.
+- [Fokker-Planck Equation](https://jienweng.github.io/notes/fokker-planck-sde/): First-principles derivation and numerical example.
+
+## Research
+
+- [Publications](https://jienweng.github.io/publications/): Research in satellite rainfall monitoring, multi-agent cooperation, information design, optimal execution, and quantitative finance.
+- [Google Scholar](https://scholar.google.com/citations?user=2siljxAAAAAJ&hl=en): Author profile and indexed research.
+- [ORCID](https://orcid.org/0009-0001-2543-3887): Persistent researcher identifier.
+
+## Technical Work
+
+- [Projects](https://jienweng.github.io/projects/): Public product, data, AI, Web3, software, and hardware projects.
+- [GitHub](https://github.com/JienWeng): Public repositories and open-source activity.
+
+## Optional
+
+- [Older Blog Archive](https://jienweng.github.io/blog/): Earlier personal writing, hackathon reflections, and experiments.
+- [Atom Feed](https://jienweng.github.io/atom.xml): Machine-readable feed of new content.
+- [Sitemap](https://jienweng.github.io/sitemap.xml): Complete index of public site URLs.

@@ -1,0 +1,82 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta content="width=device-width,initial-scale=1" name=viewport><meta content=light name=color-scheme><meta content=#F5F5F2 name=theme-color><meta content="An introduction to simple linear regression, the OLS method, and deriving the estimators using Sxx and Sxy notation." name=description><meta content="Jien Weng" name=author><meta content="math, statistics, regression" name=keywords><meta content=index,follow,max-image-preview:large name=robots><title>Simple Linear Regression · Jien Weng</title><link href=https://jienweng.github.io/notes/regression-01-simple-linear-regression/ rel=canonical><link href=https://jienweng.github.io/notes/regression-01-simple-linear-regression/ hreflang=en rel=alternate><link title="Jien Weng Atom Feed" href=https://jienweng.github.io/atom.xml rel=alternate type=application/atom+xml><link title="LLM-readable site index" href=https://jienweng.github.io/llms.txt rel=alternate type=text/plain><link href=https://jienweng.github.io/sitemap.xml rel=sitemap type=application/xml><link href=https://jienweng.github.io/favicon.ico rel=icon sizes=32x32><link href=https://jienweng.github.io/img/favicon.svg rel=icon type=image/svg+xml><link href=https://jienweng.github.io/img/apple-touch-icon.png rel=apple-touch-icon><meta content=lEVDsYCFTWIXyy8uMAXy7BJM0v5zRns_CEjn7XcQTRE name=google-site-verification><meta content=958D991A9C82A2EFB2FF8A29B9EB9115 name=msvalidate.01><meta content="Simple Linear Regression · Jien Weng" property=og:title><meta content="An introduction to simple linear regression, the OLS method, and deriving the estimators using Sxx and Sxy notation." property=og:description><meta content=article property=og:type><meta content=https://jienweng.github.io/notes/regression-01-simple-linear-regression/ property=og:url><meta content="Jien Weng" property=og:site_name><meta content=en_US property=og:locale><meta content=https://jienweng.github.io/img/og-partner.png property=og:image><meta content=1200 property=og:image:width><meta content=630 property=og:image:height><meta content=summary_large_image name=twitter:card><meta content="Simple Linear Regression · Jien Weng" name=twitter:title><meta content="An introduction to simple linear regression, the OLS method, and deriving the estimators using Sxx and Sxy notation." name=twitter:description><meta content=https://jienweng.github.io/img/og-partner.png name=twitter:image><meta content=2026-01-02 property=article:published_time><meta content="Jien Weng" property=article:author><meta content=2026-01-02 property=article:modified_time><meta content=math property=article:tag><meta content=statistics property=article:tag><meta content=regression property=article:tag><link as=font crossorigin href=https://jienweng.github.io/fonts/lmroman-regular.woff2 rel=preload type=font/woff2><link href=https://jienweng.github.io/css/giallo-light.css id=syntax-theme rel=stylesheet><link href="https://jienweng.github.io/site.css?v=20260924-home-simplified" rel=stylesheet><link crossorigin href=https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css rel=stylesheet><script crossorigin defer src=https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js></script><script crossorigin defer src=https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js></script><script type=application/ld+json>
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://jienweng.github.io/#person",
+        "name": "Jien Weng",
+        "url": "https://jienweng.github.io",
+        "email": "laijienweng@gmail.com",
+        "jobTitle": "Independent Consultant & Product Manager",
+        "knowsAbout": ["Business transformation", "Product management", "Artificial intelligence", "Data science", "Machine learning", "Web3"],
+        "sameAs": ["https://github.com/jienweng","https://linkedin.com/in/jienweng","https://scholar.google.com/citations?user=2siljxAAAAAJ&hl=en","https://orcid.org/0009-0001-2543-3887"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://jienweng.github.io/#website",
+        "url": "https://jienweng.github.io",
+        "name": "Jien Weng",
+        "description": "Web3 Product Manager, Business Transformation Consultant, and Data Science & Machine Learning Trainer.",
+        "inLanguage": "en",
+        "publisher": { "@id": "https://jienweng.github.io/#person" }
+      },
+      {
+        "@type": "Article",
+        "headline": "Simple Linear Regression",
+        "description": "An introduction to simple linear regression, the OLS method, and deriving the estimators using Sxx and Sxy notation.",
+        "url": "https://jienweng.github.io/notes/regression-01-simple-linear-regression/",
+        "mainEntityOfPage": "https://jienweng.github.io/notes/regression-01-simple-linear-regression/",
+        "image": "https://jienweng.github.io/img/og-partner.png",
+        "inLanguage": "en",
+        "author": { "@id": "https://jienweng.github.io/#person" },
+        "publisher": { "@id": "https://jienweng.github.io/#person" },
+        "isPartOf": { "@id": "https://jienweng.github.io/#website" },
+        "datePublished": "2026-01-02",
+        "dateModified": "2026-01-02",
+        "keywords": "math, statistics, regression"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Jien Weng",
+            "item": "https://jienweng.github.io"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Jien Weng",
+            "item": "https://jienweng.github.io/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Writing",
+            "item": "https://jienweng.github.io/notes/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Simple Linear Regression",
+            "item": "https://jienweng.github.io/notes/regression-01-simple-linear-regression/"
+          }
+        ]
+      }
+    ]
+  }
+  </script><body class=article-page><div class=page-shell><header class=site-header><div class=site-brand><a class=site-title href=https://jienweng.github.io>Jien Weng</a></div><nav aria-label=Primary class=site-nav><a href=https://jienweng.github.io/cv>CV</a><a href=https://jienweng.github.io/projects>Projects</a><a href=https://jienweng.github.io/notes>Writing</a><a href=https://jienweng.github.io/publications>Research</a><a href=https://jienweng.github.io/bio>About</a><a href=https://jienweng.github.io/services>Work With Me</a></nav></header><main class=content-grid><aside class=rail><div class="rail-block article-rail"><a class=back-link href=https://jienweng.github.io/notes/>Back</a><h1 class=section-title>Simple Linear Regression</h1><p class=rail-note>Jan 2, 2026<ul class=tag-list><li><a href=https://jienweng.github.io/tags/math/>math</a><li><a href=https://jienweng.github.io/tags/statistics/>statistics</a><li><a href=https://jienweng.github.io/tags/regression/>regression</a></ul><nav aria-label="Table of contents" class=toc><ul class=plain-list><li><a href=#the-model>The Model</a><li><a href=#ordinary-least-squares-ols>Ordinary Least Squares (OLS)</a><li><a href=#deriving-the-normal-equations>Deriving the Normal Equations</a><li><a href=#introducing-s-xx-and-s-xy-notation>Introducing $S_{xx}$ and $S_{xy}$ Notation</a><li><a href=#residuals-and-fitted-values>Residuals and Fitted Values</a><li><a href=#key-assumptions>Key Assumptions</a><li><a href=#summary>Summary</a></ul></nav></div></aside><section class=well><article class="prose article-prose"><p>Simple linear regression estimates a line from one predictor and one response. This note derives the slope and intercept from first principles and sets up the later regression notes.<p>In secondary school, we learn that the equation of a straight line is given by $y = mx + c$, where $m$ is the slope and $c$ is the y-intercept. In statistics and machine learning, we use a similar but more general form to model the relationship between a dependent variable $y$ and an independent variable $x$. This is known as simple linear regression.<h2 id=the-model>The Model</h2><p>In simple linear regression, we express the relationship as:<p>$$\hat{y}_i = \hat{\beta}_0 + \hat{\beta}_1 x_i,$$<p>where $\hat{y}_i$ is the predicted value of the dependent variable for the $i$-th observation, $\hat{\beta}_0$ is the estimated y-intercept, and $\hat{\beta}_1$ is the estimated slope coefficient. The "hat" notation indicates that these are estimates derived from data, not the true (unknown) population parameters $\beta_0$ and $\beta_1$.<p>The true model is assumed to be:<p>$$y_i = \beta_0 + \beta_1 x_i + \varepsilon_i,$$<p>where $\varepsilon_i$ represents the random error term for the $i$-th observation.<h2 id=ordinary-least-squares-ols>Ordinary Least Squares (OLS)</h2><p>The question is: how do we find the best estimates $\hat{\beta}_0$ and $\hat{\beta}_1$? We need a systematic method that determines the line of best fit. The most common approach is Ordinary Least Squares (OLS).<p>OLS minimizes the sum of the squared differences between the observed values $y_i$ and the predicted values $\hat{y}_i$. These differences are called residuals, defined as $e_i = y_i - \hat{y}_i$. By squaring the residuals, we treat positive and negative errors equally and penalize larger deviations more heavily.<p>The objective function is the Sum of Squared Errors (SSE):<p>$$SSE = \sum^n_{i=1}(y_i - \hat{y}_i)^2 = \sum^n_{i=1}(y_i - \hat{\beta}_0 - \hat{\beta}_1 x_i)^2.$$<h2 id=deriving-the-normal-equations>Deriving the Normal Equations</h2><p>To minimize the SSE, we take partial derivatives with respect to $\hat{\beta}_0$ and $\hat{\beta}_1$ and set them equal to zero.<h3 id=partial-derivative-with-respect-to-hat-beta-0>Partial derivative with respect to $\hat{\beta}_0$</h3><p>$$\frac{\partial SSE}{\partial \hat{\beta}_0} = -2\sum^n_{i=1}(y_i - \hat{\beta}_0 - \hat{\beta}_1 x_i) = 0.$$<p>Dividing both sides by $-2$ and expanding the sum:<p>$$\sum^n_{i=1} y_i - n\hat{\beta}_0 - \hat{\beta}_1 \sum^n_{i=1} x_i = 0.$$<p>Solving for $\hat{\beta}_0$:<p>$$\hat{\beta}_0 = \bar{y} - \hat{\beta}_1 \bar{x},$$<p>where $\bar{x} = \frac{1}{n}\sum^n_{i=1}x_i$ and $\bar{y} = \frac{1}{n}\sum^n_{i=1}y_i$ are the sample means.<h3 id=partial-derivative-with-respect-to-hat-beta-1>Partial derivative with respect to $\hat{\beta}_1$</h3><p>$$\frac{\partial SSE}{\partial \hat{\beta}_1} = -2\sum^n_{i=1}x_i(y_i - \hat{\beta}_0 - \hat{\beta}_1 x_i) = 0.$$<p>Dividing by $-2$ and expanding:<p>$$\sum^n_{i=1} x_i y_i - \hat{\beta}_0 \sum^n_{i=1} x_i - \hat{\beta}_1 \sum^n_{i=1} x_i^2 = 0.$$<p>Substituting $\hat{\beta}_0 = \bar{y} - \hat{\beta}_1 \bar{x}$:<p>$$\sum^n_{i=1} x_i y_i - (\bar{y} - \hat{\beta}_1 \bar{x})\sum^n_{i=1} x_i - \hat{\beta}_1 \sum^n_{i=1} x_i^2 = 0.$$<p>After simplification, we obtain:<p>$$\hat{\beta}_1 = \frac{\sum^n_{i=1}(x_i - \bar{x})(y_i - \bar{y})}{\sum^n_{i=1}(x_i - \bar{x})^2}.$$<h2 id=introducing-s-xx-and-s-xy-notation>Introducing $S_{xx}$ and $S_{xy}$ Notation</h2><p>To write the estimators more concisely, we define the following summary statistics:<p>$$S_{xx} = \sum^n_{i=1}(x_i - \bar{x})^2 = \sum^n_{i=1}x_i^2 - n\bar{x}^2,$$<p>$$S_{xy} = \sum^n_{i=1}(x_i - \bar{x})(y_i - \bar{y}) = \sum^n_{i=1}x_i y_i - n\bar{x}\bar{y}.$$<p>Using this notation, the OLS estimators become:<p>$$\hat{\beta}_1 = \frac{S_{xy}}{S_{xx}},$$<p>$$\hat{\beta}_0 = \bar{y} - \hat{\beta}_1 \bar{x}.$$<p>These are elegant expressions that reveal the structure of the estimates. The slope $\hat{\beta}_1$ is the ratio of the joint variability of $x$ and $y$ (captured by $S_{xy}$) to the variability of $x$ alone (captured by $S_{xx}$). The intercept $\hat{\beta}_0$ ensures the regression line passes through the point $(\bar{x}, \bar{y})$.<h2 id=residuals-and-fitted-values>Residuals and Fitted Values</h2><p>Once we have $\hat{\beta}_0$ and $\hat{\beta}_1$, we can compute:<ul><li><strong>Fitted values</strong>: $\hat{y}_i = \hat{\beta}_0 + \hat{\beta}_1 x_i$ for each observation.<li><strong>Residuals</strong>: $e_i = y_i - \hat{y}_i$ for each observation.</ul><p>Two important properties of OLS residuals are worth noting:<ol><li>The residuals sum to zero: $\sum^n_{i=1} e_i = 0$.<li>The residuals are uncorrelated with the fitted values: $\sum^n_{i=1} e_i \hat{y}_i = 0$.</ol><p>These properties follow directly from the normal equations.<h2 id=key-assumptions>Key Assumptions</h2><p>For OLS to produce reliable estimates, the following assumptions are typically required:<ol><li><strong>Linearity</strong>: The relationship between $x$ and $y$ is linear in the parameters.<li><strong>Independence</strong>: The observations are independent of one another.<li><strong>Homoscedasticity</strong>: The variance of the error terms $\varepsilon_i$ is constant across all values of $x$.<li><strong>Normality</strong>: The error terms are normally distributed, that is, $\varepsilon_i \sim N(0, \sigma^2)$.</ol><p>When these assumptions hold, OLS produces the Best Linear Unbiased Estimators (BLUE) according to the Gauss-Markov theorem.<h2 id=summary>Summary</h2><p>Simple linear regression rests on four ideas:<ul><li>The model $\hat{y}_i = \hat{\beta}_0 + \hat{\beta}_1 x_i$ describes the estimated linear relationship between $x$ and $y$.<li>OLS minimizes the sum of squared errors to find the best-fitting line.<li>The estimators $\hat{\beta}<em>1 = S</em>{xy}/S_{xx}$ and $\hat{\beta}_0 = \bar{y} - \hat{\beta}_1\bar{x}$ are derived from the normal equations.<li>The $S_{xx}$ and $S_{xy}$ notation provides a compact way to express these results.</ul><p>The next note extends this framework to multiple independent variables.</article><nav aria-label="Series navigation" class=series-nav><div class=series-slot></div><div class="series-slot series-slot-next"><span class=series-label>Next in series</span><a href=https://jienweng.github.io/notes/regression-02-multiple-linear-regression/>Multiple Linear Regression</a></div></nav></section></main><footer class=site-footer><div>© 2026 Jien Weng. Last built Oct 2026.</div><div class=footer-links><a href=https://jienweng.github.io/now>Now</a><a href=https://jienweng.github.io/atom.xml>RSS</a><a href=mailto:laijienweng@gmail.com>Email</a><a rel="noreferrer noopener" href=https://github.com/jienweng target=_blank>GitHub</a><a rel="noreferrer noopener" href=https://linkedin.com/in/jienweng target=_blank>LinkedIn</a><a rel="noreferrer noopener" href=https://orcid.org/0009-0001-2543-3887 target=_blank>ORCID</a></div></footer></div><script src=https://jienweng.github.io/site.js></script><script async data-goatcounter=https://jienweng.goatcounter.com/count src=//gc.zgo.at/count.js></script><script>document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            { left: '$$', right: '$$', display: true },
+            { left: '$', right: '$', display: false },
+            { left: '\\(', right: '\\)', display: false },
+            { left: '\\[', right: '\\]', display: true }
+          ],
+          throwOnError: false
+        });
+      }
+    });</script>
