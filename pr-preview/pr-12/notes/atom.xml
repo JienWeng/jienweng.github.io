@@ -33,11 +33,7 @@
 &lt;p&gt;The customer sends funds to the deposit address. The browser’s &lt;code&gt;deposit-watch&lt;&#x2F;code&gt; SDK polls the chain and fires &lt;code&gt;onDeposit&lt;&#x2F;code&gt; when funds appear. That callback gives immediate feedback and notifies the merchant’s backend; it is not proof of settlement.&lt;&#x2F;p&gt;
 &lt;figure class=&quot;payment-artifact&quot;&gt;
   &lt;a href=&quot;..&#x2F;..&#x2F;img&#x2F;projects&#x2F;cryptorails-deposit-flow.png&quot; aria-label=&quot;View the full-size CryptoRails payment workflow&quot;&gt;
-    &lt;picture&gt;
-      &lt;source media=&quot;(max-width: 640px)&quot; width=&quot;1440&quot; height=&quot;3520&quot; srcset=&quot;..&#x2F;..&#x2F;img&#x2F;projects&#x2F;cryptorails-deposit-flow-mobile.png&quot;&gt;
-      &lt;img width=&quot;3600&quot; height=&quot;2060&quot; src=&quot;..&#x2F;..&#x2F;img&#x2F;projects&#x2F;cryptorails-deposit-flow.png&quot; alt=&quot;CryptoRails deposit flow: customer address, browser detection, server-side consolidation, and settlement through a verified signed webhook.&quot; loading=&quot;lazy&quot;&gt;
-    &lt;&#x2F;picture&gt;
-  &lt;&#x2F;a&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;plain&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  &amp;lt;img width=&amp;quot;3600&amp;quot; height=&amp;quot;2060&amp;quot; src=&amp;quot;..&#x2F;..&#x2F;img&#x2F;projects&#x2F;cryptorails-deposit-flow.png&amp;quot; alt=&amp;quot;CryptoRails deposit flow: customer address, browser detection, server-side consolidation, and settlement through a verified signed webhook.&amp;quot; loading=&amp;quot;lazy&amp;quot;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;  &lt;&#x2F;a&gt;
   &lt;figcaption&gt;&lt;span&gt;Redrawn from the &lt;a href=&quot;https:&#x2F;&#x2F;docs.cryptorails.tech&#x2F;guide&quot;&gt;public integration guide&lt;&#x2F;a&gt;: detection provides feedback; a verified webhook authorises settlement.&lt;&#x2F;span&gt;&lt;&#x2F;figcaption&gt;
 &lt;&#x2F;figure&gt;
 &lt;p&gt;The merchant’s backend requests consolidation. CryptoRails validates the on-chain funds and sweeps them from the deposit address to the tenant’s consolidation wallet. The gateway tracks this transaction through confirmation before sending the signed webhook.&lt;&#x2F;p&gt;
