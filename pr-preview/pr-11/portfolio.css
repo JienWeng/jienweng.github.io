@@ -204,3 +204,11 @@
 .portfolio .article-contents summary { min-height: 44px; padding: 10px 0; cursor: pointer; font-weight: 600; }
 .portfolio:not(.home) .article-contents .toc { margin-top: 4px; border: 0; padding-top: 0; }
 .portfolio:not(.home) .tag-list, .portfolio:not(.home) .tag-list a { text-transform: none; letter-spacing: 0; font-size: .8125rem; }
+
+/* About uses the existing portrait as a quiet counterpart to the reading column. */
+.portfolio .about-portrait { margin: 0; max-width: 320px; }
+.portfolio .about-portrait img { display: block; width: 100%; height: auto; }
+@media (max-width: 920px) {
+  .portfolio .about-portrait { max-width: 360px; }
+  .portfolio .about-rail .article-rail:empty { display: none; }
+}
