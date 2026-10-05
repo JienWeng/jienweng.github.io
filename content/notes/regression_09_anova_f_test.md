@@ -26,7 +26,7 @@ reaction = true
 
 The regression F-test asks whether the model explains variation as a whole before we inspect individual predictors. This note builds the ANOVA table, derives the test, and shows why the F-test equals the slope t-test in simple linear regression.
 
-The [previous note](/posts/regression-08-statistical-testing) tested regression coefficients one at a time with t-tests. Each t-test asks whether a particular predictor has an effect. The F-test asks first whether the model explains any variability in $y$. The Analysis of Variance (ANOVA) answers that question using quantities already defined.
+The [previous note](@/notes/regression_08_statistical_testing.md) tested regression coefficients one at a time with t-tests. Each t-test asks whether a particular predictor has an effect. The F-test asks first whether the model explains any variability in $y$. The Analysis of Variance (ANOVA) answers that question using quantities already defined.
 
 ## The Question the F-Test Asks
 
@@ -43,7 +43,7 @@ Under $H\_0$, none of the predictors carries any linear information about $y$, a
 
 ## Revisiting the Sum of Squares Decomposition
 
-The starting point is the identity we proved in the [post on R-squared](/posts/regression-05-r-squared-and-correlation):
+The starting point is the identity we proved in the [post on R-squared](@/notes/regression_05_r_squared_and_correlation.md):
 
 $$SST = SSR + SSE,$$
 
@@ -65,7 +65,7 @@ The degrees of freedom add up exactly as the sums of squares do:
 
 $$(n - 1) = (p - 1) + (n - p).$$
 
-For simple linear regression ($p = 2$), this reads $(n-1) = 1 + (n-2)$: one degree of freedom for the slope, $n - 2$ for the residuals, matching the denominator of MSE from the [standard error post](/posts/regression-06-standard-error).
+For simple linear regression ($p = 2$), this reads $(n-1) = 1 + (n-2)$: one degree of freedom for the slope, $n - 2$ for the residuals, matching the denominator of MSE from the [standard error post](@/notes/regression_06_standard_error.md).
 
 ## Mean Squares
 
@@ -139,7 +139,7 @@ The sample means are $\bar{x} = 3$ and $\bar{y} = 5$, and the summary statistics
 
 $$S\_{xx} = 10, \quad S\_{yy} = 30, \quad S\_{xy} = 17.$$
 
-The OLS estimates follow from the formulas in the [first post](/posts/regression-01-simple-linear-regression):
+The OLS estimates follow from the formulas in the [first post](@/notes/regression_01_simple_linear_regression.md):
 
 $$\hat{\beta}\_1 = \frac{S\_{xy}}{S\_{xx}} = \frac{17}{10} = 1.7, \quad \hat{\beta}\_0 = \bar{y} - \hat{\beta}\_1\bar{x} = 5 - 1.7 \times 3 = -0.1.$$
 

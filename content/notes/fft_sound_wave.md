@@ -34,7 +34,7 @@ $$
 
 We build up the picture of sound as a sum of sinusoids, get the DFT as its discrete version, and then let the structure of the DFT matrix hand us the Cooley-Tukey FFT almost for free. At the end we run the whole thing on a real sound wave, implemented from scratch in Python.
 
-> **Run it yourself.** Every code block below is collected in a runnable Jupyter notebook: [**download `fft-sound-wave.ipynb`**](/notebooks/fft-sound-wave.ipynb). It only needs `numpy` and `matplotlib` (`pip install numpy matplotlib`), and runs top to bottom.
+> **Run it yourself.** Every code block below is collected in a runnable Jupyter notebook: [**download `fft-sound-wave.ipynb`**](../../notebooks/fft-sound-wave.ipynb). It only needs `numpy` and `matplotlib` (`pip install numpy matplotlib`), and runs top to bottom.
 
 ## Start with a Sound Wave
 

@@ -58,7 +58,6 @@ Prospective use therefore requires more than an offline performance estimate. Cl
 
 RL may help with sequential treatment decisions, but the evidence burden is higher than for a conventional prediction model. Before deployment, I would ask whether the state captures the real decision context, whether the data support the proposed policy, and whether the reward and monitoring process constrain harmful behaviour. If any answer is unclear, the system is not ready for prospective clinical use.
 
-{{ figure(src="/img/posts/guidelines_for_reinforcement_learning_in_healthcare.jpg", alt="Three groups of guidelines for evaluating reinforcement learning in healthcare", caption="Guidelines for reinforcement learning in healthcare, adapted from Gottesman et al. (2019).") }}
 
 ## Reference
 

@@ -31,7 +31,7 @@ The earlier notes built the regression framework using $S\_{xx}$ and $S\_{xy}$ t
 
 ## Recap of Key Notation
 
-In [Simple Linear Regression](/posts/regression-01-simple-linear-regression), we introduced:
+In [Simple Linear Regression](@/notes/regression_01_simple_linear_regression.md), we introduced:
 
 $$S\_{xx} = \sum^n_{i=1}(x_i - \bar{x})^2,$$
 

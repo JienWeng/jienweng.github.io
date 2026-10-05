@@ -88,4 +88,4 @@ Eco Finance was our attempt to make carbon footprints visible through a familiar
 
 Hope you guys like it :D
 
-Oh btw! Once again.. You can read the full story [here](/posts/first-hackathon-experience).
+Oh btw! Once again.. You can read the full story [here](@/blog/first-hackathon-experience.md).

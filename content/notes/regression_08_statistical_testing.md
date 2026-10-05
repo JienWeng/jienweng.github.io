@@ -27,7 +27,7 @@ reaction = true
 Hypothesis tests ask whether the data provide enough evidence against a specified regression claim. This note covers test setup, assumptions, p-values, and the boundary between evidence and overclaiming.
 
 
-The [previous note](/posts/regression-07-confidence-intervals) constructed confidence intervals for regression coefficients. Confidence intervals and hypothesis tests answer related questions. Here, we formalize the hypothesis-testing framework for regression coefficients.
+The [previous note](@/notes/regression_07_confidence_intervals.md) constructed confidence intervals for regression coefficients. Confidence intervals and hypothesis tests answer related questions. Here, we formalize the hypothesis-testing framework for regression coefficients.
 
 ## Hypothesis Testing for Individual Coefficients
 

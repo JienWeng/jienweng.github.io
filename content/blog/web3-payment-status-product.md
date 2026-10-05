@@ -62,6 +62,6 @@ For a payment lifecycle, I would turn the following into explicit stories and ac
 
 This is not glamorous product work. It is the part that stops a payment demo from becoming a support problem later.
 
-The full cross-chain flow is documented in my [Web3 payment transaction lifecycle note](/notes/cryptorails-transaction-lifecycle/).
+The full cross-chain flow is documented in my [Web3 payment transaction lifecycle note](@/notes/cryptorails-transaction-lifecycle.md).
 
 This is a generalised case study. Product-specific business details, implementation details, and performance results remain confidential.

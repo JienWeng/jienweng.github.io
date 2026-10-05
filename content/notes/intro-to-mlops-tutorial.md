@@ -16,7 +16,7 @@ lang = "en"
 toc = true
 +++
 
-This is the written companion to the [**Introduction to MLOps** slides](/slides/2026/intro-to-mlops/). It follows the deck section by section: the same chain of ideas, the same figures, and then the hands-on the deck builds toward. The slides give the picture in a room; this note lets you read it at your own pace and, more importantly, **run** it. By the end you will have tracked a real machine-learning experiment, compared two runs, and inspected them in a web UI.
+This is the written companion to the [**Introduction to MLOps** slides](../../slides/2026/intro-to-mlops/). It follows the deck section by section: the same chain of ideas, the same figures, and then the hands-on the deck builds toward. The slides give the picture in a room; this note lets you read it at your own pace and, more importantly, **run** it. By the end you will have tracked a real machine-learning experiment, compared two runs, and inspected them in a web UI.
 
 The chain the deck walks, and so will we:
 
@@ -374,4 +374,4 @@ Adopting these habits in your daily workflow pays off quickly: time saved in the
 
 ---
 
-> **Source and licence.** This tutorial follows and adapts the lecture [“An introduction to MLOps”](https://aboucaud.github.io/slides/2023/lsst-france-mlops) by Alexandre Boucaud (LSST France, Lyon, December 2023), licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). The figures come from the accompanying [slides](/slides/2026/intro-to-mlops/), re-hosted under the same licence; individual captions credit their original sources. This tutorial and hands-on example are my own adaptation and are also shared under CC BY-SA 4.0.
+> **Source and licence.** This tutorial follows and adapts the lecture [“An introduction to MLOps”](https://aboucaud.github.io/slides/2023/lsst-france-mlops) by Alexandre Boucaud (LSST France, Lyon, December 2023), licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). The figures come from the accompanying [slides](../../slides/2026/intro-to-mlops/), re-hosted under the same licence; individual captions credit their original sources. This tutorial and hands-on example are my own adaptation and are also shared under CC BY-SA 4.0.

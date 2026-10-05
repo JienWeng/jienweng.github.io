@@ -27,7 +27,7 @@ reaction = true
 SST, SSR, and SSE split the variation in a response into a fitted part and a residual part. This note uses that decomposition to derive $R^2$, connect it to correlation, and show why a high $R^2$ can still mislead.
 
 
-The [previous note](/posts/regression-04-correlation) introduced the Pearson correlation coefficient $r$. Here, the coefficient of determination $R^2$ comes from the decomposition of total variability, and for simple linear regression it satisfies $R^2 = r^2$.
+The [previous note](@/notes/regression_04_correlation.md) introduced the Pearson correlation coefficient $r$. Here, the coefficient of determination $R^2$ comes from the decomposition of total variability, and for simple linear regression it satisfies $R^2 = r^2$.
 
 ## The Sum of Squares Decomposition
 
@@ -115,7 +115,7 @@ $$R^2 = \frac{SSR}{SST} = \frac{S\_{xy}^2 / S\_{xx}}{S\_{yy}} = \frac{S\_{xy}^2}
 
 ### Step 3: Compare with $r^2$
 
-From the [previous note](/posts/regression-04-correlation), the correlation coefficient is:
+From the [previous note](@/notes/regression_04_correlation.md), the correlation coefficient is:
 
 $$r = \frac{S\_{xy}}{\sqrt{S\_{xx} \cdot S\_{yy}}}.$$
 

@@ -1,5 +1,5 @@
 <figure class="wide">
-  <img src="{{ src }}" alt="{{ alt | default(value='') }}" loading="lazy" decoding="async">
+  <img src="{% if src is starting_with("https://") or src is starting_with("http://") or src is starting_with("//") %}{{ src }}{% else %}{{ get_url(path=src) }}{% endif %}" alt="{{ alt | default(value='') }}" loading="lazy" decoding="async">
   {% if caption %}
   <figcaption>{{ caption }}</figcaption>
   {% endif %}

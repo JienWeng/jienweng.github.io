@@ -34,7 +34,7 @@
 {% macro art_simple(item) %}
 <article class="collection-item collection-simple collection-credential">
   <div class="collection-main">
-    {% if item.logo %}<img class="collection-credential-logo" src="{{ item.logo }}" alt="{{ item.issuer | default(value="") }}" width="36" height="36" loading="lazy">{% endif %}
+    {% if item.logo %}<img class="collection-credential-logo" src="{{ get_url(path=item.logo) }}" alt="{{ item.issuer | default(value="") }}" width="36" height="36" loading="lazy">{% endif %}
     <div class="collection-credential-copy">
       <div class="collection-title-line">
         {% if item.link %}
