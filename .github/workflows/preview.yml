@@ -18,6 +18,7 @@ on:
 permissions:
   contents: write
   deployments: read
+  pages: read
   pull-requests: write
 
 concurrency:
