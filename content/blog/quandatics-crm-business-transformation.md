@@ -52,7 +52,7 @@ Each opportunity then moves through its own funnel. The stages are more than lab
 
 <figure class="crm-artifact">
   <a href="../../img/blog/quandatics/deal-to-cash-portfolio.png" aria-label="View the full-size CRM deal-to-cash diagram">
-    <picture><source media="(max-width: 640px)" srcset="../../img/blog/quandatics/deal-to-cash-mobile-portfolio.png"><img src="../../img/blog/quandatics/deal-to-cash-portfolio.png" width="1666" height="944" loading="lazy" decoding="async" alt="Deal-to-cash flow from qualified lead through account, opportunity, approved sales order, project delivery, and payment received."></picture>
+    <img src="../../img/blog/quandatics/deal-to-cash-portfolio.png" width="1666" height="944" loading="lazy" decoding="async" alt="Deal-to-cash flow from qualified lead through account, opportunity, approved sales order, project delivery, and payment received.">
   </a>
   <figcaption><span>01 · Lead to approved sales order</span><a href="../../img/blog/quandatics/deal-to-cash-portfolio.png">View full-size diagram</a></figcaption>
 </figure>
@@ -69,7 +69,7 @@ Management then approves the milestone. Once it is approved, finance can issue t
 
 <figure class="crm-artifact">
   <a href="../../img/blog/quandatics/project-to-cash-portfolio.png" aria-label="View the full-size CRM project-to-cash diagram">
-    <picture><source media="(max-width: 640px)" srcset="../../img/blog/quandatics/project-to-cash-mobile-portfolio.png"><img src="../../img/blog/quandatics/project-to-cash-portfolio.png" width="1600" height="920" loading="lazy" decoding="async" alt="Project-to-cash flow from an approved sales order through project phases, milestone approval, invoicing, payment receipt, and margin update."></picture>
+    <img src="../../img/blog/quandatics/project-to-cash-portfolio.png" width="1600" height="920" loading="lazy" decoding="async" alt="Project-to-cash flow from an approved sales order through project phases, milestone approval, invoicing, payment receipt, and margin update.">
   </a>
   <figcaption><span>02 · Delivery milestone to collected payment</span><a href="../../img/blog/quandatics/project-to-cash-portfolio.png">View full-size diagram</a></figcaption>
 </figure>
@@ -84,7 +84,7 @@ At the same time, the money-out side is procure-to-pay. A purchase order goes to
 
 <figure class="crm-artifact">
   <a href="../../img/blog/quandatics/o2c-p2p-portfolio.png" aria-label="View the full-size order-to-cash and procure-to-pay diagram">
-    <picture><source media="(max-width: 640px)" srcset="../../img/blog/quandatics/o2c-p2p-mobile-portfolio.png"><img src="../../img/blog/quandatics/o2c-p2p-portfolio.png" width="1600" height="960" loading="lazy" decoding="async" alt="Two finance flows linked to one sales order: customer milestone claim through invoice and receipt; supplier purchase order through invoice and approved payment voucher. Both post to Autocount and the same project."></picture>
+    <img src="../../img/blog/quandatics/o2c-p2p-portfolio.png" width="1600" height="960" loading="lazy" decoding="async" alt="Two finance flows linked to one sales order: customer milestone claim through invoice and receipt; supplier purchase order through invoice and approved payment voucher. Both post to Autocount and the same project.">
   </a>
   <figcaption><span>03 · Money in and money out</span><a href="../../img/blog/quandatics/o2c-p2p-portfolio.png">View full-size diagram</a></figcaption>
 </figure>

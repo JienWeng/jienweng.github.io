@@ -42,10 +42,10 @@ The customer sends funds to the deposit address. The browser’s `deposit-watch`
 
 <figure class="payment-artifact">
   <a href="../../img/projects/cryptorails-deposit-flow.png" aria-label="View the full-size CryptoRails payment workflow">
-    <picture>
-      <source media="(max-width: 640px)" width="1440" height="3520" srcset="../../img/projects/cryptorails-deposit-flow-mobile.png">
+
+
       <img width="3600" height="2060" src="../../img/projects/cryptorails-deposit-flow.png" alt="CryptoRails deposit flow: customer address, browser detection, server-side consolidation, and settlement through a verified signed webhook." loading="lazy">
-    </picture>
+
   </a>
   <figcaption><span>Redrawn from the <a href="https://docs.cryptorails.tech/guide">public integration guide</a>: detection provides feedback; a verified webhook authorises settlement.</span></figcaption>
 </figure>
