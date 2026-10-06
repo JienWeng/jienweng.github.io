@@ -24,7 +24,7 @@ reaction = true
 topic = "Business Transformation"
 +++
 
-At Quandatics, I’m working on an internal CRM connecting sales, project delivery, and finance.
+At Quandatics, I’m working on an [internal CRM](https://app.quandatics.com) connecting sales, project delivery, and finance.
 
 ## The choice to build internally
 
@@ -41,10 +41,10 @@ A qualified lead becomes an account, a contact, and an opportunity. One account 
 When an opportunity is won, the approved quotation becomes a numbered sales order. The order links the sale to a project with its items, budget, team, phases, and milestones.
 
 <figure class="crm-artifact">
-  <a href="../../img/blog/quandatics/deal-to-cash-portfolio.png" aria-label="View the full-size CRM deal-to-cash diagram">
-    <img src="../../img/blog/quandatics/deal-to-cash-portfolio.png" width="1666" height="944" loading="lazy" decoding="async" alt="Deal-to-cash flow from qualified lead through account, opportunity, approved sales order, project delivery, and payment received.">
+  <a href="../../img/blog/quandatics/deal-to-cash-excalidraw.svg" aria-label="View the full-size CRM deal-to-cash diagram">
+    <img width="1600" height="1079" src="../../img/blog/quandatics/deal-to-cash-excalidraw.svg" loading="lazy" decoding="async" alt="Deal-to-cash flow from qualified lead through account, opportunity, approved sales order, project delivery, and payment received.">
   </a>
-  <figcaption><span>01 · Lead to approved sales order</span><a href="../../img/blog/quandatics/deal-to-cash-portfolio.png">View full-size diagram</a></figcaption>
+  <figcaption><span>01 · Lead to approved sales order</span><a href="../../img/blog/quandatics/deal-to-cash-excalidraw.svg">View full-size diagram</a></figcaption>
 </figure>
 
 ## From delivery to payment
@@ -54,10 +54,10 @@ Each project phase has deliverables and a progress percentage. Once a phase is c
 The same records need to show delivery progress, billed amounts, receipts, and outstanding payments. Otherwise, finance and delivery have to reconstruct the status separately.
 
 <figure class="crm-artifact">
-  <a href="../../img/blog/quandatics/project-to-cash-portfolio.png" aria-label="View the full-size CRM project-to-cash diagram">
-    <img src="../../img/blog/quandatics/project-to-cash-portfolio.png" width="1600" height="920" loading="lazy" decoding="async" alt="Project-to-cash flow from an approved sales order through project phases, milestone approval, invoicing, payment receipt, and margin update.">
+  <a href="../../img/blog/quandatics/project-to-cash-excalidraw.svg" aria-label="View the full-size CRM project-to-cash diagram">
+    <img width="1600" height="800" src="../../img/blog/quandatics/project-to-cash-excalidraw.svg" loading="lazy" decoding="async" alt="Project-to-cash flow from an approved sales order through project phases, milestone approval, invoicing, payment receipt, and margin update.">
   </a>
-  <figcaption><span>02 · Delivery milestone to collected payment</span><a href="../../img/blog/quandatics/project-to-cash-portfolio.png">View full-size diagram</a></figcaption>
+  <figcaption><span>02 · Delivery milestone to collected payment</span><a href="../../img/blog/quandatics/project-to-cash-excalidraw.svg">View full-size diagram</a></figcaption>
 </figure>
 
 ## Customer receipts and supplier costs
@@ -67,10 +67,10 @@ On the customer side, a milestone claim becomes a sales invoice, then a receipt 
 On the supplier side, a purchase order links to the sales order. Finance matches the supplier invoice to that purchase order, approves a payment voucher, and posts the cost to the project.
 
 <figure class="crm-artifact">
-  <a href="../../img/blog/quandatics/o2c-p2p-portfolio.png" aria-label="View the full-size order-to-cash and procure-to-pay diagram">
-    <img src="../../img/blog/quandatics/o2c-p2p-portfolio.png" width="1600" height="960" loading="lazy" decoding="async" alt="Two finance flows linked to one sales order: customer milestone claim through invoice and receipt; supplier purchase order through invoice and approved payment voucher. Both post to Autocount and the same project.">
+  <a href="../../img/blog/quandatics/o2c-p2p-excalidraw.svg" aria-label="View the full-size order-to-cash and procure-to-pay diagram">
+    <img width="1600" height="847" src="../../img/blog/quandatics/o2c-p2p-excalidraw.svg" loading="lazy" decoding="async" alt="Two finance flows linked to one sales order: customer milestone claim through invoice and receipt; supplier purchase order through invoice and approved payment voucher. Both post to Autocount and the same project.">
   </a>
-  <figcaption><span>03 · Money in and money out</span><a href="../../img/blog/quandatics/o2c-p2p-portfolio.png">View full-size diagram</a></figcaption>
+  <figcaption><span>03 · Money in and money out</span><a href="../../img/blog/quandatics/o2c-p2p-excalidraw.svg">View full-size diagram</a></figcaption>
 </figure>
 
 ## My role

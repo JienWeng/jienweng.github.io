@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block body_class %}cv-page{% endblock body_class %}
+{% block head %}<link rel="stylesheet" href="{{ get_url(path='editorial.css') }}"><link rel="stylesheet" href="{{ get_url(path='cv.css') }}">{% endblock head %}
+{% block content %}
+<main id="main" class="cv-main">
+  <header class="editorial-heading"><h1>{{ section.title }}</h1><p>Experience, education, and contributions.</p></header>
+  <div class="cv-layout">
+    <aside class="cv-index"><nav aria-label="CV sections">{% for heading in ["Experience", "Education", "Awards", "Certifications", "Grants", "Open Source", "Volunteering", "Memberships", "Publications"] %}<a href="#{{ heading | slugify }}">{{ heading }}</a>{% endfor %}</nav><a class="cv-contact" href="mailto:{{ config.extra.email }}">Contact me</a></aside>
+    <article class="prose cv-prose">{{ section.content | safe }}</article>
+  </div>
+</main>
+{% endblock content %}

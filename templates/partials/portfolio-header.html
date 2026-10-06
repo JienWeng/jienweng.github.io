@@ -3,7 +3,7 @@
   <a class="portfolio-brand" href="{{ get_url(path='/') }}">{{ config.extra.site_title }}</a>
   <nav class="portfolio-nav" aria-label="Primary">
     <a href="{{ get_url(path='/projects/') }}"{% if current == "/projects/" %} aria-current="page"{% endif %}>Work</a>
-    <a href="{{ get_url(path='/notes/') }}"{% if current == "/notes/" %} aria-current="page"{% endif %}>Writing</a>
+    <a href="{{ get_url(path='/notes/') }}"{% if current is starting_with("/notes/") or current is starting_with("/blog/") %} aria-current="page"{% endif %}>Writing</a>
     <a href="{{ get_url(path='/bio/') }}"{% if current == "/bio/" %} aria-current="page"{% endif %}>About</a>
     <a class="nav-cv" href="{{ get_url(path='/cv/') }}"{% if current == "/cv/" %} aria-current="page"{% endif %}>View CV</a>
   </nav>
@@ -11,7 +11,7 @@
     <summary>Menu <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h18M3 17h18"/></svg></summary>
     <nav aria-label="Mobile primary">
       <a href="{{ get_url(path='/projects/') }}"{% if current == "/projects/" %} aria-current="page"{% endif %}>Work</a>
-      <a href="{{ get_url(path='/notes/') }}"{% if current == "/notes/" %} aria-current="page"{% endif %}>Writing</a>
+      <a href="{{ get_url(path='/notes/') }}"{% if current is starting_with("/notes/") or current is starting_with("/blog/") %} aria-current="page"{% endif %}>Writing</a>
       <a href="{{ get_url(path='/publications/') }}"{% if current == "/publications/" %} aria-current="page"{% endif %}>Research</a>
       <a href="{{ get_url(path='/bio/') }}"{% if current == "/bio/" %} aria-current="page"{% endif %}>About</a>
       <a href="{{ get_url(path='/cv/') }}"{% if current == "/cv/" %} aria-current="page"{% endif %}>View CV</a>

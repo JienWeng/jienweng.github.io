@@ -2,9 +2,9 @@
 title = "Writing"
 description = "Practical writing on business transformation, product work, AI, data, Web3, and research."
 sort_by = "date"
-template = "notes.html"
+template = "writing.html"
 page_template = "page.html"
 generate_feeds = true
 +++
 
-Notes on product delivery, business systems, and mathematical research, with derivations and worked examples.
+Blog posts on product work and business systems, alongside technical notes on mathematics, AI, and research. Browse the two collections below.

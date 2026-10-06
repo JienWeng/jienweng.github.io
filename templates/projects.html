@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block body_class %}projects-page{% endblock body_class %}
+{% block head %}<link rel="stylesheet" href="{{ get_url(path='projects.css') }}">{% endblock head %}
+{% block content %}
+{% set projects = load_data(path="content/projects/items.toml") %}
+<main id="main" class="projects-main" data-projects>
+  <header class="projects-heading"><p>Selected work &amp; experiments</p><h1>Projects</h1><p>Software for creative work, business operations, and research. A selection of things I’m building and exploring.</p></header>
+  <div class="projects-tools" hidden>
+    <div class="project-filters" role="group" aria-label="Filter projects by area">
+      {% for category in ["All", "AI & data", "Research", "Systems", "Web3", "Experiments"] %}<button type="button" data-filter="{{ category }}" aria-pressed="{% if loop.first %}true{% else %}false{% endif %}">{{ category }}</button>{% endfor %}
+    </div>
+    <label class="project-search">Search projects<input type="search" placeholder="Name, technology, or topic" aria-controls="project-list"></label>
+    <p class="project-count" role="status" aria-live="polite"></p>
+  </div>
+  <div id="project-list">
+  {% for project in projects.collection %}
+    <article class="project-entry" id="{{ project.id }}" data-category="{{ project.category }}">
+      <figure class="project-media">
+        <a {% if project.id == "videoflow" or project.id == "monash-water" %}href="{{ get_url(path=project.case_study) }}" aria-label="View {{ project.title }} project"{% else %}href="{{ get_url(path=project.img) }}" data-preview data-caption="{{ project.caption | default(value=project.title) }}" aria-label="Enlarge {{ project.title }} image"{% endif %}><img src="{{ get_url(path=project.still_img | default(value=project.img)) }}" {% if project.still_img %}data-animated data-still="{{ get_url(path=project.still_img) }}" data-gif="{{ get_url(path=project.img) }}"{% endif %} alt="{{ project.image_alt | default(value=project.subtitle) }}" loading="{% if loop.first %}eager{% else %}lazy{% endif %}"></a>
+        {% if project.still_img %}<button class="motion-toggle" type="button" hidden>Pause animation</button>{% endif %}
+        <figcaption>{{ project.caption | default(value=project.subtitle) }} <span aria-hidden="true">↗</span></figcaption>
+      </figure>
+      <div class="project-entry-copy">
+        <p class="project-meta"><span>{{ project.category }}</span>{% if project.status %}<span>{{ project.status }}</span>{% endif %}</p>
+        <h2>{{ project.title }}</h2><p class="project-deck">{{ project.subtitle }}</p><p>{{ project.content }}</p>
+        <div class="project-entry-links">
+          {% if project.id == "videoflow" or project.id == "monash-water" %}<a href="{{ get_url(path=project.case_study) }}">Explore {{ project.title }} →</a>
+          {% else %}
+          {% if project.link %}<a href="{{ project.link }}">{{ project.link_label | default(value="View source") }} ↗</a>{% endif %}
+          {% if project.case_study %}<a href="{{ get_url(path=project.case_study) }}">{{ project.case_study_label | default(value="Read case study") }} →</a>{% endif %}
+          {% if project.app_link %}<a href="{{ project.app_link }}">Android APK ↗</a><a href="{{ project.dashboard_link }}">Operator dashboard ↗</a>{% endif %}
+          {% endif %}
+        </div>
+      </div>
+    </article>
+  {% endfor %}
+  </div>
+  <div class="projects-empty" hidden><p>No projects match this selection.</p><button type="button" data-clear>Clear filters and search</button></div>
+  <dialog class="project-dialog" aria-label="Project image preview"><button type="button" class="preview-close" aria-label="Close image preview">Close ×</button><figure><figcaption></figcaption></figure></dialog>
+</main>
+{% endblock content %}
+{% block script %}<script src="{{ get_url(path='projects.js') }}" defer></script>{% endblock script %}

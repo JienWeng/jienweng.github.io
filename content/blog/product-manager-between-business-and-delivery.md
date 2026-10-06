@@ -52,3 +52,9 @@ A successful demo covers only one of these paths. I include the delayed and dupl
 The request also needs agreed networks, failure cases, and responses for the user. I turn those decisions into backlog items, track dependencies, and raise blocked work or competing requests with the business owner.
 
 The [CryptoRails workflow](@/notes/cryptorails-transaction-lifecycle.md) shows the deposit and consolidation sequence behind these requirements. Product-specific business details, internal metrics, and implementation details remain confidential.
+
+
+## Related reading
+
+- [The CryptoRails deposit-to-settlement workflow](@/notes/cryptorails-transaction-lifecycle.md).
+- [Why a Web3 payment needs more than a transaction hash](@/blog/web3-payment-status-product.md).

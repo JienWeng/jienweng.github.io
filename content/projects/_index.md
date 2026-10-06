@@ -1,9 +1,5 @@
 +++
 title = "Projects"
-description = "Selected apps, technical projects, and experiments."
-template = "section.html"
+description = "Explore Jien Weng’s projects: VideoFlow video orchestration, the Monash Water Platform, internal CRM workflows, and Web3 and software experiments."
+template = "projects.html"
 +++
-
-Selected apps and experiments. The live apps require sign-in; public repositories are linked where available.
-
-{{ collection(file="items.toml") }}

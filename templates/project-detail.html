@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block body_class %}project-detail-page{% endblock body_class %}
+{% block head %}<link rel="stylesheet" href="{{ get_url(path='project-detail.css') }}">{% endblock head %}
+{% block content %}
+{% set data = load_data(path="content/projects/items.toml") %}
+{% set project = data.collection | filter(attribute="id", value=page.extra.project_id) | first %}
+<main id="main" class="project-detail-main">
+  <header class="project-detail-heading"><nav class="project-breadcrumb" aria-label="Breadcrumb"><a href="{{ get_url(path='/projects/') }}">Projects</a><span aria-hidden="true">/</span><span aria-current="page">{{ project.title }}</span></nav><h1>{{ page.title }}</h1><p>{{ project.subtitle }}</p></header>
+  <div class="project-detail-overview">
+    <figure class="project-artifact"><img width="1280" height="853" src="{{ get_url(path=project.still_img | default(value=project.img)) }}"{% if project.still_img %} data-animated data-still="{{ get_url(path=project.still_img) }}" data-gif="{{ get_url(path=project.img) }}"{% endif %} alt="{{ project.image_alt }}" fetchpriority="high"><figcaption>{{ project.caption }}{% if project.still_img %}<button class="motion-toggle" type="button" hidden>Pause animation</button>{% endif %}</figcaption></figure>
+    <aside class="project-detail-context"><h2>{{ project.status }}</h2><p>{{ project.content }}</p><div class="project-detail-actions"><a href="{{ project.link }}">{{ project.link_label }}</a>{% if project.app_link %}<a href="{{ project.app_link }}">Download Android APK</a><a href="{{ project.dashboard_link }}">Open operator dashboard</a>{% endif %}</div></aside>
+  </div>
+  <div class="project-detail-reading"><aside><nav aria-label="On this page">{% for heading in page.toc %}<a href="#{{ heading.id }}">{{ heading.title }}</a>{% endfor %}</nav></aside><article class="prose">{{ page.content | safe }}</article></div>
+  {% if project.secondary_img %}<figure class="project-mobile-artifact"><img src="{{ get_url(path=project.secondary_img) }}" alt="CitizenFlood Android reporting screen with rainfall, water level, temperature, and wastewater options" width="922" height="2048" loading="lazy"><figcaption>CitizenFlood · Android reporting screen</figcaption></figure>{% endif %}
+</main>
+{% endblock content %}

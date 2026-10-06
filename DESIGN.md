@@ -4,30 +4,30 @@ description: A practical editorial portfolio with work evidence at its center.
 colors:
   paper: "#f6f3ec"
   paper-2: "#eee9df"
-  accent-soft: "#eed1bd"
-  ink: "#20201e"
-  ink-soft: "#494944"
-  accent: "#b83e12"
-  rule: "#a6a49d"
+  accent-soft: "#eee4da"
+  ink: "#35342f"
+  ink-soft: "#5f5c54"
+  accent: "#875b43"
+  rule: "#ddd7cc"
   white: "#ffffff"
 typography:
   display:
     fontFamily: "Archivo, sans-serif"
-    fontSize: "clamp(4rem, 8.3vw, 8.3rem)"
-    fontWeight: 900
-    lineHeight: 0.93
-    letterSpacing: "-0.04em"
+    fontSize: "clamp(3.25rem, 5.3vw, 5rem)"
+    fontWeight: 450
+    lineHeight: 1.12
+    letterSpacing: "-0.025em"
   headline:
     fontFamily: "Archivo, sans-serif"
-    fontSize: "clamp(2rem, 3.65vw, 3.6rem)"
-    fontWeight: 850
-    lineHeight: 1.05
-    letterSpacing: "-0.035em"
+    fontSize: "clamp(1.75rem, 3vw, 3rem)"
+    fontWeight: 450
+    lineHeight: 1.18
+    letterSpacing: "-0.025em"
   title:
     fontFamily: "Archivo, sans-serif"
     fontSize: "1.35rem"
-    fontWeight: 750
-    lineHeight: 1.15
+    fontWeight: 500
+    lineHeight: 1.3
     letterSpacing: "-0.025em"
   body:
     fontFamily: "Archivo, sans-serif"
@@ -40,25 +40,30 @@ typography:
   reading-h2:
     fontFamily: "Archivo, sans-serif"
     fontSize: "1.65rem"
-    fontWeight: 750
-    lineHeight: 1.2
+    fontWeight: 500
+    lineHeight: 1.3
     letterSpacing: "-0.025em"
   reading-h3:
     fontFamily: "Archivo, sans-serif"
     fontSize: "1.25rem"
-    fontWeight: 700
+    fontWeight: 500
     lineHeight: 1.3
   article-title:
     fontFamily: "Archivo, sans-serif"
-    fontSize: "clamp(2rem, 4vw, 4rem)"
-    fontWeight: 800
-    lineHeight: 1.08
-    letterSpacing: "-0.035em"
+    fontSize: "clamp(1.9rem, 3.4vw, 3.3rem)"
+    fontWeight: 450
+    lineHeight: 1.16
+    letterSpacing: "-0.025em"
   collection-title:
     fontFamily: "Archivo, sans-serif"
     fontSize: "1.15rem"
-    fontWeight: 550
+    fontWeight: 450
     lineHeight: 1.4
+  diagram:
+    fontFamily: "Excalifont, cursive"
+    fontSize: "20px"
+    fontWeight: 400
+    lineHeight: 1.25
   caption:
     fontFamily: "Archivo, sans-serif"
     fontSize: "0.8125rem"
@@ -71,7 +76,7 @@ typography:
   label:
     fontFamily: "Archivo, sans-serif"
     fontSize: "0.6875rem"
-    letterSpacing: "0.14em"
+    letterSpacing: "0.08em"
 rounded:
   square: "0px"
 spacing:
@@ -82,83 +87,96 @@ spacing:
   generous: "40px"
 components:
   button-primary:
-    backgroundColor: "{colors.accent}"
-    textColor: "{colors.white}"
+    backgroundColor: "transparent"
+    textColor: "{colors.accent}"
     rounded: "{rounded.square}"
     padding: "10px 20px"
   button-primary-hover:
-    backgroundColor: "{colors.ink}"
-    textColor: "{colors.white}"
+    backgroundColor: "{colors.accent-soft}"
+    textColor: "{colors.accent}"
   project-rail:
-    backgroundColor: "{colors.accent}"
-    textColor: "{colors.white}"
-    padding: "14px 20px 22px"
+    backgroundColor: "transparent"
+    textColor: "{colors.ink-soft}"
+    padding: "4px 8px 16px"
   workflow:
     padding: "8px 14px 16px"
 ---
 
 # Design System: Jien Weng Portfolio
 
-## Overview
+## Direction
 
-**Creative North Star: "Practical Editorial Portfolio"**
+A quiet editorial portfolio: warm paper, restrained brown accents, readable Archivo typography, and work evidence at its center. The user's October 2026 refinement reduces the heavy type and filled panels across the website while preserving its structure, content, navigation, and square geometry.
 
-The homepage uses a confident editorial composition: oversized type, warm paper, charcoal rules, and rust numbered work rails. Practical evidence and direct navigation carry the professional identity. The same Archivo, warm paper, charcoal, and rust identity extends across template-based content and collection pages. Standalone slide decks retain their own designs.
+Implementation sources are `templates/base.html`, `templates/partials/portfolio-header.html`, `templates/home.html`, `templates/page.html`, `static/site.css`, `static/portfolio.css`, and `static/portfolio.js`. Shared styling covers the homepage, articles, About, CV, services, collections, taxonomies, and error page. Standalone slide decks retain their authored designs.
 
-The approved visual reference is `.impeccable/mocks/desktop-recommended.png`, with the headline “Business needs. Buildable products.” Implementation sources are `templates/base.html`, `templates/partials/portfolio-header.html`, `templates/home.html`, `templates/page.html`, `static/site.css`, `static/portfolio.css`, and `static/portfolio.js`. The base template preloads Archivo and loads the shared portfolio CSS and menu script on every template-based page.
+## Palette
 
-**Key Characteristics:**
-- Oversized, tightly set sans-serif display type.
-- Flat paper surfaces, thin rules, and square corners.
-- Numbered rust rails paired with work evidence.
-- Responsive semantic diagrams and direct text links.
+Warm paper (`#f6f3ec`) is the main surface. Ink (`#35342f`) carries text, with soft ink (`#5f5c54`) for supporting information. Muted brown (`#875b43`) is reserved primarily for links and actions. Numbers and headline punctuation use the text palette. Light rules (`#ddd7cc`) separate sections. Accent tint (`#eee4da`) is reserved for selection and hover feedback. Inset paper (`#eee9df`) supports code blocks.
 
-## Colors
-
-Primary rust marks actions, headline punctuation, and project numbering. Neutral warm paper is the canvas; charcoal carries text and major rules. Soft ink supports secondary prose and diagram outlines, while the lighter rule separates writing entries. White text sits on filled rust controls and rails. Inset paper supports code blocks and the restyled diagram’s alternating lanes. Soft rust identifies the diagram’s management band; it is an artifact color rather than a general surface fill.
-
-**The Evidence Rule.** Color organizes the reading sequence; evidence remains understandable without color.
+Avoid solid accent panels, black dividers, shadows, and general-purpose decorative fills. Color supports reading order; it does not carry meaning alone.
 
 ## Typography
 
-Archivo is self-hosted as a variable WOFF2 font with weights 100–900 and `font-display: swap`. Display type uses the heaviest weight; body text stays plain and readable. Uppercase, tracked labels are reserved for small annotations and the wordmark.
+Archivo is self-hosted as a variable WOFF2 font with weights 100–900 and `font-display: swap`. The hero, main section headings, article titles, collection titles, and text actions use weight 450. The wordmark, reading subheadings, and role headings use 500; inline emphasis uses 600; body text uses 400. Hierarchy comes from size and spacing rather than heavy weight.
 
-The display size becomes `clamp(3.75rem, 9.7vw, 6.6rem)` at 1100px and below, then `clamp(2.35rem, 10.5vw, 4.2rem)` with 0.98 line height at 640px and below. Mobile allows natural headline wrapping. Intro copy is limited to 66ch. Reading prose uses 17px type and 1.75 line height, reducing to 16px at 920px and below. Reading h2 and h3 have their own restrained scale. Captions and collection dates use the caption role; article dates, topic notes, and contents links use reading-meta. Back links use their named role, and collection titles use the collection-title role. The 1.15rem size also serves the mobile wordmark. These are intentional role sizes rather than a uniform mathematical scale.
+The hero uses `clamp(3.25rem, 5.3vw, 5rem)`, 1.12 leading, and -0.025em tracking. At 1100px and below it uses `clamp(3rem, 7vw, 4.5rem)`; at 640px and below it uses `clamp(2rem, 8.8vw, 3.25rem)` and 1.1 leading. Mobile headings wrap naturally.
+
+Homepage section headings use `clamp(1.75rem, 3vw, 3rem)` and 1.18 leading, reducing to 1.75rem on phones. Article titles use `clamp(1.9rem, 3.4vw, 3.3rem)` with 1.16 leading and a 30ch maximum. Reading h2 and h3 use 1.65rem and 1.25rem, both at weight 500. Reading prose uses 17px with 1.78 leading, reducing to 16px at 920px and below. The reading measure remains 68ch.
+
+Project annotations and role labels use sentence case with natural spacing; the wordmark remains uppercase. Rail labels use 12px and role labels use 13px for comfortable reading. The hero margin note uses sentence case. Dates, captions, and metadata use their documented roles. Small role-specific sizes in the existing collection and CV layout are intentional.
 
 ## Layout
 
-The shell is capped at 100rem with fluid horizontal padding; mobile uses 20px gutters. Desktop work sections use a 110px rail, a 40px gap, and an evidence area split between artifact and role. At 1100px and below, rails narrow to 70px with a 24px gap, evidence stacks, and the hero margin annotation disappears. At 640px and below, rails become horizontal, navigation becomes a native details menu, and all work sections form one column. Writing and contact align with the desktop work content edge.
+The homepage shell is capped at 100rem with fluid gutters. The hero has 64px top and 56px bottom padding; phones use 40px and 44px. Work sections pair a 110px marker column with an evidence area and use 32px top and 40px bottom padding. Thin rules and generous spacing define the rhythm.
 
-Reading and collection shells are capped at 92rem. Their desktop layout pairs a minimum 210px, 25% rail with a flexible content column and a 48px gap. At 920px and below, the layout becomes one column with a 28px gap. Article headings span both columns, have a ruled bottom edge, and limit the title to 30ch. Article contents use a native “On this page” disclosure. Wide tables scroll within the reading column.
+At 1100px and below, the marker column narrows to 70px, evidence stacks, and the hero margin note disappears. At 640px and below, markers become an unfilled horizontal row and content becomes one column with 20px gutters.
 
-The original homepage verification found no horizontal overflow at 320, 390, 768, and 1536px. This observation does not certify every subsequent page.
+Reading and collection shells are capped at 92rem. Desktop uses a minimum 210px, 25% rail and a flexible reading column with a 48px gap. At 920px and below the layout stacks with a 28px gap. Wide tables and equations scroll within the reading column. Article titles span both columns.
 
-## Elevation & Depth
+The About page uses the existing profile image, displayed in the rail on desktop and above the copy on phones.
 
-Flat surfaces and thin borders provide separation. The mobile navigation overlays content using stacking order, warm paper, and a charcoal border. There are no shadows.
+## Components and interaction
 
-## Shapes
+Primary actions are square outlined links with brown text and a light border. Hover adds an accent tint and brown border. Text links remain underlined, with a 4px arrow movement over 180ms ease-out. Keyboard focus remains a visible 2px accent outline with a 5px offset.
 
-Square controls, rectangular workflow stages, and straight rules establish the geometry. Arrows use simple strokes; work rails form the recurring accent shape. Avoid adding rounded containers to this template-page vocabulary.
+Project markers have transparent backgrounds, muted labels, lightweight neutral numbers, and light rules. The role sidebar uses the same light rule. The header, footer, collection rows, and article sections share light dividers.
 
-## Components
+Primary actions and menu summaries retain a 44px minimum height; menu links use 48px. The native mobile details menu overlays content on warm paper. JavaScript closes it after navigation, outside click, and Escape, restoring focus after Escape. Current navigation remains marked by an underline and accent text. Reduced-motion preference disables transitions.
 
-Primary links use filled rust rectangles, white labels, and a right arrow; hover changes the fill to charcoal. Text actions are underlined and move their arrow 4px over 180ms ease-out on hover. Interactive links and menu summaries use a 2px rust focus outline with a 5px offset. Reduced-motion preference disables transitions.
+Article contents use a native disclosure. Captions can wrap to accommodate full-size and editable-source links. Tags and collection links retain their existing target sizes.
 
-Desktop navigation uses plain text links with a minimum 44px height. The mobile details summary has the same minimum; menu links use 48px. Native details provides disclosure semantics, while JavaScript closes the menu on link selection, outside click, and Escape; Escape restores focus to the summary.
+## Diagrams
 
-Numbered work rails identify the work sequence. The payment artwork is a deterministic PNG diagram redrawn from CryptoRails’ public integration guide: customer deposit address, browser detection, server-side consolidation, and verified-webhook settlement. Desktop and phone display the same complete landscape diagram, with a full-size image link for closer inspection. Its exact-text renderer is `scripts/render_portfolio_diagrams.py`; the article distinguishes browser detection from gateway transaction status. The CRM figure uses `static/img/blog/quandatics/deal-to-cash-portfolio.png`, a generated palette and typography restyle of the original eight-step workflow, and offers a full-size link. The original image is retained; the adjacent `.png.json` records the full generation prompt and text correction. Treat it as a restyled source artifact, not a new product screenshot. Writing entries use ruled rows with a title, date, and arrow, moving the date below the title on mobile. The shared header marks the current destination with rust text and an underline. Article contents use a native details summary with a 44px minimum height. Tags and collection links are plain textual navigation, with current minimum heights of 32px and 36px respectively; inline reading links retain natural text sizing.
+CRM and CryptoRails workflows are editable `.excalidraw` sources, with portable SVG previews generated by `scripts/generate_excalidraw_diagrams.py` and `scripts/render_excalidraw_diagrams.cjs`. SVGs embed the OFL-licensed Excalifont face for consistent rendering. Excalifont is confined to these source artifacts; the website uses Archivo.
 
-## Do's and Don'ts
+Diagrams use thin warm-gray outlines, muted connectors, light paper fills, and restrained emphasis. They remain illustrative workflows, with full-size links and editable-source downloads. The CryptoRails flow distinguishes browser feedback from verified-webhook settlement and retains its public documentation provenance. Original diagrams remain archived.
 
-- Do preserve visible keyboard focus and the 44px minimum for primary actions and disclosure controls.
-- Do label the payment workflow as illustrative and retain provenance for the restyled CRM workflow.
-- Do retain the native mobile menu and reduced-motion behavior.
-- Do use the shared Archivo identity across template pages and preserve standalone slide designs.
-- Do make each label and sentence explain a destination, role, decision, or piece of evidence.
+## Constraints
 
-- Don't introduce shadows, rounded card grids, or decorative technology imagery across template pages.
-- Don't present illustrative workflows as product screenshots.
-- Don't treat this documentation as a passed formal quantitative build-state specification.
+- Preserve site content, factual claims, navigation, and artifact provenance.
+- Keep readable text contrast and visible focus; lighten decoration rather than fading all content.
+- Use typography, spacing, and thin rules for hierarchy.
+- Keep the existing square geometry and native disclosure behavior.
+- Avoid shadows, rounded card grids, large filled accent panels, and decorative technology imagery.
+- Visual checks describe the tested routes and viewports only; this document is not a blanket certification.
 
-The About page displays the existing `static/img/profile.webp` in the reading rail on desktop and above the copy on mobile. CRM workflow vectors remain editable sources; desktop and phone display the same complete diagrams as 2× PNG exports for consistent font rendering.
+The Projects page uses generous two-column editorial rows with contained artifact images, category filters, a labeled search, and native dialog image previews. On mobile, each image precedes its project details. All projects and direct image links remain available without JavaScript. VideoFlow uses the real shared studio interface with illustrative demo content; Monash uses its public platform and actual CitizenFlood reporting screen.
+
+Project row titles use a fluid 1.6rem–2.4rem size, weight 450, and 1.2 line height. Image preview backdrops use rgba(35, 33, 28, .72) to keep the artifact legible.
+
+About uses a portrait and identity column beside a generous biography, followed by three text paths into work, writing, and experience. Writing and Blog use editorial rows: topic/date/read time in a narrow column, title and description in the reading column. All writing combines notes and blog entries; topic and search controls progressively enhance the index. The regression series retains chronological reading order in a native disclosure. VideoFlow has an animated studio overview with a pause control and a reduced-motion still fallback.
+
+The homepage shows two selected work stories, followed by an Explore more work link to the Projects archive, where VideoFlow and Monash remain available. All writing visibly separates Blog posts (product work, systems, and experiences) from Technical notes (mathematics, AI, and research); each group explains its contents before the article rows. Article titles are h3 beneath each collection h2. Filters hide empty groups as well as articles.
+
+View more work on the homepage is a centered native disclosure, collapsed initially. It reveals VideoFlow and Monash in the same editorial evidence layout as the first two projects. The control becomes Show less work when open. VideoFlow animation pauses while the disclosure is closed.
+
+The regression reading path is an inset native disclosure with a title, lesson count, short progression description, and numbered title/summary rows. The CV uses a dedicated template with a sticky section index on desktop and wrapping anchor navigation on mobile, consistent entry spacing, aligned dates, and one page h1. All source CV facts remain intact.
+
+When expanded, the homepage work disclosure places its Show less work control below the newly revealed projects. Closing returns focus to View more work. Without JavaScript, the native summary remains available.
+
+Public diagrams offer an in-page native dialog with fit/actual-size controls, Escape and backdrop dismissal, and focus restoration. Excalidraw source downloads are omitted from visitor-facing captions. SVG previews and the internal editable source files remain available for maintenance.
+
+CV certifications use two columns above 640px, with each logo above its title, issuer, issue date, and credential link. Mobile uses a single column. The certifications collection has an explicit class rather than position-based layout rules.
+
+Dedicated project pages pair a large artifact with concise project context and real action links, then use a narrow contents index beside a 68ch reading column. The layout stacks below 920px. Source descriptions distinguish actual application imagery from the illustrative VideoFlow project and unvalidated Monash scenario outputs.

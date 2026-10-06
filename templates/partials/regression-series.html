@@ -1,0 +1,8 @@
+{% set regression = notes.pages | filter(attribute="extra.topic", value="Regression") | sort(attribute="date") %}
+<details class="reading-series" id="regression-series">
+  <summary><span><span class="series-heading">Linear regression</span><span class="series-description">{{ regression | length }} lessons · from fitting a line to statistical testing</span></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="series-intro"><p>Follow the derivations in order. Each lesson builds on the notation and results from the previous one.</p></div>
+  <ol class="series-lessons">
+    {% for item in regression %}<li><a href="{{ item.permalink }}"><span class="lesson-number" aria-hidden="true">{{ loop.index }}</span><span class="lesson-copy"><span class="lesson-title">{{ item.title }}</span><span class="lesson-description">{{ item.description }}</span></span><span class="lesson-time">{{ item.reading_time }} min</span></a></li>{% endfor %}
+  </ol>
+</details>

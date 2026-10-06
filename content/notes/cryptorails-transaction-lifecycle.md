@@ -35,10 +35,10 @@ The merchant generates a deposit address for each customer and stores it in its 
 The browser’s `deposit-watch` SDK polls the chain and fires `onDeposit` when funds appear. The callback updates the interface and notifies the merchant backend. The backend requests consolidation; CryptoRails validates the funds and sweeps them into the tenant’s consolidation wallet.
 
 <figure class="payment-artifact">
-<a href="../../img/projects/cryptorails-deposit-flow.png" aria-label="View the full-size CryptoRails payment workflow">
-<img width="3600" height="2060" src="../../img/projects/cryptorails-deposit-flow.png" alt="CryptoRails deposit flow: customer address, browser detection, server-side consolidation, and settlement through a verified signed webhook." loading="lazy">
+<a href="../../img/projects/cryptorails-deposit-flow-excalidraw.svg" aria-label="View the full-size CryptoRails payment workflow">
+<img width="1600" height="898" src="../../img/projects/cryptorails-deposit-flow-excalidraw.svg" alt="CryptoRails deposit flow: customer address, browser detection, server-side consolidation, and settlement through a verified signed webhook." loading="lazy">
 </a>
-<figcaption><span>Redrawn from the <a href="https://docs.cryptorails.tech/guide">public integration guide</a>: detection provides feedback; a verified webhook authorises settlement.</span></figcaption>
+<figcaption><span>Redrawn from the <a href="https://docs.cryptorails.tech/guide">public integration guide</a>: detection provides feedback; a verified webhook authorises settlement.</span> <a href="../../img/projects/cryptorails-deposit-flow-excalidraw.svg">View full-size diagram</a></figcaption>
 </figure>
 
 ## Confirmation and settlement
@@ -67,3 +67,9 @@ Each case needs a defined response: wait, retry, reject, or review. The interfac
 I contribute to the backlog and roadmap, run Scrum ceremonies, and coordinate the engineering team. I work with the business owner and engineers to define which event permits settlement, what the user sees while waiting, and how retries avoid duplicate credit.
 
 Try the [live deposit interface](https://docs.cryptorails.tech/guide/playground), or read the [integration guide](https://docs.cryptorails.tech/guide), [transaction overview](https://docs.cryptorails.tech/documentation/overview), and [webhook documentation](https://docs.cryptorails.tech/documentation/webhooks). Internal implementation details and performance results remain confidential.
+
+
+## Related product decisions
+
+- [How I define when a payment is complete](@/blog/product-manager-between-business-and-delivery.md).
+- [TRON energy as a product requirement](@/blog/tron-energy-product-requirement.md).

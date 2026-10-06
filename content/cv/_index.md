@@ -1,10 +1,10 @@
 +++
 title = "Curriculum Vitae"
-description = "A web version of the current CV."
-template = "section.html"
+description = "Jien Weng’s experience in product management, technical consulting, Monash research, and data science training, plus education and publications."
+template = "cv.html"
 +++
 
-# Experience
+## Experience
 
 {{ collection(file="experiences.toml") }}
 

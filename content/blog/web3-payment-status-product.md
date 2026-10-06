@@ -51,3 +51,9 @@ Client-side detection provides quick feedback when funds appear. Settlement requ
 - Prevent retries from crediting the same payment twice.
 
 The [CryptoRails lifecycle note](@/notes/cryptorails-transaction-lifecycle.md) covers the documented deposit and consolidation flow. These are generalised requirements; internal details and performance results remain confidential.
+
+
+## Related reading
+
+- [Deposit detection, consolidation, and settlement in CryptoRails](@/notes/cryptorails-transaction-lifecycle.md).
+- [How I define when a payment is complete](@/blog/product-manager-between-business-and-delivery.md).

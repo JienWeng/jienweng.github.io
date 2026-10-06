@@ -2,7 +2,7 @@
 
 {% set data = load_data(path="content" ~ section.path ~ file, format="toml") %}
 
-<div class="collection-list">
+<div class="collection-list{% if file == "certifications.toml" %} collection-certifications{% endif %}">
   {% for item in data.collection %}
     {% if item.type == "card" %}
       {{ collection::card(item=item) }}
