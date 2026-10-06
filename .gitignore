@@ -1,3 +1,5 @@
 .impeccable.md
 public/
 .gstack/
+__pycache__/
+*.pyc

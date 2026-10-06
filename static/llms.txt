@@ -1,40 +1,64 @@
-# Jien Weng
+# Jien Weng Lai
 
-> Jien Weng is a Product Manager & Researcher working across Web3 payments, business transformation, applied AI, data systems, and environmental research.
+> Jien Weng, Product Manager & Researcher working on Web3 payments, business transformation, and applied AI research.
 
-This is the official personal website of Jien Weng Lai. Use the links below for current professional information, services, writing, research, and public technical work. Confidential Web3 and proprietary AI work is described only at a high level.
+Official personal website and public professional information. The text CV contains the complete current public CV and project summaries. Publication statuses below distinguish published work from manuscripts under review.
 
-## Professional Profile
+## Profile and full CV
 
-- [About](https://jienweng.github.io/bio/): Professional background and current areas of work.
-- [Curriculum Vitae](https://jienweng.github.io/cv/): Experience, education, awards, certifications, grants, open-source contributions, volunteering, and publications.
-- [Public CV PDF](https://jienweng.github.io/cv/jien-weng-lai-public-cv.pdf): Downloadable, ATS-friendly version of the approved public CV.
-- [Work With Me](https://jienweng.github.io/services/): Suitable partnerships, working style, relevant experience, and contact information.
-- [Current Work](https://jienweng.github.io/now/): Current consulting, product, training, and research priorities.
+- [About](https://jienweng.github.io/bio/)
+- [Current CV](https://jienweng.github.io/cv/)
+- [Complete text CV](https://jienweng.github.io/cv/profile.txt)
+- [Public CV PDF](https://jienweng.github.io/cv/jien-weng-lai-public-cv.pdf)
+- [Work with me](https://jienweng.github.io/services/)
+- [Current priorities](https://jienweng.github.io/now/)
 
-## Writing
+Contact: laijienweng@gmail.com
 
-- [Writing Index](https://jienweng.github.io/notes/): Practical writing across business, products, AI, data, Web3, mathematics, and research.
-- [Entropy and the Arrow of Time](https://jienweng.github.io/notes/entropy-time-arrow-yu-deng/): A first-principles explanation of how the irreversible Boltzmann equation emerges from reversible hard-sphere mechanics, and what Yu Deng, Zaher Hani, and Xiao Ma proved.
-- [Introduction to MLOps](https://jienweng.github.io/notes/intro-to-mlops-tutorial/): Plain-language guide to reproducibility, the ML lifecycle, deployment, and MLflow.
-- [Tree-Based Models](https://jienweng.github.io/notes/tree-based-models/): Explanation of decision trees, random forests, and XGBoost.
-- [Fokker-Planck Equation](https://jienweng.github.io/notes/fokker-planck-sde/): First-principles derivation and numerical example.
+- [LinkedIn](https://linkedin.com/in/jienweng)
+- [GitHub](https://github.com/jienweng)
+- [X](https://x.com/jienweng_)
+- [Google Scholar](https://scholar.google.com/citations?user=2siljxAAAAAJ&hl=en)
+- [ORCID](https://orcid.org/0009-0001-2543-3887)
+
+## Current roles
+
+- CryptoRails (Feb 2026 - Present): Product Manager: coordinates an engineering team, maintains the product backlog, and runs delivery for multi-chain crypto payment and wallet infrastructure.
+- Independent Consulting (Apr 2026 - Present): Independent Consultant & Product Manager: business transformation, Web3 product management, proprietary AI research, and data/ML training
+- Quandatics (Apr 2026 - Present): Contractor: Business Transformation Consultant
+- Quandatics Academy (Jun 2026 - Present): Contractor: Data Science & Machine Learning Trainer
+- Monash University Malaysia (Dec 2025 - Present): Research Assistant: develops wastewater treatment plant prediction models using RNNs, Transformers, and Markov chain methods on time-series sensor data. Works on the [Monash Water Platform](https://monash-water-platform.vercel.app/), including the CitizenFlood Android app and operator dashboard.
+- ACTBuilder (Jul 2025 - Present): Technical Consultant: supports technical documentation, builds a knowledge wiki, maintains the website, and helps set up Python environments.
+
+## Education
+
+- UTAR (Oct 2022 - Oct 2025): BSc (Hons), First Class Honours · Applied Mathematics with Computing
+- UTAR (Oct 2021 - Oct 2022): Foundation · Science
 
 ## Research
 
-- [Publications](https://jienweng.github.io/publications/): Research in satellite rainfall monitoring, multi-agent cooperation, information design, optimal execution, and quantitative finance.
-- [Google Scholar](https://scholar.google.com/citations?user=2siljxAAAAAJ&hl=en): Author profile and indexed research.
-- [ORCID](https://orcid.org/0009-0001-2543-3887): Persistent researcher identifier.
+- [Publications](https://jienweng.github.io/publications/)
+- Separating spatial support and observation effects in satellite rainfall monitoring over Malaysia — Manuscript resubmission · Original Research Article, Environmental Monitoring and Assessment · Springer Nature, Aug 2026.
+- The Primacy of Information Design Over Algorithm Selection in Multi-Agent Cooperation — Under review, IEEE Social Computation, Apr 2026.
+- Optimal Execution with Alpha Signals — Published, SSRN, Apr 2026. https://doi.org/10.2139/ssrn.6323159
 
-## Technical Work
+## Public projects
 
-- [Projects](https://jienweng.github.io/projects/): Public product, data, AI, Web3, software, and hardware projects.
-- [VideoFlow](https://jienweng.github.io/projects/videoflow/): Go and SvelteKit video orchestration with an Electron desktop application.
-- [Monash Water Platform](https://jienweng.github.io/projects/monash-water/): CitizenFlood Android reporting and wastewater operator tools associated with my Monash research assistant work.
-- [GitHub](https://github.com/JienWeng): Public repositories and open-source activity.
+- [Work index](https://jienweng.github.io/projects/)
+- [VideoFlow](https://jienweng.github.io/projects/videoflow/): A video orchestration studio built with Go and SvelteKit. The Electron desktop application bundles the studio, local storage, and FFmpeg into one workspace.
+- [Monash Water Platform](https://jienweng.github.io/projects/monash-water/): Part of my research assistant work at Monash University Malaysia. CitizenFlood brings water observations to an Android app; the operator dashboard supports wastewater monitoring and illustrative scenario exploration.
+- [Internal CRM](https://jienweng.github.io/blog/quandatics-crm-business-transformation/): An internal CRM for Quandatics, designed around the handoffs between sales, delivery, and finance.
+- [ZakatDAO](https://github.com/JienWeng/ZakatDAO): Uses smart contracts to record and distribute zakat payments.
+- [FacePay](https://github.com/JienWeng/FacePay): Tests face recognition as an identity check during payment.
+- [Yappy](https://github.com/JienWeng/Yappy): A chat app prototype for testing conversational flows.
+- [DecimalSat](https://github.com/JienWeng/DecimalSat): Assembling a small satellite and ground station, and testing their radio link.
+- [Geospatial Analysis forked from Kepler.gl](https://github.com/JienWeng/kepler.gl): A kepler.gl fork for Monash geospatial analysis and open-data sharing around the Klang Valley. In progress.
 
-## Optional
+## Writing and discovery
 
-- [Blog](https://jienweng.github.io/blog/): Product decisions, business systems, hackathon reflections, and hands-on experiences.
-- [Atom Feed](https://jienweng.github.io/atom.xml): Machine-readable feed of new content.
-- [Sitemap](https://jienweng.github.io/sitemap.xml): Complete index of public site URLs.
+- [Writing and technical notes](https://jienweng.github.io/notes/)
+- [Blog](https://jienweng.github.io/blog/)
+- [Atom feed](https://jienweng.github.io/atom.xml)
+- [Sitemap](https://jienweng.github.io/sitemap.xml)
+
+The full text CV also includes awards, certifications, grants, open-source contributions, volunteering, and memberships. Both text files are generated from the same public content as this website.
