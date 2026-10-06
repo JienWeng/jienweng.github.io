@@ -8,7 +8,7 @@
     <updated>2026-07-20T00:00:00+00:00</updated>
     <id>https://jienweng.github.io/pr-preview/pr-13/blog/atom.xml</id>
     <entry xml:lang="en">
-        <title>How I Turn Payment Requests into Delivery Work</title>
+        <title>How I Define When a Payment Is Complete</title>
         <published>2026-07-20T00:00:00+00:00</published>
         <updated>2026-07-20T00:00:00+00:00</updated>
         
@@ -23,16 +23,23 @@
         <link rel="alternate" type="text/html" href="https://jienweng.github.io/pr-preview/pr-13/blog/product-manager-between-business-and-delivery/"/>
         <id>https://jienweng.github.io/pr-preview/pr-13/blog/product-manager-between-business-and-delivery/</id>
         
-        <content type="html" xml:base="https://jienweng.github.io/pr-preview/pr-13/blog/product-manager-between-business-and-delivery/">&lt;p&gt;I coordinate an engineering team working on Web3 payment flows, chain integrations, QA, and UI testing. I maintain the backlog and roadmap, run Scrum ceremonies, and clarify priorities with the business owner.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;turning-a-request-into-work&quot;&gt;Turning a request into work&lt;&#x2F;h2&gt;
-&lt;p&gt;“Make deposits more reliable” leaves several decisions open: which networks, which failure cases, what the user sees, and which event allows settlement.&lt;&#x2F;p&gt;
-&lt;p&gt;I turn those decisions into a scope the team can discuss and test. Each item needs a business outcome, a user or merchant problem, technical constraints, and acceptance criteria.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;keeping-delivery-on-track&quot;&gt;Keeping delivery on track&lt;&#x2F;h2&gt;
-&lt;p&gt;Between ceremonies, I track dependencies, clarify decisions, and surface blocked work. I also keep new requests from displacing work we have already agreed.&lt;&#x2F;p&gt;
-&lt;p&gt;Some decisions add a story. Others reject a shortcut that would make reconciliation or QA harder. I raise disagreements early so the business owner and engineers can choose the trade-off.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;defining-done&quot;&gt;Defining done&lt;&#x2F;h2&gt;
-&lt;p&gt;A payment screen can look finished while a transaction remains pending or a duplicate webhook can credit it twice. Acceptance criteria need to cover those states as well as the successful flow.&lt;&#x2F;p&gt;
-&lt;p&gt;Product-specific business details, internal metrics, and implementation details remain confidential.&lt;&#x2F;p&gt;
+        <content type="html" xml:base="https://jienweng.github.io/pr-preview/pr-13/blog/product-manager-between-business-and-delivery/">&lt;p&gt;I coordinate an engineering team working on Web3 payments. I maintain the backlog and roadmap, run Scrum ceremonies, and clarify priorities with the business owner.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;when-the-merchant-can-credit-a-payment&quot;&gt;When the merchant can credit a payment&lt;&#x2F;h2&gt;
+&lt;p&gt;“Make deposits more reliable” leaves a decision open: which event allows the merchant to credit its ledger?&lt;&#x2F;p&gt;
+&lt;p&gt;I work through that boundary with the business owner and engineers. In the documented CryptoRails flow, the browser detects incoming funds and gives the customer feedback. The merchant backend credits the ledger after receiving and verifying the signed settlement webhook.&lt;&#x2F;p&gt;
+&lt;p&gt;The trade-off is waiting for confirmation and server verification before calling the payment complete. The interface still needs to show progress during that wait. Treating detection as completion would let the screen promise an outcome the backend has yet to verify.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-i-put-into-acceptance-criteria&quot;&gt;What I put into acceptance criteria&lt;&#x2F;h2&gt;
+&lt;p&gt;That boundary changes what the team has to test:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Deposit detection updates the interface without marking the payment settled.&lt;&#x2F;li&gt;
+&lt;li&gt;A delayed confirmation leaves the payment pending.&lt;&#x2F;li&gt;
+&lt;li&gt;The backend verifies the webhook before updating the ledger.&lt;&#x2F;li&gt;
+&lt;li&gt;A repeated webhook or retry cannot credit the same payment twice.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;A successful demo covers only one of these paths. I include the delayed and duplicate cases when defining done with the team.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;keeping-the-scope-deliverable&quot;&gt;Keeping the scope deliverable&lt;&#x2F;h2&gt;
+&lt;p&gt;The request also needs agreed networks, failure cases, and responses for the user. I turn those decisions into backlog items, track dependencies, and raise blocked work or competing requests with the business owner.&lt;&#x2F;p&gt;
+&lt;p&gt;The &lt;a href=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;pr-preview&#x2F;pr-13&#x2F;notes&#x2F;cryptorails-transaction-lifecycle&#x2F;&quot;&gt;CryptoRails workflow&lt;&#x2F;a&gt; shows the deposit and consolidation sequence behind these requirements. Product-specific business details, internal metrics, and implementation details remain confidential.&lt;&#x2F;p&gt;
 </content>
         
     </entry>
@@ -86,8 +93,11 @@
         <link rel="alternate" type="text/html" href="https://jienweng.github.io/pr-preview/pr-13/blog/quandatics-crm-business-transformation/"/>
         <id>https://jienweng.github.io/pr-preview/pr-13/blog/quandatics-crm-business-transformation/</id>
         
-        <content type="html" xml:base="https://jienweng.github.io/pr-preview/pr-13/blog/quandatics-crm-business-transformation/">&lt;p&gt;At Quandatics, I’m working on an internal CRM connecting sales, project delivery, and finance. The team had tried Salesforce, but its structure required workarounds around our existing process.&lt;&#x2F;p&gt;
-&lt;p&gt;We started by mapping what each team needs at a handover: the approved scope, supporting documents, current status, and the person responsible for the next step.&lt;&#x2F;p&gt;
+        <content type="html" xml:base="https://jienweng.github.io/pr-preview/pr-13/blog/quandatics-crm-business-transformation/">&lt;p&gt;At Quandatics, I’m working on an internal CRM connecting sales, project delivery, and finance.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-choice-to-build-internally&quot;&gt;The choice to build internally&lt;&#x2F;h2&gt;
+&lt;p&gt;The team had tried Salesforce, but its structure required workarounds around our existing process. The alternatives were to keep adapting it, change our process to fit it, or build internally. We chose an internal CRM around the sales, delivery, and finance handoffs.&lt;&#x2F;p&gt;
+&lt;p&gt;That choice gives us control over the handoffs, but also means owning development, deployment, and support. An established CRM can be the better option when its process fits the business.&lt;&#x2F;p&gt;
+&lt;p&gt;I map what each team needs before it can act: the approved scope, supporting documents, current status, and the person responsible for the next step.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;from-lead-to-sales-order&quot;&gt;From lead to sales order&lt;&#x2F;h2&gt;
 &lt;p&gt;A qualified lead becomes an account, a contact, and an opportunity. One account can have several opportunities, each with its own sales funnel and approval requirements.&lt;&#x2F;p&gt;
 &lt;p&gt;When an opportunity is won, the approved quotation becomes a numbered sales order. The order links the sale to a project with its items, budget, team, phases, and milestones.&lt;&#x2F;p&gt;
@@ -117,9 +127,7 @@
 &lt;&#x2F;figure&gt;
 &lt;h2 id=&quot;my-role&quot;&gt;My role&lt;&#x2F;h2&gt;
 &lt;p&gt;I work across requirements, design, development, production deployment, and support. I clarify who owns each record, what a status means, and what happens when scope changes or an approval arrives late.&lt;&#x2F;p&gt;
-&lt;p&gt;Support reveals the gaps that a workflow diagram misses. A late handover or incomplete claim can expose an assumption we need to resolve before adding another field or screen.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;why-an-internal-system&quot;&gt;Why an internal system&lt;&#x2F;h2&gt;
-&lt;p&gt;Custom software adds work of its own. An established CRM can be a better choice when its process matches the business, or when changing the process is worthwhile. Here, the team had already tried adapting to Salesforce and continued to need workarounds.&lt;&#x2F;p&gt;
+&lt;p&gt;For a milestone claim, that means defining the evidence and management approval finance needs before issuing an invoice. I work through ownership and approval conditions before adding fields or screens. Support can reveal gaps, such as an incomplete claim or a late handover.&lt;&#x2F;p&gt;
 &lt;p&gt;The internal CRM is still in progress. Client-specific implementation details and operational results remain confidential.&lt;&#x2F;p&gt;
 </content>
         
