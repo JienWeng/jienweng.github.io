@@ -24,6 +24,7 @@
         <id>https://jienweng.github.io/pr-preview/pr-13/blog/product-manager-between-business-and-delivery/</id>
         
         <content type="html" xml:base="https://jienweng.github.io/pr-preview/pr-13/blog/product-manager-between-business-and-delivery/">&lt;p&gt;I coordinate an engineering team working on Web3 payments. I maintain the backlog and roadmap, run Scrum ceremonies, and clarify priorities with the business owner.&lt;&#x2F;p&gt;
+&lt;p&gt;When gathering requirements, I start with the intended users and how they will understand the flow. For a payment, I ask what the customer sees while waiting and whether the status tells them to wait, retry, or take another action.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;when-the-merchant-can-credit-a-payment&quot;&gt;When the merchant can credit a payment&lt;&#x2F;h2&gt;
 &lt;p&gt;“Make deposits more reliable” leaves a decision open: which event allows the merchant to credit its ledger?&lt;&#x2F;p&gt;
 &lt;p&gt;I work through that boundary with the business owner and engineers. In the documented CryptoRails flow, the browser detects incoming funds and gives the customer feedback. The merchant backend credits the ledger after receiving and verifying the signed settlement webhook.&lt;&#x2F;p&gt;
@@ -97,7 +98,7 @@
 &lt;h2 id=&quot;the-choice-to-build-internally&quot;&gt;The choice to build internally&lt;&#x2F;h2&gt;
 &lt;p&gt;The team had tried Salesforce, but its structure required workarounds around our existing process. The alternatives were to keep adapting it, change our process to fit it, or build internally. We chose an internal CRM around the sales, delivery, and finance handoffs.&lt;&#x2F;p&gt;
 &lt;p&gt;That choice gives us control over the handoffs, but also means owning development, deployment, and support. An established CRM can be the better option when its process fits the business.&lt;&#x2F;p&gt;
-&lt;p&gt;I map what each team needs before it can act: the approved scope, supporting documents, current status, and the person responsible for the next step.&lt;&#x2F;p&gt;
+&lt;p&gt;I look at the workflow from the viewpoint of the people using the CRM. I map requirements around what sales, delivery, and finance need before they can act: the approved scope, supporting documents, current status, and the person responsible for the next step.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;from-lead-to-sales-order&quot;&gt;From lead to sales order&lt;&#x2F;h2&gt;
 &lt;p&gt;A qualified lead becomes an account, a contact, and an opportunity. One account can have several opportunities, each with its own sales funnel and approval requirements.&lt;&#x2F;p&gt;
 &lt;p&gt;When an opportunity is won, the approved quotation becomes a numbered sales order. The order links the sale to a project with its items, budget, team, phases, and milestones.&lt;&#x2F;p&gt;
