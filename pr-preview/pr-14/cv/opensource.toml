@@ -1,0 +1,10 @@
+[[collection]]
+type = "card_expandable"
+title = "SymPy"
+subtitle = "PR #29376: add type annotations to warning helpers"
+date = "12 Mar 2026"
+link = "https://github.com/sympy/sympy/pull/29376"
+link_label = "Link"
+expand_label = "Details"
+content = "Added type annotations to SymPy’s warning helpers. Reviewed and merged into SymPy master."
+featured = true

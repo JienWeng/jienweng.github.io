@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Jien Weng - Blog</title>
+    <subtitle>Jien Weng, Product Manager &amp; Researcher working on Web3 payments, business transformation, and applied AI research.</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://jienweng.github.io/pr-preview/pr-14/blog/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://jienweng.github.io/pr-preview/pr-14/blog/"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2026-07-20T00:00:00+00:00</updated>
+    <id>https://jienweng.github.io/pr-preview/pr-14/blog/atom.xml</id>
+    <entry xml:lang="en">
+        <title>How I Define When a Payment Is Complete</title>
+        <published>2026-07-20T00:00:00+00:00</published>
+        <updated>2026-07-20T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://jienweng.github.io/pr-preview/pr-14/blog/product-manager-between-business-and-delivery/"/>
+        <id>https://jienweng.github.io/pr-preview/pr-14/blog/product-manager-between-business-and-delivery/</id>
+        
+        <content type="html" xml:base="https://jienweng.github.io/pr-preview/pr-14/blog/product-manager-between-business-and-delivery/">&lt;p&gt;I coordinate an engineering team working on Web3 payments. I maintain the backlog and roadmap, run Scrum ceremonies, and clarify priorities with the business owner.&lt;&#x2F;p&gt;
+&lt;p&gt;When gathering requirements, I start with the intended users and how they will understand the flow. For a payment, I ask what the customer sees while waiting and whether the status tells them to wait, retry, or take another action.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;when-the-merchant-can-credit-a-payment&quot;&gt;When the merchant can credit a payment&lt;&#x2F;h2&gt;
+&lt;p&gt;“Make deposits more reliable” leaves a decision open: which event allows the merchant to credit its ledger?&lt;&#x2F;p&gt;
+&lt;p&gt;I work through that boundary with the business owner and engineers. In the documented CryptoRails flow, the browser detects incoming funds and gives the customer feedback. The merchant backend credits the ledger after receiving and verifying the signed settlement webhook.&lt;&#x2F;p&gt;
+&lt;p&gt;The trade-off is waiting for confirmation and server verification before calling the payment complete. The interface still needs to show progress during that wait. Treating detection as completion would let the screen promise an outcome the backend has yet to verify.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-i-put-into-acceptance-criteria&quot;&gt;What I put into acceptance criteria&lt;&#x2F;h2&gt;
+&lt;p&gt;That boundary changes what the team has to test:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Deposit detection updates the interface without marking the payment settled.&lt;&#x2F;li&gt;
+&lt;li&gt;A delayed confirmation leaves the payment pending.&lt;&#x2F;li&gt;
+&lt;li&gt;The backend verifies the webhook before updating the ledger.&lt;&#x2F;li&gt;
+&lt;li&gt;A repeated webhook or retry cannot credit the same payment twice.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;A successful demo covers only one of these paths. I include the delayed and duplicate cases when defining done with the team.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;keeping-the-scope-deliverable&quot;&gt;Keeping the scope deliverable&lt;&#x2F;h2&gt;
+&lt;p&gt;The request also needs agreed networks, failure cases, and responses for the user. I turn those decisions into backlog items, track dependencies, and raise blocked work or competing requests with the business owner.&lt;&#x2F;p&gt;
+&lt;p&gt;The &lt;a href=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;pr-preview&#x2F;pr-14&#x2F;notes&#x2F;cryptorails-transaction-lifecycle&#x2F;&quot;&gt;CryptoRails workflow&lt;&#x2F;a&gt; shows the deposit and consolidation sequence behind these requirements. Product-specific business details, internal metrics, and implementation details remain confidential.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;related-reading&quot;&gt;Related reading&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;pr-preview&#x2F;pr-14&#x2F;notes&#x2F;cryptorails-transaction-lifecycle&#x2F;&quot;&gt;The CryptoRails deposit-to-settlement workflow&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;pr-preview&#x2F;pr-14&#x2F;blog&#x2F;web3-payment-status-product&#x2F;&quot;&gt;Why a Web3 payment needs more than a transaction hash&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>TRON Energy Is a Product Requirement</title>
+        <published>2026-06-22T00:00:00+00:00</published>
+        <updated>2026-06-22T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://jienweng.github.io/pr-preview/pr-14/blog/tron-energy-product-requirement/"/>
+        <id>https://jienweng.github.io/pr-preview/pr-14/blog/tron-energy-product-requirement/</id>
+        
+        <content type="html" xml:base="https://jienweng.github.io/pr-preview/pr-14/blog/tron-energy-product-requirement/">&lt;p&gt;On EVM networks, transactions normally need the network’s native coin for gas. TRON token transfers use Energy and may consume Bandwidth. If an account lacks Energy, a transfer can burn TRX to cover the shortfall.&lt;&#x2F;p&gt;
+&lt;p&gt;That changes the payment cost and the checks required before broadcast.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-payment-sequence&quot;&gt;The payment sequence&lt;&#x2F;h2&gt;
+&lt;p&gt;In our payment flow, we apply Energy rental before a resource-heavy TRON transaction:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Validate the payment and network.&lt;&#x2F;li&gt;
+&lt;li&gt;Check the transaction’s resource requirement.&lt;&#x2F;li&gt;
+&lt;li&gt;Arrange rented Energy when needed.&lt;&#x2F;li&gt;
+&lt;li&gt;Broadcast and monitor the transaction.&lt;&#x2F;li&gt;
+&lt;li&gt;Wait for the required confirmation condition.&lt;&#x2F;li&gt;
+&lt;li&gt;Reconcile the transfer with the payment request.&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;requirements-and-testing&quot;&gt;Requirements and testing&lt;&#x2F;h2&gt;
+&lt;p&gt;The backlog needs to account for insufficient resources, rental failure, unexpected costs, and confirmation delays. QA also needs chain-specific address, wallet, and fee cases.&lt;&#x2F;p&gt;
+&lt;p&gt;I now check these requirements before the team designs the error states. Exact rental rules and internal implementation details remain confidential.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Why We Built an Internal CRM After Trying Salesforce</title>
+        <published>2026-05-25T00:00:00+00:00</published>
+        <updated>2026-05-25T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://jienweng.github.io/pr-preview/pr-14/blog/quandatics-crm-business-transformation/"/>
+        <id>https://jienweng.github.io/pr-preview/pr-14/blog/quandatics-crm-business-transformation/</id>
+        
+        <content type="html" xml:base="https://jienweng.github.io/pr-preview/pr-14/blog/quandatics-crm-business-transformation/">&lt;p&gt;At Quandatics, I’m working on an &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;app.quandatics.com&quot;&gt;internal CRM&lt;&#x2F;a&gt; connecting sales, project delivery, and finance.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-choice-to-build-internally&quot;&gt;The choice to build internally&lt;&#x2F;h2&gt;
+&lt;p&gt;The team had tried Salesforce, but its structure required workarounds around our existing process. The alternatives were to keep adapting it, change our process to fit it, or build internally. We chose an internal CRM around the sales, delivery, and finance handoffs.&lt;&#x2F;p&gt;
+&lt;p&gt;That choice gives us control over the handoffs, but also means owning development, deployment, and support. An established CRM can be the better option when its process fits the business.&lt;&#x2F;p&gt;
+&lt;p&gt;I look at the workflow from the viewpoint of the people using the CRM. I map requirements around what sales, delivery, and finance need before they can act: the approved scope, supporting documents, current status, and the person responsible for the next step.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;from-lead-to-sales-order&quot;&gt;From lead to sales order&lt;&#x2F;h2&gt;
+&lt;p&gt;A qualified lead becomes an account, a contact, and an opportunity. One account can have several opportunities, each with its own sales funnel and approval requirements.&lt;&#x2F;p&gt;
+&lt;p&gt;When an opportunity is won, the approved quotation becomes a numbered sales order. The order links the sale to a project with its items, budget, team, phases, and milestones.&lt;&#x2F;p&gt;
+&lt;figure class=&quot;crm-artifact&quot;&gt;
+  &lt;a href=&quot;..&#x2F;..&#x2F;img&#x2F;blog&#x2F;quandatics&#x2F;deal-to-cash-excalidraw.svg&quot; aria-label=&quot;View the full-size CRM deal-to-cash diagram&quot;&gt;
+    &lt;img width=&quot;1600&quot; height=&quot;1079&quot; src=&quot;..&#x2F;..&#x2F;img&#x2F;blog&#x2F;quandatics&#x2F;deal-to-cash-excalidraw.svg&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; alt=&quot;Deal-to-cash flow from qualified lead through account, opportunity, approved sales order, project delivery, and payment received.&quot;&gt;
+  &lt;&#x2F;a&gt;
+  &lt;figcaption&gt;&lt;span&gt;01 · Lead to approved sales order&lt;&#x2F;span&gt;&lt;a href=&quot;..&#x2F;..&#x2F;img&#x2F;blog&#x2F;quandatics&#x2F;deal-to-cash-excalidraw.svg&quot;&gt;View full-size diagram&lt;&#x2F;a&gt;&lt;&#x2F;figcaption&gt;
+&lt;&#x2F;figure&gt;
+&lt;h2 id=&quot;from-delivery-to-payment&quot;&gt;From delivery to payment&lt;&#x2F;h2&gt;
+&lt;p&gt;Each project phase has deliverables and a progress percentage. Once a phase is complete, the team submits a milestone claim with evidence. Management approves it before finance issues the invoice.&lt;&#x2F;p&gt;
+&lt;p&gt;The same records need to show delivery progress, billed amounts, receipts, and outstanding payments. Otherwise, finance and delivery have to reconstruct the status separately.&lt;&#x2F;p&gt;
+&lt;figure class=&quot;crm-artifact&quot;&gt;
+  &lt;a href=&quot;..&#x2F;..&#x2F;img&#x2F;blog&#x2F;quandatics&#x2F;project-to-cash-excalidraw.svg&quot; aria-label=&quot;View the full-size CRM project-to-cash diagram&quot;&gt;
+    &lt;img width=&quot;1600&quot; height=&quot;800&quot; src=&quot;..&#x2F;..&#x2F;img&#x2F;blog&#x2F;quandatics&#x2F;project-to-cash-excalidraw.svg&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; alt=&quot;Project-to-cash flow from an approved sales order through project phases, milestone approval, invoicing, payment receipt, and margin update.&quot;&gt;
+  &lt;&#x2F;a&gt;
+  &lt;figcaption&gt;&lt;span&gt;02 · Delivery milestone to collected payment&lt;&#x2F;span&gt;&lt;a href=&quot;..&#x2F;..&#x2F;img&#x2F;blog&#x2F;quandatics&#x2F;project-to-cash-excalidraw.svg&quot;&gt;View full-size diagram&lt;&#x2F;a&gt;&lt;&#x2F;figcaption&gt;
+&lt;&#x2F;figure&gt;
+&lt;h2 id=&quot;customer-receipts-and-supplier-costs&quot;&gt;Customer receipts and supplier costs&lt;&#x2F;h2&gt;
+&lt;p&gt;On the customer side, a milestone claim becomes a sales invoice, then a receipt matched to the invoice. The accounting entry goes to Autocount with its supporting documents.&lt;&#x2F;p&gt;
+&lt;p&gt;On the supplier side, a purchase order links to the sales order. Finance matches the supplier invoice to that purchase order, approves a payment voucher, and posts the cost to the project.&lt;&#x2F;p&gt;
+&lt;figure class=&quot;crm-artifact&quot;&gt;
+  &lt;a href=&quot;..&#x2F;..&#x2F;img&#x2F;blog&#x2F;quandatics&#x2F;o2c-p2p-excalidraw.svg&quot; aria-label=&quot;View the full-size order-to-cash and procure-to-pay diagram&quot;&gt;
+    &lt;img width=&quot;1600&quot; height=&quot;847&quot; src=&quot;..&#x2F;..&#x2F;img&#x2F;blog&#x2F;quandatics&#x2F;o2c-p2p-excalidraw.svg&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; alt=&quot;Two finance flows linked to one sales order: customer milestone claim through invoice and receipt; supplier purchase order through invoice and approved payment voucher. Both post to Autocount and the same project.&quot;&gt;
+  &lt;&#x2F;a&gt;
+  &lt;figcaption&gt;&lt;span&gt;03 · Money in and money out&lt;&#x2F;span&gt;&lt;a href=&quot;..&#x2F;..&#x2F;img&#x2F;blog&#x2F;quandatics&#x2F;o2c-p2p-excalidraw.svg&quot;&gt;View full-size diagram&lt;&#x2F;a&gt;&lt;&#x2F;figcaption&gt;
+&lt;&#x2F;figure&gt;
+&lt;h2 id=&quot;my-role&quot;&gt;My role&lt;&#x2F;h2&gt;
+&lt;p&gt;I work across requirements, design, development, production deployment, and support. I clarify who owns each record, what a status means, and what happens when scope changes or an approval arrives late.&lt;&#x2F;p&gt;
+&lt;p&gt;For a milestone claim, that means defining the evidence and management approval finance needs before issuing an invoice. I work through ownership and approval conditions before adding fields or screens. Support can reveal gaps, such as an incomplete claim or a late handover.&lt;&#x2F;p&gt;
+&lt;p&gt;The internal CRM is still in progress. Client-specific implementation details and operational results remain confidential.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>A Web3 Payment Needs More Than a Transaction Hash</title>
+        <published>2026-05-18T00:00:00+00:00</published>
+        <updated>2026-05-18T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://jienweng.github.io/pr-preview/pr-14/blog/web3-payment-status-product/"/>
+        <id>https://jienweng.github.io/pr-preview/pr-14/blog/web3-payment-status-product/</id>
+        
+        <content type="html" xml:base="https://jienweng.github.io/pr-preview/pr-14/blog/web3-payment-status-product/">&lt;p&gt;A transaction hash identifies a submitted transaction. The backend still needs to confirm what happened before crediting a ledger or releasing an order.&lt;&#x2F;p&gt;
+&lt;p&gt;While working on a multi-chain gateway, I kept returning to when each person can act on a payment state.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-each-state-needs-to-tell-us&quot;&gt;What each state needs to tell us&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;The customer needs to know whether to wait or retry.&lt;&#x2F;li&gt;
+&lt;li&gt;The merchant needs to know whether to release the order.&lt;&#x2F;li&gt;
+&lt;li&gt;The backend needs verified evidence before updating the ledger.&lt;&#x2F;li&gt;
+&lt;li&gt;QA needs acceptance criteria for each transition.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Submission, confirmation, failure, and settlement need distinct meanings in the interface, webhook handler, and support process.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;detection-and-settlement&quot;&gt;Detection and settlement&lt;&#x2F;h2&gt;
+&lt;p&gt;Client-side detection provides quick feedback when funds appear. Settlement requires a verified server-side signal, with checks for the network, token, recipient, amount, transaction status, and duplicate processing.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;acceptance-criteria-i-would-write&quot;&gt;Acceptance criteria I would write&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Give each payment request a unique reference and expiry.&lt;&#x2F;li&gt;
+&lt;li&gt;Check the selected token and network before signing.&lt;&#x2F;li&gt;
+&lt;li&gt;Record the transaction hash without marking it settled.&lt;&#x2F;li&gt;
+&lt;li&gt;Define separate responses for delays, failures, and duplicates.&lt;&#x2F;li&gt;
+&lt;li&gt;Verify a webhook before it updates the ledger.&lt;&#x2F;li&gt;
+&lt;li&gt;Prevent retries from crediting the same payment twice.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;The &lt;a href=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;pr-preview&#x2F;pr-14&#x2F;notes&#x2F;cryptorails-transaction-lifecycle&#x2F;&quot;&gt;CryptoRails lifecycle note&lt;&#x2F;a&gt; covers the documented deposit and consolidation flow. These are generalised requirements; internal details and performance results remain confidential.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;related-reading&quot;&gt;Related reading&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;pr-preview&#x2F;pr-14&#x2F;notes&#x2F;cryptorails-transaction-lifecycle&#x2F;&quot;&gt;Deposit detection, consolidation, and settlement in CryptoRails&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;pr-preview&#x2F;pr-14&#x2F;blog&#x2F;product-manager-between-business-and-delivery&#x2F;&quot;&gt;How I define when a payment is complete&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Talentbank Boardroom Challenge 2025</title>
+        <published>2025-11-14T00:00:00+00:00</published>
+        <updated>2025-11-14T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://jienweng.github.io/pr-preview/pr-14/blog/talentbank-boardroom-challenge/"/>
+        <id>https://jienweng.github.io/pr-preview/pr-14/blog/talentbank-boardroom-challenge/</id>
+        
+        <content type="html" xml:base="https://jienweng.github.io/pr-preview/pr-14/blog/talentbank-boardroom-challenge/">&lt;p&gt;Photos from the Talentbank Boardroom Challenge 2025.&lt;&#x2F;p&gt;
+&lt;figure class=&quot;wide&quot;&gt;
+  &lt;img src=&quot;https:&amp;#x2F;&amp;#x2F;cdn.cosmos.so&amp;#x2F;757eebfe-bcda-458c-a666-bb88ff978ed2?format=jpeg&quot; alt=&quot;Talentbank Boardroom Challenge 2025&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+  
+&lt;&#x2F;figure&gt;
+&lt;figure class=&quot;wide&quot;&gt;
+  &lt;img src=&quot;https:&amp;#x2F;&amp;#x2F;cdn.cosmos.so&amp;#x2F;e9ab40f7-f55a-40b0-90f9-43afddce3592?format=jpeg&quot; alt=&quot;Talentbank Boardroom Challenge 2025&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+  
+&lt;&#x2F;figure&gt;
+&lt;figure class=&quot;wide&quot;&gt;
+  &lt;img src=&quot;https:&amp;#x2F;&amp;#x2F;cdn.cosmos.so&amp;#x2F;22cf9c61-bcc4-4cb3-a5d3-901668997566?format=jpeg&quot; alt=&quot;Talentbank Boardroom Challenge 2025&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+  
+&lt;&#x2F;figure&gt;
+&lt;figure class=&quot;wide&quot;&gt;
+  &lt;img src=&quot;https:&amp;#x2F;&amp;#x2F;cdn.cosmos.so&amp;#x2F;e06b9475-0616-4202-b7cb-7644eefba819?format=jpeg&quot; alt=&quot;Talentbank Boardroom Challenge 2025&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+  
+&lt;&#x2F;figure&gt;
+&lt;figure class=&quot;wide&quot;&gt;
+  &lt;img src=&quot;https:&amp;#x2F;&amp;#x2F;cdn.cosmos.so&amp;#x2F;dc8979eb-c7e4-4c5a-9530-921feb0b0ae4?format=jpeg&quot; alt=&quot;Talentbank Boardroom Challenge 2025&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+  
+&lt;&#x2F;figure&gt;
+&lt;figure class=&quot;wide&quot;&gt;
+  &lt;img src=&quot;https:&amp;#x2F;&amp;#x2F;cdn.cosmos.so&amp;#x2F;4a589e9c-6ab9-458d-a659-7c47b8f8b583?format=jpeg&quot; alt=&quot;Talentbank Boardroom Challenge 2025&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+  
+&lt;&#x2F;figure&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>A Small Talk About Hackathons</title>
+        <published>2025-08-07T00:00:00+00:00</published>
+        <updated>2025-08-07T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://jienweng.github.io/pr-preview/pr-14/blog/something-about-hackathon/"/>
+        <id>https://jienweng.github.io/pr-preview/pr-14/blog/something-about-hackathon/</id>
+        
+        <content type="html" xml:base="https://jienweng.github.io/pr-preview/pr-14/blog/something-about-hackathon/">&lt;p&gt;The time and energy hackathons demand is insane. Preliminary rounds, semi-finals, and finals each mean another round of brainstorming, last-minute changes, and almost no sleep.&lt;&#x2F;p&gt;
+&lt;p&gt;At first, I finished each one looking forward to the next. After enough rounds, I was tired before the next competition started.&lt;&#x2F;p&gt;
+&lt;p&gt;I also kept comparing myself to people who work in tech every day. I’m a mathematics student exploring outside my field, but that’s easy to forget when everyone around me seems more experienced.&lt;&#x2F;p&gt;
+&lt;p&gt;There’s one more hackathon coming up. I’ll give it what I can, then take a proper break. I still want to do hackathons, but I need time away from the constant cycle of proving myself.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Dead Internet Theory #1</title>
+        <published>2025-07-22T00:00:00+00:00</published>
+        <updated>2025-07-22T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://jienweng.github.io/pr-preview/pr-14/blog/dead-internet-theory-1/"/>
+        <id>https://jienweng.github.io/pr-preview/pr-14/blog/dead-internet-theory-1/</id>
+        
+        <content type="html" xml:base="https://jienweng.github.io/pr-preview/pr-14/blog/dead-internet-theory-1/">&lt;p&gt;LinkedIn and Reddit have started to feel different. I keep seeing polished posts that say the right things but feel disconnected from a person. I’m unsure whether that’s a real shift or my own overreaction.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;cdn.cosmos.so&#x2F;b77a432b-7713-4b10-879d-e8256d284766?format=jpeg&quot; alt=&quot;You can&amp;#39;t tell whether the experience is real or not&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;I used ChatGPT to help write content in the past. Reading it back, I could tell it didn’t sound like anything I had experienced. The sentences were clean; the experience felt artificial.&lt;&#x2F;p&gt;
+&lt;p&gt;Chatbots are useful for proofreading, restructuring, and catching the sentence I somehow wrote twice. They should not supply the experience itself. I would rather read a long-ass, badly organised article by someone who was there than a perfect post assembled from general opinions.&lt;&#x2F;p&gt;
+&lt;p&gt;I can’t tell whether I’m seeing more bots, more generated content, or becoming more sensitive to both. If you’ve noticed it too, &lt;a href=&quot;mailto:laijienweng@gmail.com&quot;&gt;email me&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Building a DeepSeek-R1 Chatbot</title>
+        <published>2024-12-30T00:00:00+00:00</published>
+        <updated>2024-12-30T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://jienweng.github.io/pr-preview/pr-14/blog/deepseek-r1-chatbot/"/>
+        <id>https://jienweng.github.io/pr-preview/pr-14/blog/deepseek-r1-chatbot/</id>
+        
+        <content type="html" xml:base="https://jienweng.github.io/pr-preview/pr-14/blog/deepseek-r1-chatbot/">&lt;p&gt;I built a chatbot with DeepSeek-R1-Distill-Qwen-1.5B to experiment with a downloadable reasoning model. The interface separates its intermediate output from the final response.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;huggingface.co&#x2F;spaces&#x2F;jienweng&#x2F;chatbot_v2&quot;&gt;Try the Hugging Face demo&lt;&#x2F;a&gt; or &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;huggingface.co&#x2F;spaces&#x2F;jienweng&#x2F;chatbot_v2&#x2F;tree&#x2F;main&quot;&gt;read the source&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;showing-the-intermediate-output&quot;&gt;Showing the intermediate output&lt;&#x2F;h2&gt;
+&lt;p&gt;While testing responses, I noticed the model produced reasoning text before its answer. I decided to display it rather than discard it.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;huggingface.co&#x2F;spaces&#x2F;jienweng&#x2F;chatbot_v2&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;cdn.cosmos.so&#x2F;b65be583-5569-41e4-ab62-b4bf500120e1?format=jpeg&quot; alt=&quot;Chatbot displaying intermediate model output above the response&quot; &#x2F;&gt;&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Asked about climate change in Malaysia, it produced a structured response but included the Andaman and Nicobar Islands and a “Ch bamboo” initiative I had never heard of. The output sounded convincing despite those mistakes.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;huggingface.co&#x2F;spaces&#x2F;jienweng&#x2F;chatbot_v2&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;cdn.cosmos.so&#x2F;6c9e3e2a-d318-4615-8786-7d60248fc049?format=jpeg&quot; alt=&quot;Climate response with incorrect references to Malaysian geography&quot; &#x2F;&gt;&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Showing the intermediate text helped me inspect the response and compare prompts. It still needed fact-checking.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;hosting-the-experiment&quot;&gt;Hosting the experiment&lt;&#x2F;h2&gt;
+&lt;p&gt;I used Gradio on a basic Hugging Face Spaces instance with 2 vCPUs and 16 GB RAM. That limits inference speed; the demo can take time to respond.&lt;&#x2F;p&gt;
+&lt;p&gt;The small model made the experiment manageable. I could download it, inspect the model card, and change the interface without depending on a paid inference API.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;huggingface.co&#x2F;spaces&#x2F;jienweng&#x2F;chatbot_v2&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;cdn.cosmos.so&#x2F;0eab3363-76da-4dab-b44b-a4a5d7cdc96f?format=jpeg&quot; alt=&quot;Chatbot interface&quot; &#x2F;&gt;&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;For model details and published results, see the &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;huggingface.co&#x2F;deepseek-ai&#x2F;DeepSeek-R1-Distill-Qwen-1.5B&quot;&gt;official model card&lt;&#x2F;a&gt;. The &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;huggingface.co&#x2F;docs&#x2F;hub&#x2F;spaces-overview&quot;&gt;Spaces documentation&lt;&#x2F;a&gt; covers hosting.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Eco Finance: A PayHack Prototype</title>
+        <published>2024-12-29T00:00:00+00:00</published>
+        <updated>2024-12-29T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://jienweng.github.io/pr-preview/pr-14/blog/eco-finance/"/>
+        <id>https://jienweng.github.io/pr-preview/pr-14/blog/eco-finance/</id>
+        
+        <content type="html" xml:base="https://jienweng.github.io/pr-preview/pr-14/blog/eco-finance/">&lt;p&gt;We built Eco Finance during PayHack 2024 to show estimated carbon emissions alongside everyday spending. It was a 24-hour prototype using OpenFinance transaction data and dummy emission factors.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;cdn.cosmos.so&#x2F;3034bd0a-9dae-4078-80a9-a641c747b58a?format=jpeg&quot; alt=&quot;Eco Finance Interface&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;estimating-a-transaction-s-footprint&quot;&gt;Estimating a transaction’s footprint&lt;&#x2F;h2&gt;
+&lt;p&gt;The proposed calculation uses the merchant category code (MCC), an emission factor, and the amount spent. For example, a dummy factor of 0.5 kg CO₂ per RM gives an estimate of 50 kg CO₂ for a RM 100 transaction.&lt;&#x2F;p&gt;
+&lt;p&gt;Real use would require research into the factors for each merchant category. We considered surveys and work with DOSM; the hackathon version did not validate those estimates.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-proposed-business-model&quot;&gt;The proposed business model&lt;&#x2F;h2&gt;
+&lt;p&gt;We explored pooling users’ estimated savings, certifying carbon credits, selling them to companies, and rewarding users. Bursa Carbon Exchange was the market reference. This was a proposal to investigate, not an implemented or validated credit system.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;cdn.cosmos.so&#x2F;f54512bd-f014-43ac-a1b1-39628b5990d7?format=jpeg&quot; alt=&quot;The whole business plan of eco-finance&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-we-built&quot;&gt;What we built&lt;&#x2F;h2&gt;
+&lt;p&gt;We made a customer interface and an admin view. The demo is no longer maintained, so these screenshots record the prototype.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;cdn.cosmos.so&#x2F;7ee8a2c3-551c-4726-9551-f7d6ab743391?format=jpeg&quot; alt=&quot;Admin Dashboard&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;We didn’t make the final round T.T. I wrote more about the build, mentoring, and deadline problems in &lt;a href=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;pr-preview&#x2F;pr-14&#x2F;blog&#x2F;first-hackathon-experience&#x2F;&quot;&gt;my first hackathon experience&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>First Physical Hackathon Experience</title>
+        <published>2024-12-02T00:00:00+00:00</published>
+        <updated>2024-12-02T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://jienweng.github.io/pr-preview/pr-14/blog/first-hackathon-experience/"/>
+        <id>https://jienweng.github.io/pr-preview/pr-14/blog/first-hackathon-experience/</id>
+        
+        <content type="html" xml:base="https://jienweng.github.io/pr-preview/pr-14/blog/first-hackathon-experience/">&lt;p&gt;Janice, Roius, Gwyn, and I entered PayHack 2024 as four mathematics students from UTAR. Only two of us had tried a hackathon; Gwyn had never written code. None of us had much web development experience.&lt;&#x2F;p&gt;
+&lt;p&gt;We made the Top 32 from almost 100 teams. Then we had four days to learn enough Vue.js and Flask to build a prototype while juggling internships. Janice travelled from JB to KL for it.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;cdn.cosmos.so&#x2F;25b6ad42-8235-45ae-9505-a2c296a8ca2a?format=jpeg&quot; alt=&quot;Team breakfast at PayHack 2024&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-idea-and-the-questions-we-hadn-t-answered&quot;&gt;The idea and the questions we hadn’t answered&lt;&#x2F;h2&gt;
+&lt;p&gt;Our idea estimated carbon footprints from transaction data and explored pooling the savings for trading.&lt;&#x2F;p&gt;
+&lt;p&gt;Johan Nasir’s mentoring sessions felt like a rotan session. “What happens if the carbon credits are manipulated?” “How do you ensure the authenticity of the footprint data?” Each question sent us back to the assumptions behind the demo.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;cdn.cosmos.so&#x2F;b16e0c66-cefb-4cc6-8bf6-de5a087cc513?format=jpeg&quot; alt=&quot;Team discussing the prototype with a mentor&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;keeping-the-demo-alive&quot;&gt;Keeping the demo alive&lt;&#x2F;h2&gt;
+&lt;p&gt;We worked through tutorials after our internships. At the hackathon, we took turns sleeping. I couldn’t get a tent, so I used a bench for four-hour naps.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;cdn.cosmos.so&#x2F;0d444922-77c4-4d91-b645-fb96b7fd5d17?format=jpeg&quot; alt=&quot;Working on the prototype overnight&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;At 8:30 AM on submission day, 90 minutes before the deadline, our backend crashed while parsing information. We hardcoded some components to submit by 10 AM.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;cdn.cosmos.so&#x2F;0784bdc4-dc31-4b2b-9d5a-2e04677a9ba1?format=jpeg&quot; alt=&quot;Presenting our final product: MouManTai - tracking and trading carbon footprints from financial transactions&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-pitch&quot;&gt;The pitch&lt;&#x2F;h2&gt;
+&lt;p&gt;We didn’t make the Top 10. A blockchain remittance team stood out because they had researched regulation and validated their market as carefully as they had built the product.&lt;&#x2F;p&gt;
+&lt;p&gt;The stronger pitches connected features to business problems, survived the demo pressure, and answered questions with numbers. Next time, I wanted to validate the market earlier and practise the pitch more.&lt;&#x2F;p&gt;
+&lt;p&gt;I did win a Samsung monitor in the lucky draw. That gave our tired team something to laugh about.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;cdn.cosmos.so&#x2F;3d119ab7-d3bf-4632-8675-6fbaf1963c08?format=jpeg&quot; alt=&quot;Winning a Samsung monitor in the lucky draw&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;cdn.cosmos.so&#x2F;266c9030-58ad-4536-9e60-c88edb6df8a9?format=jpeg&quot; alt=&quot;Jien Weng, Janice, Gwyn and Roius&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Janice, Roius, and Gwyn took the risk with me. Johan kept asking the questions we wanted to avoid. PayNet and JomHack gave us a place to build and test an idea outside the classroom.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>
