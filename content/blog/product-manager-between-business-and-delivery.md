@@ -1,6 +1,6 @@
 +++
-title = "How I Turn Payment Requests into Delivery Work"
-description = "Backlog decisions, acceptance criteria, and engineering coordination in Web3 payments."
+title = "How I Define When a Payment Is Complete"
+description = "The settlement boundary, its trade-off, and the acceptance criteria I work through with engineers."
 date = 2026-07-20
 updated = 2026-07-20
 draft = false
@@ -24,22 +24,29 @@ reaction = true
 topic = "Product Management"
 +++
 
-I coordinate an engineering team working on Web3 payment flows, chain integrations, QA, and UI testing. I maintain the backlog and roadmap, run Scrum ceremonies, and clarify priorities with the business owner.
+I coordinate an engineering team working on Web3 payments. I maintain the backlog and roadmap, run Scrum ceremonies, and clarify priorities with the business owner.
 
-## Turning a request into work
+## When the merchant can credit a payment
 
-“Make deposits more reliable” leaves several decisions open: which networks, which failure cases, what the user sees, and which event allows settlement.
+“Make deposits more reliable” leaves a decision open: which event allows the merchant to credit its ledger?
 
-I turn those decisions into a scope the team can discuss and test. Each item needs a business outcome, a user or merchant problem, technical constraints, and acceptance criteria.
+I work through that boundary with the business owner and engineers. In the documented CryptoRails flow, the browser detects incoming funds and gives the customer feedback. The merchant backend credits the ledger after receiving and verifying the signed settlement webhook.
 
-## Keeping delivery on track
+The trade-off is waiting for confirmation and server verification before calling the payment complete. The interface still needs to show progress during that wait. Treating detection as completion would let the screen promise an outcome the backend has yet to verify.
 
-Between ceremonies, I track dependencies, clarify decisions, and surface blocked work. I also keep new requests from displacing work we have already agreed.
+## What I put into acceptance criteria
 
-Some decisions add a story. Others reject a shortcut that would make reconciliation or QA harder. I raise disagreements early so the business owner and engineers can choose the trade-off.
+That boundary changes what the team has to test:
 
-## Defining done
+- Deposit detection updates the interface without marking the payment settled.
+- A delayed confirmation leaves the payment pending.
+- The backend verifies the webhook before updating the ledger.
+- A repeated webhook or retry cannot credit the same payment twice.
 
-A payment screen can look finished while a transaction remains pending or a duplicate webhook can credit it twice. Acceptance criteria need to cover those states as well as the successful flow.
+A successful demo covers only one of these paths. I include the delayed and duplicate cases when defining done with the team.
 
-Product-specific business details, internal metrics, and implementation details remain confidential.
+## Keeping the scope deliverable
+
+The request also needs agreed networks, failure cases, and responses for the user. I turn those decisions into backlog items, track dependencies, and raise blocked work or competing requests with the business owner.
+
+The [CryptoRails workflow](@/notes/cryptorails-transaction-lifecycle.md) shows the deposit and consolidation sequence behind these requirements. Product-specific business details, internal metrics, and implementation details remain confidential.

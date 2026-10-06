@@ -24,9 +24,15 @@ reaction = true
 topic = "Business Transformation"
 +++
 
-At Quandatics, I’m working on an internal CRM connecting sales, project delivery, and finance. The team had tried Salesforce, but its structure required workarounds around our existing process.
+At Quandatics, I’m working on an internal CRM connecting sales, project delivery, and finance.
 
-We started by mapping what each team needs at a handover: the approved scope, supporting documents, current status, and the person responsible for the next step.
+## The choice to build internally
+
+The team had tried Salesforce, but its structure required workarounds around our existing process. The alternatives were to keep adapting it, change our process to fit it, or build internally. We chose an internal CRM around the sales, delivery, and finance handoffs.
+
+That choice gives us control over the handoffs, but also means owning development, deployment, and support. An established CRM can be the better option when its process fits the business.
+
+I map what each team needs before it can act: the approved scope, supporting documents, current status, and the person responsible for the next step.
 
 ## From lead to sales order
 
@@ -71,10 +77,6 @@ On the supplier side, a purchase order links to the sales order. Finance matches
 
 I work across requirements, design, development, production deployment, and support. I clarify who owns each record, what a status means, and what happens when scope changes or an approval arrives late.
 
-Support reveals the gaps that a workflow diagram misses. A late handover or incomplete claim can expose an assumption we need to resolve before adding another field or screen.
-
-## Why an internal system
-
-Custom software adds work of its own. An established CRM can be a better choice when its process matches the business, or when changing the process is worthwhile. Here, the team had already tried adapting to Salesforce and continued to need workarounds.
+For a milestone claim, that means defining the evidence and management approval finance needs before issuing an invoice. I work through ownership and approval conditions before adding fields or screens. Support can reveal gaps, such as an incomplete claim or a late handover.
 
 The internal CRM is still in progress. Client-specific implementation details and operational results remain confidential.
