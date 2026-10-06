@@ -24,8 +24,24 @@ jobs:
         with:
           tool: zola@0.22.1
 
+      - name: Install Node for interaction checks
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Check playback and visitor events
+        run: |
+          npm install --prefix "$RUNNER_TEMP/portfolio-interaction-check" --no-package-lock jsdom@30.1.2
+          NODE_PATH="$RUNNER_TEMP/portfolio-interaction-check/node_modules" node scripts/check_site_interactions.cjs
+
+      - name: Install public profile dependencies
+        run: python3 -m pip install --disable-pip-version-check -r scripts/requirements-profile.txt
+
       - name: Build site
         run: |
+          python3 scripts/generate_llms.py
+          python3 scripts/generate_cv_pdf.py
+          python3 scripts/check_public_profile.py
           zola build
           touch public/.nojekyll
 

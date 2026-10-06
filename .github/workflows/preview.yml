@@ -30,7 +30,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out pull request
-        if: github.event.action != 'closed'
         uses: actions/checkout@v4
         with:
           ref: ${{ github.event_name == 'workflow_dispatch' && inputs.preview_ref || github.event.pull_request.head.sha }}
@@ -41,9 +40,28 @@ jobs:
         with:
           tool: zola@0.22.1
 
+      - name: Install Node for interaction checks
+        if: github.event.action != 'closed'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Check playback and visitor events
+        if: github.event.action != 'closed'
+        run: |
+          npm install --prefix "$RUNNER_TEMP/portfolio-interaction-check" --no-package-lock jsdom@30.1.2
+          NODE_PATH="$RUNNER_TEMP/portfolio-interaction-check/node_modules" node scripts/check_site_interactions.cjs
+
+      - name: Install public profile dependencies
+        if: github.event.action != 'closed'
+        run: python3 -m pip install --disable-pip-version-check -r scripts/requirements-profile.txt
+
       - name: Build preview site
         if: github.event.action != 'closed'
         run: |
+          python3 scripts/generate_llms.py
+          python3 scripts/generate_cv_pdf.py
+          python3 scripts/check_public_profile.py
           zola build --base-url "https://jienweng.github.io/pr-preview/pr-${{ inputs.preview_pr_number || github.event.pull_request.number }}/"
           touch public/.nojekyll
 

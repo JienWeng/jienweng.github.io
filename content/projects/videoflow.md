@@ -9,6 +9,12 @@ search_topics = ["AI video orchestration", "Go backend", "SvelteKit", "Electron 
 toc = true
 +++
 
+## My work on VideoFlow
+
+I work on the studio across the Go backend, SvelteKit interface, and Electron packaging. The project brings script planning, characters, scenes, shots, and media jobs into one workspace, with a shared interface for desktop and web use.
+
+The central design problem is keeping the relationships between these stages visible. A generated image or video is useful only when it remains connected to the character, scene, or shot it belongs to.
+
 ## AI video orchestration: scripts, scenes, and storyboards
 
 VideoFlow is an AI video orchestration platform that organises video work around a script, its characters, scenes, and individual shots. The studio makes those relationships visible so references and generation stages can be managed together.
@@ -27,7 +33,15 @@ The web version uses the shared frontend and backend through Docker. It is a sin
 
 Keeping project data and media together makes the workspace portable between sessions. AI generation still requires internet access and an OpenRouter API key with credits. Local storage does not make the generation service offline.
 
-The studio image on this page contains an illustrative project populated for the portfolio. Its animation is a view of that captured interface, rather than a recording of AI generation or rendering.
+## Recorded workflow
+
+<p id="workflow-transcript">The 19-second recording shows a real local session: enter Maya’s name and description, create the character, visit the Scenes workspace, then open Studio and select Maya on the story canvas. The demo uses an isolated project and has no audio. It demonstrates character creation and navigation; AI generation and rendering are not shown.</p>
+
+## What the project delivers
+
+The public repository provides a working studio, local project storage, web deployment instructions, and desktop download information. The desktop packaging brings the engine and media tools together so users can start without installing the development toolchain.
+
+The project is still evolving, with the current implementation focused on shared studio workflows and portable local projects.
 
 ## VideoFlow source code and desktop downloads
 
