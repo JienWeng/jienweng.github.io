@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title>Jien Weng - Blog</title>
-    <subtitle>Web3 Product Manager, Business Transformation Consultant, and Data Science &amp; Machine Learning Trainer.</subtitle>
+    <subtitle>Jien Weng, Product Manager &amp; Researcher working on Web3 payments, business transformation, and applied AI research.</subtitle>
     <link rel="self" type="application/atom+xml" href="https://jienweng.github.io/blog/atom.xml"/>
     <link rel="alternate" type="text/html" href="https://jienweng.github.io/blog/"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
@@ -41,6 +41,11 @@
 &lt;h2 id=&quot;keeping-the-scope-deliverable&quot;&gt;Keeping the scope deliverable&lt;&#x2F;h2&gt;
 &lt;p&gt;The request also needs agreed networks, failure cases, and responses for the user. I turn those decisions into backlog items, track dependencies, and raise blocked work or competing requests with the business owner.&lt;&#x2F;p&gt;
 &lt;p&gt;The &lt;a href=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;notes&#x2F;cryptorails-transaction-lifecycle&#x2F;&quot;&gt;CryptoRails workflow&lt;&#x2F;a&gt; shows the deposit and consolidation sequence behind these requirements. Product-specific business details, internal metrics, and implementation details remain confidential.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;related-reading&quot;&gt;Related reading&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;notes&#x2F;cryptorails-transaction-lifecycle&#x2F;&quot;&gt;The CryptoRails deposit-to-settlement workflow&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;blog&#x2F;web3-payment-status-product&#x2F;&quot;&gt;Why a Web3 payment needs more than a transaction hash&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
 </content>
         
     </entry>
@@ -94,7 +99,7 @@
         <link rel="alternate" type="text/html" href="https://jienweng.github.io/blog/quandatics-crm-business-transformation/"/>
         <id>https://jienweng.github.io/blog/quandatics-crm-business-transformation/</id>
         
-        <content type="html" xml:base="https://jienweng.github.io/blog/quandatics-crm-business-transformation/">&lt;p&gt;At Quandatics, I’m working on an internal CRM connecting sales, project delivery, and finance.&lt;&#x2F;p&gt;
+        <content type="html" xml:base="https://jienweng.github.io/blog/quandatics-crm-business-transformation/">&lt;p&gt;At Quandatics, I’m working on an &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;app.quandatics.com&quot;&gt;internal CRM&lt;&#x2F;a&gt; connecting sales, project delivery, and finance.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;the-choice-to-build-internally&quot;&gt;The choice to build internally&lt;&#x2F;h2&gt;
 &lt;p&gt;The team had tried Salesforce, but its structure required workarounds around our existing process. The alternatives were to keep adapting it, change our process to fit it, or build internally. We chose an internal CRM around the sales, delivery, and finance handoffs.&lt;&#x2F;p&gt;
 &lt;p&gt;That choice gives us control over the handoffs, but also means owning development, deployment, and support. An established CRM can be the better option when its process fits the business.&lt;&#x2F;p&gt;
@@ -103,28 +108,28 @@
 &lt;p&gt;A qualified lead becomes an account, a contact, and an opportunity. One account can have several opportunities, each with its own sales funnel and approval requirements.&lt;&#x2F;p&gt;
 &lt;p&gt;When an opportunity is won, the approved quotation becomes a numbered sales order. The order links the sale to a project with its items, budget, team, phases, and milestones.&lt;&#x2F;p&gt;
 &lt;figure class=&quot;crm-artifact&quot;&gt;
-  &lt;a href=&quot;..&#x2F;..&#x2F;img&#x2F;blog&#x2F;quandatics&#x2F;deal-to-cash-portfolio.png&quot; aria-label=&quot;View the full-size CRM deal-to-cash diagram&quot;&gt;
-    &lt;img src=&quot;..&#x2F;..&#x2F;img&#x2F;blog&#x2F;quandatics&#x2F;deal-to-cash-portfolio.png&quot; width=&quot;1666&quot; height=&quot;944&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; alt=&quot;Deal-to-cash flow from qualified lead through account, opportunity, approved sales order, project delivery, and payment received.&quot;&gt;
+  &lt;a href=&quot;..&#x2F;..&#x2F;img&#x2F;blog&#x2F;quandatics&#x2F;deal-to-cash-excalidraw.svg&quot; aria-label=&quot;View the full-size CRM deal-to-cash diagram&quot;&gt;
+    &lt;img width=&quot;1600&quot; height=&quot;1079&quot; src=&quot;..&#x2F;..&#x2F;img&#x2F;blog&#x2F;quandatics&#x2F;deal-to-cash-excalidraw.svg&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; alt=&quot;Deal-to-cash flow from qualified lead through account, opportunity, approved sales order, project delivery, and payment received.&quot;&gt;
   &lt;&#x2F;a&gt;
-  &lt;figcaption&gt;&lt;span&gt;01 · Lead to approved sales order&lt;&#x2F;span&gt;&lt;a href=&quot;..&#x2F;..&#x2F;img&#x2F;blog&#x2F;quandatics&#x2F;deal-to-cash-portfolio.png&quot;&gt;View full-size diagram&lt;&#x2F;a&gt;&lt;&#x2F;figcaption&gt;
+  &lt;figcaption&gt;&lt;span&gt;01 · Lead to approved sales order&lt;&#x2F;span&gt;&lt;a href=&quot;..&#x2F;..&#x2F;img&#x2F;blog&#x2F;quandatics&#x2F;deal-to-cash-excalidraw.svg&quot;&gt;View full-size diagram&lt;&#x2F;a&gt;&lt;&#x2F;figcaption&gt;
 &lt;&#x2F;figure&gt;
 &lt;h2 id=&quot;from-delivery-to-payment&quot;&gt;From delivery to payment&lt;&#x2F;h2&gt;
 &lt;p&gt;Each project phase has deliverables and a progress percentage. Once a phase is complete, the team submits a milestone claim with evidence. Management approves it before finance issues the invoice.&lt;&#x2F;p&gt;
 &lt;p&gt;The same records need to show delivery progress, billed amounts, receipts, and outstanding payments. Otherwise, finance and delivery have to reconstruct the status separately.&lt;&#x2F;p&gt;
 &lt;figure class=&quot;crm-artifact&quot;&gt;
-  &lt;a href=&quot;..&#x2F;..&#x2F;img&#x2F;blog&#x2F;quandatics&#x2F;project-to-cash-portfolio.png&quot; aria-label=&quot;View the full-size CRM project-to-cash diagram&quot;&gt;
-    &lt;img src=&quot;..&#x2F;..&#x2F;img&#x2F;blog&#x2F;quandatics&#x2F;project-to-cash-portfolio.png&quot; width=&quot;1600&quot; height=&quot;920&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; alt=&quot;Project-to-cash flow from an approved sales order through project phases, milestone approval, invoicing, payment receipt, and margin update.&quot;&gt;
+  &lt;a href=&quot;..&#x2F;..&#x2F;img&#x2F;blog&#x2F;quandatics&#x2F;project-to-cash-excalidraw.svg&quot; aria-label=&quot;View the full-size CRM project-to-cash diagram&quot;&gt;
+    &lt;img width=&quot;1600&quot; height=&quot;800&quot; src=&quot;..&#x2F;..&#x2F;img&#x2F;blog&#x2F;quandatics&#x2F;project-to-cash-excalidraw.svg&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; alt=&quot;Project-to-cash flow from an approved sales order through project phases, milestone approval, invoicing, payment receipt, and margin update.&quot;&gt;
   &lt;&#x2F;a&gt;
-  &lt;figcaption&gt;&lt;span&gt;02 · Delivery milestone to collected payment&lt;&#x2F;span&gt;&lt;a href=&quot;..&#x2F;..&#x2F;img&#x2F;blog&#x2F;quandatics&#x2F;project-to-cash-portfolio.png&quot;&gt;View full-size diagram&lt;&#x2F;a&gt;&lt;&#x2F;figcaption&gt;
+  &lt;figcaption&gt;&lt;span&gt;02 · Delivery milestone to collected payment&lt;&#x2F;span&gt;&lt;a href=&quot;..&#x2F;..&#x2F;img&#x2F;blog&#x2F;quandatics&#x2F;project-to-cash-excalidraw.svg&quot;&gt;View full-size diagram&lt;&#x2F;a&gt;&lt;&#x2F;figcaption&gt;
 &lt;&#x2F;figure&gt;
 &lt;h2 id=&quot;customer-receipts-and-supplier-costs&quot;&gt;Customer receipts and supplier costs&lt;&#x2F;h2&gt;
 &lt;p&gt;On the customer side, a milestone claim becomes a sales invoice, then a receipt matched to the invoice. The accounting entry goes to Autocount with its supporting documents.&lt;&#x2F;p&gt;
 &lt;p&gt;On the supplier side, a purchase order links to the sales order. Finance matches the supplier invoice to that purchase order, approves a payment voucher, and posts the cost to the project.&lt;&#x2F;p&gt;
 &lt;figure class=&quot;crm-artifact&quot;&gt;
-  &lt;a href=&quot;..&#x2F;..&#x2F;img&#x2F;blog&#x2F;quandatics&#x2F;o2c-p2p-portfolio.png&quot; aria-label=&quot;View the full-size order-to-cash and procure-to-pay diagram&quot;&gt;
-    &lt;img src=&quot;..&#x2F;..&#x2F;img&#x2F;blog&#x2F;quandatics&#x2F;o2c-p2p-portfolio.png&quot; width=&quot;1600&quot; height=&quot;960&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; alt=&quot;Two finance flows linked to one sales order: customer milestone claim through invoice and receipt; supplier purchase order through invoice and approved payment voucher. Both post to Autocount and the same project.&quot;&gt;
+  &lt;a href=&quot;..&#x2F;..&#x2F;img&#x2F;blog&#x2F;quandatics&#x2F;o2c-p2p-excalidraw.svg&quot; aria-label=&quot;View the full-size order-to-cash and procure-to-pay diagram&quot;&gt;
+    &lt;img width=&quot;1600&quot; height=&quot;847&quot; src=&quot;..&#x2F;..&#x2F;img&#x2F;blog&#x2F;quandatics&#x2F;o2c-p2p-excalidraw.svg&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; alt=&quot;Two finance flows linked to one sales order: customer milestone claim through invoice and receipt; supplier purchase order through invoice and approved payment voucher. Both post to Autocount and the same project.&quot;&gt;
   &lt;&#x2F;a&gt;
-  &lt;figcaption&gt;&lt;span&gt;03 · Money in and money out&lt;&#x2F;span&gt;&lt;a href=&quot;..&#x2F;..&#x2F;img&#x2F;blog&#x2F;quandatics&#x2F;o2c-p2p-portfolio.png&quot;&gt;View full-size diagram&lt;&#x2F;a&gt;&lt;&#x2F;figcaption&gt;
+  &lt;figcaption&gt;&lt;span&gt;03 · Money in and money out&lt;&#x2F;span&gt;&lt;a href=&quot;..&#x2F;..&#x2F;img&#x2F;blog&#x2F;quandatics&#x2F;o2c-p2p-excalidraw.svg&quot;&gt;View full-size diagram&lt;&#x2F;a&gt;&lt;&#x2F;figcaption&gt;
 &lt;&#x2F;figure&gt;
 &lt;h2 id=&quot;my-role&quot;&gt;My role&lt;&#x2F;h2&gt;
 &lt;p&gt;I work across requirements, design, development, production deployment, and support. I clarify who owns each record, what a status means, and what happens when scope changes or an approval arrives late.&lt;&#x2F;p&gt;
@@ -171,6 +176,11 @@
 &lt;li&gt;Prevent retries from crediting the same payment twice.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;The &lt;a href=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;notes&#x2F;cryptorails-transaction-lifecycle&#x2F;&quot;&gt;CryptoRails lifecycle note&lt;&#x2F;a&gt; covers the documented deposit and consolidation flow. These are generalised requirements; internal details and performance results remain confidential.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;related-reading&quot;&gt;Related reading&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;notes&#x2F;cryptorails-transaction-lifecycle&#x2F;&quot;&gt;Deposit detection, consolidation, and settlement in CryptoRails&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;blog&#x2F;product-manager-between-business-and-delivery&#x2F;&quot;&gt;How I define when a payment is complete&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
 </content>
         
     </entry>

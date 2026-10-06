@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title>Jien Weng - Writing</title>
-    <subtitle>Web3 Product Manager, Business Transformation Consultant, and Data Science &amp; Machine Learning Trainer.</subtitle>
+    <subtitle>Jien Weng, Product Manager &amp; Researcher working on Web3 payments, business transformation, and applied AI research.</subtitle>
     <link rel="self" type="application/atom+xml" href="https://jienweng.github.io/notes/atom.xml"/>
     <link rel="alternate" type="text/html" href="https://jienweng.github.io/notes/"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
@@ -29,10 +29,10 @@
 &lt;p&gt;The merchant generates a deposit address for each customer and stores it in its backend. The API key stays on the server. The customer sends funds to that address through the deposit modal or a custom interface.&lt;&#x2F;p&gt;
 &lt;p&gt;The browser’s &lt;code&gt;deposit-watch&lt;&#x2F;code&gt; SDK polls the chain and fires &lt;code&gt;onDeposit&lt;&#x2F;code&gt; when funds appear. The callback updates the interface and notifies the merchant backend. The backend requests consolidation; CryptoRails validates the funds and sweeps them into the tenant’s consolidation wallet.&lt;&#x2F;p&gt;
 &lt;figure class=&quot;payment-artifact&quot;&gt;
-&lt;a href=&quot;..&#x2F;..&#x2F;img&#x2F;projects&#x2F;cryptorails-deposit-flow.png&quot; aria-label=&quot;View the full-size CryptoRails payment workflow&quot;&gt;
-&lt;img width=&quot;3600&quot; height=&quot;2060&quot; src=&quot;..&#x2F;..&#x2F;img&#x2F;projects&#x2F;cryptorails-deposit-flow.png&quot; alt=&quot;CryptoRails deposit flow: customer address, browser detection, server-side consolidation, and settlement through a verified signed webhook.&quot; loading=&quot;lazy&quot;&gt;
+&lt;a href=&quot;..&#x2F;..&#x2F;img&#x2F;projects&#x2F;cryptorails-deposit-flow-excalidraw.svg&quot; aria-label=&quot;View the full-size CryptoRails payment workflow&quot;&gt;
+&lt;img width=&quot;1600&quot; height=&quot;898&quot; src=&quot;..&#x2F;..&#x2F;img&#x2F;projects&#x2F;cryptorails-deposit-flow-excalidraw.svg&quot; alt=&quot;CryptoRails deposit flow: customer address, browser detection, server-side consolidation, and settlement through a verified signed webhook.&quot; loading=&quot;lazy&quot;&gt;
 &lt;&#x2F;a&gt;
-&lt;figcaption&gt;&lt;span&gt;Redrawn from the &lt;a href=&quot;https:&#x2F;&#x2F;docs.cryptorails.tech&#x2F;guide&quot;&gt;public integration guide&lt;&#x2F;a&gt;: detection provides feedback; a verified webhook authorises settlement.&lt;&#x2F;span&gt;&lt;&#x2F;figcaption&gt;
+&lt;figcaption&gt;&lt;span&gt;Redrawn from the &lt;a href=&quot;https:&#x2F;&#x2F;docs.cryptorails.tech&#x2F;guide&quot;&gt;public integration guide&lt;&#x2F;a&gt;: detection provides feedback; a verified webhook authorises settlement.&lt;&#x2F;span&gt; &lt;a href=&quot;..&#x2F;..&#x2F;img&#x2F;projects&#x2F;cryptorails-deposit-flow-excalidraw.svg&quot;&gt;View full-size diagram&lt;&#x2F;a&gt;&lt;&#x2F;figcaption&gt;
 &lt;&#x2F;figure&gt;
 &lt;h2 id=&quot;confirmation-and-settlement&quot;&gt;Confirmation and settlement&lt;&#x2F;h2&gt;
 &lt;p&gt;The gateway tracks consolidation and withdrawal transactions through &lt;code&gt;pending&lt;&#x2F;code&gt;, &lt;code&gt;wait_for_confirmation&lt;&#x2F;code&gt;, &lt;code&gt;confirmed&lt;&#x2F;code&gt;, or &lt;code&gt;failed&lt;&#x2F;code&gt;. These are separate from the browser’s deposit-detection state.&lt;&#x2F;p&gt;
@@ -51,6 +51,11 @@
 &lt;h2 id=&quot;my-part-in-delivery&quot;&gt;My part in delivery&lt;&#x2F;h2&gt;
 &lt;p&gt;I contribute to the backlog and roadmap, run Scrum ceremonies, and coordinate the engineering team. I work with the business owner and engineers to define which event permits settlement, what the user sees while waiting, and how retries avoid duplicate credit.&lt;&#x2F;p&gt;
 &lt;p&gt;Try the &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;docs.cryptorails.tech&#x2F;guide&#x2F;playground&quot;&gt;live deposit interface&lt;&#x2F;a&gt;, or read the &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;docs.cryptorails.tech&#x2F;guide&quot;&gt;integration guide&lt;&#x2F;a&gt;, &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;docs.cryptorails.tech&#x2F;documentation&#x2F;overview&quot;&gt;transaction overview&lt;&#x2F;a&gt;, and &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;docs.cryptorails.tech&#x2F;documentation&#x2F;webhooks&quot;&gt;webhook documentation&lt;&#x2F;a&gt;. Internal implementation details and performance results remain confidential.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;related-product-decisions&quot;&gt;Related product decisions&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;blog&#x2F;product-manager-between-business-and-delivery&#x2F;&quot;&gt;How I define when a payment is complete&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;blog&#x2F;tron-energy-product-requirement&#x2F;&quot;&gt;TRON energy as a product requirement&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
 </content>
         
     </entry>
@@ -758,6 +763,8 @@ $$&lt;&#x2F;p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Source and licence.&lt;&#x2F;strong&gt; This tutorial follows and adapts the lecture &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;aboucaud.github.io&#x2F;slides&#x2F;2023&#x2F;lsst-france-mlops&quot;&gt;“An introduction to MLOps”&lt;&#x2F;a&gt; by Alexandre Boucaud (LSST France, Lyon, December 2023), licensed under &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;creativecommons.org&#x2F;licenses&#x2F;by-sa&#x2F;4.0&#x2F;&quot;&gt;CC BY-SA 4.0&lt;&#x2F;a&gt;. The figures come from the accompanying &lt;a href=&quot;..&#x2F;..&#x2F;slides&#x2F;2026&#x2F;intro-to-mlops&#x2F;&quot;&gt;slides&lt;&#x2F;a&gt;, re-hosted under the same licence; individual captions credit their original sources. This tutorial and hands-on example are my own adaptation and are also shared under CC BY-SA 4.0.&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
+&lt;h2 id=&quot;a-related-software-project&quot;&gt;A related software project&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;projects&#x2F;videoflow&#x2F;&quot;&gt;VideoFlow&lt;&#x2F;a&gt; is my video orchestration studio built with Go and SvelteKit, with an Electron desktop application. Its project page describes the shared architecture, local data, and external generation services.&lt;&#x2F;p&gt;
 </content>
         
     </entry>
