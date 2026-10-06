@@ -26,6 +26,8 @@ topic = "Product Management"
 
 I coordinate an engineering team working on Web3 payments. I maintain the backlog and roadmap, run Scrum ceremonies, and clarify priorities with the business owner.
 
+When gathering requirements, I start with the intended users and how they will understand the flow. For a payment, I ask what the customer sees while waiting and whether the status tells them to wait, retry, or take another action.
+
 ## When the merchant can credit a payment
 
 “Make deposits more reliable” leaves a decision open: which event allows the merchant to credit its ledger?

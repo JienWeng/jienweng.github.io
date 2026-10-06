@@ -32,7 +32,7 @@ The team had tried Salesforce, but its structure required workarounds around our
 
 That choice gives us control over the handoffs, but also means owning development, deployment, and support. An established CRM can be the better option when its process fits the business.
 
-I map what each team needs before it can act: the approved scope, supporting documents, current status, and the person responsible for the next step.
+I look at the workflow from the viewpoint of the people using the CRM. I map requirements around what sales, delivery, and finance need before they can act: the approved scope, supporting documents, current status, and the person responsible for the next step.
 
 ## From lead to sales order
 
