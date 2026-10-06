@@ -8,7 +8,7 @@
     <updated>2026-08-02T00:00:00+00:00</updated>
     <id>https://jienweng.github.io/notes/atom.xml</id>
     <entry xml:lang="en">
-        <title>Designing a Web3 Payment Transaction Lifecycle Across EVM and TRON</title>
+        <title>CryptoRails: From Deposit to Settlement</title>
         <published>2026-08-02T00:00:00+00:00</published>
         <updated>2026-08-02T00:00:00+00:00</updated>
         
@@ -23,45 +23,34 @@
         <link rel="alternate" type="text/html" href="https://jienweng.github.io/notes/cryptorails-transaction-lifecycle/"/>
         <id>https://jienweng.github.io/notes/cryptorails-transaction-lifecycle/</id>
         
-        <content type="html" xml:base="https://jienweng.github.io/notes/cryptorails-transaction-lifecycle/">&lt;p&gt;CryptoRails is a payment gateway that people can actually use to accept crypto payments. It is closer in spirit to a simple Stripe-style checkout and settlement product than to a research prototype. The feature set is still focused, but the main payment functionality is there.&lt;&#x2F;p&gt;
-&lt;p&gt;The question I keep coming back to is quite ordinary. When can we honestly tell someone that the money has arrived?&lt;&#x2F;p&gt;
-&lt;p&gt;The screen may show a transaction hash almost immediately. That is useful, but it is not the same as a confirmed payment. The backend still has to match the transaction to the original request, check what happened on-chain, and decide whether it is safe to settle.&lt;&#x2F;p&gt;
-&lt;p&gt;That gap between “the wallet says something happened” and “the business can act on it” is where much of the product work lives. Even a simple payment gateway has to get this part right.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;a-transaction-hash-is-only-one-part-of-the-story&quot;&gt;A transaction hash is only one part of the story&lt;&#x2F;h2&gt;
-&lt;p&gt;In the documented integration, the merchant generates a deposit address for each customer and stores it in its own backend. The frontend shows that address through a deposit modal or a custom interface. The API key stays on the server.&lt;&#x2F;p&gt;
-&lt;p&gt;The hash belongs to the blockchain. The payment reference belongs to the business request. Keeping both is what lets the backend answer a fairly important question later: is this the payment we were expecting, or is it only a transaction that happens to exist?&lt;&#x2F;p&gt;
-&lt;p&gt;The customer sends funds to the deposit address. The browser’s &lt;code&gt;deposit-watch&lt;&#x2F;code&gt; SDK polls the chain and fires &lt;code&gt;onDeposit&lt;&#x2F;code&gt; when funds appear. That callback gives immediate feedback and notifies the merchant’s backend; it is not proof of settlement.&lt;&#x2F;p&gt;
+        <content type="html" xml:base="https://jienweng.github.io/notes/cryptorails-transaction-lifecycle/">&lt;p&gt;CryptoRails accepts crypto deposits and consolidates them into a merchant’s wallet. In the documented integration, the browser detects incoming funds, while a verified server webhook authorises settlement.&lt;&#x2F;p&gt;
+&lt;p&gt;I coordinate product delivery across payment flows, EVM and TRON integration, QA, and UI testing. These are the states and failure cases I need to account for in the backlog.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;deposit-detection-and-consolidation&quot;&gt;Deposit detection and consolidation&lt;&#x2F;h2&gt;
+&lt;p&gt;The merchant generates a deposit address for each customer and stores it in its backend. The API key stays on the server. The customer sends funds to that address through the deposit modal or a custom interface.&lt;&#x2F;p&gt;
+&lt;p&gt;The browser’s &lt;code&gt;deposit-watch&lt;&#x2F;code&gt; SDK polls the chain and fires &lt;code&gt;onDeposit&lt;&#x2F;code&gt; when funds appear. The callback updates the interface and notifies the merchant backend. The backend requests consolidation; CryptoRails validates the funds and sweeps them into the tenant’s consolidation wallet.&lt;&#x2F;p&gt;
 &lt;figure class=&quot;payment-artifact&quot;&gt;
 &lt;a href=&quot;..&#x2F;..&#x2F;img&#x2F;projects&#x2F;cryptorails-deposit-flow.png&quot; aria-label=&quot;View the full-size CryptoRails payment workflow&quot;&gt;
 &lt;img width=&quot;3600&quot; height=&quot;2060&quot; src=&quot;..&#x2F;..&#x2F;img&#x2F;projects&#x2F;cryptorails-deposit-flow.png&quot; alt=&quot;CryptoRails deposit flow: customer address, browser detection, server-side consolidation, and settlement through a verified signed webhook.&quot; loading=&quot;lazy&quot;&gt;
 &lt;&#x2F;a&gt;
 &lt;figcaption&gt;&lt;span&gt;Redrawn from the &lt;a href=&quot;https:&#x2F;&#x2F;docs.cryptorails.tech&#x2F;guide&quot;&gt;public integration guide&lt;&#x2F;a&gt;: detection provides feedback; a verified webhook authorises settlement.&lt;&#x2F;span&gt;&lt;&#x2F;figcaption&gt;
 &lt;&#x2F;figure&gt;
-&lt;p&gt;The merchant’s backend requests consolidation. CryptoRails validates the on-chain funds and sweeps them from the deposit address to the tenant’s consolidation wallet. The gateway tracks this transaction through confirmation before sending the signed webhook.&lt;&#x2F;p&gt;
-&lt;p&gt;That distinction sounds obvious when written down. It becomes less obvious when a customer is waiting, a merchant is asking whether an order can be released, and the transaction is taking longer than expected.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;the-network-changes-the-work&quot;&gt;The network changes the work&lt;&#x2F;h2&gt;
-&lt;p&gt;Supporting EVM networks and TRON does not mean putting two names into a dropdown and calling the problem solved.&lt;&#x2F;p&gt;
-&lt;p&gt;On an EVM network, the transaction normally needs the network&#x27;s native coin to pay gas. A TRON token transfer depends on TRON resources, especially Energy, and may also use Bandwidth.&lt;&#x2F;p&gt;
-&lt;p&gt;For TRON, the gateway applies Energy rental before a resource-heavy transaction is broadcast. Without enough Energy, the transfer can burn TRX to cover the missing resource. The transaction may succeed, but the cost can be surprisingly high. That makes Energy part of the product flow, not a detail to leave for the user to discover afterwards.&lt;&#x2F;p&gt;
-&lt;p&gt;The chain also affects monitoring, confirmation, wallet compatibility, error handling, and QA. The broad sequence is shared, but the conditions inside each step are not identical. Confirmation rules need to come from the implementation and the selected network, not from a label in the interface.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;the-waiting-part-is-part-of-the-product&quot;&gt;The waiting part is part of the product&lt;&#x2F;h2&gt;
-&lt;p&gt;After broadcast, the system has to keep checking. Has the transaction appeared? Is it still processing? Did it fail? Has it reached the confirmation condition required by the product?&lt;&#x2F;p&gt;
-&lt;p&gt;The interface should make those states understandable. “Waiting for the network” gives the user something useful. A raw RPC error usually does not. At the same time, the interface should not turn a pending transaction into a success message just to make the screen feel finished.&lt;&#x2F;p&gt;
-&lt;p&gt;The gateway documentation describes a backend lifecycle with states such as &lt;code&gt;pending&lt;&#x2F;code&gt;, &lt;code&gt;wait_for_confirmation&lt;&#x2F;code&gt;, &lt;code&gt;confirmed&lt;&#x2F;code&gt;, and &lt;code&gt;failed&lt;&#x2F;code&gt;. These describe the gateway’s consolidation or withdrawal transaction, rather than the browser’s deposit detection.&lt;&#x2F;p&gt;
-&lt;p&gt;When the consolidation confirms, the merchant can reconcile the signed webhook with the deposit recorded earlier, using the address and reference. This must remain safe when the same webhook is delivered twice. A customer should not receive credit twice because an event was delivered twice.&lt;&#x2F;p&gt;
-&lt;p&gt;The final signal is sent to the product through a signed webhook. The receiving backend should verify the HMAC signature against the raw request body before trusting the payload. That server-side event can then update a ledger, release an item, or tell a merchant that the payment is complete.&lt;&#x2F;p&gt;
-&lt;p&gt;The client-side signal still has a job. It can tell the user that funds have been detected quickly. It should not be the authority for settlement.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;the-unhappy-paths-are-where-the-design-gets-tested&quot;&gt;The unhappy paths are where the design gets tested&lt;&#x2F;h2&gt;
-&lt;p&gt;The payment can be sent on the wrong network, use the wrong token, or arrive with the wrong amount. The request can expire. The transaction can be delayed, dropped, or rejected by the wallet. An indexing service or RPC can be late. A webhook can be duplicated.&lt;&#x2F;p&gt;
-&lt;p&gt;These are different problems. Some need a retry. Some need a manual review. Some should be rejected permanently. Putting all of them into one “failed” state makes the system easier to code and harder to operate.&lt;&#x2F;p&gt;
-&lt;p&gt;This is also why I care about the payment state shown in the UI. It affects what the customer does next, what the merchant believes, and what the delivery team has to test.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;where-i-sit-in-the-work&quot;&gt;Where I sit in the work&lt;&#x2F;h2&gt;
-&lt;p&gt;My role sits between the business owner and the delivery team. I contribute to the backlog and roadmap, run Scrum ceremonies, and coordinate an engineering team working across payment flows, EVM and TRON integration, QA, and UI&#x2F;UX testing.&lt;&#x2F;p&gt;
-&lt;p&gt;The work is partly about writing requirements. It is also about asking the annoying question before the team has already built the wrong thing. What happens if the transaction is late? Which event is authoritative? What should the user see while the chain is still processing? What stops a retry from crediting the same payment twice?&lt;&#x2F;p&gt;
-&lt;p&gt;Those questions connect the technical state of the system to the experience people actually have. The gateway is simple for now, but it is already usable. A payment is not complete because one screen says it is. It is complete when the system has enough verified evidence to treat it as settled.&lt;&#x2F;p&gt;
-&lt;p&gt;To see the actual deposit interface, try the &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;docs.cryptorails.tech&#x2F;guide&#x2F;playground&quot;&gt;live SDK playground&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
-&lt;p&gt;For the public technical reference, see the &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;docs.cryptorails.tech&#x2F;&quot;&gt;CryptoRails payment gateway documentation&lt;&#x2F;a&gt;, especially the &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;docs.cryptorails.tech&#x2F;guide&quot;&gt;integration guide&lt;&#x2F;a&gt;, &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;docs.cryptorails.tech&#x2F;documentation&#x2F;overview&quot;&gt;transaction overview&lt;&#x2F;a&gt;, and &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;docs.cryptorails.tech&#x2F;documentation&#x2F;webhooks&quot;&gt;webhook documentation&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
-&lt;p&gt;This is a generalised case study. Product-specific business details, implementation details, and performance results remain confidential.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;confirmation-and-settlement&quot;&gt;Confirmation and settlement&lt;&#x2F;h2&gt;
+&lt;p&gt;The gateway tracks consolidation and withdrawal transactions through &lt;code&gt;pending&lt;&#x2F;code&gt;, &lt;code&gt;wait_for_confirmation&lt;&#x2F;code&gt;, &lt;code&gt;confirmed&lt;&#x2F;code&gt;, or &lt;code&gt;failed&lt;&#x2F;code&gt;. These are separate from the browser’s deposit-detection state.&lt;&#x2F;p&gt;
+&lt;p&gt;After consolidation confirms, the gateway sends a signed webhook. The merchant backend verifies the HMAC signature against the raw request body, reconciles the address and reference, and credits the ledger once. Duplicate delivery must not create duplicate credit.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;evm-and-tron-costs&quot;&gt;EVM and TRON costs&lt;&#x2F;h2&gt;
+&lt;p&gt;EVM transactions normally use the network’s native coin for gas. TRON token transfers use Energy and may consume Bandwidth. Without enough Energy, a transfer can burn TRX to cover the shortfall.&lt;&#x2F;p&gt;
+&lt;p&gt;The gateway applies Energy rental before resource-heavy TRON transactions. Chain-specific resource checks, confirmation conditions, and wallet errors belong in the requirements and QA cases.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;cases-the-team-has-to-test&quot;&gt;Cases the team has to test&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Wrong network, token, recipient, or amount.&lt;&#x2F;li&gt;
+&lt;li&gt;Wallet rejection or a delayed transaction.&lt;&#x2F;li&gt;
+&lt;li&gt;Late RPC or indexing responses.&lt;&#x2F;li&gt;
+&lt;li&gt;Repeated requests and duplicated webhooks.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Each case needs a defined response: wait, retry, reject, or review. The interface must show pending work without suggesting that settlement has completed.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;my-part-in-delivery&quot;&gt;My part in delivery&lt;&#x2F;h2&gt;
+&lt;p&gt;I contribute to the backlog and roadmap, run Scrum ceremonies, and coordinate the engineering team. I work with the business owner and engineers to define which event permits settlement, what the user sees while waiting, and how retries avoid duplicate credit.&lt;&#x2F;p&gt;
+&lt;p&gt;Try the &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;docs.cryptorails.tech&#x2F;guide&#x2F;playground&quot;&gt;live deposit interface&lt;&#x2F;a&gt;, or read the &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;docs.cryptorails.tech&#x2F;guide&quot;&gt;integration guide&lt;&#x2F;a&gt;, &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;docs.cryptorails.tech&#x2F;documentation&#x2F;overview&quot;&gt;transaction overview&lt;&#x2F;a&gt;, and &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;docs.cryptorails.tech&#x2F;documentation&#x2F;webhooks&quot;&gt;webhook documentation&lt;&#x2F;a&gt;. Internal implementation details and performance results remain confidential.&lt;&#x2F;p&gt;
 </content>
         
     </entry>
@@ -183,13 +172,6 @@ $$&lt;&#x2F;p&gt;
 &lt;p&gt;A time-irreversible kinetic equation can emerge rigorously from a time-reversible particle system, over long times and under a defined dilute-gas limit.&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
 &lt;p&gt;That distinction is not a weakness. It is the whole point.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;my-takeaway&quot;&gt;My Takeaway&lt;&#x2F;h2&gt;
-&lt;p&gt;I used to think the arrow of time came from adding randomness to mechanics. Now I think that picture is too simple. The hard-sphere dynamics in this work are deterministic. The direction appears in the passage from an exact microscopic state to an effective statistical law, together with the assumptions on the initial ensemble and the mathematical control of correlations.&lt;&#x2F;p&gt;
-&lt;p&gt;Deng, Hani, and Ma made this passage rigorous without pretending the collision history was simple. They carried the history, organised it, and showed why the macroscopic equation still wins:&lt;&#x2F;p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Irreversibility is what reversible mechanics looks like after we move from every coordinate to the statistical description we can actually use.&lt;&#x2F;p&gt;
-&lt;&#x2F;blockquote&gt;
-&lt;p&gt;That is not the final philosophical answer to what time is. But it is a beautiful mathematical answer to how a direction of time can emerge from laws that have no preferred direction themselves.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;references&quot;&gt;References&lt;&#x2F;h2&gt;
 &lt;ol&gt;
 &lt;li&gt;Ludwig Boltzmann, &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;doi.org&#x2F;10.1017&#x2F;CBO9781139381420.023&quot;&gt;“Weitere Studien über das Wärmegleichgewicht unter Gas-molekülen”&lt;&#x2F;a&gt;, 1872.&lt;&#x2F;li&gt;
@@ -216,14 +198,11 @@ $$&lt;&#x2F;p&gt;
         <link rel="alternate" type="text/html" href="https://jienweng.github.io/notes/fokker-planck-sde/"/>
         <id>https://jienweng.github.io/notes/fokker-planck-sde/</id>
         
-        <content type="html" xml:base="https://jienweng.github.io/notes/fokker-planck-sde/">&lt;p&gt;Most explanations of the Fokker-Planck equation start too late. They write down a partial differential equation for a density, call one term &quot;drift&quot; and the other &quot;diffusion&quot;, and move on. That is correct, but it hides where the equation comes from.&lt;&#x2F;p&gt;
-&lt;p&gt;The cleaner way to think about it is to start one step earlier, with a single stochastic trajectory. A stochastic differential equation describes &lt;em&gt;one&lt;&#x2F;em&gt; random path. But one path tells you almost nothing. What we usually want is the distribution: given where the system started, where is it likely to be at time $t$? The Fokker-Planck equation is the deterministic law that this distribution obeys.&lt;&#x2F;p&gt;
+        <content type="html" xml:base="https://jienweng.github.io/notes/fokker-planck-sde/">&lt;p&gt;A stochastic differential equation describes a random path. The Fokker-Planck equation describes how its probability density evolves. I derive that connection, solve the density equation in Python, and compare it with simulated Ornstein-Uhlenbeck paths and the exact solution.&lt;&#x2F;p&gt;
 &lt;p&gt;So the real chain is:&lt;&#x2F;p&gt;
 &lt;p&gt;$$
 \text{SDE} \to \text{ensemble of paths} \to \text{density } p(x,t) \to \text{Fokker-Planck PDE} \to \text{stationary law}.
 $$&lt;&#x2F;p&gt;
-&lt;p&gt;Once that chain is visible, the equation stops looking like a definition to memorize. It becomes the obvious bookkeeping for how probability mass flows: drift transports it, diffusion spreads it.&lt;&#x2F;p&gt;
-&lt;p&gt;Start with one stochastic differential equation, simulate many paths, and the cloud of points begins to look like a density. This note follows that path to the Fokker-Planck equation, solves it in Python, and checks the result against an Ornstein-Uhlenbeck example with a known closed form.&lt;&#x2F;p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Run it yourself.&lt;&#x2F;strong&gt; Every code block below is collected in a runnable Jupyter notebook: &lt;a href=&quot;..&#x2F;..&#x2F;notebooks&#x2F;fokker-planck-sde.ipynb&quot;&gt;&lt;strong&gt;download &lt;code&gt;fokker-planck-sde.ipynb&lt;&#x2F;code&gt;&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;. It only needs &lt;code&gt;numpy&lt;&#x2F;code&gt; and &lt;code&gt;matplotlib&lt;&#x2F;code&gt; (&lt;code&gt;pip install numpy matplotlib&lt;&#x2F;code&gt;), and runs top to bottom.&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
@@ -442,16 +421,7 @@ $$&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;strong&gt;Boundary conditions carry modelling meaning.&lt;&#x2F;strong&gt; We used an absorbing far-field boundary ($p = 0$), which is fine when the density decays anyway. But boundaries are not just numerics: a &lt;strong&gt;reflecting&lt;&#x2F;strong&gt; boundary (zero current, $J = 0$) models a wall the process cannot cross, while an &lt;strong&gt;absorbing&lt;&#x2F;strong&gt; boundary models a level at which the process is killed. In finance the absorbing case is exactly a barrier option or a default threshold.&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;strong&gt;State-dependent diffusion.&lt;&#x2F;strong&gt; When $\sigma$ depends on $x$, the second term is $\partial_x^2[\tfrac12 \sigma^2(x), p]$, and the $\sigma^2$ stays &lt;em&gt;inside&lt;&#x2F;em&gt; both derivatives. Geometric Brownian motion, $dX = \mu X, dt + \sigma X, dW$, is the standard example and underlies Black-Scholes. Getting that placement wrong is the most common error in writing down a Fokker-Planck equation.&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;strong&gt;Higher dimensions.&lt;&#x2F;strong&gt; In $d$ dimensions the drift becomes a vector and the diffusion a matrix $D = \tfrac12 \sigma \sigma^\top$, and the equation reads $\partial_t p = -\nabla!\cdot(\boldsymbol\mu p) + \nabla!\cdot(\nabla!\cdot(D, p))$. The grid solver stops scaling, and Monte Carlo becomes the practical method. That crossover is why simulation dominates high-dimensional problems.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;the-big-picture&quot;&gt;The Big Picture&lt;&#x2F;h2&gt;
-&lt;p&gt;At this point the pieces should feel like one continuous argument rather than a definition dropped from the sky.&lt;&#x2F;p&gt;
-&lt;p&gt;We started with an SDE, a rule for one random trajectory, and simulated it with Euler-Maruyama. One path is unpredictable, but the ensemble of paths forms a density $p(x, t)$. Applying Ito&#x27;s lemma to a test function and integrating by parts turned the randomness of the SDE into a deterministic PDE for that density, the Fokker-Planck equation:&lt;&#x2F;p&gt;
-&lt;p&gt;$$
-\frac{\partial p}{\partial t} = -\frac{\partial}{\partial x}\big[\mu, p\big] + \frac{\partial^2}{\partial x^2}!\left[\tfrac{1}{2}\sigma^2, p\right].
-$$&lt;&#x2F;p&gt;
-&lt;p&gt;Reading it as a conservation law $\partial_t p = -\partial_x J$ exposed its two forces: drift transports probability, diffusion spreads it. Setting the current to zero gave the stationary distribution. And an Ornstein-Uhlenbeck example, solvable in closed form, let us check three independent routes, Monte Carlo, a from-scratch PDE solver, and the exact Gaussian, against the same hand-computed numbers.&lt;&#x2F;p&gt;
-&lt;p&gt;So the SDE and the Fokker-Planck equation are two views of one process. The SDE is the microscopic rule for a single sample; the Fokker-Planck equation is the macroscopic law for the whole probability cloud. This is the same duality that runs through the rest of the stochastic toolkit: the &lt;em&gt;forward&lt;&#x2F;em&gt; Kolmogorov equation here evolves densities in time, while the &lt;em&gt;backward&lt;&#x2F;em&gt; Kolmogorov equation evolves expectations and is the object behind Feynman-Kac and option pricing.&lt;&#x2F;p&gt;
-&lt;p&gt;I think this topic reads better when the SDE is taken as the starting point and the PDE is derived as its consequence, rather than the other way around. The mathematics carries the weight, the OU example makes the abstraction concrete, and the three-way agreement closes the loop.&lt;&#x2F;p&gt;
-&lt;p&gt;If you think there is a better example, a cleaner derivation, or a natural extension, feel free to suggest it. From here the obvious next steps are the backward Kolmogorov equation and Feynman-Kac, Langevin dynamics as a sampler, and the jump from these scalar equations to their high-dimensional, matrix-diffusion form.&lt;&#x2F;p&gt;
+&lt;p&gt;The forward Kolmogorov equation evolves densities; the backward equation evolves expectations and leads to Feynman-Kac. That is a useful next step from this example.&lt;&#x2F;p&gt;
 </content>
         
     </entry>
@@ -471,14 +441,8 @@ $$&lt;&#x2F;p&gt;
         <link rel="alternate" type="text/html" href="https://jienweng.github.io/notes/intro-to-mlops-tutorial/"/>
         <id>https://jienweng.github.io/notes/intro-to-mlops-tutorial/</id>
         
-        <content type="html" xml:base="https://jienweng.github.io/notes/intro-to-mlops-tutorial/">&lt;p&gt;This is the written companion to the &lt;a href=&quot;..&#x2F;..&#x2F;slides&#x2F;2026&#x2F;intro-to-mlops&#x2F;&quot;&gt;&lt;strong&gt;Introduction to MLOps&lt;&#x2F;strong&gt; slides&lt;&#x2F;a&gt;. It follows the deck section by section: the same chain of ideas, the same figures, and then the hands-on the deck builds toward. The slides give the picture in a room; this note lets you read it at your own pace and, more importantly, &lt;strong&gt;run&lt;&#x2F;strong&gt; it. By the end you will have tracked a real machine-learning experiment, compared two runs, and inspected them in a web UI.&lt;&#x2F;p&gt;
-&lt;p&gt;The chain the deck walks, and so will we:&lt;&#x2F;p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;reproducibility → the software cycle → DevOps → the ML lifecycle → MLOps → MLflow → a hands-on.&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;In a hurry?&lt;&#x2F;strong&gt; Skip straight to the &lt;a href=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;notes&#x2F;intro-to-mlops-tutorial&#x2F;#hands-on-track-your-first-experiment&quot;&gt;&lt;strong&gt;hands-on&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;, or just &lt;code&gt;git clone&lt;&#x2F;code&gt; the companion repo, &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;JienWeng&#x2F;mlops-tutorial&quot;&gt;&lt;strong&gt;github.com&#x2F;JienWeng&#x2F;mlops-tutorial&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;, and run it. The sections above the hands-on are the &lt;em&gt;why&lt;&#x2F;em&gt;; the hands-on is the &lt;em&gt;how&lt;&#x2F;em&gt;.&lt;&#x2F;p&gt;
-&lt;&#x2F;blockquote&gt;
+        <content type="html" xml:base="https://jienweng.github.io/notes/intro-to-mlops-tutorial/">&lt;p&gt;This companion to the &lt;a href=&quot;..&#x2F;..&#x2F;slides&#x2F;2026&#x2F;intro-to-mlops&#x2F;&quot;&gt;Introduction to MLOps slides&lt;&#x2F;a&gt; covers reproducibility, CI&#x2F;CD, and experiment tracking with MLflow. The example tracks two training runs and compares them in the web UI.&lt;&#x2F;p&gt;
+&lt;p&gt;Go straight to the &lt;a href=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;notes&#x2F;intro-to-mlops-tutorial&#x2F;#hands-on-track-your-first-experiment&quot;&gt;hands-on&lt;&#x2F;a&gt;, or clone the &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;JienWeng&#x2F;mlops-tutorial&quot;&gt;companion repository&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;why-reproducibility-and-why-ml-makes-it-hard&quot;&gt;Why reproducibility, and why ML makes it hard&lt;&#x2F;h2&gt;
 &lt;p&gt;The starting motivation is research integrity. A result you cannot reproduce is hard to trust, hard to build on, and hard to defend. In software-heavy science this is why people publish code alongside papers (the &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;paperswithcode.com&quot;&gt;Papers with Code&lt;&#x2F;a&gt; culture). But &quot;publish the code&quot; is not enough on its own.&lt;&#x2F;p&gt;
 &lt;figure class=&quot;wide&quot;&gt;
@@ -791,10 +755,6 @@ $$&lt;&#x2F;p&gt;
 &lt;li&gt;&lt;strong&gt;Monitor&lt;&#x2F;strong&gt; the served model&#x27;s predictions, closing the loop back to data.&lt;&#x2F;li&gt;
 &lt;&#x2F;ol&gt;
 &lt;p&gt;That list is exactly the MLOps workflow from earlier. You have now built its first two links.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;take-home-message&quot;&gt;Take-home message&lt;&#x2F;h2&gt;
-&lt;p&gt;Research, and production work too, should be &lt;strong&gt;reproducible&lt;&#x2F;strong&gt; and, where possible, &lt;strong&gt;open&lt;&#x2F;strong&gt;. If your work involves machine learning, that means using dedicated tools to make experiments reproducible rather than relying on memory and scattered notebooks.&lt;&#x2F;p&gt;
-&lt;p&gt;Adopting these habits in your daily workflow pays off quickly: time saved in the long run, engineering skill gained, and trust earned among collaborators. And MLflow in particular is &lt;strong&gt;not just for machine learning&lt;&#x2F;strong&gt;: it is a capable logbook for tracking &lt;em&gt;any&lt;&#x2F;em&gt; computational experiment and keeping your results reproducible over time.&lt;&#x2F;p&gt;
-&lt;hr &#x2F;&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Source and licence.&lt;&#x2F;strong&gt; This tutorial follows and adapts the lecture &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;aboucaud.github.io&#x2F;slides&#x2F;2023&#x2F;lsst-france-mlops&quot;&gt;“An introduction to MLOps”&lt;&#x2F;a&gt; by Alexandre Boucaud (LSST France, Lyon, December 2023), licensed under &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;creativecommons.org&#x2F;licenses&#x2F;by-sa&#x2F;4.0&#x2F;&quot;&gt;CC BY-SA 4.0&lt;&#x2F;a&gt;. The figures come from the accompanying &lt;a href=&quot;..&#x2F;..&#x2F;slides&#x2F;2026&#x2F;intro-to-mlops&#x2F;&quot;&gt;slides&lt;&#x2F;a&gt;, re-hosted under the same licence; individual captions credit their original sources. This tutorial and hands-on example are my own adaptation and are also shared under CC BY-SA 4.0.&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
@@ -817,7 +777,7 @@ $$&lt;&#x2F;p&gt;
         <link rel="alternate" type="text/html" href="https://jienweng.github.io/notes/tree-based-models/"/>
         <id>https://jienweng.github.io/notes/tree-based-models/</id>
         
-        <content type="html" xml:base="https://jienweng.github.io/notes/tree-based-models/">&lt;p&gt;A single decision tree is powerful but unstable. Nearly everything about Random Forests and XGBoost follows from that one sentence, so that is where this note starts, not at the formulas. Forests and boosting are just two different answers to the instability problem.&lt;&#x2F;p&gt;
+        <content type="html" xml:base="https://jienweng.github.io/notes/tree-based-models/">&lt;p&gt;Decision trees split data into regions using a sequence of rules. This note derives the tree, then shows how Random Forests average trees and XGBoost builds them sequentially.&lt;&#x2F;p&gt;
 &lt;p&gt;The path is:&lt;&#x2F;p&gt;
 &lt;p&gt;$$
 \text{decision rules} \to \text{decision trees} \to \text{bagging} \to \text{Random Forest} \to \text{boosting} \to \text{XGBoost}.
@@ -826,7 +786,7 @@ $$&lt;&#x2F;p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Run it yourself.&lt;&#x2F;strong&gt; The worked example is collected in a runnable notebook: &lt;a href=&quot;..&#x2F;..&#x2F;notebooks&#x2F;tree-based-models.ipynb&quot;&gt;&lt;strong&gt;download &lt;code&gt;tree-based-models.ipynb&lt;&#x2F;code&gt;&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;. It uses &lt;code&gt;numpy&lt;&#x2F;code&gt;, &lt;code&gt;scikit-learn&lt;&#x2F;code&gt;, and (optionally) &lt;code&gt;xgboost&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
-&lt;h2 id=&quot;why-people-reach-for-trees-random-forests-and-xgboost&quot;&gt;Why People Reach for Trees, Random Forests, and XGBoost&lt;&#x2F;h2&gt;
+&lt;h2 id=&quot;choosing-a-tree-model&quot;&gt;Choosing a tree model&lt;&#x2F;h2&gt;
 &lt;p&gt;The motivation usually looks like this:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Linear models miss nonlinear structure.&lt;&#x2F;strong&gt; Trees capture nonlinear, rule-like boundaries without feature engineering.&lt;&#x2F;li&gt;
@@ -1072,12 +1032,6 @@ $$&lt;&#x2F;p&gt;
 &lt;li&gt;&lt;code&gt;sklearn.ensemble.RandomForestClassifier&lt;&#x2F;code&gt; for bagging and feature subsampling.&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;code&gt;xgboost.XGBClassifier&lt;&#x2F;code&gt; for second-order boosting with regularization.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
-&lt;h2 id=&quot;the-big-picture&quot;&gt;The Big Picture&lt;&#x2F;h2&gt;
-&lt;p&gt;We started with simple decision rules. That gave us decision trees.&lt;&#x2F;p&gt;
-&lt;p&gt;Decision trees are powerful but unstable, so we average them. That gives us bagging, and then Random Forests.&lt;&#x2F;p&gt;
-&lt;p&gt;Random Forests reduce variance but still leave bias on the table, so we build trees sequentially to correct errors. That gives us boosting, and XGBoost.&lt;&#x2F;p&gt;
-&lt;p&gt;Trees define nonlinear partitions, bagging stabilizes them, boosting makes them accurate. That is the whole story, and every formula above is one of those three moves written out.&lt;&#x2F;p&gt;
-&lt;p&gt;At some point I may extend the notebook with hyperparameter tuning and a multi-class example. If you want that sooner, leave a comment.&lt;&#x2F;p&gt;
 </content>
         
     </entry>
@@ -1102,7 +1056,7 @@ $$&lt;&#x2F;p&gt;
 &lt;p&gt;$$
 \text{sound wave} \to \text{samples} \to \text{DFT} \to \text{FFT} \to \text{spectrum}.
 $$&lt;&#x2F;p&gt;
-&lt;p&gt;We build up the picture of sound as a sum of sinusoids, get the DFT as its discrete version, and then let the structure of the DFT matrix hand us the Cooley-Tukey FFT almost for free. At the end we run the whole thing on a real sound wave, implemented from scratch in Python.&lt;&#x2F;p&gt;
+&lt;p&gt;I derive the DFT from sampled sinusoids, then use its matrix structure to derive the Cooley-Tukey FFT. The Python example recovers the frequencies in a synthetic sound wave.&lt;&#x2F;p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Run it yourself.&lt;&#x2F;strong&gt; Every code block below is collected in a runnable Jupyter notebook: &lt;a href=&quot;..&#x2F;..&#x2F;notebooks&#x2F;fft-sound-wave.ipynb&quot;&gt;&lt;strong&gt;download &lt;code&gt;fft-sound-wave.ipynb&lt;&#x2F;code&gt;&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;. It only needs &lt;code&gt;numpy&lt;&#x2F;code&gt; and &lt;code&gt;matplotlib&lt;&#x2F;code&gt; (&lt;code&gt;pip install numpy matplotlib&lt;&#x2F;code&gt;), and runs top to bottom.&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
@@ -1500,17 +1454,6 @@ $$&lt;&#x2F;p&gt;
 &lt;p&gt;A Hann window tapers the signal smoothly to zero at both ends, which suppresses the discontinuity that causes leakage. The trade-off is a slight widening of each spectral peak. For most audio applications this is a good deal.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;real-input-a-slightly-faster-variant&quot;&gt;Real Input: A Slightly Faster Variant&lt;&#x2F;h2&gt;
 &lt;p&gt;When the input is real, &lt;code&gt;numpy.fft.rfft&lt;&#x2F;code&gt; returns only the non-redundant half of the spectrum and is about twice as fast as the full complex FFT. In from-scratch code the same idea can be implemented by exploiting the conjugate symmetry directly. For production use, &lt;code&gt;numpy.fft.rfft&lt;&#x2F;code&gt; or any mature FFT library (FFTW, PocketFFT, cuFFT) is almost always the right choice. The recursive implementation above is for understanding, not for speed.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;the-big-picture&quot;&gt;The Big Picture&lt;&#x2F;h2&gt;
-&lt;p&gt;At this point the whole thing should feel like one continuous argument, not three unrelated algorithms.&lt;&#x2F;p&gt;
-&lt;p&gt;We started with a sound wave in the time domain and asked which frequencies it contains. Sampling gave us a finite sequence $x_n$. Projecting that sequence onto a basis of complex exponentials gave the DFT:&lt;&#x2F;p&gt;
-&lt;p&gt;$$
-X_k = \sum_{n=0}^{N-1} x_n , e^{-i 2\pi k n &#x2F; N}.
-$$&lt;&#x2F;p&gt;
-&lt;p&gt;The DFT is a linear map, so it can be written as a matrix product $X = F_N x$. Computed naively, that is $O(N^2)$.&lt;&#x2F;p&gt;
-&lt;p&gt;We then exploited the structure of $F_N$. The roots of unity satisfy a recursion, so the $N$-point DFT splits into two $N&#x2F;2$-point DFTs combined by $N&#x2F;2$ butterflies. That gives the recurrence $T(N) = 2T(N&#x2F;2) + O(N)$ and the complexity $O(N \log N)$.&lt;&#x2F;p&gt;
-&lt;p&gt;Finally, we tested the whole pipeline on a synthetic sound wave and recovered the three input tones as three clean peaks in the magnitude spectrum.&lt;&#x2F;p&gt;
-&lt;p&gt;So in the end, the DFT is the definition and the FFT is the algorithm. The DFT says what we want. The FFT says how to get it quickly. The exponential keeps showing up for the same reason it does in logistic and softmax regression: it is the right basis when the underlying object has multiplicative structure. Roots of unity are multiplicative. Splitting them in half, again and again, is exactly what turns $N^2$ into $N \log N$.&lt;&#x2F;p&gt;
-&lt;p&gt;If I keep going with this, the next stops are the short-time Fourier transform and spectrograms, and after that the jump from Fourier bases to wavelets. Corrections and better examples are welcome in the comments.&lt;&#x2F;p&gt;
 </content>
         
     </entry>
@@ -1530,15 +1473,12 @@ $$&lt;&#x2F;p&gt;
         <link rel="alternate" type="text/html" href="https://jienweng.github.io/notes/softmax-regression/"/>
         <id>https://jienweng.github.io/notes/softmax-regression/</id>
         
-        <content type="html" xml:base="https://jienweng.github.io/notes/softmax-regression/">&lt;p&gt;Softmax regression is what logistic regression grows into when there are more than two classes, and logistic regression itself only really makes sense once you understand odds. So instead of starting at the softmax formula, this note starts all the way back at odds and walks forward:&lt;&#x2F;p&gt;
+        <content type="html" xml:base="https://jienweng.github.io/notes/softmax-regression/">&lt;p&gt;Softmax regression extends logistic regression to multiple classes. This derivation starts with odds:&lt;&#x2F;p&gt;
 &lt;p&gt;$$
 \text{probability} \to \text{odds} \to \text{log-odds} \to \text{logistic regression} \to \text{softmax regression}.
 $$&lt;&#x2F;p&gt;
-&lt;p&gt;By the end, the exponential should not feel like a trick anymore. It is just the machine that turns unrestricted linear scores into positive ratios.&lt;&#x2F;p&gt;
-&lt;p&gt;If you want the full runnable walkthrough, the companion notebook lives on Kaggle:&lt;&#x2F;p&gt;
-&lt;p&gt;&lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.kaggle.com&#x2F;code&#x2F;lyhatt&#x2F;softmax-from-logistic-regression&quot;&gt;https:&#x2F;&#x2F;www.kaggle.com&#x2F;code&#x2F;lyhatt&#x2F;softmax-from-logistic-regression&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;p&gt;That notebook was assisted by AI tools. This note is the written version.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;start-with-probability-then-ask-for-more-structure&quot;&gt;Start with Probability, Then Ask for More Structure&lt;&#x2F;h2&gt;
+&lt;p&gt;The &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.kaggle.com&#x2F;code&#x2F;lyhatt&#x2F;softmax-from-logistic-regression&quot;&gt;companion notebook&lt;&#x2F;a&gt; contains the runnable examples and was assisted by AI tools.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;probability-and-odds&quot;&gt;Probability and odds&lt;&#x2F;h2&gt;
 &lt;p&gt;Suppose we have a binary outcome. Let&lt;&#x2F;p&gt;
 &lt;p&gt;$$
 p = P(y=1 \mid x)
@@ -1575,7 +1515,7 @@ $$&lt;&#x2F;p&gt;
 &lt;p&gt;$$
 \frac{p}{1-p} = e^{w^T x + b}.
 $$&lt;&#x2F;p&gt;
-&lt;p&gt;This is where the exponential enters the story, and it is doing real mathematical work. It appears because it is the inverse of the logarithm, because it guarantees the odds stay positive, and because it converts an unrestricted real-valued score into a valid positive ratio.&lt;&#x2F;p&gt;
+&lt;p&gt;Exponentiation inverts the logarithm and converts the unrestricted score into positive odds.&lt;&#x2F;p&gt;
 &lt;p&gt;Now multiply both sides by $(1-p)$:&lt;&#x2F;p&gt;
 &lt;p&gt;$$
 p = (1-p)e^{w^T x + b}.
@@ -1834,20 +1774,6 @@ $$&lt;&#x2F;p&gt;
 &lt;p&gt;This is also a good place to be honest about what logistic regression and softmax regression can and cannot do. They are simple, fast, interpretable, and they produce probabilities directly, which is often exactly what we want. They also work surprisingly well when the classes are close to linearly separable in feature space. But the tradeoff is clear: if the real boundary is highly nonlinear, these models will struggle, the quality of the features matters a great deal, and multiclass confusion often comes from genuinely similar classes rather than from a bug in the formula.&lt;&#x2F;p&gt;
 &lt;p&gt;This is also where people usually start reaching for nonlinear models. In deep learning, nonlinear functions become popular precisely because they can build more complex decision boundaries than a single linear logit layer can express. They are often used as activation functions inside deeper networks, and that added nonlinearity is what lets the model represent more complicated structure. But that is really another topic. Here the point is to understand the clean linear baseline first.&lt;&#x2F;p&gt;
 &lt;p&gt;That is why these models are such good teaching models and such good baselines. When they succeed, they do so for understandable reasons. When they fail, they usually fail in ways that teach us something about the data.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;the-big-picture&quot;&gt;The Big Picture&lt;&#x2F;h2&gt;
-&lt;p&gt;At this point the whole thing should feel like one continuous argument, not three unrelated formulas.&lt;&#x2F;p&gt;
-&lt;p&gt;We started with probability, then moved to odds:&lt;&#x2F;p&gt;
-&lt;p&gt;$$
-\frac{p}{1-p}.
-$$&lt;&#x2F;p&gt;
-&lt;p&gt;We took logarithms to obtain log-odds:&lt;&#x2F;p&gt;
-&lt;p&gt;$$
-\log \frac{p}{1-p}.
-$$&lt;&#x2F;p&gt;
-&lt;p&gt;We modeled the log-odds linearly and solved for the probability, which produced the sigmoid and logistic regression.&lt;&#x2F;p&gt;
-&lt;p&gt;Then we asked what happens when there are many classes instead of two. The same need appears again: we must turn unrestricted scores into valid positive ratios, and then normalize them into probabilities. That requirement leads directly to the softmax formula.&lt;&#x2F;p&gt;
-&lt;p&gt;So logistic regression is a model for binary log-odds, and softmax regression is the same idea with more classes. The exponential appears because it converts linear scores into positive ratios, and gradient descent is the engine underneath both. Learn them together; separately they both look more arbitrary than they are.&lt;&#x2F;p&gt;
-&lt;p&gt;Natural continuations from here: cross-entropy from maximum likelihood, and the step from softmax regression to a neural network, which is just softmax with learned features. Corrections welcome in the comments.&lt;&#x2F;p&gt;
 </content>
         
     </entry>
@@ -1940,16 +1866,6 @@ $$H_1: \beta_j \neq 0 \quad \text{(the predictor has an effect)}.$$&lt;&#x2F;p&g
 &lt;li&gt;&lt;strong&gt;False Discovery Rate (FDR) control&lt;&#x2F;strong&gt;: Controls the expected proportion of false rejections.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;In regression, the overall model significance is typically assessed using the F-test, which tests all predictors simultaneously. The next note develops that test through ANOVA.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;summary&quot;&gt;Summary&lt;&#x2F;h2&gt;
-&lt;p&gt;Hypothesis testing for regression coefficients rests on six points:&lt;&#x2F;p&gt;
-&lt;ul&gt;
-&lt;li&gt;The t-statistic $t = \hat{\beta}_j &#x2F; SE(\hat{\beta}_j)$ follows $t_{n-p}$ under $H_0: \beta_j = 0$.&lt;&#x2F;li&gt;
-&lt;li&gt;Reject $H_0$ when $|t| &amp;gt; t_{\alpha&#x2F;2, n-p}$ or equivalently when $p\text{-value} &amp;lt; \alpha$.&lt;&#x2F;li&gt;
-&lt;li&gt;For $\beta_1$ in SLR: $t = S_{xy}&#x2F;\sqrt{MSE \cdot S_{xx}}$ with $n - 2$ degrees of freedom.&lt;&#x2F;li&gt;
-&lt;li&gt;Testing $\beta_1 = 0$ is equivalent to testing $\rho = 0$.&lt;&#x2F;li&gt;
-&lt;li&gt;Confidence intervals and hypothesis tests provide equivalent information.&lt;&#x2F;li&gt;
-&lt;li&gt;Always consider practical significance alongside statistical significance.&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
 &lt;p&gt;The next note examines the ANOVA framework and its F-test for overall model significance.&lt;&#x2F;p&gt;
 </content>
         
@@ -2027,15 +1943,6 @@ $$H_1: \beta_j \neq 0 \quad \text{(the predictor has an effect)}.$$&lt;&#x2F;p&g
 &lt;p&gt;The confidence interval for the mean response is:&lt;&#x2F;p&gt;
 &lt;p&gt;$$\hat{y}_0 \pm t_{\alpha&#x2F;2,, n-2} \cdot \sqrt{MSE\left(\frac{1}{n} + \frac{(x_0 - \bar{x})^2}{S_{xx}}\right)}.$$&lt;&#x2F;p&gt;
 &lt;p&gt;Notice that this interval is narrowest when $x_0 = \bar{x}$ and grows wider as $x_0$ moves away from $\bar{x}$. This reflects the fact that we are most confident about predictions near the center of the data.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;summary&quot;&gt;Summary&lt;&#x2F;h2&gt;
-&lt;p&gt;Confidence intervals for regression coefficients follow from these five facts:&lt;&#x2F;p&gt;
-&lt;ul&gt;
-&lt;li&gt;The pivotal quantity $(\hat{\beta}_j - \beta_j)&#x2F;SE(\hat{\beta}_j) \sim t_{n-p}$ forms the basis for inference.&lt;&#x2F;li&gt;
-&lt;li&gt;For $\beta_1$: $\hat{\beta}_1 \pm t_{\alpha&#x2F;2, n-2} \cdot \sqrt{MSE&#x2F;S_{xx}}$.&lt;&#x2F;li&gt;
-&lt;li&gt;For $\beta_0$: $\hat{\beta}_0 \pm t_{\alpha&#x2F;2, n-2} \cdot \sqrt{MSE(1&#x2F;n + \bar{x}^2&#x2F;S_{xx})}$.&lt;&#x2F;li&gt;
-&lt;li&gt;For any $\beta_i$ in multiple regression: $\hat{\beta}_i \pm t_{\alpha&#x2F;2, n-p} \cdot \sqrt{MSE \cdot C_{ii}}$.&lt;&#x2F;li&gt;
-&lt;li&gt;Interval width depends on the confidence level, residual variability, predictor spread, and sample size.&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
 &lt;p&gt;The next note uses the same t-distribution framework for formal hypothesis tests on regression coefficients.&lt;&#x2F;p&gt;
 </content>
         
@@ -2108,15 +2015,6 @@ $$H_1: \beta_j \neq 0 \quad \text{(the predictor has an effect)}.$$&lt;&#x2F;p&g
 &lt;h2 id=&quot;interpreting-the-standard-error&quot;&gt;Interpreting the Standard Error&lt;&#x2F;h2&gt;
 &lt;p&gt;The standard error measures the typical size of the sampling variability in the estimated coefficient. If we were to repeatedly draw new samples of size $n$ from the same population and compute $\hat{\beta}_1$ each time, the standard deviation of these estimates would be approximately $SE(\hat{\beta}_1)$.&lt;&#x2F;p&gt;
 &lt;p&gt;A small standard error relative to the coefficient estimate suggests that the estimate is precise. A large standard error suggests substantial uncertainty. We will use the standard error to construct confidence intervals (Post 7) and perform hypothesis tests (Post 8).&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;summary&quot;&gt;Summary&lt;&#x2F;h2&gt;
-&lt;p&gt;The standard-error derivation gives five practical results:&lt;&#x2F;p&gt;
-&lt;ul&gt;
-&lt;li&gt;$MSE = SSE&#x2F;(n-2)$ estimates the error variance $\sigma^2$ for simple linear regression, or $MSE = SSE&#x2F;(n-p)$ for multiple regression.&lt;&#x2F;li&gt;
-&lt;li&gt;$SE(\hat{\beta}_1) = \sqrt{MSE&#x2F;S_{xx}}$ measures the precision of the slope estimate.&lt;&#x2F;li&gt;
-&lt;li&gt;$SE(\hat{\beta}_0) = \sqrt{MSE(1&#x2F;n + \bar{x}^2&#x2F;S_{xx})}$ measures the precision of the intercept estimate.&lt;&#x2F;li&gt;
-&lt;li&gt;For multiple regression, $SE(\hat{\beta}_j) = \sqrt{MSE \cdot C_{jj}}$ where $C_{jj}$ is the $(j+1)$-th diagonal element of $(\mathbf{X}^T\mathbf{X})^{-1}$.&lt;&#x2F;li&gt;
-&lt;li&gt;Precision improves with larger $S_{xx}$, smaller $MSE$, and larger $n$.&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
 &lt;p&gt;The next note uses these standard errors to construct confidence intervals for $\beta_0$, $\beta_1$, and $\beta_i$.&lt;&#x2F;p&gt;
 </content>
         
@@ -2218,14 +2116,6 @@ SSE &amp;amp;= S_{yy} - 2\cdot\frac{S_{xy}}{S_{xx}}\cdot S_{xy} + \frac{S_{xy}^2
 &lt;p&gt;First, $R^2$ quantifies fit, not correctness. It tells us how much of the variability in $y$ is captured by the fitted line, but it says nothing about whether a line was the right model to fit. A clearly nonlinear pattern can still produce a high $R^2$ if the linear component happens to be strong. Anscombe&#x27;s quartet is the classic reference here: four datasets with essentially identical $R^2$ (and identical fitted lines), one of which is a clean linear relationship, one a perfect parabola, and two dominated by single outlying points. The residual plot distinguishes them; $R^2$ does not.&lt;&#x2F;p&gt;
 &lt;p&gt;Second, plain $R^2$ never decreases when a predictor is added. Since OLS minimizes SSE over a strictly larger space of models, SSE can only stay the same or shrink, so $R^2 = 1 - SSE&#x2F;SST$ can only stay the same or grow, even when the new predictor is pure noise. This is exactly the problem the adjusted $R^2$ above is designed to correct.&lt;&#x2F;p&gt;
 &lt;p&gt;Third, a high $R^2$ is not evidence of causation, and it is not a measure of predictive performance on new data. It is computed on the same observations used to fit the model, so it says nothing about how the model generalizes out of sample.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;summary&quot;&gt;Summary&lt;&#x2F;h2&gt;
-&lt;p&gt;The sum-of-squares decomposition gives four useful results:&lt;&#x2F;p&gt;
-&lt;ul&gt;
-&lt;li&gt;$SST = SSR + SSE$ decomposes total variability into explained and unexplained components.&lt;&#x2F;li&gt;
-&lt;li&gt;$R^2 = SSR&#x2F;SST = 1 - SSE&#x2F;SST$ measures the proportion of variance explained.&lt;&#x2F;li&gt;
-&lt;li&gt;For simple linear regression, $R^2 = r^2 = S_{xy}^2&#x2F;(S_{xx} \cdot S_{yy})$, proven by expressing SSR in terms of $S_{xx}$ and $S_{xy}$.&lt;&#x2F;li&gt;
-&lt;li&gt;Adjusted $R^2$ penalizes for model complexity in multiple regression.&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
 &lt;p&gt;The next note derives the standard errors of $\hat{\beta}_0$ and $\hat{\beta}_1$ using $S_{xx}$ and MSE.&lt;&#x2F;p&gt;
 </content>
         
@@ -2300,15 +2190,6 @@ SSE &amp;amp;= S_{yy} - 2\cdot\frac{S_{xy}}{S_{xx}}\cdot S_{xy} + \frac{S_{xy}^2
 &lt;p&gt;When the data $(x_i, y_i)$ are sampled from a bivariate normal distribution, $r$ is a consistent estimator of $\rho$.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;correlation-does-not-imply-causation&quot;&gt;Correlation Does Not Imply Causation&lt;&#x2F;h2&gt;
 &lt;p&gt;A strong correlation between two variables does not mean that one causes the other. The association might be due to a lurking variable, reverse causation, or coincidence. Regression models describe associations; establishing causation requires careful experimental design or additional assumptions.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;summary&quot;&gt;Summary&lt;&#x2F;h2&gt;
-&lt;p&gt;The Pearson correlation coefficient can be summarized as follows:&lt;&#x2F;p&gt;
-&lt;ul&gt;
-&lt;li&gt;$S_{yy} = \sum(y_i - \bar{y})^2$ completes the set of summary statistics alongside $S_{xx}$ and $S_{xy}$.&lt;&#x2F;li&gt;
-&lt;li&gt;The sample standard deviations $S_x = \sqrt{S_{xx}&#x2F;(n-1)}$ and $S_y = \sqrt{S_{yy}&#x2F;(n-1)}$ measure spread.&lt;&#x2F;li&gt;
-&lt;li&gt;The correlation $r = S_{xy}&#x2F;\sqrt{S_{xx} \cdot S_{yy}}$ quantifies the strength of the linear relationship.&lt;&#x2F;li&gt;
-&lt;li&gt;$r$ is bounded between $-1$ and $1$, symmetric, and dimensionless.&lt;&#x2F;li&gt;
-&lt;li&gt;The regression slope and correlation are related by $\hat{\beta}_1 = r \cdot S_y &#x2F; S_x$.&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
 &lt;p&gt;The next note defines $R^2$ with SST, SSE, and SSR, then proves that $R^2 = r^2$ for simple linear regression.&lt;&#x2F;p&gt;
 </content>
         
@@ -2378,15 +2259,6 @@ SSE &amp;amp;= S_{yy} - 2\cdot\frac{S_{xy}}{S_{xx}}\cdot S_{xy} + \frac{S_{xy}^2
 &lt;p&gt;Consider a quadratic model $y_i = \beta_0 + \beta_1 x_i + \beta_2 x_i^2 + \varepsilon_i$ with the design matrix:&lt;&#x2F;p&gt;
 &lt;p&gt;$$\mathbf{X} = \begin{pmatrix} 1 &amp;amp; x_1 &amp;amp; x_1^2 \\ 1 &amp;amp; x_2 &amp;amp; x_2^2 \\ \vdots &amp;amp; \vdots &amp;amp; \vdots \\ 1 &amp;amp; x_n &amp;amp; x_n^2 \end{pmatrix}.$$&lt;&#x2F;p&gt;
 &lt;p&gt;There are $p = 3$ parameters. The OLS solution $\hat{\boldsymbol{\beta}} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{Y}$ gives us $\hat{\beta}_0$, $\hat{\beta}_1$, and $\hat{\beta}_2$ simultaneously. The coefficient $\hat{\beta}_2$ indicates the curvature of the fitted parabola: a positive $\hat{\beta}_2$ means the curve opens upward, and a negative $\hat{\beta}_2$ means it opens downward.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;summary&quot;&gt;Summary&lt;&#x2F;h2&gt;
-&lt;p&gt;Polynomial regression follows from five observations:&lt;&#x2F;p&gt;
-&lt;ul&gt;
-&lt;li&gt;The polynomial model $y_i = \beta_0 + \beta_1 x_i + \beta_2 x_i^2 + \cdots + \beta_d x_i^d + \varepsilon_i$ is nonlinear in $x$ but linear in the parameters.&lt;&#x2F;li&gt;
-&lt;li&gt;By treating each power of $x$ as a separate predictor, polynomial regression becomes a special case of multiple linear regression.&lt;&#x2F;li&gt;
-&lt;li&gt;The OLS estimator $\hat{\boldsymbol{\beta}} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{Y}$ applies directly.&lt;&#x2F;li&gt;
-&lt;li&gt;Choosing the polynomial degree requires balancing fit and complexity to avoid overfitting.&lt;&#x2F;li&gt;
-&lt;li&gt;Centering or using orthogonal polynomials helps address multicollinearity.&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
 &lt;p&gt;The next note uses $S_{xx}$, $S_{yy}$, and $S_{xy}$ to define correlation.&lt;&#x2F;p&gt;
 </content>
         
@@ -2414,7 +2286,7 @@ SSE &amp;amp;= S_{yy} - 2\cdot\frac{S_{xy}}{S_{xx}}\cdot S_{xy} + \frac{S_{xy}^2
 &lt;p&gt;$$y_i = \beta_0 + \beta_1 x_{i1} + \beta_2 x_{i2} + \cdots + \beta_{p-1} x_{i,p-1} + \varepsilon_i,$$&lt;&#x2F;p&gt;
 &lt;p&gt;where $x_{ij}$ is the value of the $j$-th predictor for the $i$-th observation, $\beta_j$ are the regression coefficients, and $\varepsilon_i$ is the error term. The total number of parameters is $p$ (including the intercept $\beta_0$).&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;matrix-notation&quot;&gt;Matrix Notation&lt;&#x2F;h2&gt;
-&lt;p&gt;Writing out the model for each observation individually becomes cumbersome as the number of predictors grows. Matrix notation provides a compact and powerful alternative.&lt;&#x2F;p&gt;
+&lt;p&gt;Matrix notation collects the observations and predictors into one equation.&lt;&#x2F;p&gt;
 &lt;p&gt;Define the following:&lt;&#x2F;p&gt;
 &lt;p&gt;$$\mathbf{Y} = \begin{pmatrix} y_1 \\ y_2 \\ \vdots \\ y_n \end{pmatrix}, \quad \mathbf{X} = \begin{pmatrix} 1 &amp;amp; x_{11} &amp;amp; x_{12} &amp;amp; \cdots &amp;amp; x_{1,p-1} \\ 1 &amp;amp; x_{21} &amp;amp; x_{22} &amp;amp; \cdots &amp;amp; x_{2,p-1} \\ \vdots &amp;amp; \vdots &amp;amp; \vdots &amp;amp; \ddots &amp;amp; \vdots \\ 1 &amp;amp; x_{n1} &amp;amp; x_{n2} &amp;amp; \cdots &amp;amp; x_{n,p-1} \end{pmatrix},$$&lt;&#x2F;p&gt;
 &lt;p&gt;$$\boldsymbol{\beta} = \begin{pmatrix} \beta_0 \\ \beta_1 \\ \vdots \\ \beta_{p-1} \end{pmatrix}, \quad \boldsymbol{\varepsilon} = \begin{pmatrix} \varepsilon_1 \\ \varepsilon_2 \\ \vdots \\ \varepsilon_n \end{pmatrix}.$$&lt;&#x2F;p&gt;
@@ -2456,14 +2328,6 @@ SSE &amp;amp;= S_{yy} - 2\cdot\frac{S_{xy}}{S_{xx}}\cdot S_{xy} + \frac{S_{xy}^2
 &lt;p&gt;In the special case where $p = 2$, we have a single predictor $x$ and the design matrix becomes:&lt;&#x2F;p&gt;
 &lt;p&gt;$$\mathbf{X} = \begin{pmatrix} 1 &amp;amp; x_1 \\ 1 &amp;amp; x_2 \\ \vdots &amp;amp; \vdots \\ 1 &amp;amp; x_n \end{pmatrix}.$$&lt;&#x2F;p&gt;
 &lt;p&gt;Computing $(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{Y}$ in this case yields the familiar results $\hat{\beta}&lt;em&gt;1 = S&lt;&#x2F;em&gt;{xy}&#x2F;S_{xx}$ and $\hat{\beta}_0 = \bar{y} - \hat{\beta}_1\bar{x}$, confirming that the matrix formulation is a true generalization.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;summary&quot;&gt;Summary&lt;&#x2F;h2&gt;
-&lt;p&gt;The multiple-regression framework adds four pieces:&lt;&#x2F;p&gt;
-&lt;ul&gt;
-&lt;li&gt;The model $\mathbf{Y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\varepsilon}$ uses matrix notation to express the relationship compactly.&lt;&#x2F;li&gt;
-&lt;li&gt;The OLS estimator $\hat{\boldsymbol{\beta}} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{Y}$ generalizes the simple linear regression solution.&lt;&#x2F;li&gt;
-&lt;li&gt;Each $\hat{\beta}_j$ measures the effect of one predictor while holding the others constant.&lt;&#x2F;li&gt;
-&lt;li&gt;The hat matrix $\mathbf{H}$ projects observed values onto fitted values.&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
 &lt;p&gt;The next note treats powers of one variable as multiple predictors in polynomial regression.&lt;&#x2F;p&gt;
 </content>
         
@@ -2544,14 +2408,6 @@ SSE &amp;amp;= S_{yy} - 2\cdot\frac{S_{xy}}{S_{xx}}\cdot S_{xy} + \frac{S_{xy}^2
 &lt;li&gt;&lt;strong&gt;Normality&lt;&#x2F;strong&gt;: The error terms are normally distributed, that is, $\varepsilon_i \sim N(0, \sigma^2)$.&lt;&#x2F;li&gt;
 &lt;&#x2F;ol&gt;
 &lt;p&gt;When these assumptions hold, OLS produces the Best Linear Unbiased Estimators (BLUE) according to the Gauss-Markov theorem.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;summary&quot;&gt;Summary&lt;&#x2F;h2&gt;
-&lt;p&gt;Simple linear regression rests on four ideas:&lt;&#x2F;p&gt;
-&lt;ul&gt;
-&lt;li&gt;The model $\hat{y}_i = \hat{\beta}_0 + \hat{\beta}_1 x_i$ describes the estimated linear relationship between $x$ and $y$.&lt;&#x2F;li&gt;
-&lt;li&gt;OLS minimizes the sum of squared errors to find the best-fitting line.&lt;&#x2F;li&gt;
-&lt;li&gt;The estimators $\hat{\beta}&lt;em&gt;1 = S&lt;&#x2F;em&gt;{xy}&#x2F;S_{xx}$ and $\hat{\beta}_0 = \bar{y} - \hat{\beta}_1\bar{x}$ are derived from the normal equations.&lt;&#x2F;li&gt;
-&lt;li&gt;The $S_{xx}$ and $S_{xy}$ notation provides a compact way to express these results.&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
 &lt;p&gt;The next note extends this framework to multiple independent variables.&lt;&#x2F;p&gt;
 </content>
         
@@ -2772,7 +2628,7 @@ $$&lt;&#x2F;p&gt;
 &lt;p&gt;But all of this hangs on the choice of learning rate $\alpha$. Too large and the algorithm overshoots the minimum and diverges. Too small and convergence crawls. There are various ways to adapt the learning rate during optimization, like schedules and optimizers such as Adam and RMSprop, which I may cover in a future post.&lt;&#x2F;p&gt;
 &lt;hr&gt;
 &lt;h2 id=&quot;known-issues-of-gradient-descent&quot;&gt;Known Issues of Gradient Descent&lt;&#x2F;h2&gt;
-&lt;p&gt;While gradient descent is a powerful optimization algorithm, it does have some known issues. In multivariate functions, the presence of saddle points can affect the convergence. Saddle points are points where the gradient is zero, but they are neither local minima nor local maxima. In high-dimensional spaces, saddle points are more prevalent than local minima, and gradient descent can get stuck at these points, leading to slow convergence or failure to find the global minimum. A popular example is the function $f(x, y) = x^2 - y^2$, which has a saddle point at $(0, 0)$. The direction vector at this point is zero, and gradient descent may struggle to escape this point.&lt;&#x2F;p&gt;
+&lt;p&gt;Saddle points can affect convergence in multivariate functions. Saddle points are points where the gradient is zero, but they are neither local minima nor local maxima. In high-dimensional spaces, saddle points are more prevalent than local minima, and gradient descent can get stuck at these points, leading to slow convergence or failure to find the global minimum. A popular example is the function $f(x, y) = x^2 - y^2$, which has a saddle point at $(0, 0)$. The direction vector at this point is zero, and gradient descent may struggle to escape this point.&lt;&#x2F;p&gt;
 &lt;figure class=&quot;wide&quot;&gt;
   &lt;img src=&quot;https:&amp;#x2F;&amp;#x2F;cdn.cosmos.so&amp;#x2F;41b26430-2fde-4cfb-8d2b-a9debca6d4ee?format=jpeg&quot; alt=&quot;Gradient Descent Saddle Point&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
   
@@ -2781,10 +2637,8 @@ $$&lt;&#x2F;p&gt;
 &lt;&#x2F;figure&gt;
 &lt;p&gt;Saddle points can be handled with noise, momentum, or second-order methods that use the curvature of the function. Gradient descent remains useful because the rule is simple and works across many objectives.&lt;&#x2F;p&gt;
 &lt;hr&gt;
-&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
-&lt;p&gt;That is gradient descent: a one-line update rule used throughout machine learning.&lt;&#x2F;p&gt;
-&lt;p&gt;The rule is simple, but its behaviour depends on the geometry of the objective and the choice of learning rate.&lt;&#x2F;p&gt;
-&lt;p&gt;For a visual explanation, this StatQuest video is useful:&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;video-walkthrough&quot;&gt;Video walkthrough&lt;&#x2F;h2&gt;
+&lt;p&gt;For a visual explanation, see StatQuest:&lt;&#x2F;p&gt;
 &lt;figure class=&quot;wide video-embed&quot;&gt;
   &lt;div class=&quot;video-shell&quot;&gt;
     &lt;iframe
@@ -2900,7 +2754,7 @@ $$&lt;&#x2F;p&gt;
   &lt;&#x2F;div&gt;
 &lt;&#x2F;details&gt;
 &lt;h2 id=&quot;takeaway&quot;&gt;Takeaway&lt;&#x2F;h2&gt;
-&lt;p&gt;The incremental rule reduces the memory cost from storing an entire reward history to storing one estimate and one counter per action. More importantly, it exposes a pattern that appears throughout reinforcement learning: update an estimate by moving it toward a new target in proportion to the current error.&lt;&#x2F;p&gt;
+&lt;p&gt;The incremental rule reduces the memory cost from storing an entire reward history to storing one estimate and one counter per action.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;reference&quot;&gt;Reference&lt;&#x2F;h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Sutton, R. S., &amp;amp; Barto, A. G. (2018). &lt;em&gt;&lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;http:&#x2F;&#x2F;incompleteideas.net&#x2F;book&#x2F;the-book-2nd.html&quot;&gt;Reinforcement Learning: An Introduction&lt;&#x2F;a&gt;&lt;&#x2F;em&gt; (2nd ed.). MIT Press.&lt;&#x2F;li&gt;
