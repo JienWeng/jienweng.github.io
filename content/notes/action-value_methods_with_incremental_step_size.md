@@ -84,7 +84,7 @@ End For
 {% end %}
 ## Takeaway
 
-The incremental rule reduces the memory cost from storing an entire reward history to storing one estimate and one counter per action. More importantly, it exposes a pattern that appears throughout reinforcement learning: update an estimate by moving it toward a new target in proportion to the current error.
+The incremental rule reduces the memory cost from storing an entire reward history to storing one estimate and one counter per action.
 
 ## Reference
 

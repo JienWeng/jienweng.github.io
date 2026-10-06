@@ -126,14 +126,4 @@ When the data $(x_i, y_i)$ are sampled from a bivariate normal distribution, $r$
 
 A strong correlation between two variables does not mean that one causes the other. The association might be due to a lurking variable, reverse causation, or coincidence. Regression models describe associations; establishing causation requires careful experimental design or additional assumptions.
 
-## Summary
-
-The Pearson correlation coefficient can be summarized as follows:
-
-- $S_{yy} = \sum(y_i - \bar{y})^2$ completes the set of summary statistics alongside $S\_{xx}$ and $S\_{xy}$.
-- The sample standard deviations $S_x = \sqrt{S_{xx}/(n-1)}$ and $S_y = \sqrt{S_{yy}/(n-1)}$ measure spread.
-- The correlation $r = S_{xy}/\sqrt{S_{xx} \cdot S_{yy}}$ quantifies the strength of the linear relationship.
-- $r$ is bounded between $-1$ and $1$, symmetric, and dimensionless.
-- The regression slope and correlation are related by $\hat{\beta}_1 = r \cdot S_y / S_x$.
-
 The next note defines $R^2$ with SST, SSE, and SSR, then proves that $R^2 = r^2$ for simple linear regression.

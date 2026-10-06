@@ -23,7 +23,7 @@ featured = false
 reaction = true
 +++
 
-These are a few photos from the Talentbank Boardroom Challenge 2025. I am keeping this one as a photo record rather than pretending I still remember every preparation decision from the day.
+Photos from the Talentbank Boardroom Challenge 2025.
 
 {{ figure(src="https://cdn.cosmos.so/757eebfe-bcda-458c-a666-bb88ff978ed2?format=jpeg", alt="Talentbank Boardroom Challenge 2025", caption="") }}
 

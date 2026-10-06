@@ -122,14 +122,4 @@ The standard error measures the typical size of the sampling variability in the 
 
 A small standard error relative to the coefficient estimate suggests that the estimate is precise. A large standard error suggests substantial uncertainty. We will use the standard error to construct confidence intervals (Post 7) and perform hypothesis tests (Post 8).
 
-## Summary
-
-The standard-error derivation gives five practical results:
-
-- $MSE = SSE/(n-2)$ estimates the error variance $\sigma^2$ for simple linear regression, or $MSE = SSE/(n-p)$ for multiple regression.
-- $SE(\hat{\beta}\_1) = \sqrt{MSE/S\_{xx}}$ measures the precision of the slope estimate.
-- $SE(\hat{\beta}\_0) = \sqrt{MSE(1/n + \bar{x}^2/S\_{xx})}$ measures the precision of the intercept estimate.
-- For multiple regression, $SE(\hat{\beta}\_j) = \sqrt{MSE \cdot C\_{jj}}$ where $C\_{jj}$ is the $(j+1)$-th diagonal element of $(\mathbf{X}^T\mathbf{X})^{-1}$.
-- Precision improves with larger $S\_{xx}$, smaller $MSE$, and larger $n$.
-
 The next note uses these standard errors to construct confidence intervals for $\beta\_0$, $\beta\_1$, and $\beta\_i$.

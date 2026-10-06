@@ -1,17 +1,15 @@
 +++
 title = "About"
-description = "Professional background, consulting work, and research interests of Jien Weng."
+description = "Product management, consulting, teaching, and mathematical research."
 
 [extra]
 portrait = "img/profile.webp"
 +++
 
-I work across business transformation, AI, data, and Web3 product development. As an independent consultant and product manager, I help teams improve processes, build practical systems, and turn ideas into working products. My Web3 product work also involves proprietary AI research, and I deliver data and machine-learning training.
+I’m Jien Weng, an independent consultant and product manager. I coordinate delivery for CryptoRails and work with Quandatics on an internal CRM linking sales, project delivery, and finance. I also teach data science and machine learning at Quandatics Academy.
 
-I am also a research assistant at Monash University Malaysia. The center of my research is mathematical modelling, especially where it meets learning, decision-making, finance, and environmental systems. I work on multi-agent reinforcement learning, market microstructure, and quantitative finance, treating them as different settings in which modelling assumptions and information constraints determine what a system can actually learn or control.
+At Monash University Malaysia, I research wastewater treatment plant prediction using RNNs, Transformers, and Markov chain methods. My other research interests include multi-agent reinforcement learning, market microstructure, and quantitative finance.
 
-The questions that keep showing up in my work are simple to state. What information does an agent actually need in order to act well? When does a change in regime matter more than a change in method? When does prediction improve control, and when does it only create the appearance of sophistication?
+I studied Applied Mathematics with Computing at UTAR. My [notes](@/notes/_index.md) contain the derivations and worked examples I use to understand statistics, optimisation, and reinforcement learning.
 
-I am building stronger foundations in stochastic and environmental modelling. My current wastewater treatment plant research uses RNNs, Transformers, and Markov chain methods to model time-series sensor data and predict plant behaviour.
-
-I hold a BSc. (Hons) in Applied Mathematics with Computing from UTAR. Alongside formal research, I keep a running notebook of derivations, clarifications, and working explanations in statistics, regression, optimization, and reinforcement learning.
+For my experience and qualifications, see my [CV](@/cv/_index.md). To discuss a role or project, [email me](mailto:laijienweng@gmail.com).

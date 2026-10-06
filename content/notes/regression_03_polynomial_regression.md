@@ -106,14 +106,4 @@ $$\mathbf{X} = \begin{pmatrix} 1 & x\_1 & x\_1^2 \\\\ 1 & x\_2 & x\_2^2 \\\\ \vd
 
 There are $p = 3$ parameters. The OLS solution $\hat{\boldsymbol{\beta}} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{Y}$ gives us $\hat{\beta}\_0$, $\hat{\beta}\_1$, and $\hat{\beta}\_2$ simultaneously. The coefficient $\hat{\beta}\_2$ indicates the curvature of the fitted parabola: a positive $\hat{\beta}\_2$ means the curve opens upward, and a negative $\hat{\beta}\_2$ means it opens downward.
 
-## Summary
-
-Polynomial regression follows from five observations:
-
-- The polynomial model $y_i = \beta_0 + \beta_1 x_i + \beta_2 x_i^2 + \cdots + \beta_d x_i^d + \varepsilon_i$ is nonlinear in $x$ but linear in the parameters.
-- By treating each power of $x$ as a separate predictor, polynomial regression becomes a special case of multiple linear regression.
-- The OLS estimator $\hat{\boldsymbol{\beta}} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{Y}$ applies directly.
-- Choosing the polynomial degree requires balancing fit and complexity to avoid overfitting.
-- Centering or using orthogonal polynomials helps address multicollinearity.
-
 The next note uses $S\_{xx}$, $S\_{yy}$, and $S\_{xy}$ to define correlation.

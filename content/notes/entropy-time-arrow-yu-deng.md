@@ -189,16 +189,6 @@ This also explains why I would not summarise the result as “mathematics proves
 
 That distinction is not a weakness. It is the whole point.
 
-## My Takeaway
-
-I used to think the arrow of time came from adding randomness to mechanics. Now I think that picture is too simple. The hard-sphere dynamics in this work are deterministic. The direction appears in the passage from an exact microscopic state to an effective statistical law, together with the assumptions on the initial ensemble and the mathematical control of correlations.
-
-Deng, Hani, and Ma made this passage rigorous without pretending the collision history was simple. They carried the history, organised it, and showed why the macroscopic equation still wins:
-
-> Irreversibility is what reversible mechanics looks like after we move from every coordinate to the statistical description we can actually use.
-
-That is not the final philosophical answer to what time is. But it is a beautiful mathematical answer to how a direction of time can emerge from laws that have no preferred direction themselves.
-
 ## References
 
 1. Ludwig Boltzmann, [“Weitere Studien über das Wärmegleichgewicht unter Gas-molekülen”](https://doi.org/10.1017/CBO9781139381420.023), 1872.

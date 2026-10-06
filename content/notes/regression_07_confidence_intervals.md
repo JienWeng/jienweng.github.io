@@ -133,14 +133,4 @@ $$\hat{y}\_0 \pm t\_{\alpha/2,\, n-2} \cdot \sqrt{MSE\left(\frac{1}{n} + \frac{(
 
 Notice that this interval is narrowest when $x\_0 = \bar{x}$ and grows wider as $x\_0$ moves away from $\bar{x}$. This reflects the fact that we are most confident about predictions near the center of the data.
 
-## Summary
-
-Confidence intervals for regression coefficients follow from these five facts:
-
-- The pivotal quantity $(\hat{\beta}\_j - \beta\_j)/SE(\hat{\beta}\_j) \sim t\_{n-p}$ forms the basis for inference.
-- For $\beta\_1$: $\hat{\beta}\_1 \pm t\_{\alpha/2, n-2} \cdot \sqrt{MSE/S\_{xx}}$.
-- For $\beta\_0$: $\hat{\beta}\_0 \pm t\_{\alpha/2, n-2} \cdot \sqrt{MSE(1/n + \bar{x}^2/S\_{xx})}$.
-- For any $\beta\_i$ in multiple regression: $\hat{\beta}\_i \pm t\_{\alpha/2, n-p} \cdot \sqrt{MSE \cdot C\_{ii}}$.
-- Interval width depends on the confidence level, residual variability, predictor spread, and sample size.
-
 The next note uses the same t-distribution framework for formal hypothesis tests on regression coefficients.

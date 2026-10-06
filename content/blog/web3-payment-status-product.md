@@ -24,44 +24,30 @@ reaction = true
 topic = "Web3"
 +++
 
-A transaction hash is evidence that something was submitted. It is not, by itself, evidence that a payment is safe to settle.
+A transaction hash identifies a submitted transaction. The backend still needs to confirm what happened before crediting a ledger or releasing an order.
 
-That distinction became one of the product questions I kept returning to while working on a multi-chain payment gateway. The interface wants to show progress quickly. The backend needs stronger evidence before it credits a ledger, releases an item, or tells a merchant that the payment is complete.
+While working on a multi-chain gateway, I kept returning to when each person can act on a payment state.
 
-## The states are part of the product
+## What each state needs to tell us
 
-A payment needs more than a green tick or a red cross. At minimum, the system has to distinguish between a request that is waiting to be submitted, a transaction that has been broadcast, a transaction that is still being checked, a confirmed payment, and a failure that needs action.
+- The customer needs to know whether to wait or retry.
+- The merchant needs to know whether to release the order.
+- The backend needs verified evidence before updating the ledger.
+- QA needs acceptance criteria for each transition.
 
-These states affect different people in different ways.
+Submission, confirmation, failure, and settlement need distinct meanings in the interface, webhook handler, and support process.
 
-- The user wants to know whether they should wait or try again.
-- The merchant wants to know whether an order can be released.
-- The backend needs to know whether it can update the ledger.
-- The delivery team needs acceptance criteria for every transition.
+## Detection and settlement
 
-When these states are vague, the UI, webhook handler, and support process all start making different assumptions.
+Client-side detection provides quick feedback when funds appear. Settlement requires a verified server-side signal, with checks for the network, token, recipient, amount, transaction status, and duplicate processing.
 
-## The useful boundary
+## Acceptance criteria I would write
 
-Client-side detection can make the experience feel responsive. It can tell the user that funds have been noticed or that a wallet has submitted a transaction.
+- Give each payment request a unique reference and expiry.
+- Check the selected token and network before signing.
+- Record the transaction hash without marking it settled.
+- Define separate responses for delays, failures, and duplicates.
+- Verify a webhook before it updates the ledger.
+- Prevent retries from crediting the same payment twice.
 
-Settlement needs a server-side signal that has been verified. The backend should check the network, token, recipient, amount, transaction status, and duplicate-processing rules before moving the payment into a final state.
-
-That boundary is a product decision as much as a technical one. It decides when the business is willing to treat an on-chain event as money received.
-
-## What I would put in the backlog
-
-For a payment lifecycle, I would turn the following into explicit stories and acceptance criteria.
-
-- A payment request has a unique reference and an expiry.
-- The selected token and network are checked before signing.
-- A submitted transaction records its hash without becoming settled.
-- Delayed, failed, and duplicated transactions have different outcomes.
-- A webhook is verified before it can trigger a ledger update.
-- Retrying a write does not credit the same payment twice.
-
-This is not glamorous product work. It is the part that stops a payment demo from becoming a support problem later.
-
-The full cross-chain flow is documented in my [Web3 payment transaction lifecycle note](@/notes/cryptorails-transaction-lifecycle.md).
-
-This is a generalised case study. Product-specific business details, implementation details, and performance results remain confidential.
+The [CryptoRails lifecycle note](@/notes/cryptorails-transaction-lifecycle.md) covers the documented deposit and consolidation flow. These are generalised requirements; internal details and performance results remain confidential.

@@ -23,20 +23,10 @@ featured = false
 reaction = false
 +++
 
-Hackathons reward fast learning, but they also make it easy to waste time and mistake exhaustion for progress. After a few of them, I started thinking more seriously about what the pressure was doing to me.
+The time and energy hackathons demand is insane. Preliminary rounds, semi-finals, and finals each mean another round of brainstorming, last-minute changes, and almost no sleep.
 
-Along the way, I met people with much more experience than me. I cannot compete with them on their home ground, and it is easy to feel small in those moments.
+At first, I finished each one looking forward to the next. After enough rounds, I was tired before the next competition started.
 
-The time and energy they demand is insane. Most competitions have a preliminary round, sometimes a semi-final, and then a final. Each round becomes a mini-marathon of brainstorming, last-minute changes, and almost no sleep, all to deliver something that works.
+I also kept comparing myself to people who work in tech every day. I’m a mathematics student exploring outside my field, but that’s easy to forget when everyone around me seems more experienced.
 
-In the first few hackathons, I was genuinely excited. Every time one ended, I was already looking forward to the next. After enough rounds, though, the excitement wore off. I still learned something from every competition, but I was tired before the next one even started.
-
-Eventually, it all started to feel a bit empty.
-
-There was also this lingering thought back in my mind: "Why am I comparing myself to people who are fully in this industry, who live and breathe in tech every single day, when I'm still just a student trying to explore things outside my field?"
-
-There is still one more hackathon coming up, and I will give it what I can. After that, I need a proper break from hackathons and the constant cycle of proving myself. I need to breathe, reset, and take care of my mental health.
-
-I am not quitting hackathons forever. I need some time away from them, though, to focus on myself and rebuild my energy.
-
-That is where I am at the moment. I will see what the last one feels like, then take the break I should have taken earlier.
+There’s one more hackathon coming up. I’ll give it what I can, then take a proper break. I still want to do hackathons, but I need time away from the constant cycle of proving myself.

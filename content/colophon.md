@@ -3,8 +3,8 @@ title = "Colophon"
 description = "How this site is made."
 +++
 
-This site is built with [Zola](https://www.getzola.org), a static site generator, from plain Markdown files. The typeface is Latin Modern Roman, the digital descendant of Donald Knuth's Computer Modern, which is why the pages look like they came out of LaTeX. That is on purpose; most of what I write starts life in LaTeX anyway.
+This site uses [Zola](https://www.getzola.org), Markdown, and the Archivo typeface. GitHub Pages hosts it; pull requests have their own preview URLs.
 
-There is no JavaScript framework and no build pipeline beyond Zola itself. Math is rendered with KaTeX on the pages that need it. Comments run on GitHub Discussions through [giscus](https://giscus.app). Analytics is [GoatCounter](https://www.goatcounter.com), which counts visits and nothing else. There is no cookie banner because there are no cookies.
+[KaTeX](https://katex.org) renders equations. [GoatCounter](https://www.goatcounter.com) provides visit statistics. The layout uses plain HTML, CSS, and a small amount of JavaScript.
 
-The site is built with Zola and hosted on GitHub Pages. If something is broken, [email me](mailto:laijienweng@gmail.com).
+Found a broken link or a mistake? [Email me](mailto:laijienweng@gmail.com).

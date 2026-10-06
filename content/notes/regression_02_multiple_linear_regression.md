@@ -39,7 +39,7 @@ where $x\_{ij}$ is the value of the $j$-th predictor for the $i$-th observation,
 
 ## Matrix Notation
 
-Writing out the model for each observation individually becomes cumbersome as the number of predictors grows. Matrix notation provides a compact and powerful alternative.
+Matrix notation collects the observations and predictors into one equation.
 
 Define the following:
 
@@ -114,14 +114,5 @@ In the special case where $p = 2$, we have a single predictor $x$ and the design
 $$\mathbf{X} = \begin{pmatrix} 1 & x\_1 \\\\ 1 & x\_2 \\\\ \vdots & \vdots \\\\ 1 & x\_n \end{pmatrix}.$$
 
 Computing $(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{Y}$ in this case yields the familiar results $\hat{\beta}_1 = S_{xy}/S_{xx}$ and $\hat{\beta}_0 = \bar{y} - \hat{\beta}_1\bar{x}$, confirming that the matrix formulation is a true generalization.
-
-## Summary
-
-The multiple-regression framework adds four pieces:
-
-- The model $\mathbf{Y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\varepsilon}$ uses matrix notation to express the relationship compactly.
-- The OLS estimator $\hat{\boldsymbol{\beta}} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{Y}$ generalizes the simple linear regression solution.
-- Each $\hat{\beta}\_j$ measures the effect of one predictor while holding the others constant.
-- The hat matrix $\mathbf{H}$ projects observed values onto fitted values.
 
 The next note treats powers of one variable as multiple predictors in polynomial regression.

@@ -1,6 +1,6 @@
 +++
-title = "The Product Manager Sits Between the Business Question and the Delivery Queue"
-description = "What coordinating a Web3 delivery team taught me about turning business priorities into work the team can actually ship."
+title = "How I Define When a Payment Is Complete"
+description = "The settlement boundary, its trade-off, and the acceptance criteria I work through with engineers."
 date = 2026-07-20
 updated = 2026-07-20
 draft = false
@@ -24,41 +24,31 @@ reaction = true
 topic = "Product Management"
 +++
 
-Product management is often described as deciding what to build. In practice, a large part of the job is making sure the business question survives contact with the delivery team.
+I coordinate an engineering team working on Web3 payments. I maintain the backlog and roadmap, run Scrum ceremonies, and clarify priorities with the business owner.
 
-In my current Web3 product work, I coordinate an engineering team across payment flows, chain integrations, QA, and UI/UX testing. The work is technical, but the first problem is usually less technical than that. Someone needs to decide what matters now, what can wait, and what “done” should mean.
+When gathering requirements, I start with the intended users and how they will understand the flow. For a payment, I ask what the customer sees while waiting and whether the status tells them to wait, retry, or take another action.
 
-## Turning a request into something buildable
+## When the merchant can credit a payment
 
-A business request often arrives as an outcome rather than a feature.
+“Make deposits more reliable” leaves a decision open: which event allows the merchant to credit its ledger?
 
-“Make deposits more reliable” is a useful concern, but it is not yet a backlog item. The team still needs to know which networks are involved, which failure cases matter, what the user should see, and which event allows the business to settle the payment.
+I work through that boundary with the business owner and engineers. In the documented CryptoRails flow, the browser detects incoming funds and gives the customer feedback. The merchant backend credits the ledger after receiving and verifying the signed settlement webhook.
 
-My job is to keep asking those questions until the request has a shape that the team can discuss and test.
+The trade-off is waiting for confirmation and server verification before calling the payment complete. The interface still needs to show progress during that wait. Treating detection as completion would let the screen promise an outcome the backend has yet to verify.
 
-That usually means connecting four things.
+## What I put into acceptance criteria
 
-- The business outcome
-- The user or merchant problem
-- The technical constraint
-- The acceptance condition
+That boundary changes what the team has to test:
 
-If one of these is missing, the team can still start work, but it will probably discover the missing piece halfway through the sprint.
+- Deposit detection updates the interface without marking the payment settled.
+- A delayed confirmation leaves the payment pending.
+- The backend verifies the webhook before updating the ledger.
+- A repeated webhook or retry cannot credit the same payment twice.
 
-## The delivery rhythm
+A successful demo covers only one of these paths. I include the delayed and duplicate cases when defining done with the team.
 
-I maintain the backlog and roadmap, run Scrum ceremonies, and keep the business owner and team members connected. The ceremonies are useful, but the practical work happens between them.
+## Keeping the scope deliverable
 
-I track dependencies, clarify decisions, surface blocked work, and keep new requests from quietly displacing the work already agreed. Sometimes the right decision is to add a story. Sometimes it is to reject a shortcut that would make reconciliation or QA harder later.
+The request also needs agreed networks, failure cases, and responses for the user. I turn those decisions into backlog items, track dependencies, and raise blocked work or competing requests with the business owner.
 
-The product manager is not there to remove every disagreement. The role is to make the disagreement visible early enough that the team can make a deliberate trade-off.
-
-## What I have learned
-
-The best backlog is not the one with the most detail. It is the one where the team understands the problem, the boundary of the work, and the evidence needed to call it complete.
-
-That is especially true for Web3 payments. A feature can look finished in the interface while the transaction is still pending, the wrong network was used, or a duplicate webhook can still credit the same payment twice.
-
-Product work sits in that gap between what the business wants to happen and what the system can prove has happened.
-
-This is a generalised case study. Product-specific business details, internal metrics, and implementation details remain confidential.
+The [CryptoRails workflow](@/notes/cryptorails-transaction-lifecycle.md) shows the deposit and consolidation sequence behind these requirements. Product-specific business details, internal metrics, and implementation details remain confidential.

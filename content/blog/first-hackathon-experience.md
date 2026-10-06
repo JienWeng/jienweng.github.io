@@ -23,44 +23,40 @@ featured = false
 reaction = false
 +++
 
-Our first physical hackathon put four mathematics students into a software-first environment with very little web development experience. The useful lessons came from the messy parts, especially ideation, mentoring, and pitching.
+Janice, Roius, Gwyn, and I entered PayHack 2024 as four mathematics students from UTAR. Only two of us had tried a hackathon; Gwyn had never written code. None of us had much web development experience.
 
-I found myself staring at my phone, thumb hovering over the share button. "Am I really qualified for this?" I thought to myself. "What if we make fools of ourselves?" The doubts crept in like unwanted guests. But then another voice, stronger and more determined, pushed back: "When else will we get a chance like this? We might not be coders, but we know how to solve problems. Isn't that what hackathons are really about?"
+We made the Top 32 from almost 100 teams. Then we had four days to learn enough Vue.js and Flask to build a prototype while juggling internships. Janice travelled from JB to KL for it.
 
-I reached out to my fellow mathematics coursemates: Janice, Roius, and Gwyn. "Hey, want to do something crazy?" I asked, half expecting them to laugh it off. To my surprise, their responses came quickly, filled with enthusiasm despite (or maybe because of) our collective inexperience. Only 2 of us had ever participated in a hackathon before, and Gwyn had never even written a line of code. But there we were, four mathematics students from UTAR, signing up for one of the most competitive hackathons in the country.
+![Team breakfast at PayHack 2024](https://cdn.cosmos.so/25b6ad42-8235-45ae-9505-a2c296a8ca2a?format=jpeg)
 
-The looks we got when we arrived were priceless. "Are you guys from Computer Science?" someone asked, eyeing our team with curiosity. We exchanged glances and grinned. "Nope, we're Math students, haha..." The mixture of surprise and skepticism on their faces was something I'll never forget. In those moments, our outsider status felt both terrifying and strangely useful.
+## The idea and the questions we hadn’t answered
 
-![Our first breakfast together at PayHack 2024 - nervous but excited! The calm before the storm.](https://cdn.cosmos.so/25b6ad42-8235-45ae-9505-a2c296a8ca2a?format=jpeg)
+Our idea estimated carbon footprints from transaction data and explored pooling the savings for trading.
 
-November 30th marked our first day, and it was a blur of ideation and learning. We came up with an idea for an app that visualized transaction carbon footprints and pooled the estimated surplus for trading. On paper, it combined fintech with environmental accounting.
+Johan Nasir’s mentoring sessions felt like a rotan session. “What happens if the carbon credits are manipulated?” “How do you ensure the authenticity of the footprint data?” Each question sent us back to the assumptions behind the demo.
 
-![Getting grilled during our mentoring session - each question pushed us to think deeper about our solution](https://cdn.cosmos.so/b16e0c66-cefb-4cc6-8bf6-de5a087cc513?format=jpeg)
+![Team discussing the prototype with a mentor](https://cdn.cosmos.so/b16e0c66-cefb-4cc6-8bf6-de5a087cc513?format=jpeg)
 
-Then came the intense mentoring sessions with Johan Nasir. He didn't hold back. "What happens if the carbon credits are manipulated?" he'd challenge. "How do you ensure the authenticity of the footprint data?" Another round of rethinking. Each session felt like an intense rotan session, with tough love at its finest. He'd poke holes in our solutions, push us to think deeper, and force us to confront real-world problems that actually needed solving.
+## Keeping the demo alive
 
-The week before the hackathon was a rollercoaster. Competing against almost 100 teams from across Malaysia, we were shocked to make it to the Top 32. When we saw Johan's name among our judges and received the news of our advancement, our excitement was through the roof. But reality quickly set in: we had a major problem. None of us had real web development experience. My knowledge was limited to Python, SQL, and vanilla HTML/CSS/JavaScript.
+We worked through tutorials after our internships. At the hackathon, we took turns sleeping. I couldn’t get a tent, so I used a bench for four-hour naps.
 
-With four days between Tuesday and Friday, we had to make technical decisions while juggling our internships. After researching our options, we settled on Vue.js and Flask. Janice even travelled from JB to KL for this. Every evening after our internships, we'd work through tutorials and try to learn the stack quickly.
+![Working on the prototype overnight](https://cdn.cosmos.so/0d444922-77c4-4d91-b645-fb96b7fd5d17?format=jpeg)
 
-![3 AM and still debugging - running on determination and coffee](https://cdn.cosmos.so/0d444922-77c4-4d91-b645-fb96b7fd5d17?format=jpeg)
-
-The hackathon itself was intense. When exhaustion hit, we took turns napping wherever we could. I couldn't get a tent, so I made do with a random bench for quick 4-hour power naps before jumping back into coding. Everything seemed to be going smoothly until the morning of the submission. At 8:30 AM, just after breakfast and 90 minutes before the deadline, our backend crashed because the information couldn't be parsed properly. In a desperate move, we had to hardcode some components just to make the submission deadline at 10 AM.
+At 8:30 AM on submission day, 90 minutes before the deadline, our backend crashed while parsing information. We hardcoded some components to submit by 10 AM.
 
 ![Presenting our final product: MouManTai - tracking and trading carbon footprints from financial transactions](https://cdn.cosmos.so/0784bdc4-dc31-4b2b-9d5a-2e04677a9ba1?format=jpeg)
 
-We did not make the Top 10, but the final pitches showed me how much the business case shaped the strongest projects. One team's blockchain remittance system stood out because its regulatory research and market validation were as careful as its technical work. I left thinking, "Next time, we need to validate the market earlier."
+## The pitch
 
-The top teams also presented much better than we did. Their pitches connected each feature to a business problem, their demos survived the pressure, and they knew their numbers when the judges pushed back. I made mental notes: "Practice the pitch more. Know your numbers. Be ready for any question."
+We didn’t make the Top 10. A blockchain remittance team stood out because they had researched regulation and validated their market as carefully as they had built the product.
 
-Despite not making the finals, I did win a Samsung monitor in the lucky draw, a small consolation that brought some laughs to our tired team.
+The stronger pitches connected features to business problems, survived the demo pressure, and answered questions with numbers. Next time, I wanted to validate the market earlier and practise the pitch more.
 
-![A silver lining - winning a Samsung monitor in the lucky draw!](https://cdn.cosmos.so/3d119ab7-d3bf-4632-8675-6fbaf1963c08?format=jpeg)
+I did win a Samsung monitor in the lucky draw. That gave our tired team something to laugh about.
 
-Looking back now, the sleepless nights and debugging sessions blur together. I remember the late-night breakthrough when our first feature worked, Johan's smile during the final presentation, and the four of us trying to keep the demo alive.
+![Winning a Samsung monitor in the lucky draw](https://cdn.cosmos.so/3d119ab7-d3bf-4632-8675-6fbaf1963c08?format=jpeg)
 
 ![Jien Weng, Janice, Gwyn and Roius](https://cdn.cosmos.so/266c9030-58ad-4536-9e60-c88edb6df8a9?format=jpeg)
 
-Janice, Roius, and Gwyn took the risk with me even though most of us had never built a web product. Johan kept asking the questions we wanted to avoid. PayNet and JomHack gave four mathematics students a place to test whether our ideas could survive outside a classroom.
-
-The equations and formulas we studied were not enough on their own, but they helped us break down a problem, test assumptions, and keep going when the interface failed. We did not become software engineers in 24 hours. We did learn that four mathematics students could still build something and present it.
+Janice, Roius, and Gwyn took the risk with me. Johan kept asking the questions we wanted to avoid. PayNet and JomHack gave us a place to build and test an idea outside the classroom.
