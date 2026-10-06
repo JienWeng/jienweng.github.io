@@ -1,0 +1,76 @@
+[[collection]]
+type = "art"
+title = "Freelancy"
+subtitle = "Freelancer CRM for clients, projects, and billing."
+content = "A workspace for managing freelance work."
+status = "Live app · Sign-in required"
+link = "https://freelancy-eta.vercel.app"
+link_label = "Live app"
+
+[[collection]]
+type = "art"
+title = "Finance"
+subtitle = "Personal finance dashboard."
+content = "A dashboard for tracking personal finances."
+status = "Live app · Sign-in required"
+link = "https://finance-eight-drab.vercel.app"
+link_label = "Live app"
+
+[[collection]]
+type = "art"
+title = "AI Video Generation Orchestration"
+subtitle = "Pipeline for producing video series."
+content = "Connects AI generation stages to produce a video series."
+status = "In progress"
+# TODO: add link and image when there is something to show
+
+[[collection]]
+type = "art"
+title = "Internal CRM"
+subtitle = "Sales, delivery, and finance in one workflow."
+content = "An internal CRM for Quandatics, designed around the handoffs between sales, delivery, and finance."
+img = "/img/blog/quandatics/deal-to-cash-portfolio.png"
+image_alt = "CRM workflow from qualified lead through sales order and project delivery to payment received"
+image_color = true
+case_study = "blog/quandatics-crm-business-transformation/"
+status = "In progress"
+
+[[collection]]
+type = "art"
+title = "ZakatDAO"
+subtitle = "Smart-contract zakat distribution prototype."
+content = "Uses smart contracts to record and distribute zakat payments."
+img = "/img/projects/zakatdao/banner.webp"
+link = "https://github.com/JienWeng/ZakatDAO"
+
+[[collection]]
+type = "art"
+title = "FacePay"
+subtitle = "Face-recognition payment prototype."
+content = "Tests face recognition as an identity check during payment."
+img = "/img/projects/facepay/facepay.jpg"
+link = "https://github.com/JienWeng/FacePay"
+
+[[collection]]
+type = "art"
+title = "Yappy"
+subtitle = "Conversational app prototype."
+content = "A chat app prototype for testing conversational flows."
+img = "/img/projects/yappy/demo.gif"
+link = "https://github.com/JienWeng/Yappy"
+
+[[collection]]
+type = "art"
+title = "DecimalSat"
+subtitle = "Ground-station and satellite build."
+content = "Assembling a small satellite and ground station, and testing their radio link."
+img = "/img/projects/decimal-sat/assembled-sat.jpeg"
+link = "https://github.com/JienWeng/DecimalSat"
+
+[[collection]]
+type = "art"
+title = "Geospatial Analysis forked from Kepler.gl"
+subtitle = "Monash geospatial analysis and open-data platform."
+content = "A kepler.gl fork for Monash geospatial analysis and open-data sharing around the Klang Valley. In progress."
+img = "/img/projects/kepler/kepler.png"
+link = "https://github.com/JienWeng/kepler.gl"
