@@ -7,4 +7,4 @@ page_template = "page.html"
 generate_feeds = true
 +++
 
-Practical explanations and working ideas from the intersection of business, products, technology, and research. I write to make difficult subjects clearer and more useful.
+Notes on product delivery, business systems, and mathematical research, with derivations and worked examples.

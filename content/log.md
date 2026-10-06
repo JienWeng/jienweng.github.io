@@ -3,8 +3,6 @@ title = "Log"
 description = "One-line site and work history, newest first."
 +++
 
-One line per thing. Newest first.
-
 - **Jul 2026.** Site rework: plainer copy, Now and Colophon pages, figure numbering. Fokker-Planck note published.
 - **Jun 2026.** MLOps tutorial with runnable notebook. Began proprietary AI research as part of Web3 product management and a contractor training engagement with Quandatics Academy.
 - **May 2026.** Tree-based models note.

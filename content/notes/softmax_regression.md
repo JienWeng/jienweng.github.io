@@ -24,21 +24,15 @@ featured = false
 reaction = true
 +++
 
-Softmax regression is what logistic regression grows into when there are more than two classes, and logistic regression itself only really makes sense once you understand odds. So instead of starting at the softmax formula, this note starts all the way back at odds and walks forward:
+Softmax regression extends logistic regression to multiple classes. This derivation starts with odds:
 
 $$
 \text{probability} \to \text{odds} \to \text{log-odds} \to \text{logistic regression} \to \text{softmax regression}.
 $$
 
-By the end, the exponential should not feel like a trick anymore. It is just the machine that turns unrestricted linear scores into positive ratios.
+The [companion notebook](https://www.kaggle.com/code/lyhatt/softmax-from-logistic-regression) contains the runnable examples and was assisted by AI tools.
 
-If you want the full runnable walkthrough, the companion notebook lives on Kaggle:
-
-<https://www.kaggle.com/code/lyhatt/softmax-from-logistic-regression>
-
-That notebook was assisted by AI tools. This note is the written version.
-
-## Start with Probability, Then Ask for More Structure
+## Probability and odds
 
 Suppose we have a binary outcome. Let
 
@@ -98,7 +92,7 @@ $$
 \frac{p}{1-p} = e^{w^T x + b}.
 $$
 
-This is where the exponential enters the story, and it is doing real mathematical work. It appears because it is the inverse of the logarithm, because it guarantees the odds stay positive, and because it converts an unrestricted real-valued score into a valid positive ratio.
+Exponentiation inverts the logarithm and converts the unrestricted score into positive odds.
 
 Now multiply both sides by $(1-p)$:
 
@@ -430,27 +424,3 @@ This is also a good place to be honest about what logistic regression and softma
 This is also where people usually start reaching for nonlinear models. In deep learning, nonlinear functions become popular precisely because they can build more complex decision boundaries than a single linear logit layer can express. They are often used as activation functions inside deeper networks, and that added nonlinearity is what lets the model represent more complicated structure. But that is really another topic. Here the point is to understand the clean linear baseline first.
 
 That is why these models are such good teaching models and such good baselines. When they succeed, they do so for understandable reasons. When they fail, they usually fail in ways that teach us something about the data.
-
-## The Big Picture
-
-At this point the whole thing should feel like one continuous argument, not three unrelated formulas.
-
-We started with probability, then moved to odds:
-
-$$
-\frac{p}{1-p}.
-$$
-
-We took logarithms to obtain log-odds:
-
-$$
-\log \frac{p}{1-p}.
-$$
-
-We modeled the log-odds linearly and solved for the probability, which produced the sigmoid and logistic regression.
-
-Then we asked what happens when there are many classes instead of two. The same need appears again: we must turn unrestricted scores into valid positive ratios, and then normalize them into probabilities. That requirement leads directly to the softmax formula.
-
-So logistic regression is a model for binary log-odds, and softmax regression is the same idea with more classes. The exponential appears because it converts linear scores into positive ratios, and gradient descent is the engine underneath both. Learn them together; separately they both look more arbitrary than they are.
-
-Natural continuations from here: cross-entropy from maximum likelihood, and the step from softmax regression to a neural network, which is just softmax with learned features. Corrections welcome in the comments.

@@ -16,13 +16,9 @@ lang = "en"
 toc = true
 +++
 
-This is the written companion to the [**Introduction to MLOps** slides](../../slides/2026/intro-to-mlops/). It follows the deck section by section: the same chain of ideas, the same figures, and then the hands-on the deck builds toward. The slides give the picture in a room; this note lets you read it at your own pace and, more importantly, **run** it. By the end you will have tracked a real machine-learning experiment, compared two runs, and inspected them in a web UI.
+This companion to the [Introduction to MLOps slides](../../slides/2026/intro-to-mlops/) covers reproducibility, CI/CD, and experiment tracking with MLflow. The example tracks two training runs and compares them in the web UI.
 
-The chain the deck walks, and so will we:
-
-> **reproducibility → the software cycle → DevOps → the ML lifecycle → MLOps → MLflow → a hands-on.**
-
-> **In a hurry?** Skip straight to the [**hands-on**](#hands-on-track-your-first-experiment), or just `git clone` the companion repo, [**github.com/JienWeng/mlops-tutorial**](https://github.com/JienWeng/mlops-tutorial), and run it. The sections above the hands-on are the *why*; the hands-on is the *how*.
+Go straight to the [hands-on](#hands-on-track-your-first-experiment), or clone the [companion repository](https://github.com/JienWeng/mlops-tutorial).
 
 ## Why reproducibility, and why ML makes it hard
 
@@ -365,13 +361,5 @@ You have implemented the smallest real MLOps loop: **parameterise → run → lo
 4. **Monitor** the served model's predictions, closing the loop back to data.
 
 That list is exactly the MLOps workflow from earlier. You have now built its first two links.
-
-## Take-home message
-
-Research, and production work too, should be **reproducible** and, where possible, **open**. If your work involves machine learning, that means using dedicated tools to make experiments reproducible rather than relying on memory and scattered notebooks.
-
-Adopting these habits in your daily workflow pays off quickly: time saved in the long run, engineering skill gained, and trust earned among collaborators. And MLflow in particular is **not just for machine learning**: it is a capable logbook for tracking *any* computational experiment and keeping your results reproducible over time.
-
----
 
 > **Source and licence.** This tutorial follows and adapts the lecture [“An introduction to MLOps”](https://aboucaud.github.io/slides/2023/lsst-france-mlops) by Alexandre Boucaud (LSST France, Lyon, December 2023), licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). The figures come from the accompanying [slides](../../slides/2026/intro-to-mlops/), re-hosted under the same licence; individual captions credit their original sources. This tutorial and hands-on example are my own adaptation and are also shared under CC BY-SA 4.0.

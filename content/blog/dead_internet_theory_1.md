@@ -1,6 +1,6 @@
 +++
 title = "Dead Internet Theory #1"
-description = "How much we see on Internet is real?"
+description = "Why polished posts can feel disconnected from the people behind them."
 date = 2025-07-22
 updated = 2025-07-22
 draft = false
@@ -23,16 +23,12 @@ featured = false
 reaction = false
 +++
 
-Lately, LinkedIn and Reddit have started to feel different to me. I keep seeing polished posts that say the right things but do not feel connected to a real person, and I am still unsure whether that is a real shift or my own overreaction.
+LinkedIn and Reddit have started to feel different. I keep seeing polished posts that say the right things but feel disconnected from a person. I’m unsure whether that’s a real shift or my own overreaction.
 
 ![You can't tell whether the experience is real or not](https://cdn.cosmos.so/b77a432b-7713-4b10-879d-e8256d284766?format=jpeg)
 
-I used ChatGPT to help write some content in the past. When I read it back, I could tell that it did not sound like anything I had actually experienced. The sentences were clean enough, but the experience behind them felt artificial. I am not against using AI as a tool. I am against publishing words that have no person left inside them.
+I used ChatGPT to help write content in the past. Reading it back, I could tell it didn’t sound like anything I had experienced. The sentences were clean; the experience felt artificial.
 
-That is the part I notice while scrolling. The posts are polished, agreeable, and strangely empty. Reading them feels like shouting into a void where nobody is really listening.
+Chatbots are useful for proofreading, restructuring, and catching the sentence I somehow wrote twice. They should not supply the experience itself. I would rather read a long-ass, badly organised article by someone who was there than a perfect post assembled from general opinions.
 
-Social media, LinkedIn, and Reddit feel different now. I cannot tell whether there is more bot activity, more generated content, or whether I have become more sensitive to it. Either way, automated perfection is starting to replace the awkward signs that a person was actually there.
-
-Chatbots are useful for proofreading, restructuring, and catching the sentence I somehow wrote twice. They should not become the source of the experience itself. I would rather read a long-ass article that is badly organised but clearly written by someone who was there than another perfect post assembled from general opinions.
-
-I do not know whether this is the dead Internet Theory or only a change in my own attention. If you have noticed the same thing, email me at [contact@jienweng.com](mailto:contact@jienweng.com). I am curious what I am missing.
+I can’t tell whether I’m seeing more bots, more generated content, or becoming more sensitive to both. If you’ve noticed it too, [email me](mailto:laijienweng@gmail.com).

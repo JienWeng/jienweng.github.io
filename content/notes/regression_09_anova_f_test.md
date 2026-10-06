@@ -163,15 +163,4 @@ $$t = \frac{\hat{\beta}\_1}{\sqrt{MSE / S\_{xx}}} = \frac{1.7}{\sqrt{0.3667 / 10
 
 and indeed $t^2 \approx 78.82 = F$. The critical values match too: $t\_{0.025,\, 3} = 3.182$ and $3.182^2 \approx 10.13$.
 
-## Summary
-
-The ANOVA framework gives six results:
-
-- The F-test asks whether the model explains anything at all: $H\_0: \beta\_1 = \cdots = \beta\_k = 0$ against the alternative that at least one slope is nonzero.
-- The decomposition $SST = SSR + SSE$ from the R-squared post carries over, with degrees of freedom $(n-1) = (p-1) + (n-p)$.
-- Mean squares put the components on a comparable scale: $MSR = SSR/(p-1)$ and $MSE = SSE/(n-p)$, with $E(MSE) = \sigma^2$ always and $E(MSR) > \sigma^2$ only when some slope is nonzero.
-- The statistic $F = MSR/MSE$ follows $F\_{p-1,\, n-p}$ under $H\_0$, and large values reject.
-- In simple linear regression, $F = t^2$: the overall F-test and the slope t-test are the same test.
-- The ANOVA table organizes the sums of squares, degrees of freedom, and the F statistic in one place.
-
 A significant F tells us the model is better than no model; it does not tell us which predictors are responsible, whether the linear form is right, or whether the model predicts well out of sample. Those questions belong to the individual t-tests, residual diagnostics, and validation on new data.

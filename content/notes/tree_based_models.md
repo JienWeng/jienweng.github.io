@@ -24,7 +24,7 @@ featured = false
 reaction = true
 +++
 
-A single decision tree is powerful but unstable. Nearly everything about Random Forests and XGBoost follows from that one sentence, so that is where this note starts, not at the formulas. Forests and boosting are just two different answers to the instability problem.
+Decision trees split data into regions using a sequence of rules. This note derives the tree, then shows how Random Forests average trees and XGBoost builds them sequentially.
 
 The path is:
 
@@ -36,7 +36,7 @@ Intuition first, but the math is written out in full. I dislike formulas that ap
 
 > **Run it yourself.** The worked example is collected in a runnable notebook: [**download `tree-based-models.ipynb`**](../../notebooks/tree-based-models.ipynb). It uses `numpy`, `scikit-learn`, and (optionally) `xgboost`.
 
-## Why People Reach for Trees, Random Forests, and XGBoost
+## Choosing a tree model
 
 The motivation usually looks like this:
 
@@ -330,15 +330,3 @@ If you want to read real implementations, start here:
 - `sklearn.tree.DecisionTreeClassifier` for tree splits, impurity, and pruning logic.
 - `sklearn.ensemble.RandomForestClassifier` for bagging and feature subsampling.
 - `xgboost.XGBClassifier` for second-order boosting with regularization.
-
-## The Big Picture
-
-We started with simple decision rules. That gave us decision trees.
-
-Decision trees are powerful but unstable, so we average them. That gives us bagging, and then Random Forests.
-
-Random Forests reduce variance but still leave bias on the table, so we build trees sequentially to correct errors. That gives us boosting, and XGBoost.
-
-Trees define nonlinear partitions, bagging stabilizes them, boosting makes them accurate. That is the whole story, and every formula above is one of those three moves written out.
-
-At some point I may extend the notebook with hyperparameter tuning and a multi-class example. If you want that sooner, leave a comment.

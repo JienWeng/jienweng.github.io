@@ -148,15 +148,4 @@ Common corrections include:
 
 In regression, the overall model significance is typically assessed using the F-test, which tests all predictors simultaneously. The next note develops that test through ANOVA.
 
-## Summary
-
-Hypothesis testing for regression coefficients rests on six points:
-
-- The t-statistic $t = \hat{\beta}\_j / SE(\hat{\beta}\_j)$ follows $t\_{n-p}$ under $H\_0: \beta\_j = 0$.
-- Reject $H\_0$ when $|t| > t\_{\alpha/2, n-p}$ or equivalently when $p\text{-value} < \alpha$.
-- For $\beta\_1$ in SLR: $t = S\_{xy}/\sqrt{MSE \cdot S\_{xx}}$ with $n - 2$ degrees of freedom.
-- Testing $\beta\_1 = 0$ is equivalent to testing $\rho = 0$.
-- Confidence intervals and hypothesis tests provide equivalent information.
-- Always consider practical significance alongside statistical significance.
-
 The next note examines the ANOVA framework and its F-test for overall model significance.

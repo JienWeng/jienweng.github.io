@@ -173,13 +173,4 @@ Second, plain $R^2$ never decreases when a predictor is added. Since OLS minimiz
 
 Third, a high $R^2$ is not evidence of causation, and it is not a measure of predictive performance on new data. It is computed on the same observations used to fit the model, so it says nothing about how the model generalizes out of sample.
 
-## Summary
-
-The sum-of-squares decomposition gives four useful results:
-
-- $SST = SSR + SSE$ decomposes total variability into explained and unexplained components.
-- $R^2 = SSR/SST = 1 - SSE/SST$ measures the proportion of variance explained.
-- For simple linear regression, $R^2 = r^2 = S\_{xy}^2/(S\_{xx} \cdot S\_{yy})$, proven by expressing SSR in terms of $S\_{xx}$ and $S\_{xy}$.
-- Adjusted $R^2$ penalizes for model complexity in multiple regression.
-
 The next note derives the standard errors of $\hat{\beta}\_0$ and $\hat{\beta}\_1$ using $S\_{xx}$ and MSE.

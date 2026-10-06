@@ -1,6 +1,6 @@
 +++
 title = "Gradient Descent Algorithm Explained"
-description = "We take a deep dive into the Gradient Descent algorithm, its working principles from a mathematical angle."
+description = "The gradient descent update rule, worked examples, and the effect of the learning rate."
 date = 2025-11-30
 updated = 2025-11-30
 draft = false
@@ -200,7 +200,7 @@ But all of this hangs on the choice of learning rate $\alpha$. Too large and the
 
 ## Known Issues of Gradient Descent
 
-While gradient descent is a powerful optimization algorithm, it does have some known issues. In multivariate functions, the presence of saddle points can affect the convergence. Saddle points are points where the gradient is zero, but they are neither local minima nor local maxima. In high-dimensional spaces, saddle points are more prevalent than local minima, and gradient descent can get stuck at these points, leading to slow convergence or failure to find the global minimum. A popular example is the function $f(x, y) = x^2 - y^2$, which has a saddle point at $(0, 0)$. The direction vector at this point is zero, and gradient descent may struggle to escape this point.
+Saddle points can affect convergence in multivariate functions. Saddle points are points where the gradient is zero, but they are neither local minima nor local maxima. In high-dimensional spaces, saddle points are more prevalent than local minima, and gradient descent can get stuck at these points, leading to slow convergence or failure to find the global minimum. A popular example is the function $f(x, y) = x^2 - y^2$, which has a saddle point at $(0, 0)$. The direction vector at this point is zero, and gradient descent may struggle to escape this point.
 
 {{ figure(src="https://cdn.cosmos.so/41b26430-2fde-4cfb-8d2b-a9debca6d4ee?format=jpeg", alt="Gradient Descent Saddle Point", caption="Gradient Descent Saddle Point") }}
 
@@ -208,12 +208,8 @@ Saddle points can be handled with noise, momentum, or second-order methods that 
 
 <hr>
 
-## Conclusion
+## Video walkthrough
 
-That is gradient descent: a one-line update rule used throughout machine learning.
-
-The rule is simple, but its behaviour depends on the geometry of the objective and the choice of learning rate.
-
-For a visual explanation, this StatQuest video is useful:
+For a visual explanation, see StatQuest:
 
 {{ youtube(id="sDv4f4s2SB8", caption="Gradient Descent, Step-by-Step | StatQuest") }}

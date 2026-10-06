@@ -24,19 +24,13 @@ featured = false
 reaction = true
 +++
 
-Most explanations of the Fokker-Planck equation start too late. They write down a partial differential equation for a density, call one term "drift" and the other "diffusion", and move on. That is correct, but it hides where the equation comes from.
-
-The cleaner way to think about it is to start one step earlier, with a single stochastic trajectory. A stochastic differential equation describes *one* random path. But one path tells you almost nothing. What we usually want is the distribution: given where the system started, where is it likely to be at time $t$? The Fokker-Planck equation is the deterministic law that this distribution obeys.
+A stochastic differential equation describes a random path. The Fokker-Planck equation describes how its probability density evolves. I derive that connection, solve the density equation in Python, and compare it with simulated Ornstein-Uhlenbeck paths and the exact solution.
 
 So the real chain is:
 
 $$
 \text{SDE} \to \text{ensemble of paths} \to \text{density } p(x,t) \to \text{Fokker-Planck PDE} \to \text{stationary law}.
 $$
-
-Once that chain is visible, the equation stops looking like a definition to memorize. It becomes the obvious bookkeeping for how probability mass flows: drift transports it, diffusion spreads it.
-
-Start with one stochastic differential equation, simulate many paths, and the cloud of points begins to look like a density. This note follows that path to the Fokker-Planck equation, solves it in Python, and checks the result against an Ornstein-Uhlenbeck example with a known closed form.
 
 > **Run it yourself.** Every code block below is collected in a runnable Jupyter notebook: [**download `fokker-planck-sde.ipynb`**](../../notebooks/fokker-planck-sde.ipynb). It only needs `numpy` and `matplotlib` (`pip install numpy matplotlib`), and runs top to bottom.
 
@@ -322,20 +316,4 @@ A few things trip people up when they take this beyond the OU example.
 
 **Higher dimensions.** In $d$ dimensions the drift becomes a vector and the diffusion a matrix $D = \tfrac12 \sigma \sigma^\top$, and the equation reads $\partial_t p = -\nabla\!\cdot(\boldsymbol\mu p) + \nabla\!\cdot(\nabla\!\cdot(D\, p))$. The grid solver stops scaling, and Monte Carlo becomes the practical method. That crossover is why simulation dominates high-dimensional problems.
 
-## The Big Picture
-
-At this point the pieces should feel like one continuous argument rather than a definition dropped from the sky.
-
-We started with an SDE, a rule for one random trajectory, and simulated it with Euler-Maruyama. One path is unpredictable, but the ensemble of paths forms a density $p(x, t)$. Applying Ito's lemma to a test function and integrating by parts turned the randomness of the SDE into a deterministic PDE for that density, the Fokker-Planck equation:
-
-$$
-\frac{\partial p}{\partial t} = -\frac{\partial}{\partial x}\big[\mu\, p\big] + \frac{\partial^2}{\partial x^2}\!\left[\tfrac{1}{2}\sigma^2\, p\right].
-$$
-
-Reading it as a conservation law $\partial_t p = -\partial_x J$ exposed its two forces: drift transports probability, diffusion spreads it. Setting the current to zero gave the stationary distribution. And an Ornstein-Uhlenbeck example, solvable in closed form, let us check three independent routes, Monte Carlo, a from-scratch PDE solver, and the exact Gaussian, against the same hand-computed numbers.
-
-So the SDE and the Fokker-Planck equation are two views of one process. The SDE is the microscopic rule for a single sample; the Fokker-Planck equation is the macroscopic law for the whole probability cloud. This is the same duality that runs through the rest of the stochastic toolkit: the *forward* Kolmogorov equation here evolves densities in time, while the *backward* Kolmogorov equation evolves expectations and is the object behind Feynman-Kac and option pricing.
-
-I think this topic reads better when the SDE is taken as the starting point and the PDE is derived as its consequence, rather than the other way around. The mathematics carries the weight, the OU example makes the abstraction concrete, and the three-way agreement closes the loop.
-
-If you think there is a better example, a cleaner derivation, or a natural extension, feel free to suggest it. From here the obvious next steps are the backward Kolmogorov equation and Feynman-Kac, Langevin dynamics as a sampler, and the jump from these scalar equations to their high-dimensional, matrix-diffusion form.
+The forward Kolmogorov equation evolves densities; the backward equation evolves expectations and leads to Feynman-Kac. That is a useful next step from this example.

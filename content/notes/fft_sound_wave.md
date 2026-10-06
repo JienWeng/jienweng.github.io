@@ -32,7 +32,7 @@ $$
 \text{sound wave} \to \text{samples} \to \text{DFT} \to \text{FFT} \to \text{spectrum}.
 $$
 
-We build up the picture of sound as a sum of sinusoids, get the DFT as its discrete version, and then let the structure of the DFT matrix hand us the Cooley-Tukey FFT almost for free. At the end we run the whole thing on a real sound wave, implemented from scratch in Python.
+I derive the DFT from sampled sinusoids, then use its matrix structure to derive the Cooley-Tukey FFT. The Python example recovers the frequencies in a synthetic sound wave.
 
 > **Run it yourself.** Every code block below is collected in a runnable Jupyter notebook: [**download `fft-sound-wave.ipynb`**](../../notebooks/fft-sound-wave.ipynb). It only needs `numpy` and `matplotlib` (`pip install numpy matplotlib`), and runs top to bottom.
 
@@ -584,23 +584,3 @@ A Hann window tapers the signal smoothly to zero at both ends, which suppresses 
 ## Real Input: A Slightly Faster Variant
 
 When the input is real, `numpy.fft.rfft` returns only the non-redundant half of the spectrum and is about twice as fast as the full complex FFT. In from-scratch code the same idea can be implemented by exploiting the conjugate symmetry directly. For production use, `numpy.fft.rfft` or any mature FFT library (FFTW, PocketFFT, cuFFT) is almost always the right choice. The recursive implementation above is for understanding, not for speed.
-
-## The Big Picture
-
-At this point the whole thing should feel like one continuous argument, not three unrelated algorithms.
-
-We started with a sound wave in the time domain and asked which frequencies it contains. Sampling gave us a finite sequence $x_n$. Projecting that sequence onto a basis of complex exponentials gave the DFT:
-
-$$
-X_k = \sum_{n=0}^{N-1} x_n \, e^{-i 2\pi k n / N}.
-$$
-
-The DFT is a linear map, so it can be written as a matrix product $X = F_N x$. Computed naively, that is $O(N^2)$.
-
-We then exploited the structure of $F_N$. The roots of unity satisfy a recursion, so the $N$-point DFT splits into two $N/2$-point DFTs combined by $N/2$ butterflies. That gives the recurrence $T(N) = 2T(N/2) + O(N)$ and the complexity $O(N \log N)$.
-
-Finally, we tested the whole pipeline on a synthetic sound wave and recovered the three input tones as three clean peaks in the magnitude spectrum.
-
-So in the end, the DFT is the definition and the FFT is the algorithm. The DFT says what we want. The FFT says how to get it quickly. The exponential keeps showing up for the same reason it does in logistic and softmax regression: it is the right basis when the underlying object has multiplicative structure. Roots of unity are multiplicative. Splitting them in half, again and again, is exactly what turns $N^2$ into $N \log N$.
-
-If I keep going with this, the next stops are the short-time Fourier transform and spectrograms, and after that the jump from Fourier bases to wavelets. Corrections and better examples are welcome in the comments.
