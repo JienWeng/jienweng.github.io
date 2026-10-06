@@ -45,8 +45,8 @@
       </div>
       {% if item.subtitle or item.link %}
       <div class="collection-subtitle collection-credential-meta">
-        {% if item.subtitle %}{{ item.subtitle }}{% endif %}
-        {% if item.subtitle and item.link %}<span aria-hidden="true"> · </span>{% endif %}
+        {% if item.issuer %}<span class="credential-issuer">{{ item.issuer }}</span>{% endif %}
+        {% if item.subtitle %}<span>{{ item.subtitle }}</span>{% endif %}
         {% if item.link %}<a href="{{ item.link }}" target="_blank" rel="noreferrer noopener">View credential</a>{% endif %}
       </div>
       {% endif %}
@@ -78,7 +78,7 @@
     <div class="collection-links">
       {% if item.pdf %}<a href="{{ item.pdf }}" target="_blank" rel="noreferrer noopener">PDF</a>{% endif %}
       {% if item.pdf and item.link %}<span aria-hidden="true"> · </span>{% endif %}
-      {% if item.link %}<a href="{{ item.link }}" target="_blank" rel="noreferrer noopener">DOI</a>{% endif %}
+      {% if item.link %}<a href="{{ item.link }}" target="_blank" rel="noreferrer noopener">{{ item.link_label | default(value="DOI") }}</a>{% endif %}
     </div>
     {% endif %}
   </div>

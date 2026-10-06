@@ -14,7 +14,7 @@
       {% endif %}
       <h1 class="article-title">{{ page.title }}</h1>
       {% if page.date %}
-      <p class="rail-note">{{ page.date | date(format="%b %-d, %Y") }}</p>
+      <p class="rail-note article-byline"><a href="{{ get_url(path='/bio/') }}">{{ config.extra.author }}</a><span>{{ page.date | date(format="%b %-d, %Y") }}</span><span>{{ page.reading_time }} min read</span></p>
       {% endif %}
   </header>
   <aside class="rail{% if page.extra.portrait %} about-rail{% endif %}">

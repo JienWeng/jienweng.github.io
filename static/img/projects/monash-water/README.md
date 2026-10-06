@@ -1,0 +1,1 @@
+Platform screenshot captured from https://monash-water-platform.vercel.app/ on 2026-10-06. CitizenFlood reporting screen copied from the platform repository public app assets. The operator dashboard is linked separately; its plant API was unavailable during capture.

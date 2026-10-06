@@ -1,6 +1,6 @@
 base_url = "https://jienweng.github.io"
 title = "Jien Weng"
-description = "Web3 Product Manager, Business Transformation Consultant, and Data Science & Machine Learning Trainer."
+description = "Jien Weng, Product Manager & Researcher working on Web3 payments, business transformation, and applied AI research."
 default_language = "en"
 output_dir = "public"
 compile_sass = true
@@ -35,6 +35,7 @@ author = "Jien Weng"
 email = "laijienweng@gmail.com"
 github = "https://github.com/jienweng"
 linkedin = "https://linkedin.com/in/jienweng"
+x = "https://x.com/jienweng_"
 scholar = "https://scholar.google.com/citations?user=2siljxAAAAAJ&hl=en"
 orcid = "https://orcid.org/0009-0001-2543-3887"
 primary_accent = "ochre"
@@ -46,7 +47,7 @@ force_theme = ""
 goatcounter = "jienweng"
 
 # Search Console verification tokens (paste content values from the meta tag method)
-google_site_verification = "lEVDsYCFTWIXyy8uMAXy7BJM0v5zRns_CEjn7XcQTRE"
+google_site_verification = "G_DTtAIvt6bJ7eDssFUP03Kq408RfaGiM69bgFTWHgc"
 bing_site_verification = "958D991A9C82A2EFB2FF8A29B9EB9115"
 
 [extra.giscus]

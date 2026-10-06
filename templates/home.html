@@ -1,5 +1,4 @@
 {% extends "base.html" %}
-{% block title %}{{ config.title }} · Product management{% endblock title %}
 {% block body_class %}home{% endblock body_class %}
 
 
@@ -9,8 +8,8 @@
 <main id="main" class="portfolio-main">
   <section class="portfolio-hero" aria-labelledby="intro-title">
     <div class="hero-copy">
-      <h1 id="intro-title"><span>Business needs<span class="orange">.</span></span><span>Buildable products<span class="orange">.</span></span></h1>
-      <p class="hero-intro">I’m Jien Weng. I manage Web3 payment delivery and help teams build internal systems.</p>
+      <h1 id="intro-title"><span>Product Manager</span><span>&amp; Researcher</span></h1>
+      <p class="hero-intro">I’m Jien Weng. I work on Web3 payments, business transformation, and applied AI research.</p>
       <div class="hero-links">
         <a class="portfolio-button" href="{{ get_url(path='/cv/') }}">View CV <svg aria-hidden="true"><use href="#arrow-right"/></svg></a>
         <a class="portfolio-link" href="mailto:{{ config.extra.email }}?subject=Opportunity">Email me <svg aria-hidden="true"><use href="#arrow-right"/></svg></a>
@@ -27,8 +26,8 @@
         <p class="project-intro">Coordinating engineers on payment requirements, backlog, and acceptance criteria.</p>
         <div class="project-evidence">
           <figure class="payment-artifact">
-            <a href="{{ get_url(path='img/projects/cryptorails-deposit-flow.png') }}" aria-label="View the full-size CryptoRails payment workflow"><img width="3600" height="2060" src="{{ get_url(path='img/projects/cryptorails-deposit-flow.png') }}" loading="lazy" alt="CryptoRails deposit flow: customer address, browser detection, server-side consolidation, and settlement through a verified signed webhook."></a>
-            <figcaption>Deposit to settlement <a href="{{ get_url(path='img/projects/cryptorails-deposit-flow.png') }}">View full-size diagram <svg aria-hidden="true"><use href="#arrow-right"/></svg></a></figcaption>
+            <a href="{{ get_url(path='img/projects/cryptorails-deposit-flow-excalidraw.svg') }}" aria-label="View the full-size CryptoRails payment workflow"><img width="1600" height="898" src="{{ get_url(path='img/projects/cryptorails-deposit-flow-excalidraw.svg') }}" loading="lazy" alt="CryptoRails deposit flow: customer address, browser detection, server-side consolidation, and settlement through a verified signed webhook."></a>
+            <figcaption>Deposit to settlement <a href="{{ get_url(path='img/projects/cryptorails-deposit-flow-excalidraw.svg') }}">View full-size diagram <svg aria-hidden="true"><use href="#arrow-right"/></svg></a></figcaption>
           </figure>
           <div class="project-role">
             <span class="role-label">Delivery decision</span>
@@ -47,18 +46,41 @@
         <p class="project-intro">Mapping sales, project, and finance handovers for an internal CRM.</p>
         <div class="project-evidence">
           <figure class="crm-artifact">
-            <a href="{{ get_url(path='img/blog/quandatics/deal-to-cash-portfolio.png') }}" aria-label="View the full-size CRM deal-to-cash diagram"><img src="{{ get_url(path='img/blog/quandatics/deal-to-cash-portfolio.png') }}" width="1666" height="944" loading="lazy" alt="CRM deal-to-cash workflow connecting qualified leads, sales orders, project milestones, and payments."></a>
-            <figcaption>Deal-to-cash workflow <a href="{{ get_url(path='img/blog/quandatics/deal-to-cash-portfolio.png') }}">View full-size diagram <svg aria-hidden="true"><use href="#arrow-right"/></svg></a></figcaption>
+            <a href="{{ get_url(path='img/blog/quandatics/deal-to-cash-excalidraw.svg') }}" aria-label="View the full-size CRM deal-to-cash diagram"><img width="1600" height="1079" src="{{ get_url(path='img/blog/quandatics/deal-to-cash-excalidraw.svg') }}" loading="lazy" alt="CRM deal-to-cash workflow connecting qualified leads, sales orders, project milestones, and payments."></a>
+            <figcaption>Deal-to-cash workflow <a href="{{ get_url(path='img/blog/quandatics/deal-to-cash-excalidraw.svg') }}">View full-size diagram <svg aria-hidden="true"><use href="#arrow-right"/></svg></a></figcaption>
           </figure>
           <div class="project-role">
             <span class="role-label">Project trade-off</span>
             <h3>Why build internally?</h3>
             <p>Building around the team’s handoffs after Salesforce needed workarounds, while taking on development and support.</p>
+            <a class="portfolio-link" href="https://app.quandatics.com">Open CRM</a>
             <a class="portfolio-link" href="{{ get_url(path='/blog/quandatics-crm-business-transformation/') }}">Read case study <svg aria-hidden="true"><use href="#arrow-right"/></svg></a>
           </div>
         </div>
       </div>
     </article>
+
+    {% set projects = load_data(path="content/projects/items.toml") %}
+    <details class="more-work">
+      <summary><span class="more-work-label">View more work</span><span class="less-work-label">Show less work</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
+      <div class="more-work-content">
+      {% for project in projects.collection %}
+      {% if project.id == "videoflow" or project.id == "monash-water" %}
+        <article class="portfolio-project" aria-labelledby="{{ project.id }}-title">
+          <div class="project-rail" aria-hidden="true"><span class="project-number">{% if project.id == "videoflow" %}03{% else %}04{% endif %}</span><span class="rail-line"></span><span class="rail-label">{{ project.category }}</span></div>
+          <div class="project-content"><h2 id="{{ project.id }}-title">{{ project.title }}</h2><p class="project-intro">{{ project.subtitle }}</p>
+            <div class="project-evidence">
+              <figure class="project-artifact"><a href="{{ get_url(path=project.case_study) }}"><img width="1280" height="853" src="{{ get_url(path=project.still_img | default(value=project.img)) }}"{% if project.still_img %} data-animated data-still="{{ get_url(path=project.still_img) }}" data-gif="{{ get_url(path=project.img) }}"{% endif %} loading="lazy" alt="{{ project.image_alt }}"></a><figcaption>{{ project.caption }}{% if project.still_img %}<button class="motion-toggle" type="button" hidden>Pause animation</button>{% endif %}</figcaption></figure>
+              <div class="project-role"><span class="role-label">{{ project.status }}</span><h3>{% if project.id == "videoflow" %}A studio for web &amp; desktop{% else %}Field reports &amp; operator tools{% endif %}</h3><p>{{ project.content }}</p><a class="portfolio-link" href="{{ get_url(path=project.case_study) }}">Explore {{ project.title }} <svg aria-hidden="true"><use href="#arrow-right"/></svg></a></div>
+            </div>
+          </div>
+        </article>
+      {% endif %}
+      {% endfor %}
+      <a class="portfolio-link work-archive-link" href="{{ get_url(path='/projects/') }}">All projects <svg aria-hidden="true"><use href="#arrow-right"/></svg></a>
+      <button class="more-work-collapse" type="button" hidden>Show less work <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 15 6-6 6 6"/></svg></button>
+      </div>
+    </details>
   </section>
 
   <section class="portfolio-writing" aria-labelledby="writing-title">

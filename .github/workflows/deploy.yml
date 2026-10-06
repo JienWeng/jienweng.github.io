@@ -29,6 +29,9 @@ jobs:
           zola build
           touch public/.nojekyll
 
+      - name: Check SEO metadata and local links
+        run: python3 scripts/check_site_seo.py public
+
       - name: Publish site while preserving pull request previews
         uses: JamesIves/github-pages-deploy-action@v4
         with:

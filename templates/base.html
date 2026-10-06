@@ -4,6 +4,7 @@
   {% set title_text = config.title %}
   {% if page %}{% set title_text = page.title ~ " · " ~ config.title %}{% endif %}
   {% if section and section.title %}{% set title_text = section.title ~ " · " ~ config.title %}{% endif %}
+  {% if section and section.path == "/" %}{% set title_text = config.title ~ " | Product Manager & Researcher" %}{% endif %}
 
   {% set desc_text = config.description %}
   {% if page and page.description %}{% set desc_text = page.description %}{% endif %}
@@ -13,10 +14,23 @@
   {% if page %}{% set canonical_url = page.permalink %}{% endif %}
   {% if section and section.permalink %}{% set canonical_url = section.permalink %}{% endif %}
 
-  {% set og_type = "website" %}
-  {% if page %}{% set og_type = "article" %}{% endif %}
+  {% if taxonomy %}
+    {% if term %}
+      {% set title_text = term.name ~ " · " ~ config.title %}
+      {% set desc_text = "Writing by Jien Weng about " ~ term.name ~ ". Browse articles, technical notes, and worked examples." %}
+      {% set canonical_url = term.permalink %}
+    {% else %}
+      {% set taxonomy_title = taxonomy.name | title %}
+      {% set title_text = taxonomy_title ~ " · " ~ config.title %}
+      {% set desc_text = "Browse Jien Weng’s writing by " ~ taxonomy.name ~ ", covering product management, Web3, AI, mathematics, and research." %}
+      {% set canonical_url = get_url(path='/' ~ taxonomy.name ~ '/') %}
+    {% endif %}
+  {% endif %}
 
-  {% set og_image = get_url(path='img/og-partner.png') %}
+  {% set og_type = "website" %}
+  {% if page and page.date %}{% set og_type = "article" %}{% endif %}
+
+  {% set og_image = get_url(path='img/og-partner.jpg') %}
   {% if page and page.extra.cover %}{% set og_image = get_url(path=page.extra.cover) %}{% endif %}
   {% if section and section.extra.cover %}{% set og_image = get_url(path=section.extra.cover) %}{% endif %}
 
@@ -30,7 +44,7 @@
   <meta name="description" content="{{ desc_text }}">
   <meta name="author" content="{{ config.extra.author }}">
   {% if keywords_text %}<meta name="keywords" content="{{ keywords_text }}">{% endif %}
-  <meta name="robots" content="index,follow,max-image-preview:large">
+  {% block robots %}<meta name="robots" content="index,follow,max-image-preview:large">{% endblock robots %}
   <title>{% block title %}{{ title_text }}{% endblock title %}</title>
   <link rel="canonical" href="{{ canonical_url }}">
   <link rel="alternate" hreflang="en" href="{{ canonical_url }}">
@@ -55,6 +69,7 @@
   <meta property="og:site_name" content="{{ config.title }}">
   <meta property="og:locale" content="en_US">
   <meta property="og:image" content="{{ og_image }}">
+  <meta property="og:image:alt" content="{{ title_text }}">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
 
@@ -62,6 +77,8 @@
   <meta name="twitter:title" content="{{ title_text }}">
   <meta name="twitter:description" content="{{ desc_text }}">
   <meta name="twitter:image" content="{{ og_image }}">
+  <meta name="twitter:image:alt" content="{{ title_text }}">
+  <meta name="twitter:site" content="@jienweng_">
 
   {% if page and page.date %}
   <meta property="article:published_time" content="{{ page.date }}">
@@ -87,6 +104,7 @@
   {% set same_as = [] %}
   {% if config.extra.github %}{% set_global same_as = same_as | concat(with=config.extra.github) %}{% endif %}
   {% if config.extra.linkedin %}{% set_global same_as = same_as | concat(with=config.extra.linkedin) %}{% endif %}
+  {% if config.extra.x %}{% set_global same_as = same_as | concat(with=config.extra.x) %}{% endif %}
   {% if config.extra.scholar %}{% set_global same_as = same_as | concat(with=config.extra.scholar) %}{% endif %}
   {% if config.extra.orcid %}{% set_global same_as = same_as | concat(with=config.extra.orcid) %}{% endif %}
 
@@ -100,7 +118,8 @@
         "name": {{ config.extra.author | json_encode | safe }},
         "url": {{ config.base_url | json_encode | safe }},
         "email": {{ config.extra.email | json_encode | safe }},
-        "jobTitle": "Independent Consultant & Product Manager",
+        "jobTitle": "Product Manager & Researcher",
+        "image": {{ get_url(path="img/profile.webp") | json_encode | safe }},
         "knowsAbout": ["Business transformation", "Product management", "Artificial intelligence", "Data science", "Machine learning", "Web3"],
         "sameAs": {{ same_as | json_encode | safe }}
       },
@@ -112,16 +131,28 @@
         "description": {{ config.description | json_encode | safe }},
         "inLanguage": "en",
         "publisher": { "@id": {{ config.base_url ~ "/#person" | json_encode | safe }} }
-      }{% if section and section.path == "/" %},
+      }{% if (section and section.path == "/") or (page and page.path == "/bio/") %},
       {
         "@type": "ProfilePage",
-        "@id": {{ config.base_url ~ "/#profile" | json_encode | safe }},
-        "url": {{ config.base_url | json_encode | safe }},
+        "@id": {{ canonical_url ~ "#profile" | json_encode | safe }},
+        "url": {{ canonical_url | json_encode | safe }},
         "name": {{ config.title | json_encode | safe }},
-        "description": {{ config.description | json_encode | safe }},
+        "description": {{ desc_text | json_encode | safe }},
         "mainEntity": { "@id": {{ config.base_url ~ "/#person" | json_encode | safe }} },
         "isPartOf": { "@id": {{ config.base_url ~ "/#website" | json_encode | safe }} }
-      }{% endif %}{% if page %},
+      }{% endif %}{% if page and not page.date and page.path != "/bio/" %},
+      {
+        "@type": "WebPage",
+        "@id": {{ canonical_url ~ "#webpage" | json_encode | safe }},
+        "url": {{ canonical_url | json_encode | safe }},
+        "name": {{ page.title | json_encode | safe }},
+        "description": {{ desc_text | json_encode | safe }},
+        "inLanguage": "en",
+        "author": { "@id": {{ config.base_url ~ "/#person" | json_encode | safe }} },
+        "isPartOf": { "@id": {{ config.base_url ~ "/#website" | json_encode | safe }} }{% if page.extra.search_topics %},
+        "keywords": {{ page.extra.search_topics | json_encode | safe }}{% endif %}{% if page.updated %},
+        "dateModified": {{ page.updated | json_encode | safe }}{% endif %}
+      }{% endif %}{% if page and page.date %},
       {
         "@type": "Article",
         "headline": {{ page.title | json_encode | safe }},
@@ -136,7 +167,7 @@
         "datePublished": {{ page.date | json_encode | safe }}{% endif %}{% if page.updated %},
         "dateModified": {{ page.updated | json_encode | safe }}{% endif %}{% if keywords_text %},
         "keywords": {{ keywords_text | json_encode | safe }}{% endif %}
-      }{% if page.ancestors %},
+      }{% endif %}{% if page and page.ancestors %},
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
@@ -145,21 +176,21 @@
             "position": 1,
             "name": {{ config.title | json_encode | safe }},
             "item": {{ config.base_url | json_encode | safe }}
-          }{% for ancestor in page.ancestors %}{% set anc = get_section(path=ancestor) %},
+          }{% set_global breadcrumb_position = 1 %}{% for ancestor in page.ancestors %}{% set anc = get_section(path=ancestor) %}{% if anc.path != "/" %}{% set_global breadcrumb_position = breadcrumb_position + 1 %},
           {
             "@type": "ListItem",
-            "position": {{ loop.index + 1 }},
+            "position": {{ breadcrumb_position }},
             "name": {{ anc.title | json_encode | safe }},
             "item": {{ anc.permalink | json_encode | safe }}
-          }{% endfor %},
+          }{% endif %}{% endfor %},
           {
             "@type": "ListItem",
-            "position": {{ page.ancestors | length + 2 }},
+            "position": {{ breadcrumb_position + 1 }},
             "name": {{ page.title | json_encode | safe }},
             "item": {{ canonical_url | json_encode | safe }}
           }
         ]
-      }{% endif %}{% endif %}
+      }{% endif %}
     ]
   }
   </script>
@@ -185,12 +216,13 @@
         <a href="mailto:{{ config.extra.email }}">Email</a>
         <a href="{{ config.extra.github }}" target="_blank" rel="noreferrer noopener">GitHub</a>
         <a href="{{ config.extra.linkedin }}" target="_blank" rel="noreferrer noopener">LinkedIn</a>
+        <a href="{{ config.extra.x }}" target="_blank" rel="noreferrer noopener">X</a>
         <a href="{{ config.extra.orcid }}" target="_blank" rel="noreferrer noopener">ORCID</a>
       </div>
     </footer>
   </div>
 
-  <script src="{{ get_url(path='site.js') }}"></script>
+  <script src="{{ get_url(path='site.js') }}" defer></script>
   <script src="{{ get_url(path='portfolio.js') }}" defer></script>
   {% include "partials/analytics.html" %}
   {% if page and page.extra.math %}

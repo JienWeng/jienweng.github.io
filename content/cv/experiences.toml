@@ -33,7 +33,14 @@ type = "card_simple"
 title = "Monash University Malaysia"
 date = "Dec 2025 - Present"
 link = "https://www.monash.edu"
-content = "Research Assistant: develops wastewater treatment plant prediction models using RNNs, Transformers, and Markov chain methods on time-series sensor data."
+content = "Research Assistant: develops wastewater treatment plant prediction models using RNNs, Transformers, and Markov chain methods on time-series sensor data. Works on the [Monash Water Platform](https://monash-water-platform.vercel.app/), including the CitizenFlood Android app and operator dashboard."
+featured = true
+
+[[collection]]
+type = "card_simple"
+title = "ACTBuilder"
+date = "Jul 2025 - Present"
+content = "Technical Consultant: supports technical documentation, builds a knowledge wiki, maintains the website, and helps set up Python environments."
 featured = true
 
 [[collection]]

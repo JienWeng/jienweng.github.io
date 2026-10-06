@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block body_class %}writing-page{% endblock body_class %}
+{% block head %}<link rel="stylesheet" href="{{ get_url(path='editorial.css') }}">{% endblock head %}
+{% block content %}
+{% set notes = get_section(path="notes/_index.md") %}
+{% set blog = get_section(path="blog/_index.md") %}
+{% if section.path == "/blog/" %}{% set entries = blog.pages %}{% else %}{% set entries = notes.pages | concat(with=blog.pages) | sort(attribute="date") | reverse %}{% endif %}
+<main id="main" class="writing-main" data-writing>
+  <header class="editorial-heading"><h1>{{ section.title }}</h1><div class="writing-intro">{{ section.content | safe }}</div><nav aria-label="Writing collections"><a href="{{ notes.permalink }}"{% if section.path == "/notes/" %} aria-current="page"{% endif %}>All writing</a><a href="{{ blog.permalink }}"{% if section.path == "/blog/" %} aria-current="page"{% endif %}>Blog posts</a><a href="{{ get_url(path='/publications/') }}">Research papers</a></nav></header>
+  <div class="writing-controls" hidden>
+    <label>Browse by topic<select aria-controls="writing-list"><option value="all">All topics</option>{% for topic in ["Business Transformation", "Product Management", "Web3", "Applied AI", "Machine Learning", "MLOps", "Quantitative Finance", "Reinforcement Learning", "Stochastic Modelling", "Mathematical Physics", "Signal Processing", "Regression", "Sustainability"] %}{% set group = entries | filter(attribute="extra.topic", value=topic) %}{% if group | length > 0 %}<option value="{{ topic }}">{{ topic }}</option>{% endif %}{% endfor %}<option value="Other">Experiences &amp; other writing</option></select></label>
+    <label>Search writing<input type="search" placeholder="Title, topic, or idea" aria-controls="writing-list"></label>
+    <p role="status" aria-live="polite" class="writing-count"></p>
+  </div>
+  <div class="writing-index" id="writing-list">
+  {% for kind in ["blog", "notes"] %}
+    {% if kind == "blog" %}{% set group = blog.pages %}{% else %}{% set group = notes.pages %}{% endif %}
+    {% if section.path != "/blog/" or kind == "blog" %}
+    <section class="writing-group" aria-labelledby="{{ kind }}-heading">
+      <header class="writing-group-heading"><h2 id="{{ kind }}-heading">{% if kind == "blog" %}Blog posts{% else %}Technical notes{% endif %}</h2><p>{% if kind == "blog" %}Product decisions, business systems, and lessons from building things.{% else %}Mathematical explanations, derivations, and worked examples in AI and research.{% endif %}</p></header>
+      {% if kind == "notes" %}{% include "partials/regression-series.html" %}{% endif %}
+      {% for item in group %}
+      <article class="essay-entry" data-topic="{{ item.extra.topic | default(value='Other') }}"><div class="essay-meta"><span>{{ item.extra.topic | default(value="Experiences") }}</span><time datetime="{{ item.date | date(format='%Y-%m-%d') }}">{{ item.date | date(format="%b %-d, %Y") }}</time><span>{{ item.reading_time }} min read</span></div><div><h3><a href="{{ item.permalink }}">{{ item.title }}</a></h3>{% if item.description %}<p>{{ item.description }}</p>{% endif %}</div></article>
+      {% endfor %}
+    </section>
+    {% endif %}
+  {% endfor %}
+  </div>
+  <div class="writing-empty" hidden><p>No writing matches this selection.</p><button type="button" data-reset>Clear topic and search</button></div>
+
+</main>
+{% endblock content %}
+{% block script %}<script src="{{ get_url(path='writing.js') }}" defer></script>{% endblock script %}

@@ -363,3 +363,8 @@ You have implemented the smallest real MLOps loop: **parameterise → run → lo
 That list is exactly the MLOps workflow from earlier. You have now built its first two links.
 
 > **Source and licence.** This tutorial follows and adapts the lecture [“An introduction to MLOps”](https://aboucaud.github.io/slides/2023/lsst-france-mlops) by Alexandre Boucaud (LSST France, Lyon, December 2023), licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). The figures come from the accompanying [slides](../../slides/2026/intro-to-mlops/), re-hosted under the same licence; individual captions credit their original sources. This tutorial and hands-on example are my own adaptation and are also shared under CC BY-SA 4.0.
+
+
+## A related software project
+
+[VideoFlow](@/projects/videoflow.md) is my video orchestration studio built with Go and SvelteKit, with an Electron desktop application. Its project page describes the shared architecture, local data, and external generation services.
