@@ -1113,3 +1113,7 @@ summary:focus-visible {
     break-inside: avoid;
   }
 }
+
+/* Syntax colours retain contrast against the warm code-block surface. */
+.prose .giallo .z-keyword, .prose .giallo .z-storage { color: #b52c3b; }
+.prose .giallo .z-comment { color: #58616b; }

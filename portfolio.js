@@ -80,3 +80,35 @@
     if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) close();
   });
 })();
+
+(() => {
+  const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
+  document.querySelectorAll('[data-preview-video]').forEach(video => {
+    const button = video.closest('figure').querySelector('.motion-toggle');
+    if (!button) return;
+    let requested = !preference.matches;
+    let visible = false;
+    const update = () => {
+      const shouldPlay = requested && visible && !document.hidden;
+      button.textContent = requested ? 'Pause animation' : 'Play animation';
+      button.setAttribute('aria-pressed', String(requested));
+      if (shouldPlay) {
+        if (!video.getAttribute('src')) video.src = video.dataset.src;
+        video.play().catch(error => {
+          if (error.name !== 'AbortError') { requested = false; update(); }
+        });
+      } else video.pause();
+    };
+    button.hidden = false;
+    button.addEventListener('click', () => { requested = !requested; update(); });
+    preference.addEventListener('change', () => { requested = !preference.matches; update(); });
+    document.addEventListener('visibilitychange', update);
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(entries => {
+        visible = entries[0].isIntersecting;
+        update();
+      }, {threshold: 0.1}).observe(video);
+    } else visible = true;
+    update();
+  });
+})();
