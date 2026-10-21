@@ -1,0 +1,33 @@
+.cv-main { max-width: 82rem; margin: 0 auto; padding: 64px 0 80px; }
+.cv-main .editorial-heading { border-bottom: 1px solid var(--rule); margin-bottom: 40px; padding-bottom: 32px; }
+.cv-main .editorial-heading p { color: var(--ink-soft); font-size: 1.125rem; margin: 0; }
+.cv-layout { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: clamp(32px, 5vw, 72px); align-items: start; }
+.cv-index { position: sticky; top: 24px; }
+.cv-index nav { display: grid; gap: 2px; }
+.cv-index a { display: inline-flex; align-items: center; min-height: 44px; font-size: .9375rem; color: var(--ink-soft); text-decoration: none; }
+.cv-index a:hover { color: var(--accent); text-decoration: underline; }
+.cv-index .cv-contact { color: var(--accent); border-top: 1px solid var(--rule); margin-top: 24px; padding-top: 12px; width: 100%; }
+body.cv-page .cv-main .cv-prose { max-width: none; min-width: 0; }
+body.cv-page .cv-main .cv-prose > h2 { scroll-margin-top: 28px; font-weight: 450; font-size: 1.75rem; margin: 56px 0 24px; }
+body.cv-page .cv-main .cv-prose > h2:first-child { margin-top: 0; }
+body.cv-page .cv-main .cv-prose > .collection-list { display: grid; grid-template-columns: 1fr; gap: 0; margin: 0; }
+body.cv-page .cv-main .cv-prose > .collection-list .collection-item { border-top: 1px solid var(--rule); padding: 24px 0; grid-template-columns: minmax(0, 1fr) 155px; gap: 16px 32px; }
+body.cv-page .cv-main .cv-prose > .collection-list .collection-title { font-size: 1.125rem; line-height: 1.4; font-weight: 500; }
+body.cv-page .cv-main .cv-prose > .collection-list .collection-subtitle, body.cv-page .cv-main .cv-prose > .collection-list .collection-body { font-size: 1rem; line-height: 1.65; }
+body.cv-page .cv-main .cv-prose > .collection-list .collection-body p { margin: 8px 0 0; max-width: 65ch; }
+body.cv-page .cv-main .cv-prose > .collection-list .collection-date { grid-column: 2; grid-row: 1; text-align: right; min-width: 0; padding-top: 3px; font-size: .8125rem; line-height: 1.6; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+body.cv-page .cv-main .collection-details summary { font-size: .9375rem; min-height: 44px; padding: 10px 0; }
+body.cv-page .cv-main .collection-main { min-width: 0; }
+@media (max-width: 920px) { .cv-main { padding-top: 40px; } .cv-layout { grid-template-columns: 1fr; gap: 32px; } .cv-index { position: static; } .cv-index nav { display: flex; flex-wrap: wrap; gap: 4px 24px; } .cv-index .cv-contact { display: none; } }
+@media (max-width: 600px) { body.cv-page .cv-main .cv-prose > .collection-list .collection-item { grid-template-columns: 1fr; gap: 12px; } body.cv-page .cv-main .cv-prose > .collection-list .collection-date { grid-column: 1; grid-row: auto; text-align: left; padding-top: 0; } body.cv-page .cv-main .cv-prose > h2 { margin-top: 40px; } }
+@media print { .cv-index { display: none; } .cv-layout { display: block; } .cv-main { padding: 0; } body.cv-page .cv-main .collection-item { break-inside: avoid; } }
+
+body.cv-page .cv-main .collection-credential .collection-main { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
+body.cv-page .cv-main .collection-credential-logo { width: auto; max-width: 112px; height: 32px; object-fit: contain; object-position: left center; background: transparent; border-radius: 0; padding: 0; }
+body.cv-page .cv-main .collection-credential-copy { width: 100%; }
+body.cv-page .cv-main .collection-credential-meta { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; margin-top: 10px; }
+body.cv-page .cv-main .collection-credential-meta a { display: inline-flex; align-items: center; min-height: 44px; color: var(--accent); }
+
+body.cv-page .cv-main .cv-prose > .collection-certifications { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 40px; }
+body.cv-page .cv-main .cv-prose > .collection-certifications .collection-item { grid-template-columns: minmax(0, 1fr); }
+@media (max-width: 640px) { body.cv-page .cv-main .cv-prose > .collection-certifications { grid-template-columns: minmax(0, 1fr); } }

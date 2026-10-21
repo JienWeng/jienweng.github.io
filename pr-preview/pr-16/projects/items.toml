@@ -1,0 +1,116 @@
+[[collection]]
+id = "videoflow"
+case_study = "projects/videoflow/"
+case_study_label = "Explore VideoFlow"
+category = "AI & data"
+title = "VideoFlow"
+subtitle = "AI video orchestration for scripts, storyboards, and render jobs."
+content = "A video orchestration studio built with Go and SvelteKit. The Electron desktop application bundles the studio, local storage, and FFmpeg into one workspace."
+status = "Web & Electron desktop"
+img = "/img/projects/videoflow/walkthrough-poster.webp"
+img_width = 1440
+img_height = 900
+demo_video = "/img/projects/videoflow/walkthrough.mp4"
+demo_poster = "/img/projects/videoflow/walkthrough-poster.webp"
+image_alt = "Recorded VideoFlow workflow creating Maya and inspecting the character on the story canvas"
+caption = "Recorded workflow · character creation and story canvas"
+link = "https://github.com/JienWeng/videoflow-go"
+link_label = "Source & desktop downloads"
+
+[[collection]]
+id = "monash-water"
+case_study = "projects/monash-water/"
+case_study_label = "Explore the water platform"
+category = "Research"
+title = "Monash Water Platform"
+subtitle = "CitizenFlood Android reporting and wastewater monitoring in Malaysia."
+content = "Part of my research assistant work at Monash University Malaysia. CitizenFlood brings water observations to an Android app; the operator dashboard supports wastewater monitoring and illustrative scenario exploration."
+status = "Research assistant · Monash"
+img = "/img/projects/monash-water/platform.webp"
+img_width = 1280
+img_height = 853
+image_alt = "Monash Water Platform public website introducing community reporting and wastewater monitoring"
+caption = "Public platform · CitizenFlood & operator tools"
+secondary_img = "/img/projects/monash-water/citizenflood.webp"
+link = "https://monash-water-platform.vercel.app/"
+link_label = "Visit platform"
+app_link = "https://monash-water-platform.vercel.app/download"
+dashboard_link = "https://monash-water-platform.vercel.app/dashboard"
+
+[[collection]]
+id = "crm"
+category = "Systems"
+type = "art"
+title = "Internal CRM"
+subtitle = "Sales, delivery, and finance in one workflow."
+content = "An internal CRM for Quandatics, designed around the handoffs between sales, delivery, and finance."
+img = "/img/blog/quandatics/deal-to-cash-excalidraw.svg"
+img_width = 1600
+img_height = 1079
+image_alt = "CRM workflow from qualified lead through sales order and project delivery to payment received"
+image_color = true
+case_study = "blog/quandatics-crm-business-transformation/"
+link = "https://app.quandatics.com"
+link_label = "Open CRM"
+status = "In progress"
+
+[[collection]]
+id = "zakatdao"
+category = "Web3"
+type = "art"
+title = "ZakatDAO"
+subtitle = "Smart-contract zakat distribution prototype."
+content = "Uses smart contracts to record and distribute zakat payments."
+img = "/img/projects/zakatdao/banner.webp"
+img_width = 1600
+img_height = 810
+link = "https://github.com/JienWeng/ZakatDAO"
+
+[[collection]]
+id = "facepay"
+category = "Experiments"
+type = "art"
+title = "FacePay"
+subtitle = "Face-recognition payment prototype."
+content = "Tests face recognition as an identity check during payment."
+img = "/img/projects/facepay/facepay.jpg"
+img_width = 1600
+img_height = 987
+link = "https://github.com/JienWeng/FacePay"
+
+[[collection]]
+id = "yappy"
+category = "Experiments"
+type = "art"
+title = "Yappy"
+subtitle = "Conversational app prototype."
+content = "A chat app prototype for testing conversational flows."
+img = "/img/projects/yappy/demo.gif"
+still_img = "/img/projects/yappy/demo-still.webp"
+img_width = 1200
+img_height = 800
+link = "https://github.com/JienWeng/Yappy"
+
+[[collection]]
+id = "decimalsat"
+category = "Experiments"
+type = "art"
+title = "DecimalSat"
+subtitle = "Ground-station and satellite build."
+content = "Assembling a small satellite and ground station, and testing their radio link."
+img = "/img/projects/decimal-sat/assembled-sat.jpeg"
+img_width = 480
+img_height = 640
+link = "https://github.com/JienWeng/DecimalSat"
+
+[[collection]]
+id = "geospatial"
+category = "AI & data"
+type = "art"
+title = "Geospatial Analysis forked from Kepler.gl"
+subtitle = "Monash geospatial analysis and open-data platform."
+content = "A kepler.gl fork for Monash geospatial analysis and open-data sharing around the Klang Valley. In progress."
+img = "/img/projects/kepler/kepler.png"
+img_width = 800
+img_height = 600
+link = "https://github.com/JienWeng/kepler.gl"

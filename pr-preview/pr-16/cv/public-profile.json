@@ -1,0 +1,358 @@
+{
+  "schemaVersion": 2,
+  "source": "https://jienweng.github.io/cv/",
+  "sourceDigest": "2e0225da4bd4c6f901afbce978657ffa2998f61cbc0c207d53d3bd93d5cf1b6e",
+  "basics": {
+    "name": "Jien Weng Lai",
+    "email": "laijienweng@gmail.com",
+    "website": "https://jienweng.github.io",
+    "linkedin": "https://linkedin.com/in/jienweng",
+    "github": "https://github.com/jienweng",
+    "x": "https://x.com/jienweng_",
+    "orcid": "https://orcid.org/0009-0001-2543-3887",
+    "scholar": "https://scholar.google.com/citations?user=2siljxAAAAAJ&hl=en"
+  },
+  "headline": "Product Manager & Researcher",
+  "summary": "Jien Weng, Product Manager & Researcher working on Web3 payments, business transformation, and applied AI research.",
+  "sections": {
+    "Experience": [
+      {
+        "title": "CryptoRails",
+        "date": "Feb 2026 - Present",
+        "content": "Product Manager: coordinates an engineering team, maintains the product backlog, and runs delivery for multi-chain crypto payment and wallet infrastructure."
+      },
+      {
+        "title": "Independent Consulting",
+        "date": "Apr 2026 - Present",
+        "content": "Independent Consultant & Product Manager: business transformation, Web3 product management, proprietary AI research, and data/ML training"
+      },
+      {
+        "title": "Quandatics",
+        "date": "Apr 2026 - Present",
+        "content": "Contractor: Business Transformation Consultant",
+        "link": "https://quandatics.com"
+      },
+      {
+        "title": "Quandatics Academy",
+        "date": "Jun 2026 - Present",
+        "content": "Contractor: Data Science & Machine Learning Trainer",
+        "link": "https://academy.quandatics.com"
+      },
+      {
+        "title": "Monash University Malaysia",
+        "date": "Dec 2025 - Present",
+        "content": "Research Assistant: develops wastewater treatment plant prediction models using RNNs, Transformers, and Markov chain methods on time-series sensor data. Works on the [Monash Water Platform](https://monash-water-platform.vercel.app/), including the CitizenFlood Android app and operator dashboard.",
+        "link": "https://www.monash.edu"
+      },
+      {
+        "title": "ACTBuilder",
+        "date": "Jul 2025 - Present",
+        "content": "Technical Consultant: supports technical documentation, builds a knowledge wiki, maintains the website, and helps set up Python environments."
+      },
+      {
+        "title": "Great Eastern Life Assurance",
+        "date": "Oct 2024 - Jan 2025",
+        "content": "Finance Analyst - Data Engineer Intern",
+        "link": "https://www.greateasternlife.com/my/en/personal-insurance.html"
+      }
+    ],
+    "Education": [
+      {
+        "title": "UTAR",
+        "date": "Oct 2022 - Oct 2025",
+        "content": "BSc (Hons), First Class Honours · Applied Mathematics with Computing",
+        "link": "https://www.utar.edu.my"
+      },
+      {
+        "title": "UTAR",
+        "date": "Oct 2021 - Oct 2022",
+        "content": "Foundation · Science",
+        "link": "https://www.utar.edu.my"
+      }
+    ],
+    "Awards": [
+      {
+        "title": "KPJ Healthcare K.R.A.F.T. Challenge 2025",
+        "date": "Nov 2025",
+        "content": "Top 12"
+      },
+      {
+        "title": "Talentbank Boardroom Challenge 2025",
+        "date": "Nov 2025",
+        "content": "Future Founder Award, Top 15 Finalist"
+      },
+      {
+        "title": "CodeNection Hackathon 2025",
+        "date": "Oct 2025",
+        "content": "Mentor"
+      },
+      {
+        "title": "4th International Process Control Competition",
+        "date": "Aug 2025",
+        "content": "Best Visualisation Award",
+        "link": "https://www.facebook.com/cheme.utp/posts/-empowering-future-engineers-ipcc-2025-ignites-innovation-at-utp-from-22nd-to-24/1178536717631535/"
+      },
+      {
+        "title": "PayHack 2025",
+        "date": "Aug 2025",
+        "content": "Consolation Prize"
+      },
+      {
+        "title": "Alibaba Cloud AI Hackathon 2025",
+        "date": "May 2025",
+        "content": "Top 13 Finalist"
+      },
+      {
+        "title": "Hack The Future",
+        "date": "May 2025",
+        "content": "Best Presenter"
+      },
+      {
+        "title": "JomHack Varsity Challenge 2025",
+        "date": "Apr 2025",
+        "content": "Participant"
+      },
+      {
+        "title": "Universiti Malaya Hackathon 2025",
+        "date": "Apr 2025",
+        "content": "4th runner-up"
+      },
+      {
+        "title": "20th LIAM Structured Workshop",
+        "date": "Dec 2024",
+        "content": "Best Presenter Award, Best Team Award",
+        "link": "https://www.linkedin.com/posts/jienweng_liam-teamwork-insurance-activity-7278028877585596417-49cL"
+      },
+      {
+        "title": "PayHack 2024",
+        "date": "Dec 2024",
+        "content": "Semi-finalist"
+      },
+      {
+        "title": "Data Science Digital Race 2024",
+        "date": "Oct 2024",
+        "content": "Finalist"
+      }
+    ],
+    "Certifications": [
+      {
+        "title": "Agile Project Management",
+        "subtitle": "Issued Sep 2026",
+        "issuer": "Google",
+        "link": "https://www.coursera.org/account/accomplishments/verify/V3O86KGTCBO7"
+      },
+      {
+        "title": "Google Project Management",
+        "subtitle": "Issued Sep 2026",
+        "issuer": "Google",
+        "link": "https://www.coursera.org/account/accomplishments/professional-cert/90U3GKFA7YI9"
+      },
+      {
+        "title": "AWS Cloud Practitioner Essentials",
+        "subtitle": "Issued Aug 2026",
+        "issuer": "Amazon Web Services (AWS)",
+        "link": "https://skillbuilder.aws/70a3bd99-baff-4e9c-9df8-596909eacbd8"
+      },
+      {
+        "title": "Databricks Fundamentals",
+        "subtitle": "Issued Apr 2026",
+        "issuer": "Databricks"
+      },
+      {
+        "title": "Capital Market Essentials Programme",
+        "subtitle": "Issued Oct 2025",
+        "issuer": "Securities Industry Development Corporation (SIDC)",
+        "link": "https://erp.sidc.com.my/index/certificate/searchserial?serial_number=CE-2025-6602-297077"
+      },
+      {
+        "title": "Front End Development",
+        "subtitle": "Issued Jan 2025",
+        "issuer": "freeCodeCamp",
+        "link": "https://www.freecodecamp.org/certification/JienWeng/front-end-development-libraries"
+      },
+      {
+        "title": "NVIDIA Deep Learning",
+        "subtitle": "Issued Dec 2024",
+        "issuer": "NVIDIA",
+        "link": "https://learn.nvidia.com/certificates?id=vadb2mqrSgKGRqORxsa3KQ#"
+      },
+      {
+        "title": "IBM Data Science",
+        "subtitle": "Issued Oct 2024",
+        "issuer": "IBM",
+        "link": "https://www.coursera.org/account/accomplishments/specialization/VXTZ7EFLXX2V"
+      },
+      {
+        "title": "Google Data Analytics",
+        "subtitle": "Issued Jun 2024",
+        "issuer": "Google",
+        "link": "https://www.coursera.org/account/accomplishments/professional-cert/OSVLSAL5XQQL"
+      },
+      {
+        "title": "NLP for Machine Learning",
+        "subtitle": "Issued Jun 2024",
+        "issuer": "LinkedIn Learning",
+        "link": "https://www.linkedin.com/learning/certificates/31163a64417d9ee58f69f9da29aa1f40cbc6a43247454a998787e9d5aa5bb3c7"
+      }
+    ],
+    "Grants": [
+      {
+        "title": "Kuok Foundation Scholar",
+        "date": "Oct 2024",
+        "content": "Undergraduate scholarship awarded by the Kuok Foundation."
+      },
+      {
+        "title": "HuaZong Education Fund",
+        "date": "Apr 2024",
+        "content": "Study grant awarded by the HuaZong Education Fund."
+      },
+      {
+        "title": "KIT Foundation Scholarship",
+        "date": "May 2023",
+        "content": "Scholarship awarded by the KIT Foundation."
+      },
+      {
+        "title": "UTAR Scholarships for Top Achievers",
+        "date": "Oct 2022",
+        "content": "Merit-based tuition scholarship for academic performance at UTAR."
+      },
+      {
+        "title": "UTAR Scholarships for Top Achievers (Pre-U)",
+        "date": "Oct 2021",
+        "content": "Merit-based tuition scholarship for the UTAR Foundation programme."
+      }
+    ],
+    "Open Source": [
+      {
+        "title": "SymPy",
+        "date": "12 Mar 2026",
+        "subtitle": "PR #29376: add type annotations to warning helpers",
+        "content": "Added type annotations to SymPy’s warning helpers. Reviewed and merged into SymPy master.",
+        "link": "https://github.com/sympy/sympy/pull/29376"
+      }
+    ],
+    "Volunteering": [
+      {
+        "title": "Mentor & Judge, KitaHack 2026",
+        "date": "Mar 2026",
+        "subtitle": "Google Developer Groups on Campus Malaysia",
+        "content": "Mentored participating teams and judged project submissions."
+      },
+      {
+        "title": "Hackathon Mentor",
+        "date": "Oct 2025",
+        "subtitle": "CodeNection",
+        "content": "Mentored student teams throughout the hackathon."
+      }
+    ],
+    "Memberships": [
+      {
+        "title": "Kuok Foundation",
+        "date": "2025 - Present",
+        "subtitle": "Kuok Foundation Scholar",
+        "content": "Member of the Kuok Foundation scholars community."
+      }
+    ],
+    "Publications": [
+      {
+        "title": "Separating spatial support and observation effects in satellite rainfall monitoring over Malaysia",
+        "date": "Aug 2026",
+        "authors": "Jien Weng Lai",
+        "venue": "Environmental Monitoring and Assessment · Springer Nature",
+        "status": "Manuscript resubmission · Original Research Article",
+        "content": "Satellite rainfall products are often evaluated with gauges that sample different periods and spatial supports. We assessed daily IMERG Final V07 rainfall over Malaysia from October 2015 to September 2025, separating regional rainfall patterns from gauge-footprint and gauge-to-footprint effects. IMERG can screen regional rainfall patterns, but local high-intensity verification remains gauge-dependent.",
+        "tags": [
+          "Satellite Rainfall",
+          "Environmental Monitoring",
+          "Malaysia",
+          "Remote Sensing"
+        ]
+      },
+      {
+        "title": "The Primacy of Information Design Over Algorithm Selection in Multi-Agent Cooperation",
+        "date": "Apr 2026",
+        "authors": "Jien Weng Lai, Wei Lun Tan, Ying Loong Lee and Ming Fai Chow",
+        "venue": "IEEE Social Computation",
+        "status": "Under review",
+        "content": "A full-factorial experiment in the Public Goods Game shows that information regime and incentive strength explain 85.8% of cooperation-rate variance; algorithm choice accounts for just 3.8%. Agents with the least information cooperate most (83% versus 42% under full observation), attributable to state-space compression. TreeSHAP and Shapley-variance decomposition confirm information structure, not algorithm selection, as the primary design lever for cooperation.",
+        "tags": [
+          "Multi-Agent Reinforcement Learning",
+          "Public Goods Game",
+          "Information Design",
+          "Cooperation"
+        ]
+      },
+      {
+        "title": "Optimal Execution with Alpha Signals",
+        "date": "Apr 2026",
+        "authors": "Jien Weng Lai",
+        "venue": "SSRN",
+        "status": "Published",
+        "content": "Studies optimal trade execution strategies that incorporate predictive alpha signals, bridging market microstructure theory with practical quantitative trading.",
+        "link": "https://doi.org/10.2139/ssrn.6323159",
+        "tags": [
+          "Quantitative Finance",
+          "Optimal Execution",
+          "Alpha Signals",
+          "Market Microstructure"
+        ]
+      }
+    ]
+  },
+  "projects": [
+    {
+      "title": "VideoFlow",
+      "subtitle": "AI video orchestration for scripts, storyboards, and render jobs.",
+      "status": "Web & Electron desktop",
+      "content": "A video orchestration studio built with Go and SvelteKit. The Electron desktop application bundles the studio, local storage, and FFmpeg into one workspace.",
+      "link": "https://github.com/JienWeng/videoflow-go",
+      "case_study": "projects/videoflow/"
+    },
+    {
+      "title": "Monash Water Platform",
+      "subtitle": "CitizenFlood Android reporting and wastewater monitoring in Malaysia.",
+      "status": "Research assistant · Monash",
+      "content": "Part of my research assistant work at Monash University Malaysia. CitizenFlood brings water observations to an Android app; the operator dashboard supports wastewater monitoring and illustrative scenario exploration.",
+      "link": "https://monash-water-platform.vercel.app/",
+      "case_study": "projects/monash-water/"
+    },
+    {
+      "title": "Internal CRM",
+      "subtitle": "Sales, delivery, and finance in one workflow.",
+      "status": "In progress",
+      "content": "An internal CRM for Quandatics, designed around the handoffs between sales, delivery, and finance.",
+      "link": "https://app.quandatics.com",
+      "case_study": "blog/quandatics-crm-business-transformation/"
+    },
+    {
+      "title": "ZakatDAO",
+      "subtitle": "Smart-contract zakat distribution prototype.",
+      "content": "Uses smart contracts to record and distribute zakat payments.",
+      "link": "https://github.com/JienWeng/ZakatDAO"
+    },
+    {
+      "title": "FacePay",
+      "subtitle": "Face-recognition payment prototype.",
+      "content": "Tests face recognition as an identity check during payment.",
+      "link": "https://github.com/JienWeng/FacePay"
+    },
+    {
+      "title": "Yappy",
+      "subtitle": "Conversational app prototype.",
+      "content": "A chat app prototype for testing conversational flows.",
+      "link": "https://github.com/JienWeng/Yappy"
+    },
+    {
+      "title": "DecimalSat",
+      "subtitle": "Ground-station and satellite build.",
+      "content": "Assembling a small satellite and ground station, and testing their radio link.",
+      "link": "https://github.com/JienWeng/DecimalSat"
+    },
+    {
+      "title": "Geospatial Analysis forked from Kepler.gl",
+      "subtitle": "Monash geospatial analysis and open-data platform.",
+      "content": "A kepler.gl fork for Monash geospatial analysis and open-data sharing around the Klang Valley. In progress.",
+      "link": "https://github.com/JienWeng/kepler.gl"
+    }
+  ]
+}
