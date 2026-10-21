@@ -92,11 +92,3 @@ The reward design gives people a reason to arrive early. They can earn PAPER at 
 That's how I read the incentive loop. I don't know the team's internal marketing plan. I also haven't verified the paid-promotion claims, launch figures, or wallet earnings discussed in the original chat, so I'm leaving them out.
 
 What interests me is whether people keep trading when earning PAPER becomes less attractive. I would look at repeat participation after rewards decline, how concentrated the distributions are, and how much volume comes from identifiable farming. Counting wallets wouldn't be enough because one person can use several addresses.
-
-## What I still haven't answered
-
-I also haven't reconciled the money. I'd need the recoverable USDC, trader balances, locked margin, queued profits, accrued rewards, and open-position exposure. Those numbers need to follow the contract's accounting so I don't count the same liability twice.
-
-Then I'd check what happens when many open positions become profitable together, especially after funds have already been distributed to stakers. How much USDC remains to pay them? How old are the unpaid claims?
-
-For now, I'd want the public dashboard to show available balances, queued profits, queue age, and completed withdrawals separately. If I'm waiting for $4,000, I want to know how long people ahead of me have been waiting and what funds are available to pay us.
