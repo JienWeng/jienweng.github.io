@@ -5,8 +5,68 @@
     <link rel="self" type="application/atom+xml" href="https://jienweng.github.io/blog/atom.xml"/>
     <link rel="alternate" type="text/html" href="https://jienweng.github.io/blog/"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2026-07-20T00:00:00+00:00</updated>
+    <updated>2026-10-21T00:00:00+00:00</updated>
     <id>https://jienweng.github.io/blog/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Trying to Understand PaperTrade&#x27;s Tokenomics</title>
+        <published>2026-10-21T00:00:00+00:00</published>
+        <updated>2026-10-21T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://jienweng.github.io/blog/papertrade-trading-tokenomics-and-trust/"/>
+        <id>https://jienweng.github.io/blog/papertrade-trading-tokenomics-and-trust/</id>
+        
+        <content type="html" xml:base="https://jienweng.github.io/blog/papertrade-trading-tokenomics-and-trust/">&lt;p&gt;PaperTrade caught my attention because losing traders receive PAPER, which they can stake for USDC rewards. Someone could lose money on a trade and still come out ahead through the rewards. I wanted to understand how that works, where the USDC comes from, and why the next person would join.&lt;&#x2F;p&gt;
+&lt;p&gt;The tokenomics give people more than one reason to trade. Some want to profit from price movements; others may accept trading losses to accumulate PAPER. The mint rate also changes over time, so an early participant and a later participant can pay the same amount in losses for different amounts of PAPER. That made me curious about who benefits as more people join, and whether the rewards can keep attracting activity once earning tokens becomes less generous.&lt;&#x2F;p&gt;
+&lt;p&gt;To work through that, I needed to understand how the LP pays winners, how losses become tokens, and what stakers can claim. I also looked at the relayer because being able to close a position affects whether a trader can realize those outcomes.&lt;&#x2F;p&gt;
+&lt;p&gt;I worked through these questions in a &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;chatgpt.com&#x2F;share&#x2F;6ad8ae3a-5e88-83ec-a5e7-59d6fe144fd3&quot;&gt;ChatGPT conversation&lt;&#x2F;a&gt;, then checked the linked documentation and Guardian review. These notes cover the published design as of 21 October 2026. I haven&#x27;t checked every deployed contract or reconstructed its live balances.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;who-pays-when-you-win&quot;&gt;Who pays when you win?&lt;&#x2F;h2&gt;
+&lt;p&gt;PaperTrade uses Hyperliquid&#x27;s prices to create synthetic trades against its own liquidity pool, or LP. It reads the best bid and ask and takes their midpoint. Your position doesn&#x27;t become an order on Hyperliquid&#x27;s perpetual order book. The LP takes the other side. The documentation describes BTC and ETH positions with multipliers up to 1,000×. &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;papertrade.network&#x2F;docs&#x2F;learn&#x2F;trades-pricing&#x2F;&quot;&gt;Trading and pricing&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Say you put $100 into a position at 100×. You now have $10,000 of exposure. If the price moves 0.5% in your direction, the linear gross profit is $50. PaperTrade applies an asymmetric impact adjustment to profitable closes, so that calculation alone doesn&#x27;t tell you what gets credited. It also leaves out liquidation and the other settlement rules.&lt;&#x2F;p&gt;
+&lt;p&gt;The LP needs USDC to pay that profit. PaperTrade&#x27;s Martingaler mechanism allows the pool to start without upfront seed capital and build its bankroll from trading losses. If it cannot cover winning payouts, those payouts can wait. &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;papertrade.network&#x2F;docs&#x2F;martingaler&#x2F;overview&#x2F;&quot;&gt;Martingaler overview&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;That was where I needed to slow down. A profitable trade can leave you waiting for money.&lt;&#x2F;p&gt;
+&lt;p&gt;The documentation splits the accounting into three parts:&lt;&#x2F;p&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;State&lt;&#x2F;th&gt;&lt;th&gt;What it records&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;Treasury&lt;&#x2F;td&gt;&lt;td&gt;Tracked LP funds under the settlement rules&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;sideBucket&lt;&#x2F;td&gt;&lt;td&gt;Proceeds parked while the payout queue is active&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Payout queue&lt;&#x2F;td&gt;&lt;td&gt;Unpaid winning profits, with older claims paid first&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;p&gt;On an ordinary winning close, your original margin returns to your available balance separately. Any profit that cannot be funded goes into the queue. Later backing can pay the claims through a harvest process. &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;papertrade.network&#x2F;docs&#x2F;how&#x2F;solvency-queue&#x2F;&quot;&gt;Solvency and queue&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;For a simplified example, suppose you&#x27;re owed $5,000 of profit and only $1,000 can be paid immediately. The remaining $4,000 is still owed to you. Putting it in a queue doesn&#x27;t create the missing USDC. You have to wait for backing to arrive.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;losing-a-trade-earns-paper&quot;&gt;Losing a trade earns PAPER&lt;&#x2F;h2&gt;
+&lt;p&gt;Eligible realized losses mint PAPER. The documented starting rate is 100 PAPER per dollar of eligible loss basis while tracked LP is below $2 million. After the threshold, the rate decays using a high-water mark. Distributing funds out of the LP doesn&#x27;t reset it to the earlier rate. &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;papertrade.network&#x2F;docs&#x2F;how&#x2F;mint-curve&#x2F;&quot;&gt;Mint curve&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;So the same eligible loss can earn different amounts of PAPER depending on when it happens. I say “eligible loss” because the mint basis can differ from the gross amount a trader loses under the settlement rules.&lt;&#x2F;p&gt;
+&lt;p&gt;You can stake PAPER for a share of eligible USDC distributions. The standard documented staking model has no lockup or cooldown, and rewards can be claimed into the Exchange balance before withdrawal. &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;papertrade.network&#x2F;docs&#x2F;paper&#x2F;staking&#x2F;&quot;&gt;Staking and claims&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Suppose your stake stays at 1% of the pool while $50,000 is distributed. You would receive $500. But you still need to compare that with what you spent acquiring PAPER, and your share can shrink as other people stake. One distribution doesn&#x27;t tell you how much the next one will pay.&lt;&#x2F;p&gt;
+&lt;p&gt;This also changes how I would read the trading volume. Someone might trade because they expect BTC to rise. Someone else might accept a loss because they want PAPER. Both add volume, but they are doing different things.&lt;&#x2F;p&gt;
+&lt;p&gt;Guardian identifies farming on gross losses, including hedged strategies, as a retained economic risk. A trader&#x27;s losing position can qualify for tokens while another position offsets some of that loss. &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.guardian.security&#x2F;portfolio&#x2F;papertrade&#x2F;protocol-review-2026-10-09&#x2F;&quot;&gt;Guardian security review&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-liquidation-rule-needs-a-separate-read&quot;&gt;The liquidation rule needs a separate read&lt;&#x2F;h2&gt;
+&lt;p&gt;PaperTrade has a hard-bust trigger. Liquidation through that path takes the full isolated margin, even where a voluntary close at the trigger could still return some equity. The documentation describes a buffer of roughly five basis points of price. &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;papertrade.network&#x2F;docs&#x2F;learn&#x2F;liquidations&#x2F;&quot;&gt;Liquidations&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;With a large position relative to your margin, a small price difference can take a large share of your money. I wouldn&#x27;t use the ordinary closing calculation to estimate what comes back after liquidation. The two paths follow different rules.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;who-submits-the-trades&quot;&gt;Who submits the trades?&lt;&#x2F;h2&gt;
+&lt;p&gt;The user signs an instruction, and the relayer and batch executor submit it to the Exchange. Session-key and contract checks validate the authority behind it. &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;papertrade.network&#x2F;docs&#x2F;how&#x2F;architecture&#x2F;&quot;&gt;Architecture&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;I can inspect what reaches the contract. That still leaves me asking what happened to a request before it got there. Was it delayed? Rejected? Could I submit it another way?&lt;&#x2F;p&gt;
+&lt;p&gt;Guardian&#x27;s review records concerns about relayer dependence and price bounds on signed instructions. It also describes upgrade authority, while the off-chain relayer, sweeper, and keepers were outside the review&#x27;s scope. I can&#x27;t treat that contract review as proof that the submission service is fair or always available. &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.guardian.security&#x2F;portfolio&#x2F;papertrade&#x2F;protocol-review-2026-10-09&#x2F;&quot;&gt;Guardian security review&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;The protocol also documents a risk from using the instantaneous best-bid&#x2F;ask midpoint. Changes to those quotes can affect its reference price. Open-interest caps and adjustments to winning PnL can limit exposure, but they don&#x27;t remove the risk. &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;papertrade.network&#x2F;docs&#x2F;how&#x2F;risk&#x2F;&quot;&gt;Risk documentation&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;I also want to know how I would close my position if the authorized relayer stopped submitting requests. I&#x27;d want to see that fallback demonstrated.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;why-would-people-join&quot;&gt;Why would people join?&lt;&#x2F;h2&gt;
+&lt;p&gt;The reward design gives people a reason to arrive early. They can earn PAPER at the earlier mint rate, stake it, and potentially receive USDC. If they share those rewards, other people have a reason to look into it too.&lt;&#x2F;p&gt;
+&lt;p&gt;That&#x27;s how I read the incentive loop. I don&#x27;t know the team&#x27;s internal marketing plan. I also haven&#x27;t verified the paid-promotion claims, launch figures, or wallet earnings discussed in the original chat, so I&#x27;m leaving them out.&lt;&#x2F;p&gt;
+&lt;p&gt;What interests me is whether people keep trading when earning PAPER becomes less attractive. I would look at repeat participation after rewards decline, how concentrated the distributions are, and how much volume comes from identifiable farming. Counting wallets wouldn&#x27;t be enough because one person can use several addresses.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-i-still-haven-t-answered&quot;&gt;What I still haven&#x27;t answered&lt;&#x2F;h2&gt;
+&lt;p&gt;I also haven&#x27;t reconciled the money. I&#x27;d need the recoverable USDC, trader balances, locked margin, queued profits, accrued rewards, and open-position exposure. Those numbers need to follow the contract&#x27;s accounting so I don&#x27;t count the same liability twice.&lt;&#x2F;p&gt;
+&lt;p&gt;Then I&#x27;d check what happens when many open positions become profitable together, especially after funds have already been distributed to stakers. How much USDC remains to pay them? How old are the unpaid claims?&lt;&#x2F;p&gt;
+&lt;p&gt;For now, I&#x27;d want the public dashboard to show available balances, queued profits, queue age, and completed withdrawals separately. If I&#x27;m waiting for $4,000, I want to know how long people ahead of me have been waiting and what funds are available to pay us.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
     <entry xml:lang="en">
         <title>How I Define When a Payment Is Complete</title>
         <published>2026-07-20T00:00:00+00:00</published>
