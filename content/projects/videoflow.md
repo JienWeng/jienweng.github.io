@@ -45,6 +45,8 @@ The project is still evolving, with the current implementation focused on shared
 
 ## VideoFlow source code and desktop downloads
 
+Download the desktop application from [GitHub releases](https://github.com/JienWeng/videoflow-go/releases). The release notes describe available platforms and installation requirements.
+
 The [VideoFlow repository](https://github.com/JienWeng/videoflow-go) contains the implementation, setup instructions, and desktop release information. The [desktop and web guide](https://github.com/JienWeng/videoflow-go/blob/main/docs/ELECTRON-AND-WEB.md) explains the shared architecture and packaging.
 
 For related writing on managing machine-learning workflows, read my [introduction to MLOps](@/notes/intro-to-mlops-tutorial.md).
