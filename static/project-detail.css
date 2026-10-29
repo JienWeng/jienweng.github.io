@@ -22,3 +22,5 @@
 
 .project-breadcrumb { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; color: var(--ink-soft); font-size: .875rem; }
 .project-breadcrumb a { display: inline-flex; align-items: center; min-height: 44px; color: var(--accent); }
+
+.project-detail-overview-text { grid-template-columns: 1fr; max-width: 68ch; }

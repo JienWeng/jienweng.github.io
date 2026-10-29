@@ -42,3 +42,5 @@
 @media (prefers-reduced-motion: reduce) { .project-media img { transition: none; } }
 
 .project-dialog .preview-motion { float: left; color: var(--accent); text-decoration: underline; }
+
+.project-entry-text { grid-template-columns: 1fr; }

@@ -14,22 +14,22 @@
   </div>
   <div id="project-list">
   {% for project in projects.collection %}
-    <article class="project-entry" id="{{ project.id }}" data-category="{{ project.category }}">
+    <article class="project-entry{% if not project.img %} project-entry-text{% endif %}" id="{{ project.id }}" data-category="{{ project.category }}">
+      {% if project.img %}
       <figure class="project-media">
         <a {% if project.id == "videoflow" or project.id == "monash-water" %}href="{{ get_url(path=project.case_study) }}" aria-label="View {{ project.title }} project"{% else %}href="{{ get_url(path=project.img) }}" data-preview data-caption="{{ project.caption | default(value=project.title) }}" aria-label="Enlarge {{ project.title }} image"{% endif %}>{% if project.demo_video %}<video width="{{ project.img_width }}" height="{{ project.img_height }}" poster="{{ get_url(path=project.demo_poster) }}" data-preview-video data-src="{{ get_url(path=project.demo_video) }}" preload="none" muted loop playsinline aria-label="{{ project.image_alt }}">Recorded VideoFlow workflow.</video>{% else %}<img width="{{ project.img_width }}" height="{{ project.img_height }}" src="{{ get_url(path=project.still_img | default(value=project.img)) }}" {% if project.still_img %}data-animated data-still="{{ get_url(path=project.still_img) }}" data-gif="{{ get_url(path=project.animated_img | default(value=project.img)) }}"{% endif %} alt="{{ project.image_alt | default(value=project.subtitle) }}" loading="{% if loop.first %}eager{% else %}lazy{% endif %}">{% endif %}</a>
         {% if project.demo_video or project.still_img %}<button class="motion-toggle" type="button" hidden>Pause animation</button>{% endif %}
         <figcaption>{{ project.caption | default(value=project.subtitle) }} <span aria-hidden="true">↗</span></figcaption>
       </figure>
+      {% endif %}
       <div class="project-entry-copy">
         <p class="project-meta"><span>{{ project.category }}</span>{% if project.status %}<span>{{ project.status }}</span>{% endif %}</p>
         <h2>{{ project.title }}</h2><p class="project-deck">{{ project.subtitle }}</p><p>{{ project.content }}</p>
         <div class="project-entry-links">
-          {% if project.id == "videoflow" or project.id == "monash-water" %}<a href="{{ get_url(path=project.case_study) }}">Explore {{ project.title }} →</a>
-          {% else %}
-          {% if project.link %}<a href="{{ project.link }}">{{ project.link_label | default(value="View source") }} ↗</a>{% endif %}
           {% if project.case_study %}<a href="{{ get_url(path=project.case_study) }}">{{ project.case_study_label | default(value="Read case study") }} →</a>{% endif %}
+          {% if project.link %}<a href="{{ project.link }}">{{ project.link_label | default(value="View source") }} ↗</a>{% endif %}
+          {% if project.download_link %}<a href="{{ project.download_link }}">Desktop downloads ↗</a>{% endif %}
           {% if project.app_link %}<a href="{{ project.app_link }}">Android APK ↗</a><a href="{{ project.dashboard_link }}">Operator dashboard ↗</a>{% endif %}
-          {% endif %}
         </div>
       </div>
     </article>

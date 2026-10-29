@@ -15,7 +15,20 @@ demo_poster = "/img/projects/videoflow/walkthrough-poster.webp"
 image_alt = "Recorded VideoFlow workflow creating Maya and inspecting the character on the story canvas"
 caption = "Recorded workflow · character creation and story canvas"
 link = "https://github.com/JienWeng/videoflow-go"
-link_label = "Source & desktop downloads"
+link_label = "View source"
+download_link = "https://github.com/JienWeng/videoflow-go/releases"
+
+[[collection]]
+id = "polyarb"
+case_study = "projects/polyarb/"
+case_study_label = "Explore PolyArb"
+category = "Web3"
+title = "PolyArb"
+subtitle = "Polymarket arbitrage research in Rust."
+content = "Finds Polymarket YES and NO pairs costing less than $1 after fees. Uses real market prices with simulated orders and a persistent paper balance by default."
+status = "Dry-run by default"
+link = "https://github.com/JienWeng/polyarb"
+link_label = "View source"
 
 [[collection]]
 id = "monash-water"
