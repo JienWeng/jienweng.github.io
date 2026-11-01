@@ -27,8 +27,7 @@ title = "PolyArb"
 subtitle = "Polymarket arbitrage research in Rust."
 content = "Finds Polymarket YES and NO pairs costing less than $1 after fees. Uses real market prices with simulated orders and a persistent paper balance by default."
 status = "Dry-run by default"
-link = "https://github.com/JienWeng/polyarb"
-link_label = "View source"
+source_note = "Source code is not publicly shared."
 
 [[collection]]
 id = "monash-water"

@@ -2,7 +2,7 @@
 title = "The Maths Behind PolyArb"
 description = "Working through YES–NO arbitrage, fees paid in shares, order-book depth, and the gap between a paper trade and a live fill."
 date = 2026-10-29
-updated = 2026-10-29
+updated = 2026-11-01
 draft = false
 
 [taxonomies]
@@ -21,7 +21,7 @@ reaction = true
 
 PolyArb looks for Polymarket YES and NO shares that together cost less than $1 after fees. The first calculation fits on one line. Deciding how much to buy takes more work, because the displayed prices may cover only a few shares, fees can reduce the shares received, and the two orders can fill differently.
 
-This post works through those calculations alongside the [paired-buy planner in PolyArb](https://github.com/JienWeng/polyarb/blob/95f1e831ec26c45ad9c57ee2ad96bf22f0161351/crates/arb-strategy/src/paired.rs). All prices and trading outcomes below are hypothetical. They are examples for checking the arithmetic, not results from a live run.
+This post explains the general mathematics behind the [PolyArb project](@/projects/polyarb.md). The source code is not publicly shared. All prices and trading outcomes below are hypothetical. They are examples for checking the arithmetic, not results from a live run.
 
 ## Why a pair is worth $1
 
@@ -43,15 +43,15 @@ Suppose YES costs $0.46 and NO costs $0.51. Buying 100 of each costs $97. The co
 
 ## Buy fees can leave fewer pairs than ordered
 
-A useful first model subtracts a dollar fee from that $3. PolyArb's planner goes further: its buy-fee model deducts fees from the shares received.
+A useful first model subtracts a dollar fee from that $3. A model for fees deducted from received shares needs to account for the smaller net balances.
 
-The code accepts a fee rate $r$ and an exponent $e$, and models the dollar fee per gross share at price $p$ as
+Let a hypothetical model use a fee rate $r$ and an exponent $e$ to calculate the dollar fee per gross share at price $p$ as
 
 $$
 f(p)=r[p(1-p)]^e.
 $$
 
-This is the planner's parameterised model. It should not be read as a universal fee schedule for every market. The market's applicable fee rules and parameters still need to be checked.
+This is a parameterised example. It should not be read as a universal fee schedule for every market. The market's applicable fee rules and parameters still need to be checked.
 
 Converting the dollar fee into shares gives a retained fraction
 
@@ -83,7 +83,7 @@ $$
 
 Orders for 100 shares on each side leave 98.92 YES shares and 99.02 NO shares. Only 98.92 pairs are covered by the complete-set calculation. Against the $97 purchase cost, that leaves $1.92 before other costs. There are also 0.10 unmatched NO shares; this bound assigns them no value.
 
-The planner checks the worst retained fraction across each leg's executable price range. A fill below the limit costs less, but the share-fee fraction can change with the fill price. The code bounds the two effects separately rather than assuming that the limit price alone describes the fee deduction.
+For a range of possible fill prices, a conservative estimate can use the smallest retained fraction across that range. Fees and purchase costs must use consistent units.
 
 ## The cheapest price may cover only a small order
 
@@ -103,15 +103,13 @@ $$
 
 Even with no fees, the $100 paired payout would leave a $0.20 loss. Multiplying the best displayed prices by 100 would have reported a $3 profit.
 
-PolyArb evaluates quantities at depth breakpoints, subject to its budget and size constraints. For a candidate size $q$, it finds the limit prices $L_Y(q)$ and $L_N(q)$ needed to reach that quantity. Its conservative cost bound is
+A depth-aware calculation can evaluate quantities at depth breakpoints, subject to budget and size constraints. For a candidate size $q$, it finds the limit prices $L_Y(q)$ and $L_N(q)$ needed to reach that quantity. A conservative cost bound is
 
 $$
 C_{\max}(q)=q[L_Y(q)+L_N(q)].
 $$
 
 At $q=100$, this bound is $101. At $q=20$, it is $19.40. The bound charges every share at its leg's limit price, so it can exceed the cost calculated by walking the book.
-
-The planner also rounds buy prices upward to the configured tick and quantities downward to hundredths. After a budget adjustment, it recomputes the limits for the final size. Otherwise it could evaluate a different quantity from the one it intends to order.
 
 ## A profitable plan still needs two fills
 
@@ -127,11 +125,11 @@ Thirty complete pairs have a $30 combined payout. The remaining 70 YES shares de
 
 For arbitrary net balances $n_Y$ and $n_N$, the complete-pair quantity is $\min(n_Y,n_N)$. The unmatched quantity is $|n_Y-n_N|$. A record of submitted orders cannot establish either number; execution records must show what filled and what fees were deducted.
 
-The planner itself leaves source freshness, token identity, and risk approval to its caller. Its field named `guaranteed_profit_usdc` is therefore a bound within the planner's assumptions. Stale data or a missing leg can invalidate the proposed trade before that bound describes the holdings.
+These bounds require fresh market data, matching token identities, and both fills. Stale data or a missing leg can invalidate a proposed trade.
 
 ## What I would check in a paper-trading result
 
-PolyArb defaults to real market prices with simulated orders and a persistent $1,000 starting paper balance. The [README](https://github.com/JienWeng/polyarb/blob/95f1e831ec26c45ad9c57ee2ad96bf22f0161351/README.md) says live mode requires explicit configuration and is not ready for unattended trading.
+PolyArb defaults to real market prices with simulated orders and a persistent $1,000 starting paper balance. Live mode requires explicit configuration and is not ready for unattended trading.
 
 The dashboard helps inspect activity, but a detected price gap, a risk-approved decision, a simulated fill, and realised profit describe different stages. To assess a run, I would check which prices and quantities were observed, how old the book was, which fee parameters were used, and how the simulator decided that each order filled.
 

@@ -11,7 +11,7 @@ I’m Jien Weng, an independent consultant and product manager. I coordinate del
 
 At Monash University Malaysia, I research wastewater treatment plant prediction using RNNs, Transformers, and Markov chain methods. This work includes the [Monash Water Platform](https://monash-water-platform.vercel.app/), with the CitizenFlood Android app and operator dashboard. [Explore the wastewater monitoring project](@/projects/monash-water.md). My other research interests include multi-agent reinforcement learning, market microstructure, and quantitative finance.
 
-I also build [VideoFlow](https://github.com/JienWeng/videoflow-go), an AI video orchestration studio for web and desktop, and [PolyArb](https://github.com/JienWeng/polyarb), a Rust bot for exploring Polymarket arbitrage with simulated trading enabled by default.
+I also build [VideoFlow](https://github.com/JienWeng/videoflow-go), an AI video orchestration studio for web and desktop, and [PolyArb](@/projects/polyarb.md), a Rust bot for exploring Polymarket arbitrage with simulated trading enabled by default.
 
 I studied Applied Mathematics with Computing at UTAR. My [notes](@/notes/_index.md) contain the derivations and worked examples I use to understand statistics, optimisation, and reinforcement learning.
 

@@ -12,7 +12,7 @@ I’m Jien Weng, an independent consultant and product manager. I coordinate del
 
 At Monash University Malaysia, I research wastewater treatment plant prediction using RNNs, Transformers, and Markov chain methods. This work includes the [Monash Water Platform](https://monash-water-platform.vercel.app/), with the CitizenFlood Android app and operator dashboard. [Explore the wastewater monitoring project](https://jienweng.github.io/projects/monash-water/). My other research interests include multi-agent reinforcement learning, market microstructure, and quantitative finance.
 
-I also build [VideoFlow](https://github.com/JienWeng/videoflow-go), an AI video orchestration studio for web and desktop, and [PolyArb](https://github.com/JienWeng/polyarb), a Rust bot for exploring Polymarket arbitrage with simulated trading enabled by default.
+I also build [VideoFlow](https://github.com/JienWeng/videoflow-go), an AI video orchestration studio for web and desktop, and [PolyArb](https://jienweng.github.io/projects/polyarb/), a Rust bot for exploring Polymarket arbitrage with simulated trading enabled by default.
 
 I studied Applied Mathematics with Computing at UTAR. My [notes](https://jienweng.github.io/notes/) contain the derivations and worked examples I use to understand statistics, optimisation, and reinforcement learning.
 
@@ -393,8 +393,6 @@ Polymarket arbitrage research in Rust.
 Status: Dry-run by default
 
 Finds Polymarket YES and NO pairs costing less than $1 after fees. Uses real market prices with simulated orders and a persistent paper balance by default.
-
-Link: https://github.com/JienWeng/polyarb
 
 Case study: https://jienweng.github.io/projects/polyarb/
 
