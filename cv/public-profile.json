@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "source": "https://jienweng.github.io/cv/",
-  "sourceDigest": "2e0225da4bd4c6f901afbce978657ffa2998f61cbc0c207d53d3bd93d5cf1b6e",
+  "sourceDigest": "bf2bdc2d20e5866f63f57d51e2c77e657a7924e7c401817e4d109b48b8d1c6c4",
   "basics": {
     "name": "Jien Weng Lai",
     "email": "laijienweng@gmail.com",
@@ -307,6 +307,13 @@
       "content": "A video orchestration studio built with Go and SvelteKit. The Electron desktop application bundles the studio, local storage, and FFmpeg into one workspace.",
       "link": "https://github.com/JienWeng/videoflow-go",
       "case_study": "projects/videoflow/"
+    },
+    {
+      "title": "PolyArb",
+      "subtitle": "Polymarket arbitrage research in Rust.",
+      "status": "Dry-run by default",
+      "content": "Finds Polymarket YES and NO pairs costing less than $1 after fees. Uses real market prices with simulated orders and a persistent paper balance by default.",
+      "case_study": "projects/polyarb/"
     },
     {
       "title": "Monash Water Platform",

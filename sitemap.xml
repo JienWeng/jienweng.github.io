@@ -30,6 +30,10 @@
         <lastmod>2026-10-21</lastmod>
     </url>
     <url>
+        <loc>https://jienweng.github.io/blog/polyarb-arbitrage-math/</loc>
+        <lastmod>2026-11-01</lastmod>
+    </url>
+    <url>
         <loc>https://jienweng.github.io/blog/product-manager-between-business-and-delivery/</loc>
         <lastmod>2026-07-20</lastmod>
     </url>
@@ -167,6 +171,10 @@
         <lastmod>2026-10-06</lastmod>
     </url>
     <url>
+        <loc>https://jienweng.github.io/projects/polyarb/</loc>
+        <lastmod>2026-11-01</lastmod>
+    </url>
+    <url>
         <loc>https://jienweng.github.io/projects/videoflow/</loc>
         <lastmod>2026-10-06</lastmod>
     </url>
@@ -271,6 +279,9 @@
     </url>
     <url>
         <loc>https://jienweng.github.io/tags/reproducibility/</loc>
+    </url>
+    <url>
+        <loc>https://jienweng.github.io/tags/rust/</loc>
     </url>
     <url>
         <loc>https://jienweng.github.io/tags/sde/</loc>

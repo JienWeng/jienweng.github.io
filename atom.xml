@@ -5,8 +5,103 @@
     <link rel="self" type="application/atom+xml" href="https://jienweng.github.io/atom.xml"/>
     <link rel="alternate" type="text/html" href="https://jienweng.github.io"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2026-10-21T00:00:00+00:00</updated>
+    <updated>2026-11-01T00:00:00+00:00</updated>
     <id>https://jienweng.github.io/atom.xml</id>
+    <entry xml:lang="en">
+        <title>The Maths Behind PolyArb</title>
+        <published>2026-10-29T00:00:00+00:00</published>
+        <updated>2026-11-01T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://jienweng.github.io/blog/polyarb-arbitrage-math/"/>
+        <id>https://jienweng.github.io/blog/polyarb-arbitrage-math/</id>
+        
+        <content type="html" xml:base="https://jienweng.github.io/blog/polyarb-arbitrage-math/">&lt;p&gt;PolyArb looks for Polymarket YES and NO shares that together cost less than $1 after fees. The first calculation fits on one line. Deciding how much to buy takes more work, because the displayed prices may cover only a few shares, fees can reduce the shares received, and the two orders can fill differently.&lt;&#x2F;p&gt;
+&lt;p&gt;This post explains the general mathematics behind the &lt;a href=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;projects&#x2F;polyarb&#x2F;&quot;&gt;PolyArb project&lt;&#x2F;a&gt;. The source code is not publicly shared. All prices and trading outcomes below are hypothetical. They are examples for checking the arithmetic, not results from a live run.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;why-a-pair-is-worth-1&quot;&gt;Why a pair is worth $1&lt;&#x2F;h2&gt;
+&lt;p&gt;Take a binary market and let its YES payout be $X$. The complementary NO payout is $1-X$. Holding one of each gives&lt;&#x2F;p&gt;
+&lt;p&gt;$$
+X+(1-X)=1.
+$$&lt;&#x2F;p&gt;
+&lt;p&gt;The shares must belong to the same condition and form a complete complementary set. Buying YES on one question and NO on a similar question does not establish this identity. Polymarket&#x27;s &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;legacy-docs.polymarket.com&#x2F;faq&#x2F;trading&quot;&gt;portfolio documentation&lt;&#x2F;a&gt; describes merging a matching pair back into collateral.&lt;&#x2F;p&gt;
+&lt;p&gt;For equal quantities $q$, ignoring fees and other costs, buying at prices $p_Y$ and $p_N$ gives the profit&lt;&#x2F;p&gt;
+&lt;p&gt;$$
+\pi(q)=q(1-p_Y-p_N).
+$$&lt;&#x2F;p&gt;
+&lt;p&gt;Suppose YES costs $0.46 and NO costs $0.51. Buying 100 of each costs $97. The complete set has a $100 payout, leaving a gross $3 spread. This calculation assumes both quantities are acquired at those prices and the complete set can be converted or settled as expected.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;buy-fees-can-leave-fewer-pairs-than-ordered&quot;&gt;Buy fees can leave fewer pairs than ordered&lt;&#x2F;h2&gt;
+&lt;p&gt;A useful first model subtracts a dollar fee from that $3. A model for fees deducted from received shares needs to account for the smaller net balances.&lt;&#x2F;p&gt;
+&lt;p&gt;Let a hypothetical model use a fee rate $r$ and an exponent $e$ to calculate the dollar fee per gross share at price $p$ as&lt;&#x2F;p&gt;
+&lt;p&gt;$$
+f(p)=r[p(1-p)]^e.
+$$&lt;&#x2F;p&gt;
+&lt;p&gt;This is a parameterised example. It should not be read as a universal fee schedule for every market. The market&#x27;s applicable fee rules and parameters still need to be checked.&lt;&#x2F;p&gt;
+&lt;p&gt;Converting the dollar fee into shares gives a retained fraction&lt;&#x2F;p&gt;
+&lt;p&gt;$$
+a(p)=1-\frac{f(p)}{p}.
+$$&lt;&#x2F;p&gt;
+&lt;p&gt;If both orders buy $q$ gross shares at fixed prices, the net balances become $q,a(p_Y)$ and $q,a(p_N)$. The number of complete pairs is limited by the smaller balance:&lt;&#x2F;p&gt;
+&lt;p&gt;$$
+m=q\min{a(p_Y),a(p_N)}.
+$$&lt;&#x2F;p&gt;
+&lt;p&gt;Valuing any unmatched remainder at zero gives a conservative paired profit, before other costs,&lt;&#x2F;p&gt;
+&lt;p&gt;$$
+\pi_{\mathrm{pair}}=m-q(p_Y+p_N).
+$$&lt;&#x2F;p&gt;
+&lt;p&gt;Use the earlier prices and assume, only for this example, $r=0.02$ and $e=1$. Then&lt;&#x2F;p&gt;
+&lt;p&gt;$$
+a(0.46)=1-0.02(0.54)=0.9892,
+$$&lt;&#x2F;p&gt;
+&lt;p&gt;$$
+a(0.51)=1-0.02(0.49)=0.9902.
+$$&lt;&#x2F;p&gt;
+&lt;p&gt;Orders for 100 shares on each side leave 98.92 YES shares and 99.02 NO shares. Only 98.92 pairs are covered by the complete-set calculation. Against the $97 purchase cost, that leaves $1.92 before other costs. There are also 0.10 unmatched NO shares; this bound assigns them no value.&lt;&#x2F;p&gt;
+&lt;p&gt;For a range of possible fill prices, a conservative estimate can use the smallest retained fraction across that range. Fees and purchase costs must use consistent units.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-cheapest-price-may-cover-only-a-small-order&quot;&gt;The cheapest price may cover only a small order&lt;&#x2F;h2&gt;
+&lt;p&gt;Suppose the asks are:&lt;&#x2F;p&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Side&lt;&#x2F;th&gt;&lt;th style=&quot;text-align: right&quot;&gt;Price&lt;&#x2F;th&gt;&lt;th style=&quot;text-align: right&quot;&gt;Shares available at that price&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;YES&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: right&quot;&gt;$0.46&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: right&quot;&gt;20&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;YES&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: right&quot;&gt;$0.50&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: right&quot;&gt;80&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;NO&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: right&quot;&gt;$0.51&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: right&quot;&gt;100&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;p&gt;The first 20 pairs cost $0.97 each before fees. Buying 100 YES shares requires taking the next level too. The actual cost of buying 100 shares on both sides, if this book remains available, is&lt;&#x2F;p&gt;
+&lt;p&gt;$$
+C(100)=20(0.46)+80(0.50)+100(0.51)=100.20.
+$$&lt;&#x2F;p&gt;
+&lt;p&gt;Even with no fees, the $100 paired payout would leave a $0.20 loss. Multiplying the best displayed prices by 100 would have reported a $3 profit.&lt;&#x2F;p&gt;
+&lt;p&gt;A depth-aware calculation can evaluate quantities at depth breakpoints, subject to budget and size constraints. For a candidate size $q$, it finds the limit prices $L_Y(q)$ and $L_N(q)$ needed to reach that quantity. A conservative cost bound is&lt;&#x2F;p&gt;
+&lt;p&gt;$$
+C_{\max}(q)=q[L_Y(q)+L_N(q)].
+$$&lt;&#x2F;p&gt;
+&lt;p&gt;At $q=100$, this bound is $101. At $q=20$, it is $19.40. The bound charges every share at its leg&#x27;s limit price, so it can exceed the cost calculated by walking the book.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;a-profitable-plan-still-needs-two-fills&quot;&gt;A profitable plan still needs two fills&lt;&#x2F;h2&gt;
+&lt;p&gt;The cost and payout bounds assume both legs fill in the required quantities. They do not guarantee that execution will produce those balances.&lt;&#x2F;p&gt;
+&lt;p&gt;Suppose the YES order fills for 100 shares but the NO order fills for only 30. Ignore fees here to isolate the quantity mismatch. The holdings can be written as&lt;&#x2F;p&gt;
+&lt;p&gt;$$
+100Y+30N=30(Y+N)+70Y.
+$$&lt;&#x2F;p&gt;
+&lt;p&gt;Thirty complete pairs have a $30 combined payout. The remaining 70 YES shares depend on the outcome or on the price available when they are sold. If the bot tries to complete the hedge, it may have to pay more for NO than the original plan allowed.&lt;&#x2F;p&gt;
+&lt;p&gt;For arbitrary net balances $n_Y$ and $n_N$, the complete-pair quantity is $\min(n_Y,n_N)$. The unmatched quantity is $|n_Y-n_N|$. A record of submitted orders cannot establish either number; execution records must show what filled and what fees were deducted.&lt;&#x2F;p&gt;
+&lt;p&gt;These bounds require fresh market data, matching token identities, and both fills. Stale data or a missing leg can invalidate a proposed trade.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-i-would-check-in-a-paper-trading-result&quot;&gt;What I would check in a paper-trading result&lt;&#x2F;h2&gt;
+&lt;p&gt;PolyArb defaults to real market prices with simulated orders and a persistent $1,000 starting paper balance. Live mode requires explicit configuration and is not ready for unattended trading.&lt;&#x2F;p&gt;
+&lt;p&gt;The dashboard helps inspect activity, but a detected price gap, a risk-approved decision, a simulated fill, and realised profit describe different stages. To assess a run, I would check which prices and quantities were observed, how old the book was, which fee parameters were used, and how the simulator decided that each order filled.&lt;&#x2F;p&gt;
+&lt;p&gt;For a completed trade, the accounting should include the paired collateral actually recovered, proceeds or remaining value from unmatched shares, the purchase cost, and other execution costs. With consistent units, that is&lt;&#x2F;p&gt;
+&lt;p&gt;$$
+\pi_{\mathrm{net}}=M+U-C-K,
+$$&lt;&#x2F;p&gt;
+&lt;p&gt;where $M$ is recovered paired collateral, $U$ is the unmatched inventory&#x27;s proceeds or marked value, $C$ is the purchase cost, and $K$ covers additional costs not already deducted. If $U$ includes unsold inventory, part of this figure remains unrealised.&lt;&#x2F;p&gt;
+&lt;p&gt;Before treating a paper balance as evidence of live profitability, I would compare its assumed fills with the depth and timestamps recorded for each leg. A simulator that grants both fills at the observed prices has already assumed away the execution failure in the previous example.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
     <entry xml:lang="en">
         <title>Trying to Understand PaperTrade&#x27;s Tokenomics</title>
         <published>2026-10-21T00:00:00+00:00</published>
