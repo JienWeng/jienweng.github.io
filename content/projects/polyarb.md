@@ -2,7 +2,7 @@
 title = "PolyArb: Polymarket Arbitrage Research in Rust"
 description = "A Rust arbitrage bot with paper trading, risk checks, and a React dashboard for inspecting Polymarket activity."
 template = "project-detail.html"
-updated = 2026-10-29
+updated = 2026-11-01
 [extra]
 project_id = "polyarb"
 toc = true
@@ -28,12 +28,12 @@ These views help distinguish opportunities detected by the scanner from decision
 
 ## What the prototype demonstrates
 
-The project connects market monitoring, decision rules, simulated execution, and observability in one research workflow. The repository includes a demo runbook and operational documentation alongside the bot and dashboard.
+The project connects market monitoring, decision rules, simulated execution, and observability in one research workflow.
 
-Paper balances and expected profit are simulated outputs. They do not establish realised returns or prove that both sides of a trade would fill in live conditions. The repository states that live mode is not ready for unattended trading.
+Paper balances and expected profit are simulated outputs. They do not establish realised returns or prove that both sides of a trade would fill in live conditions. Live mode is not ready for unattended trading.
 
-## Source and supporting material
+## Project availability
 
-Explore the [PolyArb repository](https://github.com/JienWeng/polyarb), the [demo runbook](https://github.com/JienWeng/polyarb/blob/main/DEMO.md), and the [Rust workspace](https://github.com/JienWeng/polyarb/blob/main/Cargo.toml).
+PolyArb is a private project. Its source code is not publicly shared.
 
-For the calculations behind the bot, read [The Maths Behind PolyArb](@/blog/polyarb-arbitrage-math.md), with worked examples of fees, order-book depth, and partial fills.
+Read [The Maths Behind PolyArb](@/blog/polyarb-arbitrage-math.md) for hypothetical examples of fees, order-book depth, and partial fills.

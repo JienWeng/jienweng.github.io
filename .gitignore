@@ -3,3 +3,10 @@ public/
 .gstack/
 __pycache__/
 *.pyc
+
+# Local editor, analysis, and design-tool artifacts
+.codegraph/
+.cursor/
+.impeccable/
+.DS_Store
+.hugo_build.lock
