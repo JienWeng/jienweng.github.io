@@ -1,6 +1,6 @@
 +++
 title = "Why Can't Time Flow Backwards? Entropy, Yu Deng, and What the Mathematics Actually Proves"
-description = "A first-principles look at why reversible particle collisions can produce an irreversible Boltzmann equation, how entropy enters mathematically, and what Yu Deng's Fields Medal work with Zaher Hani and Xiao Ma actually proved."
+description = "Reversible collisions, the Boltzmann equation, entropy, and the results of Yu Deng, Zaher Hani, and Xiao Ma."
 date = 2026-08-02
 updated = 2026-08-02
 draft = false

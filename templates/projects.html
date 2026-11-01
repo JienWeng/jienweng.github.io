@@ -4,7 +4,7 @@
 {% block content %}
 {% set projects = load_data(path="content/projects/items.toml") %}
 <main id="main" class="projects-main" data-projects>
-  <header class="projects-heading"><p>Selected work &amp; experiments</p><h1>Projects</h1><p>Software for creative work, business operations, and research. A selection of things I’m building and exploring.</p></header>
+  <header class="projects-heading"><p>Selected work &amp; experiments</p><h1>Projects</h1><p>Projects in AI, business systems, Web3, and research.</p></header>
   <div class="projects-tools" hidden>
     <div class="project-filters" role="group" aria-label="Filter projects by area">
       {% for category in ["All", "AI & data", "Research", "Systems", "Web3", "Experiments"] %}<button type="button" data-filter="{{ category }}" aria-pressed="{% if loop.first %}true{% else %}false{% endif %}">{{ category }}</button>{% endfor %}
@@ -19,7 +19,7 @@
       <figure class="project-media">
         <a {% if project.id == "videoflow" or project.id == "monash-water" %}href="{{ get_url(path=project.case_study) }}" aria-label="View {{ project.title }} project"{% else %}href="{{ get_url(path=project.img) }}" data-preview data-caption="{{ project.caption | default(value=project.title) }}" aria-label="Enlarge {{ project.title }} image"{% endif %}>{% if project.demo_video %}<video width="{{ project.img_width }}" height="{{ project.img_height }}" poster="{{ get_url(path=project.demo_poster) }}" data-preview-video data-src="{{ get_url(path=project.demo_video) }}" preload="none" muted loop playsinline aria-label="{{ project.image_alt }}">Recorded VideoFlow workflow.</video>{% else %}<img width="{{ project.img_width }}" height="{{ project.img_height }}" src="{{ get_url(path=project.still_img | default(value=project.img)) }}" {% if project.still_img %}data-animated data-still="{{ get_url(path=project.still_img) }}" data-gif="{{ get_url(path=project.animated_img | default(value=project.img)) }}"{% endif %} alt="{{ project.image_alt | default(value=project.subtitle) }}" loading="{% if loop.first %}eager{% else %}lazy{% endif %}">{% endif %}</a>
         {% if project.demo_video or project.still_img %}<button class="motion-toggle" type="button" hidden>Pause animation</button>{% endif %}
-        <figcaption>{{ project.caption | default(value=project.subtitle) }} <span aria-hidden="true">↗</span></figcaption>
+        <figcaption>{{ project.caption | default(value=project.subtitle) }}</figcaption>
       </figure>
       {% endif %}
       <div class="project-entry-copy">
@@ -27,9 +27,9 @@
         <h2>{{ project.title }}</h2><p class="project-deck">{{ project.subtitle }}</p><p>{{ project.content }}</p>
         <div class="project-entry-links">
           {% if project.case_study %}<a href="{{ get_url(path=project.case_study) }}">{{ project.case_study_label | default(value="Read case study") }} →</a>{% endif %}
-          {% if project.link %}<a href="{{ project.link }}">{{ project.link_label | default(value="View source") }} ↗</a>{% endif %}
-          {% if project.download_link %}<a href="{{ project.download_link }}">Desktop downloads ↗</a>{% endif %}
-          {% if project.app_link %}<a href="{{ project.app_link }}">Android APK ↗</a><a href="{{ project.dashboard_link }}">Operator dashboard ↗</a>{% endif %}
+          {% if project.link %}<a href="{{ project.link }}">{{ project.link_label | default(value="View source") }}</a>{% endif %}
+          {% if project.download_link %}<a href="{{ project.download_link }}">Desktop downloads</a>{% endif %}
+          {% if project.app_link %}<a href="{{ project.app_link }}">Android APK</a><a href="{{ project.dashboard_link }}">Operator dashboard</a>{% endif %}
         </div>
       </div>
     </article>

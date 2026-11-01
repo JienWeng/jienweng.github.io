@@ -7,4 +7,4 @@ page_template = "page.html"
 generate_feeds = true
 +++
 
-Writing about product delivery, business systems, hackathons, and lessons from hands-on work. For mathematical derivations and worked examples, explore the technical notes in All writing.
+Notes on product delivery, business systems, and hackathons.

@@ -7,4 +7,4 @@ page_template = "page.html"
 generate_feeds = true
 +++
 
-Blog posts on product work and business systems, alongside technical notes on mathematics, AI, and research. Browse the two collections below.
+Product essays and technical notes on mathematics, AI, and research.

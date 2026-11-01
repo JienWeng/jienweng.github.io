@@ -1,6 +1,6 @@
 +++
 title = "Curriculum Vitae"
-description = "Jien Weng’s experience in product management, technical consulting, Monash research, and data science training, plus education and publications."
+description = "Jien Weng’s experience, education, research, and qualifications."
 template = "cv.html"
 +++
 

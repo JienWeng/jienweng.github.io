@@ -17,7 +17,7 @@
     {% if kind == "blog" %}{% set group = blog.pages %}{% else %}{% set group = notes.pages %}{% endif %}
     {% if section.path != "/blog/" or kind == "blog" %}
     <section class="writing-group" aria-labelledby="{{ kind }}-heading">
-      <header class="writing-group-heading"><h2 id="{{ kind }}-heading">{% if kind == "blog" %}Blog posts{% else %}Technical notes{% endif %}</h2><p>{% if kind == "blog" %}Product decisions, business systems, and lessons from building things.{% else %}Mathematical explanations, derivations, and worked examples in AI and research.{% endif %}</p></header>
+      <header class="writing-group-heading"><h2 id="{{ kind }}-heading">{% if kind == "blog" %}Blog posts{% else %}Technical notes{% endif %}</h2><p>{% if kind == "blog" %}Product decisions, business systems, and field notes.{% else %}Mathematics, AI, and worked examples.{% endif %}</p></header>
       {% if kind == "notes" %}{% include "partials/regression-series.html" %}{% endif %}
       {% for item in group %}
       <article class="essay-entry" data-topic="{{ item.extra.topic | default(value='Other') }}"><div class="essay-meta"><span>{{ item.extra.topic | default(value="Experiences") }}</span><time datetime="{{ item.date | date(format='%Y-%m-%d') }}">{{ item.date | date(format="%b %-d, %Y") }}</time><span>{{ item.reading_time }} min read</span></div><div><h3><a href="{{ item.permalink }}">{{ item.title }}</a></h3>{% if item.description %}<p>{{ item.description }}</p>{% endif %}</div></article>

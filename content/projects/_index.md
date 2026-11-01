@@ -1,5 +1,5 @@
 +++
 title = "Projects"
-description = "Explore Jien Weng’s projects: VideoFlow video orchestration, the Monash Water Platform, internal CRM workflows, and Web3 and software experiments."
+description = "VideoFlow, PolyArb, the Monash Water Platform, and business systems."
 template = "projects.html"
 +++

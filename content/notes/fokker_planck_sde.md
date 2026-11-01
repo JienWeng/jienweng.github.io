@@ -1,6 +1,6 @@
 +++
 title = "The Fokker-Planck Equation Explained, from an SDE to the Density it Evolves"
-description = "A first-principles walkthrough from a single stochastic trajectory to the Fokker-Planck equation for its probability density, derived from Ito's lemma, with a from-scratch Python solution and an Ornstein-Uhlenbeck example checked three ways."
+description = "Derive the Fokker-Planck equation from Ito's lemma, then solve an Ornstein-Uhlenbeck example in Python and check it three ways."
 date = 2026-07-01
 updated = 2026-07-01
 draft = false
