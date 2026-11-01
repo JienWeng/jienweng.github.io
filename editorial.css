@@ -68,6 +68,5 @@
 .about-profiles a { display: grid; grid-template-columns: 20px minmax(0, 1fr) 14px; align-items: center; gap: 10px; min-height: 56px; padding: 12px; border: 1px solid var(--rule); color: var(--ink); font-size: .875rem; line-height: 1.35; text-decoration: none; transition: background-color 180ms ease-out, border-color 180ms ease-out; }
 .about-profiles a:hover { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
 .about-profiles svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
-.about-profiles .profile-arrow { width: 14px; height: 14px; color: var(--ink-soft); }
 .about-profiles .profile-label { display: block; font-size: inherit; line-height: inherit; color: inherit; }
 @media (max-width: 760px) { .about-profiles { grid-column: 1 / -1; } }

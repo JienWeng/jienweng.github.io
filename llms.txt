@@ -45,9 +45,9 @@ Contact: laijienweng@gmail.com
 ## Public projects
 
 - [Work index](https://jienweng.github.io/projects/)
-- [VideoFlow](https://jienweng.github.io/projects/videoflow/): A video orchestration studio built with Go and SvelteKit. The Electron desktop application bundles the studio, local storage, and FFmpeg into one workspace.
-- [PolyArb](https://jienweng.github.io/projects/polyarb/): Finds Polymarket YES and NO pairs costing less than $1 after fees. Uses real market prices with simulated orders and a persistent paper balance by default.
-- [Monash Water Platform](https://jienweng.github.io/projects/monash-water/): Part of my research assistant work at Monash University Malaysia. CitizenFlood brings water observations to an Android app; the operator dashboard supports wastewater monitoring and illustrative scenario exploration.
+- [VideoFlow](https://jienweng.github.io/projects/videoflow/): A Go and SvelteKit studio for web and desktop, with local storage and bundled FFmpeg.
+- [PolyArb](https://jienweng.github.io/projects/polyarb/): Evaluates Polymarket YES–NO pairs after fees and available depth. Includes exposure limits, persistent paper trading, and an activity dashboard.
+- [Monash Water Platform](https://jienweng.github.io/projects/monash-water/): Monash research work: CitizenFlood Android reporting and a wastewater dashboard with illustrative scenarios.
 - [Internal CRM](https://jienweng.github.io/blog/quandatics-crm-business-transformation/): An internal CRM for Quandatics, designed around the handoffs between sales, delivery, and finance.
 - [ZakatDAO](https://github.com/JienWeng/ZakatDAO): Uses smart contracts to record and distribute zakat payments.
 - [FacePay](https://github.com/JienWeng/FacePay): Tests face recognition as an identity check during payment.
