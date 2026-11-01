@@ -42,8 +42,7 @@ $$
 Suppose YES costs USD 0.46 and NO costs USD 0.51. Buying 100 of each costs USD 97. The complete set has a USD 100 payout, leaving a gross USD 3 spread. This calculation assumes both quantities are acquired at those prices and the complete set can be converted or settled as expected.
 
 <figure>
-<img src="/img/blog/polyarb/paired-trade.svg" width="760" height="680" loading="lazy" alt="Hypothetical paired trade: 100 YES shares cost USD 46 and 100 NO shares cost USD 51. Before fees, 100 complete pairs have a USD 100 payout and USD 3 spread. Illustrative share fees reduce the paired payout to USD 98.92 and the spread to USD 1.92. A separate partial-fill example leaves 30 complete pairs and 70 unpaired YES shares.">
-<figcaption>Hypothetical examples. Fees and partial fills are separate scenarios; neither is a live result.</figcaption>
+<img src="/img/blog/polyarb/paired-trade.svg" width="760" height="360" loading="lazy" alt="Before fees: 100 YES and 100 NO shares cost USD 97, pay USD 100 as complete pairs, and leave USD 3.">
 </figure>
 
 ## Buy fees can leave fewer pairs than ordered
