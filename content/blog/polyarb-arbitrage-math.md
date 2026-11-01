@@ -19,11 +19,11 @@ math = true
 reaction = true
 +++
 
-PolyArb looks for Polymarket YES and NO shares that together cost less than $1 after fees. The first calculation fits on one line. Deciding how much to buy takes more work, because the displayed prices may cover only a few shares, fees can reduce the shares received, and the two orders can fill differently.
+PolyArb looks for Polymarket YES and NO shares that together cost less than USD 1 after fees. The first calculation fits on one line. Deciding how much to buy takes more work, because the displayed prices may cover only a few shares, fees can reduce the shares received, and the two orders can fill differently.
 
 This post explains the general mathematics behind the [PolyArb project](@/projects/polyarb.md). The source code is not publicly shared. All prices and trading outcomes below are hypothetical. They are examples for checking the arithmetic, not results from a live run.
 
-## Why a pair is worth $1
+## Why a pair is worth USD 1
 
 Take a binary market and let its YES payout be $X$. The complementary NO payout is $1-X$. Holding one of each gives
 
@@ -39,11 +39,16 @@ $$
 \pi(q)=q(1-p_Y-p_N).
 $$
 
-Suppose YES costs $0.46 and NO costs $0.51. Buying 100 of each costs $97. The complete set has a $100 payout, leaving a gross $3 spread. This calculation assumes both quantities are acquired at those prices and the complete set can be converted or settled as expected.
+Suppose YES costs USD 0.46 and NO costs USD 0.51. Buying 100 of each costs USD 97. The complete set has a USD 100 payout, leaving a gross USD 3 spread. This calculation assumes both quantities are acquired at those prices and the complete set can be converted or settled as expected.
+
+<figure>
+<img src="/img/blog/polyarb/paired-trade.svg" width="760" height="680" loading="lazy" alt="Hypothetical paired trade: 100 YES shares cost USD 46 and 100 NO shares cost USD 51. Before fees, 100 complete pairs have a USD 100 payout and USD 3 spread. Illustrative share fees reduce the paired payout to USD 98.92 and the spread to USD 1.92. A separate partial-fill example leaves 30 complete pairs and 70 unpaired YES shares.">
+<figcaption>Hypothetical examples. Fees and partial fills are separate scenarios; neither is a live result.</figcaption>
+</figure>
 
 ## Buy fees can leave fewer pairs than ordered
 
-A useful first model subtracts a dollar fee from that $3. A model for fees deducted from received shares needs to account for the smaller net balances.
+A useful first model subtracts a dollar fee from that USD 3. A model for fees deducted from received shares needs to account for the smaller net balances.
 
 Let a hypothetical model use a fee rate $r$ and an exponent $e$ to calculate the dollar fee per gross share at price $p$ as
 
@@ -81,7 +86,7 @@ $$
 a(0.51)=1-0.02(0.49)=0.9902.
 $$
 
-Orders for 100 shares on each side leave 98.92 YES shares and 99.02 NO shares. Only 98.92 pairs are covered by the complete-set calculation. Against the $97 purchase cost, that leaves $1.92 before other costs. There are also 0.10 unmatched NO shares; this bound assigns them no value.
+Orders for 100 shares on each side leave 98.92 YES shares and 99.02 NO shares. Only 98.92 pairs are covered by the complete-set calculation. Against the USD 97 purchase cost, that leaves USD 1.92 before other costs. There are also 0.10 unmatched NO shares; this bound assigns them no value.
 
 For a range of possible fill prices, a conservative estimate can use the smallest retained fraction across that range. Fees and purchase costs must use consistent units.
 
@@ -91,17 +96,17 @@ Suppose the asks are:
 
 | Side | Price | Shares available at that price |
 | --- | ---: | ---: |
-| YES | $0.46 | 20 |
-| YES | $0.50 | 80 |
-| NO | $0.51 | 100 |
+| YES | USD 0.46 | 20 |
+| YES | USD 0.50 | 80 |
+| NO | USD 0.51 | 100 |
 
-The first 20 pairs cost $0.97 each before fees. Buying 100 YES shares requires taking the next level too. The actual cost of buying 100 shares on both sides, if this book remains available, is
+The first 20 pairs cost USD 0.97 each before fees. Buying 100 YES shares requires taking the next level too. The actual cost of buying 100 shares on both sides, if this book remains available, is
 
 $$
 C(100)=20(0.46)+80(0.50)+100(0.51)=100.20.
 $$
 
-Even with no fees, the $100 paired payout would leave a $0.20 loss. Multiplying the best displayed prices by 100 would have reported a $3 profit.
+Even with no fees, the USD 100 paired payout would leave a USD 0.20 loss. Multiplying the best displayed prices by 100 would have reported a USD 3 profit.
 
 A depth-aware calculation can evaluate quantities at depth breakpoints, subject to budget and size constraints. For a candidate size $q$, it finds the limit prices $L_Y(q)$ and $L_N(q)$ needed to reach that quantity. A conservative cost bound is
 
@@ -109,7 +114,7 @@ $$
 C_{\max}(q)=q[L_Y(q)+L_N(q)].
 $$
 
-At $q=100$, this bound is $101. At $q=20$, it is $19.40. The bound charges every share at its leg's limit price, so it can exceed the cost calculated by walking the book.
+At $q=100$, this bound is USD 101. At $q=20$, it is USD 19.40. The bound charges every share at its leg's limit price, so it can exceed the cost calculated by walking the book.
 
 ## A profitable plan still needs two fills
 
@@ -121,15 +126,25 @@ $$
 100Y+30N=30(Y+N)+70Y.
 $$
 
-Thirty complete pairs have a $30 combined payout. The remaining 70 YES shares depend on the outcome or on the price available when they are sold. If the bot tries to complete the hedge, it may have to pay more for NO than the original plan allowed.
+Thirty complete pairs have a USD 30 combined payout. The remaining 70 YES shares depend on the outcome or on the price available when they are sold. If the bot tries to complete the hedge, it may have to pay more for NO than the original plan allowed.
 
 For arbitrary net balances $n_Y$ and $n_N$, the complete-pair quantity is $\min(n_Y,n_N)$. The unmatched quantity is $|n_Y-n_N|$. A record of submitted orders cannot establish either number; execution records must show what filled and what fees were deducted.
 
 These bounds require fresh market data, matching token identities, and both fills. Stale data or a missing leg can invalidate a proposed trade.
 
+## From a price observation to an execution record
+
+A technical workflow needs to preserve enough evidence to reconstruct each decision. Start with both order books for the same condition, their observation times, and the fee parameters used for the calculation. Reject a candidate if either book is too old under the chosen freshness policy.
+
+Next, calculate an affordable quantity from executable depth and net shares after fees. Apply limits on order cost and unmatched exposure before submitting orders. A positive spread alone does not answer either question.
+
+After submission, track each leg independently. Record the requested quantity, filled quantity, average fill price, deducted fees, and remaining order quantity. Reconcile those records against the resulting balances before counting complete pairs. An order acknowledgement confirms receipt of a request; it does not confirm a fill.
+
+These are general design requirements for evaluating a paired-trade system. They do not describe or expose PolyArb's private implementation.
+
 ## What I would check in a paper-trading result
 
-PolyArb defaults to real market prices with simulated orders and a persistent $1,000 starting paper balance. Live mode requires explicit configuration and is not ready for unattended trading.
+PolyArb defaults to real market prices with simulated orders and a persistent USD 1,000 starting paper balance. Live mode requires explicit configuration and is not ready for unattended trading.
 
 The dashboard helps inspect activity, but a detected price gap, a risk-approved decision, a simulated fill, and realised profit describe different stages. To assess a run, I would check which prices and quantities were observed, how old the book was, which fee parameters were used, and how the simulator decided that each order filled.
 
