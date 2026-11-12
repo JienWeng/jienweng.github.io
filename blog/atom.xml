@@ -8,6 +8,49 @@
     <updated>2026-11-12T00:00:00+00:00</updated>
     <id>https://jienweng.github.io/blog/atom.xml</id>
     <entry xml:lang="en">
+        <title>A Design Checklist You Can Give Your AI</title>
+        <published>2026-11-12T00:00:00+00:00</published>
+        <updated>2026-11-12T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://jienweng.github.io/blog/design-guide-for-ai/"/>
+        <id>https://jienweng.github.io/blog/design-guide-for-ai/</id>
+        
+        <content type="html" xml:base="https://jienweng.github.io/blog/design-guide-for-ai/">&lt;p&gt;I wanted a link I could paste into an AI conversation and say: use this to check the interface, explain what needs work, and suggest fixes.&lt;&#x2F;p&gt;
+&lt;p&gt;I assembled &lt;a href=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;design&#x2F;&quot;&gt;Design Guide for AI&lt;&#x2F;a&gt; around that idea. It includes 138 checklists and 908 individual items from Checklist Design, with instructions for choosing the relevant checks and reporting what the agent can verify.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;give-the-agent-a-starting-point&quot;&gt;Give the agent a starting point&lt;&#x2F;h2&gt;
+&lt;p&gt;Open the &lt;a href=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;design&#x2F;&quot;&gt;guide page&lt;&#x2F;a&gt;, copy the review prompt, and add your website, screenshots, or project files. The assistant needs access to the interface as well as the guide.&lt;&#x2F;p&gt;
+&lt;p&gt;For a shorter prompt, use:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Read https:&#x2F;&#x2F;jienweng.github.io&#x2F;design&#x2F;llms.txt and follow its review protocol. Review this interface using the relevant checklists. Account for every selected item, cite evidence, and separate observed problems from checks you cannot verify. Suggest fixes before changing anything.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;Then add the interface you want reviewed. You can narrow the request to a screen, component, or flow: “Review this sign-up form” gives the agent a clearer scope than “Check my app.”&lt;&#x2F;p&gt;
+&lt;p&gt;The &lt;a href=&quot;&#x2F;design&#x2F;llms.txt&quot;&gt;LLM entry point&lt;&#x2F;a&gt; contains the review instructions and links to individual checklists. An agent can fetch the ones it needs. The &lt;a href=&quot;&#x2F;design&#x2F;guide.txt&quot;&gt;complete text guide&lt;&#x2F;a&gt; contains the whole collection for offline use or an assistant that cannot follow the individual links. If it cannot open links at all, paste the relevant text into the conversation.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-the-agent-should-return&quot;&gt;What the agent should return&lt;&#x2F;h2&gt;
+&lt;p&gt;Before reviewing, the agent should explain which checklists it selected and why. A form might need the input-field, button, submission, and validation checklists. A screenshot of an empty state calls for a different selection.&lt;&#x2F;p&gt;
+&lt;p&gt;Each selected item gets a status: Present, Partial, Missing, Not applicable, or Unverified. The report should include the evidence and location, then propose fixes for observed problems. It also has to reconcile its item counts and list anything it skipped.&lt;&#x2F;p&gt;
+&lt;p&gt;For example, a screenshot can show that an email field has no visible label. It cannot establish how a screen reader announces the field. The report should separate those observations and say what test is still needed.&lt;&#x2F;p&gt;
+&lt;p&gt;The same applies to optional elements. A checklist might mention an illustration, but a small utility form may have no use for one. The agent should explain that decision rather than recommend adding decoration to satisfy a list.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;where-the-checklists-come-from&quot;&gt;Where the checklists come from&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.checklist.design&#x2F;&quot;&gt;Checklist Design&lt;&#x2F;a&gt; publishes an &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;Checklist-Design&#x2F;skills&quot;&gt;official agent-skill repository&lt;&#x2F;a&gt; under the MIT license. I used its published bundle rather than scrape the website page by page.&lt;&#x2F;p&gt;
+&lt;p&gt;The checklist items, descriptions, and tips are their work. I added the website presentation, shareable text files, review protocol, and checks for incomplete reports. The &lt;a href=&quot;&#x2F;design&#x2F;LICENSE.txt&quot;&gt;license&lt;&#x2F;a&gt; and &lt;a href=&quot;&#x2F;design&#x2F;manifest.json&quot;&gt;source manifest&lt;&#x2F;a&gt; identify the original authors and the pinned source commit.&lt;&#x2F;p&gt;
+&lt;p&gt;The collection covers design systems, web apps, mobile apps, websites, and user flows. It is a snapshot; future changes to the source need to be reviewed and imported.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-i-tested&quot;&gt;What I tested&lt;&#x2F;h2&gt;
+&lt;p&gt;I ran three fresh agent reviews with different evidence: a form’s source code, an empty-state screenshot, and a modal’s source plus recorded browser observations. The reviewers were not given the expected answers.&lt;&#x2F;p&gt;
+&lt;p&gt;Across their selected checklists, they reported all 37 items and matched the expected outcomes in 19 checks. They found the four planted problems: a missing field label, missing supporting text, no modal close action, and a modal that overflowed on mobile. They left unseen behavior unverified and respected the request to omit decorative illustrations.&lt;&#x2F;p&gt;
+&lt;p&gt;These were three controlled cases using one model. They do not establish how every model will handle a large product or an ambiguous screenshot. The report validator checks item IDs, missing rows, totals, and completion claims. Someone still needs to assess whether the evidence supports the findings and whether the suggested fixes help.&lt;&#x2F;p&gt;
+&lt;p&gt;To try it, &lt;a href=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;design&#x2F;&quot;&gt;copy the prompt from the guide&lt;&#x2F;a&gt; and start with one screen or flow you can inspect yourself.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
         <title>The Maths Behind PolyArb</title>
         <published>2026-10-29T00:00:00+00:00</published>
         <updated>2026-11-12T00:00:00+00:00</updated>
