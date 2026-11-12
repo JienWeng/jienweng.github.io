@@ -53,7 +53,10 @@ def generate():
         path = match.group(1).removesuffix('.md').removesuffix('/_index')
         return f']({base}/{path}/)'
     bio = re.sub(r'\]\(@/([^)]*)\)', resolve, bio)
+    focus = (ROOT / 'content/now.md').read_text().split('+++', 2)[2].strip()
+    focus = re.sub(r'\]\(@/([^)]*)\)', resolve, focus)
     full = intro + source + '\n## Profile\n\n' + bio + '\n\n## Social and research profiles\n\n' + socials
+    full += '\n\n## Current focus\n\n' + focus
     for label, _ in SECTIONS:
         full += f'\n\n## {label}\n\n' + '\n\n'.join(entry(item) for item in sections[label])
     full += '\n\n## Public projects\n\n' + '\n\n'.join(
@@ -64,20 +67,27 @@ def generate():
     summary = intro + 'Official personal website and public professional information. The text CV contains the complete current public CV and project summaries. Publication statuses below distinguish published work from manuscripts under review.\n\n## Profile and full CV\n\n'
     summary += '\n'.join('- ' + link(label, path) for label, path in [
         ('About', 'bio/'), ('Current CV', 'cv/'), ('Complete text CV', 'cv/profile.txt'),
-        ('Public CV PDF', 'cv/jien-weng-lai-public-cv.pdf'), ('Work with me', 'services/'), ('Current priorities', 'now/')])
+        ('Public CV PDF', 'cv/jien-weng-lai-public-cv.pdf'), ('Structured public profile', 'cv/public-profile.json'),
+        ('Work with me', 'services/'), ('Current priorities', 'now/')])
     summary += '\n\nContact: ' + extra['email'] + '\n\n' + socials
     summary += '\n\n## Current roles\n\n' + '\n'.join(
         f'- {item["title"]} ({item.get("date", "")}): {item.get("content", "")}'
         for item in sections['Experience'] if 'Present' in item.get('date', ''))
+    previous = [item for item in sections['Experience'] if 'Present' not in item.get('date', '')]
+    if previous:
+        summary += '\n\n## Earlier experience\n\n' + '\n'.join(
+            f'- {item["title"]} ({item.get("date", "")}): {item.get("content", "")}' for item in previous)
     summary += '\n\n## Education\n\n' + '\n'.join(
         f'- {item["title"]} ({item.get("date", "")}): {item.get("content", "")}' for item in sections['Education'])
     summary += '\n\n## Research\n\n' + '- ' + link('Publications', 'publications/') + '\n'
     summary += '\n'.join(f'- {item["title"]} — {item["status"]}, {item["venue"]}, {item["date"]}.' +
                          (f' {item["link"]}' if item.get('link') else '') for item in sections['Publications'])
     summary += '\n\n## Public projects\n\n' + '- ' + link('Work index', 'projects/') + '\n'
-    summary += '\n'.join(f'- [{item["title"]}]({base + "/" + item["case_study"] if item.get("case_study") else item["link"]}): {item["content"]}' for item in projects)
+    summary += '\n'.join(f'- [{item["title"]}]({base + "/" + item["case_study"] if item.get("case_study") else item["link"]}): {item["content"]}' +
+                         (f' Status: {item["status"]}.' if item.get('status') else '') for item in projects)
     summary += '\n\n## Writing and discovery\n\n' + '\n'.join('- ' + link(label, path) for label, path in [
-        ('Writing and technical notes', 'notes/'), ('Blog', 'blog/'), ('Atom feed', 'atom.xml'), ('Sitemap', 'sitemap.xml')])
+        ('Writing and technical notes', 'notes/'), ('Blog', 'blog/'), ('Site log', 'log/'),
+        ('Colophon', 'colophon/'), ('Atom feed', 'atom.xml'), ('Sitemap', 'sitemap.xml')])
     summary += '\n\nThe full text CV also includes awards, certifications, grants, open-source contributions, volunteering, and memberships. Both text files are generated from the same public content as this website.\n'
     public_fields = ('title', 'date', 'subtitle', 'issuer', 'authors', 'venue', 'status', 'content', 'link', 'tags')
     profile = {
@@ -88,6 +98,7 @@ def generate():
                    **{key: extra[key] for key in ('linkedin', 'github', 'x', 'orcid', 'scholar')}},
         'headline': 'Product Manager & Researcher',
         'summary': config['description'],
+        'currentFocus': {'source': base + '/now/', 'content': focus},
         'sections': {label: [{key: item[key] for key in public_fields if key in item}
                              for item in items] for label, items in sections.items()},
         'projects': [{key: item[key] for key in public_fields + ('case_study',) if key in item}

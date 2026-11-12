@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "source": "https://jienweng.github.io/cv/",
-  "sourceDigest": "0fcc0d2f0937e8a318070b38057c086b5ca4a5ab37462e09c606e14d56e22512",
+  "sourceDigest": "869c79b83cca824a073fa549756267690b1d5314161a2a875379d34a8dd7ce17",
   "basics": {
     "name": "Jien Weng Lai",
     "email": "laijienweng@gmail.com",
@@ -14,12 +14,16 @@
   },
   "headline": "Product Manager & Researcher",
   "summary": "Jien Weng, Product Manager & Researcher working on Web3 payments, business transformation, and applied AI research.",
+  "currentFocus": {
+    "source": "https://jienweng.github.io/now/",
+    "content": "[Now page](https://nownownow.com/about). Last updated November 12, 2026.\n\n**Product delivery.** At CryptoRails, I maintain the backlog and roadmap, define acceptance criteria, and coordinate engineering delivery for multi-chain payments and wallet infrastructure. My [payment lifecycle note](https://jienweng.github.io/notes/cryptorails-transaction-lifecycle/) explains the decisions behind that work.\n\n**Business systems.** At Quandatics, I work across requirements, design, development, deployment, and support for the [internal CRM](https://jienweng.github.io/blog/quandatics-crm-business-transformation/) connecting sales, project delivery, and finance.\n\n**Teaching.** Separately, I teach and coach learners in data science and machine learning at Quandatics Academy. My [hands-on MLOps tutorial](https://jienweng.github.io/notes/intro-to-mlops-tutorial/) is one public teaching sample.\n\n**Research.** I am a Research Assistant at Monash University Malaysia, developing wastewater treatment plant prediction models with RNNs, Transformers, and Markov chain methods on time-series sensor data.\n\n**Technical consulting.** Supporting ACTBuilder with technical documentation, a knowledge wiki, website maintenance, and Python environment setup.\n\n**Writing.** My [notes](https://jienweng.github.io/notes/) include a nine-part regression series, stochastic modelling, and product decisions. The [Fokker-Planck note](https://jienweng.github.io/notes/fokker_planck_sde/) connects stochastic differential equations with evolving probability distributions.\n\n**Projects.** [VideoFlow](https://jienweng.github.io/projects/videoflow/) is a canvas-based AI video studio for characters, scripts, scenes, image and video generation, and editing. [PolyArb](https://jienweng.github.io/projects/polyarb/), my Rust Polymarket arbitrage platform, is in production. The [Monash Water Platform](https://jienweng.github.io/projects/monash-water/) connects CitizenFlood community reporting with wastewater monitoring."
+  },
   "sections": {
     "Experience": [
       {
         "title": "CryptoRails",
         "date": "Feb 2026 - Present",
-        "content": "Product Manager: coordinates an engineering team, maintains the product backlog, and runs delivery for multi-chain crypto payment and wallet infrastructure."
+        "content": "Product Manager: maintains the backlog and roadmap, runs Scrum ceremonies, and coordinates engineering delivery for multi-chain crypto payment and wallet infrastructure. Defines payment states, settlement criteria, and acceptance criteria for delayed or duplicate payments with the business owner and engineers."
       },
       {
         "title": "Independent Consulting",
@@ -29,13 +33,13 @@
       {
         "title": "Quandatics",
         "date": "Apr 2026 - Present",
-        "content": "Contractor: Business Transformation Consultant",
+        "content": "Contractor, Business Transformation Consultant: maps sales, project delivery, and finance workflows for an internal CRM. Works across requirements, design, development, deployment, and support, including record ownership, approvals, and milestone-to-invoice handovers.",
         "link": "https://quandatics.com"
       },
       {
         "title": "Quandatics Academy",
         "date": "Jun 2026 - Present",
-        "content": "Contractor: Data Science & Machine Learning Trainer",
+        "content": "Contractor, Data Science & Machine Learning Trainer: teaches and coaches learners in data science and machine learning.",
         "link": "https://academy.quandatics.com"
       },
       {
@@ -52,7 +56,7 @@
       {
         "title": "Great Eastern Life Assurance",
         "date": "Oct 2024 - Jan 2025",
-        "content": "Finance Analyst - Data Engineer Intern",
+        "content": "Finance Analyst - Data Engineer Intern: worked on data pipelines using Hive SQL in Apache Zeppelin.",
         "link": "https://www.greateasternlife.com/my/en/personal-insurance.html"
       }
     ],
@@ -60,7 +64,7 @@
       {
         "title": "UTAR",
         "date": "Oct 2022 - Oct 2025",
-        "content": "BSc (Hons), First Class Honours · Applied Mathematics with Computing",
+        "content": "Bachelor of Science (Honours) Applied Mathematics with Computing with Merit",
         "link": "https://www.utar.edu.my"
       },
       {
@@ -302,16 +306,16 @@
   "projects": [
     {
       "title": "VideoFlow",
-      "subtitle": "AI video orchestration for scripts, storyboards, and render jobs.",
+      "subtitle": "Canvas-based AI video creation, from characters and scripts to scenes and editing.",
       "status": "Web & Electron desktop",
-      "content": "A Go and SvelteKit studio for web and desktop, with local storage and bundled FFmpeg.",
+      "content": "A Go and SvelteKit studio for web and Electron desktop, connecting characters, scripts, scenes, image/video generation, and editing.",
       "link": "https://github.com/JienWeng/videoflow-go",
       "case_study": "projects/videoflow/"
     },
     {
       "title": "PolyArb",
-      "subtitle": "Polymarket arbitrage research in Rust.",
-      "status": "Dry-run by default",
+      "subtitle": "Rust Polymarket arbitrage platform, now in production.",
+      "status": "In production",
       "content": "Evaluates Polymarket YES–NO pairs after fees and available depth. Includes exposure limits, persistent paper trading, and an activity dashboard.",
       "case_study": "projects/polyarb/"
     },

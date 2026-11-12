@@ -2,7 +2,7 @@
 title = "An Introduction to MLOps: A Complete Tutorial with a Hands-On Example"
 description = "A plain-language tutorial that follows the Intro to MLOps slides end to end: reproducibility, the software cycle, DevOps, the ML lifecycle, MLOps, and MLflow, with diagrams and a runnable hands-on."
 date = 2026-06-29
-updated = 2026-06-30
+updated = 2026-11-12
 draft = false
 aliases = ["/posts/intro-to-mlops-tutorial/"]
 
@@ -367,4 +367,4 @@ That list is exactly the MLOps workflow from earlier. You have now built its fir
 
 ## A related software project
 
-[VideoFlow](@/projects/videoflow.md) is my video orchestration studio built with Go and SvelteKit, with an Electron desktop application. Its project page describes the shared architecture, local data, and external generation services.
+[VideoFlow](@/projects/videoflow.md) is my canvas-based AI video studio built with Go and SvelteKit, with an Electron desktop application. Its project page describes the shared architecture, local data, and external generation services.

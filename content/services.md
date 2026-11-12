@@ -1,6 +1,7 @@
 +++
 title = "Work With Me"
 description = "Requirements, product delivery, internal systems, and data science training."
+updated = 2026-11-12
 +++
 
 I help teams define requirements, plan delivery, and test what they build. My work covers internal systems, Web3 payments, and data science training.
@@ -18,7 +19,7 @@ At Quandatics, I work on an internal CRM across requirements, design, developmen
 
 At CryptoRails, I coordinate an engineering team working on payments, chain integrations, and testing. [Read about the delivery work](@/blog/product-manager-between-business-and-delivery.md).
 
-For a sample of my teaching, see the [hands-on MLOps tutorial](@/notes/intro-to-mlops-tutorial.md).
+At Quandatics Academy, I teach and coach learners in data science and machine learning. For a sample of my teaching, see the [hands-on MLOps tutorial](@/notes/intro-to-mlops-tutorial.md).
 
 ## Get in touch
 

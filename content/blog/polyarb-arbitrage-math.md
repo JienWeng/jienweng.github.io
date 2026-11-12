@@ -2,7 +2,7 @@
 title = "The Maths Behind PolyArb"
 description = "Working through YES–NO arbitrage, fees paid in shares, order-book depth, and the gap between a paper trade and a live fill."
 date = 2026-10-29
-updated = 2026-11-01
+updated = 2026-11-12
 draft = false
 
 [taxonomies]
@@ -143,7 +143,7 @@ These are general design requirements for evaluating a paired-trade system. They
 
 ## What I would check in a paper-trading result
 
-PolyArb defaults to real market prices with simulated orders and a persistent USD 1,000 starting paper balance. Live mode requires explicit configuration and is not ready for unattended trading.
+PolyArb is now in production and also supports paper trading. This section concerns simulated results, not evidence of live returns. Paper trading uses real market prices and simulated orders, with balances that persist across restarts.
 
 The dashboard helps inspect activity, but a detected price gap, a risk-approved decision, a simulated fill, and realised profit describe different stages. To assess a run, I would check which prices and quantities were observed, how old the book was, which fee parameters were used, and how the simulator decided that each order filled.
 

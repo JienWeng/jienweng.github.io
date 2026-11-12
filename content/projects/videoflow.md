@@ -1,17 +1,19 @@
 +++
-title = "VideoFlow: AI Video Orchestration with Go & Electron"
-description = "Explore VideoFlow, an AI video orchestration platform built with Go, SvelteKit, and Electron for scripts, storyboards, render jobs, and local media workflows."
+title = "VideoFlow: Canvas-Based AI Video Studio"
+description = "A Go, SvelteKit, and Electron video studio connecting characters, scripts, scenes, text-to-image, image-to-video, and editing in a canvas workflow."
 template = "project-detail.html"
-updated = 2026-10-06
+updated = 2026-11-12
 [extra]
 project_id = "videoflow"
-search_topics = ["AI video orchestration", "Go backend", "SvelteKit", "Electron desktop application", "FFmpeg", "storyboard workflow"]
+search_topics = ["AI video creation", "canvas workspace", "Go backend", "SvelteKit", "Electron desktop application", "text-to-image", "image-to-video", "video editing"]
 toc = true
 +++
 
 ## Studio workflow
 
 I work on the Go backend, SvelteKit interface, and Electron packaging. VideoFlow connects scripts, characters, scenes, shots, and media jobs so generated assets stay attached to their references.
+
+The canvas brings story elements and generated outputs into one workspace. Select a character, scene, or asset to edit its details or ask for AI-assisted changes. The workflow supports text-to-image and image-to-video generation, followed by video editing, captions, and composition work.
 
 ## Go and SvelteKit with an Electron desktop application
 
@@ -21,9 +23,11 @@ The Electron application starts a private local backend and displays the same fr
 
 The web version uses the shared frontend and backend through Docker. It is a single-user deployment; the desktop interface and the web studio share the same underlying workflow.
 
-## SQLite project storage and OpenRouter AI generation
+## Local project storage and AI providers
 
-Keeping project data and media together makes the workspace portable between sessions. AI generation still requires internet access and an OpenRouter API key with credits. Local storage does not make the generation service offline.
+Keeping project data and media together makes the workspace portable between sessions. Current source uses local Codex or Claude Code sessions for text planning, fal.ai for image/video generation, and OpenRouter for vision and transcription, with other supported media routes available in settings. Provider setup depends on the release; see the [current provider guide](https://github.com/JienWeng/videoflow-go/blob/main/docs/PROVIDERS.md).
+
+AI services require the relevant account access and, for paid generation, provider credits. Local project storage does not make cloud generation offline. The built-in editor and optional HyperFrames composition workflow support further editing; the [editing guide](https://github.com/JienWeng/videoflow-go/blob/main/docs/LOCAL-DIRECTOR.md) describes the available controls and limitations.
 
 ## Recorded workflow
 

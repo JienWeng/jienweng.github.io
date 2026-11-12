@@ -9,6 +9,7 @@ from generate_llms import ROOT, SECTIONS, read
 
 
 def normalized(value):
+    value = re.sub(r'\[([^\]]+)\]\(https?://[^)]+\)', r'\1', value)
     return re.sub(r'\s+', ' ', value).strip()
 
 
@@ -23,7 +24,7 @@ def main():
         items = read(f'content/cv/{name}.toml')['collection']
         assert len(profile['sections'][label]) == len(items), label
         for item in items:
-            for key in ('title', 'date', 'subtitle', 'status'):
+            for key in ('title', 'date', 'subtitle', 'issuer', 'authors', 'venue', 'status', 'content'):
                 if item.get(key):
                     assert item[key] in text, (label, key, 'text')
                     assert normalized(item[key]) in pdf, (label, key, 'PDF')
