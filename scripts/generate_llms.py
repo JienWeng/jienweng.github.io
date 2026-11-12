@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate public AI-readable profile files from the website's current content."""
+"""Generate public AI-readable profile and design guide files from website content."""
 import argparse
 import hashlib
 import json
@@ -89,6 +89,8 @@ def generate():
         ('Writing and technical notes', 'notes/'), ('Blog', 'blog/'), ('Site log', 'log/'),
         ('Colophon', 'colophon/'), ('Atom feed', 'atom.xml'), ('Sitemap', 'sitemap.xml')])
     summary += '\n\nThe full text CV also includes awards, certifications, grants, open-source contributions, volunteering, and memberships. Both text files are generated from the same public content as this website.\n'
+    if (ROOT / 'content/design.md').is_file():
+        summary += '\n## Design resource\n\n- ' + link('Design Guide for AI', 'design/llms.txt') + ': Review procedure, interface rules, and the complete text guide.\n'
     public_fields = ('title', 'date', 'subtitle', 'issuer', 'authors', 'venue', 'status', 'content', 'link', 'tags')
     profile = {
         'schemaVersion': 2,
@@ -112,8 +114,12 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--check', action='store_true', help='Fail if committed output is out of date')
     args = parser.parse_args()
+    outputs = generate()
+    if (ROOT / 'content/design.md').is_file():
+        from generate_design_guide import generate_design_resources
+        outputs.update(generate_design_resources(read('config.toml')['base_url'].rstrip('/')))
     stale = []
-    for relative, content in generate().items():
+    for relative, content in outputs.items():
         path = ROOT / relative
         if args.check:
             if not path.exists() or path.read_text() != content:
@@ -123,7 +129,7 @@ def main():
             path.write_text(content)
             print(f'Generated {relative}')
     if stale:
-        parser.exit(1, 'Outdated public profiles: ' + ', '.join(stale) + '\nRun python3 scripts/generate_llms.py\n')
+        parser.exit(1, 'Outdated AI-readable files: ' + ', '.join(stale) + '\nRun python3 scripts/generate_llms.py\n')
 
 
 if __name__ == '__main__':

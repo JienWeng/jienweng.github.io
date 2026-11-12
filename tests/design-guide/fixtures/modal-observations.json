@@ -1,0 +1,34 @@
+{
+  "artifact": "modal.html",
+  "environment": "Local isolated test fixture in Chromium; simulated Delete button does not delete actual data.",
+  "observations": [
+    {
+      "test": "viewport fit",
+      "width": 1440,
+      "modalWidth": 640,
+      "hasHorizontalScroll": false
+    },
+    {
+      "test": "viewport fit",
+      "width": 390,
+      "modalWidth": 640,
+      "hasHorizontalScroll": true
+    },
+    {
+      "test": "Escape dismissal",
+      "stillVisible": true
+    },
+    {
+      "test": "Backdrop dismissal",
+      "stillVisible": true
+    },
+    {
+      "test": "Close/cancel controls",
+      "count": 0
+    },
+    {
+      "test": "Simulated primary action",
+      "callbackRan": true
+    }
+  ]
+}

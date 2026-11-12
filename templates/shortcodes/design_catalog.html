@@ -1,0 +1,19 @@
+{% set catalog = load_data(path="data/checklist-design/catalog.json") %}
+<nav aria-label="Checklist categories" class="design-category-links">
+{% for category in catalog.categories %}<a href="#catalog-{{ category.slug }}">{{ category.name }} ({{ category.count }})</a>{% endfor %}
+</nav>
+<div class="design-catalog">
+{% for category in catalog.categories %}
+<details id="catalog-{{ category.slug }}" class="design-category">
+<summary>{{ category.name }} · {{ category.count }} checklists</summary>
+{% for checklist in category.checklists %}
+<details class="design-checklist" id="{{ checklist.file | replace(from='.md', to='') }}">
+<summary>{{ checklist.title }} · {{ checklist.itemCount }} items</summary>
+<p><a href="{{ checklist.url }}">Open this checklist as Markdown</a> · <a href="{{ checklist.source }}">Original source</a></p>
+<div class="design-checklist-body">{{ checklist.body | markdown | safe }}</div>
+</details>
+{% endfor %}
+</details>
+{% endfor %}
+</div>
+<p>Checklist collection: Copyright (c) 2026 Checklist Design. <a href="{{ get_url(path='design/LICENSE.txt') }}">MIT license and permission notice</a>.</p>

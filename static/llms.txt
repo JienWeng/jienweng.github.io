@@ -70,3 +70,7 @@ Contact: laijienweng@gmail.com
 - [Sitemap](https://jienweng.github.io/sitemap.xml)
 
 The full text CV also includes awards, certifications, grants, open-source contributions, volunteering, and memberships. Both text files are generated from the same public content as this website.
+
+## Design resource
+
+- [Design Guide for AI](https://jienweng.github.io/design/llms.txt): Review procedure, interface rules, and the complete text guide.

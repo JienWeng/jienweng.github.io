@@ -1,0 +1,7 @@
+{% extends "page.html" %}
+{% block head %}
+<link rel="stylesheet" href="{{ get_url(path='design-guide.css') }}">
+<link rel="describedby" href="{{ get_url(path='design/llms.txt') }}">
+<link rel="alternate" type="text/plain" href="{{ get_url(path='design/guide.txt') }}">
+{% endblock head %}
+{% block script %}<script src="{{ get_url(path='design-guide.js') }}" defer></script>{% endblock script %}

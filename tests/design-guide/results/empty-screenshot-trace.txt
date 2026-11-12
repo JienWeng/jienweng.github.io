@@ -1,0 +1,5 @@
+static/design/llms.txt
+static/design/checklists/web-app-empty-state.md
+static/design/manifest.json
+static/design/checklists/design-system-button.md
+Artifact viewed with image viewer: tests/design-guide/fixtures/empty-state.png

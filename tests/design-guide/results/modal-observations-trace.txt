@@ -1,0 +1,5 @@
+static/design/llms.txt
+static/design/checklists/design-system-modal.md
+static/design/manifest.json (commit and modal entry; initial display truncated, selected metadata then extracted)
+tests/design-guide/fixtures/modal.html
+tests/design-guide/fixtures/modal-observations.json

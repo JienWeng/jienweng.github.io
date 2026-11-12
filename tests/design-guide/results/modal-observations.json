@@ -1,0 +1,119 @@
+{
+  "scope": "Review of the isolated web modal for a project user deciding whether to invoke simulated Delete project. Evidence is modal.html source and a supplied Chromium observation log produced by someone else. Only the modal component is in scope; no browser tests or implementation changes were performed. Selection was frozen at one checklist and six items before findings.",
+  "snapshot": "bfae71e507b1b7c03c12e0756402b60eb80f5d14",
+  "selected": [
+    {
+      "checklist": "design-system-modal",
+      "reason": "Directly covers this modal component; all six source item descriptions and tips were read."
+    }
+  ],
+  "excluded": [
+    {
+      "checklist": "design-system-button",
+      "reason": "Separate button-component audit is outside the modal-only scope; action clarity is covered by the modal checklist."
+    },
+    {
+      "checklist": "design-system-accessibility",
+      "reason": "Shared foundations are explicitly outside scope; no comprehensive accessibility or conformance assessment is claimed."
+    },
+    {
+      "checklist": "design-system-typography",
+      "reason": "Shared foundations are explicitly outside scope."
+    },
+    {
+      "checklist": "design-system-color-system",
+      "reason": "Shared foundations are explicitly outside scope."
+    },
+    {
+      "checklist": "design-system-spacing-and-grid",
+      "reason": "Shared foundations are explicitly outside scope."
+    },
+    {
+      "checklist": "flows-deleting-account",
+      "reason": "This is a project modal and simulated boolean callback, not an account-deletion journey; broader user flows and other UI are outside scope."
+    }
+  ],
+  "items": [
+    {
+      "id": "design-system-modal:01",
+      "title": "Title",
+      "status": "Present",
+      "location": "#modal-title",
+      "evidenceType": "source",
+      "evidence": "tests/design-guide/fixtures/modal.html: h1#modal-title",
+      "reason": "\u201cDelete project?\u201d clearly names the decision and action."
+    },
+    {
+      "id": "design-system-modal:02",
+      "title": "Actionable item",
+      "status": "Present",
+      "location": "#delete; supplied simulated primary action state",
+      "evidenceType": "user",
+      "evidence": "tests/design-guide/fixtures/modal-observations.json: Simulated primary action, callbackRan=true; modal.html button#delete",
+      "reason": "The explicit \u201cDelete project\u201d label identifies the action; the supplied observation establishes that its simulated callback runs. This fixture only sets a boolean."
+    },
+    {
+      "id": "design-system-modal:03",
+      "title": "Close action",
+      "status": "Missing",
+      "location": "Open modal; close/cancel, Escape and backdrop dismissal states",
+      "evidenceType": "user",
+      "evidence": "tests/design-guide/fixtures/modal-observations.json: Close/cancel controls count=0; Escape dismissal and Backdrop dismissal stillVisible=true",
+      "reason": "The observed states establish no non-destructive way to exit the dialog.",
+      "severity": "Medium",
+      "impact": "A user who declines the simulated action cannot dismiss the dialog through its controls or the exercised dismissal paths.",
+      "fix": "Add a clearly labelled Cancel or Close control that dismisses the dialog without invoking the simulated delete callback; support Escape dismissal.",
+      "verify": "Open the fixture, activate Cancel/Close and press Escape in separate runs; confirm the dialog closes and simulatedDelete is not set."
+    },
+    {
+      "id": "design-system-modal:04",
+      "title": "Responsiveness",
+      "status": "Partial",
+      "location": "Viewport fit at 1440px and 390px",
+      "evidenceType": "user",
+      "evidence": "tests/design-guide/fixtures/modal-observations.json: viewport fit observations, modalWidth=640 at both widths, hasHorizontalScroll=false at 1440 and true at 390",
+      "reason": "Desktop fit is established, while the narrow viewport overflows horizontally.",
+      "severity": "Medium",
+      "impact": "Narrow-screen users must scroll horizontally to inspect or operate the dialog.",
+      "fix": "Constrain the modal width to available viewport space with responsive margins and padding; consider full-screen presentation on narrow screens.",
+      "verify": "Recheck at 390px and 1440px, confirming no horizontal overflow and that the title, description and controls remain visible and usable."
+    },
+    {
+      "id": "design-system-modal:05",
+      "title": "Background change behind modal",
+      "status": "Present",
+      "location": ".backdrop CSS",
+      "evidenceType": "source",
+      "evidence": "tests/design-guide/fixtures/modal.html: .backdrop background:#0008; position:fixed; inset:0",
+      "reason": "The implemented full-viewport translucent black backdrop changes the background to focus attention on the modal. This is source evidence, not a personal rendering observation."
+    },
+    {
+      "id": "design-system-modal:06",
+      "title": "Description",
+      "status": "Present",
+      "location": "#modal-description",
+      "evidenceType": "source",
+      "evidence": "tests/design-guide/fixtures/modal.html: p#modal-description",
+      "reason": "The description explains the stated permanent deletion consequence needed for the decision. Actual data deletion is outside this isolated fixture; the callback only sets a boolean."
+    }
+  ],
+  "coverage": {
+    "expected": 6,
+    "reported": 6,
+    "remaining": [],
+    "complete": true,
+    "verificationComplete": true,
+    "totals": {
+      "Present": 4,
+      "Partial": 1,
+      "Missing": 1,
+      "Not applicable": 0,
+      "Unverified": 0
+    }
+  },
+  "limitations": [
+    "Source and supplied observation evidence only; I did not run the browser tests or personally verify runtime rendering.",
+    "Runtime observations cover only the listed Chromium states and viewport widths; coverage and verification completion refer only to the six selected checklist items within this evidence boundary.",
+    "No full accessibility conformance claim; other UI and shared foundations are outside scope. The Delete action sets a boolean and does not delete actual data."
+  ]
+}

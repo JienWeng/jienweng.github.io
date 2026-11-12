@@ -1,0 +1,45 @@
+{
+  "form-source": {
+    "brief": "Review a minimal inline newsletter email subscription form from source only. Focus input and submission; page layout and shared design-system foundations are outside this narrow review. Decorative illustrations are intentionally unwanted. Do not run the interface. Runtime outcomes are not supplied.",
+    "artifacts": ["fixtures/form.html"],
+    "requiredChecklists": ["design-system-input-field", "flows-submitting-a-form"],
+    "allowedEvidence": ["source", "none"],
+    "expectedStatuses": {
+      "design-system-input-field:02": ["Missing"],
+      "design-system-input-field:05": ["Not applicable"],
+      "flows-submitting-a-form:01": ["Present"],
+      "flows-submitting-a-form:02": ["Unverified"],
+      "flows-submitting-a-form:03": ["Unverified"],
+      "flows-submitting-a-form:04": ["Unverified"],
+      "flows-submitting-a-form:05": ["Unverified"]
+    }
+  },
+  "empty-screenshot": {
+    "brief": "Review the first-use projects empty-state component in this screenshot only. The entire component is shown. The design intentionally omits decorative illustration. There is no source, interaction history, or other state evidence. Other UI and shared foundations are outside scope.",
+    "artifacts": ["fixtures/empty-state.png"],
+    "requiredChecklists": ["web-app-empty-state"],
+    "allowedEvidence": ["screenshot", "none", "user"],
+    "expectedStatuses": {
+      "web-app-empty-state:01": ["Not applicable"],
+      "web-app-empty-state:02": ["Present"],
+      "web-app-empty-state:03": ["Missing"],
+      "web-app-empty-state:04": ["Unverified"],
+      "web-app-empty-state:05": ["Unverified"],
+      "web-app-empty-state:06": ["Unverified"]
+    }
+  },
+  "modal-observations": {
+    "brief": "Review only the modal component using its source and the supplied browser observation log. The log was produced by someone else; do not claim you personally ran those browser tests. Other UI and shared foundations are outside scope. This is an isolated fixture: the Delete button only sets a boolean and does not delete actual data.",
+    "artifacts": ["fixtures/modal.html", "fixtures/modal-observations.json"],
+    "requiredChecklists": ["design-system-modal"],
+    "allowedEvidence": ["source", "user", "none"],
+    "expectedStatuses": {
+      "design-system-modal:01": ["Present"],
+      "design-system-modal:02": ["Present"],
+      "design-system-modal:03": ["Missing"],
+      "design-system-modal:04": ["Partial"],
+      "design-system-modal:05": ["Present"],
+      "design-system-modal:06": ["Present"]
+    }
+  }
+}

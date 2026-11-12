@@ -5,6 +5,11 @@
 {% set projects = load_data(path="content/projects/items.toml") %}
 <main id="main" class="projects-main" data-projects>
   <header class="projects-heading"><p>Selected work &amp; experiments</p><h1>Projects</h1><p>Projects in AI, business systems, Web3, and research.</p></header>
+  <section class="projects-resource" aria-labelledby="design-resource-title">
+    <h2 id="design-resource-title"><a href="{{ get_url(path='/design/') }}">Design Guide for AI</a></h2>
+    <p>A public resource I assembled for AI interface reviews: 138 MIT-licensed Checklist Design checklists, 908 items, and an original review workflow.</p>
+    <a href="{{ get_url(path='/design/') }}">Use the guide</a>
+  </section>
   <div class="projects-tools" hidden>
     <div class="project-filters" role="group" aria-label="Filter projects by area">
       {% for category in ["All", "AI & data", "Research", "Systems", "Web3", "Experiments"] %}<button type="button" data-filter="{{ category }}" aria-pressed="{% if loop.first %}true{% else %}false{% endif %}">{{ category }}</button>{% endfor %}

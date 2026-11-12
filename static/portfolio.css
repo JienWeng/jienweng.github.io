@@ -257,3 +257,5 @@
 .article-byline a { color: var(--accent); }
 
 .project-media video { display: block; width: 100%; height: 100%; object-fit: contain; background: var(--paper-deep); }
+
+.guide-feature-links { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 28px; margin-top: 20px; }

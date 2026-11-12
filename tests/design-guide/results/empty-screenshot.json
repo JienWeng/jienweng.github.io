@@ -1,0 +1,173 @@
+{
+  "scope": "Screenshot-only review of the complete first-use projects empty-state component for new web-app users deciding how to create their first project. Evidence is limited to the supplied image viewed with the image viewer and the supplied scope constraints. No source, interaction history, alternate states, browser tests, or other UI reviewed; decorative illustration is intentionally omitted and shared foundations are outside scope.",
+  "snapshot": "bfae71e507b1b7c03c12e0756402b60eb80f5d14",
+  "selected": [
+    {
+      "checklist": "web-app-empty-state",
+      "reason": "Directly matches the first-use projects empty-state component; frozen at 6 items before findings."
+    },
+    {
+      "checklist": "design-system-button",
+      "reason": "The component contains a primary CTA button; frozen at 5 items before findings."
+    }
+  ],
+  "excluded": [
+    {
+      "checklist": "web-app-onboarding",
+      "reason": "The broader onboarding journey is outside the component-only scope."
+    },
+    {
+      "checklist": "web-app-search-results",
+      "reason": "No search-results screen is supplied; the selected empty-state checklist retains the unresolved distinction check."
+    },
+    {
+      "checklist": "design-system-accessibility",
+      "reason": "Shared foundations are explicitly outside scope; no accessibility conformance claim is made."
+    },
+    {
+      "checklist": "design-system-typography",
+      "reason": "Shared foundations are explicitly outside scope."
+    },
+    {
+      "checklist": "design-system-color-system",
+      "reason": "Shared foundations are explicitly outside scope."
+    },
+    {
+      "checklist": "design-system-spacing-and-grid",
+      "reason": "Shared foundations are explicitly outside scope."
+    },
+    {
+      "checklist": "flows-submitting-a-form",
+      "reason": "No creation form or submission journey is in scope or supplied."
+    }
+  ],
+  "items": [
+    {
+      "id": "web-app-empty-state:01",
+      "title": "Illustration or icon",
+      "status": "Not applicable",
+      "location": "First-use projects empty-state component",
+      "evidenceType": "user",
+      "evidence": "Task instruction: intentional omission of decorative illustration",
+      "reason": "Decorative illustration is intentionally omitted under the supplied design constraint; the clear heading communicates emptiness."
+    },
+    {
+      "id": "web-app-empty-state:02",
+      "title": "Clear heading",
+      "status": "Present",
+      "location": "First-use projects empty-state component",
+      "evidenceType": "screenshot",
+      "evidence": "tests/design-guide/fixtures/empty-state.png \u2014 heading",
+      "reason": "The visible heading \u201cNo projects yet\u201d names the missing content plainly."
+    },
+    {
+      "id": "web-app-empty-state:03",
+      "title": "Supporting description",
+      "status": "Missing",
+      "location": "First-use projects empty-state component",
+      "evidenceType": "screenshot",
+      "evidence": "tests/design-guide/fixtures/empty-state.png \u2014 complete component",
+      "reason": "The entire component shows only a heading and CTA, with no explanation of what belongs here.",
+      "severity": "Medium",
+      "impact": "First-time users receive no explanation of what projects contain or why to create one.",
+      "fix": "Add a concise sentence explaining what a project organizes and the value of creating the first one.",
+      "verify": "Inspect the complete first-use component for a brief, useful explanatory sentence below the heading."
+    },
+    {
+      "id": "web-app-empty-state:04",
+      "title": "Primary action",
+      "status": "Unverified",
+      "location": "First-use projects empty-state component",
+      "evidenceType": "screenshot",
+      "evidence": "tests/design-guide/fixtures/empty-state.png \u2014 CTA",
+      "reason": "A \u201cCreate a project\u201d CTA is visible, but its destination and ability to create the first project cannot be established from pixels.",
+      "verify": "Activate the CTA and confirm it starts the first-project creation workflow."
+    },
+    {
+      "id": "web-app-empty-state:05",
+      "title": "Zero state vs. no-results state",
+      "status": "Unverified",
+      "location": "First-use projects empty-state component",
+      "evidenceType": "screenshot",
+      "evidence": "tests/design-guide/fixtures/empty-state.png \u2014 heading",
+      "reason": "The heading communicates a first-use zero state; no search or filter state evidence establishes whether a separate no-results variant exists.",
+      "verify": "Inspect a search or filter with zero matches and compare its message and recovery controls with this first-use state."
+    },
+    {
+      "id": "web-app-empty-state:06",
+      "title": "Error state variant",
+      "status": "Unverified",
+      "location": "First-use projects empty-state component",
+      "evidenceType": "screenshot",
+      "evidence": "tests/design-guide/fixtures/empty-state.png \u2014 supplied first-use state",
+      "reason": "Only a first-use empty state is supplied; loading failures and their messaging were not observed.",
+      "verify": "Trigger a project-loading failure and confirm a distinct error variant rather than this empty state."
+    },
+    {
+      "id": "design-system-button:01",
+      "title": "Base style",
+      "status": "Present",
+      "location": "First-use projects empty-state component",
+      "evidenceType": "screenshot",
+      "evidence": "tests/design-guide/fixtures/empty-state.png \u2014 CTA",
+      "reason": "The CTA has a clearly visible dark filled base style."
+    },
+    {
+      "id": "design-system-button:02",
+      "title": "Shape",
+      "status": "Present",
+      "location": "First-use projects empty-state component",
+      "evidenceType": "screenshot",
+      "evidence": "tests/design-guide/fixtures/empty-state.png \u2014 CTA",
+      "reason": "The CTA is rectangular with visible internal padding around its label."
+    },
+    {
+      "id": "design-system-button:03",
+      "title": "Variants",
+      "status": "Unverified",
+      "location": "First-use projects empty-state component",
+      "evidenceType": "screenshot",
+      "evidence": "tests/design-guide/fixtures/empty-state.png \u2014 CTA",
+      "reason": "One filled CTA is visible; the screenshot cannot establish the available button variants or their intended hierarchy.",
+      "verify": "Inspect the component specification or applicable runtime examples to establish the intended button variants and their use."
+    },
+    {
+      "id": "design-system-button:04",
+      "title": "Copy",
+      "status": "Present",
+      "location": "First-use projects empty-state component",
+      "evidenceType": "screenshot",
+      "evidence": "tests/design-guide/fixtures/empty-state.png \u2014 CTA label",
+      "reason": "\u201cCreate a project\u201d states the intended next action clearly."
+    },
+    {
+      "id": "design-system-button:05",
+      "title": "States",
+      "status": "Unverified",
+      "location": "First-use projects empty-state component",
+      "evidenceType": "screenshot",
+      "evidence": "tests/design-guide/fixtures/empty-state.png \u2014 idle CTA",
+      "reason": "Only an idle visual is supplied; hover, focus, and disabled treatment cannot be assessed.",
+      "verify": "Inspect the CTA in hover, keyboard-focus, and applicable disabled states."
+    }
+  ],
+  "coverage": {
+    "expected": 11,
+    "reported": 11,
+    "remaining": [],
+    "complete": true,
+    "verificationComplete": false,
+    "totals": {
+      "Present": 4,
+      "Partial": 0,
+      "Missing": 1,
+      "Not applicable": 1,
+      "Unverified": 5
+    }
+  },
+  "limitations": [
+    "Only the supplied screenshot was inspected with an image viewer; no source or live interaction evidence was available.",
+    "CTA behavior, button variants and interaction states, no-results variants, and load-error variants require further verification.",
+    "Other UI and shared foundations were excluded by scope; no browser, keyboard, screen reader, contrast measurement, or device tests were performed."
+  ]
+}

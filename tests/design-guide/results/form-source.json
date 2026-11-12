@@ -1,0 +1,270 @@
+{
+  "scope": "Source-only review of the minimal inline newsletter subscription form for website readers entering an email and submitting. Evidence is the complete supplied HTML, with no runtime observations. Focus is input and submission; page layout and shared foundations are excluded. Review only; no interface edits or browser execution.",
+  "snapshot": "bfae71e507b1b7c03c12e0756402b60eb80f5d14",
+  "selected": [
+    {
+      "checklist": "design-system-input-field",
+      "reason": "Email input component and its label, format, example, and optional help. Frozen count: 6."
+    },
+    {
+      "checklist": "design-system-button",
+      "reason": "Submit action component and its copy, styling, and states. Frozen count: 5."
+    },
+    {
+      "checklist": "flows-showing-input-error",
+      "reason": "Invalid email entry and correction flow. Frozen count: 4."
+    },
+    {
+      "checklist": "flows-submitting-a-form",
+      "reason": "Newsletter subscription submission feedback and outcome flow. Frozen count: 5."
+    }
+  ],
+  "excluded": [
+    {
+      "checklist": "website-sign-up",
+      "reason": "Newsletter opt-in does not create an account; account registration screen content is outside scope."
+    },
+    {
+      "checklist": "website-waitlist",
+      "reason": "No waitlist or launch queue is described."
+    },
+    {
+      "checklist": "website-landing-page",
+      "reason": "Page layout is explicitly outside the review."
+    },
+    {
+      "checklist": "design-system-accessibility",
+      "reason": "Shared foundations are explicitly outside scope; this is not a full accessibility audit."
+    },
+    {
+      "checklist": "design-system-typography",
+      "reason": "Shared foundation outside scope."
+    },
+    {
+      "checklist": "design-system-color-system",
+      "reason": "Shared foundation outside scope."
+    },
+    {
+      "checklist": "design-system-spacing-and-grid",
+      "reason": "Page layout and shared foundations outside scope."
+    },
+    {
+      "checklist": "design-system-loading",
+      "reason": "Submission pending feedback is covered by the selected submitting-a-form flow; no separate custom loading component is supplied."
+    }
+  ],
+  "items": [
+    {
+      "id": "design-system-input-field:01",
+      "title": "Input field",
+      "status": "Present",
+      "location": "tests/design-guide/fixtures/form.html:3 \u2014 newsletter form",
+      "evidenceType": "source",
+      "evidence": "tests/design-guide/fixtures/form.html:1-3 (complete supplied HTML; CSS at line 2)",
+      "reason": "The form declares an editable native input with type=\"email\"; actual interaction and readability were not exercised."
+    },
+    {
+      "id": "design-system-input-field:02",
+      "title": "Label",
+      "status": "Missing",
+      "location": "tests/design-guide/fixtures/form.html:3 \u2014 newsletter form",
+      "evidenceType": "source",
+      "evidence": "tests/design-guide/fixtures/form.html:1-3 (complete supplied HTML; CSS at line 2)",
+      "reason": "The sole input has no label element or explicit accessible-name attribute; the placeholder supplies an example rather than a persistent field label.",
+      "severity": "Medium",
+      "impact": "The field loses its instructional cue when the placeholder is replaced by entered text, making later review and correction harder.",
+      "fix": "Add a persistent Email address label associated with the input using matching for and id attributes.",
+      "verify": "Inspect the association in source, then verify the label remains visible while entering an address and inspect the computed accessible name in a browser."
+    },
+    {
+      "id": "design-system-input-field:03",
+      "title": "Placeholder text",
+      "status": "Present",
+      "location": "tests/design-guide/fixtures/form.html:3 \u2014 newsletter form",
+      "evidenceType": "source",
+      "evidence": "tests/design-guide/fixtures/form.html:1-3 (complete supplied HTML; CSS at line 2)",
+      "reason": "placeholder=\"you@example.com\" supplies an example email address. Rendered placeholder styling is untested."
+    },
+    {
+      "id": "design-system-input-field:04",
+      "title": "Data format",
+      "status": "Present",
+      "location": "tests/design-guide/fixtures/form.html:3 \u2014 newsletter form",
+      "evidenceType": "source",
+      "evidence": "tests/design-guide/fixtures/form.html:1-3 (complete supplied HTML; CSS at line 2)",
+      "reason": "type=\"email\" and the example address specify the relevant email format at source level; runtime validity behavior remains untested."
+    },
+    {
+      "id": "design-system-input-field:05",
+      "title": "Illustration or icon",
+      "status": "Not applicable",
+      "location": "tests/design-guide/fixtures/form.html:3 \u2014 newsletter form",
+      "evidenceType": "none",
+      "evidence": "Scope constraint: minimal inline email form; decorative illustrations unwanted.",
+      "reason": "Decorative illustrations are explicitly unwanted and a single short field does not need a visual break."
+    },
+    {
+      "id": "design-system-input-field:06",
+      "title": "Hint",
+      "status": "Not applicable",
+      "location": "tests/design-guide/fixtures/form.html:3 \u2014 newsletter form",
+      "evidenceType": "none",
+      "evidence": "Scope constraint: minimal inline email form; decorative illustrations unwanted.",
+      "reason": "The minimal email task is explained by the heading and email example; additional explanatory hint text is unnecessary for this scope."
+    },
+    {
+      "id": "design-system-button:01",
+      "title": "Base style",
+      "status": "Present",
+      "location": "tests/design-guide/fixtures/form.html:3 \u2014 newsletter form",
+      "evidenceType": "source",
+      "evidence": "tests/design-guide/fixtures/form.html:1-3 (complete supplied HTML; CSS at line 2)",
+      "reason": "A native button element declares the base button presentation; no reset removes the browser default border/fill. Rendering is untested."
+    },
+    {
+      "id": "design-system-button:02",
+      "title": "Shape",
+      "status": "Present",
+      "location": "tests/design-guide/fixtures/form.html:3 \u2014 newsletter form",
+      "evidenceType": "source",
+      "evidence": "tests/design-guide/fixtures/form.html:1-3 (complete supplied HTML; CSS at line 2)",
+      "reason": "The input,button CSS declares padding:12px and font:inherit; other button shape properties use browser defaults."
+    },
+    {
+      "id": "design-system-button:03",
+      "title": "Variants",
+      "status": "Not applicable",
+      "location": "tests/design-guide/fixtures/form.html:3 \u2014 newsletter form",
+      "evidenceType": "none",
+      "evidence": "Scope constraint: minimal inline email form; decorative illustrations unwanted.",
+      "reason": "This form has only one primary action; a system of primary/secondary variants is outside the narrow component review."
+    },
+    {
+      "id": "design-system-button:04",
+      "title": "Copy",
+      "status": "Present",
+      "location": "tests/design-guide/fixtures/form.html:3 \u2014 newsletter form",
+      "evidenceType": "source",
+      "evidence": "tests/design-guide/fixtures/form.html:1-3 (complete supplied HTML; CSS at line 2)",
+      "reason": "The submit button text is Subscribe, consistent with the newsletter heading."
+    },
+    {
+      "id": "design-system-button:05",
+      "title": "States",
+      "status": "Unverified",
+      "location": "tests/design-guide/fixtures/form.html:3 \u2014 newsletter form",
+      "evidenceType": "source",
+      "evidence": "tests/design-guide/fixtures/form.html:1-3 (complete supplied HTML; CSS at line 2)",
+      "reason": "The source relies on native button states and provides no custom hover, focus, or disabled rules. Their actual display and operation are unknown.",
+      "verify": "In a separately authorized browser session, exercise the relevant native input/submission state, including invalid email, refocus, pending submission, success, and failure as applicable; record visible feedback and keyboard behavior."
+    },
+    {
+      "id": "flows-showing-input-error:01",
+      "title": "Keep the input in default state",
+      "status": "Unverified",
+      "location": "tests/design-guide/fixtures/form.html:3 \u2014 newsletter form",
+      "evidenceType": "source",
+      "evidence": "tests/design-guide/fixtures/form.html:1-3 (complete supplied HTML; CSS at line 2)",
+      "reason": "The source has no custom validation script or initial error markup, but required/type=email native validation timing has not been observed.",
+      "verify": "In a separately authorized browser session, exercise the relevant native input/submission state, including invalid email, refocus, pending submission, success, and failure as applicable; record visible feedback and keyboard behavior."
+    },
+    {
+      "id": "flows-showing-input-error:02",
+      "title": "Allow user to enter information",
+      "status": "Unverified",
+      "location": "tests/design-guide/fixtures/form.html:3 \u2014 newsletter form",
+      "evidenceType": "source",
+      "evidence": "tests/design-guide/fixtures/form.html:1-3 (complete supplied HTML; CSS at line 2)",
+      "reason": "No custom input event validation is declared; uninterrupted typing and native validation behavior have not been exercised.",
+      "verify": "In a separately authorized browser session, exercise the relevant native input/submission state, including invalid email, refocus, pending submission, success, and failure as applicable; record visible feedback and keyboard behavior."
+    },
+    {
+      "id": "flows-showing-input-error:03",
+      "title": "Signal error after loss of focus",
+      "status": "Unverified",
+      "location": "tests/design-guide/fixtures/form.html:3 \u2014 newsletter form",
+      "evidenceType": "source",
+      "evidence": "tests/design-guide/fixtures/form.html:1-3 (complete supplied HTML; CSS at line 2)",
+      "reason": "The source has no blur handler or custom error message/icon. Whether native feedback appears after blur and explains correction is unknown.",
+      "verify": "In a separately authorized browser session, exercise the relevant native input/submission state, including invalid email, refocus, pending submission, success, and failure as applicable; record visible feedback and keyboard behavior."
+    },
+    {
+      "id": "flows-showing-input-error:04",
+      "title": "Return to default state upon reattempt",
+      "status": "Unverified",
+      "location": "tests/design-guide/fixtures/form.html:3 \u2014 newsletter form",
+      "evidenceType": "source",
+      "evidence": "tests/design-guide/fixtures/form.html:1-3 (complete supplied HTML; CSS at line 2)",
+      "reason": "There is no custom error-reset handler; the native validation feedback lifecycle on refocus is unknown.",
+      "verify": "In a separately authorized browser session, exercise the relevant native input/submission state, including invalid email, refocus, pending submission, success, and failure as applicable; record visible feedback and keyboard behavior."
+    },
+    {
+      "id": "flows-submitting-a-form:01",
+      "title": "Show button to submit",
+      "status": "Present",
+      "location": "tests/design-guide/fixtures/form.html:3 \u2014 newsletter form",
+      "evidenceType": "source",
+      "evidence": "tests/design-guide/fixtures/form.html:1-3 (complete supplied HTML; CSS at line 2)",
+      "reason": "The form contains a type=\"submit\" button after the email input with the task-specific text Subscribe; below-field placement is a contextual layout suggestion outside this inline form scope."
+    },
+    {
+      "id": "flows-submitting-a-form:02",
+      "title": "Show loading state after submission",
+      "status": "Unverified",
+      "location": "tests/design-guide/fixtures/form.html:3 \u2014 newsletter form",
+      "evidenceType": "source",
+      "evidence": "tests/design-guide/fixtures/form.html:1-3 (complete supplied HTML; CSS at line 2)",
+      "reason": "No explicit loading markup or script appears in the source. Native navigation/loading feedback and submission duration have not been observed.",
+      "verify": "In a separately authorized browser session, exercise the relevant native input/submission state, including invalid email, refocus, pending submission, success, and failure as applicable; record visible feedback and keyboard behavior."
+    },
+    {
+      "id": "flows-submitting-a-form:03",
+      "title": "Show success message when it submits",
+      "status": "Unverified",
+      "location": "tests/design-guide/fixtures/form.html:3 \u2014 newsletter form",
+      "evidenceType": "source",
+      "evidence": "tests/design-guide/fixtures/form.html:1-3 (complete supplied HTML; CSS at line 2)",
+      "reason": "The form has no explicit action, success markup, or success handler; the submission destination response and user-visible outcome are unknown.",
+      "verify": "In a separately authorized browser session, exercise the relevant native input/submission state, including invalid email, refocus, pending submission, success, and failure as applicable; record visible feedback and keyboard behavior."
+    },
+    {
+      "id": "flows-submitting-a-form:04",
+      "title": "If it doesn't, show an error message",
+      "status": "Unverified",
+      "location": "tests/design-guide/fixtures/form.html:3 \u2014 newsletter form",
+      "evidenceType": "source",
+      "evidence": "tests/design-guide/fixtures/form.html:1-3 (complete supplied HTML; CSS at line 2)",
+      "reason": "No explicit submission error handling is present. Server/navigation failure responses and native error feedback are unknown.",
+      "verify": "In a separately authorized browser session, exercise the relevant native input/submission state, including invalid email, refocus, pending submission, success, and failure as applicable; record visible feedback and keyboard behavior."
+    },
+    {
+      "id": "flows-submitting-a-form:05",
+      "title": "An error may occur because of the wrong information",
+      "status": "Unverified",
+      "location": "tests/design-guide/fixtures/form.html:3 \u2014 newsletter form",
+      "evidenceType": "source",
+      "evidence": "tests/design-guide/fixtures/form.html:1-3 (complete supplied HTML; CSS at line 2)",
+      "reason": "The required email input declares validation constraints, but the specificity and visibility of actual invalid-input messages have not been exercised.",
+      "verify": "In a separately authorized browser session, exercise the relevant native input/submission state, including invalid email, refocus, pending submission, success, and failure as applicable; record visible feedback and keyboard behavior."
+    }
+  ],
+  "coverage": {
+    "expected": 20,
+    "reported": 20,
+    "remaining": [],
+    "complete": true,
+    "verificationComplete": false,
+    "totals": {
+      "Present": 7,
+      "Partial": 0,
+      "Missing": 1,
+      "Not applicable": 3,
+      "Unverified": 9
+    }
+  },
+  "limitations": [
+    "Only the three-line HTML source was inspected; no browser, keyboard, screen reader, device, contrast measurement, network response, or supplied runtime log was available.",
+    "Source declarations establish component structure, not runtime behavior. Native validation, focus/hover feedback, loading and submission success/failure remain unverified.",
+    "Page layout and shared design-system foundations were excluded by instruction; no general accessibility conformance claim is made."
+  ]
+}
