@@ -6,12 +6,14 @@
 {% set notes = get_section(path="notes/_index.md") %}
 <svg class="portfolio-icons" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><symbol id="arrow-right" viewBox="0 0 24 24"><path d="M3 12h17m-6-6 6 6-6 6"/></symbol></svg>
 <main id="main" class="portfolio-main">
-  <section class="portfolio-writing" aria-labelledby="design-guide-title">
-    <div class="writing-heading"><h2 id="design-guide-title">Designing with AI<span class="orange">?</span></h2></div>
-    <p>Give your AI a UI/UX guide to help it design clearer, more usable interfaces.</p>
+  <section class="guide-feature" aria-labelledby="design-guide-title">
+    <div class="guide-feature-copy">
+      <h2 id="design-guide-title">Designing with AI?</h2>
+      <p>Give your AI a UI/UX guide to help it design clearer, more usable interfaces.</p>
+    </div>
     <div class="guide-feature-links">
-      <a class="portfolio-link" href="{{ get_url(path='/design/') }}">Get the UI/UX guide <svg aria-hidden="true"><use href="#arrow-right"/></svg></a>
-      <a class="portfolio-link" href="{{ get_url(path='/blog/design-guide-for-ai/') }}">How to use it <svg aria-hidden="true"><use href="#arrow-right"/></svg></a>
+      <a class="guide-feature-primary" href="{{ get_url(path='/design/') }}">Get the UI/UX guide</a>
+      <a class="guide-feature-secondary" href="{{ get_url(path='/blog/design-guide-for-ai/') }}">How to use it</a>
     </div>
   </section>
 
