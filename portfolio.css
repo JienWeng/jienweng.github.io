@@ -258,8 +258,8 @@
 
 .project-media video { display: block; width: 100%; height: 100%; object-fit: contain; background: var(--paper-deep); }
 
-/* The guide stays visible above the portfolio without becoming a second hero. */
-.guide-feature { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 24px 40px; margin-top: 24px; padding: 24px 28px; background: var(--paper-2); }
+/* A compact resource between the introduction and selected work. */
+.guide-feature { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 24px 40px; margin: 0 0 32px; padding: 24px 28px; background: var(--paper-2); }
 .guide-feature-copy { min-width: 0; }
 .guide-feature h2 { font-size: 1.375rem; font-weight: 500; line-height: 1.25; letter-spacing: -.02em; }
 .portfolio .guide-feature p { max-width: 65ch; margin-top: 8px; color: var(--ink-soft); font-size: 1rem; line-height: 1.5; }
@@ -273,7 +273,7 @@
   .guide-feature { grid-template-columns: minmax(0, 1fr); gap: 18px; }
 }
 @media (max-width: 640px) {
-  .guide-feature { margin-top: 20px; padding: 20px; }
+  .guide-feature { margin-bottom: 24px; padding: 20px; }
   .guide-feature-links { gap: 8px 20px; }
 }
 @media print {
