@@ -10,6 +10,7 @@ Official personal website and public professional information. The text CV conta
 - [Current CV](https://jienweng.github.io/cv/)
 - [Complete text CV](https://jienweng.github.io/cv/profile.txt)
 - [Public CV PDF](https://jienweng.github.io/cv/jien-weng-lai-public-cv.pdf)
+- [Structured public profile](https://jienweng.github.io/cv/public-profile.json)
 - [Work with me](https://jienweng.github.io/services/)
 - [Current priorities](https://jienweng.github.io/now/)
 
@@ -23,16 +24,20 @@ Contact: laijienweng@gmail.com
 
 ## Current roles
 
-- CryptoRails (Feb 2026 - Present): Product Manager: coordinates an engineering team, maintains the product backlog, and runs delivery for multi-chain crypto payment and wallet infrastructure.
+- CryptoRails (Feb 2026 - Present): Product Manager: maintains the backlog and roadmap, runs Scrum ceremonies, and coordinates engineering delivery for multi-chain crypto payment and wallet infrastructure. Defines payment states, settlement criteria, and acceptance criteria for delayed or duplicate payments with the business owner and engineers.
 - Independent Consulting (Apr 2026 - Present): Independent Consultant & Product Manager: business transformation, Web3 product management, proprietary AI research, and data/ML training
-- Quandatics (Apr 2026 - Present): Contractor: Business Transformation Consultant
-- Quandatics Academy (Jun 2026 - Present): Contractor: Data Science & Machine Learning Trainer
+- Quandatics (Apr 2026 - Present): Contractor, Business Transformation Consultant: maps sales, project delivery, and finance workflows for an internal CRM. Works across requirements, design, development, deployment, and support, including record ownership, approvals, and milestone-to-invoice handovers.
+- Quandatics Academy (Jun 2026 - Present): Contractor, Data Science & Machine Learning Trainer: teaches and coaches learners in data science and machine learning.
 - Monash University Malaysia (Dec 2025 - Present): Research Assistant: develops wastewater treatment plant prediction models using RNNs, Transformers, and Markov chain methods on time-series sensor data. Works on the [Monash Water Platform](https://monash-water-platform.vercel.app/), including the CitizenFlood Android app and operator dashboard.
 - ACTBuilder (Jul 2025 - Present): Technical Consultant: supports technical documentation, builds a knowledge wiki, maintains the website, and helps set up Python environments.
 
+## Earlier experience
+
+- Great Eastern Life Assurance (Oct 2024 - Jan 2025): Finance Analyst - Data Engineer Intern: worked on data pipelines using Hive SQL in Apache Zeppelin.
+
 ## Education
 
-- UTAR (Oct 2022 - Oct 2025): BSc (Hons), First Class Honours · Applied Mathematics with Computing
+- UTAR (Oct 2022 - Oct 2025): Bachelor of Science (Honours) Applied Mathematics with Computing with Merit
 - UTAR (Oct 2021 - Oct 2022): Foundation · Science
 
 ## Research
@@ -45,10 +50,10 @@ Contact: laijienweng@gmail.com
 ## Public projects
 
 - [Work index](https://jienweng.github.io/projects/)
-- [VideoFlow](https://jienweng.github.io/projects/videoflow/): A Go and SvelteKit studio for web and desktop, with local storage and bundled FFmpeg.
-- [PolyArb](https://jienweng.github.io/projects/polyarb/): Evaluates Polymarket YES–NO pairs after fees and available depth. Includes exposure limits, persistent paper trading, and an activity dashboard.
-- [Monash Water Platform](https://jienweng.github.io/projects/monash-water/): Monash research work: CitizenFlood Android reporting and a wastewater dashboard with illustrative scenarios.
-- [Internal CRM](https://jienweng.github.io/blog/quandatics-crm-business-transformation/): An internal CRM for Quandatics, designed around the handoffs between sales, delivery, and finance.
+- [VideoFlow](https://jienweng.github.io/projects/videoflow/): A Go and SvelteKit studio for web and Electron desktop, connecting characters, scripts, scenes, image/video generation, and editing. Status: Web & Electron desktop.
+- [PolyArb](https://jienweng.github.io/projects/polyarb/): Evaluates Polymarket YES–NO pairs after fees and available depth. Includes exposure limits, persistent paper trading, and an activity dashboard. Status: In production.
+- [Monash Water Platform](https://jienweng.github.io/projects/monash-water/): Monash research work: CitizenFlood Android reporting and a wastewater dashboard with illustrative scenarios. Status: Research assistant · Monash.
+- [Internal CRM](https://jienweng.github.io/blog/quandatics-crm-business-transformation/): An internal CRM for Quandatics, designed around the handoffs between sales, delivery, and finance. Status: In progress.
 - [ZakatDAO](https://github.com/JienWeng/ZakatDAO): Uses smart contracts to record and distribute zakat payments.
 - [FacePay](https://github.com/JienWeng/FacePay): Tests face recognition as an identity check during payment.
 - [Yappy](https://github.com/JienWeng/Yappy): A chat app prototype for testing conversational flows.
@@ -59,6 +64,8 @@ Contact: laijienweng@gmail.com
 
 - [Writing and technical notes](https://jienweng.github.io/notes/)
 - [Blog](https://jienweng.github.io/blog/)
+- [Site log](https://jienweng.github.io/log/)
+- [Colophon](https://jienweng.github.io/colophon/)
 - [Atom feed](https://jienweng.github.io/atom.xml)
 - [Sitemap](https://jienweng.github.io/sitemap.xml)
 

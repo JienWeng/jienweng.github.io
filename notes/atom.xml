@@ -5,7 +5,7 @@
     <link rel="self" type="application/atom+xml" href="https://jienweng.github.io/notes/atom.xml"/>
     <link rel="alternate" type="text/html" href="https://jienweng.github.io/notes/"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2026-08-02T00:00:00+00:00</updated>
+    <updated>2026-11-12T00:00:00+00:00</updated>
     <id>https://jienweng.github.io/notes/atom.xml</id>
     <entry xml:lang="en">
         <title>CryptoRails: From Deposit to Settlement</title>
@@ -433,7 +433,7 @@ $$&lt;&#x2F;p&gt;
     <entry xml:lang="en">
         <title>An Introduction to MLOps: A Complete Tutorial with a Hands-On Example</title>
         <published>2026-06-29T00:00:00+00:00</published>
-        <updated>2026-06-30T00:00:00+00:00</updated>
+        <updated>2026-11-12T00:00:00+00:00</updated>
         
         <author>
           <name>
@@ -764,7 +764,7 @@ $$&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;strong&gt;Source and licence.&lt;&#x2F;strong&gt; This tutorial follows and adapts the lecture &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;aboucaud.github.io&#x2F;slides&#x2F;2023&#x2F;lsst-france-mlops&quot;&gt;“An introduction to MLOps”&lt;&#x2F;a&gt; by Alexandre Boucaud (LSST France, Lyon, December 2023), licensed under &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;creativecommons.org&#x2F;licenses&#x2F;by-sa&#x2F;4.0&#x2F;&quot;&gt;CC BY-SA 4.0&lt;&#x2F;a&gt;. The figures come from the accompanying &lt;a href=&quot;..&#x2F;..&#x2F;slides&#x2F;2026&#x2F;intro-to-mlops&#x2F;&quot;&gt;slides&lt;&#x2F;a&gt;, re-hosted under the same licence; individual captions credit their original sources. This tutorial and hands-on example are my own adaptation and are also shared under CC BY-SA 4.0.&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
 &lt;h2 id=&quot;a-related-software-project&quot;&gt;A related software project&lt;&#x2F;h2&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;projects&#x2F;videoflow&#x2F;&quot;&gt;VideoFlow&lt;&#x2F;a&gt; is my video orchestration studio built with Go and SvelteKit, with an Electron desktop application. Its project page describes the shared architecture, local data, and external generation services.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;projects&#x2F;videoflow&#x2F;&quot;&gt;VideoFlow&lt;&#x2F;a&gt; is my canvas-based AI video studio built with Go and SvelteKit, with an Electron desktop application. Its project page describes the shared architecture, local data, and external generation services.&lt;&#x2F;p&gt;
 </content>
         
     </entry>

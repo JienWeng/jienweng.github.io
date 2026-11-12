@@ -5,12 +5,12 @@
     <link rel="self" type="application/atom+xml" href="https://jienweng.github.io/atom.xml"/>
     <link rel="alternate" type="text/html" href="https://jienweng.github.io"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2026-11-01T00:00:00+00:00</updated>
+    <updated>2026-11-12T00:00:00+00:00</updated>
     <id>https://jienweng.github.io/atom.xml</id>
     <entry xml:lang="en">
         <title>The Maths Behind PolyArb</title>
         <published>2026-10-29T00:00:00+00:00</published>
-        <updated>2026-11-01T00:00:00+00:00</updated>
+        <updated>2026-11-12T00:00:00+00:00</updated>
         
         <author>
           <name>
@@ -99,7 +99,7 @@ $$&lt;&#x2F;p&gt;
 &lt;p&gt;After submission, track each leg independently. Record the requested quantity, filled quantity, average fill price, deducted fees, and remaining order quantity. Reconcile those records against the resulting balances before counting complete pairs. An order acknowledgement confirms receipt of a request; it does not confirm a fill.&lt;&#x2F;p&gt;
 &lt;p&gt;These are general design requirements for evaluating a paired-trade system. They do not describe or expose PolyArb&#x27;s private implementation.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;what-i-would-check-in-a-paper-trading-result&quot;&gt;What I would check in a paper-trading result&lt;&#x2F;h2&gt;
-&lt;p&gt;PolyArb defaults to real market prices with simulated orders and a persistent USD 1,000 starting paper balance. Live mode requires explicit configuration and is not ready for unattended trading.&lt;&#x2F;p&gt;
+&lt;p&gt;PolyArb is now in production and also supports paper trading. This section concerns simulated results, not evidence of live returns. Paper trading uses real market prices and simulated orders, with balances that persist across restarts.&lt;&#x2F;p&gt;
 &lt;p&gt;The dashboard helps inspect activity, but a detected price gap, a risk-approved decision, a simulated fill, and realised profit describe different stages. To assess a run, I would check which prices and quantities were observed, how old the book was, which fee parameters were used, and how the simulator decided that each order filled.&lt;&#x2F;p&gt;
 &lt;p&gt;For a completed trade, the accounting should include the paired collateral actually recovered, proceeds or remaining value from unmatched shares, the purchase cost, and other execution costs. With consistent units, that is&lt;&#x2F;p&gt;
 &lt;p&gt;$$
@@ -634,7 +634,7 @@ $$&lt;&#x2F;p&gt;
     <entry xml:lang="en">
         <title>An Introduction to MLOps: A Complete Tutorial with a Hands-On Example</title>
         <published>2026-06-29T00:00:00+00:00</published>
-        <updated>2026-06-30T00:00:00+00:00</updated>
+        <updated>2026-11-12T00:00:00+00:00</updated>
         
         <author>
           <name>
@@ -965,7 +965,7 @@ $$&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;strong&gt;Source and licence.&lt;&#x2F;strong&gt; This tutorial follows and adapts the lecture &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;aboucaud.github.io&#x2F;slides&#x2F;2023&#x2F;lsst-france-mlops&quot;&gt;“An introduction to MLOps”&lt;&#x2F;a&gt; by Alexandre Boucaud (LSST France, Lyon, December 2023), licensed under &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;creativecommons.org&#x2F;licenses&#x2F;by-sa&#x2F;4.0&#x2F;&quot;&gt;CC BY-SA 4.0&lt;&#x2F;a&gt;. The figures come from the accompanying &lt;a href=&quot;..&#x2F;..&#x2F;slides&#x2F;2026&#x2F;intro-to-mlops&#x2F;&quot;&gt;slides&lt;&#x2F;a&gt;, re-hosted under the same licence; individual captions credit their original sources. This tutorial and hands-on example are my own adaptation and are also shared under CC BY-SA 4.0.&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
 &lt;h2 id=&quot;a-related-software-project&quot;&gt;A related software project&lt;&#x2F;h2&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;projects&#x2F;videoflow&#x2F;&quot;&gt;VideoFlow&lt;&#x2F;a&gt; is my video orchestration studio built with Go and SvelteKit, with an Electron desktop application. Its project page describes the shared architecture, local data, and external generation services.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;projects&#x2F;videoflow&#x2F;&quot;&gt;VideoFlow&lt;&#x2F;a&gt; is my canvas-based AI video studio built with Go and SvelteKit, with an Electron desktop application. Its project page describes the shared architecture, local data, and external generation services.&lt;&#x2F;p&gt;
 </content>
         
     </entry>

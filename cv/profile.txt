@@ -8,11 +8,15 @@ Contact: laijienweng@gmail.com
 
 ## Profile
 
-I’m Jien Weng, an independent consultant and product manager. I coordinate delivery for CryptoRails and work with Quandatics on the [internal CRM](https://app.quandatics.com) linking sales, project delivery, and finance. I also teach data science and machine learning at Quandatics Academy.
+I’m Jien Weng, an independent consultant and product manager. At CryptoRails, I maintain the product backlog, define acceptance criteria, and coordinate engineering delivery for multi-chain crypto payments and wallet infrastructure.
+
+At Quandatics, I work on business transformation through an [internal CRM](https://jienweng.github.io/blog/quandatics-crm-business-transformation/) linking sales, project delivery, and finance. My role spans requirements, design, development, deployment, and support. Separately, I teach and coach learners in data science and machine learning at Quandatics Academy.
+
+Earlier, as a Finance Analyst - Data Engineer Intern at Great Eastern Life Assurance, I worked on data pipelines using Hive SQL in Apache Zeppelin.
 
 At Monash University Malaysia, I research wastewater treatment plant prediction using RNNs, Transformers, and Markov chain methods. This includes the [Monash Water Platform](https://jienweng.github.io/projects/monash-water/), CitizenFlood Android app, and operator dashboard. My other research interests include multi-agent reinforcement learning, market microstructure, and quantitative finance.
 
-I also build [VideoFlow](https://github.com/JienWeng/videoflow-go), an AI video orchestration studio for web and desktop, and [PolyArb](https://jienweng.github.io/projects/polyarb/), a Rust Polymarket arbitrage bot with paper trading.
+I also build [VideoFlow](https://jienweng.github.io/projects/videoflow/), a canvas-based AI video studio for web and desktop, and [PolyArb](https://jienweng.github.io/projects/polyarb/), a Rust Polymarket arbitrage platform now in production.
 
 I studied Applied Mathematics with Computing at UTAR. I write [notes](https://jienweng.github.io/notes/) on statistics, optimisation, and reinforcement learning.
 
@@ -26,13 +30,31 @@ For my experience and qualifications, see my [CV](https://jienweng.github.io/cv/
 - [Google Scholar](https://scholar.google.com/citations?user=2siljxAAAAAJ&hl=en)
 - [ORCID](https://orcid.org/0009-0001-2543-3887)
 
+## Current focus
+
+[Now page](https://nownownow.com/about). Last updated November 12, 2026.
+
+**Product delivery.** At CryptoRails, I maintain the backlog and roadmap, define acceptance criteria, and coordinate engineering delivery for multi-chain payments and wallet infrastructure. My [payment lifecycle note](https://jienweng.github.io/notes/cryptorails-transaction-lifecycle/) explains the decisions behind that work.
+
+**Business systems.** At Quandatics, I work across requirements, design, development, deployment, and support for the [internal CRM](https://jienweng.github.io/blog/quandatics-crm-business-transformation/) connecting sales, project delivery, and finance.
+
+**Teaching.** Separately, I teach and coach learners in data science and machine learning at Quandatics Academy. My [hands-on MLOps tutorial](https://jienweng.github.io/notes/intro-to-mlops-tutorial/) is one public teaching sample.
+
+**Research.** I am a Research Assistant at Monash University Malaysia, developing wastewater treatment plant prediction models with RNNs, Transformers, and Markov chain methods on time-series sensor data.
+
+**Technical consulting.** Supporting ACTBuilder with technical documentation, a knowledge wiki, website maintenance, and Python environment setup.
+
+**Writing.** My [notes](https://jienweng.github.io/notes/) include a nine-part regression series, stochastic modelling, and product decisions. The [Fokker-Planck note](https://jienweng.github.io/notes/fokker_planck_sde/) connects stochastic differential equations with evolving probability distributions.
+
+**Projects.** [VideoFlow](https://jienweng.github.io/projects/videoflow/) is a canvas-based AI video studio for characters, scripts, scenes, image and video generation, and editing. [PolyArb](https://jienweng.github.io/projects/polyarb/), my Rust Polymarket arbitrage platform, is in production. The [Monash Water Platform](https://jienweng.github.io/projects/monash-water/) connects CitizenFlood community reporting with wastewater monitoring.
+
 ## Experience
 
 ### CryptoRails
 
 Feb 2026 - Present
 
-Product Manager: coordinates an engineering team, maintains the product backlog, and runs delivery for multi-chain crypto payment and wallet infrastructure.
+Product Manager: maintains the backlog and roadmap, runs Scrum ceremonies, and coordinates engineering delivery for multi-chain crypto payment and wallet infrastructure. Defines payment states, settlement criteria, and acceptance criteria for delayed or duplicate payments with the business owner and engineers.
 
 ### Independent Consulting
 
@@ -44,7 +66,7 @@ Independent Consultant & Product Manager: business transformation, Web3 product 
 
 Apr 2026 - Present
 
-Contractor: Business Transformation Consultant
+Contractor, Business Transformation Consultant: maps sales, project delivery, and finance workflows for an internal CRM. Works across requirements, design, development, deployment, and support, including record ownership, approvals, and milestone-to-invoice handovers.
 
 Link: https://quandatics.com
 
@@ -52,7 +74,7 @@ Link: https://quandatics.com
 
 Jun 2026 - Present
 
-Contractor: Data Science & Machine Learning Trainer
+Contractor, Data Science & Machine Learning Trainer: teaches and coaches learners in data science and machine learning.
 
 Link: https://academy.quandatics.com
 
@@ -74,7 +96,7 @@ Technical Consultant: supports technical documentation, builds a knowledge wiki,
 
 Oct 2024 - Jan 2025
 
-Finance Analyst - Data Engineer Intern
+Finance Analyst - Data Engineer Intern: worked on data pipelines using Hive SQL in Apache Zeppelin.
 
 Link: https://www.greateasternlife.com/my/en/personal-insurance.html
 
@@ -84,7 +106,7 @@ Link: https://www.greateasternlife.com/my/en/personal-insurance.html
 
 Oct 2022 - Oct 2025
 
-BSc (Hons), First Class Honours · Applied Mathematics with Computing
+Bachelor of Science (Honours) Applied Mathematics with Computing with Merit
 
 Link: https://www.utar.edu.my
 
@@ -376,11 +398,11 @@ Topics: Quantitative Finance, Optimal Execution, Alpha Signals, Market Microstru
 
 ### VideoFlow
 
-AI video orchestration for scripts, storyboards, and render jobs.
+Canvas-based AI video creation, from characters and scripts to scenes and editing.
 
 Status: Web & Electron desktop
 
-A Go and SvelteKit studio for web and desktop, with local storage and bundled FFmpeg.
+A Go and SvelteKit studio for web and Electron desktop, connecting characters, scripts, scenes, image/video generation, and editing.
 
 Link: https://github.com/JienWeng/videoflow-go
 
@@ -388,9 +410,9 @@ Case study: https://jienweng.github.io/projects/videoflow/
 
 ### PolyArb
 
-Polymarket arbitrage research in Rust.
+Rust Polymarket arbitrage platform, now in production.
 
-Status: Dry-run by default
+Status: In production
 
 Evaluates Polymarket YES–NO pairs after fees and available depth. Includes exposure limits, persistent paper trading, and an activity dashboard.
 
