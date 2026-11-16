@@ -31,6 +31,10 @@
         <lastmod>2024-12-02</lastmod>
     </url>
     <url>
+        <loc>https://jienweng.github.io/blog/learning-maths-with-ai/</loc>
+        <lastmod>2026-11-16</lastmod>
+    </url>
+    <url>
         <loc>https://jienweng.github.io/blog/papertrade-trading-tokenomics-and-trust/</loc>
         <lastmod>2026-10-21</lastmod>
     </url>
@@ -224,6 +228,9 @@
         <loc>https://jienweng.github.io/tags/crm/</loc>
     </url>
     <url>
+        <loc>https://jienweng.github.io/tags/cryptography/</loc>
+    </url>
+    <url>
         <loc>https://jienweng.github.io/tags/defi/</loc>
     </url>
     <url>
@@ -257,10 +264,16 @@
         <loc>https://jienweng.github.io/tags/healthcare/</loc>
     </url>
     <url>
+        <loc>https://jienweng.github.io/tags/learning/</loc>
+    </url>
+    <url>
         <loc>https://jienweng.github.io/tags/machine-learning/</loc>
     </url>
     <url>
         <loc>https://jienweng.github.io/tags/math/</loc>
+    </url>
+    <url>
+        <loc>https://jienweng.github.io/tags/mathematics/</loc>
     </url>
     <url>
         <loc>https://jienweng.github.io/tags/mlflow/</loc>

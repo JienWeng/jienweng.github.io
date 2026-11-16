@@ -5,8 +5,72 @@
     <link rel="self" type="application/atom+xml" href="https://jienweng.github.io/blog/atom.xml"/>
     <link rel="alternate" type="text/html" href="https://jienweng.github.io/blog/"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2026-11-12T00:00:00+00:00</updated>
+    <updated>2026-11-16T00:00:00+00:00</updated>
     <id>https://jienweng.github.io/blog/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Why I’m Still Learning Maths</title>
+        <published>2026-11-16T00:00:00+00:00</published>
+        <updated>2026-11-16T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://jienweng.github.io/blog/learning-maths-with-ai/"/>
+        <id>https://jienweng.github.io/blog/learning-maths-with-ai/</id>
+        
+        <content type="html" xml:base="https://jienweng.github.io/blog/learning-maths-with-ai/">&lt;p&gt;Coming from an Applied Math and Computing background, I find the question of whether maths is still worth learning quite personal.&lt;&#x2F;p&gt;
+&lt;p&gt;OpenAI’s announcements about &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;openai.com&#x2F;index&#x2F;navier-stokes-solution&#x2F;&quot;&gt;Navier–Stokes&lt;&#x2F;a&gt; and the &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;openai.com&#x2F;index&#x2F;building-scientific-understanding-with-academic-communities&#x2F;&quot;&gt;Exponential Time Hypothesis&lt;&#x2F;a&gt; make it easy to wonder where humans fit. If you are about to spend several years studying mathematics, it is reasonable to ask what you are working towards when machines can produce results at this level.&lt;&#x2F;p&gt;
+&lt;p&gt;The Navier–Stokes equations describe fluid motion. OpenAI claimed a proof that, under a smooth external force, initially smooth three-dimensional motion can develop a singularity in finite time. Researchers have since &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.kcl.ac.uk&#x2F;news&#x2F;openais-navier-stokes-proof-called-into-question&quot;&gt;questioned whether the Lean formalization matches the written proof&lt;&#x2F;a&gt;. That does not establish that the result is false, but it leaves work to do before treating the computer-checked version as verification of the written argument.&lt;&#x2F;p&gt;
+&lt;p&gt;The ETH announcement concerns a different kind of problem. The hypothesis says, roughly, that deciding whether a Boolean formula in 3-SAT can be satisfied requires exponential time in the worst case. OpenAI’s &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;openai&#x2F;math&#x2F;blob&#x2F;main&#x2F;lean&#x2F;docs&#x2F;378.md&quot;&gt;published notes&lt;&#x2F;a&gt; describe a subexponential algorithm. Its bound is still superpolynomial, so this does not settle P versus NP or immediately give us a fast tool for everyday use.&lt;&#x2F;p&gt;
+&lt;p&gt;I want to understand those details. Reading that a problem has been solved tells me very little about the assumptions, the method, or what someone could build from it. Even deciding how much weight to give an announcement takes some knowledge of the mathematics involved.&lt;&#x2F;p&gt;
+&lt;p&gt;Grant Sanderson’s &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=LKrwhjOI8Nc&quot;&gt;video on AI and mathematics&lt;&#x2F;a&gt; gave me a useful way to think about it. He compares practising maths to going to the gym. A machine can do the work faster, but going through it yourself still develops your own ability.&lt;&#x2F;p&gt;
+&lt;figure class=&quot;wide video-embed&quot;&gt;
+  &lt;div class=&quot;video-shell&quot;&gt;
+    &lt;iframe
+      src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;LKrwhjOI8Nc&quot;
+      title=&quot;3Blue1Brown · There’s never been a better time to go into math&quot;
+      loading=&quot;lazy&quot;
+      allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+      referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+      allowfullscreen
+    &gt;&lt;&#x2F;iframe&gt;
+  &lt;&#x2F;div&gt;
+  
+  &lt;figcaption&gt;3Blue1Brown · There’s never been a better time to go into math&lt;&#x2F;figcaption&gt;
+  
+&lt;&#x2F;figure&gt;
+&lt;p&gt;&lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=LKrwhjOI8Nc&quot;&gt;Watch the full video on YouTube&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;That makes sense to me when I think about building software with AI. I still want to understand the assumptions behind an answer, follow the reasoning, and work out whether it applies to the problem in front of me. An answer I cannot explain leaves me dependent on whoever, or whatever, produced it.&lt;&#x2F;p&gt;
+&lt;p&gt;With software, it is tempting to stop once something runs. I want to be able to go further than that. If an AI suggests an algorithm, I want to understand why it works and which inputs might cause trouble. If it proposes a mathematical model, I want to know what the model assumes about the thing it represents. A convincing explanation can still leave out a condition that matters in the application.&lt;&#x2F;p&gt;
+&lt;p&gt;That takes practice. Following a solution while it is in front of me is easier than reconstructing it later. Working through the problem myself gives me a better sense of where I am confused. Sometimes the part I cannot explain is a definition I have been using too loosely. Sometimes I have followed the algebra without understanding why anyone chose that approach.&lt;&#x2F;p&gt;
+&lt;p&gt;I think that is part of what makes maths useful beyond a particular course or theorem. It gives me practice being precise about a question, keeping track of assumptions, and finding out where an argument stops working. I want those habits when I use AI too.&lt;&#x2F;p&gt;
+&lt;p&gt;I also like how maths finds uses far from the questions people started with. Elliptic curves appear in &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;abelprize.no&#x2F;sites&#x2F;default&#x2F;files&#x2F;2021-09&#x2F;The%20Abel%20Prize%202013-2017_Full.pdf&quot;&gt;Wiles’s proof of Fermat’s Last Theorem&lt;&#x2F;a&gt; and in cryptographic systems such as ECDSA. Elliptic-curve cryptography predates Wiles’s proof, so one did not come from the other. Both use an older body of mathematics that people found different ways to build on.&lt;&#x2F;p&gt;
+&lt;p&gt;For me, the interesting part is how much there is to learn around the result. To understand the connection, I need to learn what an elliptic curve is, how its points can be added, and how changing the number system changes the arithmetic. The picture below helps with the real-number case. Cryptography takes that arithmetic into finite fields, where the points are discrete.&lt;&#x2F;p&gt;
+&lt;p&gt;ECDSA uses elliptic-curve arithmetic to create and verify digital signatures. I could use a library without understanding much of that background. Learning the maths gives me a way to understand the design, read its assumptions, and ask more useful questions about it. That is a reason to study it even if I never prove a new theorem about elliptic curves.&lt;&#x2F;p&gt;
+&lt;figure class=&quot;wide&quot;&gt;
+  &lt;img src=&quot;https:&#x2F;&#x2F;jienweng.github.io&#x2F;img&#x2F;blog&#x2F;maths-with-ai&#x2F;elliptic-curve-addition.svg&quot; alt=&quot;Point addition on an elliptic curve: a line intersects the curve, and reflection gives the sum.&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+  
+  &lt;figcaption&gt;Point addition on a real elliptic curve. Cryptographic curves use points over finite fields.&lt;&#x2F;figcaption&gt;
+  
+&lt;&#x2F;figure&gt;
+&lt;p&gt;Image by &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;commons.wikimedia.org&#x2F;wiki&#x2F;File:EllipticCurveAddition.svg&quot;&gt;Googolplexian1221, via Wikimedia Commons&lt;&#x2F;a&gt;, &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;creativecommons.org&#x2F;licenses&#x2F;by-sa&#x2F;4.0&#x2F;&quot;&gt;CC BY-SA 4.0&lt;&#x2F;a&gt;, unchanged. &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;upload.wikimedia.org&#x2F;wikipedia&#x2F;commons&#x2F;e&#x2F;e5&#x2F;EllipticCurveAddition.svg&quot;&gt;Original image&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.desmos.com&#x2F;calculator&#x2F;t0neeko2lj&quot;&gt;Try the curve in Desmos&lt;&#x2F;a&gt; · &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;ecdsa.com&#x2F;tools&#x2F;curve-playground&quot;&gt;Explore finite-field arithmetic&lt;&#x2F;a&gt; · &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.rfc-editor.org&#x2F;rfc&#x2F;rfc6090.html&quot;&gt;Cryptography reference&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Complex numbers have a similar story. They emerged through work on &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;mathshistory.st-andrews.ac.uk&#x2F;HistTopics&#x2F;Quadratic_etc_equations&#x2F;&quot;&gt;algebraic equations&lt;&#x2F;a&gt; and later became part of the language of &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;interactivetextbooks.tudelft.nl&#x2F;introduction-to-quantum-mechanics&#x2F;content&#x2F;complexnumbers.html&quot;&gt;quantum mechanics&lt;&#x2F;a&gt;. Geometry beyond Euclid became part of how &lt;a rel=&quot;noopener nofollow noreferrer external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.einstein-online.info&#x2F;en&#x2F;GeomGravity&#x2F;&quot;&gt;general relativity describes gravity&lt;&#x2F;a&gt;. People working on the original questions could not have laid out all those later uses.&lt;&#x2F;p&gt;
+&lt;p&gt;This makes me reluctant to judge mathematics only by whether I can see an immediate application. There may be something useful in the methods developed along the way, or in a connection to another subject. When AI produces a new result, I want to understand what else we might do with the ideas behind it. There could be years of worthwhile work in explaining those ideas, testing their limits, and finding where they apply.&lt;&#x2F;p&gt;
+&lt;p&gt;I would be careful about claiming that asking questions or building theories will always be uniquely human. Grant considers those possibilities too. His argument leaves room for much more capable machines while still valuing the experience of learning maths.&lt;&#x2F;p&gt;
+&lt;p&gt;Grant also gives a reason for thinking this is a good time to enter the field. The community knows it needs to change, which gives newcomers a chance to influence how mathematics is explained and how contributions are recognised. I like that there is room in his answer for people who enjoy teaching, visualising, applying, or understanding mathematics, as well as people who want to prove theorems.&lt;&#x2F;p&gt;
+&lt;p&gt;I do not take that as a promise that a maths career will be easy or that every part of academic life will survive unchanged. I can still see a reason to learn without knowing exactly what the job market or research process will look like in ten years. I want to understand more of the systems I work with, and maths keeps giving me things I want to understand.&lt;&#x2F;p&gt;
+&lt;p&gt;I think that makes this a good time to keep learning. I can ask AI about a step I do not understand, request a smaller example, or get help exploring a connection. I can ask it to explain the same idea algebraically and geometrically, then compare the explanations with a textbook or another source.&lt;&#x2F;p&gt;
+&lt;p&gt;I also need to leave myself enough work to learn from. Getting a complete solution too early can make it hard to tell whether I could have found the next step myself. I would rather try the problem, ask for a hint when I get stuck, and spend some time with the part that confused me.&lt;&#x2F;p&gt;
+&lt;p&gt;So I want to keep doing some of the work myself. Try a problem before reading the solution. Use AI when I get stuck. Then close the answer and see whether I can explain the reasoning without it.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
     <entry xml:lang="en">
         <title>A Design Checklist You Can Give Your AI</title>
         <published>2026-11-12T00:00:00+00:00</published>
