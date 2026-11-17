@@ -2,7 +2,7 @@
 title = "Why We Built an Internal CRM After Trying Salesforce"
 description = "How I map sales, delivery, and finance handovers for an internal CRM at Quandatics."
 date = 2026-05-25
-updated = 2026-05-25
+updated = 2026-11-17
 draft = false
 aliases = ["/posts/quandatics-crm-business-transformation/"]
 
@@ -53,6 +53,18 @@ Each project phase has deliverables and a progress percentage. Once a phase is c
 
 The same records need to show delivery progress, billed amounts, receipts, and outstanding payments. Otherwise, finance and delivery have to reconstruct the status separately.
 
+### From completed work to invoice-ready
+
+Completed delivery and invoice readiness are different stages. A completed milestone describes the work; invoice readiness also depends on the supporting evidence and management approval finance needs to act.
+
+I use this handover to connect the requirements of the three teams:
+
+- **Sales:** the approved scope provides the reference for what was agreed.
+- **Delivery:** the completed milestone and its supporting evidence explain what has been delivered.
+- **Finance:** the milestone claim and management approval provide the basis for issuing the invoice.
+
+My contribution is translating those handovers into requirements and supporting implementation, testing, and feedback. The product work is not just recording that a task is complete. It is making the next team's required information, approval, and responsibility clear. Invoice-ready does not mean that an invoice has been issued or payment received.
+
 <figure class="crm-artifact">
   <a href="../../img/blog/quandatics/project-to-cash-excalidraw.svg" aria-label="View the full-size CRM project-to-cash diagram">
     <img width="1600" height="800" src="../../img/blog/quandatics/project-to-cash-excalidraw.svg" loading="lazy" decoding="async" alt="Project-to-cash flow from an approved sales order through project phases, milestone approval, invoicing, payment receipt, and margin update.">
@@ -79,4 +91,4 @@ I work across requirements, design, development, production deployment, and supp
 
 For a milestone claim, that means defining the evidence and management approval finance needs before issuing an invoice. I work through ownership and approval conditions before adding fields or screens. Support can reveal gaps, such as an incomplete claim or a late handover.
 
-The internal CRM is still in progress. Client-specific implementation details and operational results remain confidential.
+The internal CRM is in daily use, with further modules in development. Client-specific implementation details and operational results remain confidential.
