@@ -1,6 +1,6 @@
 +++
 title = "Now"
-description = "Current work in Web3 product delivery, CRM systems, data science teaching, Monash research, VideoFlow, and PolyArb."
+description = "Current work in Web3 product delivery, CRM systems, data science teaching, Monash research, VideoFlow, and Polymarket binary-pairs arbitrage."
 updated = 2026-11-12
 +++
 
@@ -18,4 +18,4 @@ updated = 2026-11-12
 
 **Writing.** My [notes](@/notes/_index.md) include a nine-part regression series, stochastic modelling, and product decisions. The [Fokker-Planck note](@/notes/fokker_planck_sde.md) connects stochastic differential equations with evolving probability distributions.
 
-**Projects.** [VideoFlow](@/projects/videoflow.md) is a canvas-based AI video studio for characters, scripts, scenes, image and video generation, and editing. [PolyArb](@/projects/polyarb.md), my Rust Polymarket arbitrage platform, is in production. The [Monash Water Platform](@/projects/monash-water.md) connects CitizenFlood community reporting with wastewater monitoring.
+**Projects.** [VideoFlow](@/projects/videoflow.md) is a canvas-based AI video studio for characters, scripts, scenes, image and video generation, and editing. [Polymarket binary-pairs arbitrage](@/projects/polyarb.md), my Rust Polymarket arbitrage platform, is in production. The [Monash Water Platform](@/projects/monash-water.md) connects CitizenFlood community reporting with wastewater monitoring.

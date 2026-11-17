@@ -1,5 +1,5 @@
 +++
-title = "The Maths Behind PolyArb"
+title = "The Maths Behind Polymarket binary-pairs arbitrage"
 description = "Working through YES–NO arbitrage, fees paid in shares, order-book depth, and the gap between a paper trade and a live fill."
 date = 2026-10-29
 updated = 2026-11-12
@@ -19,9 +19,9 @@ math = true
 reaction = true
 +++
 
-PolyArb looks for Polymarket YES and NO shares that together cost less than USD 1 after fees. The first calculation fits on one line. Deciding how much to buy takes more work, because the displayed prices may cover only a few shares, fees can reduce the shares received, and the two orders can fill differently.
+Polymarket binary-pairs arbitrage looks for Polymarket YES and NO shares that together cost less than USD 1 after fees. The first calculation fits on one line. Deciding how much to buy takes more work, because the displayed prices may cover only a few shares, fees can reduce the shares received, and the two orders can fill differently.
 
-This post explains the general mathematics behind the [PolyArb project](@/projects/polyarb.md). The source code is not publicly shared. All prices and trading outcomes below are hypothetical. They are examples for checking the arithmetic, not results from a live run.
+This post explains the general mathematics behind the [Polymarket binary-pairs arbitrage project](@/projects/polyarb.md). The source code is not publicly shared. All prices and trading outcomes below are hypothetical. They are examples for checking the arithmetic, not results from a live run.
 
 ## Why a pair is worth USD 1
 
@@ -139,11 +139,11 @@ Next, calculate an affordable quantity from executable depth and net shares afte
 
 After submission, track each leg independently. Record the requested quantity, filled quantity, average fill price, deducted fees, and remaining order quantity. Reconcile those records against the resulting balances before counting complete pairs. An order acknowledgement confirms receipt of a request; it does not confirm a fill.
 
-These are general design requirements for evaluating a paired-trade system. They do not describe or expose PolyArb's private implementation.
+These are general design requirements for evaluating a paired-trade system. They do not describe or expose Polymarket binary-pairs arbitrage's private implementation.
 
 ## What I would check in a paper-trading result
 
-PolyArb is now in production and also supports paper trading. This section concerns simulated results, not evidence of live returns. Paper trading uses real market prices and simulated orders, with balances that persist across restarts.
+Polymarket binary-pairs arbitrage is now in production and also supports paper trading. This section concerns simulated results, not evidence of live returns. Paper trading uses real market prices and simulated orders, with balances that persist across restarts.
 
 The dashboard helps inspect activity, but a detected price gap, a risk-approved decision, a simulated fill, and realised profit describe different stages. To assess a run, I would check which prices and quantities were observed, how old the book was, which fee parameters were used, and how the simulator decided that each order filled.
 

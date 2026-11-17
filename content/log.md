@@ -4,7 +4,7 @@ description = "One-line site and work history, newest first."
 updated = 2026-11-12
 +++
 
-- **Nov 2026.** Reconciled the public CV, About, Now, project descriptions, and machine-readable profiles. Updated VideoFlow's canvas workflow and PolyArb's production status.
+- **Nov 2026.** Reconciled the public CV, About, Now, project descriptions, and machine-readable profiles. Updated VideoFlow's canvas workflow and Polymarket binary-pairs arbitrage's production status.
 - **Jul 2026.** Site rework: plainer copy, Now and Colophon pages, figure numbering. Fokker-Planck and regression ANOVA/F-test notes published.
 - **Jun 2026.** MLOps tutorial with runnable notebook. Began proprietary AI research as part of Web3 product management and a contractor training engagement with Quandatics Academy.
 - **May 2026.** Tree-based models note.

@@ -51,7 +51,7 @@ Contact: laijienweng@gmail.com
 
 - [Work index](https://jienweng.github.io/projects/)
 - [VideoFlow](https://jienweng.github.io/projects/videoflow/): A Go and SvelteKit studio for web and Electron desktop, connecting characters, scripts, scenes, image/video generation, and editing. Status: Web & Electron desktop.
-- [PolyArb](https://jienweng.github.io/projects/polyarb/): Evaluates Polymarket YES–NO pairs after fees and available depth. Includes exposure limits, persistent paper trading, and an activity dashboard. Status: In production.
+- [Polymarket binary-pairs arbitrage](https://jienweng.github.io/projects/polyarb/): Evaluates Polymarket YES–NO pairs after fees and available depth. Includes exposure limits, persistent paper trading, and an activity dashboard. Status: In production.
 - [Monash Water Platform](https://jienweng.github.io/projects/monash-water/): Monash research work: CitizenFlood Android reporting and a wastewater dashboard with illustrative scenarios. Status: Research assistant · Monash.
 - [Internal CRM](https://jienweng.github.io/blog/quandatics-crm-business-transformation/): An internal CRM for Quandatics, designed around the handoffs between sales, delivery, and finance. Status: In progress.
 - [ZakatDAO](https://github.com/JienWeng/ZakatDAO): Uses smart contracts to record and distribute zakat payments.

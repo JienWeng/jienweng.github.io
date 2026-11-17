@@ -16,7 +16,7 @@ Earlier, as a Finance Analyst - Data Engineer Intern at Great Eastern Life Assur
 
 At Monash University Malaysia, I research wastewater treatment plant prediction using RNNs, Transformers, and Markov chain methods. This includes the [Monash Water Platform](@/projects/monash-water.md), CitizenFlood Android app, and operator dashboard. My other research interests include multi-agent reinforcement learning, market microstructure, and quantitative finance.
 
-I also build [VideoFlow](@/projects/videoflow.md), a canvas-based AI video studio for web and desktop, and [PolyArb](@/projects/polyarb.md), a Rust Polymarket arbitrage platform now in production.
+I also build [VideoFlow](@/projects/videoflow.md), a canvas-based AI video studio for web and desktop, and [Polymarket binary-pairs arbitrage](@/projects/polyarb.md), a Rust Polymarket arbitrage platform now in production.
 
 I studied Applied Mathematics with Computing at UTAR. I write [notes](@/notes/_index.md) on statistics, optimisation, and reinforcement learning.
 
