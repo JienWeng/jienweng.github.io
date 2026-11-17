@@ -16,7 +16,7 @@ Earlier, as a Finance Analyst - Data Engineer Intern at Great Eastern Life Assur
 
 At Monash University Malaysia, I research wastewater treatment plant prediction using RNNs, Transformers, and Markov chain methods. This includes the [Monash Water Platform](https://jienweng.github.io/projects/monash-water/), CitizenFlood Android app, and operator dashboard. My other research interests include multi-agent reinforcement learning, market microstructure, and quantitative finance.
 
-I also build [VideoFlow](https://jienweng.github.io/projects/videoflow/), a canvas-based AI video studio for web and desktop, and [PolyArb](https://jienweng.github.io/projects/polyarb/), a Rust Polymarket arbitrage platform now in production.
+I also build [VideoFlow](https://jienweng.github.io/projects/videoflow/), a canvas-based AI video studio for web and desktop, and [Polymarket binary-pairs arbitrage](https://jienweng.github.io/projects/polyarb/), a Rust Polymarket arbitrage platform now in production.
 
 I studied Applied Mathematics with Computing at UTAR. I write [notes](https://jienweng.github.io/notes/) on statistics, optimisation, and reinforcement learning.
 
@@ -46,7 +46,7 @@ For my experience and qualifications, see my [CV](https://jienweng.github.io/cv/
 
 **Writing.** My [notes](https://jienweng.github.io/notes/) include a nine-part regression series, stochastic modelling, and product decisions. The [Fokker-Planck note](https://jienweng.github.io/notes/fokker_planck_sde/) connects stochastic differential equations with evolving probability distributions.
 
-**Projects.** [VideoFlow](https://jienweng.github.io/projects/videoflow/) is a canvas-based AI video studio for characters, scripts, scenes, image and video generation, and editing. [PolyArb](https://jienweng.github.io/projects/polyarb/), my Rust Polymarket arbitrage platform, is in production. The [Monash Water Platform](https://jienweng.github.io/projects/monash-water/) connects CitizenFlood community reporting with wastewater monitoring.
+**Projects.** [VideoFlow](https://jienweng.github.io/projects/videoflow/) is a canvas-based AI video studio for characters, scripts, scenes, image and video generation, and editing. [Polymarket binary-pairs arbitrage](https://jienweng.github.io/projects/polyarb/), my Rust Polymarket arbitrage platform, is in production. The [Monash Water Platform](https://jienweng.github.io/projects/monash-water/) connects CitizenFlood community reporting with wastewater monitoring.
 
 ## Experience
 
@@ -408,7 +408,7 @@ Link: https://github.com/JienWeng/videoflow-go
 
 Case study: https://jienweng.github.io/projects/videoflow/
 
-### PolyArb
+### Polymarket binary-pairs arbitrage
 
 Rust Polymarket arbitrage platform, now in production.
 
