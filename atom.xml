@@ -5,7 +5,7 @@
     <link rel="self" type="application/atom+xml" href="https://jienweng.github.io/atom.xml"/>
     <link rel="alternate" type="text/html" href="https://jienweng.github.io"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2026-11-16T00:00:00+00:00</updated>
+    <updated>2026-11-17T00:00:00+00:00</updated>
     <id>https://jienweng.github.io/atom.xml</id>
     <entry xml:lang="en">
         <title>Why I’m Still Learning Maths</title>
@@ -1113,7 +1113,7 @@ $$&lt;&#x2F;p&gt;
     <entry xml:lang="en">
         <title>Why We Built an Internal CRM After Trying Salesforce</title>
         <published>2026-05-25T00:00:00+00:00</published>
-        <updated>2026-05-25T00:00:00+00:00</updated>
+        <updated>2026-11-17T00:00:00+00:00</updated>
         
         <author>
           <name>
@@ -1143,6 +1143,15 @@ $$&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;from-delivery-to-payment&quot;&gt;From delivery to payment&lt;&#x2F;h2&gt;
 &lt;p&gt;Each project phase has deliverables and a progress percentage. Once a phase is complete, the team submits a milestone claim with evidence. Management approves it before finance issues the invoice.&lt;&#x2F;p&gt;
 &lt;p&gt;The same records need to show delivery progress, billed amounts, receipts, and outstanding payments. Otherwise, finance and delivery have to reconstruct the status separately.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;from-completed-work-to-invoice-ready&quot;&gt;From completed work to invoice-ready&lt;&#x2F;h3&gt;
+&lt;p&gt;Completed delivery and invoice readiness are different stages. A completed milestone describes the work; invoice readiness also depends on the supporting evidence and management approval finance needs to act.&lt;&#x2F;p&gt;
+&lt;p&gt;I use this handover to connect the requirements of the three teams:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Sales:&lt;&#x2F;strong&gt; the approved scope provides the reference for what was agreed.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Delivery:&lt;&#x2F;strong&gt; the completed milestone and its supporting evidence explain what has been delivered.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Finance:&lt;&#x2F;strong&gt; the milestone claim and management approval provide the basis for issuing the invoice.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;My contribution is translating those handovers into requirements and supporting implementation, testing, and feedback. The product work is not just recording that a task is complete. It is making the next team&#x27;s required information, approval, and responsibility clear. Invoice-ready does not mean that an invoice has been issued or payment received.&lt;&#x2F;p&gt;
 &lt;figure class=&quot;crm-artifact&quot;&gt;
   &lt;a href=&quot;..&#x2F;..&#x2F;img&#x2F;blog&#x2F;quandatics&#x2F;project-to-cash-excalidraw.svg&quot; aria-label=&quot;View the full-size CRM project-to-cash diagram&quot;&gt;
     &lt;img width=&quot;1600&quot; height=&quot;800&quot; src=&quot;..&#x2F;..&#x2F;img&#x2F;blog&#x2F;quandatics&#x2F;project-to-cash-excalidraw.svg&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; alt=&quot;Project-to-cash flow from an approved sales order through project phases, milestone approval, invoicing, payment receipt, and margin update.&quot;&gt;
@@ -1161,7 +1170,7 @@ $$&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;my-role&quot;&gt;My role&lt;&#x2F;h2&gt;
 &lt;p&gt;I work across requirements, design, development, production deployment, and support. I clarify who owns each record, what a status means, and what happens when scope changes or an approval arrives late.&lt;&#x2F;p&gt;
 &lt;p&gt;For a milestone claim, that means defining the evidence and management approval finance needs before issuing an invoice. I work through ownership and approval conditions before adding fields or screens. Support can reveal gaps, such as an incomplete claim or a late handover.&lt;&#x2F;p&gt;
-&lt;p&gt;The internal CRM is still in progress. Client-specific implementation details and operational results remain confidential.&lt;&#x2F;p&gt;
+&lt;p&gt;The internal CRM is in daily use, with further modules in development. Client-specific implementation details and operational results remain confidential.&lt;&#x2F;p&gt;
 </content>
         
     </entry>
