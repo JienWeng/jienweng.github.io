@@ -14,7 +14,7 @@
       {% endif %}
       <h1 class="article-title">{{ page.title }}</h1>
       {% if page.date %}
-      <p class="rail-note article-byline"><a href="{{ get_url(path='/bio/') }}">{{ config.extra.author }}</a><span>{{ page.date | date(format="%b %-d, %Y") }}</span><span>{{ page.reading_time }} min read</span></p>
+      <p class="rail-note article-byline"><a href="{{ get_url(path='/bio/') }}">{{ config.extra.author }}</a><span>{{ page.date | date(format="%b %-d, %Y") }}</span><span>{{ page.reading_time }} min read</span>{% if page.extra.topic %}<span class="byline-chapter">{{ page.extra.topic }}</span>{% endif %}</p>
       {% endif %}
   </header>
   <aside class="rail{% if page.extra.portrait %} about-rail{% endif %}">
@@ -45,9 +45,7 @@
   <section class="well">
     <article class="prose article-prose">
       {{ page.content | safe }}
-      {% if page.path == "/notes/" %}
-      <div class="tombstone" aria-hidden="true"></div>
-      {% endif %}
+      {% if page.date %}<span class="end-mark" aria-hidden="true"></span>{% endif %}
     </article>
 
     {% if page.extra.topic and page.extra.topic == "Regression" %}
