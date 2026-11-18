@@ -8,7 +8,7 @@ aliases = ["/posts/entropy-time-arrow-yu-deng/"]
 
 [taxonomies]
 categories = ["2026"]
-tags = ["math", "entropy", "arrow of time", "boltzmann equation", "statistical mechanics", "partial differential equations"]
+tags = ["mathematics"]
 
 [extra]
 topic = "Mathematical Physics"

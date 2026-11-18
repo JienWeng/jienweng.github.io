@@ -8,7 +8,7 @@ aliases = ["/posts/photovoltaic-systems-in-wwtps-malaysia/"]
 
 [taxonomies]
 categories = ["2025"]
-tags = ["WWTP"]
+tags = ["sustainability"]
 
 [extra]
 topic = "Sustainability"

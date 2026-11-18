@@ -8,7 +8,7 @@ aliases = ["/posts/tron-energy-product-requirement/"]
 
 [taxonomies]
 categories = ["2026"]
-tags = ["web3", "product management", "TRON", "payments"]
+tags = ["web3", "payments", "product management"]
 
 [extra]
 lang = "en"
@@ -24,23 +24,23 @@ reaction = true
 topic = "Web3"
 +++
 
-On EVM networks, transactions normally need the network’s native coin for gas. TRON token transfers use Energy and may consume Bandwidth. If an account lacks Energy, a transfer can burn TRX to cover the shortfall.
+On EVM networks, transactions normally need the native coin for gas. TRON token transfers use Energy and may consume Bandwidth. If an account lacks Energy, the transfer can burn TRX to cover the shortfall.
 
-That changes the payment cost and the checks required before broadcast.
+That changes the payment cost and what we must check before broadcast.
 
 ## The payment sequence
 
-In our payment flow, we apply Energy rental before a resource-heavy TRON transaction:
+We rent Energy before a resource-heavy TRON transaction:
 
 1. Validate the payment and network.
 2. Check the transaction’s resource requirement.
-3. Arrange rented Energy when needed.
+3. Rent Energy when needed.
 4. Broadcast and monitor the transaction.
 5. Wait for the required confirmation condition.
 6. Reconcile the transfer with the payment request.
 
 ## Requirements and testing
 
-The backlog needs to account for insufficient resources, rental failure, unexpected costs, and confirmation delays. QA also needs chain-specific address, wallet, and fee cases.
+The backlog must cover insufficient resources, rental failure, unexpected costs, and confirmation delays. QA also needs chain-specific address, wallet, and fee cases.
 
-I now check these requirements before the team designs the error states. Exact rental rules and internal implementation details remain confidential.
+I now check these requirements before the team designs error states. Exact rental rules and internal implementation details stay confidential.

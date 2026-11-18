@@ -8,7 +8,7 @@ aliases = ["/posts/tree-based-models/"]
 
 [taxonomies]
 categories = ["2026"]
-tags = ["math", "ai", "machine learning", "trees", "ensemble", "classification", "optimization"]
+tags = ["machine learning"]
 
 [extra]
 topic = "Machine Learning"

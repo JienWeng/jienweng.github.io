@@ -8,7 +8,7 @@ aliases = ["/posts/web3-payment-status-product/"]
 
 [taxonomies]
 categories = ["2026"]
-tags = ["web3", "product management", "payments"]
+tags = ["web3", "payments", "product management"]
 
 [extra]
 lang = "en"
@@ -24,22 +24,22 @@ reaction = true
 topic = "Web3"
 +++
 
-A transaction hash identifies a submitted transaction. The backend still needs to confirm what happened before crediting a ledger or releasing an order.
+A transaction hash identifies a submitted transaction. It does not tell the backend whether it can credit a ledger or release an order.
 
-While working on a multi-chain gateway, I kept returning to when each person can act on a payment state.
+On a multi-chain gateway, I kept returning to one question: when can each person act on a payment state?
 
 ## What each state needs to tell us
 
-- The customer needs to know whether to wait or retry.
-- The merchant needs to know whether to release the order.
-- The backend needs verified evidence before updating the ledger.
-- QA needs acceptance criteria for each transition.
+- Customer: wait or retry?
+- Merchant: release the order or not?
+- Backend: is there verified evidence to update the ledger?
+- QA: what are the acceptance criteria for each transition?
 
 Submission, confirmation, failure, and settlement need distinct meanings in the interface, webhook handler, and support process.
 
 ## Detection and settlement
 
-Client-side detection provides quick feedback when funds appear. Settlement requires a verified server-side signal, with checks for the network, token, recipient, amount, transaction status, and duplicate processing.
+Client-side detection gives quick feedback when funds appear. Settlement needs a verified server-side signal that checks network, token, recipient, amount, transaction status, and duplicate processing.
 
 ## Acceptance criteria I would write
 
@@ -50,8 +50,7 @@ Client-side detection provides quick feedback when funds appear. Settlement requ
 - Verify a webhook before it updates the ledger.
 - Prevent retries from crediting the same payment twice.
 
-The [CryptoRails lifecycle note](@/notes/cryptorails-transaction-lifecycle.md) covers the documented deposit and consolidation flow. These are generalised requirements; internal details and performance results remain confidential.
-
+The [CryptoRails lifecycle note](@/notes/cryptorails-transaction-lifecycle.md) covers the documented deposit and consolidation flow. These requirements are generalised; internal details and performance results remain confidential.
 
 ## Related reading
 

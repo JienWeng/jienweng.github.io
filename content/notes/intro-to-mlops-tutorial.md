@@ -8,7 +8,7 @@ aliases = ["/posts/intro-to-mlops-tutorial/"]
 
 [taxonomies]
 categories = ["2026"]
-tags = ["mlops", "ai", "reproducibility", "tools", "mlflow"]
+tags = ["machine learning"]
 
 [extra]
 topic = "Machine Learning"

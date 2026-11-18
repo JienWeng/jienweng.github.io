@@ -8,7 +8,7 @@ aliases = ["/posts/product-manager-between-business-and-delivery/"]
 
 [taxonomies]
 categories = ["2026"]
-tags = ["product management", "web3", "delivery"]
+tags = ["product management", "web3", "payments"]
 
 [extra]
 lang = "en"
@@ -24,35 +24,34 @@ reaction = true
 topic = "Product Management"
 +++
 
-I coordinate an engineering team working on Web3 payments. I maintain the backlog and roadmap, run Scrum ceremonies, and clarify priorities with the business owner.
+I coordinate an engineering team building Web3 payments: I maintain the backlog and roadmap, run Scrum ceremonies, and clarify priorities with the business owner.
 
-When gathering requirements, I start with the intended users and how they will understand the flow. For a payment, I ask what the customer sees while waiting and whether the status tells them to wait, retry, or take another action.
+I start requirements with the users and how they will understand the flow. For a payment, I ask what the customer sees while waiting, and whether the status tells them to wait, retry, or act.
 
 ## When the merchant can credit a payment
 
-“Make deposits more reliable” leaves a decision open: which event allows the merchant to credit its ledger?
+“Make deposits more reliable” leaves one decision open: which event lets the merchant credit its ledger?
 
-I work through that boundary with the business owner and engineers. In the documented CryptoRails flow, the browser detects incoming funds and gives the customer feedback. The merchant backend credits the ledger after receiving and verifying the signed settlement webhook.
+I settle it with the business owner and engineers. In the documented CryptoRails flow, the browser detects incoming funds and shows the customer feedback. The merchant backend credits the ledger only after verifying the signed settlement webhook.
 
-The trade-off is waiting for confirmation and server verification before calling the payment complete. The interface still needs to show progress during that wait. Treating detection as completion would let the screen promise an outcome the backend has yet to verify.
+The trade-off: the payment is not complete until confirmation and server verification, so the interface has to show progress meanwhile. Treating detection as completion would let the screen promise what the backend has not verified.
 
 ## What I put into acceptance criteria
 
-That boundary changes what the team has to test:
+That boundary changes what the team tests:
 
 - Deposit detection updates the interface without marking the payment settled.
 - A delayed confirmation leaves the payment pending.
 - The backend verifies the webhook before updating the ledger.
 - A repeated webhook or retry cannot credit the same payment twice.
 
-A successful demo covers only one of these paths. I include the delayed and duplicate cases when defining done with the team.
+A successful demo covers only one path, so I include the delayed and duplicate cases in the definition of done.
 
 ## Keeping the scope deliverable
 
-The request also needs agreed networks, failure cases, and responses for the user. I turn those decisions into backlog items, track dependencies, and raise blocked work or competing requests with the business owner.
+The request also needs agreed networks, failure cases, and user responses. I turn these into backlog items, track dependencies, and raise blocked work or competing requests with the business owner.
 
-The [CryptoRails workflow](@/notes/cryptorails-transaction-lifecycle.md) shows the deposit and consolidation sequence behind these requirements. Product-specific business details, internal metrics, and implementation details remain confidential.
-
+The [CryptoRails workflow](@/notes/cryptorails-transaction-lifecycle.md) shows the deposit and consolidation sequence behind these requirements. Product-specific business, metric, and implementation details remain confidential.
 
 ## Related reading
 

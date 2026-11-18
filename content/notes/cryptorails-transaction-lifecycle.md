@@ -8,7 +8,7 @@ aliases = ["/posts/cryptorails-transaction-lifecycle/", "/blog/cryptorails-trans
 
 [taxonomies]
 categories = ["2026"]
-tags = ["web3", "product management", "payments"]
+tags = ["web3", "payments", "product management"]
 
 [extra]
 lang = "en"

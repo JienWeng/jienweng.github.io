@@ -8,7 +8,7 @@ aliases = ["/posts/proof-of-ordinary-least-square/"]
 
 [taxonomies]
 categories = ["2025"]
-tags = ["math", "ai"]
+tags = ["statistics", "mathematics"]
 
 [extra]
 topic = "Regression"

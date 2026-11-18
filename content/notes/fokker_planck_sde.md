@@ -8,7 +8,7 @@ aliases = ["/posts/fokker-planck-sde/"]
 
 [taxonomies]
 categories = ["2026"]
-tags = ["math", "stochastic processes", "sde", "fokker-planck", "quantitative finance", "python"]
+tags = ["mathematics", "quantitative finance"]
 
 [extra]
 topic = "Stochastic Modelling"

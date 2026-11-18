@@ -8,7 +8,7 @@ aliases = ["/posts/gradient-descent/"]
 
 [taxonomies]
 categories = ["2025"]
-tags = ["math", "ai", "optimization"]
+tags = ["machine learning", "mathematics"]
 
 [extra]
 topic = "Machine Learning"
