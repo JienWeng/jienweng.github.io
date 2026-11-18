@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "source": "https://jienweng.github.io/cv/",
-  "sourceDigest": "3cdc00de513260dcc5094a43d2b3d994544b3c09f380b80f5f201a2368632867",
+  "sourceDigest": "05d8801086a4d07dff46d0e9ac72666c81df816c6842bba8ff5624b88807223b",
   "basics": {
     "name": "Jien Weng Lai",
     "email": "laijienweng@gmail.com",
@@ -23,40 +23,47 @@
       {
         "title": "CryptoRails",
         "date": "Feb 2026 - Present",
-        "content": "Product Manager: maintains the backlog and roadmap, runs Scrum ceremonies, and coordinates engineering delivery for multi-chain crypto payment and wallet infrastructure. Defines payment states, settlement criteria, and acceptance criteria for delayed or duplicate payments with the business owner and engineers."
+        "subtitle": "Product Manager",
+        "content": "Maintains the backlog and roadmap, runs Scrum ceremonies, and coordinates engineering delivery for multi-chain crypto payments and wallet infrastructure. Defines payment states, settlement criteria, and acceptance criteria for delayed or duplicate payments."
       },
       {
         "title": "Independent Consulting",
         "date": "Apr 2026 - Present",
-        "content": "Independent Consultant & Product Manager: business transformation, Web3 product management, proprietary AI research, and data/ML training"
+        "subtitle": "Independent Consultant & Product Manager",
+        "content": "Business transformation, Web3 product management, proprietary AI research, and data and ML training."
       },
       {
         "title": "Quandatics",
         "date": "Apr 2026 - Present",
-        "content": "Contractor, Business Transformation Consultant: maps sales, project delivery, and finance workflows for an internal CRM. Works across requirements, design, development, deployment, and support, including record ownership, approvals, and milestone-to-invoice handovers.",
+        "subtitle": "Business Transformation Consultant (Contractor)",
+        "content": "Maps sales, project delivery, and finance workflows for an internal CRM. Works across requirements, design, development, deployment, and support, including record ownership, approvals, and milestone-to-invoice handovers.",
         "link": "https://quandatics.com"
       },
       {
         "title": "Quandatics Academy",
         "date": "Jun 2026 - Present",
-        "content": "Contractor, Data Science & Machine Learning Trainer: teaches and coaches learners in data science and machine learning.",
+        "subtitle": "Data Science & Machine Learning Trainer (Contractor)",
+        "content": "Teaches and coaches learners in data science and machine learning.",
         "link": "https://academy.quandatics.com"
       },
       {
         "title": "Monash University Malaysia",
         "date": "Dec 2025 - Present",
-        "content": "Research Assistant: develops wastewater treatment plant prediction models using RNNs, Transformers, and Markov chain methods on time-series sensor data. Works on the [Monash Water Platform](https://monash-water-platform.vercel.app/), including the CitizenFlood Android app and operator dashboard.",
+        "subtitle": "Research Assistant",
+        "content": "Develops wastewater treatment plant prediction models using RNNs, Transformers, and Markov chain methods on time-series sensor data. Works on the [Monash Water Platform](https://monash-water-platform.vercel.app/), including the CitizenFlood Android app and operator dashboard.",
         "link": "https://www.monash.edu"
       },
       {
         "title": "ACTBuilder",
         "date": "Jul 2025 - Present",
-        "content": "Technical Consultant: supports technical documentation, builds a knowledge wiki, maintains the website, and helps set up Python environments."
+        "subtitle": "Technical Consultant",
+        "content": "Supports technical documentation, builds a knowledge wiki, maintains the website, and helps set up Python environments."
       },
       {
         "title": "Great Eastern Life Assurance",
         "date": "Oct 2024 - Jan 2025",
-        "content": "Finance Analyst - Data Engineer Intern: worked on data pipelines using Hive SQL in Apache Zeppelin.",
+        "subtitle": "Finance Analyst, Data Engineer Intern",
+        "content": "Worked on data pipelines using Hive SQL in Apache Zeppelin.",
         "link": "https://www.greateasternlife.com/my/en/personal-insurance.html"
       }
     ],
@@ -64,13 +71,14 @@
       {
         "title": "UTAR",
         "date": "Oct 2022 - Oct 2025",
-        "content": "Bachelor of Science (Honours) Applied Mathematics with Computing with Merit",
+        "subtitle": "Bachelor of Science (Honours) Applied Mathematics with Computing",
+        "content": "Graduated with Merit.",
         "link": "https://www.utar.edu.my"
       },
       {
         "title": "UTAR",
         "date": "Oct 2021 - Oct 2022",
-        "content": "Foundation · Science",
+        "subtitle": "Foundation in Science",
         "link": "https://www.utar.edu.my"
       }
     ],
@@ -78,64 +86,64 @@
       {
         "title": "KPJ Healthcare K.R.A.F.T. Challenge 2025",
         "date": "Nov 2025",
-        "content": "Top 12"
+        "subtitle": "Top 12"
       },
       {
         "title": "Talentbank Boardroom Challenge 2025",
         "date": "Nov 2025",
-        "content": "Future Founder Award, Top 15 Finalist"
+        "subtitle": "Future Founder Award, Top 15 Finalist"
       },
       {
         "title": "CodeNection Hackathon 2025",
         "date": "Oct 2025",
-        "content": "Mentor"
+        "subtitle": "Mentor"
       },
       {
         "title": "4th International Process Control Competition",
         "date": "Aug 2025",
-        "content": "Best Visualisation Award",
+        "subtitle": "Best Visualisation Award",
         "link": "https://www.facebook.com/cheme.utp/posts/-empowering-future-engineers-ipcc-2025-ignites-innovation-at-utp-from-22nd-to-24/1178536717631535/"
       },
       {
         "title": "PayHack 2025",
         "date": "Aug 2025",
-        "content": "Consolation Prize"
+        "subtitle": "Consolation Prize"
       },
       {
         "title": "Alibaba Cloud AI Hackathon 2025",
         "date": "May 2025",
-        "content": "Top 13 Finalist"
+        "subtitle": "Top 13 Finalist"
       },
       {
         "title": "Hack The Future",
         "date": "May 2025",
-        "content": "Best Presenter"
+        "subtitle": "Best Presenter"
       },
       {
         "title": "JomHack Varsity Challenge 2025",
         "date": "Apr 2025",
-        "content": "Participant"
+        "subtitle": "Participant"
       },
       {
         "title": "Universiti Malaya Hackathon 2025",
         "date": "Apr 2025",
-        "content": "4th runner-up"
+        "subtitle": "4th runner-up"
       },
       {
         "title": "20th LIAM Structured Workshop",
         "date": "Dec 2024",
-        "content": "Best Presenter Award, Best Team Award",
+        "subtitle": "Best Presenter Award, Best Team Award",
         "link": "https://www.linkedin.com/posts/jienweng_liam-teamwork-insurance-activity-7278028877585596417-49cL"
       },
       {
         "title": "PayHack 2024",
         "date": "Dec 2024",
-        "content": "Semi-finalist"
+        "subtitle": "Semi-finalist"
       },
       {
         "title": "Data Science Digital Race 2024",
         "date": "Oct 2024",
-        "content": "Finalist"
+        "subtitle": "Finalist"
       }
     ],
     "Certifications": [
@@ -203,49 +211,49 @@
       {
         "title": "Kuok Foundation Scholar",
         "date": "Oct 2024",
-        "content": "Undergraduate scholarship awarded by the Kuok Foundation."
+        "subtitle": "Undergraduate scholarship"
       },
       {
         "title": "HuaZong Education Fund",
         "date": "Apr 2024",
-        "content": "Study grant awarded by the HuaZong Education Fund."
+        "subtitle": "Study grant"
       },
       {
         "title": "KIT Foundation Scholarship",
         "date": "May 2023",
-        "content": "Scholarship awarded by the KIT Foundation."
+        "subtitle": "Scholarship"
       },
       {
         "title": "UTAR Scholarships for Top Achievers",
         "date": "Oct 2022",
-        "content": "Merit-based tuition scholarship for academic performance at UTAR."
+        "subtitle": "Merit-based tuition scholarship"
       },
       {
         "title": "UTAR Scholarships for Top Achievers (Pre-U)",
         "date": "Oct 2021",
-        "content": "Merit-based tuition scholarship for the UTAR Foundation programme."
+        "subtitle": "Merit-based tuition scholarship, Foundation programme"
       }
     ],
     "Open Source": [
       {
         "title": "SymPy",
-        "date": "12 Mar 2026",
-        "subtitle": "PR #29376: add type annotations to warning helpers",
+        "date": "Mar 2026",
+        "subtitle": "Contributor, PR #29376",
         "content": "Added type annotations to SymPy’s warning helpers. Reviewed and merged into SymPy master.",
         "link": "https://github.com/sympy/sympy/pull/29376"
       }
     ],
     "Volunteering": [
       {
-        "title": "Mentor & Judge, KitaHack 2026",
+        "title": "KitaHack 2026",
         "date": "Mar 2026",
-        "subtitle": "Google Developer Groups on Campus Malaysia",
+        "subtitle": "Mentor and judge, Google Developer Groups on Campus Malaysia",
         "content": "Mentored participating teams and judged project submissions."
       },
       {
-        "title": "Hackathon Mentor",
+        "title": "CodeNection 2025",
         "date": "Oct 2025",
-        "subtitle": "CodeNection",
+        "subtitle": "Hackathon mentor",
         "content": "Mentored student teams throughout the hackathon."
       }
     ],

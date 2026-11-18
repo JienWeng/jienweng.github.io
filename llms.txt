@@ -24,21 +24,21 @@ Contact: laijienweng@gmail.com
 
 ## Current roles
 
-- CryptoRails (Feb 2026 - Present): Product Manager: maintains the backlog and roadmap, runs Scrum ceremonies, and coordinates engineering delivery for multi-chain crypto payment and wallet infrastructure. Defines payment states, settlement criteria, and acceptance criteria for delayed or duplicate payments with the business owner and engineers.
-- Independent Consulting (Apr 2026 - Present): Independent Consultant & Product Manager: business transformation, Web3 product management, proprietary AI research, and data/ML training
-- Quandatics (Apr 2026 - Present): Contractor, Business Transformation Consultant: maps sales, project delivery, and finance workflows for an internal CRM. Works across requirements, design, development, deployment, and support, including record ownership, approvals, and milestone-to-invoice handovers.
-- Quandatics Academy (Jun 2026 - Present): Contractor, Data Science & Machine Learning Trainer: teaches and coaches learners in data science and machine learning.
-- Monash University Malaysia (Dec 2025 - Present): Research Assistant: develops wastewater treatment plant prediction models using RNNs, Transformers, and Markov chain methods on time-series sensor data. Works on the [Monash Water Platform](https://monash-water-platform.vercel.app/), including the CitizenFlood Android app and operator dashboard.
-- ACTBuilder (Jul 2025 - Present): Technical Consultant: supports technical documentation, builds a knowledge wiki, maintains the website, and helps set up Python environments.
+- CryptoRails (Feb 2026 - Present): Maintains the backlog and roadmap, runs Scrum ceremonies, and coordinates engineering delivery for multi-chain crypto payments and wallet infrastructure. Defines payment states, settlement criteria, and acceptance criteria for delayed or duplicate payments.
+- Independent Consulting (Apr 2026 - Present): Business transformation, Web3 product management, proprietary AI research, and data and ML training.
+- Quandatics (Apr 2026 - Present): Maps sales, project delivery, and finance workflows for an internal CRM. Works across requirements, design, development, deployment, and support, including record ownership, approvals, and milestone-to-invoice handovers.
+- Quandatics Academy (Jun 2026 - Present): Teaches and coaches learners in data science and machine learning.
+- Monash University Malaysia (Dec 2025 - Present): Develops wastewater treatment plant prediction models using RNNs, Transformers, and Markov chain methods on time-series sensor data. Works on the [Monash Water Platform](https://monash-water-platform.vercel.app/), including the CitizenFlood Android app and operator dashboard.
+- ACTBuilder (Jul 2025 - Present): Supports technical documentation, builds a knowledge wiki, maintains the website, and helps set up Python environments.
 
 ## Earlier experience
 
-- Great Eastern Life Assurance (Oct 2024 - Jan 2025): Finance Analyst - Data Engineer Intern: worked on data pipelines using Hive SQL in Apache Zeppelin.
+- Great Eastern Life Assurance (Oct 2024 - Jan 2025): Worked on data pipelines using Hive SQL in Apache Zeppelin.
 
 ## Education
 
-- UTAR (Oct 2022 - Oct 2025): Bachelor of Science (Honours) Applied Mathematics with Computing with Merit
-- UTAR (Oct 2021 - Oct 2022): Foundation · Science
+- UTAR (Oct 2022 - Oct 2025): Graduated with Merit.
+- UTAR (Oct 2021 - Oct 2022): 
 
 ## Research
 

@@ -54,19 +54,25 @@ For my experience and qualifications, see my [CV](https://jienweng.github.io/cv/
 
 Feb 2026 - Present
 
-Product Manager: maintains the backlog and roadmap, runs Scrum ceremonies, and coordinates engineering delivery for multi-chain crypto payment and wallet infrastructure. Defines payment states, settlement criteria, and acceptance criteria for delayed or duplicate payments with the business owner and engineers.
+Product Manager
+
+Maintains the backlog and roadmap, runs Scrum ceremonies, and coordinates engineering delivery for multi-chain crypto payments and wallet infrastructure. Defines payment states, settlement criteria, and acceptance criteria for delayed or duplicate payments.
 
 ### Independent Consulting
 
 Apr 2026 - Present
 
-Independent Consultant & Product Manager: business transformation, Web3 product management, proprietary AI research, and data/ML training
+Independent Consultant & Product Manager
+
+Business transformation, Web3 product management, proprietary AI research, and data and ML training.
 
 ### Quandatics
 
 Apr 2026 - Present
 
-Contractor, Business Transformation Consultant: maps sales, project delivery, and finance workflows for an internal CRM. Works across requirements, design, development, deployment, and support, including record ownership, approvals, and milestone-to-invoice handovers.
+Business Transformation Consultant (Contractor)
+
+Maps sales, project delivery, and finance workflows for an internal CRM. Works across requirements, design, development, deployment, and support, including record ownership, approvals, and milestone-to-invoice handovers.
 
 Link: https://quandatics.com
 
@@ -74,7 +80,9 @@ Link: https://quandatics.com
 
 Jun 2026 - Present
 
-Contractor, Data Science & Machine Learning Trainer: teaches and coaches learners in data science and machine learning.
+Data Science & Machine Learning Trainer (Contractor)
+
+Teaches and coaches learners in data science and machine learning.
 
 Link: https://academy.quandatics.com
 
@@ -82,7 +90,9 @@ Link: https://academy.quandatics.com
 
 Dec 2025 - Present
 
-Research Assistant: develops wastewater treatment plant prediction models using RNNs, Transformers, and Markov chain methods on time-series sensor data. Works on the [Monash Water Platform](https://monash-water-platform.vercel.app/), including the CitizenFlood Android app and operator dashboard.
+Research Assistant
+
+Develops wastewater treatment plant prediction models using RNNs, Transformers, and Markov chain methods on time-series sensor data. Works on the [Monash Water Platform](https://monash-water-platform.vercel.app/), including the CitizenFlood Android app and operator dashboard.
 
 Link: https://www.monash.edu
 
@@ -90,13 +100,17 @@ Link: https://www.monash.edu
 
 Jul 2025 - Present
 
-Technical Consultant: supports technical documentation, builds a knowledge wiki, maintains the website, and helps set up Python environments.
+Technical Consultant
+
+Supports technical documentation, builds a knowledge wiki, maintains the website, and helps set up Python environments.
 
 ### Great Eastern Life Assurance
 
 Oct 2024 - Jan 2025
 
-Finance Analyst - Data Engineer Intern: worked on data pipelines using Hive SQL in Apache Zeppelin.
+Finance Analyst, Data Engineer Intern
+
+Worked on data pipelines using Hive SQL in Apache Zeppelin.
 
 Link: https://www.greateasternlife.com/my/en/personal-insurance.html
 
@@ -106,7 +120,9 @@ Link: https://www.greateasternlife.com/my/en/personal-insurance.html
 
 Oct 2022 - Oct 2025
 
-Bachelor of Science (Honours) Applied Mathematics with Computing with Merit
+Bachelor of Science (Honours) Applied Mathematics with Computing
+
+Graduated with Merit.
 
 Link: https://www.utar.edu.my
 
@@ -114,7 +130,7 @@ Link: https://www.utar.edu.my
 
 Oct 2021 - Oct 2022
 
-Foundation · Science
+Foundation in Science
 
 Link: https://www.utar.edu.my
 
@@ -282,39 +298,39 @@ Link: https://www.linkedin.com/learning/certificates/31163a64417d9ee58f69f9da29a
 
 Oct 2024
 
-Undergraduate scholarship awarded by the Kuok Foundation.
+Undergraduate scholarship
 
 ### HuaZong Education Fund
 
 Apr 2024
 
-Study grant awarded by the HuaZong Education Fund.
+Study grant
 
 ### KIT Foundation Scholarship
 
 May 2023
 
-Scholarship awarded by the KIT Foundation.
+Scholarship
 
 ### UTAR Scholarships for Top Achievers
 
 Oct 2022
 
-Merit-based tuition scholarship for academic performance at UTAR.
+Merit-based tuition scholarship
 
 ### UTAR Scholarships for Top Achievers (Pre-U)
 
 Oct 2021
 
-Merit-based tuition scholarship for the UTAR Foundation programme.
+Merit-based tuition scholarship, Foundation programme
 
 ## Open Source
 
 ### SymPy
 
-12 Mar 2026
+Mar 2026
 
-PR #29376: add type annotations to warning helpers
+Contributor, PR #29376
 
 Added type annotations to SymPy’s warning helpers. Reviewed and merged into SymPy master.
 
@@ -322,19 +338,19 @@ Link: https://github.com/sympy/sympy/pull/29376
 
 ## Volunteering
 
-### Mentor & Judge, KitaHack 2026
+### KitaHack 2026
 
 Mar 2026
 
-Google Developer Groups on Campus Malaysia
+Mentor and judge, Google Developer Groups on Campus Malaysia
 
 Mentored participating teams and judged project submissions.
 
-### Hackathon Mentor
+### CodeNection 2025
 
 Oct 2025
 
-CodeNection
+Hackathon mentor
 
 Mentored student teams throughout the hackathon.
 
