@@ -37,7 +37,7 @@
   .projects-main .project-filters button,
   .design-prompt, .design-prompt button,
   .diagram-viewer button, .writing-main button[data-reset], .projects-empty button,
-  .prose pre, .v3-state, .lost-flow span, .cv-view button
+  .prose pre, .v3-state, .lost-flow span
 ) {
   position: relative; isolation: isolate;
   border: 0; border-radius: 0; background-color: transparent;
@@ -47,7 +47,7 @@
   .projects-main .project-filters button,
   .design-prompt, .design-prompt button,
   .diagram-viewer button, .writing-main button[data-reset], .projects-empty button,
-  .prose pre, .v3-state, .lost-flow span, .cv-view button
+  .prose pre, .v3-state, .lost-flow span
 )::before {
   content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
   border: 1.6px solid var(--stroke); border-radius: 9px 3px 10px 4px / 4px 10px 3px 9px;
@@ -58,7 +58,7 @@
   .projects-main .project-filters button,
   .design-prompt, .design-prompt button,
   .diagram-viewer button, .writing-main button[data-reset], .projects-empty button,
-  .prose pre, .v3-state, .lost-flow span, .cv-view button
+  .prose pre, .v3-state, .lost-flow span
 )::after {
   content: ""; position: absolute; inset: 1px -2px -1px 2px; z-index: -1; pointer-events: none;
   border: 1.1px solid var(--stroke-soft); border-radius: 4px 10px 3px 9px / 9px 3px 10px 4px;
