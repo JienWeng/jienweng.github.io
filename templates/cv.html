@@ -27,5 +27,14 @@
   buttons.forEach(b => b.addEventListener('click', () => apply(b.dataset.view)));
   group.hidden = false;
   apply(view);
+  // Touch and click: tap a TL;DR row to open it; links inside still work.
+  main.querySelectorAll('.cv-prose > .collection-list:not(.collection-certifications) .collection-item').forEach(item => {
+    item.addEventListener('click', event => {
+      if (!main.classList.contains('is-brief') || event.target.closest('a, summary, button')) return;
+      const open = item.classList.toggle('is-open');
+      main.querySelectorAll('.collection-item.is-open').forEach(other => { if (other !== item) other.classList.remove('is-open'); });
+      item.setAttribute('aria-expanded', String(open));
+    });
+  });
 })();
 </script>{% endblock script %}

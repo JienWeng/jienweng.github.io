@@ -89,7 +89,38 @@ body.cv-page .cv-main .cv-prose .collection-certifications .collection-credentia
 body.cv-page .cv-view button::before { border-color: var(--stroke-soft); }
 body.cv-page .cv-view button[aria-pressed="true"]::before { border-color: var(--accent); background: var(--hachure); }
 .collection-summary { display: none; }
-.cv-main.is-brief .collection-summary { display: block; margin-top: 4px; font-size: .9375rem; line-height: 1.55; color: var(--ink-soft); }
-.cv-main.is-brief .collection-card .collection-body,
-.cv-main.is-brief .collection-expandable .collection-details { display: none; }
+body.cv-page main.cv-main.is-brief .collection-expandable .collection-details { display: none; }
 .cv-main.is-brief .cv-prose > .collection-list:not(.collection-certifications) .collection-item { padding: 14px 0; }
+
+/* TL;DR rows open like a magnifier: hover, focus, or tap expands one row,
+   lifts it inside a drawn outline, and lets the others fall back. */
+body.cv-page main.cv-main.is-brief .collection-summary,
+body.cv-page main.cv-main.is-brief .collection-card .collection-body {
+  display: grid; grid-template-rows: 1fr; opacity: 1;
+  transition: grid-template-rows 260ms cubic-bezier(.2, .7, .2, 1), opacity 200ms ease-out, margin 260ms ease-out;
+}
+body.cv-page main.cv-main.is-brief :is(.collection-summary, .collection-card .collection-body) > * { overflow: hidden; min-height: 0; }
+body.cv-page main.cv-main.is-brief .collection-summary { margin-top: 4px; font-size: .9375rem; line-height: 1.55; color: var(--ink-soft); }
+body.cv-page main.cv-main.is-brief .collection-card .collection-body { grid-template-rows: 0fr; opacity: 0; margin-top: 0; }
+
+body.cv-page main.cv-main.is-brief .cv-prose > .collection-list:not(.collection-certifications) .collection-item {
+  position: relative; isolation: isolate; cursor: zoom-in;
+  transition: transform 240ms cubic-bezier(.2, .7, .2, 1), opacity 200ms ease-out;
+}
+body.cv-page main.cv-main.is-brief .cv-prose > .collection-list:not(.collection-certifications) .collection-item::before {
+  content: ""; position: absolute; inset: 2px -18px; z-index: -1; pointer-events: none;
+  border: 1.6px solid var(--stroke); border-radius: 12px 4px 14px 5px / 5px 13px 4px 12px;
+  background: var(--paper); box-shadow: 0 14px 28px -20px rgba(53, 52, 47, .45);
+  opacity: 0; transform: scale(.98); transition: opacity 200ms ease-out, transform 240ms cubic-bezier(.2, .7, .2, 1);
+}
+body.cv-page main.cv-main.is-brief .collection-item:is(:hover, :focus-within, .is-open) { transform: scale(1.015); cursor: zoom-out; }
+body.cv-page main.cv-main.is-brief .cv-prose > .collection-list:not(.collection-certifications) .collection-item:is(:hover, :focus-within, .is-open)::before { opacity: 1; transform: none; }
+body.cv-page main.cv-main.is-brief .collection-card:is(:hover, :focus-within, .is-open) .collection-body { grid-template-rows: 1fr; opacity: 1; margin-top: 8px; transition-delay: 120ms; }
+body.cv-page main.cv-main.is-brief .cv-prose .collection-card:is(:hover, :focus-within, .is-open) .collection-summary:has(+ .collection-body) { display: none; }
+body.cv-page main.cv-main.is-brief .collection-list:has(.collection-item:is(:hover, :focus-within, .is-open)) .collection-item:not(:hover, :focus-within, .is-open) { opacity: .55; }
+@media (hover: none) { body.cv-page main.cv-main.is-brief .collection-item:hover:not(.is-open) { transform: none; } body.cv-page main.cv-main.is-brief .cv-prose > .collection-list:not(.collection-certifications) .collection-item:hover:not(.is-open)::before { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  body.cv-page main.cv-main.is-brief .collection-item, body.cv-page main.cv-main.is-brief .collection-item::before,
+  body.cv-page main.cv-main.is-brief :is(.collection-summary, .collection-card .collection-body) { transition: none; }
+  body.cv-page main.cv-main.is-brief .collection-item:is(:hover, :focus-within, .is-open) { transform: none; }
+}
