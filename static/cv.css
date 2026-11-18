@@ -100,16 +100,17 @@ body.cv-page main.cv-main.is-brief .collection-card .collection-body { grid-temp
 
 body.cv-page main.cv-main.is-brief .cv-prose > .collection-list:not(.collection-certifications) .collection-item {
   position: relative; isolation: isolate; cursor: zoom-in;
-  transition: transform 240ms cubic-bezier(.2, .7, .2, 1), opacity 200ms ease-out;
+  transition: transform 380ms cubic-bezier(.34, 1.56, .64, 1), opacity 220ms ease-out;
 }
 body.cv-page main.cv-main.is-brief .cv-prose > .collection-list:not(.collection-certifications) .collection-item::before {
   content: ""; position: absolute; inset: 2px -18px; z-index: -1; pointer-events: none;
   border: 1.6px solid var(--stroke); border-radius: 12px 4px 14px 5px / 5px 13px 4px 12px;
   background: var(--paper); box-shadow: 0 14px 28px -20px rgba(53, 52, 47, .45);
-  opacity: 0; transform: scale(.98); transition: opacity 200ms ease-out, transform 240ms cubic-bezier(.2, .7, .2, 1);
+  opacity: 0; clip-path: inset(48% 50% 48% 50% round 12px);
+  transition: opacity 160ms ease-out, clip-path 420ms cubic-bezier(.22, 1, .36, 1), box-shadow 380ms ease-out;
 }
-body.cv-page main.cv-main.is-brief .collection-item:is(:hover, :focus-within, .is-open) { transform: scale(1.015); cursor: zoom-out; }
-body.cv-page main.cv-main.is-brief .cv-prose > .collection-list:not(.collection-certifications) .collection-item:is(:hover, :focus-within, .is-open)::before { opacity: 1; transform: none; }
+body.cv-page main.cv-main.is-brief .collection-item:is(:hover, :focus-within, .is-open) { transform: translateY(-3px) scale(1.035); cursor: zoom-out; z-index: 2; }
+body.cv-page main.cv-main.is-brief .cv-prose > .collection-list:not(.collection-certifications) .collection-item:is(:hover, :focus-within, .is-open)::before { opacity: 1; clip-path: inset(-40px -40px -40px -40px); box-shadow: 0 22px 40px -24px rgba(53, 52, 47, .55); }
 body.cv-page main.cv-main.is-brief .collection-card:is(:hover, :focus-within, .is-open) .collection-body { grid-template-rows: 1fr; opacity: 1; margin-top: 8px; transition-delay: 120ms; }
 body.cv-page main.cv-main.is-brief .cv-prose .collection-card:is(:hover, :focus-within, .is-open) .collection-summary:has(+ .collection-body) { display: none; }
 body.cv-page main.cv-main.is-brief .collection-list:has(.collection-item:is(:hover, :focus-within, .is-open)) .collection-item:not(:hover, :focus-within, .is-open) { opacity: .55; }
@@ -118,5 +119,6 @@ body.cv-page main.cv-main.is-brief .collection-list:has(.collection-item:is(:hov
   body.cv-page main.cv-main.is-brief .collection-item, body.cv-page main.cv-main.is-brief .collection-item::before,
   body.cv-page main.cv-main.is-brief :is(.collection-summary, .collection-card .collection-body) { transition: none; }
   body.cv-page main.cv-main.is-brief .collection-item:is(:hover, :focus-within, .is-open) { transform: none; }
+  body.cv-page main.cv-main.is-brief .cv-prose > .collection-list:not(.collection-certifications) .collection-item::before { clip-path: none; }
 }
 body.cv-page main.cv-main.is-brief .collection-expandable:is(:hover, :focus-within, .is-open) .collection-details { display: block; }
