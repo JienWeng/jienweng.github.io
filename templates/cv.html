@@ -2,8 +2,8 @@
 {% block body_class %}cv-page{% endblock body_class %}
 {% block head %}<link rel="stylesheet" href="{{ get_url(path='editorial.css') }}"><link rel="stylesheet" href="{{ get_url(path='cv.css') }}">{% endblock head %}
 {% block content %}
-<main id="main" class="cv-main">
-  <header class="editorial-heading cv-heading"><h1>{{ section.title }}</h1><p>Product manager and researcher. Web3 payments, business systems, and applied AI.</p><div class="cv-actions"><a class="portfolio-button" href="{{ get_url(path='cv/jien-weng-lai-public-cv.pdf') }}">Download PDF</a><a href="{{ get_url(path='cv/profile.txt') }}">Plain-text version</a><a href="mailto:{{ config.extra.email }}">Email me</a></div><div class="cv-view" role="group" aria-label="CV length" hidden><button type="button" data-view="brief" aria-pressed="true">TL;DR</button><button type="button" data-view="full" aria-pressed="false">Full CV</button></div></header>
+<main id="main" class="cv-main is-brief">
+  <header class="editorial-heading cv-heading"><h1>{{ section.title }}</h1><p>Product manager and researcher. Web3 payments, business systems, and applied AI.</p><div class="cv-actions"><a class="portfolio-button" href="{{ get_url(path='cv/jien-weng-lai-public-cv.pdf') }}">Download PDF</a><a href="{{ get_url(path='cv/profile.txt') }}">Plain-text version</a><a href="mailto:{{ config.extra.email }}">Email me</a></div></header>
   <div class="cv-layout">
     <aside class="cv-index"><nav aria-label="CV sections">{% for heading in ["Experience", "Education", "Publications", "Awards", "Certifications", "Grants", "Open Source", "Volunteering", "Memberships"] %}<a href="#{{ heading | slugify }}">{{ heading }}</a>{% endfor %}</nav></aside>
     <article class="prose cv-prose">{{ section.content | safe }}</article>
@@ -12,29 +12,13 @@
 {% endblock content %}
 {% block script %}<script>
 (() => {
-  const main = document.querySelector('.cv-main');
-  const group = document.querySelector('.cv-view');
-  if (!main || !group) return;
-  const buttons = [...group.querySelectorAll('button')];
-  let view = 'brief';
-  try { view = localStorage.getItem('cv-view') || 'brief'; } catch (e) {}
-  const apply = next => {
-    view = next;
-    main.classList.toggle('is-brief', view === 'brief');
-    buttons.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.view === view)));
-    try { localStorage.setItem('cv-view', view); } catch (e) {}
-  };
-  buttons.forEach(b => b.addEventListener('click', () => apply(b.dataset.view)));
-  group.hidden = false;
-  apply(view);
-  // Touch and click: tap a TL;DR row to open it; links inside still work.
-  main.querySelectorAll('.cv-prose > .collection-list:not(.collection-certifications) .collection-item').forEach(item => {
-    item.addEventListener('click', event => {
-      if (!main.classList.contains('is-brief') || event.target.closest('a, summary, button')) return;
-      const open = item.classList.toggle('is-open');
-      main.querySelectorAll('.collection-item.is-open').forEach(other => { if (other !== item) other.classList.remove('is-open'); });
-      item.setAttribute('aria-expanded', String(open));
-    });
-  });
+  // Touch and click: tap a row to open it; links inside still work.
+  const rows = [...document.querySelectorAll('.cv-main .cv-prose > .collection-list:not(.collection-certifications) .collection-item')];
+  rows.forEach(item => item.addEventListener('click', event => {
+    if (event.target.closest('a, summary, button')) return;
+    const open = item.classList.toggle('is-open');
+    rows.forEach(other => { if (other !== item) other.classList.remove('is-open'); });
+    item.setAttribute('aria-expanded', String(open));
+  }));
 })();
 </script>{% endblock script %}

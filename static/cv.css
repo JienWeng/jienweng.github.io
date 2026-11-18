@@ -82,17 +82,12 @@ body.cv-page .cv-main .cv-prose .collection-certifications .collection-credentia
 body.cv-page .cv-main .cv-prose .collection-certifications .collection-credential-logo { margin-top: 3px; }
 @media (max-width: 600px) { body.cv-page .cv-main .cv-prose .collection-meta { align-items: flex-start; } }
 
-/* TL;DR / Full CV switch */
-.cv-view { display: inline-flex; gap: 10px; margin-top: 20px; }
-.cv-view[hidden] { display: none; }
-.cv-view button { font: inherit; font-size: .9375rem; color: var(--ink); padding: 7px 16px; min-height: 40px; cursor: pointer; }
-body.cv-page .cv-view button::before { border-color: var(--stroke-soft); }
-body.cv-page .cv-view button[aria-pressed="true"]::before { border-color: var(--accent); background: var(--hachure); }
+/* Rows show a one-line summary; hover, focus, or tap opens the full entry. */
 .collection-summary { display: none; }
 body.cv-page main.cv-main.is-brief .collection-expandable .collection-details { display: none; }
 .cv-main.is-brief .cv-prose > .collection-list:not(.collection-certifications) .collection-item { padding: 14px 0; }
 
-/* TL;DR rows open like a magnifier: hover, focus, or tap expands one row,
+/* Rows open like a magnifier: hover, focus, or tap expands one row,
    lifts it inside a drawn outline, and lets the others fall back. */
 body.cv-page main.cv-main.is-brief .collection-summary,
 body.cv-page main.cv-main.is-brief .collection-card .collection-body {
@@ -124,3 +119,4 @@ body.cv-page main.cv-main.is-brief .collection-list:has(.collection-item:is(:hov
   body.cv-page main.cv-main.is-brief :is(.collection-summary, .collection-card .collection-body) { transition: none; }
   body.cv-page main.cv-main.is-brief .collection-item:is(:hover, :focus-within, .is-open) { transform: none; }
 }
+body.cv-page main.cv-main.is-brief .collection-expandable:is(:hover, :focus-within, .is-open) .collection-details { display: block; }
