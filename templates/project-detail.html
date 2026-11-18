@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block body_class %}project-detail-page{% endblock body_class %}
-{% block head %}<link rel="stylesheet" href="{{ get_url(path='project-detail.css') }}">{% endblock head %}
+{% block head %}<link rel="stylesheet" href="{{ get_url(path='project-detail.css', cachebust=true) }}">{% endblock head %}
 {% block content %}
 {% set data = load_data(path="content/projects/items.toml") %}
 {% set project = data.collection | filter(attribute="id", value=page.extra.project_id) | first %}

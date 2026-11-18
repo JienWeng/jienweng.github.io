@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block body_class %}about-page{% endblock body_class %}
-{% block head %}<link rel="stylesheet" href="{{ get_url(path='editorial.css') }}">{% endblock head %}
+{% block head %}<link rel="stylesheet" href="{{ get_url(path='editorial.css', cachebust=true) }}">{% endblock head %}
 {% block content %}
 <main id="main" class="about-main">
   <header class="editorial-heading"><h1>{{ page.title }}</h1></header>
