@@ -8,7 +8,7 @@ aliases = ["/posts/2026-03-03-linear-algebra-sense-making/"]
 
 [taxonomies]
 categories = ["2026"]
-tags = ["math", "linear algebra", "ai", "gemini-cli"]
+tags = ["mathematics", "machine learning"]
 
 [extra]
 topic = "Machine Learning"

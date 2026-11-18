@@ -8,7 +8,7 @@ aliases = ["/posts/fft-sound-wave/"]
 
 [taxonomies]
 categories = ["2026"]
-tags = ["math", "signal processing", "fft", "dsp", "python"]
+tags = ["mathematics"]
 
 [extra]
 topic = "Signal Processing"

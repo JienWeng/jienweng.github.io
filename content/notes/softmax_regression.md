@@ -8,7 +8,7 @@ aliases = ["/posts/softmax-regression/"]
 
 [taxonomies]
 categories = ["2026"]
-tags = ["math", "ai", "classification", "optimization"]
+tags = ["machine learning", "mathematics"]
 
 [extra]
 topic = "Machine Learning"

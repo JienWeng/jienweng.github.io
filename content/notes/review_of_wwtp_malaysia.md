@@ -8,7 +8,7 @@ aliases = ["/posts/review-of-wwtp-malaysia/"]
 
 [taxonomies]
 categories = ["2025"]
-tags = ["WWTP", "sustainability"]
+tags = ["sustainability"]
 
 [extra]
 topic = "Sustainability"

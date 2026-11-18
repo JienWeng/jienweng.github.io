@@ -17,7 +17,7 @@
       {% for item in terms %}
       <a class="edition-row" href="{{ item.permalink }}">
         <span class="edition-title">{{ item.name }}</span>
-        <span class="edition-date">{{ item.pages | length }} items</span>
+        <span class="edition-date">{{ item.pages | length }} {% if item.pages | length == 1 %}item{% else %}items{% endif %}</span>
       </a>
       {% endfor %}
     </div>

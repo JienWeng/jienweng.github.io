@@ -1,113 +1,123 @@
 {% extends "base.html" %}
-{% block body_class %}home{% endblock body_class %}
-
+{% block head %}<link rel="stylesheet" href="{{ get_url(path='home.css') }}">{% endblock head %}
+{% block body_class %}home v3{% endblock body_class %}
 
 {% block content %}
 {% set notes = get_section(path="notes/_index.md") %}
-<svg class="portfolio-icons" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><symbol id="arrow-right" viewBox="0 0 24 24"><path d="M3 12h17m-6-6 6 6-6 6"/></symbol></svg>
-<main id="main" class="portfolio-main">
-  <section class="portfolio-hero" aria-labelledby="intro-title">
-    <div class="hero-copy">
-      <h1 id="intro-title"><span>Product Manager</span><span>&amp; Researcher</span></h1>
-      <p class="hero-intro">I’m Jien Weng. I work on Web3 payments, business systems, and applied AI.</p>
-      <div class="hero-links">
-        <a class="portfolio-button" href="{{ get_url(path='/cv/') }}">View CV <svg aria-hidden="true"><use href="#arrow-right"/></svg></a>
-        <a class="portfolio-link" href="mailto:{{ config.extra.email }}?subject=Opportunity">Email me <svg aria-hidden="true"><use href="#arrow-right"/></svg></a>
+{% set blog = get_section(path="blog/_index.md") %}
+{% set now_page = get_page(path="now.md") %}
+{% set writing = notes.pages | concat(with=blog.pages) | sort(attribute="date") | reverse %}
+{% set projects = load_data(path="content/projects/items.toml") %}
+{% set pubs = load_data(path="content/cv/publication.toml") %}
+<main id="main" class="v3-main">
+
+  <section class="v3-hero" aria-labelledby="v3-title">
+    <div class="v3-intro">
+      <div class="v3-person">
+        <img src="{{ get_url(path='img/profile.webp') }}" width="820" height="820" alt="Jien Weng smiling beside the coast" fetchpriority="high">
+        <p><strong>Jien Weng</strong><span>Independent consultant</span></p>
+      </div>
+      <h1 id="v3-title">Product manager and researcher. I turn messy processes into states a team can build and test.</h1>
+      <div class="v3-actions">
+        <a class="v3-button" href="{{ get_url(path='/cv/') }}">View CV</a>
+        <a class="v3-link" href="mailto:{{ config.extra.email }}?subject=Opportunity">Email me</a>
       </div>
     </div>
-    <p class="hero-margin">Product management<br><span>Business transformation</span></p>
+
+    <figure class="v3-flow" aria-labelledby="v3-flow-caption">
+      <ol class="v3-states">
+        <li style="--i:0"><span class="v3-state">Received</span><span class="v3-note">address issued</span></li>
+        <li style="--i:1"><span class="v3-state">Detected</span><span class="v3-note">show progress, don’t credit yet</span></li>
+        <li style="--i:2"><span class="v3-state">Confirmed</span><span class="v3-note">wait, retry, or fail</span></li>
+        <li style="--i:3" class="is-current"><span class="v3-state"><mark>Settled</mark></span><span class="v3-note">credit the ledger here</span></li>
+      </ol>
+      <figcaption id="v3-flow-caption">When is a payment complete? One decision I work through with engineers at CryptoRails. <a href="{{ get_url(path='/blog/product-manager-between-business-and-delivery/') }}">Read how</a></figcaption>
+    </figure>
   </section>
 
-  <section class="guide-feature" aria-labelledby="design-guide-title">
-    <div class="guide-feature-copy">
-      <h2 id="design-guide-title">Designing with AI?</h2>
-      <p>Give your AI a UI/UX guide to help it design clearer, more usable interfaces.</p>
+  <section class="v3-now" aria-labelledby="v3-now-title">
+    <div class="v3-now-head">
+      <h2 id="v3-now-title">What I’m doing now</h2>
+      <a class="v3-link" href="{{ get_url(path='/now/') }}">Now page, updated {{ now_page.updated | date(format="%b %-d, %Y") }}</a>
     </div>
-    <div class="guide-feature-links">
-      <a class="guide-feature-primary" href="{{ get_url(path='/design/') }}">Get the UI/UX guide</a>
-      <a class="guide-feature-secondary" href="{{ get_url(path='/blog/design-guide-for-ai/') }}">How to use it</a>
-    </div>
+    <ul class="v3-roles">
+      <li><span class="v3-org">CryptoRails</span><span class="v3-role">Product manager</span><span class="v3-what">Backlog, roadmap, and acceptance criteria for multi-chain payments and wallets.</span><span class="v3-since">Since Feb 2026</span></li>
+      <li><span class="v3-org">Quandatics</span><span class="v3-role">Business transformation consultant</span><span class="v3-what">An internal CRM linking sales, project delivery, and finance.</span><span class="v3-since">Since Apr 2026</span></li>
+      <li><span class="v3-org">Monash University Malaysia</span><span class="v3-role">Research assistant</span><span class="v3-what">Wastewater treatment plant prediction with RNNs, Transformers, and Markov chains.</span><span class="v3-since">Since Dec 2025</span></li>
+      <li><span class="v3-org">Quandatics Academy</span><span class="v3-role">Data science and ML trainer</span><span class="v3-what">Teaching and coaching learners in data science and machine learning.</span><span class="v3-since">Since Jun 2026</span></li>
+    </ul>
+    <p class="v3-background">Background in Applied Mathematics with Computing at UTAR. Kuok Foundation Scholar.</p>
   </section>
 
-  <section id="selected-work" aria-label="Selected work">
-    <article class="portfolio-project" aria-labelledby="payments-title">
-      <div class="project-rail" aria-hidden="true"><span class="project-number">01</span><span class="rail-line"></span><span class="rail-label">Product <br>delivery <br>Web3 <br>payments</span></div>
-      <div class="project-content">
-        <h2 id="payments-title">Web3 payment product delivery</h2>
-        <p class="project-intro">Coordinating payment requirements and engineering delivery.</p>
-        <div class="project-evidence">
-          <figure class="payment-artifact">
-            <a href="{{ get_url(path='img/projects/cryptorails-deposit-flow-excalidraw.svg') }}" aria-label="View the full-size CryptoRails payment workflow"><img width="1600" height="898" src="{{ get_url(path='img/projects/cryptorails-deposit-flow-excalidraw.svg') }}" loading="lazy" alt="CryptoRails deposit flow: customer address, browser detection, server-side consolidation, and settlement through a verified signed webhook."></a>
-            <figcaption>Deposit to settlement <a href="{{ get_url(path='img/projects/cryptorails-deposit-flow-excalidraw.svg') }}">Full-size diagram <svg aria-hidden="true"><use href="#arrow-right"/></svg></a></figcaption>
-          </figure>
-          <div class="project-role">
-            <span class="role-label">Delivery decision</span>
-            <h3>When to credit a payment</h3>
-            <p>Defining payment states, retries, and settlement criteria.</p>
-            <a class="portfolio-link" href="{{ get_url(path='/blog/product-manager-between-business-and-delivery/') }}">Read case study <svg aria-hidden="true"><use href="#arrow-right"/></svg></a>
-          </div>
-        </div>
-      </div>
-    </article>
+  <section class="v3-work" aria-labelledby="v3-work-title">
+    <h2 id="v3-work-title" class="v3-section-title">Selected work</h2>
 
-    <article class="portfolio-project" aria-labelledby="crm-title">
-      <div class="project-rail" aria-hidden="true"><span class="project-number">02</span><span class="rail-line"></span><span class="rail-label">Business <br>systems <br>CRM</span></div>
-      <div class="project-content">
-        <h2 id="crm-title">CRM for sales, delivery, and finance</h2>
-        <p class="project-intro">Connecting sales, delivery, and finance.</p>
-        <div class="project-evidence">
-          <figure class="crm-artifact">
-            <a href="{{ get_url(path='img/blog/quandatics/deal-to-cash-excalidraw.svg') }}" aria-label="View the full-size CRM deal-to-cash diagram"><img width="1600" height="1079" src="{{ get_url(path='img/blog/quandatics/deal-to-cash-excalidraw.svg') }}" loading="lazy" alt="CRM deal-to-cash workflow connecting qualified leads, sales orders, project milestones, and payments."></a>
-            <figcaption>Deal-to-cash workflow <a href="{{ get_url(path='img/blog/quandatics/deal-to-cash-excalidraw.svg') }}">Full-size diagram <svg aria-hidden="true"><use href="#arrow-right"/></svg></a></figcaption>
-          </figure>
-          <div class="project-role">
-            <span class="role-label">Project trade-off</span>
-            <h3>Why build internally?</h3>
-            <p>Replacing Salesforce workarounds with an internal system the team must maintain.</p>
-            <a class="portfolio-link" href="https://app.quandatics.com">Open CRM</a>
-            <a class="portfolio-link" href="{{ get_url(path='/blog/quandatics-crm-business-transformation/') }}">Read case study <svg aria-hidden="true"><use href="#arrow-right"/></svg></a>
-          </div>
-        </div>
+    <article class="v3-case" aria-labelledby="v3-pay-title">
+      <header class="v3-case-head">
+        <h3 id="v3-pay-title">Web3 payment product delivery</h3>
+        <p class="v3-case-meta">CryptoRails, product delivery</p>
+      </header>
+      <figure class="v3-sheet payment-artifact">
+        <a href="{{ get_url(path='img/projects/cryptorails-deposit-flow-excalidraw.svg') }}" aria-label="View the full-size CryptoRails payment workflow"><img width="1600" height="898" src="{{ get_url(path='img/projects/cryptorails-deposit-flow-excalidraw.svg') }}" loading="lazy" alt="CryptoRails deposit flow: customer address, browser detection, server-side consolidation, and settlement through a verified signed webhook."></a>
+      </figure>
+      <div class="v3-decision">
+        <p class="v3-q">When should the merchant credit a payment?</p>
+        <p>Defining payment states, retries, and settlement criteria with the business owner and engineers.</p>
+        <p class="v3-links"><a class="v3-link" href="{{ get_url(path='/blog/product-manager-between-business-and-delivery/') }}">Read case study</a></p>
       </div>
     </article>
 
-    {% set projects = load_data(path="content/projects/items.toml") %}
-    <details class="more-work">
-      <summary><span class="more-work-label">View more work</span><span class="less-work-label">Show less work</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
-      <div class="more-work-content">
-      {% for project in projects.collection %}
-      {% if project.id == "videoflow" or project.id == "monash-water" %}
-        <article class="portfolio-project" aria-labelledby="{{ project.id }}-title">
-          <div class="project-rail" aria-hidden="true"><span class="project-number">{% if project.id == "videoflow" %}03{% else %}04{% endif %}</span><span class="rail-line"></span><span class="rail-label">{{ project.category }}</span></div>
-          <div class="project-content"><h2 id="{{ project.id }}-title">{{ project.title }}</h2><p class="project-intro">{{ project.subtitle }}</p>
-            <div class="project-evidence">
-              <figure class="project-artifact"><a href="{{ get_url(path=project.case_study) }}">{% if project.demo_video %}<video width="{{ project.img_width }}" height="{{ project.img_height }}" poster="{{ get_url(path=project.demo_poster) }}" data-preview-video data-src="{{ get_url(path=project.demo_video) }}" preload="none" muted loop playsinline aria-label="{{ project.image_alt }}">Recorded VideoFlow workflow.</video>{% else %}<img width="1280" height="853" src="{{ get_url(path=project.still_img | default(value=project.img)) }}"{% if project.still_img %} data-animated data-still="{{ get_url(path=project.still_img) }}" data-gif="{{ get_url(path=project.animated_img | default(value=project.img)) }}"{% endif %} loading="lazy" alt="{{ project.image_alt }}">{% endif %}</a><figcaption>{{ project.caption }}{% if project.demo_video or project.still_img %}<button class="motion-toggle" type="button" hidden>Pause animation</button>{% endif %}</figcaption></figure>
-              <div class="project-role"><span class="role-label">{{ project.status }}</span><h3>{% if project.id == "videoflow" %}A studio for web &amp; desktop{% else %}Field reports &amp; operator tools{% endif %}</h3><p>{{ project.content }}</p><a class="portfolio-link" href="{{ get_url(path=project.case_study) }}">Explore {{ project.title }} <svg aria-hidden="true"><use href="#arrow-right"/></svg></a></div>
-            </div>
-          </div>
-        </article>
-      {% endif %}
-      {% endfor %}
-      <a class="portfolio-link work-archive-link" href="{{ get_url(path='/projects/') }}">All projects <svg aria-hidden="true"><use href="#arrow-right"/></svg></a>
-      <button class="more-work-collapse" type="button" hidden>Show less work <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 15 6-6 6 6"/></svg></button>
+    <article class="v3-case" aria-labelledby="v3-crm-title">
+      <header class="v3-case-head">
+        <h3 id="v3-crm-title">CRM for sales, delivery, and finance</h3>
+        <p class="v3-case-meta">Quandatics, business systems, in progress</p>
+      </header>
+      <figure class="v3-sheet crm-artifact">
+        <a href="{{ get_url(path='img/blog/quandatics/deal-to-cash-excalidraw.svg') }}" aria-label="View the full-size CRM deal-to-cash diagram"><img width="1600" height="1079" src="{{ get_url(path='img/blog/quandatics/deal-to-cash-excalidraw.svg') }}" loading="lazy" alt="CRM deal-to-cash workflow connecting qualified leads, sales orders, project milestones, and payments."></a>
+      </figure>
+      <div class="v3-decision">
+        <p class="v3-q">Why build internally?</p>
+        <p>Replacing Salesforce workarounds with an internal system the team must maintain.</p>
+        <p class="v3-links"><a class="v3-link" href="{{ get_url(path='/blog/quandatics-crm-business-transformation/') }}">Read case study</a> <a class="v3-link" href="https://app.quandatics.com">Open CRM</a></p>
       </div>
-    </details>
-  </section>
+    </article>
 
-
-
-  <section class="portfolio-writing" aria-labelledby="writing-title">
-    <div class="writing-heading"><h2 id="writing-title">Writing &amp; research<span class="orange">.</span></h2><div><a class="portfolio-link" href="{{ notes.permalink }}">All writing <svg aria-hidden="true"><use href="#arrow-right"/></svg></a><a href="{{ get_url(path='/publications/') }}">Research publications</a></div></div>
-    <div class="writing-list">
-      {% for item in notes.pages | slice(end=config.extra.home_notes) %}
-      <a class="writing-entry" href="{{ item.permalink }}"><h3>{{ item.title }}</h3><time datetime="{{ item.date | date(format='%Y-%m-%d') }}">{{ item.date | date(format="%b %-d, %Y") }}</time><svg aria-hidden="true"><use href="#arrow-right"/></svg></a>
-      {% endfor %}
+    <div class="v3-more">
+      <h3 class="v3-sub-title">Things I build on the side</h3>
+      <ul class="v3-index">
+        {% for project in projects.collection %}{% if project.id == "videoflow" or project.id == "polyarb" or project.id == "monash-water" %}
+        <li><a href="{{ get_url(path=project.case_study) }}"><span class="v3-index-title">{{ project.title }}</span><span class="v3-index-sub">{{ project.subtitle }}</span><span class="v3-index-cat">{{ project.category }}</span></a></li>
+        {% endif %}{% endfor %}
+      </ul>
+      <p><a class="v3-link" href="{{ get_url(path='/projects/') }}">All projects</a></p>
     </div>
   </section>
 
-  <section class="portfolio-contact" aria-labelledby="contact-title">
-    <h2 id="contact-title">Discuss a role or project<span class="orange">.</span></h2>
-    <div><a class="portfolio-button" href="mailto:{{ config.extra.email }}">Email me <svg aria-hidden="true"><use href="#arrow-right"/></svg></a><a class="portfolio-link" href="{{ get_url(path='/services/') }}">Work with me <svg aria-hidden="true"><use href="#arrow-right"/></svg></a></div>
+  <section class="v3-research" aria-labelledby="v3-research-title">
+    <h2 id="v3-research-title" class="v3-section-title">Research</h2>
+    <p class="v3-research-lede">Multi-agent reinforcement learning, market microstructure, and environmental monitoring.</p>
+    <ul class="v3-index v3-pubs">
+      {% for pub in pubs.collection %}
+      <li><a href="{% if pub.link %}{{ pub.link }}{% else %}{{ get_url(path='/publications/') }}{% endif %}"><span class="v3-index-title">{{ pub.title }}</span><span class="v3-index-sub">{{ pub.venue }}</span><span class="v3-index-cat">{{ pub.status | split(pat=" · ") | first }}</span></a></li>
+      {% endfor %}
+    </ul>
+    <p class="v3-links"><a class="v3-link" href="{{ get_url(path='/publications/') }}">All research</a> <a class="v3-link" href="{{ config.extra.scholar }}">Google Scholar</a></p>
+  </section>
+
+  <section class="v3-writing" aria-labelledby="v3-writing-title">
+    <h2 id="v3-writing-title" class="v3-section-title">Recent writing</h2>
+    <ul class="v3-index v3-posts">
+      {% for item in writing | slice(end=4) %}
+      <li><a href="{{ item.permalink }}"><span class="v3-index-title">{{ item.title }}</span><span class="v3-index-sub">{{ item.description | default(value="") }}</span><time class="v3-index-cat" datetime="{{ item.date | date(format='%Y-%m-%d') }}">{{ item.date | date(format="%b %Y") }}</time></a></li>
+      {% endfor %}
+    </ul>
+    <p class="v3-links"><a class="v3-link" href="{{ notes.permalink }}">All writing</a></p>
+
+  </section>
+
+  <section class="v3-contact" aria-labelledby="v3-contact-title">
+    <h2 id="v3-contact-title">Discuss a role or project</h2>
+    <div class="v3-actions"><a class="v3-button" href="mailto:{{ config.extra.email }}">Email me</a><a class="v3-link" href="{{ get_url(path='/services/') }}">Work with me</a><a class="v3-link" href="{{ config.extra.linkedin }}">LinkedIn</a></div>
   </section>
 </main>
 {% endblock content %}

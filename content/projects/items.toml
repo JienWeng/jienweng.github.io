@@ -1,5 +1,6 @@
 [[collection]]
 id = "videoflow"
+list_img = "/img/projects/videoflow/studio.png"
 case_study = "projects/videoflow/"
 case_study_label = "Explore VideoFlow"
 category = "AI & data"
@@ -20,6 +21,8 @@ download_link = "https://github.com/JienWeng/videoflow-go/releases"
 
 [[collection]]
 id = "polyarb"
+list_img = "/img/blog/polyarb/paired-trade.svg"
+list_fit = "contain"
 case_study = "projects/polyarb/"
 case_study_label = "Explore Polymarket binary-pairs arbitrage"
 category = "Web3"
@@ -51,6 +54,7 @@ dashboard_link = "https://monash-water-platform.vercel.app/dashboard"
 
 [[collection]]
 id = "crm"
+list_fit = "contain"
 category = "Systems"
 type = "art"
 title = "Internal CRM"
@@ -92,6 +96,7 @@ link = "https://github.com/JienWeng/FacePay"
 
 [[collection]]
 id = "yappy"
+list_img = "/img/projects/yappy/demo-still.webp"
 category = "Experiments"
 type = "art"
 title = "Yappy"
@@ -117,6 +122,7 @@ link = "https://github.com/JienWeng/DecimalSat"
 
 [[collection]]
 id = "geospatial"
+list_fit = "contain"
 category = "AI & data"
 type = "art"
 title = "Geospatial Analysis forked from Kepler.gl"

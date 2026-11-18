@@ -8,7 +8,7 @@ aliases = ["/posts/action-value-methods-with-incremental-step-size/"]
 
 [taxonomies]
 categories = ["2025"]
-tags = ["math", "reinforcement learning", "ai"]
+tags = ["reinforcement learning", "mathematics"]
 
 [extra]
 topic = "Reinforcement Learning"

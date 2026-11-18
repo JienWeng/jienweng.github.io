@@ -8,7 +8,7 @@ aliases = ["/posts/regression-08-statistical-testing/"]
 
 [taxonomies]
 categories = ["2026"]
-tags = ["math", "statistics", "regression"]
+tags = ["statistics"]
 
 [extra]
 topic = "Regression"

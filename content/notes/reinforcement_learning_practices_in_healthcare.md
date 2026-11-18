@@ -8,7 +8,7 @@ aliases = ["/posts/reinforcement-learning-practices-in-healthcare/"]
 
 [taxonomies]
 categories = ["2025"]
-tags = ["reinforcement learning","ai", "healthcare"]
+tags = ["reinforcement learning"]
 
 [extra]
 topic = "Reinforcement Learning"

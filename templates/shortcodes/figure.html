@@ -1,6 +1,6 @@
 <figure class="wide">
-  <img src="{% if src is starting_with("https://") or src is starting_with("http://") or src is starting_with("//") %}{{ src }}{% else %}{{ get_url(path=src) }}{% endif %}" alt="{{ alt | default(value='') }}" loading="lazy" decoding="async">
-  {% if caption %}
-  <figcaption>{{ caption }}</figcaption>
+  <img src="{% if src is starting_with("https://") or src is starting_with("http://") or src is starting_with("//") %}{{ src }}{% else %}{{ get_url(path=src) }}{% endif %}" alt="{{ alt | default(value='') }}" {% if width %}width="{{ width }}"{% endif %} {% if height %}height="{{ height }}"{% endif %} loading="lazy" decoding="async">
+  {% if caption or credit %}
+  <figcaption>{% if caption %}<span class="fig-caption">{{ caption }}</span>{% endif %}{% if credit %}<small class="fig-credit">{{ credit | safe }}</small>{% endif %}</figcaption>
   {% endif %}
 </figure>

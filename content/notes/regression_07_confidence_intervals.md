@@ -8,7 +8,7 @@ aliases = ["/posts/regression-07-confidence-intervals/"]
 
 [taxonomies]
 categories = ["2026"]
-tags = ["math", "statistics", "regression"]
+tags = ["statistics"]
 
 [extra]
 topic = "Regression"

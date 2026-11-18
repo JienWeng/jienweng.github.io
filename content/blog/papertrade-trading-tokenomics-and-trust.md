@@ -7,7 +7,7 @@ draft = false
 
 [taxonomies]
 categories = ["2026"]
-tags = ["web3", "product management", "tokenomics", "defi"]
+tags = ["web3", "product management"]
 
 [extra]
 lang = "en"
@@ -23,25 +23,23 @@ reaction = true
 topic = "Web3"
 +++
 
-PaperTrade caught my attention because losing traders receive PAPER, which they can stake for USDC rewards. Someone could lose money on a trade and still come out ahead through the rewards. I wanted to understand how that works, where the USDC comes from, and why the next person would join.
+PaperTrade caught my attention because losing traders receive PAPER, which they can stake for USDC rewards. You could lose on a trade and still come out ahead. I wanted to know how, where the USDC comes from, and why the next person would join.
 
-The tokenomics give people more than one reason to trade. Some want to profit from price movements; others may accept trading losses to accumulate PAPER. The mint rate also changes over time, so an early participant and a later participant can pay the same amount in losses for different amounts of PAPER. That made me curious about who benefits as more people join, and whether the rewards can keep attracting activity once earning tokens becomes less generous.
+Some people trade to profit from price moves; others may accept losses to accumulate PAPER. The mint rate also changes, so an early and a later participant can lose the same amount and receive different amounts of PAPER. Who benefits as more people join, and do the rewards keep attracting activity once they become less generous?
 
-To work through that, I needed to understand how the LP pays winners, how losses become tokens, and what stakers can claim. I also looked at the relayer because being able to close a position affects whether a trader can realize those outcomes.
+So I looked at how the LP pays winners, how losses become tokens, what stakers can claim, and the relayer, since a trader who can't close a position can't realize any of it.
 
-I worked through these questions in a [ChatGPT conversation](https://chatgpt.com/share/6ad8ae3a-5e88-83ec-a5e7-59d6fe144fd3), then checked the linked documentation and Guardian review. These notes cover the published design as of 21 October 2026. I haven't checked every deployed contract or reconstructed its live balances.
+I worked through this in a [ChatGPT conversation](https://chatgpt.com/share/6ad8ae3a-5e88-83ec-a5e7-59d6fe144fd3), then checked the linked documentation and Guardian review. These notes cover the published design as of 21 October 2026, not every deployed contract or its live balances.
 
 ## Who pays when you win?
 
-PaperTrade uses Hyperliquid's prices to create synthetic trades against its own liquidity pool, or LP. It reads the best bid and ask and takes their midpoint. Your position doesn't become an order on Hyperliquid's perpetual order book. The LP takes the other side. The documentation describes BTC and ETH positions with multipliers up to 1,000×. [Trading and pricing](https://papertrade.network/docs/learn/trades-pricing/)
+PaperTrade creates synthetic trades against its own liquidity pool (LP), priced at the midpoint of Hyperliquid's best bid and ask. Your position doesn't become an order on Hyperliquid's perpetual order book; the LP takes the other side. The documentation describes BTC and ETH positions with multipliers up to 1,000×. [Trading and pricing](https://papertrade.network/docs/learn/trades-pricing/)
 
-Say you put $100 into a position at 100×. You now have $10,000 of exposure. If the price moves 0.5% in your direction, the linear gross profit is $50. PaperTrade applies an asymmetric impact adjustment to profitable closes, so that calculation alone doesn't tell you what gets credited. It also leaves out liquidation and the other settlement rules.
+Say you put $100 into a position at 100×, giving $10,000 of exposure. If the price moves 0.5% your way, the linear gross profit is $50. But PaperTrade applies an asymmetric impact adjustment to profitable closes, and that sum ignores liquidation and the other settlement rules, so it isn't what gets credited.
 
-The LP needs USDC to pay that profit. PaperTrade's Martingaler mechanism allows the pool to start without upfront seed capital and build its bankroll from trading losses. If it cannot cover winning payouts, those payouts can wait. [Martingaler overview](https://papertrade.network/docs/martingaler/overview/)
+The LP needs USDC to pay that profit. PaperTrade's Martingaler mechanism lets the pool start without seed capital and build its bankroll from trading losses. If it cannot cover winning payouts, those payouts can wait. [Martingaler overview](https://papertrade.network/docs/martingaler/overview/)
 
-That was where I needed to slow down. A profitable trade can leave you waiting for money.
-
-The documentation splits the accounting into three parts:
+So a profitable trade can leave you waiting for money. The documentation splits the accounting into three parts:
 
 | State | What it records |
 | --- | --- |
@@ -49,46 +47,44 @@ The documentation splits the accounting into three parts:
 | sideBucket | Proceeds parked while the payout queue is active |
 | Payout queue | Unpaid winning profits, with older claims paid first |
 
-On an ordinary winning close, your original margin returns to your available balance separately. Any profit that cannot be funded goes into the queue. Later backing can pay the claims through a harvest process. [Solvency and queue](https://papertrade.network/docs/how/solvency-queue/)
+On a winning close, your margin returns to your available balance separately. Profit that cannot be funded goes into the queue, and later backing can pay those claims through a harvest process. [Solvency and queue](https://papertrade.network/docs/how/solvency-queue/)
 
-For a simplified example, suppose you're owed $5,000 of profit and only $1,000 can be paid immediately. The remaining $4,000 is still owed to you. Putting it in a queue doesn't create the missing USDC. You have to wait for backing to arrive.
+In a simplified case, you're owed $5,000 of profit and only $1,000 can be paid now. The other $4,000 is still owed, but the queue doesn't create the USDC; you wait for backing.
 
 ## Losing a trade earns PAPER
 
-Eligible realized losses mint PAPER. The documented starting rate is 100 PAPER per dollar of eligible loss basis while tracked LP is below $2 million. After the threshold, the rate decays using a high-water mark. Distributing funds out of the LP doesn't reset it to the earlier rate. [Mint curve](https://papertrade.network/docs/how/mint-curve/)
+Eligible realized losses mint PAPER. The documented starting rate is 100 PAPER per dollar of eligible loss basis while tracked LP is below $2 million. Above that threshold, the rate decays using a high-water mark, so distributing funds out of the LP doesn't reset it to the earlier rate. [Mint curve](https://papertrade.network/docs/how/mint-curve/)
 
-So the same eligible loss can earn different amounts of PAPER depending on when it happens. I say “eligible loss” because the mint basis can differ from the gross amount a trader loses under the settlement rules.
+The same eligible loss can earn different amounts of PAPER depending on timing. “Eligible” matters: the mint basis can differ from what a trader loses under the settlement rules.
 
-You can stake PAPER for a share of eligible USDC distributions. The standard documented staking model has no lockup or cooldown, and rewards can be claimed into the Exchange balance before withdrawal. [Staking and claims](https://papertrade.network/docs/paper/staking/)
+Staked PAPER earns a share of eligible USDC distributions. The standard model has no lockup or cooldown, and rewards can be claimed into the Exchange balance before withdrawal. [Staking and claims](https://papertrade.network/docs/paper/staking/)
 
-Suppose your stake stays at 1% of the pool while $50,000 is distributed. You would receive $500. But you still need to compare that with what you spent acquiring PAPER, and your share can shrink as other people stake. One distribution doesn't tell you how much the next one will pay.
+A stake that stays at 1% of the pool while $50,000 is distributed receives $500. Compare that with what you spent acquiring PAPER. Your share can shrink as others stake, and one distribution doesn't predict the next.
 
-This also changes how I would read the trading volume. Someone might trade because they expect BTC to rise. Someone else might accept a loss because they want PAPER. Both add volume, but they are doing different things.
+This changes how I read volume. One person trades expecting BTC to rise; another accepts a loss to get PAPER. Both add volume for different reasons.
 
-Guardian identifies farming on gross losses, including hedged strategies, as a retained economic risk. A trader's losing position can qualify for tokens while another position offsets some of that loss. [Guardian security review](https://www.guardian.security/portfolio/papertrade/protocol-review-2026-10-09/)
+Guardian lists farming on gross losses, including hedged strategies, as a retained economic risk. A losing position can qualify for tokens while another position offsets some of that loss. [Guardian security review](https://www.guardian.security/portfolio/papertrade/protocol-review-2026-10-09/)
 
 ## The liquidation rule needs a separate read
 
-PaperTrade has a hard-bust trigger. Liquidation through that path takes the full isolated margin, even where a voluntary close at the trigger could still return some equity. The documentation describes a buffer of roughly five basis points of price. [Liquidations](https://papertrade.network/docs/learn/liquidations/)
+Liquidation through PaperTrade's hard-bust trigger takes the full isolated margin, even where a voluntary close at the trigger could still return some equity. The documentation describes a buffer of roughly five basis points of price. [Liquidations](https://papertrade.network/docs/learn/liquidations/)
 
-With a large position relative to your margin, a small price difference can take a large share of your money. I wouldn't use the ordinary closing calculation to estimate what comes back after liquidation. The two paths follow different rules.
+With a large position relative to margin, a small price difference can take much of your money. The ordinary closing calculation won't tell you what comes back after liquidation; the paths follow different rules.
 
 ## Who submits the trades?
 
 The user signs an instruction, and the relayer and batch executor submit it to the Exchange. Session-key and contract checks validate the authority behind it. [Architecture](https://papertrade.network/docs/how/architecture/)
 
-I can inspect what reaches the contract. That still leaves me asking what happened to a request before it got there. Was it delayed? Rejected? Could I submit it another way?
+I can inspect what reaches the contract, not what happened to a request before that. Was it delayed? Rejected? Could I submit it another way?
 
-Guardian's review records concerns about relayer dependence and price bounds on signed instructions. It also describes upgrade authority, while the off-chain relayer, sweeper, and keepers were outside the review's scope. I can't treat that contract review as proof that the submission service is fair or always available. [Guardian security review](https://www.guardian.security/portfolio/papertrade/protocol-review-2026-10-09/)
+Guardian's review flags relayer dependence and price bounds on signed instructions, and describes upgrade authority. The off-chain relayer, sweeper, and keepers were out of scope, so the review doesn't prove the submission service is fair or always available. [Guardian security review](https://www.guardian.security/portfolio/papertrade/protocol-review-2026-10-09/)
 
-The protocol also documents a risk from using the instantaneous best-bid/ask midpoint. Changes to those quotes can affect its reference price. Open-interest caps and adjustments to winning PnL can limit exposure, but they don't remove the risk. [Risk documentation](https://papertrade.network/docs/how/risk/)
+The protocol also documents a risk in using the instantaneous best-bid/ask midpoint: quote changes can move its reference price. Open-interest caps and adjustments to winning PnL limit exposure but don't remove the risk. [Risk documentation](https://papertrade.network/docs/how/risk/)
 
-I also want to know how I would close my position if the authorized relayer stopped submitting requests. I'd want to see that fallback demonstrated.
+If the authorized relayer stopped submitting requests, how would I close my position? I'd want to see that fallback demonstrated.
 
 ## Why would people join?
 
-The reward design gives people a reason to arrive early. They can earn PAPER at the earlier mint rate, stake it, and potentially receive USDC. If they share those rewards, other people have a reason to look into it too.
+Early arrivals can earn PAPER at the earlier mint rate, stake it, and potentially receive USDC. If they share those rewards, others have a reason to look too. That's my reading; I don't know the team's marketing plan. I've left out the paid-promotion claims, launch figures, and wallet earnings from the original chat because I haven't verified them.
 
-That's how I read the incentive loop. I don't know the team's internal marketing plan. I also haven't verified the paid-promotion claims, launch figures, or wallet earnings discussed in the original chat, so I'm leaving them out.
-
-What interests me is whether people keep trading when earning PAPER becomes less attractive. I would look at repeat participation after rewards decline, how concentrated the distributions are, and how much volume comes from identifiable farming. Counting wallets wouldn't be enough because one person can use several addresses.
+What I want to know is whether people keep trading once earning PAPER is less attractive. I would look at repeat participation after rewards decline, how concentrated the distributions are, and how much volume comes from identifiable farming. Counting wallets isn't enough, because one person can use several addresses.
