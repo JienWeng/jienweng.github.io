@@ -25,7 +25,7 @@
       {% endif %}
     </div>
     {% if item.subtitle %}<div class="collection-subtitle">{{ item.subtitle }}</div>{% endif %}
-    {% if item.summary %}<div class="collection-summary">{{ item.summary }}</div>{% endif %}
+    {% if item.summary %}<div class="collection-summary"><span>{{ item.summary }}</span></div>{% endif %}
     {% if item.content %}<div class="collection-body">{{ item.content | markdown | safe }}</div>{% endif %}
   </div>
   {% if item.date %}<div class="collection-date">{{ item.date }}</div>{% endif %}
