@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block body_class %}cv-page{% endblock body_class %}
-{% block head %}<link rel="stylesheet" href="{{ get_url(path='editorial.css') }}"><link rel="stylesheet" href="{{ get_url(path='cv.css') }}">{% endblock head %}
+{% block head %}<link rel="stylesheet" href="{{ get_url(path='editorial.css', cachebust=true) }}"><link rel="stylesheet" href="{{ get_url(path='cv.css', cachebust=true) }}">{% endblock head %}
 {% block content %}
 <main id="main" class="cv-main is-brief">
   <header class="editorial-heading cv-heading"><h1>{{ section.title }}</h1><p>Product manager and researcher. Web3 payments, business systems, and applied AI.</p><div class="cv-actions"><a class="portfolio-button" href="{{ get_url(path='cv/jien-weng-lai-public-cv.pdf') }}">Download PDF</a><a href="{{ get_url(path='cv/profile.txt') }}">Plain-text version</a><a href="mailto:{{ config.extra.email }}">Email me</a><button type="button" class="cv-expand" aria-pressed="false" hidden>Show full CV</button></div></header>

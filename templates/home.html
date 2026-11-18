@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block head %}<link rel="stylesheet" href="{{ get_url(path='home.css') }}">{% endblock head %}
+{% block head %}<link rel="stylesheet" href="{{ get_url(path='home.css', cachebust=true) }}">{% endblock head %}
 {% block body_class %}home v3{% endblock body_class %}
 
 {% block content %}

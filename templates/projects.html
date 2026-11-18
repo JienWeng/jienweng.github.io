@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block body_class %}projects-page{% endblock body_class %}
-{% block head %}<link rel="stylesheet" href="{{ get_url(path='projects.css') }}">{% endblock head %}
+{% block head %}<link rel="stylesheet" href="{{ get_url(path='projects.css', cachebust=true) }}">{% endblock head %}
 {% block content %}
 {% set projects = load_data(path="content/projects/items.toml") %}
 <main id="main" class="projects-main" data-projects>
@@ -60,4 +60,4 @@
   <dialog class="project-dialog" aria-label="Project image preview"><button type="button" class="preview-close" aria-label="Close image preview">Close</button><figure><figcaption></figcaption></figure></dialog>
 </main>
 {% endblock content %}
-{% block script %}<script src="{{ get_url(path='projects.js') }}" defer></script>{% endblock script %}
+{% block script %}<script src="{{ get_url(path='projects.js', cachebust=true) }}" defer></script>{% endblock script %}

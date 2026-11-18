@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block body_class %}writing-page{% endblock body_class %}
-{% block head %}<link rel="stylesheet" href="{{ get_url(path='editorial.css') }}">{% endblock head %}
+{% block head %}<link rel="stylesheet" href="{{ get_url(path='editorial.css', cachebust=true) }}">{% endblock head %}
 {% block content %}
 {% set notes = get_section(path="notes/_index.md") %}
 {% set blog = get_section(path="blog/_index.md") %}
@@ -41,4 +41,4 @@
 
 </main>
 {% endblock content %}
-{% block script %}<script src="{{ get_url(path='writing.js') }}" defer></script>{% endblock script %}
+{% block script %}<script src="{{ get_url(path='writing.js', cachebust=true) }}" defer></script>{% endblock script %}
