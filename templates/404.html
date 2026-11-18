@@ -1,17 +1,18 @@
 {% extends "base.html" %}
-
 {% block robots %}<meta name="robots" content="noindex,follow">{% endblock robots %}
-
 {% block body_class %}error-page{% endblock %}
-
-{% block title %}Page Not Found · {{ config.title }}{% endblock %}
-
+{% block title %}Page not found · {{ config.title }}{% endblock %}
 {% block content %}
 <div class="content-grid">
   <main id="main" class="well">
-    <h1>Page Not Found</h1>
-    <p>The page you're looking for doesn't exist or has been moved.</p>
-    <a href="{{ get_url(path='/') }}">Return home</a>
+    <h1>Page not found</h1>
+    <ol class="lost-flow" aria-label="Request flow: requested, looked up, not found">
+      <li><span>requested</span></li>
+      <li><span>looked up</span></li>
+      <li class="is-missing"><span>not found</span></li>
+    </ol>
+    <p>This address has no page, or the page has moved.</p>
+    <p class="lost-links"><a href="{{ get_url(path='/') }}">Go to the homepage</a><a href="{{ get_url(path='/notes/') }}">Browse writing</a><a href="{{ get_url(path='/projects/') }}">See projects</a></p>
   </main>
 </div>
 {% endblock content %}

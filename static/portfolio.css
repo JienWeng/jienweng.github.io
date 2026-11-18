@@ -23,8 +23,9 @@
   text-align: left;
   scrollbar-color: var(--rule) var(--paper);
 }
-.portfolio .page-shell { width: min(100%, 100rem); padding: 0 clamp(1.25rem, 2.1vw, 2.5rem) 1rem; }
-.portfolio.home p, .portfolio.home h1, .portfolio.home h2, .portfolio.home h3, .portfolio.home figure { margin: 0; }
+.portfolio .page-shell { width: min(100%, 84rem); max-width: none; padding: 0 clamp(1.25rem, 2.1vw, 2.5rem) 1rem; }
+/* Zero-specificity reset so component spacing rules below always win. */
+:where(.portfolio.home) :where(p, h1, h2, h3, figure) { margin: 0; }
 .portfolio a { text-underline-offset: .25em; }
 .portfolio a:focus-visible, .portfolio summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
 .portfolio-header svg, .portfolio-main svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.6; flex-shrink: 0; }
@@ -46,8 +47,8 @@
 .portfolio .hero-intro { max-width: 60ch; margin-top: 24px; font-size: clamp(1.05rem, 1.2vw, 1.125rem); line-height: 1.7; letter-spacing: .004em; word-spacing: .02em; }
 .hero-links { display: flex; align-items: center; gap: 28px; margin-top: 20px; }
 .portfolio-button, .portfolio-link { display: inline-flex; align-items: center; justify-content: space-between; gap: 14px; min-height: 44px; font-weight: 450; }
-.portfolio-button { padding: 10px 20px; background: transparent; color: var(--accent); text-decoration: none; border: 1px solid var(--rule); }
-.portfolio-button:hover { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+.portfolio-button { padding: 10px 20px; background: var(--ink); color: var(--paper); text-decoration: none; border: 1px solid var(--ink); transition: background-color 160ms ease-out, border-color 160ms ease-out; }
+.portfolio-button:hover { background: var(--accent); border-color: var(--accent); color: var(--paper); }
 .portfolio-link { text-decoration: underline; }
 .portfolio-link svg { transition: transform 180ms ease-out; }
 .portfolio-link:hover svg { transform: translateX(4px); }
@@ -100,7 +101,7 @@
   .rail-label { font-size: .75rem; }
   .project-evidence { grid-template-columns: minmax(0, 1fr); gap: 22px; }
   .project-role { border-left: 0; padding-left: 0; max-width: 65ch; }
-  .project-role .portfolio-link { width: auto; }
+  .project-role .portfolio-link { display: flex; width: fit-content; }
   .portfolio-writing, .portfolio-contact { padding-left: 94px; }
 }
 @media (max-width: 640px) {
@@ -153,7 +154,6 @@
 }
 
 /* Shared reading and collection surfaces use the same identity at a reading scale. */
-.portfolio:not(.home) .page-shell { max-width: 92rem; }
 .portfolio:not(.home) .content-grid { grid-template-columns: minmax(210px, 25%) minmax(0, 1fr); gap: 48px; padding: 48px 0 64px; }
 .portfolio:not(.home) .section-title, .portfolio.error-page .well h1 { font-size: clamp(1.75rem, 2.6vw, 2.6rem); font-weight: 450; letter-spacing: -.025em; line-height: 1.18; overflow-wrap: anywhere; }
 .portfolio:not(.home) .back-link { text-transform: none; letter-spacing: 0; font-size: .9375rem; color: var(--accent); min-height: 44px; display: inline-flex; align-items: center; align-self: flex-start; }
@@ -265,8 +265,8 @@
 .portfolio .guide-feature p { max-width: 65ch; margin-top: 8px; color: var(--ink-soft); font-size: 1rem; line-height: 1.5; }
 .guide-feature-links { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; }
 .guide-feature-primary, .guide-feature-secondary { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; font-size: .9375rem; font-weight: 500; }
-.guide-feature .guide-feature-primary { padding: 10px 18px; background: var(--ink); color: var(--paper); text-decoration: none; transition: background-color 160ms ease-out; }
-.guide-feature .guide-feature-primary:hover { background: var(--accent); color: var(--paper); }
+.guide-feature .guide-feature-primary { padding: 10px 18px; border: 1px solid var(--rule); color: var(--ink); text-decoration: none; transition: border-color 160ms ease-out, background-color 160ms ease-out; }
+.guide-feature .guide-feature-primary:hover { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
 .guide-feature-secondary { color: var(--ink); text-underline-offset: .25em; }
 .guide-feature-secondary:hover { color: var(--accent); }
 @media (max-width: 1000px) {

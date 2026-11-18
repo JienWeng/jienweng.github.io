@@ -8,7 +8,7 @@
   <header class="article-heading">
       {% if page.ancestors %}
       {% set parent = get_section(path=page.ancestors | last) %}
-      <a class="back-link" href="{{ parent.permalink }}">{{ parent.title | default(value="Home") }}</a>
+      <a class="back-link" href="{{ parent.permalink }}">{% if parent.path == "/" %}Home{% else %}{{ parent.title | default(value="Home") }}{% endif %}</a>
       {% else %}
       <a class="back-link" href="{{ get_url(path='/') }}">Home</a>
       {% endif %}
@@ -28,7 +28,7 @@
       </ul>
       {% endif %}
       {% if page.toc and page.extra.toc %}
-      <details class="article-contents">
+      <details class="article-contents" open>
       <summary>On this page</summary>
       <nav class="toc" aria-label="Table of contents">
         <ul class="plain-list">
@@ -73,6 +73,13 @@
     {% endif %}
     {% endif %}
 
+    {% set in_series = page.extra.topic | default(value="") == "Regression" %}
+    {% if page.date and not in_series and page.higher or page.date and not in_series and page.lower %}
+    <nav class="post-nav" aria-label="More writing">
+      {% if page.lower %}<a class="post-nav-newer" href="{{ page.lower.permalink }}"><span>Newer</span><b>{{ page.lower.title }}</b></a>{% endif %}
+      {% if page.higher %}<a class="post-nav-older" href="{{ page.higher.permalink }}"><span>Older</span><b>{{ page.higher.title }}</b></a>{% endif %}
+    </nav>
+    {% endif %}
     {% set path = page.path %}
     {% if path == "/blog/" or path == "/notes/" %}
     <div class="comments-block">
@@ -84,6 +91,7 @@
 {% endblock content %}
 
 {% block script %}
+<script>(()=>{const c=document.querySelector(".article-contents");if(c&&matchMedia("(max-width: 920px)").matches)c.open=false;})();</script>
 {% set path = page.path %}
 {% if path == "/blog/" or path == "/notes/" %}
 {% include "partials/giscus.html" %}
