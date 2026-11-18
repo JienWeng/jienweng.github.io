@@ -122,3 +122,17 @@ body.cv-page main.cv-main.is-brief .collection-list:has(.collection-item:is(:hov
   body.cv-page main.cv-main.is-brief .cv-prose > .collection-list:not(.collection-certifications) .collection-item::before { clip-path: none; }
 }
 body.cv-page main.cv-main.is-brief .collection-expandable:is(:hover, :focus-within, .is-open) .collection-details { display: block; }
+
+/* One quiet switch to open every entry; printing always shows everything. */
+.cv-actions .cv-expand { font: inherit; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0; border: 0; background: none; color: var(--accent); text-decoration: underline; text-underline-offset: .28em; cursor: pointer; }
+.cv-actions .cv-expand[hidden] { display: none; }
+.cv-actions .cv-expand::before { content: ""; width: 14px; height: 14px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14'%3E%3Cpath d='M7.2 1.4C6.8 5 7.3 9 7 12.6M1.3 7.1C5 6.7 9 7.3 12.7 7' fill='none' stroke='%23875b43' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center / contain; transition: transform 200ms ease-out; }
+.cv-actions .cv-expand[aria-pressed="true"]::before { transform: rotate(45deg); }
+.cv-main:not(.is-brief) .collection-summary { display: none; }
+@media print {
+  .cv-actions .cv-expand { display: none; }
+  .cv-main .collection-summary { display: none !important; }
+  .cv-main .collection-card .collection-body { display: block !important; opacity: 1 !important; margin-top: 8px !important; }
+  .cv-main .collection-item { transform: none !important; opacity: 1 !important; }
+  .cv-main .collection-item::before { display: none !important; }
+}
