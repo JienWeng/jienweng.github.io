@@ -3,10 +3,29 @@
 {% block head %}<link rel="stylesheet" href="{{ get_url(path='editorial.css') }}"><link rel="stylesheet" href="{{ get_url(path='cv.css') }}">{% endblock head %}
 {% block content %}
 <main id="main" class="cv-main">
-  <header class="editorial-heading"><h1>{{ section.title }}</h1><p>Experience, education, and contributions. <a href="{{ get_url(path='cv/profile.txt') }}">Read the text CV</a> · <a href="{{ get_url(path='cv/jien-weng-lai-public-cv.pdf') }}">Download PDF</a></p></header>
+  <header class="editorial-heading cv-heading"><h1>{{ section.title }}</h1><p>Product manager and researcher. Web3 payments, business systems, and applied AI.</p><div class="cv-actions"><a class="portfolio-button" href="{{ get_url(path='cv/jien-weng-lai-public-cv.pdf') }}">Download PDF</a><a href="{{ get_url(path='cv/profile.txt') }}">Plain-text version</a><a href="mailto:{{ config.extra.email }}">Email me</a></div><div class="cv-view" role="group" aria-label="CV length" hidden><button type="button" data-view="brief" aria-pressed="true">TL;DR</button><button type="button" data-view="full" aria-pressed="false">Full CV</button></div></header>
   <div class="cv-layout">
-    <aside class="cv-index"><nav aria-label="CV sections">{% for heading in ["Experience", "Education", "Awards", "Certifications", "Grants", "Open Source", "Volunteering", "Memberships", "Publications"] %}<a href="#{{ heading | slugify }}">{{ heading }}</a>{% endfor %}</nav><a class="cv-contact" href="mailto:{{ config.extra.email }}">Contact me</a></aside>
+    <aside class="cv-index"><nav aria-label="CV sections">{% for heading in ["Experience", "Education", "Publications", "Awards", "Certifications", "Grants", "Open Source", "Volunteering", "Memberships"] %}<a href="#{{ heading | slugify }}">{{ heading }}</a>{% endfor %}</nav></aside>
     <article class="prose cv-prose">{{ section.content | safe }}</article>
   </div>
 </main>
 {% endblock content %}
+{% block script %}<script>
+(() => {
+  const main = document.querySelector('.cv-main');
+  const group = document.querySelector('.cv-view');
+  if (!main || !group) return;
+  const buttons = [...group.querySelectorAll('button')];
+  let view = 'brief';
+  try { view = localStorage.getItem('cv-view') || 'brief'; } catch (e) {}
+  const apply = next => {
+    view = next;
+    main.classList.toggle('is-brief', view === 'brief');
+    buttons.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.view === view)));
+    try { localStorage.setItem('cv-view', view); } catch (e) {}
+  };
+  buttons.forEach(b => b.addEventListener('click', () => apply(b.dataset.view)));
+  group.hidden = false;
+  apply(view);
+})();
+</script>{% endblock script %}

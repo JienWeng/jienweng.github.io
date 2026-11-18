@@ -12,6 +12,10 @@ template = "cv.html"
 
 {{ collection(file="education.toml") }}
 
+## Publications
+
+{{ collection(file="publication.toml") }}
+
 ## Awards
 
 {{ collection(file="awards.toml") }}
@@ -35,7 +39,3 @@ template = "cv.html"
 ## Memberships
 
 {{ collection(file="memberships.toml") }}
-
-## Publications
-
-{{ collection(file="publication.toml") }}
