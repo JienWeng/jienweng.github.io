@@ -70,3 +70,21 @@
 .about-profiles svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 .about-profiles .profile-label { display: block; font-size: inherit; line-height: inherit; color: inherit; }
 @media (max-width: 760px) { .about-profiles { grid-column: 1 / -1; } }
+
+/* Writing index: a sticky rail for finding things, the list beside it */
+.writing-main { display: grid; grid-template-columns: 15rem minmax(0, 1fr); column-gap: clamp(40px, 6vw, 96px); align-items: start; }
+.writing-main > .editorial-heading { grid-column: 1 / -1; }
+.writing-rail { grid-column: 1; position: sticky; top: 24px; display: grid; gap: 28px; padding-top: 30px; }
+.writing-main > .writing-index, .writing-main > .writing-empty { grid-column: 2; }
+.writing-jump { display: grid; gap: 2px; }
+.writing-jump a { display: flex; justify-content: space-between; align-items: baseline; min-height: 40px; padding: 6px 0; border-bottom: 1px solid var(--rule); color: var(--ink); text-decoration: none; }
+.writing-jump a:hover { color: var(--accent); }
+.writing-jump span { font-family: var(--hand); color: var(--ink-soft); font-size: 1.05rem; }
+.portfolio .writing-rail .writing-controls { grid-template-columns: 1fr; gap: 18px; padding: 0; }
+.portfolio .writing-main .writing-index { max-width: 50rem; }
+.portfolio .writing-main .writing-group:first-child .writing-group-heading { padding-top: 24px; }
+@media (max-width: 900px) {
+  .writing-main { display: block; }
+  .writing-rail { position: static; padding-top: 0; gap: 20px; }
+  .writing-jump { grid-template-columns: 1fr 1fr; column-gap: 20px; }
+}

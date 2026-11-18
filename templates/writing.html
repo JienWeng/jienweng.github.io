@@ -7,11 +7,14 @@
 {% if section.path == "/blog/" %}{% set entries = blog.pages %}{% else %}{% set entries = notes.pages | concat(with=blog.pages) | sort(attribute="date") | reverse %}{% endif %}
 <main id="main" class="writing-main" data-writing>
   <header class="editorial-heading"><h1>{{ section.title }}</h1><div class="writing-intro">{{ section.content | safe }}</div><nav aria-label="Writing collections"><a href="{{ notes.permalink }}"{% if section.path == "/notes/" %} aria-current="page"{% endif %}>All writing</a><a href="{{ blog.permalink }}"{% if section.path == "/blog/" %} aria-current="page"{% endif %}>Blog posts</a><a href="{{ get_url(path='/publications/') }}">Research papers</a></nav></header>
+  <aside class="writing-rail" aria-label="Find writing">
+  {% if section.path != "/blog/" %}<nav class="writing-jump" aria-label="Jump to"><a href="#blog-heading">Blog posts <span>{{ blog.pages | length }}</span></a><a href="#notes-heading">Technical notes <span>{{ notes.pages | length }}</span></a></nav>{% endif %}
   <div class="writing-controls" hidden>
     <label>Browse by topic<select aria-controls="writing-list"><option value="all">All topics</option>{% for topic in ["Business Transformation", "Product Management", "Web3", "Applied AI", "Machine Learning", "MLOps", "Quantitative Finance", "Reinforcement Learning", "Stochastic Modelling", "Mathematical Physics", "Signal Processing", "Regression", "Sustainability"] %}{% set group = entries | filter(attribute="extra.topic", value=topic) %}{% if group | length > 0 %}<option value="{{ topic }}">{{ topic }}</option>{% endif %}{% endfor %}<option value="Other">Experiences &amp; other writing</option></select></label>
     <label>Search writing<input type="search" placeholder="Title, topic, or idea" aria-controls="writing-list"></label>
     <p role="status" aria-live="polite" class="writing-count"></p>
   </div>
+  </aside>
   <div class="writing-index" id="writing-list">
   {% for kind in ["blog", "notes"] %}
     {% if kind == "blog" %}{% set group = blog.pages %}{% else %}{% set group = notes.pages %}{% endif %}
