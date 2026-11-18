@@ -1,0 +1,8 @@
+[[collection]]
+type = "card"
+title = "SymPy"
+subtitle = "Contributor, PR #29376"
+date = "Mar 2026"
+link = "https://github.com/sympy/sympy/pull/29376"
+content = "Added type annotations to SymPy’s warning helpers. Reviewed and merged into SymPy master."
+featured = true

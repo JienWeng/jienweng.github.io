@@ -1,0 +1,501 @@
+# Jien Weng Lai
+
+> Jien Weng, Product Manager & Researcher working on Web3 payments, business transformation, and applied AI research.
+
+Official public profile: https://jienweng.github.io/
+Current CV: https://jienweng.github.io/cv/
+Contact: laijienweng@gmail.com
+
+## Profile
+
+I’m Jien Weng, an independent consultant and product manager. At CryptoRails, I maintain the product backlog, define acceptance criteria, and coordinate engineering delivery for multi-chain crypto payments and wallet infrastructure.
+
+At Quandatics, I work on business transformation through an [internal CRM](https://jienweng.github.io/blog/quandatics-crm-business-transformation/) linking sales, project delivery, and finance. My role spans requirements, design, development, deployment, and support. Separately, I teach and coach learners in data science and machine learning at Quandatics Academy.
+
+Earlier, as a Finance Analyst - Data Engineer Intern at Great Eastern Life Assurance, I worked on data pipelines using Hive SQL in Apache Zeppelin.
+
+At Monash University Malaysia, I research wastewater treatment plant prediction using RNNs, Transformers, and Markov chain methods. This includes the [Monash Water Platform](https://jienweng.github.io/projects/monash-water/), CitizenFlood Android app, and operator dashboard. My other research interests include multi-agent reinforcement learning, market microstructure, and quantitative finance.
+
+I also build [VideoFlow](https://jienweng.github.io/projects/videoflow/), a canvas-based AI video studio for web and desktop, and [Polymarket binary-pairs arbitrage](https://jienweng.github.io/projects/polyarb/), a Rust Polymarket arbitrage platform now in production.
+
+I studied Applied Mathematics with Computing at UTAR. I write [notes](https://jienweng.github.io/notes/) on statistics, optimisation, and reinforcement learning.
+
+For my experience and qualifications, see my [CV](https://jienweng.github.io/cv/). To discuss a role or project, [email me](mailto:laijienweng@gmail.com).
+
+## Social and research profiles
+
+- [LinkedIn](https://linkedin.com/in/jienweng)
+- [GitHub](https://github.com/jienweng)
+- [X](https://x.com/jienweng_)
+- [Google Scholar](https://scholar.google.com/citations?user=2siljxAAAAAJ&hl=en)
+- [ORCID](https://orcid.org/0009-0001-2543-3887)
+
+## Current focus
+
+[Now page](https://nownownow.com/about). Last updated November 12, 2026.
+
+**Product delivery.** At CryptoRails, I maintain the backlog and roadmap, define acceptance criteria, and coordinate engineering delivery for multi-chain payments and wallet infrastructure. My [payment lifecycle note](https://jienweng.github.io/notes/cryptorails-transaction-lifecycle/) explains the decisions behind that work.
+
+**Business systems.** At Quandatics, I work across requirements, design, development, deployment, and support for the [internal CRM](https://jienweng.github.io/blog/quandatics-crm-business-transformation/) connecting sales, project delivery, and finance.
+
+**Teaching.** Separately, I teach and coach learners in data science and machine learning at Quandatics Academy. My [hands-on MLOps tutorial](https://jienweng.github.io/notes/intro-to-mlops-tutorial/) is one public teaching sample.
+
+**Research.** I am a Research Assistant at Monash University Malaysia, developing wastewater treatment plant prediction models with RNNs, Transformers, and Markov chain methods on time-series sensor data.
+
+**Technical consulting.** Supporting ACTBuilder with technical documentation, a knowledge wiki, website maintenance, and Python environment setup.
+
+**Writing.** My [notes](https://jienweng.github.io/notes/) include a nine-part regression series, stochastic modelling, and product decisions. The [Fokker-Planck note](https://jienweng.github.io/notes/fokker_planck_sde/) connects stochastic differential equations with evolving probability distributions.
+
+**Projects.** [VideoFlow](https://jienweng.github.io/projects/videoflow/) is a canvas-based AI video studio for characters, scripts, scenes, image and video generation, and editing. [Polymarket binary-pairs arbitrage](https://jienweng.github.io/projects/polyarb/), my Rust Polymarket arbitrage platform, is in production. The [Monash Water Platform](https://jienweng.github.io/projects/monash-water/) connects CitizenFlood community reporting with wastewater monitoring.
+
+## Experience
+
+### CryptoRails
+
+Feb 2026 - Present
+
+Product Manager
+
+Maintains the backlog and roadmap, runs Scrum ceremonies, and coordinates engineering delivery for multi-chain crypto payments and wallet infrastructure. Defines payment states, settlement criteria, and acceptance criteria for delayed or duplicate payments.
+
+### Independent Consulting
+
+Apr 2026 - Present
+
+Independent Consultant & Product Manager
+
+Business transformation, Web3 product management, proprietary AI research, and data and ML training.
+
+### Quandatics
+
+Apr 2026 - Present
+
+Business Transformation Consultant (Contractor)
+
+Maps sales, project delivery, and finance workflows for an internal CRM. Works across requirements, design, development, deployment, and support, including record ownership, approvals, and milestone-to-invoice handovers.
+
+Link: https://quandatics.com
+
+### Quandatics Academy
+
+Jun 2026 - Present
+
+Data Science & Machine Learning Trainer (Contractor)
+
+Teaches and coaches learners in data science and machine learning.
+
+Link: https://academy.quandatics.com
+
+### Monash University Malaysia
+
+Dec 2025 - Present
+
+Research Assistant
+
+Develops wastewater treatment plant prediction models using RNNs, Transformers, and Markov chain methods on time-series sensor data. Works on the [Monash Water Platform](https://monash-water-platform.vercel.app/), including the CitizenFlood Android app and operator dashboard.
+
+Link: https://www.monash.edu
+
+### ACTBuilder
+
+Jul 2025 - Present
+
+Technical Consultant
+
+Supports technical documentation, builds a knowledge wiki, maintains the website, and helps set up Python environments.
+
+### Great Eastern Life Assurance
+
+Oct 2024 - Jan 2025
+
+Finance Analyst, Data Engineer Intern
+
+Worked on data pipelines using Hive SQL in Apache Zeppelin.
+
+Link: https://www.greateasternlife.com/my/en/personal-insurance.html
+
+## Education
+
+### UTAR
+
+Oct 2022 - Oct 2025
+
+Bachelor of Science (Honours) Applied Mathematics with Computing
+
+Graduated with Merit.
+
+Link: https://www.utar.edu.my
+
+### UTAR
+
+Oct 2021 - Oct 2022
+
+Foundation in Science
+
+Link: https://www.utar.edu.my
+
+## Awards
+
+### KPJ Healthcare K.R.A.F.T. Challenge 2025
+
+Nov 2025
+
+Top 12
+
+### Talentbank Boardroom Challenge 2025
+
+Nov 2025
+
+Future Founder Award, Top 15 Finalist
+
+### CodeNection Hackathon 2025
+
+Oct 2025
+
+Mentor
+
+### 4th International Process Control Competition
+
+Aug 2025
+
+Best Visualisation Award
+
+Link: https://www.facebook.com/cheme.utp/posts/-empowering-future-engineers-ipcc-2025-ignites-innovation-at-utp-from-22nd-to-24/1178536717631535/
+
+### PayHack 2025
+
+Aug 2025
+
+Consolation Prize
+
+### Alibaba Cloud AI Hackathon 2025
+
+May 2025
+
+Top 13 Finalist
+
+### Hack The Future
+
+May 2025
+
+Best Presenter
+
+### JomHack Varsity Challenge 2025
+
+Apr 2025
+
+Participant
+
+### Universiti Malaya Hackathon 2025
+
+Apr 2025
+
+4th runner-up
+
+### 20th LIAM Structured Workshop
+
+Dec 2024
+
+Best Presenter Award, Best Team Award
+
+Link: https://www.linkedin.com/posts/jienweng_liam-teamwork-insurance-activity-7278028877585596417-49cL
+
+### PayHack 2024
+
+Dec 2024
+
+Semi-finalist
+
+### Data Science Digital Race 2024
+
+Oct 2024
+
+Finalist
+
+## Certifications
+
+### Agile Project Management
+
+Issued Sep 2026
+
+Issuer: Google
+
+Link: https://www.coursera.org/account/accomplishments/verify/V3O86KGTCBO7
+
+### Google Project Management
+
+Issued Sep 2026
+
+Issuer: Google
+
+Link: https://www.coursera.org/account/accomplishments/professional-cert/90U3GKFA7YI9
+
+### AWS Cloud Practitioner Essentials
+
+Issued Aug 2026
+
+Issuer: Amazon Web Services (AWS)
+
+Link: https://skillbuilder.aws/70a3bd99-baff-4e9c-9df8-596909eacbd8
+
+### Databricks Fundamentals
+
+Issued Apr 2026
+
+Issuer: Databricks
+
+### Capital Market Essentials Programme
+
+Issued Oct 2025
+
+Issuer: Securities Industry Development Corporation (SIDC)
+
+Link: https://erp.sidc.com.my/index/certificate/searchserial?serial_number=CE-2025-6602-297077
+
+### Front End Development
+
+Issued Jan 2025
+
+Issuer: freeCodeCamp
+
+Link: https://www.freecodecamp.org/certification/JienWeng/front-end-development-libraries
+
+### NVIDIA Deep Learning
+
+Issued Dec 2024
+
+Issuer: NVIDIA
+
+Link: https://learn.nvidia.com/certificates?id=vadb2mqrSgKGRqORxsa3KQ#
+
+### IBM Data Science
+
+Issued Oct 2024
+
+Issuer: IBM
+
+Link: https://www.coursera.org/account/accomplishments/specialization/VXTZ7EFLXX2V
+
+### Google Data Analytics
+
+Issued Jun 2024
+
+Issuer: Google
+
+Link: https://www.coursera.org/account/accomplishments/professional-cert/OSVLSAL5XQQL
+
+### NLP for Machine Learning
+
+Issued Jun 2024
+
+Issuer: LinkedIn Learning
+
+Link: https://www.linkedin.com/learning/certificates/31163a64417d9ee58f69f9da29aa1f40cbc6a43247454a998787e9d5aa5bb3c7
+
+## Grants
+
+### Kuok Foundation Scholar
+
+Oct 2024
+
+Undergraduate scholarship
+
+### HuaZong Education Fund
+
+Apr 2024
+
+Study grant
+
+### KIT Foundation Scholarship
+
+May 2023
+
+Scholarship
+
+### UTAR Scholarships for Top Achievers
+
+Oct 2022
+
+Merit-based tuition scholarship
+
+### UTAR Scholarships for Top Achievers (Pre-U)
+
+Oct 2021
+
+Merit-based tuition scholarship, Foundation programme
+
+## Open Source
+
+### SymPy
+
+Mar 2026
+
+Contributor, PR #29376
+
+Added type annotations to SymPy’s warning helpers. Reviewed and merged into SymPy master.
+
+Link: https://github.com/sympy/sympy/pull/29376
+
+## Volunteering
+
+### KitaHack 2026
+
+Mar 2026
+
+Mentor and judge, Google Developer Groups on Campus Malaysia
+
+Mentored participating teams and judged project submissions.
+
+### CodeNection 2025
+
+Oct 2025
+
+Hackathon mentor
+
+Mentored student teams throughout the hackathon.
+
+## Memberships
+
+### Kuok Foundation
+
+2025 - Present
+
+Kuok Foundation Scholar
+
+Member of the Kuok Foundation scholars community.
+
+## Publications
+
+### Separating spatial support and observation effects in satellite rainfall monitoring over Malaysia
+
+Aug 2026
+
+Authors: Jien Weng Lai
+
+Venue: Environmental Monitoring and Assessment · Springer Nature
+
+Status: Manuscript resubmission · Original Research Article
+
+Satellite rainfall products are often evaluated with gauges that sample different periods and spatial supports. We assessed daily IMERG Final V07 rainfall over Malaysia from October 2015 to September 2025, separating regional rainfall patterns from gauge-footprint and gauge-to-footprint effects. IMERG can screen regional rainfall patterns, but local high-intensity verification remains gauge-dependent.
+
+Topics: Satellite Rainfall, Environmental Monitoring, Malaysia, Remote Sensing
+
+### The Primacy of Information Design Over Algorithm Selection in Multi-Agent Cooperation
+
+Apr 2026
+
+Authors: Jien Weng Lai, Wei Lun Tan, Ying Loong Lee and Ming Fai Chow
+
+Venue: IEEE Social Computation
+
+Status: Under review
+
+A full-factorial experiment in the Public Goods Game shows that information regime and incentive strength explain 85.8% of cooperation-rate variance; algorithm choice accounts for just 3.8%. Agents with the least information cooperate most (83% versus 42% under full observation), attributable to state-space compression. TreeSHAP and Shapley-variance decomposition confirm information structure, not algorithm selection, as the primary design lever for cooperation.
+
+Topics: Multi-Agent Reinforcement Learning, Public Goods Game, Information Design, Cooperation
+
+### Optimal Execution with Alpha Signals
+
+Apr 2026
+
+Authors: Jien Weng Lai
+
+Venue: SSRN
+
+Status: Published
+
+Studies optimal trade execution strategies that incorporate predictive alpha signals, bridging market microstructure theory with practical quantitative trading.
+
+Link: https://doi.org/10.2139/ssrn.6323159
+
+Topics: Quantitative Finance, Optimal Execution, Alpha Signals, Market Microstructure
+
+## Public projects
+
+### VideoFlow
+
+Canvas-based AI video creation, from characters and scripts to scenes and editing.
+
+Status: Web & Electron desktop
+
+A Go and SvelteKit studio for web and Electron desktop, connecting characters, scripts, scenes, image/video generation, and editing.
+
+Link: https://github.com/JienWeng/videoflow-go
+
+Case study: https://jienweng.github.io/projects/videoflow/
+
+### Polymarket binary-pairs arbitrage
+
+Rust Polymarket arbitrage platform, now in production.
+
+Status: In production
+
+Evaluates Polymarket YES–NO pairs after fees and available depth. Includes exposure limits, persistent paper trading, and an activity dashboard.
+
+Case study: https://jienweng.github.io/projects/polyarb/
+
+### Monash Water Platform
+
+CitizenFlood Android reporting and wastewater monitoring in Malaysia.
+
+Status: Research assistant · Monash
+
+Monash research work: CitizenFlood Android reporting and a wastewater dashboard with illustrative scenarios.
+
+Link: https://monash-water-platform.vercel.app/
+
+Case study: https://jienweng.github.io/projects/monash-water/
+
+### Internal CRM
+
+Sales, delivery, and finance in one workflow.
+
+Status: In progress
+
+An internal CRM for Quandatics, designed around the handoffs between sales, delivery, and finance.
+
+Link: https://app.quandatics.com
+
+Case study: https://jienweng.github.io/blog/quandatics-crm-business-transformation/
+
+### ZakatDAO
+
+Smart-contract zakat distribution prototype.
+
+Uses smart contracts to record and distribute zakat payments.
+
+Link: https://github.com/JienWeng/ZakatDAO
+
+### FacePay
+
+Face-recognition payment prototype.
+
+Tests face recognition as an identity check during payment.
+
+Link: https://github.com/JienWeng/FacePay
+
+### Yappy
+
+Conversational app prototype.
+
+A chat app prototype for testing conversational flows.
+
+Link: https://github.com/JienWeng/Yappy
+
+### DecimalSat
+
+Ground-station and satellite build.
+
+Assembling a small satellite and ground station, and testing their radio link.
+
+Link: https://github.com/JienWeng/DecimalSat
+
+### Geospatial Analysis forked from Kepler.gl
+
+Monash geospatial analysis and open-data platform.
+
+A kepler.gl fork for Monash geospatial analysis and open-data sharing around the Klang Valley. In progress.
+
+Link: https://github.com/JienWeng/kepler.gl
+
+Generated from the public website content; no private CV information is included.

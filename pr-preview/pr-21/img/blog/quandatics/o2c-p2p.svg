@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="960" viewBox="0 0 1600 960" role="img" aria-labelledby="title desc">
+  <title id="title">Order-to-cash and procure-to-pay workflows</title>
+  <desc id="desc">An approved sales order connects two finance flows. Customer milestone claim, sales invoice, payment receipt, and accounting entry form order-to-cash. Purchase order, supplier invoice, payment voucher, and accounting entry form procure-to-pay. Both flows connect documents and costs to the same project in Autocount.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M1 1 11 6 1 11" fill="none" stroke="#b83e12" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker>
+    <style>
+      text{font-family:Archivo,Arial,sans-serif;fill:#20201e}.eyebrow{font-size:18px;font-weight:700;letter-spacing:2px}.title{font-size:36px;font-weight:750}.lane{font-size:21px;font-weight:750;letter-spacing:1.5px;fill:#b83e12}.head{font-size:24px;font-weight:750}.copy{font-size:19px;fill:#494944}.small{font-size:17px;fill:#494944}.tag{font-size:16px;font-weight:700;letter-spacing:1px}
+    </style>
+  </defs>
+  <rect width="1600" height="960" fill="#f6f3ec"/>
+  <text x="64" y="62" class="eyebrow">CRM · FINANCE HANDOVERS</text>
+  <text x="64" y="112" class="title">One project. Two directions of cash.</text>
+  <text x="64" y="154" class="copy">The sales order ties customer revenue and supplier costs back to the same project.</text>
+
+  <rect x="64" y="192" width="1472" height="326" rx="4" fill="#eee9df" stroke="#a6a49d" stroke-width="2"/>
+  <rect x="64" y="552" width="1472" height="326" rx="4" fill="#eee9df" stroke="#a6a49d" stroke-width="2"/>
+  <text x="92" y="232" class="lane">01 · ORDER TO CASH <tspan fill="#494944" font-weight="400" letter-spacing="0">— money in</tspan></text>
+  <text x="92" y="592" class="lane">02 · PROCURE TO PAY <tspan fill="#494944" font-weight="400" letter-spacing="0">— money out</tspan></text>
+
+  <g fill="#f6f3ec" stroke="#a6a49d" stroke-width="2">
+    <rect x="88" y="272" width="250" height="176" rx="4"/><rect x="378" y="272" width="250" height="176" rx="4"/><rect x="668" y="272" width="250" height="176" rx="4"/><rect x="958" y="272" width="250" height="176" rx="4"/><rect x="1248" y="272" width="250" height="176" rx="4"/>
+    <rect x="88" y="632" width="250" height="176" rx="4"/><rect x="378" y="632" width="250" height="176" rx="4"/><rect x="668" y="632" width="250" height="176" rx="4"/><rect x="958" y="632" width="250" height="176" rx="4"/><rect x="1248" y="632" width="250" height="176" rx="4"/>
+  </g>
+  <g fill="none" stroke="#b83e12" stroke-width="3" marker-end="url(#arrow)">
+    <path d="M338 360h32"/><path d="M628 360h32"/><path d="M918 360h32"/><path d="M1208 360h32"/>
+    <path d="M338 720h32"/><path d="M628 720h32"/><path d="M918 720h32"/><path d="M1208 720h32"/>
+  </g>
+  <g>
+    <text x="112" y="310" class="tag" fill="#b83e12">CUSTOMER</text><text x="112" y="350" class="head">Milestone claim</text><text x="112" y="388" class="copy">Project phase complete;</text><text x="112" y="414" class="copy">submit for billing.</text>
+    <text x="402" y="310" class="tag" fill="#b83e12">BILLING</text><text x="402" y="350" class="head">Sales invoice</text><text x="402" y="388" class="copy">Numbered invoice</text><text x="402" y="414" class="copy">issued per milestone.</text>
+    <text x="692" y="310" class="tag" fill="#b83e12">COLLECTION</text><text x="692" y="350" class="head">Payment receipt</text><text x="692" y="388" class="copy">Receipt matched</text><text x="692" y="414" class="copy">against invoice.</text>
+    <text x="982" y="310" class="tag" fill="#b83e12">ACCOUNTING</text><text x="982" y="350" class="head">Posted to Autocount</text><text x="982" y="388" class="copy">Ledger entry, with</text><text x="982" y="414" class="copy">no re-keying.</text>
+    <text x="1272" y="310" class="tag" fill="#b83e12">RECORDS</text><text x="1272" y="350" class="head">Documents</text><text x="1272" y="388" class="copy">Sales order, invoice</text><text x="1272" y="414" class="copy">and receipt archived.</text>
+
+    <text x="112" y="670" class="tag" fill="#b83e12">SUPPLIER</text><text x="112" y="710" class="head">Purchase order</text><text x="112" y="748" class="copy">Against the sales</text><text x="112" y="774" class="copy">order and project.</text>
+    <text x="402" y="670" class="tag" fill="#b83e12">COST CAPTURE</text><text x="402" y="710" class="head">Supplier invoice</text><text x="402" y="748" class="copy">Captured and matched</text><text x="402" y="774" class="copy">to purchase order.</text>
+    <text x="692" y="670" class="tag" fill="#b83e12">PAYMENT</text><text x="692" y="710" class="head">Payment voucher</text><text x="692" y="748" class="copy">Approved payment</text><text x="692" y="774" class="copy">sent through.</text>
+    <text x="982" y="670" class="tag" fill="#b83e12">ACCOUNTING</text><text x="982" y="710" class="head">Posted to Autocount</text><text x="982" y="748" class="copy">Cost recorded against</text><text x="982" y="774" class="copy">the same project.</text>
+    <text x="1272" y="670" class="tag" fill="#b83e12">RECORDS</text><text x="1272" y="710" class="head">Documents</text><text x="1272" y="748" class="copy">Purchase order, bill</text><text x="1272" y="774" class="copy">and voucher archived.</text>
+  </g>
+  <rect x="64" y="902" width="1472" height="42" fill="#eed1bd"/>
+  <text x="88" y="930" class="small">Shared outcome: revenue, costs and supporting records roll up to the same project.</text>
+</svg>
