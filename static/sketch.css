@@ -37,7 +37,7 @@
   .projects-main .project-filters button,
   .design-prompt, .design-prompt button,
   .diagram-viewer button, .writing-main button[data-reset], .projects-empty button,
-  .prose pre, .v3-state, .lost-flow span, .cv-view button
+  .prose pre, .v3-state, .lost-flow span, .cv-view button, .reading-series, .post-nav a
 ) {
   position: relative; isolation: isolate;
   border: 0; border-radius: 0; background-color: transparent;
@@ -47,7 +47,7 @@
   .projects-main .project-filters button,
   .design-prompt, .design-prompt button,
   .diagram-viewer button, .writing-main button[data-reset], .projects-empty button,
-  .prose pre, .v3-state, .lost-flow span, .cv-view button
+  .prose pre, .v3-state, .lost-flow span, .cv-view button, .reading-series, .post-nav a
 )::before {
   content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
   border: 1.6px solid var(--stroke); border-radius: 9px 3px 10px 4px / 4px 10px 3px 9px;
@@ -58,7 +58,7 @@
   .projects-main .project-filters button,
   .design-prompt, .design-prompt button,
   .diagram-viewer button, .writing-main button[data-reset], .projects-empty button,
-  .prose pre, .v3-state, .lost-flow span, .cv-view button
+  .prose pre, .v3-state, .lost-flow span, .cv-view button, .reading-series, .post-nav a
 )::after {
   content: ""; position: absolute; inset: 1px -2px -1px 2px; z-index: -1; pointer-events: none;
   border: 1.1px solid var(--stroke-soft); border-radius: 4px 10px 3px 9px / 9px 3px 10px 4px;
@@ -224,3 +224,16 @@
 .portfolio .post-nav .post-nav-older { text-align: right; grid-column: 2; }
 @media (max-width: 640px) { .portfolio .post-nav { grid-template-columns: 1fr; } .portfolio .post-nav .post-nav-older { text-align: left; grid-column: auto; } }
 .portfolio :is(.collection-links, .collection-links a) { text-transform: none; letter-spacing: 0; }
+
+/* Book touches on articles */
+.portfolio .reading-series { border: 0; }
+.portfolio .reading-series::before { background: var(--paper); }
+.portfolio .article-byline .byline-chapter { font-family: var(--hand); font-size: 1.05rem; color: var(--accent); }
+.portfolio .article-prose > p:first-child { font-size: 1.2rem; line-height: 1.7; color: var(--ink); }
+.portfolio .end-mark { display: block; width: 64px; height: 18px; margin: 40px 0 0;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 18'%3E%3Cpath d='M4 10c6-6 10 6 16 0s10 6 16 0 10 6 16 0' fill='none' stroke='%23875b43' stroke-width='1.8' stroke-linecap='round'/%3E%3Ccircle cx='59' cy='10' r='2' fill='%23875b43'/%3E%3C/svg%3E") no-repeat left center / contain; }
+.portfolio .post-nav a { padding: 16px 18px; }
+.portfolio .post-nav a::before { border-color: var(--stroke-soft); background: var(--paper); }
+.portfolio .post-nav a::after { opacity: .5; }
+.portfolio .post-nav a:hover::before { border-color: var(--accent); }
+.portfolio .post-nav .post-nav-older { align-items: flex-end; }
