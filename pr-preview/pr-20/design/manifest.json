@@ -1,0 +1,1118 @@
+{
+  "repository": "https://github.com/Checklist-Design/skills",
+  "commit": "bfae71e507b1b7c03c12e0756402b60eb80f5d14",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Checklist Design",
+  "importedOn": "2026-11-12",
+  "liveCatalogCheckedOn": "2026-11-12",
+  "liveCatalogCount": 138,
+  "missingFromSnapshot": [],
+  "checklistCount": 138,
+  "itemCount": 908,
+  "checklists": [
+    {
+      "file": "design-system-accessibility.md",
+      "title": "Accessibility",
+      "category": "Design system",
+      "source": "https://www.checklist.design/design-system/accessibility",
+      "itemCount": 8,
+      "sha256": "cc8d04f6fbd116e0cfa2e6486d408529a8ac635afe5e07e6cc87101829252f43"
+    },
+    {
+      "file": "design-system-accordion.md",
+      "title": "Accordion",
+      "category": "Design system",
+      "source": "https://www.checklist.design/design-system/accordion",
+      "itemCount": 5,
+      "sha256": "a5743a8f676eaaab2b279e9a44a2eddf72918b886efe5dda19f8e70b14645d2b"
+    },
+    {
+      "file": "design-system-alert.md",
+      "title": "Alert",
+      "category": "Design system",
+      "source": "https://www.checklist.design/design-system/alert",
+      "itemCount": 6,
+      "sha256": "75dbe65f24dc9eef5b2b6ec3bcb5d9fe1effdf6471100374109123fdcaa2cfc4"
+    },
+    {
+      "file": "design-system-avatar.md",
+      "title": "Avatar",
+      "category": "Design system",
+      "source": "https://www.checklist.design/design-system/avatar",
+      "itemCount": 7,
+      "sha256": "f9abd0476f489701901700a86ebbc33f5c93a70ae77697a752d9c1c509857055"
+    },
+    {
+      "file": "design-system-badge.md",
+      "title": "Badge",
+      "category": "Design system",
+      "source": "https://www.checklist.design/design-system/badge",
+      "itemCount": 3,
+      "sha256": "4c9e575b62206b67952655782ff4ff2eae8839ffd5e51e3462c764a440b83a18"
+    },
+    {
+      "file": "design-system-banner.md",
+      "title": "Banner",
+      "category": "Design system",
+      "source": "https://www.checklist.design/design-system/banner",
+      "itemCount": 6,
+      "sha256": "326cdc1960b6afe88e6bbc535bfa597cf7ed083c43584c90dcc02df8d91b5ebf"
+    },
+    {
+      "file": "design-system-breadcrumb.md",
+      "title": "Breadcrumb",
+      "category": "Design system",
+      "source": "https://www.checklist.design/design-system/breadcrumb",
+      "itemCount": 4,
+      "sha256": "ed4661fc033b380fc4662f69b6bffb89fdfbf5e8731a98acb3a643a8078927b5"
+    },
+    {
+      "file": "design-system-button.md",
+      "title": "Button",
+      "category": "Design system",
+      "source": "https://www.checklist.design/design-system/button",
+      "itemCount": 5,
+      "sha256": "2fe35b4f51492563884bdbc3863ab1527f4ab975db00266dde27bf7c95005785"
+    },
+    {
+      "file": "design-system-card.md",
+      "title": "Card",
+      "category": "Design system",
+      "source": "https://www.checklist.design/design-system/card",
+      "itemCount": 5,
+      "sha256": "f85a60f9586ba442b7b72cd3913d667451753b2a49dde91e365276cb0059ba6a"
+    },
+    {
+      "file": "design-system-carousel.md",
+      "title": "Carousel",
+      "category": "Design system",
+      "source": "https://www.checklist.design/design-system/carousel",
+      "itemCount": 5,
+      "sha256": "a425d226b5e4a900ea70708b25ec6ccfa3a54afee1fe46af9848eb44aaee4e2e"
+    },
+    {
+      "file": "design-system-checkbox.md",
+      "title": "Checkbox",
+      "category": "Design system",
+      "source": "https://www.checklist.design/design-system/checkbox",
+      "itemCount": 4,
+      "sha256": "e59bd160bd41880de06203822c8b51df75a2f6db322c8f9989d474ce2d8aa878"
+    },
+    {
+      "file": "design-system-color-system.md",
+      "title": "Color System",
+      "category": "Design system",
+      "source": "https://www.checklist.design/design-system/color-system",
+      "itemCount": 8,
+      "sha256": "351c1668ae99fab044130cae55a4d87221222e69f8205b9f6f617ac99933974b"
+    },
+    {
+      "file": "design-system-date-picker.md",
+      "title": "Date Picker",
+      "category": "Design system",
+      "source": "https://www.checklist.design/design-system/date-picker",
+      "itemCount": 7,
+      "sha256": "d29108798c41d5186d451936f4866e950415652c6be83b680edd375cf2604a0c"
+    },
+    {
+      "file": "design-system-drawer.md",
+      "title": "Drawer",
+      "category": "Design system",
+      "source": "https://www.checklist.design/design-system/drawer",
+      "itemCount": 7,
+      "sha256": "c7def6c899c4580e946ef072f48e702f6c29c7b1c9eb01b0c4157927d4b8b0a7"
+    },
+    {
+      "file": "design-system-dropdown-menu.md",
+      "title": "Dropdown Menu",
+      "category": "Design system",
+      "source": "https://www.checklist.design/design-system/dropdown-menu",
+      "itemCount": 8,
+      "sha256": "9cf0651fb1f0f538d7c63240e0157857621b03d6facd6f9cd85438e727d54a7a"
+    },
+    {
+      "file": "design-system-icon.md",
+      "title": "Icon",
+      "category": "Design system",
+      "source": "https://www.checklist.design/design-system/icon",
+      "itemCount": 4,
+      "sha256": "6006e1e87efc95798a27da4f7f9b765085bf44e73cfffdbbce72f61fcca8545c"
+    },
+    {
+      "file": "design-system-input-field.md",
+      "title": "Input Field",
+      "category": "Design system",
+      "source": "https://www.checklist.design/design-system/input-field",
+      "itemCount": 6,
+      "sha256": "b9967bbdd82d89ea332105426c31469c569028be1577419e32c889e5c0c371eb"
+    },
+    {
+      "file": "design-system-loading.md",
+      "title": "Loading",
+      "category": "Design system",
+      "source": "https://www.checklist.design/design-system/loading",
+      "itemCount": 5,
+      "sha256": "504ad0bdede923d6aeb4e5b2d3dfadf489d8bda8207e42e49918e78e2b5763ea"
+    },
+    {
+      "file": "design-system-modal.md",
+      "title": "Modal",
+      "category": "Design system",
+      "source": "https://www.checklist.design/design-system/modal",
+      "itemCount": 6,
+      "sha256": "3035986e939ff2f54b36d579ee509a9302eec9962ea1be70d466a2006f922540"
+    },
+    {
+      "file": "design-system-radio.md",
+      "title": "Radio",
+      "category": "Design system",
+      "source": "https://www.checklist.design/design-system/radio",
+      "itemCount": 6,
+      "sha256": "ff51e4dc273db79191b3554f50aa8272d5dd9215ea82f8f3642a7f12fa2995b7"
+    },
+    {
+      "file": "design-system-searchbar.md",
+      "title": "Searchbar",
+      "category": "Design system",
+      "source": "https://www.checklist.design/design-system/searchbar",
+      "itemCount": 6,
+      "sha256": "817b965efe6a8cea302763741dc0efe3a2b830f388ec21c7f3a209fae0ff4357"
+    },
+    {
+      "file": "design-system-skeleton.md",
+      "title": "Skeleton",
+      "category": "Design system",
+      "source": "https://www.checklist.design/design-system/skeleton",
+      "itemCount": 5,
+      "sha256": "528f115d9b9c8185defa686abb9b0cf963cf988f4b66e9d01ef8b03bd383b8ed"
+    },
+    {
+      "file": "design-system-slider.md",
+      "title": "Slider",
+      "category": "Design system",
+      "source": "https://www.checklist.design/design-system/slider",
+      "itemCount": 5,
+      "sha256": "6860500e6d6ed57c889ae37334a0f18d10f820938fe43b1c306ac2e9bfe90c2e"
+    },
+    {
+      "file": "design-system-spacing-and-grid.md",
+      "title": "Spacing / Grid",
+      "category": "Design system",
+      "source": "https://www.checklist.design/design-system/spacing-and-grid",
+      "itemCount": 7,
+      "sha256": "1ae5ebda5649ff0d140e46c14d0f6384c4030354916f8e5f4152ff3bdeb85260"
+    },
+    {
+      "file": "design-system-stepper.md",
+      "title": "Stepper",
+      "category": "Design system",
+      "source": "https://www.checklist.design/design-system/stepper",
+      "itemCount": 7,
+      "sha256": "4758c7e691ecd02abef6461e02aff0567754d742e68db93986675cc040b8ba71"
+    },
+    {
+      "file": "design-system-table.md",
+      "title": "Table",
+      "category": "Design system",
+      "source": "https://www.checklist.design/design-system/table",
+      "itemCount": 8,
+      "sha256": "4ad378b4f43e5d972ca292cf607fb7934d79f1b7ab9ad9a3e6adea2b86c244fc"
+    },
+    {
+      "file": "design-system-tabs.md",
+      "title": "Tabs",
+      "category": "Design system",
+      "source": "https://www.checklist.design/design-system/tabs",
+      "itemCount": 5,
+      "sha256": "abc132fb559974be08dec51f52cb04b7426a6cd82abe1f6abbc040b776af6705"
+    },
+    {
+      "file": "design-system-toast.md",
+      "title": "Toast",
+      "category": "Design system",
+      "source": "https://www.checklist.design/design-system/toast",
+      "itemCount": 6,
+      "sha256": "81ec22de2b71bed62ace0d1f10fa3bf2c03d9f247b47fcde5b49eb8fb1ac2209"
+    },
+    {
+      "file": "design-system-toggle.md",
+      "title": "Toggle",
+      "category": "Design system",
+      "source": "https://www.checklist.design/design-system/toggle",
+      "itemCount": 3,
+      "sha256": "9fcf3c72d315fe019549126a1aa1c8ebe1ca22771e1dcd4fc92675cc020aca76"
+    },
+    {
+      "file": "design-system-tokens.md",
+      "title": "Tokens",
+      "category": "Design system",
+      "source": "https://www.checklist.design/design-system/tokens",
+      "itemCount": 6,
+      "sha256": "c5341c8dcdd126568a3e88efdcb621de8e57eff6d2f9148a9dac5d209220ceb5"
+    },
+    {
+      "file": "design-system-tooltip.md",
+      "title": "Tooltip",
+      "category": "Design system",
+      "source": "https://www.checklist.design/design-system/tooltip",
+      "itemCount": 4,
+      "sha256": "f0e3feb1f98394a2becbfe2e87e30126884eda8fe205161e5b5a1dfe74398338"
+    },
+    {
+      "file": "design-system-typography.md",
+      "title": "Typography",
+      "category": "Design system",
+      "source": "https://www.checklist.design/design-system/typography",
+      "itemCount": 8,
+      "sha256": "8b03db1304b070c3b32540638056ea6e3b18f799855a6bf977285afba318bfc7"
+    },
+    {
+      "file": "flows-adding-to-cart.md",
+      "title": "Adding to cart",
+      "category": "Flows",
+      "source": "https://www.checklist.design/flows/adding-to-cart",
+      "itemCount": 4,
+      "sha256": "5ead11dda78c0d63e962be74c675a2d9d8dc71fd974ad75869bad5dc5c99a991"
+    },
+    {
+      "file": "flows-canceling-subscription.md",
+      "title": "Canceling subscription",
+      "category": "Flows",
+      "source": "https://www.checklist.design/flows/canceling-subscription",
+      "itemCount": 4,
+      "sha256": "d3db9dbd595a81cb5ef30249ab6ece15072210f80c953b16928a5e13d05f4fc5"
+    },
+    {
+      "file": "flows-contacting-support.md",
+      "title": "Contacting support",
+      "category": "Flows",
+      "source": "https://www.checklist.design/flows/contacting-support",
+      "itemCount": 3,
+      "sha256": "b6a5e3557c0b4a94fb7ec8f5fab2e42fbbb3ed87383a746aae8c600e23a8b792"
+    },
+    {
+      "file": "flows-deleting-account.md",
+      "title": "Deleting account",
+      "category": "Flows",
+      "source": "https://www.checklist.design/flows/deleting-account",
+      "itemCount": 4,
+      "sha256": "8cba603031a7bb4db4485828f433eb448b5582ab70f5b92062882f9f4ac9fb76"
+    },
+    {
+      "file": "flows-entering-promo-code.md",
+      "title": "Entering promo code",
+      "category": "Flows",
+      "source": "https://www.checklist.design/flows/entering-promo-code",
+      "itemCount": 5,
+      "sha256": "e4dbc9f5136a3689fadbc6f73155fb340ee7cd1ae3ac955d622830a090f07916"
+    },
+    {
+      "file": "flows-filtering-items.md",
+      "title": "Filtering items",
+      "category": "Flows",
+      "source": "https://www.checklist.design/flows/filtering-items",
+      "itemCount": 7,
+      "sha256": "005504270ccede5d7472052105f8d164dc648fef2a429530f1bd99cb5b28d5a7"
+    },
+    {
+      "file": "flows-making-a-payment.md",
+      "title": "Making a card payment",
+      "category": "Flows",
+      "source": "https://www.checklist.design/flows/making-a-payment",
+      "itemCount": 6,
+      "sha256": "dbf7cae358927ee1f246151d2eb4359526f1ef218ad9dfcc68fd989127e7e6ab"
+    },
+    {
+      "file": "flows-resetting-password.md",
+      "title": "Resetting password",
+      "category": "Flows",
+      "source": "https://www.checklist.design/flows/resetting-password",
+      "itemCount": 6,
+      "sha256": "814a945473cbbfe89ec5ec6e892507e9c78f8b3ca9ce493e306ea0e5044275da"
+    },
+    {
+      "file": "flows-saving-changes.md",
+      "title": "Saving changes",
+      "category": "Flows",
+      "source": "https://www.checklist.design/flows/saving-changes",
+      "itemCount": 5,
+      "sha256": "02c000f62fe8e050572f3c72312f16035bb7bff05d4d0ab08170caad42cad488"
+    },
+    {
+      "file": "flows-showing-input-error.md",
+      "title": "Showing input error",
+      "category": "Flows",
+      "source": "https://www.checklist.design/flows/showing-input-error",
+      "itemCount": 4,
+      "sha256": "53d28ed09d624394444343c46fd797f81747c4f3c95b7e2a1602878f677eb3c5"
+    },
+    {
+      "file": "flows-submitting-a-form.md",
+      "title": "Submitting a form",
+      "category": "Flows",
+      "source": "https://www.checklist.design/flows/submitting-a-form",
+      "itemCount": 5,
+      "sha256": "5c3f712a03d4ab9fa67b4a63802c7b053b3752afd136451835b126798d8b85d0"
+    },
+    {
+      "file": "flows-uploading-media.md",
+      "title": "Uploading media",
+      "category": "Flows",
+      "source": "https://www.checklist.design/flows/uploading-media",
+      "itemCount": 7,
+      "sha256": "201acba8e47c498bb563390763765f5354c3556b3f180de5114575a52b26defa"
+    },
+    {
+      "file": "flows-verifying-account.md",
+      "title": "Verifying account",
+      "category": "Flows",
+      "source": "https://www.checklist.design/flows/verifying-account",
+      "itemCount": 6,
+      "sha256": "cf1e48721e7b9ac505fe1746f6ef4ca024de55508c9e8d77308632b17413d9c6"
+    },
+    {
+      "file": "mobile-account.md",
+      "title": "Account",
+      "category": "Mobile app",
+      "source": "https://www.checklist.design/mobile/account",
+      "itemCount": 5,
+      "sha256": "c1d942e9258318aa06624594b0f1a7e6138200a36b588dd4ffa4c2ab4c7e48a9"
+    },
+    {
+      "file": "mobile-action-sheet.md",
+      "title": "Action Sheet",
+      "category": "Mobile app",
+      "source": "https://www.checklist.design/mobile/action-sheet",
+      "itemCount": 8,
+      "sha256": "f2975a0674826c4a8c97d66e0a4349282a1a13b8e7eb0c0dd894267289e9bd53"
+    },
+    {
+      "file": "mobile-activity-feed.md",
+      "title": "Activity Feed",
+      "category": "Mobile app",
+      "source": "https://www.checklist.design/mobile/activity-feed",
+      "itemCount": 8,
+      "sha256": "9bed8735a88b45b639593626b8cd978f2de675b05b2acb4cd617b09747d7ead1"
+    },
+    {
+      "file": "mobile-billing.md",
+      "title": "Billing",
+      "category": "Mobile app",
+      "source": "https://www.checklist.design/mobile/billing",
+      "itemCount": 6,
+      "sha256": "d1620f70274bb3f081516e366d75a6bcbab2f793e322d7f4f0155e742efcd7db"
+    },
+    {
+      "file": "mobile-camera-media-capture.md",
+      "title": "Camera",
+      "category": "Mobile app",
+      "source": "https://www.checklist.design/mobile/camera-media-capture",
+      "itemCount": 6,
+      "sha256": "748bf52774177bc5904737b4c7cf3e8104e4700fadc9f67e0de4cbf7de22add7"
+    },
+    {
+      "file": "mobile-cart.md",
+      "title": "Cart",
+      "category": "Mobile app",
+      "source": "https://www.checklist.design/mobile/cart",
+      "itemCount": 6,
+      "sha256": "efbb59c440d8d93d5d79135e3282edd408750387ce149f2792e5856274e7007e"
+    },
+    {
+      "file": "mobile-chat.md",
+      "title": "Chat",
+      "category": "Mobile app",
+      "source": "https://www.checklist.design/mobile/chat",
+      "itemCount": 9,
+      "sha256": "c117032199d0db7bc44625241c39bdf1aaa17186685f3d18f2851de5a8c8a80f"
+    },
+    {
+      "file": "mobile-checkout.md",
+      "title": "Checkout",
+      "category": "Mobile app",
+      "source": "https://www.checklist.design/mobile/checkout",
+      "itemCount": 8,
+      "sha256": "b21fb38fe53f630653b7ed964522e2c350d55dd99da16fb9395f81bebfec4e99"
+    },
+    {
+      "file": "mobile-dashboard.md",
+      "title": "Dashboard",
+      "category": "Mobile app",
+      "source": "https://www.checklist.design/mobile/dashboard",
+      "itemCount": 8,
+      "sha256": "503101a7f842db29cd65c155c6b47998b9d52f4ad8f3f981cc5fd5b82d766a0c"
+    },
+    {
+      "file": "mobile-feedback.md",
+      "title": "Feedback",
+      "category": "Mobile app",
+      "source": "https://www.checklist.design/mobile/feedback",
+      "itemCount": 8,
+      "sha256": "0975e6cf367c9318bf4c5167bee0c41e80919112a342e9960b810951647dbae3"
+    },
+    {
+      "file": "mobile-gesture-navigation.md",
+      "title": "Gesture navigation",
+      "category": "Mobile app",
+      "source": "https://www.checklist.design/mobile/gesture-navigation",
+      "itemCount": 8,
+      "sha256": "34da4b21ff510befefda6c7c99ae3b775990d7da868b65e0ebd675ea3c2415f6"
+    },
+    {
+      "file": "mobile-in-app-browser.md",
+      "title": "In-App Browser",
+      "category": "Mobile app",
+      "source": "https://www.checklist.design/mobile/in-app-browser",
+      "itemCount": 5,
+      "sha256": "b2cb3f82238eb84329e105cde8c36a65f44f0499b82d415561df79e274039569"
+    },
+    {
+      "file": "mobile-in-app-notifications.md",
+      "title": "In-App Notifications",
+      "category": "Mobile app",
+      "source": "https://www.checklist.design/mobile/in-app-notifications",
+      "itemCount": 9,
+      "sha256": "ba3ff968cd756994df1c0e7538c41fd566f501e45713a325a0d4bf931b4d22b2"
+    },
+    {
+      "file": "mobile-invite.md",
+      "title": "Invite",
+      "category": "Mobile app",
+      "source": "https://www.checklist.design/mobile/invite",
+      "itemCount": 8,
+      "sha256": "a40a29b73815b48a07aa42da662cbafadc26678d1283d27d4919b5ae64bdff7d"
+    },
+    {
+      "file": "mobile-login.md",
+      "title": "Login",
+      "category": "Mobile app",
+      "source": "https://www.checklist.design/mobile/login",
+      "itemCount": 8,
+      "sha256": "0deeaf41da350f935e096e3e54ab479879dbeaee148c891c5a53a349d3026042"
+    },
+    {
+      "file": "mobile-map-view.md",
+      "title": "Map View",
+      "category": "Mobile app",
+      "source": "https://www.checklist.design/mobile/map-view",
+      "itemCount": 8,
+      "sha256": "48e753ca43acbb810d2eeb8e20419ea33baaafb20dec7b9177fffdeb1bb8b171"
+    },
+    {
+      "file": "mobile-onboarding-checklist.md",
+      "title": "Onboarding Checklist",
+      "category": "Mobile app",
+      "source": "https://www.checklist.design/mobile/onboarding-checklist",
+      "itemCount": 7,
+      "sha256": "a72f8f50d2d2529cfdabfab28efc9b64d793b2a776e7a57f07f77468185596e7"
+    },
+    {
+      "file": "mobile-onboarding.md",
+      "title": "Onboarding",
+      "category": "Mobile app",
+      "source": "https://www.checklist.design/mobile/onboarding",
+      "itemCount": 7,
+      "sha256": "b9b97f77e828ee36048b293f90d52b383278e49d376a23d0479700f61bc587a5"
+    },
+    {
+      "file": "mobile-paywall.md",
+      "title": "Paywall",
+      "category": "Mobile app",
+      "source": "https://www.checklist.design/mobile/paywall",
+      "itemCount": 6,
+      "sha256": "7ca7074ebb760682d38272853ba330d4c40fdbfe9beb23e1dad5a613cff67629"
+    },
+    {
+      "file": "mobile-profile.md",
+      "title": "Profile",
+      "category": "Mobile app",
+      "source": "https://www.checklist.design/mobile/profile",
+      "itemCount": 6,
+      "sha256": "066286dbcb8d1f198835f724750f0ff3d99ff2c49152dd40e64d0a45690ca6fa"
+    },
+    {
+      "file": "mobile-push-notification-opt-in.md",
+      "title": "Push Notif. Opt-in",
+      "category": "Mobile app",
+      "source": "https://www.checklist.design/mobile/push-notification-opt-in",
+      "itemCount": 6,
+      "sha256": "9b233656f4d91322f07deaabb19e00b39497be1dd4b9fa0ea916a988897ecb38"
+    },
+    {
+      "file": "mobile-referral.md",
+      "title": "Referral",
+      "category": "Mobile app",
+      "source": "https://www.checklist.design/mobile/referral",
+      "itemCount": 8,
+      "sha256": "cc5d19870698b8c082b2eca5d1eda3ad6be5136fe9f5bdf03a75bb4cdf828d85"
+    },
+    {
+      "file": "mobile-search.md",
+      "title": "Search",
+      "category": "Mobile app",
+      "source": "https://www.checklist.design/mobile/search",
+      "itemCount": 8,
+      "sha256": "f6d8562832b13ba8909cfebe33dc94c45364c407d9646f859754b03fd0806b1b"
+    },
+    {
+      "file": "mobile-settings.md",
+      "title": "Settings",
+      "category": "Mobile app",
+      "source": "https://www.checklist.design/mobile/settings",
+      "itemCount": 8,
+      "sha256": "c0e5a7a1f093c0237b5258db2475dbea593928ed5babf1dba42d83110e661359"
+    },
+    {
+      "file": "mobile-sign-up.md",
+      "title": "Sign up",
+      "category": "Mobile app",
+      "source": "https://www.checklist.design/mobile/sign-up",
+      "itemCount": 8,
+      "sha256": "87daff1934c7cb367440cbcc08349b3e04cf51937efe57aacfac0910dcc032eb"
+    },
+    {
+      "file": "mobile-splash-screen.md",
+      "title": "Splash Screen",
+      "category": "Mobile app",
+      "source": "https://www.checklist.design/mobile/splash-screen",
+      "itemCount": 6,
+      "sha256": "2ce07c3e5c11048c484cfa4137093d9df83143ffce8167d23e8e180773dfa3be"
+    },
+    {
+      "file": "mobile-tab-bar-navigation.md",
+      "title": "Tab Bar Navigation",
+      "category": "Mobile app",
+      "source": "https://www.checklist.design/mobile/tab-bar-navigation",
+      "itemCount": 7,
+      "sha256": "dc27dfe2635288f76b7d9b871c9f8fde2a3108a07e572f013c217e0430d00193"
+    },
+    {
+      "file": "mobile-upgrade.md",
+      "title": "Upgrade",
+      "category": "Mobile app",
+      "source": "https://www.checklist.design/mobile/upgrade",
+      "itemCount": 7,
+      "sha256": "aae49a988f968ae65db4c6a34b0efefe8e092d65ff073530e974f259c4902cd8"
+    },
+    {
+      "file": "web-app-2-factor-authentication.md",
+      "title": "2FA",
+      "category": "Web app",
+      "source": "https://www.checklist.design/web-app/2-factor-authentication",
+      "itemCount": 7,
+      "sha256": "2b3e379f34108bbaa543019b46105cc58ea63ba685b4fe2bdc84c98578dd84e9"
+    },
+    {
+      "file": "web-app-account.md",
+      "title": "Account",
+      "category": "Web app",
+      "source": "https://www.checklist.design/web-app/account",
+      "itemCount": 6,
+      "sha256": "fac21da2a18b469bae1da3881b527d86be2436767b5c6a887734a573fa530db8"
+    },
+    {
+      "file": "web-app-admin-panel.md",
+      "title": "Admin Panel",
+      "category": "Web app",
+      "source": "https://www.checklist.design/web-app/admin-panel",
+      "itemCount": 7,
+      "sha256": "34532c881bb4919d47d81c8cb731774ef3e707ea20e38e7f20617024c5b2e50b"
+    },
+    {
+      "file": "web-app-analytics.md",
+      "title": "Analytics",
+      "category": "Web app",
+      "source": "https://www.checklist.design/web-app/analytics",
+      "itemCount": 7,
+      "sha256": "e4524ca465c8df1573a9a14466997f3bdb329500bfd1aaf87403e7735113c753"
+    },
+    {
+      "file": "web-app-api-keys.md",
+      "title": "API Keys",
+      "category": "Web app",
+      "source": "https://www.checklist.design/web-app/api-keys",
+      "itemCount": 6,
+      "sha256": "1b5f8f42214239b0c22e4d84a0face99f02f714011dce8c9fc3329d666bed955"
+    },
+    {
+      "file": "web-app-audit-log.md",
+      "title": "Audit Log",
+      "category": "Web app",
+      "source": "https://www.checklist.design/web-app/audit-log",
+      "itemCount": 7,
+      "sha256": "3ebafc03fa9f64082274f3a345b86e073e1f592a506a9e06724867acf87779f4"
+    },
+    {
+      "file": "web-app-billing.md",
+      "title": "Billing",
+      "category": "Web app",
+      "source": "https://www.checklist.design/web-app/billing",
+      "itemCount": 7,
+      "sha256": "2525f799c00825786073991e17ae93c32088f747b379a96d2722b0549d6a0ccf"
+    },
+    {
+      "file": "web-app-chat.md",
+      "title": "Chat",
+      "category": "Web app",
+      "source": "https://www.checklist.design/web-app/chat",
+      "itemCount": 7,
+      "sha256": "c2d99da60d58862e99ef7fc5a7b3a2951410e0533acf31ccfc107f78c07dddf6"
+    },
+    {
+      "file": "web-app-checkout.md",
+      "title": "Checkout",
+      "category": "Web app",
+      "source": "https://www.checklist.design/web-app/checkout",
+      "itemCount": 7,
+      "sha256": "233fdeb3929e10d79de9bc14b50a8c39f74d64dd6aeb65f0ca6c6bb3c2e70d12"
+    },
+    {
+      "file": "web-app-comments.md",
+      "title": "Comments",
+      "category": "Web app",
+      "source": "https://www.checklist.design/web-app/comments",
+      "itemCount": 8,
+      "sha256": "6479eeee791d3dab010bd111b1efc50a145986b48ebf0d4bcc437f67ab37cfd7"
+    },
+    {
+      "file": "web-app-dashboard.md",
+      "title": "Dashboard",
+      "category": "Web app",
+      "source": "https://www.checklist.design/web-app/dashboard",
+      "itemCount": 7,
+      "sha256": "e3b8f08e01b85d736bb909634af32fbcf72bc61eb480f6997ff0fc89762e9ee2"
+    },
+    {
+      "file": "web-app-data-table.md",
+      "title": "Data Table",
+      "category": "Web app",
+      "source": "https://www.checklist.design/web-app/data-table",
+      "itemCount": 9,
+      "sha256": "db90df46915a850a5fee07e100bcf27460cf9b39f0c67fe424d6c4550274fbe2"
+    },
+    {
+      "file": "web-app-document-view.md",
+      "title": "Document View",
+      "category": "Web app",
+      "source": "https://www.checklist.design/web-app/document-view",
+      "itemCount": 8,
+      "sha256": "2683d07f725148ffdf1eb8bd016d1bb3522e8dee93cf41b5f97138494b5291d4"
+    },
+    {
+      "file": "web-app-empty-state.md",
+      "title": "Empty State",
+      "category": "Web app",
+      "source": "https://www.checklist.design/web-app/empty-state",
+      "itemCount": 6,
+      "sha256": "70f5f751ccdcf8e4f1171a41a206413b98c18ff570c5803b877e263c9c349a46"
+    },
+    {
+      "file": "web-app-feed.md",
+      "title": "Feed",
+      "category": "Web app",
+      "source": "https://www.checklist.design/web-app/feed",
+      "itemCount": 8,
+      "sha256": "05e1ab1e94b94e6a06da57f97c52a58b52b26326e001fb3bc0d7587c5069a3be"
+    },
+    {
+      "file": "web-app-feedback.md",
+      "title": "Feedback",
+      "category": "Web app",
+      "source": "https://www.checklist.design/web-app/feedback",
+      "itemCount": 9,
+      "sha256": "78d34a5ef22d5f1c797b6135da82b221312309bc7acd01538236e23f0ac991ba"
+    },
+    {
+      "file": "web-app-help-center.md",
+      "title": "Help Center",
+      "category": "Web app",
+      "source": "https://www.checklist.design/web-app/help-center",
+      "itemCount": 7,
+      "sha256": "fe10ca0c5c0a88751c5dfd030ba0b44ccbbe8a41ae4864aa27670882fcc78506"
+    },
+    {
+      "file": "web-app-home.md",
+      "title": "Home",
+      "category": "Web app",
+      "source": "https://www.checklist.design/web-app/home",
+      "itemCount": 7,
+      "sha256": "02dd498cb5b0f675a679bde2df2d7d5a5f22d314a527eceaec66ad1c1bae193e"
+    },
+    {
+      "file": "web-app-integrations.md",
+      "title": "Integrations",
+      "category": "Web app",
+      "source": "https://www.checklist.design/web-app/integrations",
+      "itemCount": 7,
+      "sha256": "fc821bc45a4e9742a85f2c7810354b5bd336d0012e082d7ed216067aa8c7aca3"
+    },
+    {
+      "file": "web-app-kanban-board-view.md",
+      "title": "Kanban board",
+      "category": "Web app",
+      "source": "https://www.checklist.design/web-app/kanban-board-view",
+      "itemCount": 7,
+      "sha256": "e7aa15a4e30c8abf6b0cda9fbac88aadb5ed5d9763ba03ef30fca2341ed1f038"
+    },
+    {
+      "file": "web-app-list-view.md",
+      "title": "List View",
+      "category": "Web app",
+      "source": "https://www.checklist.design/web-app/list-view",
+      "itemCount": 8,
+      "sha256": "4eae2365a6f4ee9d3eb16494dcb2952fbcabdaf524d650fa3a01fa214d6195a6"
+    },
+    {
+      "file": "web-app-login.md",
+      "title": "Login",
+      "category": "Web app",
+      "source": "https://www.checklist.design/web-app/login",
+      "itemCount": 7,
+      "sha256": "439033558803e61db6e241fccd267818d20189b312ad7e2653d15989e221489b"
+    },
+    {
+      "file": "web-app-maintenance.md",
+      "title": "Maintenance",
+      "category": "Web app",
+      "source": "https://www.checklist.design/web-app/maintenance",
+      "itemCount": 5,
+      "sha256": "ff0d7ef4de26772b4ba11309f764dfaf50136f2f7e41a5c6ba8f5a31a600b5cf"
+    },
+    {
+      "file": "web-app-multi-step-form.md",
+      "title": "Multi-step form",
+      "category": "Web app",
+      "source": "https://www.checklist.design/web-app/multi-step-form",
+      "itemCount": 7,
+      "sha256": "141d96cbb4dcf2a6cb54fc9f8ba86d0116eb262b9778dd7e7e19cf9222ad3378"
+    },
+    {
+      "file": "web-app-notification-settings.md",
+      "title": "Notification Settings",
+      "category": "Web app",
+      "source": "https://www.checklist.design/web-app/notification-settings",
+      "itemCount": 5,
+      "sha256": "5f941048b5cd45b2e7e2aa0d72428cfbd18531c9fd8aa13c07e0bda8b02e1d55"
+    },
+    {
+      "file": "web-app-notifications.md",
+      "title": "Notifications",
+      "category": "Web app",
+      "source": "https://www.checklist.design/web-app/notifications",
+      "itemCount": 7,
+      "sha256": "153c67eab343b25e6ce360e0039414840a5e35f5375dea89644b031ea3adf2f0"
+    },
+    {
+      "file": "web-app-onboarding.md",
+      "title": "Onboarding",
+      "category": "Web app",
+      "source": "https://www.checklist.design/web-app/onboarding",
+      "itemCount": 6,
+      "sha256": "42c2a23615692a4492cafc3dea8f49979563a3a49b1338a93d35de8a526db762"
+    },
+    {
+      "file": "web-app-pricing.md",
+      "title": "Pricing",
+      "category": "Web app",
+      "source": "https://www.checklist.design/web-app/pricing",
+      "itemCount": 7,
+      "sha256": "e78d387de4b0eae70343b6329c2c692d88cbb78db290395a395db19b8f766594"
+    },
+    {
+      "file": "web-app-public-profile.md",
+      "title": "Public Profile",
+      "category": "Web app",
+      "source": "https://www.checklist.design/web-app/public-profile",
+      "itemCount": 7,
+      "sha256": "0907f534cd8177855969a8ae183ac09bc2ee16be8b59597dddce4f0cd7a4a109"
+    },
+    {
+      "file": "web-app-report-view.md",
+      "title": "Report View",
+      "category": "Web app",
+      "source": "https://www.checklist.design/web-app/report-view",
+      "itemCount": 6,
+      "sha256": "c12266d641757eec3ae5c7a2a5740904c1911a8f8c2e0831a1b1409c3b043459"
+    },
+    {
+      "file": "web-app-reporting.md",
+      "title": "Reporting",
+      "category": "Web app",
+      "source": "https://www.checklist.design/web-app/reporting",
+      "itemCount": 7,
+      "sha256": "70e0aa3430a70e6aaf2f65e60b86b63740a82ecd7bc9505e76828042d006e733"
+    },
+    {
+      "file": "web-app-search-results.md",
+      "title": "Search Results",
+      "category": "Web app",
+      "source": "https://www.checklist.design/web-app/search-results",
+      "itemCount": 7,
+      "sha256": "2d60b575202dd4f20c55b86942bd2cd5b2cf6cd37d3573bc1dea5973d3ed1806"
+    },
+    {
+      "file": "web-app-settings.md",
+      "title": "Settings",
+      "category": "Web app",
+      "source": "https://www.checklist.design/web-app/settings",
+      "itemCount": 7,
+      "sha256": "55e1535e925c69965fc8adceb3cb5780af6170ee2a3ffa4837a7235b7af0b259"
+    },
+    {
+      "file": "web-app-single-item-detail.md",
+      "title": "Single Item Detail",
+      "category": "Web app",
+      "source": "https://www.checklist.design/web-app/single-item-detail",
+      "itemCount": 7,
+      "sha256": "40f98b3776fe2badc180a1c94e4619d85f314136fdc5ba4480c7ad16597b15ab"
+    },
+    {
+      "file": "web-app-timeline-gantt-view.md",
+      "title": "Timeline / Gantt View",
+      "category": "Web app",
+      "source": "https://www.checklist.design/web-app/timeline-gantt-view",
+      "itemCount": 7,
+      "sha256": "a3027e79567572d22e5774a78042ed6e1b8b33d9151e9835e99961254f25ad02"
+    },
+    {
+      "file": "web-app-upgrade.md",
+      "title": "Upgrade",
+      "category": "Web app",
+      "source": "https://www.checklist.design/web-app/upgrade",
+      "itemCount": 7,
+      "sha256": "a0689bd70375d1da7228fc3f7348a52a03ac541097d74526b831278f9124a739"
+    },
+    {
+      "file": "web-app-user-management.md",
+      "title": "User Management",
+      "category": "Web app",
+      "source": "https://www.checklist.design/web-app/user-management",
+      "itemCount": 6,
+      "sha256": "8b66ace6952a130f78eae4e505d54ef0f786b861f18f2b574020cba1627cf5dc"
+    },
+    {
+      "file": "web-app-version-history.md",
+      "title": "Version History",
+      "category": "Web app",
+      "source": "https://www.checklist.design/web-app/version-history",
+      "itemCount": 6,
+      "sha256": "bf0a447f439772c316aee9111277890bad1f169e8de780c9b72989b6a3674f34"
+    },
+    {
+      "file": "website-404.md",
+      "title": "404",
+      "category": "Website",
+      "source": "https://www.checklist.design/website/404",
+      "itemCount": 5,
+      "sha256": "7f5d31d915e7bccffdca4758db744ef3488f39c718552101b75e066513986264"
+    },
+    {
+      "file": "website-about.md",
+      "title": "About",
+      "category": "Website",
+      "source": "https://www.checklist.design/website/about",
+      "itemCount": 6,
+      "sha256": "848c316555e25439cf006c5af33d7de678a2d4afb912a853dc315acc5220f396"
+    },
+    {
+      "file": "website-affiliate.md",
+      "title": "Affiliate",
+      "category": "Website",
+      "source": "https://www.checklist.design/website/affiliate",
+      "itemCount": 6,
+      "sha256": "f7bd3310dbd9eb25d1dcbf40c31698494307700cbb83b58746d87a70ced05c8f"
+    },
+    {
+      "file": "website-billing.md",
+      "title": "Billing",
+      "category": "Website",
+      "source": "https://www.checklist.design/website/billing",
+      "itemCount": 7,
+      "sha256": "148ab0509ec101d2337f0e8006f64a61857e20c0f27905713f30698b61c7304e"
+    },
+    {
+      "file": "website-blog-post.md",
+      "title": "Blog Post",
+      "category": "Website",
+      "source": "https://www.checklist.design/website/blog-post",
+      "itemCount": 12,
+      "sha256": "af7c80d2c13a35a8422235336abf3ba17d045177f959aae74cb6f4e30123c177"
+    },
+    {
+      "file": "website-blog.md",
+      "title": "Blog",
+      "category": "Website",
+      "source": "https://www.checklist.design/website/blog",
+      "itemCount": 10,
+      "sha256": "1a612925abe2e9f9adc723cf8c8a71ae06f09d9421205c6f2a98c289bcf66752"
+    },
+    {
+      "file": "website-careers.md",
+      "title": "Careers",
+      "category": "Website",
+      "source": "https://www.checklist.design/website/careers",
+      "itemCount": 7,
+      "sha256": "ac163bc725ea41746a110aa6cac1f27b28ac6db7d3159527395d03331ab7cf32"
+    },
+    {
+      "file": "website-cart.md",
+      "title": "Cart",
+      "category": "Website",
+      "source": "https://www.checklist.design/website/cart",
+      "itemCount": 8,
+      "sha256": "c9e7b6bdf1f1868beba015a2c06070736300b6296e7c24899c126adc729c49d1"
+    },
+    {
+      "file": "website-coming-soon.md",
+      "title": "Coming Soon",
+      "category": "Website",
+      "source": "https://www.checklist.design/website/coming-soon",
+      "itemCount": 5,
+      "sha256": "b0031be9674bbef3ad02739424021a308d13b216689c16e823e3d67e1c323f38"
+    },
+    {
+      "file": "website-compare-page.md",
+      "title": "Compare",
+      "category": "Website",
+      "source": "https://www.checklist.design/website/compare-page",
+      "itemCount": 6,
+      "sha256": "84262587b69b843a054c4a329312e1f64d8503d27f9fb82ada8b227ca2048c95"
+    },
+    {
+      "file": "website-contact-us.md",
+      "title": "Contact Us",
+      "category": "Website",
+      "source": "https://www.checklist.design/website/contact-us",
+      "itemCount": 5,
+      "sha256": "f2f3d8b37b5e8068f7ade2589765c6d27f7f016754758670b002a9d8a34d06a6"
+    },
+    {
+      "file": "website-event-page.md",
+      "title": "Event Page",
+      "category": "Website",
+      "source": "https://www.checklist.design/website/event-page",
+      "itemCount": 6,
+      "sha256": "fa7b60c1e1bdcf014e0be64f0270777b11d6dd155b9f7331de5681ceed58ba67"
+    },
+    {
+      "file": "website-faq.md",
+      "title": "FAQ",
+      "category": "Website",
+      "source": "https://www.checklist.design/website/faq",
+      "itemCount": 5,
+      "sha256": "0ed660c748ca65913c1d779674978ff044819c3549f69e8abad0120c4ff3a741"
+    },
+    {
+      "file": "website-features.md",
+      "title": "Features",
+      "category": "Website",
+      "source": "https://www.checklist.design/website/features",
+      "itemCount": 6,
+      "sha256": "7bf4808445be0714d181064641bd6e585a5853a111198015dfacb1dc306ad6c0"
+    },
+    {
+      "file": "website-footer.md",
+      "title": "Footer",
+      "category": "Website",
+      "source": "https://www.checklist.design/website/footer",
+      "itemCount": 13,
+      "sha256": "1d5d0dec45e1a6208e39b6fbb82fd6d23f9739436de3d93309feba35a324e16e"
+    },
+    {
+      "file": "website-landing-page.md",
+      "title": "Landing Page",
+      "category": "Website",
+      "source": "https://www.checklist.design/website/landing-page",
+      "itemCount": 8,
+      "sha256": "8178809272ddaa83f026df06e97709cc0e48788bdd834f9380b52964b813c904"
+    },
+    {
+      "file": "website-legal-privacy.md",
+      "title": "Privacy",
+      "category": "Website",
+      "source": "https://www.checklist.design/website/legal-privacy",
+      "itemCount": 6,
+      "sha256": "d36b2dacba20da4749868d7f2688e07dbf7228fb771329f43a1fbca871a89a83"
+    },
+    {
+      "file": "website-login.md",
+      "title": "Login",
+      "category": "Website",
+      "source": "https://www.checklist.design/website/login",
+      "itemCount": 10,
+      "sha256": "83582a50436685b7fee97c4874eaa79ee50a14c21f9be04af5fd3c41d9fdc29f"
+    },
+    {
+      "file": "website-press-media.md",
+      "title": "Press / Media",
+      "category": "Website",
+      "source": "https://www.checklist.design/website/press-media",
+      "itemCount": 6,
+      "sha256": "2615bb6f63da963aadb5b062d376a50f0d877898edd53fcf2acd5dbba2f018db"
+    },
+    {
+      "file": "website-pricing.md",
+      "title": "Pricing",
+      "category": "Website",
+      "source": "https://www.checklist.design/website/pricing",
+      "itemCount": 7,
+      "sha256": "7ab794bd55b5959462c06f7fce29493289cf886965a6cb3ee152fb4b8ae42648"
+    },
+    {
+      "file": "website-search.md",
+      "title": "Search",
+      "category": "Website",
+      "source": "https://www.checklist.design/website/search",
+      "itemCount": 7,
+      "sha256": "72ffd121415699258ab973ad1ceeb31d77fb132b525fdfceaf9afbe61e8a28cf"
+    },
+    {
+      "file": "website-security.md",
+      "title": "Security",
+      "category": "Website",
+      "source": "https://www.checklist.design/website/security",
+      "itemCount": 7,
+      "sha256": "3ff4acc7d4333170dc0428dfd107e7f77cc264fee7503529bfb7f2b2756a095a"
+    },
+    {
+      "file": "website-sign-up.md",
+      "title": "Sign up",
+      "category": "Website",
+      "source": "https://www.checklist.design/website/sign-up",
+      "itemCount": 11,
+      "sha256": "cc4943928572baa64998b8fd0414e2f6b55410140ad91ee45d1329b0a2beebcd"
+    },
+    {
+      "file": "website-status.md",
+      "title": "Status",
+      "category": "Website",
+      "source": "https://www.checklist.design/website/status",
+      "itemCount": 7,
+      "sha256": "cf5eb40c1be9a46bfa1ac2119b991b721eb60e575a1c0ee44190296ad3bbb8cd"
+    },
+    {
+      "file": "website-team.md",
+      "title": "Team",
+      "category": "Website",
+      "source": "https://www.checklist.design/website/team",
+      "itemCount": 5,
+      "sha256": "0691b9999b8e864ad7ba17e3f4c496579cc03fd94a561e977da71e9804b46748"
+    },
+    {
+      "file": "website-testimonials.md",
+      "title": "Testimonials",
+      "category": "Website",
+      "source": "https://www.checklist.design/website/testimonials",
+      "itemCount": 5,
+      "sha256": "45758996f57189874dc1a83a71eed6190fa6f4806266263d3e3227a75b71ce6f"
+    },
+    {
+      "file": "website-waitlist.md",
+      "title": "Waitlist",
+      "category": "Website",
+      "source": "https://www.checklist.design/website/waitlist",
+      "itemCount": 6,
+      "sha256": "629c910768f16db8ea219b40be9430ed3d98d3f99c0206865ef96e6937109dcf"
+    }
+  ]
+}
