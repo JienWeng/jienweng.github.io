@@ -3,17 +3,8 @@ type = "card"
 title = "CryptoRails"
 summary = "Payment states, acceptance criteria, and delivery for multi-chain payments."
 date = "Feb 2026 - Present"
-subtitle = "Product Manager"
+subtitle = "Product Manager (Independent Consultant)"
 content = "Maintains the backlog and roadmap, runs Scrum ceremonies, and coordinates engineering delivery for multi-chain crypto payments and wallet infrastructure. Defines payment states, settlement criteria, and acceptance criteria for delayed or duplicate payments."
-featured = true
-
-[[collection]]
-type = "card"
-title = "Independent Consulting"
-summary = "Business transformation, Web3 product, AI research, and ML training."
-date = "Apr 2026 - Present"
-subtitle = "Independent Consultant & Product Manager"
-content = "Business transformation, Web3 product management, proprietary AI research, and data and ML training."
 featured = true
 
 [[collection]]
