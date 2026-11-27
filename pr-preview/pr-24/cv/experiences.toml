@@ -1,0 +1,57 @@
+[[collection]]
+type = "card"
+title = "CryptoRails"
+summary = "Payment states, acceptance criteria, and delivery for multi-chain payments."
+date = "Feb 2026 - Present"
+subtitle = "Product Manager (Independent Consultant)"
+content = "Maintains the backlog and roadmap, runs Scrum ceremonies, and coordinates engineering delivery for multi-chain crypto payments and wallet infrastructure. Defines payment states, settlement criteria, and acceptance criteria for delayed or duplicate payments."
+featured = true
+
+[[collection]]
+type = "card"
+title = "Quandatics"
+summary = "Sales, delivery, and finance workflows for an internal CRM."
+date = "Apr 2026 - Present"
+link = "https://quandatics.com"
+subtitle = "Business Transformation Consultant (Contractor)"
+content = "Maps sales, project delivery, and finance workflows for an internal CRM. Works across requirements, design, development, deployment, and support, including record ownership, approvals, and milestone-to-invoice handovers."
+featured = true
+
+[[collection]]
+type = "card"
+title = "Quandatics Academy"
+summary = "Teaches data science and machine learning."
+date = "Jun 2026 - Present"
+link = "https://academy.quandatics.com"
+subtitle = "Data Science & Machine Learning Trainer (Contractor)"
+content = "Teaches and coaches learners in data science and machine learning."
+featured = true
+
+[[collection]]
+type = "card"
+title = "Monash University Malaysia"
+summary = "Wastewater prediction models and the Monash Water Platform."
+date = "Dec 2025 - Present"
+link = "https://www.monash.edu"
+subtitle = "Research Assistant"
+content = "Develops wastewater treatment plant prediction models using RNNs, Transformers, and Markov chain methods on time-series sensor data. Works on the [Monash Water Platform](https://monash-water-platform.vercel.app/), including the CitizenFlood Android app and operator dashboard."
+featured = true
+
+[[collection]]
+type = "card"
+title = "ACTBuilder"
+summary = "Documentation, knowledge wiki, website, and Python setup."
+date = "Jul 2025 - Present"
+subtitle = "Technical Consultant"
+content = "Supports technical documentation, builds a knowledge wiki, maintains the website, and helps set up Python environments."
+featured = true
+
+[[collection]]
+type = "card"
+title = "Great Eastern Life Assurance"
+summary = "Data pipelines in Hive SQL."
+date = "Oct 2024 - Jan 2025"
+link = "https://www.greateasternlife.com/my/en/personal-insurance.html"
+subtitle = "Finance Analyst, Data Engineer Intern"
+content = "Worked on data pipelines using Hive SQL in Apache Zeppelin."
+featured = false
