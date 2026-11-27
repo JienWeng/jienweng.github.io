@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "source": "https://jienweng.github.io/cv/",
-  "sourceDigest": "05d8801086a4d07dff46d0e9ac72666c81df816c6842bba8ff5624b88807223b",
+  "sourceDigest": "717528aa1a8b36288d80564836a01b3636653cacb8045f6d69551e60787375c5",
   "basics": {
     "name": "Jien Weng Lai",
     "email": "laijienweng@gmail.com",
@@ -23,14 +23,8 @@
       {
         "title": "CryptoRails",
         "date": "Feb 2026 - Present",
-        "subtitle": "Product Manager",
+        "subtitle": "Product Manager (Independent Consultant)",
         "content": "Maintains the backlog and roadmap, runs Scrum ceremonies, and coordinates engineering delivery for multi-chain crypto payments and wallet infrastructure. Defines payment states, settlement criteria, and acceptance criteria for delayed or duplicate payments."
-      },
-      {
-        "title": "Independent Consulting",
-        "date": "Apr 2026 - Present",
-        "subtitle": "Independent Consultant & Product Manager",
-        "content": "Business transformation, Web3 product management, proprietary AI research, and data and ML training."
       },
       {
         "title": "Quandatics",
@@ -278,20 +272,6 @@
           "Environmental Monitoring",
           "Malaysia",
           "Remote Sensing"
-        ]
-      },
-      {
-        "title": "The Primacy of Information Design Over Algorithm Selection in Multi-Agent Cooperation",
-        "date": "Apr 2026",
-        "authors": "Jien Weng Lai, Wei Lun Tan, Ying Loong Lee and Ming Fai Chow",
-        "venue": "IEEE Social Computation",
-        "status": "Under review",
-        "content": "A full-factorial experiment in the Public Goods Game shows that information regime and incentive strength explain 85.8% of cooperation-rate variance; algorithm choice accounts for just 3.8%. Agents with the least information cooperate most (83% versus 42% under full observation), attributable to state-space compression. TreeSHAP and Shapley-variance decomposition confirm information structure, not algorithm selection, as the primary design lever for cooperation.",
-        "tags": [
-          "Multi-Agent Reinforcement Learning",
-          "Public Goods Game",
-          "Information Design",
-          "Cooperation"
         ]
       },
       {

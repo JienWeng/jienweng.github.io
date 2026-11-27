@@ -25,7 +25,6 @@ Contact: laijienweng@gmail.com
 ## Current roles
 
 - CryptoRails (Feb 2026 - Present): Maintains the backlog and roadmap, runs Scrum ceremonies, and coordinates engineering delivery for multi-chain crypto payments and wallet infrastructure. Defines payment states, settlement criteria, and acceptance criteria for delayed or duplicate payments.
-- Independent Consulting (Apr 2026 - Present): Business transformation, Web3 product management, proprietary AI research, and data and ML training.
 - Quandatics (Apr 2026 - Present): Maps sales, project delivery, and finance workflows for an internal CRM. Works across requirements, design, development, deployment, and support, including record ownership, approvals, and milestone-to-invoice handovers.
 - Quandatics Academy (Jun 2026 - Present): Teaches and coaches learners in data science and machine learning.
 - Monash University Malaysia (Dec 2025 - Present): Develops wastewater treatment plant prediction models using RNNs, Transformers, and Markov chain methods on time-series sensor data. Works on the [Monash Water Platform](https://monash-water-platform.vercel.app/), including the CitizenFlood Android app and operator dashboard.
@@ -44,7 +43,6 @@ Contact: laijienweng@gmail.com
 
 - [Publications](https://jienweng.github.io/publications/)
 - Separating spatial support and observation effects in satellite rainfall monitoring over Malaysia — Manuscript resubmission · Original Research Article, Environmental Monitoring and Assessment · Springer Nature, Aug 2026.
-- The Primacy of Information Design Over Algorithm Selection in Multi-Agent Cooperation — Under review, IEEE Social Computation, Apr 2026.
 - Optimal Execution with Alpha Signals — Published, SSRN, Apr 2026. https://doi.org/10.2139/ssrn.6323159
 
 ## Public projects

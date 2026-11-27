@@ -54,17 +54,9 @@ For my experience and qualifications, see my [CV](https://jienweng.github.io/cv/
 
 Feb 2026 - Present
 
-Product Manager
+Product Manager (Independent Consultant)
 
 Maintains the backlog and roadmap, runs Scrum ceremonies, and coordinates engineering delivery for multi-chain crypto payments and wallet infrastructure. Defines payment states, settlement criteria, and acceptance criteria for delayed or duplicate payments.
-
-### Independent Consulting
-
-Apr 2026 - Present
-
-Independent Consultant & Product Manager
-
-Business transformation, Web3 product management, proprietary AI research, and data and ML training.
 
 ### Quandatics
 
@@ -379,20 +371,6 @@ Status: Manuscript resubmission · Original Research Article
 Satellite rainfall products are often evaluated with gauges that sample different periods and spatial supports. We assessed daily IMERG Final V07 rainfall over Malaysia from October 2015 to September 2025, separating regional rainfall patterns from gauge-footprint and gauge-to-footprint effects. IMERG can screen regional rainfall patterns, but local high-intensity verification remains gauge-dependent.
 
 Topics: Satellite Rainfall, Environmental Monitoring, Malaysia, Remote Sensing
-
-### The Primacy of Information Design Over Algorithm Selection in Multi-Agent Cooperation
-
-Apr 2026
-
-Authors: Jien Weng Lai, Wei Lun Tan, Ying Loong Lee and Ming Fai Chow
-
-Venue: IEEE Social Computation
-
-Status: Under review
-
-A full-factorial experiment in the Public Goods Game shows that information regime and incentive strength explain 85.8% of cooperation-rate variance; algorithm choice accounts for just 3.8%. Agents with the least information cooperate most (83% versus 42% under full observation), attributable to state-space compression. TreeSHAP and Shapley-variance decomposition confirm information structure, not algorithm selection, as the primary design lever for cooperation.
-
-Topics: Multi-Agent Reinforcement Learning, Public Goods Game, Information Design, Cooperation
 
 ### Optimal Execution with Alpha Signals
 
